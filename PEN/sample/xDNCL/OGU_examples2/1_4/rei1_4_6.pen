@@ -1,0 +1,19 @@
+整数 i
+gOpenWindow(400, 400)
+gDrawBox(50,100,300,200)
+gSetLineColor(255, 255, 255)
+i を 0 から 10 まで 1 ずつ増やしながら，
+  | もし i%2 = 0 ならば
+  |   | gSetFillColor(0, 0, 255)
+  | を実行し，そうでなければ
+  |   | gSetFillColor(0, 0, 0)
+  | を実行する
+  | gFillCircle(150, 200, 40)
+  | もし i%2 = 1 ならば
+  |   | gSetFillColor(0, 0, 255)
+  | を実行し，そうでなければ
+  |   | gSetFillColor(0, 0, 0)
+  | を実行する
+  | gFillCircle(250, 200, 40)
+  | sleep(2000)
+を繰り返す

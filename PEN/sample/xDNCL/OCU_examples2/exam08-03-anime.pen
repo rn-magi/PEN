@@ -1,0 +1,13 @@
+/*                                 exam08-03-anime.pen
+ * (例08-03) 円を左から右に移動させるアニメーションを作れ
+ */
+整数 p
+gOpenWindow(400, 400)
+gSetLineColor(255, 255, 255)
+p を 20 から 400 まで 10 ずつ増やしながら，
+  | gSetFillColor(255, 0, 0)
+  | gFillCircle(p, 200, 20)
+  | gSetFillColor(255, 255, 255)
+  | sleep(100)
+  | gFillCircle(p, 200, 20)
+を繰り返す

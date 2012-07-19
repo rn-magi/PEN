@@ -1,0 +1,6 @@
+整数 teihen, takasa
+「底辺の長さを入力してください」 を印刷する
+teihen ← input()
+「高さを入力してください」 を印刷する
+takasa ← input()
+「三角形の面積は」と teihen×takasa÷2.0 を印刷する

@@ -1,0 +1,15 @@
+/*   ex02-00.pen                (例題02)
+ *   キーボードから点数(x)を入力し，
+ *   xが60以上なら，Seiseki に 1 を代入し，
+ *   xが60未満なら，Seiseki に 0 を代入し，
+ *   Seisekiの値を印刷するプログラム．
+ */
+整数 x
+整数 Seiseki
+x ← input()
+もし x ≧ 60 ならば
+  |   Seiseki ← 1
+を実行し，そうでなければ
+  |   Seiseki ← 0
+を実行する
+Seiseki を印刷する

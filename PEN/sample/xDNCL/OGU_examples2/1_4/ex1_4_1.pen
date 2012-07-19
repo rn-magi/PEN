@@ -1,0 +1,8 @@
+整数 x, y
+「x座標を入力してください」 を印刷する
+x ← input()
+「y座標を入力してください」 を印刷する
+y ← input()
+gOpenWindow(200, 200)
+gSetFillColor(255, 0, 0)
+gFillBox(x, y, 50, 50)

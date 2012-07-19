@@ -1,0 +1,16 @@
+/* リサージュ曲線を描画するプログラム */
+
+整数 c, x, y, yw
+実数 n
+
+gOpenWindow(400,360)
+
+c を 0 から 15 まで 1 ずつ増やしながら，
+  | n を 0 から 755 まで 0.1 ずつ増やしながら，
+  |   | gSetLineColor(random(255),random(255),random(255))
+  |   | yw ← random(40)
+  |   | x ← 180 * sin(n/40) + 200
+  |   | y ← 150 * sin(n/30) + 160 + yw
+  |   | gDrawPoint( x, y)
+  | を繰り返す
+を繰り返す

@@ -1,0 +1,15 @@
+整数 a
+整数 gusuu
+整数 kisuu
+整数 i
+gusuu ← 0, kisuu ← 0
+i を 1 から 10 まで 1 ずつ増やしながら，
+  | a ← input()
+  | もし a%2 = 0 ならば
+  |   | gusuu ← gusuu + 1
+  | を実行し，そうでなければ
+  |   | kisuu ← kisuu + 1
+  | を実行する
+を繰り返す
+「偶数の個数は」とgusuuを印刷する
+「奇数の個数は」とkisuuを印刷する

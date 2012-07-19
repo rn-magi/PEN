@@ -1,0 +1,31 @@
+/*** File Copy Program ***/
+
+文字列 InputFile, OutputFile, str
+整数 fdin, fdout,  stop
+
+「コピー元ファイルは？：」 を改行なしで表示する
+InputFile ← input()
+「コピー先ファイルは？：」 を改行なしで表示する
+OutputFile ← input()
+
+/* InputFile を読み込み専用で開く */
+fdin ← openr(InputFile)
+
+/* InputFile を書き込み専用で開く */
+fdout ← openw(OutputFile)
+
+(stop=0) の間，
+  | /* FileID fdin から1文字読み込む */
+  | str ← getstr(fdin, 1)
+  | もし str=EOF ならば
+  |   |  /* 読み込んだ文字が EOF であればフラグを立てる */
+  |   |  stop ← 1
+  | を実行し，そうでなければ
+  |   |  /* FileID fdout に str の文字を書き込む */
+  |   |  putstr(fdout, str)
+  | を実行する
+を繰り返す
+
+/* ファイルを閉じる */
+close(fdin)
+close(fdout)

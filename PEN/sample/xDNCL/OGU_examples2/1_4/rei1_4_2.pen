@@ -1,0 +1,12 @@
+整数 r, x, y
+gOpenWindow(400, 400)
+r を 1 から 50 まで 1 ずつ増やしながら，
+  | x ← random(399)
+  | y ← random(399)
+  | もし r%2 = 0 ならば
+  |   | gSetLineColor(255, 0, 0)
+  | を実行し，そうでなければ
+  |   | gSetLineColor(0, 0, 255)
+  | を実行する
+  | gDrawCircle(x, y, r)
+を繰り返す

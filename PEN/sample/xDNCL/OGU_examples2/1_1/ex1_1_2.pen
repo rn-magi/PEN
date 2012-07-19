@@ -1,0 +1,7 @@
+整数 a, b, seki, sho
+a ← 6
+b ← 3
+seki ← a × b
+sho ← a ÷ b
+「a × bの計算結果は」と seki を印刷する
+「a ÷ bの計算結果は」と sho を印刷する

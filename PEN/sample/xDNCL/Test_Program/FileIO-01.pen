@@ -1,0 +1,27 @@
+整数 id, n
+文字列 str
+
+id ← openw(".\FileTest.txt")
+n を 1 から 10 まで 1 ずつ増やしながら，
+  | putline(id, n + "行目")
+を繰り返す
+close(id)
+
+id ← opena(".\FileTest.txt")
+n を 1 から 10 まで 1 ずつ増やしながら，
+  | putline(id, n * 2 + "行目")
+を繰り返す
+close(id)
+
+id ← openr(".\FileTest.txt")
+str != EOF の間，
+  | str ← getline(id)
+  | もし str != EOF ならば
+  |   | str を印刷する
+  | を実行し，そうでなければ
+  |   | 「ぬるぽ」を印刷する
+  | を実行する
+を繰り返す
+close(id)
+
+remove(".\FileTest.txt")

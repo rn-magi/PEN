@@ -1,0 +1,17 @@
+®” x, i
+
+i © input()
+
+gWindowOpen(i, i)
+gDrawOval(0, 0, 25, 25)
+
+gFillOval(25, 25, 25, 25)
+gDrawLine(0, 0, i, i)
+
+gDrawLine(0, i, i, i)
+gDrawLine(i, 0, i, i)
+
+gColor(255,0,0)
+x ‚ğ 0 ‚©‚ç i ‚Ü‚Å 1 ‚¸‚Â‘‚â‚µ‚È‚ª‚çC
+  | gDrawPoint( x, i - x)
+‚ğŒJ‚è•Ô‚·

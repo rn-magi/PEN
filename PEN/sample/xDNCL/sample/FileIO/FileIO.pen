@@ -1,0 +1,23 @@
+/* File Read Program */
+
+文字列 str
+整数 id, count
+
+count ← 1
+
+/* ファイルを読み込み専用で開く */
+id ← openr(".\sample\FileIO\Data\english.txt")
+
+繰り返し，
+  | str ← getstr(id,1)
+  | もし str = " " ならば
+  |   | 「」 を表示する
+  |   | /* 単語の境目" "であれば count に1を足す */
+  |   | count ← count + 1
+  | を実行し，そうでなければ
+  |   | str を改行なしで表示する
+  | を実行する
+を， str = EOF になるまで実行する
+
+「\n」 を表示する
+「単語数は」と count と 「です」を表示する

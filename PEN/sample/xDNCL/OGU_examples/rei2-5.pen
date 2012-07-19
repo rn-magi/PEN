@@ -1,0 +1,23 @@
+整数 a
+整数 b
+整数 c
+整数 max
+整数 min
+a ← input()
+b ← input()
+c ← input()
+もし a>b ならば
+  | max ← a
+  | min ← b
+を実行し，そうでなければ
+  | max ← b
+  | min ← a
+を実行する
+もし c>max ならば
+  | max ← c
+を実行し，そうでなければ
+  | もし c<min ならば
+  |   | min ← c
+  | を実行する
+を実行する
+maxと「が大きく」とminと「が小さい」 を印刷する

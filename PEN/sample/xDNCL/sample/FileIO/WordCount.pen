@@ -1,0 +1,15 @@
+/*** Word Count Program ***/
+•¶š—ñ str
+®” fd, count, stop
+stop © 0
+count © 0
+fd © openr(".\sample\FileIO\Data\Name-Score.txt")
+(stop=0) ‚ÌŠÔC
+  | str © getstr(fd, 1)
+  | ‚à‚µ str=EOF ‚È‚ç‚Î
+  |   |  stop © 1
+  | ‚ğÀs‚·‚é
+  | count © count + 1
+‚ğŒJ‚è•Ô‚·
+count ‚ğ•\¦‚·‚é
+close(fd)

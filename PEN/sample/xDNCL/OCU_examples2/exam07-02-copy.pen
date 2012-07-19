@@ -1,0 +1,24 @@
+/*			  exam07-02-copy.pen
+ * (例07-02) 入力ファイル名と出力ファイル名を
+ *    キーボードから入力し、入力ファイルの内容
+ *    をすべて出力ファイルにコピーせよ。
+ */
+文字列 InputFile, OutputFile, str
+整数 fdin, fdout,  stop
+「コピー元ファイルは？：」 を改行なしで印刷する
+InputFile ← input()
+「コピー先ファイルは？：」 を改行なしで印刷する
+OutputFile ← input()
+fdin ← openr(InputFile)
+fdout ← openw(OutputFile)
+(stop=0) の間，
+   | str ← getstr(fdin, 1)
+   | もし str=EOF ならば
+   |   |  stop ← 1
+   | を実行し，そうでなければ
+   |   |  putstr(fdout, str)
+   | を実行する
+を繰り返す
+close(fdin)
+close(fdout)
+

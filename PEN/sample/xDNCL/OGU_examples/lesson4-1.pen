@@ -1,0 +1,19 @@
+整数 a
+整数 wa
+整数 sqwa
+整数 heikin
+整数 n
+wa ← 0, sqwa ← 0
+n ← 0
+繰り返し，
+  | a ← input()
+  | もし a≠-1 ならば
+  |   | wa ← wa + a
+  |   | sqwa ← sqwa + a × a
+  |   | n ← n+1
+  | を実行する
+を， a=-1 になるまで実行する
+「合計は」とwaを印刷する
+heikin ← wa÷n
+「平均は」とheikinを印刷する
+「分散は」と sqwa÷n-heikin×heikin を印刷する

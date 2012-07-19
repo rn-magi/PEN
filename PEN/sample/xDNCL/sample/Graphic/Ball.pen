@@ -1,0 +1,55 @@
+整数 x, y, xv, yv, width, height, r
+実数 w, soku
+
+width ← 800
+height ← 400
+r ← 10
+
+gOpenWindow(width,height)
+gSetFillColor(128,128,128)
+gSetLineColor(128,128,128)
+
+x ← 60
+w ← x - 30
+y ← 40
+xv ← 5
+yv ← random(5) + 3
+
+1=1 の間，
+  | もし w + 10 < x - r ならば
+  |   | もし soku <= 5.5 ならば
+  |   |   | もし soku < 0 ならば
+  |   |   |   | soku ← 3
+  |   |   | を実行する
+  |   |   | soku ← soku + random(100) / 1000.0
+  |   | を実行する
+  | を実行する
+  | もし w + 50 > x - r ならば
+  |   | もし soku >= -5.5 ならば
+  |   |   | もし soku > 0 ならば
+  |   |   |   | soku ← -3
+  |   |   | を実行する
+  |   |   | soku ← soku - random(100) / 1000.0
+  |   | を実行する
+  | を実行する
+  | もし w + 60 + soku <= width ならば
+  |   | w ← w + soku
+  | を実行する
+  | 
+  | もし x >= width - r または x <= r ならば
+  |   | xv ← xv * -1
+  | を実行する
+  | 
+  | もし y >= height - r - 50 かつ w <= x かつ w + 60 >= x ならば
+  |   | yv ← yv * -1
+  | を実行し，そうでなくもし y >= height - r または y <= r ならば
+  |   | yv ← yv * -1
+  | を実行する
+  | 
+  | gClearWindow()
+  | x ← x + xv
+  | y ← y + yv
+  | gFillCircle(x, y, r)
+  | gFillBox(w, height - 50, 60, 10)
+  | sleep(10)
+を繰り返す

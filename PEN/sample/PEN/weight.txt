@@ -1,0 +1,23 @@
+整数 sintyo;
+整数 taiju;
+整数 temp;
+
+出力("身長を入力してください(cm)\n");
+sintyo <- 入力;
+
+出力("体重を入力してください(kg)\n");
+taiju <- 入力;
+
+temp <- (sintyo - 100) * 90 / 100;
+
+出力("標準体重は", temp, "kgです\n");
+
+もし( taiju > temp)ならば {
+	出力("標準より", taiju - temp, "kg、太っています\n");
+}
+もし( taiju < temp)ならば {
+	出力("標準より", temp - taiju, "kg、痩せています\n");
+}
+もし( taiju == temp)ならば {
+	出力("標準体重です\n");
+}

@@ -1,0 +1,15 @@
+/*                          exam08-02-lines.pen
+ * (例08-02) 少しずつずらした線分を重ねることで模様を描け。
+ */
+整数 i, j, x1, y1, x2, y2
+gOpenWindow(400, 400)
+i を 1 から 10 まで 1 ずつ増やしながら，
+   | gSetLineColor(random(255), random(255), random(255))
+   | x1 ← random(400)
+   | y1 ← random(400)
+   | x2 ← random(400)
+   | y2 ← random(400)
+   | j を 1 から 30 まで 1 ずつ増やしながら，
+   |   | gDrawLine(x1+3*j, y1+2*j, x2+2*j, y2-3*j)
+   | を繰り返す
+を繰り返す

@@ -1,0 +1,10 @@
+®” x
+gOpenWindow(400, 400)
+gSetLineColor(255, 255, 255)
+x ‚ğ 380 ‚©‚ç 20 ‚Ü‚Å 20 ‚¸‚ÂŒ¸‚ç‚µ‚È‚ª‚çC
+  | gSetFillColor(0, 0, 255)
+  | gFillCircle(x, 200, 20)
+  | sleep(100)
+  | gSetFillColor(255, 255, 255)
+  | gFillCircle(x, 200, 20)
+‚ğŒJ‚è•Ô‚·

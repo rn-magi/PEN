@@ -1,0 +1,19 @@
+/* オーロラ風の図を描画するプログラム */
+
+整数 c, x, y, yw
+実数 n
+
+gOpenWindow(600,400)
+
+c を 0 から 15 まで 4 ずつ増やしながら，
+  | gSetLineColor(random(255),random(255),random(255))
+  | n ← 0
+  | x ← 0
+  | n <= 800 かつ x <= 600 の間，
+  |   | yw ← random(80)
+  |   | x ← 80 * sin(n/40) + n + c * 15
+  |   | y ← 155 * sin(n/130) + n / 10 + yw + c * 15
+  |   | gDrawPoint( x, y)
+  |   | n ← n + 0.02
+  | を繰り返す
+を繰り返す

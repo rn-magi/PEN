@@ -1,0 +1,18 @@
+®” i, x, y
+
+gOpenWindow(300, 300)
+
+x ‚ğ 255 ‚©‚ç 100 ‚Ü‚Å 1 ‚¸‚ÂŒ¸‚ç‚µ‚È‚ª‚çC
+  | gSetLineColor(x, x, x)
+  | gSetFillColor(x, x, x)
+  | gFillCircle(150, 150, x)
+‚ğŒJ‚è•Ô‚·
+
+gSetLineColor(255, 255, 0)
+gSetLineWidth(5)
+
+i ‚ğ 0 ‚©‚ç 360 ‚Ü‚Å 36 ‚¸‚Â‘‚â‚µ‚È‚ª‚çC
+  | x © 100 * cos(i) + 150
+  | y © 100 * sin(i) + 150
+  | gDrawCircle(x, y, 150)
+‚ğŒJ‚è•Ô‚·

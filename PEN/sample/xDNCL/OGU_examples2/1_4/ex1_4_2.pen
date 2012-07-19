@@ -1,0 +1,16 @@
+整数 i, x1, y1, x2, y2
+gOpenWindow(400, 400)
+i を 0 から 100 まで 1 ずつ増やしながら，
+  | x1 ← random(399)
+  | y1 ← random(399)
+  | x2 ← random(399)
+  | y2 ← random(399)
+  | もし i%3 = 0 ならば
+  |   | gSetLineColor(255, 0, 0)
+  | を実行し，そうでなくもし i%3 = 1 ならば
+  |   | gSetLineColor(0, 255, 0)
+  | を実行し，そうでなければ
+  |   | gSetLineColor(0, 0, 255)
+  | を実行する
+  | gDrawLine(x1, y1, x2, y2)
+を繰り返す

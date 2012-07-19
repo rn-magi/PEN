@@ -1,0 +1,2629 @@
+"初学者向けプログラミング学習環境 PEN" 変更履歴
+
+・ver 1.20  (2012/06/26)
+  [ Memo ]
+    ・ver 1.19_10 を安定バージョンとしてリリース
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - MainGUI.java
+
+・ver 1.19_10  (2012/06/26)
+  [ Fix ]
+    ・エラーメッセージの修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - MainGUI.java
+    - ParseException.java
+    - ReadMe.txt
+    - ThreadRun.java
+    - TokenMgrError.java
+
+・ver 1.19_9  (2012/06/10)
+  [ New ]
+    ・dfp(文字列)
+      -> 型を dfp (10進浮動小数点) に変換する関数を追加
+  [ BugFix ]
+    ・10進浮動小数点演算ライブラリの更新
+
+  [ NewFile ]
+    - ASTDfp.java
+  [ FixFile ]
+    - ./rossi/dfp/dfp.java
+    - ./rossi/dfp/dfpmath.java
+    - ChangeLog.txt
+    - HelpPenButtonListener.java
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.19_8  (2012/03/29)
+  [ Fix ]
+    ・PENの実行ディレクトリの取得方法の変更
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVFileIO.java
+    - MainGUI.java
+    - PenProperties.java
+
+・ver 1.19_7  (2012/03/22)
+  [ BugFix ]
+    ・Applet版 が動作しなかったのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - MainGUI.java
+    - MyRunnable.java
+    - RunButtonListener.java
+
+・ver 1.19_6  (2011/10/13)
+  [ New ]
+    ・インデントの削除をブロック単位で行うようにした
+  [ BugFix ]
+    ・再起呼び出しのプログラムを記述すると上手く動作しないことがあるのを修正
+    ・メニューの編集のアイテムが一部英語になっていたのを修正
+
+  [ FixFile ]
+    - ASTFunction.java
+    - ChangeLog.txt
+    - EditButtonList.java
+    - EditSelection.java
+    - FileOpen.java
+    - IntVExecuter.java
+    - MainGUI.java
+    - MyJMenuItem.java
+
+・ver 1.19_5  (2010/12/29)
+  [ Fix ]
+    ・FileI/O関数でファイルの文字コードを判別するように変更
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVFileIO.java
+    - MainGUI.java
+
+・ver 1.19_4  (2010/12/09)
+  [ BugFix ]
+    ・繰り返し命令が正常に動作しないのを修正
+
+  [ ReNameFile ]
+    - ASTWhileSwitch.java -> ASTWhileSwitchFor.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.19_3  (2010/12/03)
+  [ BugFix ]
+    ・For文に配列を使えなかったのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserTokenManager.java
+    - MainGUI.java
+
+・ver 1.19_2  (2010/11/22)
+  [ BugFix ]
+    ・「[配列] を入力する」が正常に動作しないのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - FileSaveButtonListener.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserTokenManager.java
+    - MainGUI.java
+    - MyJMenuBar.java
+    - NewFileButtonListener.java
+
+・ver 1.19_1  (2010/09/17)
+  [ Memo ]
+    ・JavaCC のバージョンを 4.2 -> 5.0 に変更
+  [ Fix ]
+    ・ファイルの文字コードを判別するように変更
+
+  [ NewFile ]
+    - ./org/mozilla/universalchardet/CharsetListener.java
+    - ./org/mozilla/universalchardet/Constants.java
+    - ./org/mozilla/universalchardet/UniversalDetector.java
+    - ./org/mozilla/universalchardet/prober/Big5Prober.java
+    - ./org/mozilla/universalchardet/prober/CharsetProber.java
+    - ./org/mozilla/universalchardet/prober/EscCharsetProber.java
+    - ./org/mozilla/universalchardet/prober/EUCJPProber.java
+    - ./org/mozilla/universalchardet/prober/EUCKRProber.java
+    - ./org/mozilla/universalchardet/prober/EUCTWProber.java
+    - ./org/mozilla/universalchardet/prober/GB18030Prober.java
+    - ./org/mozilla/universalchardet/prober/HebrewProber.java
+    - ./org/mozilla/universalchardet/prober/Latin1Prober.java
+    - ./org/mozilla/universalchardet/prober/MBCSGroupProber.java
+    - ./org/mozilla/universalchardet/prober/SBCSGroupProber.java
+    - ./org/mozilla/universalchardet/prober/SingleByteCharsetProber.java
+    - ./org/mozilla/universalchardet/prober/SJISProber.java
+    - ./org/mozilla/universalchardet/prober/UTF8Prober.java
+    - ./org/mozilla/universalchardet/prober/contextanalysis/EUCJPContextAnalysis.java
+    - ./org/mozilla/universalchardet/prober/contextanalysis/JapaneseContextAnalysis.java
+    - ./org/mozilla/universalchardet/prober/contextanalysis/SJISContextAnalysis.java
+    - ./org/mozilla/universalchardet/prober/distributionanalysis/Big5DistributionAnalysis.java
+    - ./org/mozilla/universalchardet/prober/distributionanalysis/CharDistributionAnalysis.java
+    - ./org/mozilla/universalchardet/prober/distributionanalysis/EUCJPDistributionAnalysis.java
+    - ./org/mozilla/universalchardet/prober/distributionanalysis/EUCKRDistributionAnalysis.java
+    - ./org/mozilla/universalchardet/prober/distributionanalysis/EUCTWDistributionAnalysis.java
+    - ./org/mozilla/universalchardet/prober/distributionanalysis/GB2312DistributionAnalysis.java
+    - ./org/mozilla/universalchardet/prober/distributionanalysis/JISDistributionAnalysis.java
+    - ./org/mozilla/universalchardet/prober/distributionanalysis/SJISDistributionAnalysis.java
+    - ./org/mozilla/universalchardet/prober/sequence/BulgarianModel.java
+    - ./org/mozilla/universalchardet/prober/sequence/CyrillicModel.java
+    - ./org/mozilla/universalchardet/prober/sequence/GreekModel.java
+    - ./org/mozilla/universalchardet/prober/sequence/HebrewModel.java
+    - ./org/mozilla/universalchardet/prober/sequence/Ibm855Model.java
+    - ./org/mozilla/universalchardet/prober/sequence/Ibm866Model.java
+    - ./org/mozilla/universalchardet/prober/sequence/Koi8rModel.java
+    - ./org/mozilla/universalchardet/prober/sequence/Latin5BulgarianModel.java
+    - ./org/mozilla/universalchardet/prober/sequence/Latin5Model.java
+    - ./org/mozilla/universalchardet/prober/sequence/Latin7Model.java
+    - ./org/mozilla/universalchardet/prober/sequence/MacCyrillicModel.java
+    - ./org/mozilla/universalchardet/prober/sequence/SequenceModel.java
+    - ./org/mozilla/universalchardet/prober/sequence/Win1251BulgarianModel.java
+    - ./org/mozilla/universalchardet/prober/sequence/Win1251Model.java
+    - ./org/mozilla/universalchardet/prober/sequence/Win1253Model.java
+    - ./org/mozilla/universalchardet/prober/statemachine/Big5SMModel.java
+    - ./org/mozilla/universalchardet/prober/statemachine/CodingStateMachine.java
+    - ./org/mozilla/universalchardet/prober/statemachine/EUCJPSMModel.java
+    - ./org/mozilla/universalchardet/prober/statemachine/EUCKRSMModel.java
+    - ./org/mozilla/universalchardet/prober/statemachine/EUCTWSMModel.java
+    - ./org/mozilla/universalchardet/prober/statemachine/GB18030SMModel.java
+    - ./org/mozilla/universalchardet/prober/statemachine/HZSMModel.java
+    - ./org/mozilla/universalchardet/prober/statemachine/ISO2022CNSMModel.java
+    - ./org/mozilla/universalchardet/prober/statemachine/ISO2022JPSMModel.java
+    - ./org/mozilla/universalchardet/prober/statemachine/ISO2022KRSMModel.java
+    - ./org/mozilla/universalchardet/prober/statemachine/PkgInt.java
+    - ./org/mozilla/universalchardet/prober/statemachine/SJISSMModel.java
+    - ./org/mozilla/universalchardet/prober/statemachine/SMModel.java
+    - ./org/mozilla/universalchardet/prober/statemachine/UCS2BESMModel.java
+    - ./org/mozilla/universalchardet/prober/statemachine/UTF8SMModel.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - FileOpen.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - JJTIntVParserState.java
+    - MainGUI.java
+    - ParseException.java
+    - PEN.java
+    - SimpleCharStream.java
+    - Token.java
+    - TokenMgrError.java
+    - WebMain.java
+
+・ver 1.19  (2010/08/29)
+  [ Memo ]
+    ・ver 1.18_17 を安定バージョンとしてリリース
+    ・1.90 からJREの 1.5.0 以上を必要とするようになりました
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - ReadMe.txt
+
+・ver 1.18_17  (2010/07/30)
+  [ Fix ]
+    ・大きな数を扱うとDFP型になるように変更
+  [ BugFix ]
+    ・大きな数を扱うとエラーになるのを修正
+
+  [ NewFile ]
+    - ./rossi/dfp/dfp.java
+    - ./rossi/dfp/dfpcalc.java
+    - ./rossi/dfp/dfpconstants.java
+    - ./rossi/dfp/dfpdec.java
+    - ./rossi/dfp/dfpmath.java
+  [ FixFile ]
+    - ASTFloatLiteral.java
+    - ASTLiteral.java
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - MainGUI.java
+    - ThreadRun.java
+  [ ReMoveFile ]
+    - dfp.java
+    - dfpcalc.java
+    - dfpconstants.java
+    - dfpdec.java
+    - dfpmath.java
+
+・ver 1.18_16  (2010/07/19)
+  [ Fix ]
+    ・描画命令実行時エラーのメッセージを表示するように変更
+    ・実数の型で剰余計算(%)ができるように変更
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - ConditionFormatException.java
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - MainGUI.java
+    - ThreadRunStop.java
+
+・ver 1.18_15  (2010/07/12)
+  [ New ]
+    ・gDrawImage(filename, x, y)
+      -> 画像を読み込み描画ウィンドウの(x, y)に描画する
+    ・gDrawImage(filename, x, y,  width, height)
+      -> 画像を読み込み描画ウィンドウの(x, y)に横幅 width で縦幅 height で描画する
+
+  [ NewFile ]
+    - ASTgDrawImage.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - HelpPenButtonListener.java
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - ReadMe.txt
+
+・ver 1.18_14  (2009/12/04)
+  [ Fix ]
+    ・（内部変更）リファクタリング
+
+  [ NewFile ]
+    - ParseError.java
+  [ FixFile ]
+    - ButtonEdit.java
+    - ChangeLog.txt
+    - ConfigButtonListener.java
+    - ConsoleKeyListener.java
+    - EditButton.java
+    - EditButtonListener.java
+    - EditButtonListener2.java
+    - FileDropOpen.java
+    - FileOpen.java
+    - HelpPenButtonListener.java
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVParser.java
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - MainGUI.java
+    - MyJMenuBar.java
+    - MyRunnable.java
+    - MyWindowAdapter.java
+    - NewFileButtonListener.java
+    - PEN.java
+    - PEN.url
+    - PenFlags.java
+    - PenProperties.java
+    - ReadMe.txt
+    - RunButtonListener.java
+    - RunClean.java
+    - ThreadRun.java
+    - WebMain.java
+  [ RemoveFile ]
+    - ErrorAppend.java
+
+・ver 1.18_13  (2009/10/30)
+  [ BugFix ]
+    ・除算が正しく動作しないのを修正
+
+  [ FixFile ]
+    - ErrorAppend.java
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - MainGUI.java
+
+・ver 1.18_12  (2009/10/21)
+  [ BugFix ]
+    ・FileIOが正しく動作しないのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - MainGUI.java
+
+・ver 1.18_11  (2009/07/30)
+  [ New ]
+    ・設定ファイルの変数宣言有無に項目を追加
+
+  [ FixFile ]
+    - ./Locale/Locale_ja_JP.properties
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - MainGUI.java
+    - Property.ini
+    - ReadMe.txt
+
+・ver 1.18_10  (2009/07/28)
+  [ New ]
+    ・変数型に「DFP(符号付き10進数)」が使用できるようにした
+
+  [ NewFile ]
+    - dfp.java
+    - dfpcalc.java
+    - dfpconstants.java
+    - dfpdec.java
+    - dfpmath.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - MainGUI.java
+
+・ver 1.18_9  (2009/07/24)
+  [ New ]
+    ・変数型に「真偽」が使用できるようにした
+    ・FileIOの読み込み文字コードを「pen.system.code」に依存するようにした
+
+  [ NewFile ]
+    - ./sample/Primitive1/if-then-else.pen
+  [ FixFile ]
+    - ChangeLog.txt
+    - ConditionFormatException.java
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - MainGUI.java
+    - PenFlags.java
+
+・ver 1.18_8  (2009/07/21)
+  [ New ]
+    ・設定ファイルに「executer.div.mode」を追加
+
+  [ FixFile ]
+    - ./Locale/Locale_ja_JP.properties
+    - ASTDivNode.java
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - MainGUI.java
+    - PenProperties.java
+    - Property.ini
+
+・ver 1.18_7  (2009/07/21)
+  [ Fix ]
+    ・（内部変更）リファクタリング
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - MainGUI.java
+    - ReadMe.txt
+    - ReadMe-w32.txt
+
+・ver 1.18_6  (2009/07/19)
+  [ New ]
+    ・「～～を入力する」の命令を追加
+  [ Fix ]
+    ・Applet版の改良
+      -> ファイルリストが取得できなかった場合のエラーを追加
+      -> サンプルファイルが開けなかった場合のエラーを追加
+
+  [ FixFile ]
+    - ASTAssignStat.java
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - MainGUI.java
+    - webFileOpenButtonListener.java
+    - webNewButtonListener.java
+
+・ver 1.18_5  (2009/07/19)
+  [ Fix ]
+    ・Applet版の改良
+      -> 新規の際、削除してもよいか聞くようにした
+      -> ファイルを開く際、開いてもよいか聞くようにした
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - FileOpen.java
+    - FileSave.java
+    - MainGUI.java
+    - NewFileButtonListener.java
+    - webFileOpenButtonListener.java
+    - webNewButtonListener.java
+
+・ver 1.18_4  (2009/07/18)
+  [ New ]
+    ・Applet版の改良
+      -> サンプルファイルを読み込めるようにした
+
+  [ NewFile ]
+    - webFileOpenButtonListener.java
+    - webNewButtonListener.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - MainGUI.java
+
+・ver 1.18_3  (2009/07/18)
+  [ Fix ]
+    ・PENのApplet版をマージ
+
+  [ NewFile ]
+    - applet.html
+    - MyJFrame.java
+    - PenFrame.java
+    - WebMain.java
+  [ FixFile ]
+    - ButtonEdit.java
+    - ChangeLog.txt
+    - EditAreaDocumentListener.java
+    - ExitButtonListener.java
+    - FileOpen.java
+    - FileSave.java
+    - FileSaveButtonListener.java
+    - HelpPenButtonListener.java
+    - MainGUI.java
+    - MyJMenuBar.java
+    - MyWindowAdapter.java
+    - NewFileButtonListener.java
+    - PEN.java
+    - PenProperties.java
+    - ReadMe.txt
+
+・ver 1.18_2  (2009/07/18)
+  [ Fix ]
+    ・（内部変更）リファクタリング
+
+  [ NewFile ]
+    - ErrorAppend.java
+    - PenFlags.java
+  [ FixFile ]
+    - ButtonEdit.java
+    - ChangeLog.txt
+    - ConsoleKeyListener.java
+    - EditAreaAddTab.java
+    - EditAreaKeyListener.java
+    - EditButton.java
+    - EditButtonList.java
+    - EditButtonListener.java
+    - EditButtonListener2.java
+    - ExitButtonListener.java
+    - FileDropOpen.java
+    - FileOpen.java
+    - FileOpenButtonListener.java
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - JJTIntVParserState.java
+    - MainGUI.java
+    - MyJMenuBar.java
+    - MyRunnable.java
+    - MyWindowAdapter.java
+    - NewFileButtonListener.java
+    - PEN.java
+    - RunButtonListener.java
+    - RunClean.java
+    - SimpleCharStream.java
+    - ThreadRun.java
+    - Token.java
+    - TokenMgrError.java
+
+・ver 1.18_1  (2009/07/17)
+  [ Fix ]
+    ・条件式にエラーがある場合のメッセージの追加
+      -> ### ○行目あたりの条件式を見直してください
+
+  [ NewFile ]
+    - ConditionFormatException.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - MainGUI.java
+    - NewFileButtonListener.java
+    - PenProperties.java
+    - ThreadRun.java
+
+・ver 1.18  (2009/07/15)
+  [ New ]
+    ・Property.iniに「pen.system.code」を設定できるようにした 
+
+  [ ReNameFile ]
+    - PEN_Property.java -> PenProperties.java
+  [ FixFile ]
+    - ButtonEdit.java
+    - ConfigButtonListener.java
+    - FileOpen.java
+    - IntVExecuter.java
+    - IntVParser.java
+    - MainGUI.java
+    - PEN.java
+    - PenProperties.java
+    - Property.ini
+
+・ver 1.17_12  (2009/06/09)
+  [ Memo ]
+    ・JavaCC のバージョンを 4.0 -> 4.2 に変更
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - JJTIntVParserState.java
+    - MainGUI.java
+    - ParseException.java
+    - SimpleCharStream.java
+    - Token.java
+    - TokenMgrError.java
+
+・ver 1.17_11  (2009/05/27)
+  [ BugFix ]
+    ・プログラム入力支援ボタン設定ファイルの修正
+
+  [ FixFile ]
+    - ./ButtonList/Default.ini
+    - ChangeLog.txt
+    - MainGUI.java
+
+・ver 1.17_10  (2009/04/19)
+  [ Fix ]
+    ・gSetMap(実数 x, 実数 y)の仕様を変更
+      -> gSetOrigin(実数 x, 実数 y)
+  [ BugFix ]
+    ・xDNCL-Drawのマニュアルに誤りがあったので修正
+
+  [ NewFile ]
+    - ASTgSetOrigin.java
+  [ FixFile ]
+    - ./Manual/xDNCL-Draw.pdf
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - IntVParser.jjt
+
+・ver 1.17_9  (2009/04/04)
+  [ Fix ]
+    ・gOpenGraphWindow()の仕様変更
+      -> gOpenGraphWindow(実数 width, 実数 height, 実数 x1, 実数 y1, 実数 x2, 実数 y2, 論理値 axis)
+    ・gSetMap()の仕様変更
+      -> gSetMap(実数x1, 実数y1, 実数x2, 実数y2)
+    ・マニュアルを更新
+
+  [ FixFile ]
+    - ./Manual/ini.pdf
+    - ./Manual/xDNCL-Draw.pdf
+    - ./Manual/xDNCL-FileIO.pdf
+    - ./Manual/xDNCL-Language-Manual.pdf
+    - ./sample/Graphic/Graph.pen
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - MainGUI.java
+
+・ver 1.17_8  (2009/02/21)
+  [ Fix ]
+    ・Copyrightの年数を2009に変更
+  [ BugFix ]
+    ・「pen.debug.flag」を有効にすると起動しなかったのを修正
+    ・「executer.graphic.origin」が正しく動作しなかったのを修正
+
+  [ FixFiel ]
+    - ChangeLog.txt
+    - HelpPenButtonListener.java
+    - IntVgOutputWindow.java
+    - MainGUI.java
+    - ReadMe.txt
+    - ReadMe-w32.txt
+    - RunButtonListener.java
+    
+・ver 1.17_7  (2008/10/14)
+  [ Fix ]
+    ・関数 "gSetMaps()" を "gSetMap()" に変更
+  [ BugFix ]
+    ・gSetMap() のy軸設定が正しく動作しなかったのを修正
+
+  [ FixFile ]
+    - ./ButtonList/Default.ini
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+  [ ReNameFile ]
+    - ASTgSetMaps.java -> ASTgSetMap.java
+
+・ver 1.17_6  (2008/09/22)
+  [ Fix ]
+    ・サンプルプログラム（関数呼び出し）の修正
+    ・プログラム入力支援ボタン定義ファイルの修正
+    ・「ヘルプ」->「設定確認」の項目を追加
+  [ BugFix ]
+    ・gOpenGraphWindow() のy軸設定が正しく動作しなかったのを修正
+
+  [ FixFile ]
+    - ./ButtonList/Default.ini
+    - ./Locale/Locale_ja_JP.properties
+    - ./sample/Function/Euclid.pen
+    - ./sample/Function/Factorial.pen
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - LocaleProperty.java
+    - MainGUI.java
+    - ParseException.java
+    - Property.ini
+
+・ver 1.17_5  (2008/07/14)
+  [ New ]
+    ・サンプルプログラムの追加
+      -> ./sample/Primitive1/switch.pen	: Switch文を使用したプログラム例
+  [ BugFix ]
+    ・関数名を間違えた時のエラーメッセージの修正
+      -> 「--行目の"???"という関数名は存在しません。」
+
+  [ NewFile ]
+    - ./sample/Primitive1/switch.pen
+  [ FixFile ]
+    - ./sample/Function/Fibonacci.pen
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - MainGUI.java
+    - ThreadRun.java
+
+・ver 1.17_4  (2008/07/09)
+  [ New ]
+    ・Property.ini での設定項目を追加
+      -> executer.var.names  : 変数名に半角/全角を使用できるか設定
+
+  [ NewFile ]
+    - VarNameError.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - MainGUI.java
+    - PEN_Property.java
+    - Property.ini
+    - ThreadRun.java
+    - ThreadRunStop.java 
+
+・ver 1.17_3  (2008/06/20)
+  [ New ]
+    ・サンプルプログラムの追加
+      -> ./sample/Graphic_J/Signal.pen  : 信号機の描画
+      -> ./sample/Primitive2/Euclid.pen : ユークリッドの互除法
+      -> ./sample/Primitive2/Sqrt.pen   : 平方根
+    ・描画専用入力支援ボタン定義ファイルの追加
+      -> ./ButtonList/DrawList.ini
+    ・変数名に "ａ"-"ｚ", "Ａ"-"Ｚ" を使用した場合、半角英字に自動変換するようにした
+  [ Fix ]
+    ・（内部変更）リファクタリング
+    ・入力支援ボタン定義ファイル用のディレクトリを作成
+
+  [ NewFile ]
+    - ./ButtonList/DrawList.ini
+    - ./sample/Graphic_J/Signal.pen
+    - ./sample/Primitive2/Euclid.pen
+    - ./sample/Primitive2/Sqrt.pen
+  [ FixFile ]
+    - ./sample/Game/HighLowGame.pen
+    - ./sample/Game/KazuAteGame.pen
+    - ./sample/Primitive1/if-then.pen
+    - ButtonEdit.java
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserTokenManager.java
+    - LocaleProperty.java
+    - PEN_Property.java
+    - PEN.java
+    - Property.ini
+  [ ReNameFile ]
+    - ./sample/Primitive2/binary.pen -> ./sample/Primitive2/Binary.pen
+    - ButtonList.ini -> ./ButtonList/Default.ini
+
+・ver 1.17_2  (2008/01/18)
+  [ Fix ]
+    ・（内部変更）リファクタリング
+  [ BugFix ]
+    ・Localeファイルを開くことができなかったバグを修正
+
+  [ NewFile ]
+    - PEN_Property.java
+  [ FixFile ]
+    - ./Locale/Locale_ja_JP.properties
+    - ConfigButtonListener.java
+    - IntVExecuter.java
+    - LocaleProperty.java
+    - MainGUI.java
+    - MyJMenuBar.java
+    - PEN.java
+    - ThreadRun.java
+
+・ver 1.17_1  (2008/01/11)
+  [ Fix ]
+    ・（内部変更）入力支援ボタン定義ファイルの読み込み方を変更
+    ・（内部変更）Locale関連のデータ読み込みを変更
+
+  [ NewFile ]
+    - LocaleProperty.java
+  [ FixFile ]
+    - ./Locale/Locale_ja_JP.properties
+    - ButtonEdit.java
+    - ChangeLog.txt
+    - ConfigButtonListener.java
+    - ConsoleAppend.java
+    - ConsoleKeyListener.java
+    - EditButton.java
+    - EditButtonList.java
+    - EditButtonListener2.java
+    - EditSelection.java
+    - ErrorSave.java
+    - FileSave.java
+    - HelpPenButtonListener.java
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVgOutputWindow.java
+    - MainGUI.java
+    - MyJMenuBar.java
+    - MyWindowAdapter.java
+    - RunTimeMouseListener.java
+
+・ver 1.17  (2007/12/26)
+  [ Fix ]
+    ・（内部変更）JavaソースファイルのエンコーディングをUTF-8に変更
+
+  [ FixFile ]
+    - ./Locale/Locale_ja_JP.properties
+    - BreakPointMouseListener.java
+    - ButtonEdit.java
+    - ChangeLog.txt
+    - ClipBoard.java
+    - ConfigButtonListener.java
+    - ConsoleAppend.java
+    - ConsoleCopyButtonListener.java
+    - ConsoleKeyListener.java
+    - EditAreaAddTab.java
+    - EditAreaUndoableEditListener.java
+    - EditSelection.java
+    - ErrorSave.java
+    - ExitButtonListener.java
+    - FileOpen.java
+    - FileSave.java
+    - HelpPenButtonListener.java
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVgOutputWindow.java
+    - IntVParser.jjt
+    - MainGUI.java
+    - MyJMenuBar.java
+    - MyRunJLabel.java
+    - MyRunnable.java
+    - MyWindowAdapter.java
+    - NewFileButtonListener.java
+    - Queue.java
+    - RunButtonListener.java
+    - RunClean.java
+    - RunTimeChangeListener.java
+    - ThreadRun.java
+    - Token.java
+    - TokenMgrError.java
+
+・ver 1.16_7  (2007/12/10)
+  [ New ]
+    ・予約語を追加
+      -> LF : \n
+      -> CR : \r
+      -> HT : \t
+      -> NL : 改行文字(システム依存)
+    ・compare(str1, str2) : 2 つの文字列を辞書式に比較し、整数の値を返す
+      -> str1 が str2 より前 : -1
+      -> str1 と str2 が同じ :  0
+      -> str1 が str2 より後 :  1
+    ・サンプルプログラムの追加
+
+  [ NewFile ]
+    - ./sample/Graphic_J/Heart.pen
+    - ./sample/Graphic_J/Japan.pen
+    - ./sample/Graphic_J/Oval.pen
+    - ASTCompare.java
+    - ASTEXTRA_STR.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+  [ ReMoveFile ]
+    - ASTEOF_STR.java
+
+・ver 1.16_6  (2007/10/28)
+  [ BugFix ]
+    ・変数宣言無しモードがfor文で有効にならないバグを修正
+    ・言語マニュアルの間違いを修正
+
+  [ NewFile ]
+    - ./sample/Graphic/Heart.pen
+  [ FixFile ]
+    - ./Manual/xDNCL-Language-Manual.pdf
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - MainGUI.java
+
+・ver 1.16_5  (2007/09/09)
+  [ New ]
+    ・gSetMaps(x, y)
+      -> 描画ウィンドウの原点を(x, y)に変更する
+    ・gSetMaps(xRange1, xRange2, yRange1, yRange2)
+      -> 描画ウィンドウの座標空間を変更する
+  [ Fix ]
+    ・入力支援ボタン定義ファイルの修正
+
+  [ NewFile ]
+    - ./sample/Graphic/Ball.pen
+    - ASTFalse.java
+    - ASTgSetMaps.java
+    - ASTTrue.java
+  [ FixFile ]
+    - ./sample/Graphic/Graph.pen
+    - ButtonList.ini
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.16_4  (2007/08/08)
+  [ New ]
+    ・グラフウィンドウで仮想的な座標空間を指定できるように機能追加
+  [ Fix ]
+    ・gOpenGraphWindow() の仕様変更
+      -> gOpenGraphWindow(width, height, xRange1, xRange2, yRange1, yRange2, boolean)
+
+  [ FixFile ]
+    - ./sample/Graphic/Graph.pen
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserTokenManager.java
+    - MainGUI.java
+
+・ver 1.16_3  (2007/08/06)
+  [ New ]
+    ・gOpenWindow(width, height, x, y)
+      -> 横幅 width, 縦幅 height で 原点(x, y) の描画ウィンドウを開く
+    ・gOpenGraphWindow(width, height, x, y)
+      -> 横幅 width, 縦幅 height で 原点(x, y) のグラフウィンドウを開く
+  [ Fix ]
+    ・(Refactoring) IntVExecuter.java
+    ・(Refactoring) IntVgOutputWindow.java
+
+  [ NewFile ]
+    - ./sample/Graphic/Graph.pen
+    - ASTgOpenGraphWindow.java
+  [ FixFile ]
+    - ./sample/Game/JanKenGame.pen
+    - ASTSwitch.java
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.16_2  (2007/08/05)
+  [ BugFix ]
+    ・繰り返し文が正常に動作しないバグの修正
+
+  [ NewFile ]
+    - ASTWhileSwitch.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.16_1  (2007/08/05)
+  [ New ]
+    ・switch文の追加
+    ・描画ウィンドウの原点を変更できるように機能追加
+    ・Property.ini での設定項目を追加
+      -> executer.graphic.origin  : 描画ウィンドウの原点を設定
+  [ Fix ]
+    ・出力文の揺らぎを追加
+
+  [ NewFile ]
+    - ASTCase.java
+    - ASTLabel.java
+    - ASTSwitch.java
+  [ FixFile ]
+    - ./Locale/Locale_ja_JP.properties
+    - ./Manual/xDNCL-Language-Swing.tex
+    - ChangeLog.txt
+    - ConfigButtonListener.java
+    - EditButtonListener2.java
+    - FileDropOpen.java
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - ParseException.java
+    - Property.ini
+
+・ver 1.16  (2007/07/26)
+  [ Memo ]
+    ・ver 1.15_7 を安定バージョンとしてリリース
+
+・ver 1.15_7  (2007/07/15)
+  [ Fix ]
+    ・（内部変更）IntVExecuterクラスの修正
+    ・マニュアルの修正
+      -> sin(), cos(), tan() の説明を修正
+      -> 「印刷する」→「表示する」
+    ・描画関数の引数を実数型で処理するように変更
+    ・For文の増減値に実数を扱えるように変更
+
+  [ FixFile ]
+    - ./Manual/xDNCL-Language-Manual.pdf
+    - ./sample/Graphic/LissajousCurvers.pen
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserTokenManager.java
+    - MainGUI.java
+
+・ver 1.15_6  (2007/07/01)
+  [ Fix ]
+    ・描画関数の引数に実数型を渡すと整数型に変換するように変更
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - MainGUI.java
+
+・ver 1.15_5  (2007/06/01)
+  [ Fix ]
+    ・エラー文のエスケープ処理を修正
+    ・演算処理の評価順番を左辺から評価するように変更
+    ・Property.ini のコメントを一部修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParserTokenManager.java
+    - MainGUI.java
+    - ParseException.java
+    - Property.ini
+
+・ver 1.15_4  (2007/05/12)
+  [ Memo ]
+    ・@author の修正
+    ・ReadMeファイルの開発者を修正
+    ・ReadMeファイルに Property.ini の説明を追加
+  [ New ]
+    ・Property.ini での設定項目を追加
+      -> pen.button.path  : 入力支援ボタン定義ファイルの指定
+      -> pen.teacher.flag : TeacherMode での起動の有無
+      -> pen.debug.flag   : DebugMode での起動の有無
+  [ Fix ]
+    ・（内部変更）ConsoleAppendクラスの修正
+    ・[ヘルプ] -> [PENについて]に表示される開発者を修正
+
+  [ FixFile ]
+    - ./Locale/Locale_ja_JP.properties
+    - BreakPointMouseListener.java
+    - ButtonEdit.java
+    - ChangeLog.txt
+    - ClipBoard.java
+    - ConfigButtonListener.java
+    - ConsoleAppend.java
+    - ConsoleCopyButtonListener.java
+    - ConsoleKeyListener.java
+    - EditAreaAddTab.java
+    - ErrorSave.java
+    - HelpPenButtonListener.java
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVgOutputWindow.java
+    - MainGUI.java
+    - Property.ini
+    - Queue.java
+    - ReadMe.txt
+    - ReadMe-w32.txt
+    - RunButtonListener.java
+    - RunClean.java
+
+・ver 1.15_3  (2007/03/26)
+  [ New ]
+    ・Property.ini での設定項目を追加
+      -> pen.dump.flag    : dumpファイルを出力するかしないかの設定
+      -> pen.dump.tempdir : dumpファイル一時保存ディレクトリの指定
+      -> pen.dump.destdir : dumpファイル最終保存先の指定
+  [ Fix ]
+    ・Property.ini での設定項目を削除
+      -> system.dump.survey : pen.dump.tempdir, pen.dump.destdir に分化
+  [ BugFix ]
+    ・配列の添え字に配列を用いることができないバグの修正
+    ・BackSpace および Delete キーにて文字を削除できないバグの修正
+
+  [ FixFile ]
+    - ./Locale/Locale_ja_JP.properties
+    - ChangeLog.txt
+    - EditSelection.java
+    - ErrorSave.java
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserTokenManager.java
+    - MainGUI.java
+    - Property.ini
+
+・ver 1.15_2  (2007/03/23)
+  [ Fix ]
+    ・(内部変更) IntVExecuterクラスの修正
+    ・(内部変更) EditSelectionクラスの修正
+    ・[ヘルプ] -> [PENについて]で表示される開発者の所属を修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - MainGUI.java
+    - ConsoleKeyListener.java
+    - EditAreaKeyListener.java
+    - EditAreaMouseListener.java
+    - EditSelection.java
+    - HelpPenButtonListener.java
+    - IntVExecuter.java
+    - IntVFileIO.java
+
+・ver 1.15_1  (2007/02/15)
+  [ New ]
+    ・エラー発生時の情報をdumpできるようにした
+      -> PEN起動時の引数に -dump をつける
+      -> dumpファイル回収先 Property.ini に記述
+
+  [ NewFile ]
+    - ErrorSave.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - ConfigButtonListener.java
+    - MainGUI.java
+    - MyRunnable.java
+    - MyWindowAdapter.java
+    - Property.ini
+
+・ver 1.15  (2007/02/01)
+  [ Memo ]
+    ・ver 1.14_5 を安定バージョンとしてリリース
+
+・ver 1.14_5  (2007/01/29)
+  [ New ]
+    ・Localeファイルの作成
+  [ Fix ]
+    ・Property.ini 内の解説を修正
+    ・設定状況確認画面の表示を変更
+
+  [ NewFile ]
+    - ./Locale/Locale_ja_JP.properties
+  [ FixFile ]
+    - ChangeLog.txt
+    - ConfigButtonListener.java
+    - IntVExecuter.java
+    - MainGUI.java
+    - MyJMenuBar.java
+    - MyRunnable.java
+    - Property.ini
+    - ThreadRun.java
+
+・ver 1.14_4  (2007/01/18)
+  [ Fix ]
+    ・設定状況の値を数値でなく日本語に変更
+  [ BugFix ]
+    ・設定確認の画面で値を変更できてしまうのを修正
+    ・変数宣言なし（警告）での警告文に改行がないのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - ConfigButtonListener.java
+    - IntVExecuter.java
+    - MainGUI.java
+    - Property.ini
+
+・ver 1.14_3  (2007/01/17)
+  [ New ]
+    ・メニューのヘルプに設定状況確認のための項目を追加
+    ・配列の範囲を超えたときのエラー文を追加
+  [ Fix ]
+    ・(内部変更) エラー発生時の処理を集中できるように修正
+    ・(内部変更) 内包していた設定ファイルを外部ファイルにした
+
+  [ NewFile ]
+    - ConfigButtonListener.java
+    - Property.ini
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - MainGUI.java
+    - MyJMenuBar.java
+    - MyRunnable.java
+    - PEN.bat
+    - Property.ini
+    - ThreadRun.java
+  [ ReMoveFile ]
+    - RunStop.java
+
+・ver 1.14_2  (2007/01/10)
+  [ New ]
+    ・変数宣言の有無を指定可能にした
+    ・配列の添字の設定可能にした
+  [ Fix ]
+    ・ReadMe.txt     の修正
+    ・ReadMe-w32.txt の修正
+    ・PEN-QuickReference.pdf の修正
+
+  [ FixFile ]
+    - ./Manual/PEN-QuickReference.pdf
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - MainGUI.java
+    - ReadMe.txt
+    - ReadMe-w32.txt
+
+・ver 1.14_1  (2007/01/05)
+  [ New ]
+    ・./sample/Graphic/Circle.pen の追加
+  [ Fix ]
+    ・(内部変更) ConsoleAppend クラスの修正
+    ・(内部変更) Queue クラスの修正
+    ・Copyright を "2003-2006" から "2003-2007" に修正
+
+  [ NewFile ]
+    - ./sample/Graphic/Circle.pen
+  [ FixFile ]
+    - ChangeLog.txt
+    - ConsoleAppend.java
+    - HelpPenButtonListener.java
+    - MainGUI.java
+    - Queue.java
+    - ReadMe.txt
+    - ReadMe-w32.txt
+
+・ver 1.14  (2006/12/24)
+  [ Memo ]
+    ・ver 1.13_5 を安定バージョンとしてリリース
+    ・バージョンを変更
+      -> x.xx     : 安定バージョン
+      -> x.xx_pxx : バグ修正安定バージョン
+      -> x.xx_xx  : 開発バージョン
+
+・ver 1.13_5  (2006/12/18)
+  [ Fix ]
+    ・手続き/関数呼び出し時、配列は参照渡しのみに修正
+    ・FileID 0～2 を使用できるように修正
+      -> 0 : 標準入力から読み込み
+      -> 1 : 標準出力に書き込み
+      -> 2 : エラー出力に書き込み
+    ・./Manul/xDNCL-Language-Manual.pdf の修正
+    ・サンプルプログラムの整理
+  [ BugFix ]
+    ・参照渡しを行った時、変数表示がおかしくなるバグの修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - MainGUI.java
+    - Queue.java
+    - ThreadRun.java
+
+・ver 1.13_4  (2006/12/04)
+  [ Fix ]
+    ・(内部変更) 描画ウィンドウのサイズを微調整
+    ・./sample/Graphic 以下のサンプルプログラムの整理
+  [ BugFix ]
+    ・描画関数の日本語対応が間違っていたので修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.13_3  (2006/12/03)
+  [ BugFix ]
+    ・手続き/関数呼び出しを正常に実行できないバグを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - MainGUI.java
+
+・ver 1.13_2  (2006/12/02)
+  [ Fix ]
+    ・(内部変更) ConsoleAppend クラスの修正
+    ・(内部変更) FileSave クラスの修正
+    ・(内部変更) IntVgOutputWindow クラスのコメント文修正
+    ・マニュアルの更新
+      - ./Manual/xDNCL-DrawFileIO-Manual.pdf -> 追加
+      - ./Manual/xDNCL-DrawManual.pdf        -> 削除
+      - ./Manual/xDNCL-FileIOManual.pdf      -> 削除
+      - ./Manul/xDNCL-Language-Manual.pdf    -> 更新
+  [ BugFix ]
+    ・gSetArrowType() での属性変更が有効にならないバグを修正
+
+  [ NewFile ]
+    - ./Manual/xDNCL-DrawFileIO-Manual.pdf
+  [ FixFile ]
+    - ./Manual/xDNCL-Language-Manual.pdf
+    - ChangeLog.txt
+    - ConsoleAppend.java
+    - ConsoleKeyListener.java
+    - FileOpen.java
+    - FileSave.java
+    - FileSaveButtonListener.java
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserTokenManager.java
+    - MainGUI.java
+    - MyRunnable.java
+    - RunButtonListener.java
+    - RunClean.java
+    - ThreadRun.java
+  [ ReMoveFile ]
+    - ./Manual/xDNCL-DrawManual.pdf
+    - ./Manual/xDNCL-FileIOManual.pdf
+
+・ver 1.13_1  (2006/11/26)
+  [ New ]
+    ・手続き/関数呼び出しで配列の参照渡しをできるようにした
+    ・戻り値に配列を扱えるようにした
+  [ Fix ]
+    ・文法のゆらぎを追加
+       - "手続き" ( "終了" | "終わり" )
+       - "関数" ( "終了" | "終わり" )
+  [ BugFix ]
+    ・配列を正しく扱えないバグを修正
+
+  [ NewFile ]
+    - Queue.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - MainGUI.java
+
+・ver 1.13  (2006/11/20)
+  [ New ]
+    ・gSaveWindow(filepath, mode) : 描画領域の保存 ( modeは jpeg, png の２種類 )
+    ・gDrawPolygon(int x[], int y[], point)
+    ・gFillPolygon(int x[], int y[], point)
+    ・gDrawPolyline(int x[], int y[], point)
+    ・手続き/関数呼び出しの引数に配列を使用できるようにした
+  [ Fix ]
+    ・(内部変更) 配列領域の確保方法を変更
+    ・(内部変更) プログラムの最適化
+    ・ReadMe.txt     の修正
+    ・ReadMe-w32.txt の修正
+    ・./sample/Graphic/*.pen の修正
+    ・./Manual/xDNCL-Language-Manual.pdf の修正
+    ・./Manual/xDNCL-Language-Swing.pdf  の修正
+
+  [ NewFile ]
+    - ./sample/Graphic/Polygon.pen
+    - ./sample/Primitive2/RadomWalk.pen
+    - ASTgSaveWindow.java
+  [ FixFile ]
+    - ./Manual/xDNCL-Language-Manual.pdf
+    - ./Manual/xDNCL-Language-Swing.pdf
+    - ./sample/Graphic/Draw01.pen
+    - ./sample/Graphic/Draw02.pen
+    - ./sample/Graphic/Draw03.pen
+    - ./sample/Graphic/Draw04.pen
+    - ./sample/Graphic/Draw05.pen
+    - ./sample/Graphic/sine.pen
+    - ./sample/Graphic/sine2.pen
+    - ./sample/Graphic/smile.pen
+    - ASTIdent.java
+    - ButtonList.ini
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - ReadMe.txt
+    - ReadMe-w32.txt
+  [ ReMoveFile ]
+    - ASTgSetColor.java
+    - GraphicButtonList.ini
+
+・ver 1.12  (2006/11/04)
+  [ New ]
+    ・描画関数の日本語対応
+       - gOpenWindow(w, h)         : 描画領域開く(w, h)
+       - gCloseWindow()            : 描画領域閉じる()
+       - gClearWindow()            : 描画領域全消去()
+       - gSetLineColor(r, g, b)    : 線色設定(r, g, b)
+       - gSetLineShape(type)       : 線種設定(type)
+       - gSetLineWidth(width)      : 線太さ設定(width)
+       - gSetArrowType(type)       : 線矢設定(type)
+       - gSetArrowDir(edge)        : 線方向設定(edge)
+       - gSetFillColor(r, g, b)    : 塗色設定(r, g, b)
+       - gSetDotShape(type)        : 点種設定(type)
+       - gSetTextColor(r, g, b)    : 文字色設定(r, g, b)
+       - gSetFont("String")        : 文字種設定("String")
+       - gSetFontType(style)       : 文字タイプ設定(style)
+       - gSetFontSize(size)        : 文字サイズ設定(size)
+       - gDrawText("string", x, y) : 文字描画("string", x, y)
+       - gDrawPoint(x, y)          : 点描画(x, y)
+       - gDrawLine(x1, y1, x2, y2) : 線描画(x1, y1, x2, y2)
+       - gDrawCircle(x, y, r)      : 円描画(x, y, r)
+       - gFillCircle(x, y, r)      : 円塗描画(x, y, r)
+       - gDrawOval(x, y, width, height) : 楕円描画(x, y, width, height)
+       - gFillOval(x, y, width, height) : 楕円塗描画(x, y, width, height)
+       - gDrawBox(x, y, width, height)  : 矩形描画(x, y, width, height)
+       - gFillBox(x, y, width, height)  : 矩形塗描画(x, y, width, height)
+       - gDrawArc(x, y, width, height, start, extent, type)
+                                        : 弧描画(x, y, width, height, start, extent, type)
+       - gFillArc(x, y, width, height, start, extent, type)
+                                        : 弧塗描画(x, y, width, height, start, extent, type)
+
+  [ FixFile ]
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - MainGUI.java
+
+・ver 1.11  (2006/09/18)
+  [ New ]
+    ・出力文に「～～を表示する」のゆらぎ追加
+    ・改行なし出力文に「～～を改行無しで表示する」のゆらぎ追加
+    ・プログラム入力支援ボタンの拡張
+  [ Fix ]
+    ・出力文のゆらぎ追加によるボタン定義ファイルの修正
+      -> 出力のボタンを「≪出力文≫ を表示する」に変更
+      -> 改行無出力のボタンを「≪出力文≫ を改行なしで表示する」に変更
+    ・プログラム入力支援ボタン拡張による定義ファイルの定義方法を変更
+
+  [ NewFile ]
+    - EditButtonListener2.java
+  [ FixFile ]
+    - ButtonEdit.java
+    - ButtonList.ini
+    - ChangeLog.txt
+    - EditButton.java
+    - EditButtonList.java
+    - EditSelection.java
+    - HelpPenButtonListener.java
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - MyJLabel.java
+
+・ver 1.10_3  (2006/08/10)
+  [ BugFix ]
+    ・連続した入力文をすばやく実行すると、正常に動作しなかったバグの修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - ConsoleKeyListener.java
+    - IntVExecuter.java
+    - MainGUI.java
+
+・ver 1.10_2  (2006/08/07)
+  [ New ]
+    ・エラー文の追加
+  [ Fix ]
+    ・./Manual/xDNCL-Language-Manual.pdf の修正
+    ・./Manual/xDNCL-Language-Swing.pdf  の修正
+  [ BugFix ]
+    ・input() の入力値がマイナスの数の場合、型が文字列になるバグの修正
+    ・input() の入力値が三桁の数字である場合、型が実数になるバグの修正
+
+  [ NewFile ]
+    - ReadMe-w32.txt
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - MainGUI.java
+    - ReadMe.txt
+    - ThreadRun.java
+
+・ver 1.10_1  (2006/07/25)
+  [ Fix ]
+    ・break文の修正
+      -> ("繰り返し" | "繰返し" | "ループ" ) "を抜ける"
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.10  (2006/07/25)
+  [ New ]
+    ・命令/関数の追加
+      -> ループを抜ける     : break文
+      -> append(str1, str2) : str1 と str2 を結合した文字列を返す
+  [ Fix ]
+    ・replace() の仕様変更
+      -> replace(str1, i, len, str2) : str1のi文字目の後からlen文字をstr2で置き換える
+
+  [ NewFile ]
+    - ASTAppend.java
+    - ASTBreak.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.09_20  (2006/07/16)
+  [ Fix ]
+    ・round() の仕様変更
+      -> 引数の小数点以下を四捨五入した実数を返す
+    ・実行速度調節バーの値を指数で扱うように変更
+  [ BugFix ]
+    ・行数の多いプログラムを開いて実行した時、編集画面の行数がおかしかったのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - MainGUI.java
+    - RunTimeChangeListener.java
+    - ThreadRun.java
+
+・ver 1.09_19  (2006/07/12)
+  [ New ]
+    ・str2int(str) : 文字列の1文字目をASCIIコードの数値に変換
+    ・int2str(int) : 引数intをASCIIコードと見なしたときの対応する文字を返す
+  [ Fix ]
+    ・変数表示画面のデータを編集できないように修正
+    ・input() の型を変更
+      -> 数字のみで構成  -> 整数
+      -> 数字と . で構成 -> 実数
+      -> それ以外        -> 文字列
+
+  [ NewFile ]
+    - ASTInt2Str.java
+    - ASTStr2Int.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.09_18  (2006/06/29)
+  [ Memo ]
+    ・JavaCC のバージョンを 3.2 -> 4.0 に変更
+  [ Fix ]
+    ・「変数画面をコピー」を「変数表示画面をコピー」に修正
+    ・構文エラーメッセージに無駄な改行コードが付いていたのを削除
+    ・変数未宣言時のエラーメッセージを修正
+    ・入力支援ボタン定義ファイル読み込み失敗時、jar内に格納したファイルを読み込むように変更
+    ・描画ウィンドウをGUI操作で閉じられないように変更
+    ・描画ウィンドウをリサイズできないように変更
+  [ BugFix ]
+    ・プログラム実行時、編集画面にファイルをドロップすると正常に動作しないバグを修正
+
+  [ FixFile ]
+    - ButtonEdit.java
+    - ChangeLog.txt
+    - FileDropOpen.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - MenuButton.java
+    - MyJMenu.java
+    - MyJMenuBar.java
+    - NewFileButtonListener.java
+    - ParseException.java
+    - ReadMe.txt
+    - SimpleCharStream.java
+    - ThreadRun.java
+
+・ver 1.09_17  (2006/05/08)
+  [ New ]
+    ・gSetArrowDir(edge) : 両端の矢じりの有無を指定
+    ・マニュアルの追加
+       - xDNCL-DrawManual.pdf   : Drawに関する関数マニュアルです
+       - xDNCL-FileIOManual.pdf : FileI/Oに関する関数マニュアルで
+  [ Fix ]
+    ・ボタン定義ファイルの変更
+    ・substring() の仕様変更
+       - substring(str, i, len) : strのi文字目からlen文字分の文字列を返す
+    ・gSetArrowType() の仕様変更
+       - gSetArrowType(type)       : 矢尻の種類を指定
+       - gSetArrowType(type, edge) : 矢尻の種類と有無を指定
+    ・(内部変更) プログラムの停止方法を変更
+
+  [ NewFile ]
+    - ASTgSetArrowDir.java
+  [ FixFile ]
+    - ButtonList.ini
+    - ChangeLog.txt
+    - EditButtonList.java
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - ReadMe.txt
+    - RunButtonListener.java
+    - ThreadRun.java
+
+・ver 1.09_16  (2006/05/04)
+  [ New ]
+    ・sleep(msec) : msecミリ秒プログラムを停止する
+  [ BugFix ]
+    ・LineShape が 0 の場合、 gSetLineWidth() が有効にならないバグの修正
+
+  [ NewFile ]
+    - ASTSleep.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.09_15  (2006/05/04)
+  [ Fix ]
+    ・gSetLineShape() の仕様変更
+       - gSetLineShape(type)        : 線種(type)の属性を変更する
+       - gSetLineShape(type, width) : 線種(type)、線の太さ(width)の属性を変更する
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.09_14  (2006/05/02)
+  [ New ]
+    ・gClearWindow()       : 描画ウィンドウをクリアする
+    ・gSetLineWidth(width) : 線の太さの属性を変更する
+  [ Fix ]
+    ・gSetLineShape(type, width) : 線の属性を変更する
+
+  [ NewFile ]
+    - ASTgClearWindow.java
+    - ASTgSetLineWidth.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - RunButtonListener.java
+    - RunClean.java
+  [ ReNameFile ]
+    - ASTgWindowClose.java -> ASTgCloseWindow.java
+    - ASTgWindowOpen.java  -> ASTgOpenWindow.java
+
+・ver 1.09_13  (2006/04/26)
+  [ BugFix ]
+    ・gSetArrowType() を文法通りに記述してもエラーになるバグの修正
+    ・gDrawText() を文法通りに記述してもエラーになるバグの修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.09_12  (2006/04/22)
+  [ BugFix ]
+    ・描画命令実行時、前回の属性値が残っていたのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVgOutputWindow.java
+    - MainGUI.java
+
+・ver 1.09_11  (2006/04/20)
+  [ New ]
+    ・描画命令の追加
+  [ Fix ]
+    ・開発者の所属を変更
+    ・コンソール画面のサイズ微調整
+    ・[ PENについて ] を微調整
+    ・ReadMe.txt の Copyright を修正
+    ・描画命令の変更
+  [ BugFix ]
+    ・コンソール画面のサイズが小さかったのを修正
+
+  [ NewFile ]
+    - ASTgDrawCircle.java
+    - ASTgDrawPolygon.java
+    - ASTgDrawPolyline.java
+    - ASTgDrawText.java
+    - ASTgFillCircle.java
+    - ASTgFillPolygon.java
+    - ASTgSetArrowType.java
+    - ASTgSetColor.java
+    - ASTgSetDotShape.java
+    - ASTgSetFillColor.java
+    - ASTgSetFont.java
+    - ASTgSetFontSize.java
+    - ASTgSetFontType.java
+    - ASTgSetLineColor.java
+    - ASTgSetLineShape.java
+    - ASTgSetTextColor.java
+  [ FixFile ]
+    - ASTgDrawArc.java
+    - ASTgDrawBox.java
+    - ASTgDrawLine.java
+    - ASTgDrawPoint.java
+    - ASTgDrawOval.java
+    - ASTgFillArc.java
+    - ASTgFillBox.java
+    - ASTgFillOval.java
+    - ASTgWindowOpen.java
+    - ASTgWindowClose.java
+    - ChangeLog.txt
+    - HelpPenButtonListener.java
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - ReadMe.txt
+    - RunStop.java
+  [ ReMoveFile ]
+    - ASTgColor.java
+    - ASTgFillPoint.java
+
+・ver 1.09_10  (2006/03/07)
+  [ New ]
+    ・描画用支援ボタン定義ファイルの追加 [ GraphicButtonList.ini ]
+  [ Fix ]
+    ・編集エリアのFontを 「MS ゴシック」 -> 「Monospaced」に変更
+    ・構文エラーのエラーメッセージを変更
+    ・実行時エラーのエラーメッセージを変更
+
+  [ NewFile ]
+    - GraphicButtonList.ini
+  [ FixFile ]
+    - ChangeLog.txt
+    - MainGUI.java
+    - ReadMe.txt
+    - ThreadRun.java
+
+・ver 1.09_9  (2006/02/22)
+  [ New ]
+    ・開発者に1名追加
+  [ Fix ]
+    ・サンプルプログラムの整理
+    ・[ Copyright 2003-2005 ] を [ Copyright 2003-2006 ] に修正
+
+  [ FixFile ]
+    - HelpPenButtonListener.java
+    - MainGUI.java
+    - MyJMenuBar.java
+    - PEN.java
+    - ReadMe.txt
+
+・ver 1.09_8  (2006/02/18)
+  [ BugFix ]
+    ・ボタン定義ファイルのパスがうまく取得できなかったのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - MainGUI.java
+
+・ver 1.09_7  (2006/01/25)
+  [ BugFix ]
+    ・インデントの自動挿入が行われなくなっていたのを修正
+
+  [ FixFile ]
+    - EditAreaAddTab.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserTokenManager.java
+    - ChangeLog.txt
+    - MainGUI.java
+
+・ver 1.09_6  (2006/01/18)
+  [ BugFix ]
+    ・計算式の構文定義を修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.09_5  (2006/01/14)
+  [ New ]
+    ・描画命令の追加
+      gDrawBox( x, y, width, height )  : 座標(x,y)から横(width)、縦(height)の矩形を描画
+      gFillBox( x, y, width, height )  : 座標(x,y)から横(width)、縦(height)の矩形(塗りつぶし)を描画
+      gDrawArc( x, y, width, height, start, extent, type )
+        : 円弧 (start:弧の始角, extent:弧の角の大きさ, type:閉じ方)
+      gFillArc( x, y, width, height, start, extent, type )
+        : 円弧 (start:弧の始角, extent:弧の角の大きさ, type:閉じ方)
+  [ Fix ]
+    ・描画命令の変更
+      gWindowOpen( width, height )     : 描画ウィンドウを開く
+      gWindowClose()                   : 描画ウィンドウを閉じる
+      gDrawLine( x1, y1, x2, y2 )      : 座標(x1,y1)から座標(x2,y2)まで線を引く
+      gDrawOval( x, y, width, height ) : 座標(x,y)から横(width)、縦(height)の円を描画
+      gDrawPoint( x, y )               : 座標(x,y)に点を描画
+      gFillOval( x, y, width, height ) : 座標(x,y)から横(width)、縦(height)の円(塗りつぶし)を描画
+      gFillPoint( x, y )               : 座標(x,y)に点を描画
+    ・サンプルプログラムの修正
+      描画関連のサンプルプログラムを修正
+  [ BugFix ]
+    ・(内部変更) スレッドの同期方法を修正
+
+  [ NewFile ]
+    - ASTgDrawArc.java
+    - ASTgDrawBox.java
+    - ASTgDrawLine.java
+    - ASTgDrawOval.java
+    - ASTgDrawPoint.java
+    - ASTgFillArc.java
+    - ASTgFillBox.java
+    - ASTgFillOval.java
+    - ASTgFillPoint.java
+    - ASTgWindowClose.java
+    - ASTgWindowOpen.java
+  [ FixFile ]
+    - ASTgColor.java
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - RunButtonListener.java
+    - RunClean.java
+    - ./sample/Draw01.pen
+    - ./sample/Draw02.pen
+    - ./sample/Draw03.pen
+  [ ReMoveFile ]
+    - ASTgDOval.java
+    - ASTgFOval.java
+    - ASTgLine.java
+    - ASTgOpen.java
+    - ASTgPoint.java
+
+・ver 1.09_4  (2006/01/10)
+  [ Fix ]
+    ・(内部変更) スレッドの同期方法を変更
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - MainGUI.java
+
+・ver 1.09_3  (2005/12/28)
+  [ New ]
+    ・編集画面、コンソール画面、変数画面のサイズを変更可能にした
+    ・ドラック＆ドロップでファイルを開けるようにした
+  [ Fix ]
+    ・(内部変更) 作図ウィンドウの描画最適化
+
+  [ NewFile ]
+    - FileDropOpen.java
+    - FileOpen.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - FileOpenButtonListener.java
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - MainGUI.java
+
+・ver 1.09_2  (2005/12/06)
+  [ Fix ]
+    ・(内部変更) ノード Block の修正
+  [ BugFix ]
+    ・入れ子内でも戻り値を動作するように修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+  [ ReMoveFile ]
+    - ASTFunctionBlock.java
+
+・ver 1.09_1  (2005/12/05)
+  [ New ]
+    ・「文法のゆらぎ」を記載した pdf を配布キットに追加
+    ・NULL文字の実装 ( NULL )
+    ・関数呼び出しの実装
+      ( BUG ) 戻り値は入れ子内では動作しません
+  [ Fix ]
+    ・[ヘルプ] のURLを修正
+    ・ReadMe のURLを修正
+    ・配布キットのディレクトリ構成を変更
+    ・(内部変更) 変数確保の仕方を変更
+    ・(内部変更) 変数表示画面クリア方法を最適化
+
+  [ NewFile ]
+    - ASTDecl.java
+    - ASTFunction.java
+    - ASTFunctionBlock.java
+    - ASTFunctionCall.java
+    - ASTFunctionVar.java
+    - ASTReturn.java
+  [ FixFile ]
+    - ASTEOF_STR.java
+    - ASTIdent.java
+    - ASTVarDecl.java
+    - ChangeLog.txt
+    - HelpPenButtonListener.java
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - ReadMe.txt
+    - RunButtonListener.java
+    - RunClean.java
+  [ ReMoveFile ]
+    - ASTFloatDecl.java
+    - ASTIntDecl.java
+    - ASTStringDecl.java
+
+・ver 1.09  (2005/11/21)
+  [ Memo ]
+    ・ver 1.08_13 を安定バージョンとしてリリース
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - MainGUI.java
+
+・ver 1.08_13  (2005/11/17)
+  [ New ]
+    ・ファイルI/O の命令追加
+      ファイルへの強制書込      : flush(fd)
+      ファイル削除              : remove(filepath)
+    ・文字列操作の命令追加
+      文字の挿入                : insert(str1, n, str2)
+            str1のn文字目にstr2を挿入した文字列を返す
+      文字の書換                : replace(str1, n, m, str2)
+            str1のnからm文字目をstr2で書き換えた文字列を返す
+      文字列を区切る            : extract(str1, str2, n)
+            str1 を str2 の文字列で区切り n個目の文字を返す
+  [ Fix ]
+    ・ファイルリネームの仕様変更
+      リネーム先にファイルがあった場合、エラーを表示しプログラム停止
+    ・実行エラー時のエラーメッセージを修正
+
+  [ NewFile ]
+    - ASTExtract.java
+    - ASTFile_flush.java
+    - ASTFile_remove.java
+    - ASTInsert.java
+    - ASTReplace.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - ThreadRun.java
+
+・ver 1.08_12  (2005/11/13)
+  [ Fix ]
+    ・ファイルの読み込み時に文字コードを判別するように変更
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - FileOpenButtonListener.java
+    - IntVFileIO.java
+    - MainGUI.java
+
+・ver 1.08_11  (2005/11/11)
+  [ New ]
+    ・ファイルI/Oのエラー文の追加
+  [ Fix ]
+    ・ICONファイルの読み込み方を変更
+    ・null -> EOF に変更
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - ReadMe.txt
+  [ ReNameFile ]
+    - ASTNull.java -> ASTEOF_STR.java
+
+・ver 1.08_10  (2005/11/11)
+  [ New ]
+    ・文法の揺らぎを実装
+  [ Fix ]
+    ・ファイル読み込み時の EOF を変更
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVFileIO.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
+・ver 1.08_9  (2005/11/10)
+  [ New ]
+    ・ICONの追加
+    ・ファイルI/Oの実装（ファイルI/Oに関するエラー表示は未実装）
+      ファイルオープン（読み込み） : fd ← openr(filepath)
+      ファイルオープン（書き込み） : fd ← openw(filepath)
+      ファイルオープン（追記書込） : fd ← opena(filepath)
+      ファイルクローズ             : close(fd)
+      ファイル読み込み             : str ← getsrt(fd, n)
+      入力 [ input()と同等 ]       : str ← getstr(0, n)
+      ファイル行読み込み           : str ← getline(fd)
+      入力 [ input()と同等 ]       : str ← getline(0)
+      ファイル書き込み             : putstr(fd, str)
+      出力 [ 改行なし出力 ]        : putstr(1, str)
+      ファイル行書き込み           : putline(fd, str)
+      出力 [ 改行あり出力 ]        : putline(1, str)
+      ファイルの有無               : str ← isfile(filepath)
+      ファイルのリネーム           : rename(filepath1, filepath2)
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - ReadMe.txt
+  [ NewFile ]
+    - ASTFile_close.java
+    - ASTFile_getline.java
+    - ASTFile_getstr.java
+    - ASTFile_isfile.java
+    - ASTFile_opena.java
+    - ASTFile_openr.java
+    - ASTFile_openw.java
+    - ASTFile_putline.java
+    - ASTFile_putstr.java
+    - ASTFile_rename.java
+    - ASTNull.java
+    - IntVFileIO.java
+    - pen.ico
+    - pen.png
+  [ ReNameFile ]
+    - gOutputWindow.java -> IntVgOutputWindow.java
+
+・ver 1.08_8  (2005/10/31)
+  [ Fix ]
+    ・参照していない変数を削除
+    ・全角半角カンマと読点を同じトークンとして扱うように変更
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - EditAreaKeyListener.java
+    - EditButton.java
+    - EditButtonListener.java
+    - ExitButtonListener.java
+    - FileOpenButtonListener.java
+    - gOutputWindow.java
+    - HelpPenButtonListener.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - MyJMenuBar.java
+    - NewFileButtonListener.java
+    - PEN.java
+    - VarCopyButtonListener.java
+
+・ver 1.08_7  (2005/10/25)
+  [ Fix ]
+    ・実行時のエラーメッセージの追加
+  [ BugFix ]
+    ・「始めに戻る」で停止した場合にエラーメッセージが吐かれるのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - MainGUI.java
+    - ThreadRun.java
+
+・ver 1.08_6  (2005/10/15)
+  [ Fix ]
+    ・ReadMeファイルを修正
+    ・PENクイックリファレンスを修正
+    ・xDNCL言語マニュアルを修正
+    ・サンプルファイルを微調整
+  [ BugFix ]
+    ・文法エラーが発生した時、フリーズする場合があるのをとりあえず対処
+    ・プログラム入力支援ボタンの記述ミスを修正
+
+  [ FixFile ]
+    - ButtonEdit.java
+    - ButtonList.ini
+    - ChangeLog.txt
+    - MainGUI.java
+    - ReadMe.txt
+    - ThreadRun.java
+    - ./sample/KazuAteGame.pen
+  [ ReNameFile ]
+    - PEN操作マニュアル.pdf -> PENクイックリファレンス.pdf
+    - 言語仕様.pdf -> xDNCL言語マニュアル.pdf
+
+・ver 1.08_5  (2005/09/09)
+  [ BugFix ]
+    ・[ ≪～≫≪～≫ ] と並んでいる時の選択範囲がおかしかったのを修正
+    ・≪～≫ の前後で範囲選択して、削除キーを押すと ≪～≫ が消えてしまうのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - EditAreaKeyListener.java
+    - EditSelection.java
+    - MainGUI.java
+
+・ver 1.08_4  (2005/09/08)
+  [ Fix ]
+    ・状態表示ラベル : [ 実行終了 ] の状態を追加
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - MainGUI.java
+    - MyRunJLabel.java
+    - RunClean.java
+    - RunStop.java
+
+・ver 1.08_3  (2005/09/06)
+  [ New ]
+    ・グラフィカルな出力を扱えるようにした
+      gopen(w, h)           : 横幅 w, 縦幅 h の描画ウィンドウを開く（1つのみ）
+      gcolor(r, g, b)       : 色(RGB)をセットする
+      gpoint(x, y)          : 座標(x, y)に点をプロット
+      gline(x1, y1, x2, y2) : 始点(x1, y1)から終点(x2, y2)に線を引く
+      gdoval(x, y, w, h)    : 座標(x, y)から横幅 x, 縦幅 yの円（枠のみ）を描画
+      gfoval(x, y, w, h)    : 座標(x, y)から横幅 x, 縦幅 yの円（塗潰し）を描画
+
+  [ NewFile ]
+    - ./sample/Drow01.pen
+    - ASTgColor.java
+    - ASTgDOval.java
+    - ASTgFOval.java
+    - ASTgLine.java
+    - ASTgOpen.java
+    - ASTgPoint.java
+    - gOutputWindow.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+    - RunButtonListener.java
+    - RunClean.java
+
+・ver 1.08_2  (2005/08/29)
+  [ Fix ]
+    ・プログラム入力支援ボタン定義ファイルで [ @挿入文字列 ] を記述しない場合、
+    　ラベル(JLabel)で表示するように変更
+  [ BugFix ]
+    ・SHIFTキー + 矢印キーで範囲選択できなかったバグの修正
+
+  [ FixFile ]
+    - ButtonEdit.java
+    - ButtonList.ini
+    - ChangeLog.txt
+    - EditAreaKeyListener.java
+    - EditButtonList.java
+    - HelpPenButtonListener.java
+    - MainGUI.java
+    - MyJLabel.java
+
+・ver 1.08_1  (2005/08/03)
+  [ Fix ]
+    ・実行速度調節バーをクリックで調節できるように変更
+
+  [ NewFile ]
+    - RunTimeMouseListener.java
+  [ FixFile ]
+    - MainGUI.java
+
+・ver 1.08  (2005/07/24)
+  [ Memo ]
+    ・ver 1.07_15 を安定バージョンとしてリリース
+
+  [ Fix ]
+    ・sampleファイルの整理
+
+  [ FixFile ]
+    - ./sample 以下整理
+
+・ver 1.07_15  (2005/07/21)
+  [ Fix ]
+    ・else-if文の変更
+      例）
+        もし ≪条件式≫ ならば
+          | 
+        を実行し，そうでなくもし ≪条件式≫ ならば
+          | 
+        を実行し，そうでなければ
+          | 
+        を実行する
+  [ FixFile ]
+    - IntVParser.jjt
+    - MainGUI.java
+
+・ver 1.07_14  (2005/07/20)
+  [ New ]
+    ・else-if文の追加
+      例）
+        もし ≪条件式≫ ならば
+          | 
+        を実行し，もし ≪条件式≫ ならば
+          | 
+        を実行し，そうでなければ
+          | 
+        を実行する
+    ・引数 -b の追加
+      起動時に [ java -jar PNE.jar -b '支援ボタン定義ファイルパス' ] で
+      支援ボタン定義ファイルを指定できるようにした
+  [ Fix ]
+    ・TeacherModeを [ -t ] でも起動できるようにした
+    ・DebugModeを [ -d ] でも起動できるようにした
+  [ BugFix ]
+    ・クレジットの誤植を修正
+
+  [ NewFile ]
+    - ASTElseIfStat.java
+  [ FixFile ]
+    - ButtonEdit.java
+    - HelpPenButtonListener.java
+    - IntVParser.jjt
+    - MainGUI.java
+
+・ver 1.07_13  (2005/07/18)
+  [ New ]
+    ・プログラム入力支援ボタンのカスタマイズ可能
+      ButtonList.ini にて支援ボタンの定義
+      （定義方法）ボタン名@ボタン幅@色(R,G,B)@挿入文字列
+  [ Fix ]
+    ・TeacherMode時に変数画面が見にくかったのを修正
+    ・サンプルファイルのディレクトリのrename
+  
+  [ NewFile ]
+    - ButtonEdit.java
+    - ButtonList.ini
+  [ FixFile ]
+    - EditButtonList.java
+    - MainGUI.java
+  [ ReNameDirectory ]
+    - ./sample/OCU - example > ./sample/OCU_example
+    - ./sample/OGU - example > ./sample/OGU_example
+
+・ver 1.07_12  (2005/06/28)
+  [ BugFix ]
+    ・比較演算子の「等しい」と「等しくない」の判定がおかしかったバグの修正
+
+  [ FixFile ]
+    - IntVExecuter.java
+    - MainGUI.java
+
+・ver 1.07_11  (2005/06/24)
+  [ New ]
+    ・組み込み関数の追加
+      int() : 引数の型を「整数」に変換する。
+      log() : 引数の自然対数値 (底は e) を返します。
+  [ Fix ]
+    ・ceil(),floor()の戻り値の型を「実数」に変更
+
+  [ NewFile ]
+    - ASTInt.java
+    - ASTLog.java
+  [ FixFile ]
+    - IntVExecuter.java
+    - IntVParser.jjt
+    - MainGUI.java
+
+・ver 1.07_10  (2005/06/23)
+  [ Fix ]
+    ・ceil(),floor(),round()の戻り値の型を「整数」に変更
+
+  [ FixFile ]
+    - IntVExecuter.java
+    - MainGUI.java
+
+・ver 1.07_9  (2005/06/23)
+  [ Fix ]
+    ・abs()の戻り値を変更
+      引数：整数 ｜ 戻り値：整数
+      引数：実数 ｜ 戻り値：実数
+  [ BugFix ]
+    ・「変数画面をコピー」で「値」がコピーされないバグの修正
+    ・while-do文,do-while文,repeat-until文で、実行行ポインタの表示がおかしかったのを修正
+
+  [ FixFile ]
+    - IntVExecuter.java
+    - IntVParser.jjt
+    - MainGUI.java
+    - VarCopyButtonListener
+
+・ver 1.07_8  (2005/06/20)
+  [ Fix ]
+    ・クレジット表記を変更
+
+  [ FixFile ]
+    - HelpPenButtonListener.java
+    - MainGUI.java
+
+・ver 1.07_7  (2005/06/19)
+  [ BugFix ]
+    ・For文で変数表示画面の「変数名」に「値」が表示されるバグの修正
+
+  [ FixFile ]
+    - IntVExecuter.java
+    - MainGUI.java
+
+・ver 1.07_6  (2005/06/18)
+  [ Fix ]
+    ・コンソール画面の背景色を変更
+      入力待ち状態：白色
+      その他の状態：灰色
+
+  [ FixFile ]
+    - IntVExecuter.java
+    - MainGUI.java
+
+・ver 1.07_5  (2005/06/18)
+  [ New ]
+    ・組み込み関数の追加
+      abs()       : 絶対値
+      ceil()      : 小数点以下 切り上げ
+      floor()     : 小数点以下 切り捨て
+      round()     : 小数点以下 四捨五入
+      length()    : 文字列の長さを返します
+      substring() : 文字列の部分文字列である新しい文字列を返します
+  [ Fix ]
+    ・変数表示画面の「型」の表示文字を変更
+
+  [ NewFile ]
+    - ASTAbs.java
+    - ASTCeil.java
+    - ASTFloor.java
+    - ASTLength.java
+    - ASTRound.java
+    - ASTSubstring.java
+  [ FixFile ]
+    - IntVExecuter.java
+    - IntVParser.jjt
+    - MainGUI.java
+
+・ver 1.07_4  (2005/06/17)
+  [ New ]
+    ・型の文字列を実装
+    ・1行の型宣言文で複数の変数を宣言できるようにした
+      例）整数 a, b, c 
+    ・変数表示画面に「型」を表示
+  [ Fix ]
+    ・ファイルの「新規」,「開く」の時、コンソール画面と変数表示画面をクリアするように変更
+    ・「始めから実行」の状態を追加（実行終了後、マーカーは一番下のまま）
+    ・「始めに戻る」ボタンで「コンソール画面」「変数画面」をクリア
+
+  [ NewFile ]
+    - RunClean.java
+  [ FixFile ]
+    - FileOpenButtonListener.java
+    - IntVExecuter.java
+    - IntVParser.jjt
+    - MainGUI.java
+    - NewFileButtonListener.java
+    - ParseException.java
+    - RunButtonListener.java
+    - RunStop.java
+    - ParseException.java
+    - ThreadRun.java
+
+・ver 1.07_3  (2005/06/15)
+  [ New ]
+    ・sqrt() の組み込み関数の実装
+  [ BugFix ]
+    ・論理演算子の「否定」が使用できなかったバグの修正
+
+  [ NewFile ]
+    - ASTSqrt.java
+  [ FixFile ]
+    - IntVExecuter.java
+    - IntVParser.jjt
+
+・ver 1.07_2  (2005/06/14)
+  [ BugFix ]
+    ・文法定義のミスでFor文がエラーとなったバグの修正
+
+  [ FixFile ]
+    - IntVParser.jjt
+
+・ver 1.07_1  (2005/06/14)
+  [ New ]
+    ・型の実数,文字列を実装
+      注）文字は input() でのみ代入可能
+    ・sin(), cos(), tan() の組み込み関数の実装
+    ・TeacherModeの追加
+      引数「-teacher」をつけてPENを起動
+      　例） % java -jar PEN.jar -teacher
+    ・DebugModeの追加
+      引数「-debug」をつけてPENを起動
+  [ Fix ]
+    ・算術計算例外のエラー文を追加
+    ・入力待ち状態のみ、コンソール画面の編集を許可するように変更
+  [ BugFix ]
+    ・2分岐条件文のボタン名を変更
+      「もし～さもなければ」→「もし～そうでなければ」
+    ・改行無し出力後に入力の命令を実行できないバグの修正
+    ・条件式で括弧付き演算ができないバグの修正
+
+  [ NewFile ]
+    - ASTCosine.java
+    - ASTSine.java
+    - ASTTangent.java
+  [ FixFile ]
+    - ConsoleKeyListener.java
+    - IntVExecuter.java
+    - IntVParser.jjt
+    - MainGUI.java
+    - PEN.java
+    - RunButtonListener.java
+    - RunStop.java
+    - ThreadRun.java
+  [ MoveFile ]
+    -  ASTLiteral_F.java  ->  ASTFloatLiteral.java
+
+・ver 1.07  (2005/05/16)
+  [ Memo ]
+    ・ver 1.06_4 を安定バージョンとしてリリース
+
+・ver 1.06_4  (2005/05/13)
+  [ Fix ]
+    ・≪～≫ に囲まれ部分を BackSpace, Delete で一括削除するように変更
+
+  [ FixFile ]
+    - EditAreaKeyListener.java
+    - EditSelection.java
+
+・ver 1.06_3  (2005/05/13)
+  [ New ]
+    ・ChangeLog 作成開始

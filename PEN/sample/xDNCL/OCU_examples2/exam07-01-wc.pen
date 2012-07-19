@@ -1,0 +1,19 @@
+/*				exam07-01-wc.pen
+ * (例07-01) 指定したファイル(./Data/English.txt)
+ *	中の文字数(改行も文字数に含めて良い)を調
+ *	べて出力せよ。
+ */
+文字列 str
+整数 fd, count, stop
+stop ← 0
+count ← 0
+fd ← openr(".\Data\English.txt")
+(stop=0) の間，
+  | str ← getstr(fd, 1)
+  | もし str=EOF ならば
+  |   |  stop ← 1
+  | を実行し，そうでなければ
+  |   |  count ← count + 1
+  | を実行する
+を繰り返す
+count を印刷する

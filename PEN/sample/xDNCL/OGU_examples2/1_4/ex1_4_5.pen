@@ -1,0 +1,22 @@
+整数 x, y, r
+gOpenWindow(400, 400)
+gSetLineColor(255, 255, 255)
+x ← 200
+y ← 200
+x ≧ 0 かつ y ≧ 0 かつ x < 400 かつ y < 400 の間，
+  | gSetFillColor(0, 0, 255)
+  | gFillCircle(x, y, 20)
+  | sleep(100)
+  | gSetFillColor(255, 255, 255)
+  | gFillCircle(x, y, 20)
+  | r ← random(3)
+  | もし r = 0 ならば
+  |   | x ← x+10
+  | を実行し，そうでなくもし r = 1 ならば
+  |   | x ← x-10
+  | を実行し，そうでなくもし r = 2 ならば
+  |   | y ← y+10
+  | を実行し，そうでなければ
+  |   | y ← y-10
+  | を実行する
+を繰り返す

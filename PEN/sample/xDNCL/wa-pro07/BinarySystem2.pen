@@ -1,0 +1,24 @@
+/* 0～15の数を2進4ビットでグラフィカルに表示 */
+
+整数 i, j, a
+gOpenWindow(400, 400)
+gDrawBox(10,100,380,200)
+gSetLineColor(255, 255, 255)
+gSetFontSize(48)
+i を 0 から 15 まで 1 ずつ増やしながら，
+  | gSetTextColor(0,255,0)
+  | gDrawText(i, 180, 70)
+  | a ← i
+  | j を 1 から 4 まで 1 ずつ増やしながら，
+  |   | もし a%2 = 0 ならば
+  |   |   | gSetFillColor(0, 0, 0)
+  |   | を実行し，そうでなければ
+  |   |   | gSetFillColor(0, 0, 255)
+  |   | を実行する
+  |   | gFillCircle(65+90×(4-j), 200, 40)
+  |   | a ← a÷2
+  | を繰り返す
+  | sleep(2000)
+  | gSetTextColor(255,255,255)
+  | gDrawText(i, 180, 70)
+を繰り返す
