@@ -1,5 +1,28 @@
-set PEN_DIR=%USERPROFILE%\デスクトップ\PEN_v120
-set PEN_WORK=%USERPROFILE%\workspace\PEN
+set PEN_VER=PEN_v120p
+
+F not EXIST ％SystemRoot％￥system32￥wbem￥wmic.exe goto WINDOWS_UNKOWN
+WMIC OS GET CAPTION | find "Windows 7" > nul
+IF not errorlevel 1 GOTO WINDOWS_7
+WMIC OS GET CAPTION | find "Windows Vista" > nul
+IF not errorlevel 1 GOTO WINDOWS_VISTA
+WMIC OS GET CAPTION | find "Windows XP" > nul
+IF not errorlevel 1 GOTO WINDOWS_XP
+GOTO WINDOWS_UNKOWN
+
+:WINDOWS_7
+:WINDOWS_VISTA
+set DESKTOP=%USERPROFILE%\Desktop
+goto :process
+:WINDOWS_XP
+set DESKTOP=%USERPROFILE%\デスクトップ
+goto :process
+:WINDOWS_UNKOWN
+goto :eof
+
+:process
+
+set PEN_DIR=%DESKTOP%\%PEN_VER%
+set PEN_WORK=%USERPROFILE%\git\PEN\PEN
 
 mkdir "%PEN_DIR%"
 mkdir "%PEN_DIR%\src"
