@@ -1,23 +1,47 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Hashtable;
 
 public class PenPlugin {
-	public static void main(String[] args) {
+	private Hashtable objTable= new Hashtable();
+	private Hashtable functionTable= new Hashtable();
+	
+	public PenPlugin() {
 		try {
-			ClassLoader loader = ClassLoader.getSystemClassLoader();
+			FileInputStream fis = new FileInputStream("./functionTable.ini");
+			InputStreamReader isr = new InputStreamReader(fis, "SJIS");
+			BufferedReader reader = new BufferedReader(isr);
+			String str = reader.readLine();
+			while (str != null) {
+				String[] line = str.split("\t");
+				if(!objTable.containsKey(line[1])){
+
+					ClassLoader loader = ClassLoader.getSystemClassLoader();
+					
+					// 呼び出すClassを指定する
+					Class claszz = loader.loadClass("plugin.TestCallMethod");
+					
+					// インスタンスの生成
+					Object obj = claszz.newInstance();
+					
+					objTable.put(line[1], obj);
+				}
+				Object[] om = new Object[]{ objTable.get(line[1]), line[2]};
+				
+				functionTable.put(line[0], om);
+
+				str = reader.readLine();
+			}
+
+			reader.close();
 			
-			// 呼び出すClassを指定する
-			Class claszz = loader.loadClass("plugin.TestCallMethod");
-			
-			// インスタンスの生成
-			Object obj = claszz.newInstance();
-			
-			// 呼び出すMethodを指定する
-			Method m = obj.getClass().getMethod("print", null);
-			
-			// メソッドの実行
-			m.invoke(obj, null);
-		} catch (ClassNotFoundException e) {
+		} catch (IOException e) {
+			e.printStackTrace();
+        } catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
 			// TODO Auto-generated catch block
@@ -31,12 +55,36 @@ public class PenPlugin {
 		} catch (IllegalAccessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
+		}
+	}
+	
+	public Object runMethood(String m){
+        Object[] obj = (Object[]) functionTable.get(m);
+        Object ret = null;
+        
+		try {
+			// 呼び出すMethodを指定する
+			Method met = obj[0].getClass().getMethod(obj[1].toString(), null);
+			
+			// メソッドの実行
+			ret = met.invoke(obj[0], null);
+		} catch (SecurityException e) {
+			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
+		
+		return ret;
 	}
 }
