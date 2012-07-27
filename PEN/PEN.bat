@@ -4,6 +4,6 @@ start javaw -cp "lib64/RXTXcomm.jar;PEN.jar" -Djava.library.path=lib64 PEN
 goto checkdone
  
 :x86
-start avaw -cp "lib/RXTXcomm.jar;PEN.jar" -Djava.library.path=lib PEN
+start javaw -cp "lib/RXTXcomm.jar;PEN.jar" -Djava.library.path=lib PEN
  
 :checkdone
