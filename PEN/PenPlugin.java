@@ -35,7 +35,7 @@ public class PenPlugin {
 					
 					objTable.put(line[1], obj);
 					
-					objectName.add(line[0]);
+					objectName.add(line[1]);
 				}
 				Object[] om = new Object[]{ objTable.get(line[1]), line[2]};
 				

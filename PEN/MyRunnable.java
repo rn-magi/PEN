@@ -37,8 +37,7 @@ public class MyRunnable implements Runnable {
 			gui.Flags.SuspendFlag	= false;
 			gui.Flags.InputFlag	= false;
 			gui.Flags.StopFlag	= false;
-			
-			gui.penPlugin.destruction();
 		}
+		gui.penPlugin.destruction();
 	}
 }
