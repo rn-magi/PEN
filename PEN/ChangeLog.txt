@@ -1,5 +1,14 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_p1 (2012/07/xx)
+  [ BugFix ]
+    ・関数呼び出しの引数と仮引数のバグで正しい値を渡せない場合があるのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - MainGUI.java
+
 ・ver 1.20  (2012/06/26)
   [ Memo ]
     ・ver 1.19_10 を安定バージョンとしてリリース

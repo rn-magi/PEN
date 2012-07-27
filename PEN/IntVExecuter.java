@@ -2163,13 +2163,13 @@ public class IntVExecuter implements IntVParserVisitor{
 			
 			Object return_var =null;
 			k = fc.jjtGetNumChildren();
-			if( k > 1) {
-				fc.jjtGetChild(0).jjtAccept(this, fc_data);
-				callVar.clear();
-				return_var = fc.jjtGetChild(1).jjtAccept(this, fc_data);
-			} else {
-				return_var = fc.jjtGetChild(0).jjtAccept(this, fc_data);
-			}
+			int runNode = 0;
+            if( k > 1) {
+                    fc.jjtGetChild(0).jjtAccept(this, fc_data);
+                    runNode = 1;
+            }
+            callVar.clear();
+            return_var = fc.jjtGetChild(runNode).jjtAccept(this, fc_data);
 			
 			if(return_var == null) {
 				run_flag(fc.line_num2, true);
