@@ -77,8 +77,10 @@ Windowsの場合          ：[ PEN.bat ] をダブルクリックして起動してください。
 その他のOS(64bit)の場合：[ PEN64.sh ] をダブルクリックまたはコマンドラインから起動してください。
 
 ＜コマンドラインからの起動＞
-32bit OS の場合： java -cp "lib/RXTXcomm.jar;PEN.jar" -Djava.library.path=lib PEN
-64bit OS の場合： java -cp "lib64/RXTXcomm.jar;PEN.jar" -Djava.library.path=lib64 PEN
+Windows 32bit の場合： java -cp "lib/RXTXcomm.jar;PEN.jar" -Djava.library.path=lib PEN
+Wondows 64bit の場合： java -cp "lib64/RXTXcomm.jar;PEN.jar" -Djava.library.path=lib64 PEN
+その他の 32bit OS の場合：java -jar -Djava.library.path=./lib PEN.jar
+その他の 64bit OS の場合：java -jar -Djava.library.path=./lib64 PEN.jar
 
 ＜PENの使い方＞
 PENの使い方は [ PEN-QuickReference.pdf ] を参照してください。
