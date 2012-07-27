@@ -1,4 +1,5 @@
 set PEN_VER=PEN
+set PLUGIN_DIR="C:\Users\rn_magi\git\PenTestCode\penPluginDev\bin"
 
 F not EXIST “SystemRoot“system32wbemwmic.exe goto WINDOWS_UNKOWN
 WMIC OS GET CAPTION | find "Windows 7" > nul
@@ -53,10 +54,22 @@ copy "%PEN_WORK%\Manual\*.pdf" "%PEN_DIR%\Manual"
 mkdir "%PEN_DIR%\ButtonList"
 copy "%PEN_WORK%\ButtonList\*.ini" "%PEN_DIR%\ButtonList"
 
+mkdir "%PEN_DIR%\lib"
+copy "%PEN_WORK%\lib\*" "%PEN_DIR%\lib"
+
+mkdir "%PEN_DIR%\lib64"
+copy "%PEN_WORK%\lib64\*" "%PEN_DIR%\lib64"
+
+mkdir "%PEN_DIR%\plugin"
+copy "%PLUGIN_DIR%\*.class" "%PEN_DIR%\plugin"
+
 copy "%PEN_WORK%\PEN.url" "%PEN_DIR%\"
 copy "%PEN_WORK%\ChangeLog.txt" "%PEN_DIR%\"
 copy "%PEN_WORK%\ReadMe.txt" "%PEN_DIR%\"
 copy "%PEN_WORK%\*.ini" "%PEN_DIR%\"
+copy "%PEN_WORK%\PEN.bat" "%PEN_DIR%\"
+copy "%PEN_WORK%\PEN.sh" "%PEN_DIR%\"
+copy "%PEN_WORK%\PEN64.sh" "%PEN_DIR%\"
 
 cd "%PEN_WORK%"
 jar cmf META-INF/MANIFEST.MF PEN.jar -C bin .

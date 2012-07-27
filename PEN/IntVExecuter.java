@@ -2163,13 +2163,13 @@ public class IntVExecuter implements IntVParserVisitor{
 			
 			Object return_var =null;
 			k = fc.jjtGetNumChildren();
+			int runNode = 0;
 			if( k > 1) {
 				fc.jjtGetChild(0).jjtAccept(this, fc_data);
-				callVar.clear();
-				return_var = fc.jjtGetChild(1).jjtAccept(this, fc_data);
-			} else {
-				return_var = fc.jjtGetChild(0).jjtAccept(this, fc_data);
+				runNode = 1;
 			}
+			callVar.clear();
+			return_var = fc.jjtGetChild(runNode).jjtAccept(this, fc_data);
 			
 			if(return_var == null) {
 				run_flag(fc.line_num2, true);
@@ -2206,6 +2206,33 @@ public class IntVExecuter implements IntVParserVisitor{
 			} else {
 				return null;
 			}
+		} else if(gui.penPlugin.containsMethod(varName)){
+			int k = node.jjtGetNumChildren();
+			Class[] c;
+			Object[] o;
+			if( k == 0){
+				c = null;
+				o = null;
+			} else {
+				c = new Class[k];
+				o = new Object[k];
+				for(int i = 0; i < k; i++){
+					Object vartmp = node.jjtGetChild(i).jjtAccept(this, data);
+					if( vartmp instanceof Integer){
+						c[i] = int.class;
+					} else if( vartmp instanceof Double){
+						c[i] = double.class;
+					} else if( vartmp instanceof String){
+						c[i] = String.class;
+					} else if( vartmp instanceof Boolean){
+						c[i] = boolean.class;
+					} else if( vartmp instanceof dfp){
+						c[i] = dfp.class;
+					}
+					o[i] = vartmp;
+				}
+			}
+			return gui.penPlugin.runMethood(varName, c, o);
 		} else {
 			gui.consoleAppend.appendAll("### "  + gui.run_point.getLineCount() + "行目の\""+ varName + "\"という関数名は存在しません。\n");
 			runBreak(true);

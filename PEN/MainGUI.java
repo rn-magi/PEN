@@ -31,7 +31,7 @@ import javax.swing.text.PlainDocument;
  *
  */
 public class MainGUI {
-	public String Version			= "ver1.20";
+	public String Version			= "ver1.20_1";
 	public String SystemName		= "PEN";
 	public String WindowName		= SystemName + " " + Version;
 	public PenFrame main_window;
@@ -85,6 +85,8 @@ public class MainGUI {
 	public IntVgOutputWindow gDrawWindow	= new IntVgOutputWindow(this);
 	
 	public PenFlags Flags = new PenFlags();
+	
+	public PenPlugin penPlugin = new PenPlugin();
 
 	private PenFileFilter filter[] = {
 			new PenFileFilter("txt" , "Text File （*.txt）") ,

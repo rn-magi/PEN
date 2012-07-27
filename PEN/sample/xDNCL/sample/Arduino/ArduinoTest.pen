@@ -1,0 +1,32 @@
+文字列 port
+実数 temp
+port ← portList(0)
+openPort(port)
+
+pinMode(6, "INPUT")
+pinMode(7, "INPUT")
+pinMode(8, "INPUT")
+pinMode(4, "OUTPUT")
+pinMode(5, "OUTPUT")
+pinMode(13, "OUTPUT")
+pinMode(10, "OUTPUT")
+
+1=1 の間，
+  | もし digitalRead(6) = 0 ならば
+  |   | digitalWrite(13, 1)
+  | を実行し，そうでなければ
+  |   | digitalWrite(13, 0)
+  | を実行する
+  | 
+  | もし digitalRead(7) = 0 ならば
+  |   | digitalWrite(10, 1)
+  | を実行し，そうでなければ
+  |   | digitalWrite(10, 0)  
+  | を実行する
+  | 
+  | もし digitalRead(8) = 0 ならば
+  |   | 「光：」 と analogRead(4) を表示する
+  |   | temp ← ((5.1 / 1024 * analogRead(5)) - 0.4) / 0.01953
+  |   | 「温度：」 と temp を表示する
+  | を実行する
+を繰り返す
