@@ -1,0 +1,1 @@
+java -cp "lib/RXTXcomm.jar;PEN.jar" -Djava.library.path=lib PEN &

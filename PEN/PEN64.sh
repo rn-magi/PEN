@@ -1,0 +1,1 @@
+java -cp "lib64/RXTXcomm.jar;PEN.jar" -Djava.library.path=lib64 PEN &
