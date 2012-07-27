@@ -1,5 +1,35 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_1 (2012/07/27)
+  [ New ]
+    ・プラグイン機能を実装
+    ・プラグインに Arduino の計測・制御を追加
+  [ BugFix ]
+    ・関数呼び出しの引数と仮引数のバグで正しい値を渡せない場合があるのを修正
+
+  [ FixFile]
+    - IntVExecuter.java
+    - MainGUI.java
+    - MyRunnable.java
+    - ReadMe.txt
+  [ NewFile ]
+    - PenPlugin.java
+    - functionTable.ini
+    - ./lib/RXTXcomm.jar
+    - ./lib/librxtxParallel.so
+    - ./lib/librxtxSerial.jnilib
+    - ./lib/librxtxSerial.so
+    - ./lib/rxtxParallel.dll
+    - ./lib/rxtxSerial.dll
+    - ./lib64/RXTXcomm.jar
+    - ./lib64/librxtxParallel.so
+    - ./lib64/librxtxSerial.jnilib
+    - ./lib64/librxtxSerial.so
+    - ./lib64/rxtxParallel.dll
+    - ./lib64/rxtxSerial.dll
+    - ./plugin/*.class
+    - ./sample/Arduino/ArduinoTest.pen
+
 ・ver 1.20  (2012/06/26)
   [ Memo ]
     ・ver 1.19_10 を安定バージョンとしてリリース

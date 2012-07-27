@@ -32,10 +32,17 @@
   |- ./ButtonList/
   |  |- Default.ini                 … プログラム入力支援ボタン 定義ファイル
   |  -- DrawList.ini                … 描画専用簡易プログラム入力支援ボタン 定義ファイル
+  |- ./lib/                         … Javaのライブラリ
+  |- ./lib64/                       … Javaのライブラリ(64bit版)
+  |- ./plugin/                      … プラグインファイル
   |- ./sample/                      … PENのサンプルプログラムです
   |- ./src/                         … PENのソースファイルです
   |- ChangeLog.txt                  … PENの更新履歴です
+  |- functionTable.ini              … プラグイン機能で呼び出す関数を定義するファイル
   |- PEN.jar                        … PEN本体です
+  |- PEN.bat                        … WindowsでPENを起動するためのファイル
+  |- PEN.sh                         … Windows以外でPENを起動するためのシェルスクリプト
+  |- PEN64.sh                       … Windows以外の64bitマシンでPENを起動するためのシェルスクリプト
   |- PEN.url                        … 配布元 Webページのリンクです
   |- Property.ini                   … PENの設定を行うファイルです
   -- ReadMe.txt                     … このファイルです
@@ -65,8 +72,15 @@ CD-ROMからコピーされる方はコピー後に、
 レジストリ等は操作していません。
 
 ＜PENの起動＞
-[ PEN.jar ] をダブルクリックして起動してください。
-またはコマンドで [ java -jar PEN.jar ] と起動してください。
+Windowsの場合          ：[ PEN.bat ] をダブルクリックして起動してください。
+その他のOS(32bit)の場合：[ PEN.sh ] をダブルクリックまたはコマンドラインから起動してください。
+その他のOS(64bit)の場合：[ PEN64.sh ] をダブルクリックまたはコマンドラインから起動してください。
+
+＜コマンドラインからの起動＞
+32bit OS の場合： java -cp "lib/RXTXcomm.jar;PEN.jar" -Djava.library.path=lib PEN
+64bit OS の場合： java -cp "lib64/RXTXcomm.jar;PEN.jar" -Djava.library.path=lib64 PEN
+
+＜PENの使い方＞
 PENの使い方は [ PEN-QuickReference.pdf ] を参照してください。
 
 ＜プログラム入力支援ボタンのカスタマイズ＞
@@ -77,7 +91,7 @@ PENの使い方は [ PEN-QuickReference.pdf ] を参照してください。
 
 ＜謝辞＞
 Applet版開発において 大阪電気通信大学 兼宗 進 先生に多大なるご協力をいただき、
-また、Mac OS X での動作確認のための環境を無償で提供            してくださり、
+また、Mac OS X での動作確認のための環境を無償で提供してくださるなど、
 この場をお借りして心からお礼を申し上げます。
 
 -------------------------------------------------------------------------------
