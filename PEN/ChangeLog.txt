@@ -1,6 +1,20 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
-・ver 1.20_1 (2012/07/28)
+・ver 1.20_2 (2012/07/29)
+  [ BugFix ]
+    ・プラグイン関数を呼び出したときに実行ポイントが正しく動作しなかったのを修正
+
+  [ NewFile ]
+    - ./sample/Arduino/LED-flash.pen
+    - ./sample/Arduino/LED-light.pen
+  [ FixFile]
+    - ChangeLog.txt
+    - MainGUI.java
+    - IntVExecuter.java
+  [ ReNameFile ]
+    - ./sample/Arduino/ArduinoTest.pen -> ./sample/Arduino/ArduinoAction.pen
+
+・ver 1.20_2 (2012/07/28)
   [ BugFix ]
     ・プラグインの終了処理が正しく行われなかったのを修正
 
@@ -17,11 +31,6 @@
   [ BugFix ]
     ・関数呼び出しの引数と仮引数のバグで正しい値を渡せない場合があるのを修正
 
-  [ FixFile]
-    - IntVExecuter.java
-    - MainGUI.java
-    - MyRunnable.java
-    - ReadMe.txt
   [ NewFile ]
     - PenPlugin.java
     - functionTable.ini
@@ -39,6 +48,11 @@
     - ./lib64/rxtxSerial.dll
     - ./plugin/*.class
     - ./sample/Arduino/ArduinoTest.pen
+  [ FixFile]
+    - IntVExecuter.java
+    - MainGUI.java
+    - MyRunnable.java
+    - ReadMe.txt
 
 ・ver 1.20  (2012/06/26)
   [ Memo ]

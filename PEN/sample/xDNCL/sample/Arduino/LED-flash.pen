@@ -1,0 +1,17 @@
+/* LED‚ğ10‰ñ“_–Å‚³‚¹‚Ü‚· */
+
+•¶š—ñ port
+®” i
+port © portList(1)
+openPort(port)
+
+pinMode(13, "OUTPUT")
+
+i ‚ğ 1 ‚©‚ç 10 ‚Ü‚Å 1 ‚¸‚Â‘‚â‚µ‚È‚ª‚çC
+  | digitalWrite(13, 1)
+  | sleep(1000)
+  | digitalWrite(13, 0)
+  | sleep(1000)
+‚ğŒJ‚è•Ô‚·
+
+closePort()

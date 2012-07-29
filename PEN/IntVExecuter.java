@@ -2232,6 +2232,7 @@ public class IntVExecuter implements IntVParserVisitor{
 					o[i] = vartmp;
 				}
 			}
+			run_flag(node.line_num1, true);
 			return gui.penPlugin.runMethood(varName, c, o);
 		} else {
 			gui.consoleAppend.appendAll("### "  + gui.run_point.getLineCount() + "行目の\""+ varName + "\"という関数名は存在しません。\n");
