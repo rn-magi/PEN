@@ -5,8 +5,10 @@
     ・プラグイン関数を呼び出したときに実行ポイントが正しく動作しなかったのを修正
 
   [ NewFile ]
-    - ./sample/Arduino/LED-flash.pen
-    - ./sample/Arduino/LED-light.pen
+    - ./sample/Arduino/ButtonPush.pen
+    - ./sample/Arduino/LED-Flash.pen
+    - ./sample/Arduino/LED-Flash2.pen
+    - ./sample/Arduino/LED-Light.pen
   [ FixFile]
     - ChangeLog.txt
     - MainGUI.java
