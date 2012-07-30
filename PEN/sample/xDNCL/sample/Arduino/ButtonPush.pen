@@ -1,0 +1,26 @@
+/* ボタン1を押すとコーンソール画面に出力する */
+
+文字列 port
+真偽 flag
+整数 i
+
+port ← portList(0)
+openPort(port)
+
+pinMode(6, "INPUT")
+
+i ← 1
+
+i < 11 の間，
+  | もし digitalRead(6) = 0 ならば
+  |   | もし flag = false ならば
+  |   |   | 「ボタンを押したよ」 と 「(」 と i と 「)」 を表示する
+  |   |   | i ← i + 1
+  |   |   | flag ← true
+  |   | を実行する 
+  | を実行し，そうでなければ
+  |   | flag ← false
+  | を実行する
+を繰り返す
+
+closePort()
