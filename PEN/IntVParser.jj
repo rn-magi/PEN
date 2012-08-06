@@ -1626,7 +1626,7 @@ void ORExpr()       :
                              jjtree.openNodeScope(jjtn001);
                            }
                            try {
-/*@egen*/ Cond()/*@bgen(jjtree)*/
+/*@egen*/ ORExpr()/*@bgen(jjtree)*/
                            } catch (Throwable jjte001) {
                              if (jjtc001) {
                                jjtree.clearNodeScope(jjtn001);
@@ -1685,19 +1685,33 @@ void AndExpr()       :
 void NotExpr()       :
 {}
 {
-	CompareExpr() [/*@bgen(jjtree) #NOTNode( 1) */
-                        {
-                          ASTNOTNode jjtn001 = new ASTNOTNode(JJTNOTNODE);
-                          boolean jjtc001 = true;
-                          jjtree.openNodeScope(jjtn001);
-                        }
-                        try {
+ 	LOOKAHEAD(100) CompareExpr() [/*@bgen(jjtree) #NOTNode( 1) */
+                                       {
+                                         ASTNOTNode jjtn001 = new ASTNOTNode(JJTNOTNODE);
+                                         boolean jjtc001 = true;
+                                         jjtree.openNodeScope(jjtn001);
+                                       }
+                                       try {
 /*@egen*/ <NOTOP>/*@bgen(jjtree)*/
-                        } finally {
-                          if (jjtc001) {
-                            jjtree.closeNodeScope(jjtn001,  1);
-                          }
-                        }
+                                       } finally {
+                                         if (jjtc001) {
+                                           jjtree.closeNodeScope(jjtn001,  1);
+                                         }
+                                       }
+/*@egen*/             ]
+	|	LOOKAHEAD(100) <LP> Cond() <RP> [/*@bgen(jjtree) #NOTNode( 1) */
+                                                  {
+                                                    ASTNOTNode jjtn002 = new ASTNOTNode(JJTNOTNODE);
+                                                    boolean jjtc002 = true;
+                                                    jjtree.openNodeScope(jjtn002);
+                                                  }
+                                                  try {
+/*@egen*/ <NOTOP>/*@bgen(jjtree)*/
+                                                  } finally {
+                                                    if (jjtc002) {
+                                                      jjtree.closeNodeScope(jjtn002,  1);
+                                                    }
+                                                  }
 /*@egen*/             ]
 }
 
@@ -2100,7 +2114,7 @@ void PrimExpr()       :
 	|	FunctionExpr()
 	|	Ident()
 //	|	FunctionCall()
-	|	<LP> Cond() <RP>
+	|	<LP> AddExpr() <RP>
 }
 
 void FunctionExpr()       :
