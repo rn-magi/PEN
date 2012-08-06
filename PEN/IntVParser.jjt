@@ -624,7 +624,8 @@ void AndExpr() #void :
 void NotExpr() #void :
 {}
 {
-	CompareExpr() [ <NOTOP> #NOTNode(1) ]
+ 	LOOKAHEAD(100) CompareExpr() [ <NOTOP> #NOTNode(1) ]
+	|	LOOKAHEAD(100) <LP> Cond() <RP> [ <NOTOP> #NOTNode(1) ]
 }
 
 void CompareExpr() #void :
@@ -684,7 +685,7 @@ void PrimExpr() #void :
 	|	FunctionExpr()
 	|	Ident()
 //	|	FunctionCall()
-	|	<LP> Cond() <RP>
+	|	<LP> AddExpr() <RP>
 }
 
 void FunctionExpr() #void :
