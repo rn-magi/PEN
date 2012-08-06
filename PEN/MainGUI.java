@@ -5,7 +5,6 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.dnd.DropTarget;
-import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.TooManyListenersException;
 
@@ -31,7 +30,7 @@ import javax.swing.text.PlainDocument;
  *
  */
 public class MainGUI {
-	public String Version			= "ver1.20_3";
+	public String Version			= "ver1.20_4";
 	public String SystemName		= "PEN";
 	public String WindowName		= SystemName + " " + Version;
 	public PenFrame main_window;

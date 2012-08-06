@@ -1626,7 +1626,7 @@ void ORExpr()       :
                              jjtree.openNodeScope(jjtn001);
                            }
                            try {
-/*@egen*/ Cond()/*@bgen(jjtree)*/
+/*@egen*/ ORExpr()/*@bgen(jjtree)*/
                            } catch (Throwable jjte001) {
                              if (jjtc001) {
                                jjtree.clearNodeScope(jjtn001);
@@ -1685,26 +1685,26 @@ void AndExpr()       :
 void NotExpr()       :
 {}
 {
-	EqualityExpr() [/*@bgen(jjtree) #NOTNode( 1) */
-                         {
-                           ASTNOTNode jjtn001 = new ASTNOTNode(JJTNOTNODE);
-                           boolean jjtc001 = true;
-                           jjtree.openNodeScope(jjtn001);
-                         }
-                         try {
+	CompareExpr() [/*@bgen(jjtree) #NOTNode( 1) */
+                        {
+                          ASTNOTNode jjtn001 = new ASTNOTNode(JJTNOTNODE);
+                          boolean jjtc001 = true;
+                          jjtree.openNodeScope(jjtn001);
+                        }
+                        try {
 /*@egen*/ <NOTOP>/*@bgen(jjtree)*/
-                         } finally {
-                           if (jjtc001) {
-                             jjtree.closeNodeScope(jjtn001,  1);
-                           }
-                         }
+                        } finally {
+                          if (jjtc001) {
+                            jjtree.closeNodeScope(jjtn001,  1);
+                          }
+                        }
 /*@egen*/             ]
 }
 
-void EqualityExpr()       :
+void CompareExpr()       :
 {}
 {
-	RelationalExpr()
+	AddExpr()
 	[
 		<EQOP>/*@bgen(jjtree) #EQNode( 2) */
                        {
@@ -1713,7 +1713,7 @@ void EqualityExpr()       :
                          jjtree.openNodeScope(jjtn001);
                        }
                        try {
-/*@egen*/ EqualityExpr()/*@bgen(jjtree)*/
+/*@egen*/ AddExpr()/*@bgen(jjtree)*/
                        } catch (Throwable jjte001) {
                          if (jjtc001) {
                            jjtree.clearNodeScope(jjtn001);
@@ -1741,7 +1741,7 @@ void EqualityExpr()       :
                                  jjtree.openNodeScope(jjtn002);
                                }
                                try {
-/*@egen*/ EqualityExpr()/*@bgen(jjtree)*/
+/*@egen*/ AddExpr()/*@bgen(jjtree)*/
                                } catch (Throwable jjte002) {
                                  if (jjtc002) {
                                    jjtree.clearNodeScope(jjtn002);
@@ -1762,78 +1762,14 @@ void EqualityExpr()       :
                                  }
                                }
 /*@egen*/           
-	]
-}
-
-void RelationalExpr()       :
-{}
-{
-	AddExpr()
-	[
-		<LSOP>/*@bgen(jjtree) #LSNode( 2) */
-                       {
-                         ASTLSNode jjtn001 = new ASTLSNode(JJTLSNODE);
-                         boolean jjtc001 = true;
-                         jjtree.openNodeScope(jjtn001);
-                       }
-                       try {
-/*@egen*/ RelationalExpr()/*@bgen(jjtree)*/
-                       } catch (Throwable jjte001) {
-                         if (jjtc001) {
-                           jjtree.clearNodeScope(jjtn001);
-                           jjtc001 = false;
-                         } else {
-                           jjtree.popNode();
-                         }
-                         if (jjte001 instanceof RuntimeException) {
-                           throw (RuntimeException)jjte001;
-                         }
-                         if (jjte001 instanceof ParseException) {
-                           throw (ParseException)jjte001;
-                         }
-                         throw (Error)jjte001;
-                       } finally {
-                         if (jjtc001) {
-                           jjtree.closeNodeScope(jjtn001,  2);
-                         }
-                       }
-/*@egen*/           
-		|	<GTOP>/*@bgen(jjtree) #GTNode( 2) */
+		| 	<LSOP>/*@bgen(jjtree) #LSNode( 2) */
                                {
-                                 ASTGTNode jjtn002 = new ASTGTNode(JJTGTNODE);
-                                 boolean jjtc002 = true;
-                                 jjtree.openNodeScope(jjtn002);
-                               }
-                               try {
-/*@egen*/ RelationalExpr()/*@bgen(jjtree)*/
-                               } catch (Throwable jjte002) {
-                                 if (jjtc002) {
-                                   jjtree.clearNodeScope(jjtn002);
-                                   jjtc002 = false;
-                                 } else {
-                                   jjtree.popNode();
-                                 }
-                                 if (jjte002 instanceof RuntimeException) {
-                                   throw (RuntimeException)jjte002;
-                                 }
-                                 if (jjte002 instanceof ParseException) {
-                                   throw (ParseException)jjte002;
-                                 }
-                                 throw (Error)jjte002;
-                               } finally {
-                                 if (jjtc002) {
-                                   jjtree.closeNodeScope(jjtn002,  2);
-                                 }
-                               }
-/*@egen*/           
-		|	<LEOP>/*@bgen(jjtree) #LENode( 2) */
-                               {
-                                 ASTLENode jjtn003 = new ASTLENode(JJTLENODE);
+                                 ASTLSNode jjtn003 = new ASTLSNode(JJTLSNODE);
                                  boolean jjtc003 = true;
                                  jjtree.openNodeScope(jjtn003);
                                }
                                try {
-/*@egen*/ RelationalExpr()/*@bgen(jjtree)*/
+/*@egen*/ AddExpr()/*@bgen(jjtree)*/
                                } catch (Throwable jjte003) {
                                  if (jjtc003) {
                                    jjtree.clearNodeScope(jjtn003);
@@ -1854,14 +1790,14 @@ void RelationalExpr()       :
                                  }
                                }
 /*@egen*/           
-		|	<GEOP>/*@bgen(jjtree) #GENode( 2) */
+		|	<GTOP>/*@bgen(jjtree) #GTNode( 2) */
                                {
-                                 ASTGENode jjtn004 = new ASTGENode(JJTGENODE);
+                                 ASTGTNode jjtn004 = new ASTGTNode(JJTGTNODE);
                                  boolean jjtc004 = true;
                                  jjtree.openNodeScope(jjtn004);
                                }
                                try {
-/*@egen*/ RelationalExpr()/*@bgen(jjtree)*/
+/*@egen*/ AddExpr()/*@bgen(jjtree)*/
                                } catch (Throwable jjte004) {
                                  if (jjtc004) {
                                    jjtree.clearNodeScope(jjtn004);
@@ -1879,6 +1815,62 @@ void RelationalExpr()       :
                                } finally {
                                  if (jjtc004) {
                                    jjtree.closeNodeScope(jjtn004,  2);
+                                 }
+                               }
+/*@egen*/           
+		|	<LEOP>/*@bgen(jjtree) #LENode( 2) */
+                               {
+                                 ASTLENode jjtn005 = new ASTLENode(JJTLENODE);
+                                 boolean jjtc005 = true;
+                                 jjtree.openNodeScope(jjtn005);
+                               }
+                               try {
+/*@egen*/ AddExpr()/*@bgen(jjtree)*/
+                               } catch (Throwable jjte005) {
+                                 if (jjtc005) {
+                                   jjtree.clearNodeScope(jjtn005);
+                                   jjtc005 = false;
+                                 } else {
+                                   jjtree.popNode();
+                                 }
+                                 if (jjte005 instanceof RuntimeException) {
+                                   throw (RuntimeException)jjte005;
+                                 }
+                                 if (jjte005 instanceof ParseException) {
+                                   throw (ParseException)jjte005;
+                                 }
+                                 throw (Error)jjte005;
+                               } finally {
+                                 if (jjtc005) {
+                                   jjtree.closeNodeScope(jjtn005,  2);
+                                 }
+                               }
+/*@egen*/           
+		|	<GEOP>/*@bgen(jjtree) #GENode( 2) */
+                               {
+                                 ASTGENode jjtn006 = new ASTGENode(JJTGENODE);
+                                 boolean jjtc006 = true;
+                                 jjtree.openNodeScope(jjtn006);
+                               }
+                               try {
+/*@egen*/ AddExpr()/*@bgen(jjtree)*/
+                               } catch (Throwable jjte006) {
+                                 if (jjtc006) {
+                                   jjtree.clearNodeScope(jjtn006);
+                                   jjtc006 = false;
+                                 } else {
+                                   jjtree.popNode();
+                                 }
+                                 if (jjte006 instanceof RuntimeException) {
+                                   throw (RuntimeException)jjte006;
+                                 }
+                                 if (jjte006 instanceof ParseException) {
+                                   throw (ParseException)jjte006;
+                                 }
+                                 throw (Error)jjte006;
+                               } finally {
+                                 if (jjtc006) {
+                                   jjtree.closeNodeScope(jjtn006,  2);
                                  }
                                }
 /*@egen*/           

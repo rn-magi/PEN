@@ -1,5 +1,24 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_4 (2012/08/07)
+  [ BugFix ]
+    ・誤った条件式の構文を受理してしまうのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - JJTIntVParserState.java
+    - MainGUI.java
+    - SimpleCharStream.java
+    - Token.java
+
 ・ver 1.20_3 (2012/07/31)
   [ BugFix ]
     ・プラグイン関数を呼び出したときに実行ポイントが正しく動作しなかったのを修正
@@ -9,7 +28,7 @@
     - ./sample/Arduino/LED-Flash.pen
     - ./sample/Arduino/LED-Flash2.pen
     - ./sample/Arduino/LED-Light.pen
-  [ FixFile]
+  [ FixFile ]
     - ChangeLog.txt
     - MainGUI.java
     - IntVExecuter.java
@@ -20,7 +39,7 @@
   [ BugFix ]
     ・プラグインの終了処理が正しく行われなかったのを修正
 
-  [ FixFile]
+  [ FixFile ]
     - ChangeLog.txt
     - MainGUI.java
     - MyRunnable.java
@@ -50,7 +69,7 @@
     - ./lib64/rxtxSerial.dll
     - ./plugin/*.class
     - ./sample/Arduino/ArduinoTest.pen
-  [ FixFile]
+  [ FixFile ]
     - IntVExecuter.java
     - MainGUI.java
     - MyRunnable.java
