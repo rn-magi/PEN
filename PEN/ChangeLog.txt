@@ -1,12 +1,17 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
-・ver 1.20_p1 (2012/07/xx)
+・ver 1.20_p1 (2012/08/xx)
   [ BugFix ]
     ・関数呼び出しの引数と仮引数のバグで正しい値を渡せない場合があるのを修正
+    ・誤った条件式の構文を受理してしまうのを修正
 
   [ FixFile ]
     - ChangeLog.txt
     - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserTokenManager.java
     - MainGUI.java
 
 ・ver 1.20  (2012/06/26)

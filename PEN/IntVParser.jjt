@@ -624,28 +624,20 @@ void AndExpr() #void :
 void NotExpr() #void :
 {}
 {
-	EqualityExpr() [ <NOTOP> #NOTNode(1) ]
+	CompareExpr() [ <NOTOP> #NOTNode(1) ]
 }
 
-void EqualityExpr() #void :
-{}
-{
-	RelationalExpr()
-	[
-		<EQOP> EqualityExpr() #EQNode(2)
-		|	<NTOP> EqualityExpr() #NTNode(2)
-	]
-}
-
-void RelationalExpr() #void :
+void CompareExpr() #void :
 {}
 {
 	AddExpr()
 	[
-		<LSOP> RelationalExpr() #LSNode(2)
-		|	<GTOP> RelationalExpr() #GTNode(2)
-		|	<LEOP> RelationalExpr() #LENode(2)
-		|	<GEOP> RelationalExpr() #GENode(2)
+		<EQOP> AddExpr() #EQNode(2)
+		|	<NTOP> AddExpr() #NTNode(2)
+		| 	<LSOP> AddExpr() #LSNode(2)
+		|	<GTOP> AddExpr() #GTNode(2)
+		|	<LEOP> AddExpr() #LENode(2)
+		|	<GEOP> AddExpr() #GENode(2)
 	]
 }
 

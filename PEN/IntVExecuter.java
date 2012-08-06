@@ -507,7 +507,7 @@ public class IntVExecuter implements IntVParserVisitor{
 		
 		try {
 			b = (Boolean)node.jjtGetChild(0).jjtAccept(this, data);
-		} catch(NumberFormatException e){
+		} catch(Exception e){
 			throw new ConditionFormatException(node.line_num1);
 		}
 		
@@ -552,7 +552,7 @@ public class IntVExecuter implements IntVParserVisitor{
 			
 			try {
 				b = (Boolean)node.jjtGetChild(1).jjtAccept(this, data);
-			} catch(NumberFormatException e){
+			} catch(Exception e){
 				throw new ConditionFormatException(node.line_num1);
 			}
 			
@@ -581,7 +581,7 @@ public class IntVExecuter implements IntVParserVisitor{
 			
 			try {
 				b = (Boolean)node.jjtGetChild(1).jjtAccept(this, data);
-			} catch(NumberFormatException e){
+			} catch(Exception e){
 				throw new ConditionFormatException(node.line_num1);
 			}
 			
@@ -675,7 +675,7 @@ public class IntVExecuter implements IntVParserVisitor{
 		do {
 			try {
 				b = (Boolean)node.jjtGetChild(0).jjtAccept(this, data);
-			} catch(NumberFormatException e){
+			} catch(Exception e){
 				throw new ConditionFormatException(node.line_num1);
 			}
 			run_flag(node.line_num1, true);

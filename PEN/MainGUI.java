@@ -5,7 +5,6 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.dnd.DropTarget;
-import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.TooManyListenersException;
 
