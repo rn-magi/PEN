@@ -1,5 +1,5 @@
 set PEN_VER=PEN
-set PLUGIN_DIR=%USERPROFILE%\git\PenTestCode\penPluginDev\bin
+set PLUGIN_DIR=%USERPROFILE%\git\penPluginDev\penPluginDev\bin
 
 F not EXIST “SystemRoot“system32wbemwmic.exe goto WINDOWS_UNKOWN
 WMIC OS GET CAPTION | find "Windows 7" > nul
