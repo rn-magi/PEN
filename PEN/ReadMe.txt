@@ -15,7 +15,7 @@
      Microsoft Windows 7 SP1 64bit        + JRE v 1.6.0
      Mac OS X 10.6.8 Intel 64bit          + JRE v 1.6.0
      Linux Mint 13 Linux 3.2.0-25-generic + JDK v 1.6.0
- [  著作権  ] Copyright(C) 2003-2012 by 中村 亮太, 西田 知博, 松浦 敏雄, 兼宗 進
+ [  著作権  ] Copyright(C) 2003-2013 by 中村 亮太, 西田 知博, 松浦 敏雄, 兼宗 進
  [転載・配布] GPLに準ずる
  [使用上注意] 本プログラムにていかなる問題が発生した場合も
               作者は一切の責任を負わないものとします。
@@ -41,6 +41,7 @@
   |- functionTable.ini              … プラグイン機能で呼び出す関数を定義するファイル
   |- PEN.jar                        … PEN本体です
   |- PEN.bat                        … WindowsでPENを起動するためのファイル
+  |- PEN.command                    … MacOSでPENを起動するためのファイル
   |- PEN.sh                         … Windows以外でPENを起動するためのシェルスクリプト
   |- PEN64.sh                       … Windows以外の64bitマシンでPENを起動するためのシェルスクリプト
   |- PEN.url                        … 配布元 Webページのリンクです
@@ -72,7 +73,8 @@ CD-ROMからコピーされる方はコピー後に、
 レジストリ等は操作していません。
 
 ＜PENの起動＞
-Windowsの場合          ：[ PEN.bat ] をダブルクリックして起動してください。
+Windowsの場合         ：[ PEN.bat ] をダブルクリックして起動してください。
+MacOSの場合           ：[ PEN.command ] をダブルクリックして起動してください。
 その他のOS(32bit)の場合：[ PEN.sh ] をダブルクリックまたはコマンドラインから起動してください。
 その他のOS(64bit)の場合：[ PEN64.sh ] をダブルクリックまたはコマンドラインから起動してください。
 

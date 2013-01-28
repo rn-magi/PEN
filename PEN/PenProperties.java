@@ -26,6 +26,14 @@ public class PenProperties {
 	public final static String EXECUTER_VAR_ORIGIN	= "executer.array.origin";
 	public final static String EXECUTER_VAR_NAMES		= "executer.var.names";
 	public final static String EXECUTER_DIV_MODE		= "executer.div.mode";
+
+	public final static int DECLARATION_PROCEDURAL = 0;
+	public final static int DECLARATION_INT		= 1;
+	public final static int DECLARATION_LONG	= 2;
+	public final static int DECLARATION_DOUBLE	= 3;
+	public final static int DECLARATION_DFP		= 4;
+	public final static int DECLARATION_STRING	= 5;
+	public final static int DECLARATION_BOOLEAN	= 6;
 	
 	public PenProperties(boolean isApplet){
 		String dir = "";

@@ -1,5 +1,5 @@
 set PEN_VER=PEN
-set PLUGIN_DIR=%USERPROFILE%\git\penPluginDev\penPluginDev\bin
+set PLUGIN_DIR=%USERPROFILE%\git\penPluginDev\penPluginDev
 
 F not EXIST “SystemRoot“system32wbemwmic.exe goto WINDOWS_UNKOWN
 WMIC OS GET CAPTION | find "Windows 7" > nul
@@ -30,17 +30,17 @@ mkdir "%PEN_DIR%\src"
 
 copy "%PEN_WORK%\*.java" "%PEN_DIR%\src\"
 copy "%PEN_WORK%\IntVParser.jjt" "%PEN_DIR%\src\"
-copy "%PEN_WORK%\Property.ini" "%PEN_DIR%\src\"
+copy "%PEN_WORK%\*.ini" "%PEN_DIR%\src\"
 copy "%PEN_WORK%\pen.png" "%PEN_DIR%\src\"
 
 mkdir "%PEN_DIR%\src\Locale"
 copy "%PEN_WORK%\Locale\*.properties" "%PEN_DIR%\src\Locale\"
 
-mkdir "%PEN_DIR%\\src\ButtonList"
+mkdir "%PEN_DIR%\src\ButtonList"
 copy "%PEN_WORK%\ButtonList\*.ini" "%PEN_DIR%\src\ButtonList"
 
-cd "%PEN_WORK%\"
-xcopy  /Y /S /EXCLUDE:nocopy.txt "%PEN_WORK%\rossi" "%PEN_DIR%\src\rossi\"
+mkdir "%PEN_DIR%\src\plugin"
+copy "%PLUGIN_DIR%\src\*.java" "%PEN_DIR%\src\plugin"
 
 cd "%PEN_WORK%\"
 xcopy  /Y /S /EXCLUDE:nocopy.txt "%PEN_WORK%\org" "%PEN_DIR%\src\org\"
@@ -61,13 +61,14 @@ mkdir "%PEN_DIR%\lib64"
 copy "%PEN_WORK%\lib64\*" "%PEN_DIR%\lib64"
 
 mkdir "%PEN_DIR%\plugin"
-copy "%PLUGIN_DIR%\*.class" "%PEN_DIR%\plugin"
+copy "%PLUGIN_DIR%\bin\*.class" "%PEN_DIR%\plugin"
 
 copy "%PEN_WORK%\PEN.url" "%PEN_DIR%\"
 copy "%PEN_WORK%\ChangeLog.txt" "%PEN_DIR%\"
 copy "%PEN_WORK%\ReadMe.txt" "%PEN_DIR%\"
 copy "%PEN_WORK%\*.ini" "%PEN_DIR%\"
 copy "%PEN_WORK%\PEN.bat" "%PEN_DIR%\"
+copy "%PEN_WORK%\PEN.command" "%PEN_DIR%\"
 copy "%PEN_WORK%\PEN.sh" "%PEN_DIR%\"
 copy "%PEN_WORK%\PEN64.sh" "%PEN_DIR%\"
 

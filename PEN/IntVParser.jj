@@ -103,11 +103,10 @@ TOKEN [IGNORE_CASE] :
 {
 	<VARGLOBAL			: "\u30b0\u30ed\u30fc\u30d0\u30eb\u5909\u6570">
 	|	< VARINT		: "\u6574\u6570" >
-	|	< VARFLOAT		: "\u5b9f\u6570" >
+	|	< VARDOUBLE		: "\u5b9f\u6570" >
 	|	< VARSTRING		: "\u6587\u5b57\u5217" >
 	|	< VARBOOLEAN	: "\u771f\u507d" >
 	|	< VARDFP		: "DFP" >
-	|	< VARREFERENCE		: "\u53c2\u7167" >
 	|	< PROCEDURAL		: "\u624b\u7d9a\u304d" >
 	|	< ENDPROCEDURAL		: "\u624b\u7d9a\u304d" ( "\u7d42\u4e86" | "\u7d42\u308f\u308a" ) >
 	|	< BREAKPROCEDURAL	: "\u624b\u7d9a\u304d\u3092\u629c\u3051\u308b" >
@@ -395,11 +394,11 @@ void Function() :
 /*@egen*/
 	( 
 		<FUNCTION> (
-			<VARINT>		{ jjtn000.decl = 1; }
-			|	<VARFLOAT>	{ jjtn000.decl = 2; }
-			|	<VARSTRING>	{ jjtn000.decl = 3; }
-			|	<VARBOOLEAN>{ jjtn000.decl = 4; }
-			|	<VARDFP>	{ jjtn000.decl = 5; }
+			<VARINT>		{ jjtn000.decl = PenProperties.DECLARATION_INT; }
+			|	<VARDOUBLE>	{ jjtn000.decl = PenProperties.DECLARATION_DOUBLE; }
+			|	<VARSTRING>	{ jjtn000.decl = PenProperties.DECLARATION_STRING; }
+			|	<VARBOOLEAN>{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
+			|	<VARDFP>	{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
 		)
 		t=<IDENT> <LP> [ FunctionVar() ] <RP> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }/*@bgen(jjtree) Block */
                 {
@@ -430,7 +429,7 @@ void Function() :
                   }
                 }
 /*@egen*/        <ENDFUNCTION>
-		|	<PROCEDURAL>	{ jjtn000.decl = 0; }
+		|	<PROCEDURAL>	{ jjtn000.decl = PenProperties.DECLARATION_PROCEDURAL; }
 		t=<IDENT> <LP> [ FunctionVar() ] <RP> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }/*@bgen(jjtree) Block */
                 {
                   ASTBlock jjtn002 = new ASTBlock(JJTBLOCK);
@@ -504,12 +503,11 @@ void FunctionVar() :
         try {
 /*@egen*/
 	(
-		<VARINT>	{ jjtn000.decl = 1; }
-		| <VARFLOAT>	{ jjtn000.decl = 2; }
-		| <VARSTRING>	{ jjtn000.decl = 3; }
-		| <VARBOOLEAN>	{ jjtn000.decl = 4; }
-		| <VARDFP>		{ jjtn000.decl = 5; }
-		| <VARREFERENCE>{ jjtn000.decl = 6; }
+		<VARINT>	{ jjtn000.decl = PenProperties.DECLARATION_INT; }
+		| <VARDOUBLE>	{ jjtn000.decl = PenProperties.DECLARATION_DOUBLE; }
+		| <VARSTRING>	{ jjtn000.decl = PenProperties.DECLARATION_STRING; }
+		| <VARBOOLEAN>	{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
+		| <VARDFP>		{ jjtn000.decl = PenProperties.DECLARATION_DFP; }
 	) Decl() [ <CM> FunctionVar() ]/*@bgen(jjtree)*/
         } catch (Throwable jjte000) {
           if (jjtc000) {
@@ -543,11 +541,11 @@ void VarDecl() :
         try {
 /*@egen*/
 	(
-		<VARINT>	{ jjtn000.decl = 1; }
-		| <VARFLOAT>	{ jjtn000.decl = 2; }
-		| <VARSTRING>	{ jjtn000.decl = 3; }
-		| <VARBOOLEAN>	{ jjtn000.decl = 4; }
-		| <VARDFP>		{ jjtn000.decl = 5; }
+		<VARINT>	{ jjtn000.decl = PenProperties.DECLARATION_INT; }
+		| <VARDOUBLE>	{ jjtn000.decl = PenProperties.DECLARATION_DOUBLE; }
+		| <VARSTRING>	{ jjtn000.decl = PenProperties.DECLARATION_STRING; }
+		| <VARBOOLEAN>	{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
+		| <VARDFP>		{ jjtn000.decl = PenProperties.DECLARATION_DFP; }
 	) Decl() ( <CM> Decl() )*/*@bgen(jjtree)*/
                                   {
                                     jjtree.closeNodeScope(jjtn000, true);

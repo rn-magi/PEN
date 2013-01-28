@@ -162,22 +162,22 @@ public class IntVExecuter implements IntVParserVisitor{
 		FunctionTable.put(node.varName, obj);
 		
 		TableNoTable.put(node.varName,new Integer(gui.vt_model.getRowCount()));
-		if( node.decl == 0 ){
+		if( node.decl == PenProperties.DECLARATION_PROCEDURAL ){
 			String[] stat_data = {"手続き", node.varName ,""};
 			gui.vt_model.addRow(stat_data);
-		} else if( node.decl == 1){
+		} else if( node.decl == PenProperties.DECLARATION_INT ){
 			String[] stat_data = {"整数", node.varName ,""};
 			gui.vt_model.addRow(stat_data);
-		} else if( node.decl == 2 ) {
+		} else if( node.decl == PenProperties.DECLARATION_DOUBLE ) {
 			String[] stat_data = {"実数", node.varName ,""};
 			gui.vt_model.addRow(stat_data);
-		} else if ( node.decl == 3 ) {
+		} else if( node.decl == PenProperties.DECLARATION_STRING ) {
 			String[] stat_data = {"文字列", node.varName ,""};
 			gui.vt_model.addRow(stat_data);
-		} else if ( node.decl == 4 ) {
+		} else if( node.decl == PenProperties.DECLARATION_BOOLEAN ) {
 			String[] stat_data = {"真偽", node.varName ,""};
 			gui.vt_model.addRow(stat_data);
-		} else if ( node.decl == 5 ) {
+		} else if( node.decl == PenProperties.DECLARATION_DFP ) {
 			String[] stat_data = {"DFP", node.varName ,""};
 			gui.vt_model.addRow(stat_data);
 		}
@@ -202,19 +202,19 @@ public class IntVExecuter implements IntVParserVisitor{
 			String[] stat_data = {null, var_name ,null};
 			TableNoTable.put(var_name,new Integer(gui.vt_model.getRowCount()));
 
-			if( node.decl == 1 ){
+			if( node.decl == PenProperties.DECLARATION_INT ){
 				obj = new Integer(Double.valueOf(var.toString()).intValue());
 				stat_data[0] = "整数";
-			} else if( node.decl == 2 ){
+			} else if( node.decl == PenProperties.DECLARATION_DOUBLE ){
 				obj = Double.valueOf(var.toString());
 				stat_data[0] = "実数";
-			} else if( node.decl == 3 ){
+			} else if( node.decl == PenProperties.DECLARATION_STRING ){
 				obj = String.valueOf(var.toString());
 				stat_data[0] = "文字列";
-			} else if( node.decl == 4 ){
+			} else if( node.decl == PenProperties.DECLARATION_BOOLEAN ){
 				obj = Boolean.valueOf(var.toString());
 				stat_data[0] = "真偽";
-			} else if( node.decl == 5 ){
+			} else if( node.decl == PenProperties.DECLARATION_DFP ){
 				obj = new dfp(var.toString());
 				stat_data[0] = "DFP";
 			}
@@ -239,11 +239,11 @@ public class IntVExecuter implements IntVParserVisitor{
 				String[] stat_data = {null, name ,null};
 				TableNoTable.put(name,new Integer(gui.vt_model.getRowCount()));
 
-				if( (decl == 1 && ver instanceof Integer) || 
-					(decl == 2 && ver instanceof Double) ||
-					(decl == 3 && ver instanceof String) ||
-					(decl == 4 && ver instanceof Boolean) ||
-					(decl == 5 && ver instanceof dfp)
+				if( (decl == PenProperties.DECLARATION_INT		&& ver instanceof Integer) || 
+					(decl == PenProperties.DECLARATION_DOUBLE	&& ver instanceof Double) ||
+					(decl == PenProperties.DECLARATION_STRING	&& ver instanceof String) ||
+					(decl == PenProperties.DECLARATION_BOOLEAN	&& ver instanceof Boolean) ||
+					(decl == PenProperties.DECLARATION_DFP		&& ver instanceof dfp)
 				) {
 					stat_data[0] = "参照";
 				} else {
@@ -289,23 +289,23 @@ public class IntVExecuter implements IntVParserVisitor{
 
 			TableNoTable.put(node.varName,new Integer(gui.vt_model.getRowCount()));
 
-			if( declaration == 1 ){
+			if( declaration == PenProperties.DECLARATION_INT ){
 				obj = new Integer(0);
 				stat_data[0] = "整数";
 				stat_data[2] = "0";
-			} else if( declaration == 2 ){
+			} else if( declaration == PenProperties.DECLARATION_DOUBLE ){
 				obj = new Double(0.0);
 				stat_data[0] = "実数";
 				stat_data[2] = "0.0";
-			} else if( declaration == 3 ){
+			} else if( declaration == PenProperties.DECLARATION_STRING ){
 				obj = new String();
 				stat_data[0] = "文字列";
 				stat_data[2] = "";
-			} else if( declaration == 4 ){
+			} else if( declaration == PenProperties.DECLARATION_BOOLEAN ){
 				obj = new Boolean(true);
 				stat_data[0] = "真偽";
 				stat_data[2] = "true";
-			} else if( declaration == 5 ){
+			} else if( declaration == PenProperties.DECLARATION_DFP ){
 				obj = new dfp("0");
 				stat_data[0] = "DFP";
 				stat_data[2] = "0.";
@@ -345,32 +345,26 @@ public class IntVExecuter implements IntVParserVisitor{
 					String x = "";
 					String y = "";
 					var = array + String.valueOf(j) + "]";
-					switch(declaration){
-						case 1:
+					if( declaration == PenProperties.DECLARATION_INT ) {
 							x = "整数";
 							y = "0";
 							vec.add(new Integer(0));
-							break;
-						case 2:
+					} else if( declaration == PenProperties.DECLARATION_DOUBLE ) {
 							x = "実数";
 							y = "0.0";
 							vec.add(new Double(0));
-							break;
-						case 3:
+					} else if( declaration == PenProperties.DECLARATION_STRING ) {
 							x = "文字列";
 							y = "";
 							vec.add(new String());
-							break;
-						case 4:
+					} else if( declaration == PenProperties.DECLARATION_BOOLEAN ) {
 							x = "真偽";
 							y = "true";
 							vec.add(new Boolean(true));
-							break;
-						case 5:
+					} else if( declaration == PenProperties.DECLARATION_DFP ) {
 							x = "DFP";
 							y = "0.";
 							vec.add(new dfp("0"));
-							break;
 					}
 					
 					TableNoTable.put(var,new Integer(gui.vt_model.getRowCount()));
@@ -2193,15 +2187,15 @@ public class IntVExecuter implements IntVParserVisitor{
 			
 			if(return_var instanceof Vector){
 				return (Vector) return_var;
-			} else if(fc.decl == ASTFunction.ReturnValueInteger){
+			} else if(fc.decl == PenProperties.DECLARATION_INT){
 				return Double.valueOf(return_var.toString()).intValue();
-			} else if(fc.decl == ASTFunction.ReturnValueDouble){
+			} else if(fc.decl == PenProperties.DECLARATION_DOUBLE){
 				return Double.valueOf(return_var.toString());
-			} else if(fc.decl == ASTFunction.ReturnValueString){
+			} else if(fc.decl == PenProperties.DECLARATION_STRING){
 				return return_var.toString();
-			} else if(fc.decl == ASTFunction.ReturnValueBoolean){
+			} else if(fc.decl == PenProperties.DECLARATION_BOOLEAN){
 				return Boolean.valueOf(return_var.toString());
-			} else if(fc.decl == ASTFunction.ReturnValueDFP){
+			} else if(fc.decl == PenProperties.DECLARATION_DFP){
 				return new dfp(return_var.toString());
 			} else {
 				return null;

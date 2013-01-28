@@ -99,11 +99,10 @@ TOKEN [IGNORE_CASE] :
 {
 	<VARGLOBAL			: "グローバル変数">
 	|	< VARINT		: "整数" >
-	|	< VARFLOAT		: "実数" >
+	|	< VARDOUBLE		: "実数" >
 	|	< VARSTRING		: "文字列" >
 	|	< VARBOOLEAN	: "真偽" >
 	|	< VARDFP		: "DFP" >
-	|	< VARREFERENCE		: "参照" >
 	|	< PROCEDURAL		: "手続き" >
 	|	< ENDPROCEDURAL		: "手続き" ( "終了" | "終わり" ) >
 	|	< BREAKPROCEDURAL	: "手続きを抜ける" >
@@ -348,15 +347,15 @@ void Function() :
 {
 	( 
 		<FUNCTION> (
-			<VARINT>		{ jjtn000.decl = 1; }
-			|	<VARFLOAT>	{ jjtn000.decl = 2; }
-			|	<VARSTRING>	{ jjtn000.decl = 3; }
-			|	<VARBOOLEAN>{ jjtn000.decl = 4; }
-			|	<VARDFP>	{ jjtn000.decl = 5; }
+			<VARINT>		{ jjtn000.decl = PenProperties.DECLARATION_INT; }
+			|	<VARDOUBLE>	{ jjtn000.decl = PenProperties.DECLARATION_DOUBLE; }
+			|	<VARSTRING>	{ jjtn000.decl = PenProperties.DECLARATION_STRING; }
+			|	<VARBOOLEAN>{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
+			|	<VARDFP>	{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
 		)
 		t=<IDENT> <LP> [ FunctionVar() ] <RP> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
 		( VarDecl() | Stat() )* #Block <ENDFUNCTION>
-		|	<PROCEDURAL>	{ jjtn000.decl = 0; }
+		|	<PROCEDURAL>	{ jjtn000.decl = PenProperties.DECLARATION_PROCEDURAL; }
 		t=<IDENT> <LP> [ FunctionVar() ] <RP> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
 		( VarDecl() | Stat() )* #Block <ENDPROCEDURAL>
 		
@@ -372,12 +371,11 @@ void FunctionVar() :
 {}
 {
 	(
-		<VARINT>	{ jjtn000.decl = 1; }
-		| <VARFLOAT>	{ jjtn000.decl = 2; }
-		| <VARSTRING>	{ jjtn000.decl = 3; }
-		| <VARBOOLEAN>	{ jjtn000.decl = 4; }
-		| <VARDFP>		{ jjtn000.decl = 5; }
-		| <VARREFERENCE>{ jjtn000.decl = 6; }
+		<VARINT>	{ jjtn000.decl = PenProperties.DECLARATION_INT; }
+		| <VARDOUBLE>	{ jjtn000.decl = PenProperties.DECLARATION_DOUBLE; }
+		| <VARSTRING>	{ jjtn000.decl = PenProperties.DECLARATION_STRING; }
+		| <VARBOOLEAN>	{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
+		| <VARDFP>		{ jjtn000.decl = PenProperties.DECLARATION_DFP; }
 	) Decl() [ <CM> FunctionVar() ]
 }
 
@@ -385,11 +383,11 @@ void VarDecl() :
 {}
 {
 	(
-		<VARINT>	{ jjtn000.decl = 1; }
-		| <VARFLOAT>	{ jjtn000.decl = 2; }
-		| <VARSTRING>	{ jjtn000.decl = 3; }
-		| <VARBOOLEAN>	{ jjtn000.decl = 4; }
-		| <VARDFP>		{ jjtn000.decl = 5; }
+		<VARINT>	{ jjtn000.decl = PenProperties.DECLARATION_INT; }
+		| <VARDOUBLE>	{ jjtn000.decl = PenProperties.DECLARATION_DOUBLE; }
+		| <VARSTRING>	{ jjtn000.decl = PenProperties.DECLARATION_STRING; }
+		| <VARBOOLEAN>	{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
+		| <VARDFP>		{ jjtn000.decl = PenProperties.DECLARATION_DFP; }
 	) Decl() ( <CM> Decl() )* { 
 				jjtn000.line_num1 = jj_consume_token(SM).beginLine;
 			}

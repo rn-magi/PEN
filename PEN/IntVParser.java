@@ -37,7 +37,7 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
           try {
             switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
             case VARINT:
-            case VARFLOAT:
+            case VARDOUBLE:
             case VARSTRING:
             case VARBOOLEAN:
             case VARDFP:
@@ -210,23 +210,23 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
           switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
           case VARINT:
             jj_consume_token(VARINT);
-                                                  jjtn000.decl = 1;
+                                                  jjtn000.decl = PenProperties.DECLARATION_INT;
             break;
-          case VARFLOAT:
-            jj_consume_token(VARFLOAT);
-                                                  jjtn000.decl = 2;
+          case VARDOUBLE:
+            jj_consume_token(VARDOUBLE);
+                                                  jjtn000.decl = PenProperties.DECLARATION_DOUBLE;
             break;
           case VARSTRING:
             jj_consume_token(VARSTRING);
-                                                  jjtn000.decl = 3;
+                                                  jjtn000.decl = PenProperties.DECLARATION_STRING;
             break;
           case VARBOOLEAN:
             jj_consume_token(VARBOOLEAN);
-                                              jjtn000.decl = 4;
+                                              jjtn000.decl = PenProperties.DECLARATION_BOOLEAN;
             break;
           case VARDFP:
             jj_consume_token(VARDFP);
-                                                  jjtn000.decl = 5;
+                                                  jjtn000.decl = PenProperties.DECLARATION_BOOLEAN;
             break;
           default:
             jj_la1[1] = jj_gen;
@@ -237,11 +237,10 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
           jj_consume_token(LP);
           switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
           case VARINT:
-          case VARFLOAT:
+          case VARDOUBLE:
           case VARSTRING:
           case VARBOOLEAN:
           case VARDFP:
-          case VARREFERENCE:
             FunctionVar();
             break;
           default:
@@ -269,7 +268,7 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
               case HT_STR:
               case NULL_STR:
               case VARINT:
-              case VARFLOAT:
+              case VARDOUBLE:
               case VARSTRING:
               case VARBOOLEAN:
               case VARDFP:
@@ -357,7 +356,7 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
               }
               switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
               case VARINT:
-              case VARFLOAT:
+              case VARDOUBLE:
               case VARSTRING:
               case VARBOOLEAN:
               case VARDFP:
@@ -481,16 +480,15 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
           break;
         case PROCEDURAL:
           jj_consume_token(PROCEDURAL);
-                                          jjtn000.decl = 0;
+                                          jjtn000.decl = PenProperties.DECLARATION_PROCEDURAL;
           t = jj_consume_token(IDENT);
           jj_consume_token(LP);
           switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
           case VARINT:
-          case VARFLOAT:
+          case VARDOUBLE:
           case VARSTRING:
           case VARBOOLEAN:
           case VARDFP:
-          case VARREFERENCE:
             FunctionVar();
             break;
           default:
@@ -518,7 +516,7 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
               case HT_STR:
               case NULL_STR:
               case VARINT:
-              case VARFLOAT:
+              case VARDOUBLE:
               case VARSTRING:
               case VARBOOLEAN:
               case VARDFP:
@@ -606,7 +604,7 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
               }
               switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
               case VARINT:
-              case VARFLOAT:
+              case VARDOUBLE:
               case VARSTRING:
               case VARBOOLEAN:
               case VARDFP:
@@ -772,27 +770,23 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
         switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
         case VARINT:
           jj_consume_token(VARINT);
-                                  jjtn000.decl = 1;
+                                  jjtn000.decl = PenProperties.DECLARATION_INT;
           break;
-        case VARFLOAT:
-          jj_consume_token(VARFLOAT);
-                                  jjtn000.decl = 2;
+        case VARDOUBLE:
+          jj_consume_token(VARDOUBLE);
+                                  jjtn000.decl = PenProperties.DECLARATION_DOUBLE;
           break;
         case VARSTRING:
           jj_consume_token(VARSTRING);
-                                  jjtn000.decl = 3;
+                                  jjtn000.decl = PenProperties.DECLARATION_STRING;
           break;
         case VARBOOLEAN:
           jj_consume_token(VARBOOLEAN);
-                                  jjtn000.decl = 4;
+                                  jjtn000.decl = PenProperties.DECLARATION_BOOLEAN;
           break;
         case VARDFP:
           jj_consume_token(VARDFP);
-                                          jjtn000.decl = 5;
-          break;
-        case VARREFERENCE:
-          jj_consume_token(VARREFERENCE);
-                                  jjtn000.decl = 6;
+                                          jjtn000.decl = PenProperties.DECLARATION_DFP;
           break;
         default:
           jj_la1[9] = jj_gen;
@@ -844,23 +838,23 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
         switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
         case VARINT:
           jj_consume_token(VARINT);
-                                  jjtn000.decl = 1;
+                                  jjtn000.decl = PenProperties.DECLARATION_INT;
           break;
-        case VARFLOAT:
-          jj_consume_token(VARFLOAT);
-                                  jjtn000.decl = 2;
+        case VARDOUBLE:
+          jj_consume_token(VARDOUBLE);
+                                  jjtn000.decl = PenProperties.DECLARATION_DOUBLE;
           break;
         case VARSTRING:
           jj_consume_token(VARSTRING);
-                                  jjtn000.decl = 3;
+                                  jjtn000.decl = PenProperties.DECLARATION_STRING;
           break;
         case VARBOOLEAN:
           jj_consume_token(VARBOOLEAN);
-                                  jjtn000.decl = 4;
+                                  jjtn000.decl = PenProperties.DECLARATION_BOOLEAN;
           break;
         case VARDFP:
           jj_consume_token(VARDFP);
-                                          jjtn000.decl = 5;
+                                          jjtn000.decl = PenProperties.DECLARATION_DFP;
           break;
         default:
           jj_la1[11] = jj_gen;
@@ -8417,7 +8411,7 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
       if (jj_3R_38()) { jj_scanpos = xsp; break; }
     }
     xsp = jj_scanpos;
-    if (jj_scan_token(78)) {
+    if (jj_scan_token(77)) {
     jj_scanpos = xsp;
     if (jj_3R_39()) return true;
     }
@@ -8553,16 +8547,16 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
       jj_la1_0 = new int[] {0xa0000201,0x0,0x0,0xa0000200,0xa0000200,0x0,0xa0000200,0xa0000200,0x0,0x0,0x0,0x0,0x0,0x8000000,0x0,0xa0000200,0x0,0xa0000200,0xa0000200,0x0,0x0,0xa0000200,0xa0000200,0x0,0x0,0xa0000200,0xa0000200,0xa0000200,0x20000200,0x0,0xa0000200,0xa0000200,0xa0000200,0x0,0xa0000200,0x20000200,0x0,0x0,0xa0000200,0x800000,0x400000,0x1000000,0x1000000,0x3f0000,0x3f0000,0x300,0x3c00,0x3c00,0x20000200,0x20000000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x20000200,0x28000000,0x0,0x0,0x20000200,0x0,};
    }
    private static void jj_la1_init_1() {
-      jj_la1_1 = new int[] {0x8225f7f8,0x1f000,0x3f000,0x8201f7f8,0x8201f7f8,0x3f000,0x8201f7f8,0x8201f7f8,0x240000,0x3f000,0x1,0x1f000,0x1,0x0,0x1,0x820007f8,0x1,0x820007f8,0x820007f8,0x30000000,0x30000000,0x820007f8,0x820007f8,0x30000000,0x30000000,0x820007f8,0x820007f8,0x820007f8,0x7f8,0x0,0x820007f8,0x820007f8,0x820007f8,0x40000000,0x820007f8,0x7f8,0x2,0x0,0x820007f8,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x7f8,0x7f8,0x0,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x7f8,0x0,0x1,0x1,0x7f8,0x7e0,};
+      jj_la1_1 = new int[] {0x4113f7f8,0x1f000,0x1f000,0x4101f7f8,0x4101f7f8,0x1f000,0x4101f7f8,0x4101f7f8,0x120000,0x1f000,0x1,0x1f000,0x1,0x0,0x1,0x410007f8,0x1,0x410007f8,0x410007f8,0x18000000,0x18000000,0x410007f8,0x410007f8,0x18000000,0x18000000,0x410007f8,0x410007f8,0x410007f8,0x7f8,0x0,0x410007f8,0x410007f8,0x410007f8,0x20000000,0x410007f8,0x7f8,0x2,0x0,0x410007f8,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x7f8,0x7f8,0x0,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x7f8,0x0,0x1,0x1,0x7f8,0x7e0,};
    }
    private static void jj_la1_init_2() {
-      jj_la1_2 = new int[] {0xfffe9000,0x0,0x0,0xfffe9000,0xfffe9000,0x0,0xfffe9000,0xfffe9000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xfffe8000,0x0,0xfffe9000,0xfffe9000,0x0,0x0,0xfffe9000,0xfffe9000,0x0,0x0,0xfffe9000,0xfffe9000,0xfffe9000,0xfffe0000,0xc0,0xfffe9000,0xfffe9000,0xfffe9000,0x204,0xfffe9000,0xfffe1000,0x0,0x6000,0xfffe9000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xfffe0000,0xfffe0000,0xfffe0000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xfffe0000,0x0,0x0,0x0,0xfffe0000,0x0,};
+      jj_la1_2 = new int[] {0xffff4800,0x0,0x0,0xffff4800,0xffff4800,0x0,0xffff4800,0xffff4800,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xffff4000,0x0,0xffff4800,0xffff4800,0x0,0x0,0xffff4800,0xffff4800,0x0,0x0,0xffff4800,0xffff4800,0xffff4800,0xffff0000,0x60,0xffff4800,0xffff4800,0xffff4800,0x102,0xffff4800,0xffff0800,0x0,0x3000,0xffff4800,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xffff0000,0xffff0000,0xffff0000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xffff0000,0x0,0x0,0x0,0xffff0000,0x0,};
    }
    private static void jj_la1_init_3() {
-      jj_la1_3 = new int[] {0xffffffff,0x0,0x0,0xffffffff,0xffffffff,0x0,0xffffffff,0xffffffff,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xffffffff,0x0,0xffffffff,0xffffffff,0x0,0x0,0xffffffff,0xffffffff,0x0,0x0,0xffffffff,0xffffffff,0xffffffff,0x7f,0x0,0xffffffff,0xffffffff,0xffffffff,0x0,0xffffffff,0x7f,0x0,0x0,0xffffffff,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x7f,0x7f,0x7f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x7f,0x0,0x0,0x0,0x7f,0x0,};
+      jj_la1_3 = new int[] {0xffffffff,0x0,0x0,0xffffffff,0xffffffff,0x0,0xffffffff,0xffffffff,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xffffffff,0x0,0xffffffff,0xffffffff,0x0,0x0,0xffffffff,0xffffffff,0x0,0x0,0xffffffff,0xffffffff,0xffffffff,0x3f,0x0,0xffffffff,0xffffffff,0xffffffff,0x0,0xffffffff,0x3f,0x0,0x0,0xffffffff,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x3f,0x3f,0x3f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x3f,0x0,0x0,0x0,0x3f,0x0,};
    }
    private static void jj_la1_init_4() {
-      jj_la1_4 = new int[] {0xb9fffff,0x0,0x0,0xb9fffff,0xb9fffff,0x0,0xb9fffff,0xb9fffff,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xb9fffff,0x0,0xb9fffff,0xb9fffff,0x0,0x0,0xb9fffff,0xb9fffff,0x0,0x0,0xb9fffff,0xb9fffff,0xb9fffff,0xb823700,0x0,0xb9fffff,0xb9fffff,0xb9fffff,0x0,0xb9fffff,0xb823700,0x0,0x0,0xb9fffff,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xb823700,0xb823700,0x23700,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xb823700,0x0,0x0,0x0,0xb823700,0x0,};
+      jj_la1_4 = new int[] {0x5cfffff,0x0,0x0,0x5cfffff,0x5cfffff,0x0,0x5cfffff,0x5cfffff,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x5cfffff,0x0,0x5cfffff,0x5cfffff,0x0,0x0,0x5cfffff,0x5cfffff,0x0,0x0,0x5cfffff,0x5cfffff,0x5cfffff,0x5c11b80,0x0,0x5cfffff,0x5cfffff,0x5cfffff,0x0,0x5cfffff,0x5c11b80,0x0,0x0,0x5cfffff,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x5c11b80,0x5c11b80,0x11b80,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x5c11b80,0x0,0x0,0x0,0x5c11b80,0x0,};
    }
    private static void jj_la1_init_5() {
       jj_la1_5 = new int[] {0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,};
@@ -8756,7 +8750,7 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
   /** Generate ParseException. */
   public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[164];
+    boolean[] la1tokens = new boolean[163];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
@@ -8785,7 +8779,7 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
         }
       }
     }
-    for (int i = 0; i < 164; i++) {
+    for (int i = 0; i < 163; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;

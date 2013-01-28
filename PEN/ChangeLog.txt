@@ -1,5 +1,26 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_5 (2013/01/28)
+  [ Fix ]
+    ・（内部変更）リファクタリング
+    ・ReadMeファイルの修正
+
+  [ NewFile ]
+    - PEN.command
+  [ FixFile ]
+    - ASTFunction.java
+    - ChangeLog.txt
+    - HelpPenButtonListener.java
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - MainGUI.java
+    - PenProperties.java
+    - ReadMe.txt
+
 ・ver 1.20_4 (2012/08/07)
   [ BugFix ]
     ・誤った条件式の構文を受理してしまうのを修正
