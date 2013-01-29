@@ -118,6 +118,7 @@ public class FileOpen {
 				detector.handleData(buf, 0, nread);
 			}
 			detector.dataEnd();
+			fis.close();
 
 			String encoding = detector.getDetectedCharset();
 			detector.reset();

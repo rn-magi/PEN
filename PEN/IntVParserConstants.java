@@ -83,13 +83,13 @@ public interface IntVParserConstants {
   /** RegularExpression Id. */
   int VARINT = 44;
   /** RegularExpression Id. */
-  int VARDOUBLE = 45;
+  int VARLONG = 45;
   /** RegularExpression Id. */
-  int VARSTRING = 46;
+  int VARDOUBLE = 46;
   /** RegularExpression Id. */
-  int VARBOOLEAN = 47;
+  int VARSTRING = 47;
   /** RegularExpression Id. */
-  int VARDFP = 48;
+  int VARBOOLEAN = 48;
   /** RegularExpression Id. */
   int PROCEDURAL = 49;
   /** RegularExpression Id. */
@@ -175,9 +175,9 @@ public interface IntVParserConstants {
   /** RegularExpression Id. */
   int INT = 90;
   /** RegularExpression Id. */
-  int LOG = 91;
+  int LONG = 91;
   /** RegularExpression Id. */
-  int DFP = 92;
+  int LOG = 92;
   /** RegularExpression Id. */
   int LENGTH = 93;
   /** RegularExpression Id. */
@@ -357,10 +357,10 @@ public interface IntVParserConstants {
     "\"NULL\"",
     "\"\\u30b0\\u30ed\\u30fc\\u30d0\\u30eb\\u5909\\u6570\"",
     "\"\\u6574\\u6570\"",
+    "\"\\u9577\\u6574\\u6570\"",
     "\"\\u5b9f\\u6570\"",
     "\"\\u6587\\u5b57\\u5217\"",
     "\"\\u771f\\u507d\"",
-    "\"DFP\"",
     "\"\\u624b\\u7d9a\\u304d\"",
     "<ENDPROCEDURAL>",
     "\"\\u624b\\u7d9a\\u304d\\u3092\\u629c\\u3051\\u308b\"",
@@ -403,8 +403,8 @@ public interface IntVParserConstants {
     "<ROUND>",
     "<ABS>",
     "<INT>",
+    "<LONG>",
     "<LOG>",
-    "<DFP>",
     "<LENGTH>",
     "<APPEND>",
     "<SUBSTRING>",

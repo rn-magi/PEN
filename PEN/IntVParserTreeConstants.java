@@ -13,110 +13,107 @@ public interface IntVParserTreeConstants
   public int JJTASSIGNSTATS = 9;
   public int JJTASSIGNSTAT = 10;
   public int JJTIFSTAT = 11;
-  public int JJTWHILESTAT = 12;
-  public int JJTREPEATUNTIL = 13;
-  public int JJTFORSTAT = 14;
-  public int JJTFORSTATADD = 15;
-  public int JJTWHILESWITCHFOR = 16;
-  public int JJTCASE = 17;
-  public int JJTSWITCH = 18;
-  public int JJTLABEL = 19;
-  public int JJTGETSTAT = 20;
-  public int JJTPUTSTAT = 21;
-  public int JJTORNODE = 22;
-  public int JJTANDNODE = 23;
-  public int JJTNOTNODE = 24;
-  public int JJTEQNODE = 25;
-  public int JJTNTNODE = 26;
-  public int JJTLSNODE = 27;
-  public int JJTGTNODE = 28;
-  public int JJTLENODE = 29;
-  public int JJTGENODE = 30;
-  public int JJTADDNODE = 31;
-  public int JJTSUBNODE = 32;
-  public int JJTMULNODE = 33;
-  public int JJTDIVNODE = 34;
-  public int JJTSURNODE = 35;
-  public int JJTMINNODE = 36;
-  public int JJTGET = 37;
-  public int JJTRANDOM = 38;
-  public int JJTSINE = 39;
-  public int JJTCOSINE = 40;
-  public int JJTTANGENT = 41;
-  public int JJTSQRT = 42;
-  public int JJTFLOOR = 43;
-  public int JJTCEIL = 44;
-  public int JJTROUND = 45;
-  public int JJTABS = 46;
-  public int JJTLOG = 47;
-  public int JJTINT = 48;
-  public int JJTDFP = 49;
-  public int JJTLENGTH = 50;
-  public int JJTAPPEND = 51;
-  public int JJTSUBSTRING = 52;
-  public int JJTINSERT = 53;
-  public int JJTREPLACE = 54;
-  public int JJTEXTRACT = 55;
-  public int JJTSTR2INT = 56;
-  public int JJTINT2STR = 57;
-  public int JJTCOMPARE = 58;
-  public int JJTGOPENWINDOW = 59;
-  public int JJTGOPENGRAPHWINDOW = 60;
-  public int JJTGCLOSEWINDOW = 61;
-  public int JJTGCLEARWINDOW = 62;
-  public int JJTGSAVEWINDOW = 63;
-  public int JJTGSETORIGIN = 64;
-  public int JJTGSETMAP = 65;
-  public int JJTGSETFILLCOLOR = 66;
-  public int JJTGSETLINECOLOR = 67;
-  public int JJTGSETTEXTCOLOR = 68;
-  public int JJTGSETFONT = 69;
-  public int JJTGSETFONTTYPE = 70;
-  public int JJTGSETFONTSIZE = 71;
-  public int JJTGSETDOTSHAPE = 72;
-  public int JJTGSETARROWDIR = 73;
-  public int JJTGSETARROWTYPE = 74;
-  public int JJTGSETLINESHAPE = 75;
-  public int JJTGSETLINEWIDTH = 76;
-  public int JJTGDRAWPOINT = 77;
-  public int JJTGDRAWLINE = 78;
-  public int JJTGDRAWTEXT = 79;
-  public int JJTGDRAWCIRCLE = 80;
-  public int JJTGFILLCIRCLE = 81;
-  public int JJTGDRAWOVAL = 82;
-  public int JJTGFILLOVAL = 83;
-  public int JJTGDRAWBOX = 84;
-  public int JJTGFILLBOX = 85;
-  public int JJTGDRAWARC = 86;
-  public int JJTGFILLARC = 87;
-  public int JJTGDRAWPOLYGON = 88;
-  public int JJTGFILLPOLYGON = 89;
-  public int JJTGDRAWPOLYLINE = 90;
-  public int JJTGDRAWIMAGE = 91;
-  public int JJTFILE_OPENR = 92;
-  public int JJTFILE_OPENW = 93;
-  public int JJTFILE_OPENA = 94;
-  public int JJTFILE_CLOSE = 95;
-  public int JJTFILE_GETSTR = 96;
-  public int JJTFILE_GETLINE = 97;
-  public int JJTFILE_PUTSTR = 98;
-  public int JJTFILE_PUTLINE = 99;
-  public int JJTFILE_FLUSH = 100;
-  public int JJTFILE_ISFILE = 101;
-  public int JJTFILE_RENAME = 102;
-  public int JJTFILE_REMOVE = 103;
-  public int JJTSLEEP = 104;
-  public int JJTIDENT = 105;
-  public int JJTARRAYNUM = 106;
-  public int JJTFUNCTIONCALL = 107;
-  public int JJTRETURN = 108;
-  public int JJTBREAK = 109;
-  public int JJTLITERAL = 110;
-  public int JJTFLOATLITERAL = 111;
-  public int JJTTRUE = 112;
-  public int JJTFALSE = 113;
-  public int JJTSTRLIT = 114;
-  public int JJTEXTRA_STR = 115;
+  public int JJTREPEATUNTIL = 12;
+  public int JJTFORSTATADD = 13;
+  public int JJTWHILESWITCHFOR = 14;
+  public int JJTCASE = 15;
+  public int JJTLABEL = 16;
+  public int JJTGETSTAT = 17;
+  public int JJTPUTSTAT = 18;
+  public int JJTORNODE = 19;
+  public int JJTANDNODE = 20;
+  public int JJTNOTNODE = 21;
+  public int JJTEQNODE = 22;
+  public int JJTNTNODE = 23;
+  public int JJTLSNODE = 24;
+  public int JJTGTNODE = 25;
+  public int JJTLENODE = 26;
+  public int JJTGENODE = 27;
+  public int JJTADDNODE = 28;
+  public int JJTSUBNODE = 29;
+  public int JJTMULNODE = 30;
+  public int JJTDIVNODE = 31;
+  public int JJTSURNODE = 32;
+  public int JJTMINNODE = 33;
+  public int JJTGET = 34;
+  public int JJTRANDOM = 35;
+  public int JJTSINE = 36;
+  public int JJTCOSINE = 37;
+  public int JJTTANGENT = 38;
+  public int JJTSQRT = 39;
+  public int JJTFLOOR = 40;
+  public int JJTCEIL = 41;
+  public int JJTROUND = 42;
+  public int JJTABS = 43;
+  public int JJTLOG = 44;
+  public int JJTINT = 45;
+  public int JJTLONG = 46;
+  public int JJTLENGTH = 47;
+  public int JJTAPPEND = 48;
+  public int JJTSUBSTRING = 49;
+  public int JJTINSERT = 50;
+  public int JJTREPLACE = 51;
+  public int JJTEXTRACT = 52;
+  public int JJTSTR2INT = 53;
+  public int JJTINT2STR = 54;
+  public int JJTCOMPARE = 55;
+  public int JJTGOPENWINDOW = 56;
+  public int JJTGOPENGRAPHWINDOW = 57;
+  public int JJTGCLOSEWINDOW = 58;
+  public int JJTGCLEARWINDOW = 59;
+  public int JJTGSAVEWINDOW = 60;
+  public int JJTGSETORIGIN = 61;
+  public int JJTGSETMAP = 62;
+  public int JJTGSETFILLCOLOR = 63;
+  public int JJTGSETLINECOLOR = 64;
+  public int JJTGSETTEXTCOLOR = 65;
+  public int JJTGSETFONT = 66;
+  public int JJTGSETFONTTYPE = 67;
+  public int JJTGSETFONTSIZE = 68;
+  public int JJTGSETDOTSHAPE = 69;
+  public int JJTGSETARROWDIR = 70;
+  public int JJTGSETARROWTYPE = 71;
+  public int JJTGSETLINESHAPE = 72;
+  public int JJTGSETLINEWIDTH = 73;
+  public int JJTGDRAWPOINT = 74;
+  public int JJTGDRAWLINE = 75;
+  public int JJTGDRAWTEXT = 76;
+  public int JJTGDRAWCIRCLE = 77;
+  public int JJTGFILLCIRCLE = 78;
+  public int JJTGDRAWOVAL = 79;
+  public int JJTGFILLOVAL = 80;
+  public int JJTGDRAWBOX = 81;
+  public int JJTGFILLBOX = 82;
+  public int JJTGDRAWARC = 83;
+  public int JJTGFILLARC = 84;
+  public int JJTGDRAWPOLYGON = 85;
+  public int JJTGFILLPOLYGON = 86;
+  public int JJTGDRAWPOLYLINE = 87;
+  public int JJTGDRAWIMAGE = 88;
+  public int JJTFILE_OPENR = 89;
+  public int JJTFILE_OPENW = 90;
+  public int JJTFILE_OPENA = 91;
+  public int JJTFILE_CLOSE = 92;
+  public int JJTFILE_GETSTR = 93;
+  public int JJTFILE_GETLINE = 94;
+  public int JJTFILE_PUTSTR = 95;
+  public int JJTFILE_PUTLINE = 96;
+  public int JJTFILE_FLUSH = 97;
+  public int JJTFILE_ISFILE = 98;
+  public int JJTFILE_RENAME = 99;
+  public int JJTFILE_REMOVE = 100;
+  public int JJTSLEEP = 101;
+  public int JJTIDENT = 102;
+  public int JJTARRAYNUM = 103;
+  public int JJTFUNCTIONCALL = 104;
+  public int JJTRETURN = 105;
+  public int JJTBREAK = 106;
+  public int JJTLITERAL = 107;
+  public int JJTFLOATLITERAL = 108;
+  public int JJTTRUE = 109;
+  public int JJTFALSE = 110;
+  public int JJTSTRLIT = 111;
+  public int JJTEXTRA_STR = 112;
 
 
   public String[] jjtNodeName = {
@@ -132,13 +129,10 @@ public interface IntVParserTreeConstants
     "AssignStats",
     "AssignStat",
     "IfStat",
-    "WhileStat",
     "RepeatUntil",
-    "ForStat",
     "ForStatAdd",
     "WhileSwitchFor",
     "Case",
-    "Switch",
     "Label",
     "GetStat",
     "PutStat",
@@ -169,7 +163,7 @@ public interface IntVParserTreeConstants
     "Abs",
     "Log",
     "Int",
-    "Dfp",
+    "Long",
     "Length",
     "Append",
     "Substring",
@@ -238,4 +232,4 @@ public interface IntVParserTreeConstants
     "EXTRA_STR",
   };
 }
-/* JavaCC - OriginalChecksum=42563d8948edfe67784d85a294f83b75 (do not edit this line) */
+/* JavaCC - OriginalChecksum=9a9b151bbd2eaea28940902cf09e7fc1 (do not edit this line) */

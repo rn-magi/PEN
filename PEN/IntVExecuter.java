@@ -6,8 +6,6 @@ import java.util.Vector;
 import javax.swing.JTextArea;
 import javax.swing.text.BadLocationException;
 
-import rossi.dfp.*;
-
 /**
  * IntVParserクラスによって生成した構文木の
  * 各ノードの処理を記述したクラス。
@@ -168,6 +166,9 @@ public class IntVExecuter implements IntVParserVisitor{
 		} else if( node.decl == PenProperties.DECLARATION_INT ){
 			String[] stat_data = {"整数", node.varName ,""};
 			gui.vt_model.addRow(stat_data);
+		} else if( node.decl == PenProperties.DECLARATION_LONG ){
+			String[] stat_data = {"長整数", node.varName ,""};
+			gui.vt_model.addRow(stat_data);
 		} else if( node.decl == PenProperties.DECLARATION_DOUBLE ) {
 			String[] stat_data = {"実数", node.varName ,""};
 			gui.vt_model.addRow(stat_data);
@@ -176,9 +177,6 @@ public class IntVExecuter implements IntVParserVisitor{
 			gui.vt_model.addRow(stat_data);
 		} else if( node.decl == PenProperties.DECLARATION_BOOLEAN ) {
 			String[] stat_data = {"真偽", node.varName ,""};
-			gui.vt_model.addRow(stat_data);
-		} else if( node.decl == PenProperties.DECLARATION_DFP ) {
-			String[] stat_data = {"DFP", node.varName ,""};
 			gui.vt_model.addRow(stat_data);
 		}
 		
@@ -201,22 +199,28 @@ public class IntVExecuter implements IntVParserVisitor{
 		} else {
 			String[] stat_data = {null, var_name ,null};
 			TableNoTable.put(var_name,new Integer(gui.vt_model.getRowCount()));
-
-			if( node.decl == PenProperties.DECLARATION_INT ){
-				obj = new Integer(Double.valueOf(var.toString()).intValue());
+			
+			if(node.decl == PenProperties.DECLARATION_INT){
+				if(var instanceof Double){
+					var = Double.valueOf(var.toString()).longValue();
+				}
+				obj = Long.valueOf(var.toString()).intValue();
 				stat_data[0] = "整数";
-			} else if( node.decl == PenProperties.DECLARATION_DOUBLE ){
+			} else if(node.decl == PenProperties.DECLARATION_LONG){
+				if(var instanceof Double){
+					var = Double.valueOf(var.toString()).longValue();
+				}
+				obj = Long.valueOf(var.toString());
+				stat_data[0] = "長整数";
+			} else if(node.decl == PenProperties.DECLARATION_DOUBLE){
 				obj = Double.valueOf(var.toString());
 				stat_data[0] = "実数";
-			} else if( node.decl == PenProperties.DECLARATION_STRING ){
+			} else if(node.decl == PenProperties.DECLARATION_STRING){
 				obj = String.valueOf(var.toString());
 				stat_data[0] = "文字列";
-			} else if( node.decl == PenProperties.DECLARATION_BOOLEAN ){
+			} else if(node.decl == PenProperties.DECLARATION_BOOLEAN){
 				obj = Boolean.valueOf(var.toString());
 				stat_data[0] = "真偽";
-			} else if( node.decl == PenProperties.DECLARATION_DFP ){
-				obj = new dfp(var.toString());
-				stat_data[0] = "DFP";
 			}
 			stat_data[2] = obj.toString();
 			gui.vt_model.addRow(stat_data);
@@ -240,10 +244,10 @@ public class IntVExecuter implements IntVParserVisitor{
 				TableNoTable.put(name,new Integer(gui.vt_model.getRowCount()));
 
 				if( (decl == PenProperties.DECLARATION_INT		&& ver instanceof Integer) || 
+					(decl == PenProperties.DECLARATION_LONG		&& ver instanceof Long) || 
 					(decl == PenProperties.DECLARATION_DOUBLE	&& ver instanceof Double) ||
 					(decl == PenProperties.DECLARATION_STRING	&& ver instanceof String) ||
-					(decl == PenProperties.DECLARATION_BOOLEAN	&& ver instanceof Boolean) ||
-					(decl == PenProperties.DECLARATION_DFP		&& ver instanceof dfp)
+					(decl == PenProperties.DECLARATION_BOOLEAN	&& ver instanceof Boolean)
 				) {
 					stat_data[0] = "参照";
 				} else {
@@ -293,7 +297,11 @@ public class IntVExecuter implements IntVParserVisitor{
 				obj = new Integer(0);
 				stat_data[0] = "整数";
 				stat_data[2] = "0";
-			} else if( declaration == PenProperties.DECLARATION_DOUBLE ){
+			} else if( declaration == PenProperties.DECLARATION_LONG ){
+				obj = new Long(0);
+				stat_data[0] = "長整数";
+				stat_data[2] = "0";
+			}  else if( declaration == PenProperties.DECLARATION_DOUBLE ){
 				obj = new Double(0.0);
 				stat_data[0] = "実数";
 				stat_data[2] = "0.0";
@@ -305,10 +313,6 @@ public class IntVExecuter implements IntVParserVisitor{
 				obj = new Boolean(true);
 				stat_data[0] = "真偽";
 				stat_data[2] = "true";
-			} else if( declaration == PenProperties.DECLARATION_DFP ){
-				obj = new dfp("0");
-				stat_data[0] = "DFP";
-				stat_data[2] = "0.";
 			}
 			symTable.put(node.varName, obj);
 			gui.vt_model.addRow(stat_data);
@@ -346,25 +350,25 @@ public class IntVExecuter implements IntVParserVisitor{
 					String y = "";
 					var = array + String.valueOf(j) + "]";
 					if( declaration == PenProperties.DECLARATION_INT ) {
-							x = "整数";
-							y = "0";
-							vec.add(new Integer(0));
+						x = "整数";
+						y = "0";
+						vec.add(new Integer(0));
+					} else if( declaration == PenProperties.DECLARATION_LONG ) {
+						x = "長整数";
+						y = "0";
+						vec.add(new Long(0));
 					} else if( declaration == PenProperties.DECLARATION_DOUBLE ) {
-							x = "実数";
-							y = "0.0";
-							vec.add(new Double(0));
+						x = "実数";
+						y = "0.0";
+						vec.add(new Double(0));
 					} else if( declaration == PenProperties.DECLARATION_STRING ) {
-							x = "文字列";
-							y = "";
-							vec.add(new String());
+						x = "文字列";
+						y = "";
+						vec.add(new String());
 					} else if( declaration == PenProperties.DECLARATION_BOOLEAN ) {
-							x = "真偽";
-							y = "true";
-							vec.add(new Boolean(true));
-					} else if( declaration == PenProperties.DECLARATION_DFP ) {
-							x = "DFP";
-							y = "0.";
-							vec.add(new dfp("0"));
+						x = "真偽";
+						y = "true";
+						vec.add(new Boolean(true));
 					}
 					
 					TableNoTable.put(var,new Integer(gui.vt_model.getRowCount()));
@@ -421,43 +425,54 @@ public class IntVExecuter implements IntVParserVisitor{
 				i = symTable.get(varName);
 			}
 			
-			if( i instanceof Integer){
-				obj = new Integer(Double.valueOf(input.toString()).intValue());
-				symTable.put(varName,obj);
-			} else if( i instanceof Double){
+			if(i instanceof Integer){
+				if(input instanceof Double){
+					input = Double.valueOf(input.toString()).longValue();
+				}
+				obj = Long.valueOf(input.toString()).intValue();
+			} else if(i instanceof Long){
+				if(input instanceof Double){
+					input = Double.valueOf(input.toString()).longValue();
+				}
+				obj = Long.valueOf(input.toString());
+			} else if(i instanceof Double){
 				obj = Double.valueOf(input.toString());
-				symTable.put(varName,obj);
-			} else if( i instanceof String){
+			} else if(i instanceof String){
 				obj = String.valueOf(input.toString());
-				symTable.put(varName,obj);
-			}else if( i instanceof Boolean){
+			} else if(i instanceof Boolean){
 				obj = Boolean.valueOf(input.toString());
-				symTable.put(varName,obj);
-			}else if( i instanceof dfp){
-				obj = new dfp(input.toString());
-				symTable.put(varName,obj);
-			} else if( i instanceof Vector){
+			}
+			
+			if(i instanceof Vector){
 				String tmpname = varName;
 				array_name = varName + "[";
 				Object tmp = node.jjtGetChild(0).jjtAccept(this, data);
 				varName = array_name + "]";
 				
-				if( tmp instanceof Vector){
+				if(tmp instanceof Vector){
 					setArrayVar( (Vector) input, tmpname + "[");
 					symTable.put(tmpname,(Vector) input);
 					return null;
-				} else if( tmp instanceof Integer){
-					obj = new Integer(Double.valueOf(input.toString()).intValue());
-				} else if( tmp instanceof Double){
+				} else if(tmp instanceof Integer){
+					if(input instanceof Double){
+						input = Double.valueOf(input.toString()).longValue();
+					}
+					obj = Long.valueOf(input.toString()).intValue();
+				} else if(tmp instanceof Long){
+					if(input instanceof Double){
+						input = Double.valueOf(input.toString()).longValue();
+					}
+					obj = Long.valueOf(input.toString());
+				} else if(tmp instanceof Double){
 					obj = Double.valueOf(input.toString());
-				} else if( tmp instanceof String){
+				} else if(tmp instanceof String){
 					obj = String.valueOf(input.toString());
-				} else if( tmp instanceof Boolean){
+				} else if(tmp instanceof Boolean){
 					obj = Boolean.valueOf(input.toString());
-				} else if( i instanceof dfp){
-					obj = new dfp(input.toString());
 				}
 				mainVec.set(tmpAddres, obj);
+			} else {
+				symTable.put(varName,obj);
 			}
 
 			Integer TableNo = (Integer)TableNoTable.get(varName);
@@ -525,13 +540,6 @@ public class IntVExecuter implements IntVParserVisitor{
 	}
 
 	/**
-	 * While文
-	 */
-	public Object visit(ASTWhileStat node, Object data) {
-		return runWhileStat(node, data);
-	}
-
-	/**
 	 * Do-While文
 	 */
 	public Object visit(ASTDoWhileStat node, Object data) {
@@ -589,32 +597,23 @@ public class IntVExecuter implements IntVParserVisitor{
 	}
 
 	/**
-	 * For文
-	 */
-	public Object visit(ASTForStat node, Object data) {
-		return runFor(node, data);
-	}
-
-	/**
 	 * For文の増減値を処理
 	 */
 	public Object visit(ASTForStatAdd node, Object data) {
 		if(node.jjtGetNumChildren() == 0){
-			return new Integer( node.op );
+			return new Integer(node.op);
 		}else{
 			Object obj = node.jjtGetChild(0).jjtAccept(this, data);
 			if( obj instanceof Integer ){
-				return new Integer( ((Integer) obj).intValue() * node.op );
+				return new Integer(((Integer) obj).intValue() * node.op);
+			} else if( obj instanceof Long ){
+				return new Long(((Long) obj).longValue() * node.op);
 			} else if( obj instanceof Double ){
-				return new Double( ((Double) obj).doubleValue() * node.op );
+				return new Double(((Double) obj).doubleValue() * node.op);
 			} else {
 				return null;
 			}
 		}
-	}
-
-	public Object visit(ASTSwitch node, Object data) {
-		return runSwitch(node, data);
 	}
 
 	public Object visit(ASTCase node, Object data) {
@@ -722,11 +721,11 @@ public class IntVExecuter implements IntVParserVisitor{
 		if(symTable.containsKey(varName)) {
 			tmp = symTable.get(varName);
 			if( tmp instanceof Integer ){
-				symTable.put(varName, new Integer(Double.valueOf(in.toString()).intValue()));
+				symTable.put(varName, new Integer(Long.valueOf(in.toString()).intValue()));
+			} else if( tmp instanceof Long ){
+				symTable.put(varName, Long.valueOf(in.toString()));
 			} else if( tmp instanceof Double ){
 				symTable.put(varName, Double.valueOf(in.toString()));
-			} else if( tmp instanceof dfp ){
-				symTable.put(varName, new dfp(in.toString()));
 			} else if( tmp instanceof Vector){
 				String tmpname = varName;
 				array_name = varName + "[";
@@ -734,11 +733,11 @@ public class IntVExecuter implements IntVParserVisitor{
 				varName = array_name + "]";
 				
 				if( tmp2 instanceof Integer){
-					obj = new Integer(Double.valueOf(in.toString()).intValue());
+					obj = new Integer(Long.valueOf(in.toString()).intValue());
+				} else if( tmp2 instanceof Long){
+					obj = Long.valueOf(in.toString());
 				} else if( tmp2 instanceof Double){
 					obj = Double.valueOf(in.toString());
-				} else if(tmp2 instanceof dfp){
-					obj = new dfp(in.toString());
 				}
 				mainVec.set(tmpAddres, obj);
 			}
@@ -756,11 +755,11 @@ public class IntVExecuter implements IntVParserVisitor{
 		
 		do {
 			varName = ((ASTIdent)(node.jjtGetChild(0))).varName;
-			dfp x = new dfp(node.jjtGetChild(0).jjtAccept(this, data).toString());
-			dfp y = new dfp(node.jjtGetChild(2).jjtAccept(this, data).toString());
+			Double x = new Double(node.jjtGetChild(0).jjtAccept(this, data).toString());
+			Double y = new Double(node.jjtGetChild(2).jjtAccept(this, data).toString());
 			op = ((ASTForStatAdd)(node.jjtGetChild(3))).op;
 
-			if( op > 0 && (x.lessThan(y) || x.equal(y)) || op < 0 && (x.greaterThan(y) || x.equal(y)) ){
+			if( op > 0 && (x.compareTo(y) <= 0) || op < 0 && (x.compareTo(y) >= 0)){
 				obj = node.jjtGetChild(4).jjtAccept(this, data);
 				if(obj != null){
 					run_flag(node.line_num2, true);
@@ -771,13 +770,7 @@ public class IntVExecuter implements IntVParserVisitor{
 				step = node.jjtGetChild(3).jjtAccept(this, data);
 				var  = node.jjtGetChild(0).jjtAccept(this, data);
 				
-				if( var instanceof Integer && step instanceof Integer){
-					int a = Integer.valueOf(var.toString()).intValue();
-					int b = Integer.valueOf(step.toString()).intValue();
-					in_var = new Integer(a + b);
-				} else if(var instanceof dfp){
-					in_var = ((dfp) var).add(new dfp(step.toString()));
-				} else {
+				if(var instanceof Double || step instanceof Double){
 					double a = Double.valueOf(var.toString()).doubleValue();
 					double b = Double.valueOf(step.toString()).doubleValue();
 					in_var = new Double(a + b);
@@ -785,9 +778,17 @@ public class IntVExecuter implements IntVParserVisitor{
 					if(var instanceof Integer){
 						in_var = new Integer(((Double) in_var).intValue());
 					}
+				} else if(var instanceof Long || step instanceof Long){
+					long a = Long.valueOf(var.toString()).longValue();
+					long b = Long.valueOf(step.toString()).longValue();
+					in_var = new Long(a + b);
+				} else {
+					int a = Integer.valueOf(var.toString()).intValue();
+					int b = Integer.valueOf(step.toString()).intValue();
+					in_var = new Integer(a + b);
 				}
 
-				if( symTable.get(varName) instanceof Vector){
+				if(symTable.get(varName) instanceof Vector){
 					String tmpname = varName;
 					array_name = varName + "[";
 					Object tmp2 = node.jjtGetChild(0).jjtAccept(this, data);
@@ -816,15 +817,15 @@ public class IntVExecuter implements IntVParserVisitor{
 		Object input = input_wait();
 		Object obj = new Object();
 		if(symTable.get(((ASTIdent)(node.jjtGetChild(0))).varName) instanceof Integer){
-			obj = new Integer(Double.valueOf(input.toString()).intValue());
-		}else if(symTable.get(((ASTIdent)(node.jjtGetChild(0))).varName) instanceof Double){
+			obj = new Integer(Long.valueOf(input.toString()).intValue());
+		} else if(symTable.get(((ASTIdent)(node.jjtGetChild(0))).varName) instanceof Long){
+			obj = Long.valueOf(input.toString());
+		} else if(symTable.get(((ASTIdent)(node.jjtGetChild(0))).varName) instanceof Double){
 			obj = Double.valueOf(input.toString());
-		}else if(symTable.get(((ASTIdent)(node.jjtGetChild(0))).varName) instanceof String){
+		} else if(symTable.get(((ASTIdent)(node.jjtGetChild(0))).varName) instanceof String){
 			obj = String.valueOf(input.toString());
-		}else if(symTable.get(((ASTIdent)(node.jjtGetChild(0))).varName) instanceof Boolean){
+		} else if(symTable.get(((ASTIdent)(node.jjtGetChild(0))).varName) instanceof Boolean){
 			obj = Boolean.valueOf(input.toString());
-		}else if(symTable.get(((ASTIdent)(node.jjtGetChild(0))).varName) instanceof dfp){
-			obj = new dfp(input.toString());
 		}
 		Integer TableNo = (Integer)TableNoTable.get(((ASTIdent)(node.jjtGetChild(0))).varName);
 		gui.vt_model.setValueAt(obj,TableNo.intValue(),2);
@@ -865,45 +866,117 @@ public class IntVExecuter implements IntVParserVisitor{
 		run_flag(node.line_num1, true);
 		return("break");
 	}
-
+	
 	/**
 	 * 比較演算子 "<" の処理
 	 */
 	public Object visit(ASTLSNode node, Object data) {
-		dfp i = new dfp(node.jjtGetChild(0).jjtAccept(this, data).toString());
-		dfp j = new dfp(node.jjtGetChild(1).jjtAccept(this, data).toString());
+		Object i = node.jjtGetChild(0).jjtAccept(this, data);
+		Object j = node.jjtGetChild(1).jjtAccept(this, data);
+		
+		int ans;
+		
+		if(i instanceof Double || j instanceof Double){
+			Double x = Double.valueOf(i.toString());
+			Double y = Double.valueOf(j.toString());
 
-		return new Boolean(i.lessThan(j));
+			ans = x.compareTo(y);
+		} else {
+			Long x = Long.valueOf(i.toString());
+			Long y = Long.valueOf(j.toString());
+			
+			ans = x.compareTo(y);
+		}
+		
+		if(ans < 0){
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
 	 * 比較演算子 ">" の処理
 	 */
 	public Object visit(ASTGTNode node, Object data) {
-		dfp i = new dfp(node.jjtGetChild(0).jjtAccept(this, data).toString());
-		dfp j = new dfp(node.jjtGetChild(1).jjtAccept(this, data).toString());
+		Object i = node.jjtGetChild(0).jjtAccept(this, data);
+		Object j = node.jjtGetChild(1).jjtAccept(this, data);
+		
+		int ans;
+		
+		if(i instanceof Double || j instanceof Double){
+			Double x = Double.valueOf(i.toString());
+			Double y = Double.valueOf(j.toString());
 
-		return new Boolean(i.greaterThan(j));
+			ans = x.compareTo(y);
+		} else {
+			Long x = Long.valueOf(i.toString());
+			Long y = Long.valueOf(j.toString());
+			
+			ans = x.compareTo(y);
+		}
+		
+		if(ans > 0){
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
 	 * 比較演算子 "<=" の処理
 	 */
 	public Object visit(ASTLENode node, Object data) {
-		dfp i = new dfp(node.jjtGetChild(0).jjtAccept(this, data).toString());
-		dfp j = new dfp(node.jjtGetChild(1).jjtAccept(this, data).toString());
+		Object i = node.jjtGetChild(0).jjtAccept(this, data);
+		Object j = node.jjtGetChild(1).jjtAccept(this, data);
 
-		return new Boolean(i.lessThan(j) || i.equal(j));
+		int ans;
+		
+		if(i instanceof Double || j instanceof Double){
+			Double x = Double.valueOf(i.toString());
+			Double y = Double.valueOf(j.toString());
+
+			ans = x.compareTo(y);
+		} else {
+			Long x = Long.valueOf(i.toString());
+			Long y = Long.valueOf(j.toString());
+			
+			ans = x.compareTo(y);
+		}
+		
+		if(ans <= 0){
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
 	 * 比較演算子 ">=" の処理
 	 */
 	public Object visit(ASTGENode node, Object data) {
-		dfp i = new dfp(node.jjtGetChild(0).jjtAccept(this, data).toString());
-		dfp j = new dfp(node.jjtGetChild(1).jjtAccept(this, data).toString());
+		Object i = node.jjtGetChild(0).jjtAccept(this, data);
+		Object j = node.jjtGetChild(1).jjtAccept(this, data);
 
-		return new Boolean(i.greaterThan(j) || i.equal(j));
+		int ans;
+		
+		if(i instanceof Double || j instanceof Double){
+			Double x = Double.valueOf(i.toString());
+			Double y = Double.valueOf(j.toString());
+
+			ans = x.compareTo(y);
+		} else {
+			Long x = Long.valueOf(i.toString());
+			Long y = Long.valueOf(j.toString());
+			
+			ans = x.compareTo(y);
+		}
+		
+		if(ans >= 0){
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -913,12 +986,10 @@ public class IntVExecuter implements IntVParserVisitor{
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
 		Object j = node.jjtGetChild(1).jjtAccept(this, data);
 		
-		if(i instanceof String || j instanceof String){
-			return new Boolean(i.toString().equals(j.toString()));
-		} else if(i instanceof Boolean && j instanceof Boolean){
+		if(i instanceof Boolean && j instanceof Boolean){
 			return new Boolean(((Boolean)i).booleanValue() == ((Boolean)j).booleanValue());
 		} else {
-			return new Boolean(new dfp(i.toString()).equal(new dfp(j.toString())));
+			return new Boolean(i.toString().equals(j.toString()));
 		}
 	}
 
@@ -929,12 +1000,10 @@ public class IntVExecuter implements IntVParserVisitor{
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
 		Object j = node.jjtGetChild(1).jjtAccept(this, data);
 		
-		if(i instanceof String || j instanceof String){
-			return new Boolean(!i.toString().equals(j.toString()));
-		} else if(i instanceof Boolean && j instanceof Boolean){
+		if(i instanceof Boolean && j instanceof Boolean){
 			return new Boolean(((Boolean) i).booleanValue() != ((Boolean) j).booleanValue());
 		} else {
-			return new Boolean(new dfp(i.toString()).unequal(new dfp(j.toString())));
+			return new Boolean(!i.toString().equals(j.toString()));
 		}
 	}
 
@@ -977,17 +1046,21 @@ public class IntVExecuter implements IntVParserVisitor{
 	public Object visit(ASTAddNode node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
 		Object j = node.jjtGetChild(1).jjtAccept(this, data);
-		if(i instanceof Integer && j instanceof Integer){
-			return new Integer( ((Integer) i).intValue() + ((Integer) j).intValue() );
-		} else if(i instanceof String || j instanceof String){
+		
+		if(i instanceof String || j instanceof String){
 			return new String(i.toString() + j.toString());
-		} else if(i instanceof dfp || j instanceof dfp){
-			return new dfp(new dfp(i.toString()).add(new dfp(j.toString())));
-		} else {
+		} else if(i instanceof Double || j instanceof Double){
 			return new Double(
 				Double.valueOf(i.toString()).doubleValue()
 				+ Double.valueOf(j.toString()).doubleValue()
 			);
+		} else if(i instanceof Long || j instanceof Long){
+			return new Long(
+				Long.valueOf(i.toString()).longValue()
+				+ Long.valueOf(j.toString()).longValue()
+			);
+		} else {
+			return new Integer(((Integer) i).intValue() + ((Integer) j).intValue());
 		}
 	}
 
@@ -997,15 +1070,19 @@ public class IntVExecuter implements IntVParserVisitor{
 	public Object visit(ASTSubNode node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
 		Object j = node.jjtGetChild(1).jjtAccept(this, data);
-		if(i instanceof Integer && j instanceof Integer){
-			return new Integer( ((Integer) i).intValue() - ((Integer) j).intValue() );
-		} else if(i instanceof dfp || j instanceof dfp){
-			return new dfp(new dfp(i.toString()).subtract(new dfp(j.toString())));
-		} else {
+		
+		if(i instanceof Double || j instanceof Double){
 			return new Double(
 				Double.valueOf(i.toString()).doubleValue()
 				- Double.valueOf(j.toString()).doubleValue()
 			);
+		} else if(i instanceof Long || j instanceof Long){
+			return new Long(
+				Long.valueOf(i.toString()).longValue()
+				- Long.valueOf(j.toString()).longValue()
+			);
+		} else {
+			return new Integer(((Integer) i).intValue() - ((Integer) j).intValue());
 		}
 	}
 
@@ -1015,15 +1092,19 @@ public class IntVExecuter implements IntVParserVisitor{
 	public Object visit(ASTMulNode node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
 		Object j = node.jjtGetChild(1).jjtAccept(this, data);
-		if(i instanceof Integer && j instanceof Integer){
-			return new Integer(((Integer) i).intValue() * ((Integer) j).intValue() );
-		} else if(i instanceof dfp || j instanceof dfp){
-			return new dfp(new dfp(i.toString()).multiply(new dfp(j.toString())));
-		} else {
+		
+		if(i instanceof Double || j instanceof Double){
 			return new Double(
 				Double.valueOf(i.toString()).doubleValue()
 				* Double.valueOf(j.toString()).doubleValue()
 			);
+		} else if(i instanceof Long || j instanceof Long){
+			return new Long(
+				Long.valueOf(i.toString()).longValue()
+				* Long.valueOf(j.toString()).longValue()
+			);
+		} else {
+			return new Integer(((Integer) i).intValue() * ((Integer) j).intValue());
 		}
 	}
 
@@ -1034,10 +1115,9 @@ public class IntVExecuter implements IntVParserVisitor{
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
 		Object j = node.jjtGetChild(1).jjtAccept(this, data);
 
-		if(i instanceof Integer && j instanceof Integer || (node.DivFlag && gui.penPro.getProperty(PenProperties.EXECUTER_DIV_MODE).equals("1"))){
-			return new Integer(Double.valueOf(i.toString()).intValue() / Double.valueOf(j.toString()).intValue());
-		} else if(i instanceof dfp || j instanceof dfp){
-			return new dfp(new dfp(i.toString()).divide(new dfp(j.toString())));
+		if((i instanceof Integer || i instanceof Long) && (j instanceof Integer || j instanceof Long)
+				|| (node.DivFlag && gui.penPro.getProperty(PenProperties.EXECUTER_DIV_MODE).equals("1"))){
+			return new Long(Long.valueOf(i.toString()) / Long.valueOf(j.toString()));
 		} else {
 			return new Double(
 				Double.valueOf(i.toString()).doubleValue()
@@ -1053,13 +1133,18 @@ public class IntVExecuter implements IntVParserVisitor{
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
 		Object j = node.jjtGetChild(1).jjtAccept(this, data);
 
-		if(i instanceof Integer && j instanceof Integer){
-			return new Integer(((Integer) i).intValue() % ((Integer) j).intValue() );
-		} else {
+		if(i instanceof Double || j instanceof Double){
 			return new Double(
 				Double.valueOf(i.toString()).doubleValue()
 				% Double.valueOf(j.toString()).doubleValue()
 			);
+		} else if(i instanceof Long || j instanceof Long){
+			return new Long(
+				Long.valueOf(i.toString()).longValue()
+				% Long.valueOf(j.toString()).longValue()
+			);
+		} else {
+			return new Integer(((Integer) i).intValue() % ((Integer) j).intValue());
 		}
 	}
 
@@ -1070,6 +1155,8 @@ public class IntVExecuter implements IntVParserVisitor{
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
 		if(i instanceof Integer){
 			return new Integer(-((Integer) i).intValue());
+		}else if(i instanceof Long){
+			return new Long(-Long.valueOf(i.toString()).longValue());
 		} else {
 			return new Double(-Double.valueOf(i.toString()).doubleValue());
 		}
@@ -1160,9 +1247,9 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTRandom node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
-		int j = Double.valueOf(i.toString()).intValue();
+		long j = Long.valueOf(i.toString()).longValue();
 		double random = Math.random() * (j + 1);
-		return new Integer((int)random);
+		return new Long((long)random);
 	}
 
 	/**
@@ -1170,7 +1257,7 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTSine node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
-		return dfpmath.sin(new dfp(i.toString()));
+		return Math.sin(Double.valueOf(i.toString()));
 	}
 
 	/**
@@ -1178,7 +1265,7 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTCosine node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
-		return dfpmath.cos(new dfp(i.toString()));
+		return Math.cos(Double.valueOf(i.toString()));
 	}
 
 	/**
@@ -1186,7 +1273,7 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTTangent node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
-		return dfpmath.tan(new dfp(i.toString()));
+		return Math.tan(Double.valueOf(i.toString()));
 	}
 
 	/**
@@ -1194,7 +1281,7 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTSqrt node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
-		return new dfp(i.toString()).sqrt();
+		return Math.sqrt(Double.valueOf(i.toString()));
 	}
 
 	/**
@@ -1213,9 +1300,13 @@ public class IntVExecuter implements IntVParserVisitor{
 	public Object visit(ASTAbs node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
 		if(i instanceof Integer){
-			int j = Double.valueOf(i.toString()).intValue();
+			int j = Long.valueOf(i.toString()).intValue();
 			int abs = Math.abs(j);
 			return new Integer(abs);
+		} else if(i instanceof Long){
+			long j = Long.valueOf(i.toString()).longValue();
+			long abs = Math.abs(j);
+			return new Long(abs);
 		} else {
 			double j = Double.valueOf(i.toString()).doubleValue();
 			double abs = Math.abs(j);
@@ -1228,7 +1319,7 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTCeil node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
-		return new dfp(i.toString()).ceil();
+		return Math.ceil(Double.valueOf(i.toString()));
 	}
 
 	/**
@@ -1236,7 +1327,7 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTFloor node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
-		return new dfp(i.toString()).floor();
+		return Math.floor(Double.valueOf(i.toString()));
 	}
 
 	/**
@@ -1244,7 +1335,7 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTRound node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
-		return new dfp(i.toString()).add(new dfp("0.5")).floor();
+		return Math.round(Double.valueOf(i.toString()));
 	}
 
 	/**
@@ -1257,12 +1348,12 @@ public class IntVExecuter implements IntVParserVisitor{
 	}
 
 	/**
-	 * dfp() : 引数の型を「DFP」に変換
+	 * long() : 引数の型を「Long」に変換
 	 */
-	public Object visit(ASTDfp node, Object data) {
+	public Object visit(ASTLong node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
-		dfp j = new dfp(i.toString());
-		return j;
+		long j = Double.valueOf(i.toString()).longValue();
+		return new Long(j);
 	}
 
 	/**
@@ -2195,8 +2286,6 @@ public class IntVExecuter implements IntVParserVisitor{
 				return return_var.toString();
 			} else if(fc.decl == PenProperties.DECLARATION_BOOLEAN){
 				return Boolean.valueOf(return_var.toString());
-			} else if(fc.decl == PenProperties.DECLARATION_DFP){
-				return new dfp(return_var.toString());
 			} else {
 				return null;
 			}
@@ -2220,8 +2309,6 @@ public class IntVExecuter implements IntVParserVisitor{
 						c[i] = String.class;
 					} else if( vartmp instanceof Boolean){
 						c[i] = boolean.class;
-					} else if( vartmp instanceof dfp){
-						c[i] = dfp.class;
 					}
 					o[i] = vartmp;
 				}
@@ -2366,12 +2453,12 @@ public class IntVExecuter implements IntVParserVisitor{
 		
 		String input_data = ckl.getInputLine();
 		if(input_data.matches("-?\\d+?")){
-			return new Integer(input_data);
+			return new Long(input_data);
 		} else if(input_data.matches("-?\\d+?.\\d+?")){
 			return new Double(input_data);
-		} else if(input_data.matches("true") || input_data.matches("TRUE") || input_data.matches("真")){
+		} else if(input_data.toLowerCase().matches("true") || input_data.matches("真")){
 			return new Boolean(true);
-		} else if(input_data.matches("false") || input_data.matches("FALSE") || input_data.matches("偽")){
+		} else if(input_data.toLowerCase().matches("false") || input_data.matches("偽")){
 			return new Boolean(false);
 		} else {
 			return input_data;
@@ -2389,17 +2476,18 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public void varSecure(String varName, Object in){
 		String[] stat_data = {null, varName ,in.toString()};
-		if( in instanceof String){
+		if(in instanceof String){
 			stat_data[0] = "文字列";
-		} else if( in instanceof Boolean){
+		} else if(in instanceof Boolean){
 			stat_data[0] = "真偽";
-		} else if( in instanceof dfp || gui.penPro.getProperty(PenProperties.EXECUTER_VAR_DECLARATION).equals("3")){
-			stat_data[0] = "DFP";
-			in = new dfp(in.toString());
-		} else if( in instanceof Integer){
-			stat_data[0] = "整数";
-		} else if( in instanceof Double){
+		} else if(in instanceof Double || gui.penPro.getProperty(PenProperties.EXECUTER_VAR_DECLARATION).equals("3")){
 			stat_data[0] = "実数";
+			in = Double.valueOf(in.toString());
+			stat_data[2] = in.toString();
+		} else if(in instanceof Long){
+			stat_data[0] = "長整数";
+		} else if(in instanceof Integer){
+			stat_data[0] = "整数";
 		}
 		TableNoTable.put(varName,new Integer(gui.vt_model.getRowCount()));
 		

@@ -99,10 +99,10 @@ TOKEN [IGNORE_CASE] :
 {
 	<VARGLOBAL			: "グローバル変数">
 	|	< VARINT		: "整数" >
+	|	< VARLONG		: "長整数" >
 	|	< VARDOUBLE		: "実数" >
 	|	< VARSTRING		: "文字列" >
 	|	< VARBOOLEAN	: "真偽" >
-	|	< VARDFP		: "DFP" >
 	|	< PROCEDURAL		: "手続き" >
 	|	< ENDPROCEDURAL		: "手続き" ( "終了" | "終わり" ) >
 	|	< BREAKPROCEDURAL	: "手続きを抜ける" >
@@ -145,8 +145,8 @@ TOKEN [IGNORE_CASE] :
 	|	< ROUND		: "round" <LP> >
 	|	< ABS		: "abs" <LP> >
 	|	< INT		: "int" <LP> >
+	|	< LONG		: "long" <LP> >
 	|	< LOG		: "log" <LP> >
-	|	< DFP		: "dfp" <LP> >
 	|	< LENGTH	: "length" <LP> >
 	|	< APPEND	: "append" <LP> >
 	|	< SUBSTRING	: "substring" <LP> >
@@ -348,10 +348,10 @@ void Function() :
 	( 
 		<FUNCTION> (
 			<VARINT>		{ jjtn000.decl = PenProperties.DECLARATION_INT; }
+			|	<VARLONG>	{ jjtn000.decl = PenProperties.DECLARATION_LONG; }
 			|	<VARDOUBLE>	{ jjtn000.decl = PenProperties.DECLARATION_DOUBLE; }
 			|	<VARSTRING>	{ jjtn000.decl = PenProperties.DECLARATION_STRING; }
 			|	<VARBOOLEAN>{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
-			|	<VARDFP>	{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
 		)
 		t=<IDENT> <LP> [ FunctionVar() ] <RP> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
 		( VarDecl() | Stat() )* #Block <ENDFUNCTION>
@@ -372,10 +372,10 @@ void FunctionVar() :
 {
 	(
 		<VARINT>	{ jjtn000.decl = PenProperties.DECLARATION_INT; }
+		| <VARLONG>		{ jjtn000.decl = PenProperties.DECLARATION_LONG; }
 		| <VARDOUBLE>	{ jjtn000.decl = PenProperties.DECLARATION_DOUBLE; }
 		| <VARSTRING>	{ jjtn000.decl = PenProperties.DECLARATION_STRING; }
 		| <VARBOOLEAN>	{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
-		| <VARDFP>		{ jjtn000.decl = PenProperties.DECLARATION_DFP; }
 	) Decl() [ <CM> FunctionVar() ]
 }
 
@@ -384,10 +384,10 @@ void VarDecl() :
 {
 	(
 		<VARINT>	{ jjtn000.decl = PenProperties.DECLARATION_INT; }
+		| <VARLONG>		{ jjtn000.decl = PenProperties.DECLARATION_LONG; }
 		| <VARDOUBLE>	{ jjtn000.decl = PenProperties.DECLARATION_DOUBLE; }
 		| <VARSTRING>	{ jjtn000.decl = PenProperties.DECLARATION_STRING; }
 		| <VARBOOLEAN>	{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
-		| <VARDFP>		{ jjtn000.decl = PenProperties.DECLARATION_DFP; }
 	) Decl() ( <CM> Decl() )* { 
 				jjtn000.line_num1 = jj_consume_token(SM).beginLine;
 			}
@@ -514,25 +514,11 @@ void ElseIfStat() #IfStat :
 	]		
 }
 
-void WhileStat() :
-{}
-{
-	Cond() <WHILE> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; } ( Stat() )* #Block
-	<ENDLOOP> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
-}
-
 void RepeatUntil() :
 {}
 {
 	<DOWHILE> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; } ( Stat() )* #Block
 	<DOWHILE2> Cond() <DOWHILE3> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
-}
-
-void ForStat() :
-{}
-{
-	Ident() <FOR> AddExpr() <FOR2> AddExpr() <FOR3> ForStatAdd() { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
-	(Stat())* #Block <ENDLOOP> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
 }
 
 void ForStatAdd() :
@@ -558,14 +544,6 @@ void WhileSwitchFor() :
 			(Stat())* #Block <ENDLOOP> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
 			{ jjtThis.p = jjtThis.fr; }
 	)
-}
-
-void Switch() :
-{}
-{
-	AddExpr() <SWITCH> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
-	(Stat())* #Case
-	<ENDSWITCH> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
 }
 
 void Label() :
@@ -701,7 +679,7 @@ void FunctionExpr() #void :
 	|	Abs()
 	|	Log()
 	|	Int()
-	|	Dfp()
+	|	Long()
 	|	Length()
 	|	Append()
 	|	Substring()
@@ -791,10 +769,10 @@ void Int() :
 	<INT>	AddExpr() <RP>
 }
 
-void Dfp() :
+void Long() :
 {}
 {
-	<DFP>	AddExpr() <RP>
+	<LONG>	AddExpr() <RP>
 }
 
 void Length() :
@@ -1174,9 +1152,9 @@ void Literal() :
 	t=<LITERAL>
 		{
 			try {
-				jjtThis.litValue = new Integer(Integer.parseInt(t.image));
+				jjtThis.litValue = new Long(Long.parseLong(t.image));
 			} catch (NumberFormatException e){
-				jjtThis.litValue = new rossi.dfp.dfp(t.image);
+				jjtThis.litValue = new Double(Double.parseDouble(t.image));
 			} catch (Exception e) {
 				jjtThis.litValue = null;
 				gui.consoleAppend.appendAll(
@@ -1196,7 +1174,14 @@ void FloatLiteral() :
 			try {
 				jjtThis.litValue = new Double(Double.parseDouble(t.image));
 			} catch (NumberFormatException e){
-				jjtThis.litValue = new rossi.dfp.dfp(t.image);
+				jjtThis.litValue = null;
+				gui.consoleAppend.appendAll(
+					"### NumberFormatException\n");
+				gui.consoleAppend.appendAll(
+					"### " + t.beginLine + "行目は無効な値です : "
+					+ t.image + "\n"
+				);
+				throw new ParseException();
 			} catch (Exception e) {
 				jjtThis.litValue = null;
 				gui.consoleAppend.appendAll(
