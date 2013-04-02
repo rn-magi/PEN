@@ -1,7 +1,8 @@
 set PEN_VER=PEN
 set PLUGIN_DIR=%USERPROFILE%\git\penPluginDev\penPluginDev
 
-F not EXIST “SystemRoot“system32wbemwmic.exe goto WINDOWS_UNKOWN
+WMIC OS GET CAPTION | find "Windows 8" > nul
+IF not errorlevel 1 GOTO WINDOWS_8
 WMIC OS GET CAPTION | find "Windows 7" > nul
 IF not errorlevel 1 GOTO WINDOWS_7
 WMIC OS GET CAPTION | find "Windows Vista" > nul
@@ -10,6 +11,7 @@ WMIC OS GET CAPTION | find "Windows XP" > nul
 IF not errorlevel 1 GOTO WINDOWS_XP
 GOTO WINDOWS_UNKOWN
 
+:WINDOWS_8
 :WINDOWS_7
 :WINDOWS_VISTA
 set DESKTOP=%USERPROFILE%\Desktop
