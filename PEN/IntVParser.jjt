@@ -1152,7 +1152,9 @@ void Literal() :
 	t=<LITERAL>
 		{
 			try {
-				jjtThis.litValue = new Long(Long.parseLong(t.image));
+				if(Long.parseLong(t.image) > Integer.MAX_VALUE || Long.parseLong(t.image) <  Integer.MIN_VALUE){
+					jjtThis.litValue = new Long(Long.parseLong(t.image));				} else {
+					jjtThis.litValue = new Integer(Integer.parseInt(t.image));				}
 			} catch (NumberFormatException e){
 				jjtThis.litValue = new Double(Double.parseDouble(t.image));
 			} catch (Exception e) {

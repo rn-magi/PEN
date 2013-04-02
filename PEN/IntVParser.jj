@@ -4480,7 +4480,9 @@ void Literal() :
 /*@egen*/
 		{
 			try {
-				jjtn000.litValue = new Long(Long.parseLong(t.image));
+				if(Long.parseLong(t.image) > Integer.MAX_VALUE || Long.parseLong(t.image) <  Integer.MIN_VALUE){
+					jjtn000.litValue = new Long(Long.parseLong(t.image));				} else {
+					jjtn000.litValue = new Integer(Integer.parseInt(t.image));				}
 			} catch (NumberFormatException e){
 				jjtn000.litValue = new Double(Double.parseDouble(t.image));
 			} catch (Exception e) {

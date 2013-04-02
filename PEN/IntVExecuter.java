@@ -1352,7 +1352,7 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTLong node, Object data) {
 		Object i = node.jjtGetChild(0).jjtAccept(this, data);
-		long j = Double.valueOf(i.toString()).longValue();
+		long j = Long.parseLong(i.toString());
 		return new Long(j);
 	}
 
