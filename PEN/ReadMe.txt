@@ -7,12 +7,18 @@
  [ Applet版 ] 兼宗 進　 : 大阪電気通信大学
  [  連絡先  ] pen@s.ogu.ac.jp
  [  配布元  ] http://www.media.osaka-cu.ac.jp/PEN/
- [ 開発環境 ] Microsoft Windows XP pro SP3  + JDK v 1.5.0 + JavaCC v5.0
+ [ 開発環境 ]
+     Microsoft Windows XP pro SP3  + JDK ver 1.5.0 + JavaCC ver 5.0
+     Microsoft Windows 7 pro SP1 64bit + JDK ver 1.5.0 + JavaCC ver 5.0
+     Microsoft Windows 8 pro 64bit  + JDK ver 1.5.0 + JavaCC ver 5.0
+     Mac OS X 10.6.8 Intel 64bit + JDK ver 1.6.0 + JavaCC ver 5.0
  [ 動作環境 ]
-     Microsoft Windows XP pro SP3         + JDK v 1.5.0
-     Microsoft Windows XP pro SP3         + JRE v 1.6.0
-     Microsoft Windows 7 SP1 64bit        + JRE v 1.5.0
-     Microsoft Windows 7 SP1 64bit        + JRE v 1.6.0
+     Microsoft Windows XP pro SP3         + JDK ver 1.5.0
+     Microsoft Windows XP pro SP3         + JRE ver 1.6.0
+     Microsoft Windows 7 pro SP1 64bit    + JDK ver 1.5.0
+     Microsoft Windows 7 pro SP1 64bit    + JRE ver 1.6.0
+     Microsoft Windows 8 pro 64bit        + JDK ver 1.5.0
+     Microsoft Windows 8 pro 64bit        + JRE ver 1.7.0
      Mac OS X 10.6.8 Intel 64bit          + JRE v 1.6.0
      Linux Mint 13 Linux 3.2.0-25-generic + JDK v 1.6.0
  [  著作権  ] Copyright(C) 2003-2013 by 中村 亮太, 西田 知博, 松浦 敏雄, 兼宗 進
@@ -60,7 +66,7 @@ PENで動作するプログラム言語は、
 PEN は Java で記述しているので JRE v1.5.x 以降が必要です。
 Javaは下記のURLよりダウンロードできます
 
-・JER 1.7.0
+・JRE 1.7.0
 　http://www.java.com/ja/download/
 
 ＜インストール＞
