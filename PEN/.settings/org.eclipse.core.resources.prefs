@@ -1,7 +1,7 @@
 eclipse.preferences.version=1
-encoding//ButtonList/Default.ini=MS932
-encoding//ButtonList/DrawList.ini=MS932
-encoding//Locale/Locale_ja_JP.properties=MS932
+encoding/ButtonList/Default.ini=MS932
+encoding/ButtonList/DrawList.ini=MS932
+encoding/Locale/Locale_ja_JP.properties=MS932
 encoding/ChangeLog.txt=MS932
 encoding/Manual=MS932
 encoding/Property.ini=MS932
