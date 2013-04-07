@@ -45,10 +45,10 @@ mkdir "%PEN_DIR%\src\plugin"
 copy "%PLUGIN_DIR%\src\*.java" "%PEN_DIR%\src\plugin"
 
 cd "%PEN_WORK%\"
-xcopy  /Y /S /EXCLUDE:nocopy.txt "%PEN_WORK%\org" "%PEN_DIR%\src\org\"
+xcopy /Y /S "%PEN_WORK%\org" "%PEN_DIR%\src\org\"
 
 cd "%PEN_WORK%\sample\xDNCL\"
-xcopy  /Y /S /EXCLUDE:nocopy.txt "%PEN_WORK%\sample\xDNCL\sample" "%PEN_DIR%\sample\"
+xcopy /Y /S "%PEN_WORK%\sample\xDNCL\sample" "%PEN_DIR%\sample\"
 
 mkdir "%PEN_DIR%\Manual"
 copy "%PEN_WORK%\Manual\*.pdf" "%PEN_DIR%\Manual"
