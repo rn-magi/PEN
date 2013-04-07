@@ -1,0 +1,17 @@
+openPort("COM5")
+
+pinMode(2, "INPUT")
+pinMode(3, "OUTPUT")
+
+digitalWrite(2, 1)
+
+1=1 の間，
+  | sleep(500)
+  | もし digitalRead(2) = 0 ならば
+  |   | digitalWrite(3, 1)
+  | を実行し，そうでなければ
+  |   | digitalWrite(3, 0)
+  | を実行する
+を繰り返す
+
+closePort()
