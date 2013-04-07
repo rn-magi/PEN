@@ -1,7 +1,6 @@
-•¶š—ñ port
 À” temp
-port © portList(0)
-openPort(port)
+
+openPort("COM4")
 
 pinMode(6, "INPUT")
 pinMode(7, "INPUT")

@@ -1,8 +1,6 @@
 /* LED‚ğ10•bŠÔ“_“”‚³‚¹‚Ü‚· */
 
-•¶š—ñ port
-port © portList(1)
-openPort(port)
+openPort("COM4")
 
 pinMode(13, "OUTPUT")
 digitalWrite(13, 1)

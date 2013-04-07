@@ -1,11 +1,9 @@
 ﻿/* ボタン1を押すとコーンソール画面に出力する */
 
-文字列 port
 真偽 flag
 整数 i
 
-port ← portList(0)
-openPort(port)
+openPort("COM4")
 
 pinMode(6, "INPUT")
 

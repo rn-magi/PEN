@@ -1,9 +1,8 @@
 /* LED‚ğ50‰ñ“_–Å‚³‚¹‚Ü‚· */
 
-•¶š—ñ port
 ®” i
-port © portList(1)
-openPort(port)
+
+openPort("COM4")
 
 pinMode(10, "OUTPUT")
 pinMode(13, "OUTPUT")
