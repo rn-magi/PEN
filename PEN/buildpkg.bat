@@ -1,5 +1,4 @@
 set PEN_VER=PEN
-set PLUGIN_DIR=%USERPROFILE%\git\penPluginDev\penPluginDev
 
 WMIC OS GET CAPTION | find "Windows 8" > nul
 IF not errorlevel 1 GOTO WINDOWS_8
@@ -26,6 +25,7 @@ goto :eof
 
 set PEN_DIR=%DESKTOP%\%PEN_VER%
 set PEN_WORK=%USERPROFILE%\git\PEN\PEN
+set PLUGIN_DIR=%USERPROFILE%\git\penPluginDev\penPluginDev
 
 mkdir "%PEN_DIR%"
 mkdir "%PEN_DIR%\src"
@@ -40,6 +40,9 @@ copy "%PEN_WORK%\Locale\*.properties" "%PEN_DIR%\src\Locale\"
 
 mkdir "%PEN_DIR%\src\ButtonList"
 copy "%PEN_WORK%\ButtonList\*.ini" "%PEN_DIR%\src\ButtonList"
+
+mkdir "%PEN_DIR%\ArduinoSketch"
+copy "%PLUGIN_DIR%\ArduinoSketch\*" "%PEN_DIR%\ArduinoSketch"
 
 mkdir "%PEN_DIR%\src\plugin"
 copy "%PLUGIN_DIR%\src\*.java" "%PEN_DIR%\src\plugin"

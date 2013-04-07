@@ -21,6 +21,7 @@ cp ${PEN_WORK}/*.ini ${PEN_DIR}/src
 cp ${PEN_WORK}/pen.png ${PEN_DIR}/src
 
 cp ${PLUGIN_DIR}/src/*.java ${PEN_DIR}/src/plugin
+cp -R ${PLUGIN_DIR}/ArduinoSketch ${PEN_DIR}/
 
 cp -R ${PEN_WORK}/Locale ${PEN_DIR}/src/
 cp -R ${PEN_WORK}/ButtonList ${PEN_DIR}/src/
