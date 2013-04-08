@@ -34,7 +34,7 @@ cp -R ${PEN_WORK}/ButtonList ${PEN_DIR}/
 cp -R ${PEN_WORK}/lib ${PEN_DIR}/
 cp -R ${PEN_WORK}/lib64 ${PEN_DIR}/
 
-cp ${PLUGIN_DIR}/bin/*.class ${PEN_DIR}/plugin
+cp -R ${PLUGIN_DIR}/bin/* ${PEN_DIR}/plugin
 
 cp ${PEN_WORK}/PEN.url ${PEN_DIR}/
 cp ${PEN_WORK}/ChangeLog.txt ${PEN_DIR}/

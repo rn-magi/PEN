@@ -35,38 +35,27 @@ copy "%PEN_WORK%\IntVParser.jjt" "%PEN_DIR%\src\"
 copy "%PEN_WORK%\*.ini" "%PEN_DIR%\src\"
 copy "%PEN_WORK%\pen.png" "%PEN_DIR%\src\"
 
-mkdir "%PEN_DIR%\src\Locale"
-copy "%PEN_WORK%\Locale\*.properties" "%PEN_DIR%\src\Locale\"
+xcopy /Y /S "%PEN_WORK%\Locale" "%PEN_DIR%\src\Locale\"
 
-mkdir "%PEN_DIR%\src\ButtonList"
-copy "%PEN_WORK%\ButtonList\*.ini" "%PEN_DIR%\src\ButtonList"
+xcopy /Y /S "%PEN_WORK%\ButtonList" "%PEN_DIR%\src\ButtonList\"
 
-mkdir "%PEN_DIR%\ArduinoSketch"
-copy "%PLUGIN_DIR%\ArduinoSketch\*" "%PEN_DIR%\ArduinoSketch"
+xcopy /Y /S "%PLUGIN_DIR%\ArduinoSketch" "%PEN_DIR%\ArduinoSketch\"
 
-mkdir "%PEN_DIR%\src\plugin"
-copy "%PLUGIN_DIR%\src\*.java" "%PEN_DIR%\src\plugin"
+xcopy /Y /S "%PLUGIN_DIR%\src" "%PEN_DIR%\src\plugin\"
 
-cd "%PEN_WORK%\"
 xcopy /Y /S "%PEN_WORK%\org" "%PEN_DIR%\src\org\"
 
-cd "%PEN_WORK%\sample\xDNCL\"
 xcopy /Y /S "%PEN_WORK%\sample\xDNCL\sample" "%PEN_DIR%\sample\"
 
 mkdir "%PEN_DIR%\Manual"
 copy "%PEN_WORK%\Manual\*.pdf" "%PEN_DIR%\Manual"
 
-mkdir "%PEN_DIR%\ButtonList"
-copy "%PEN_WORK%\ButtonList\*.ini" "%PEN_DIR%\ButtonList"
+xcopy /Y /S "%PEN_WORK%\ButtonList" "%PEN_DIR%\ButtonList\"
 
-mkdir "%PEN_DIR%\lib"
-copy "%PEN_WORK%\lib\*" "%PEN_DIR%\lib"
+xcopy /Y /S "%PEN_WORK%lib" "%PEN_DIR%\lib\"
+xcopy /Y /S "%PEN_WORK%lib64" "%PEN_DIR%\lib64\"
 
-mkdir "%PEN_DIR%\lib64"
-copy "%PEN_WORK%\lib64\*" "%PEN_DIR%\lib64"
-
-mkdir "%PEN_DIR%\plugin"
-copy "%PLUGIN_DIR%\bin\*.class" "%PEN_DIR%\plugin"
+xcopy /Y /S "%PLUGIN_DIR%\bin" "%PEN_DIR%\plugin\"
 
 copy "%PEN_WORK%\PEN.url" "%PEN_DIR%\"
 copy "%PEN_WORK%\ChangeLog.txt" "%PEN_DIR%\"
