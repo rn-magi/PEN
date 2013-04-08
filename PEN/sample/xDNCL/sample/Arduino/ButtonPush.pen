@@ -1,24 +1,24 @@
-ï»¿/* ãƒœã‚¿ãƒ³1ã‚’æŠ¼ã™ã¨ã‚³ãƒ¼ãƒ³ã‚½ãƒ¼ãƒ«ç”»é¢ã«å‡ºåŠ›ã™ã‚‹ */
+/* ƒ{ƒ^ƒ“1‚ð‰Ÿ‚·‚ÆƒR[ƒ“ƒ\[ƒ‹‰æ–Ê‚Éo—Í‚·‚é */
 
-çœŸå½ flag
-æ•´æ•° i
+^‹U flag
+®” i
 
 openPort("COM4")
 
 pinMode(6, "INPUT")
 
-i â† 1
+i © 1
 
-i < 11 ã®é–“ï¼Œ
-  | ã‚‚ã— digitalRead(6) = 0 ãªã‚‰ã°
-  |   | ã‚‚ã— flag = false ãªã‚‰ã°
-  |   |   | ã€Œãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã‚ˆã€ ã¨ ã€Œ(ã€ ã¨ i ã¨ ã€Œ)ã€ ã‚’è¡¨ç¤ºã™ã‚‹
-  |   |   | i â† i + 1
-  |   |   | flag â† true
-  |   | ã‚’å®Ÿè¡Œã™ã‚‹ 
-  | ã‚’å®Ÿè¡Œã—ï¼Œãã†ã§ãªã‘ã‚Œã°
-  |   | flag â† false
-  | ã‚’å®Ÿè¡Œã™ã‚‹
-ã‚’ç¹°ã‚Šè¿”ã™
+i < 11 ‚ÌŠÔC
+  | ‚à‚µ digitalRead(6) = 0 ‚È‚ç‚Î
+  |   | ‚à‚µ flag = false ‚È‚ç‚Î
+  |   |   | uƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚½‚æv ‚Æ u(v ‚Æ i ‚Æ u)v ‚ð•\Ž¦‚·‚é
+  |   |   | i © i + 1
+  |   |   | flag © true
+  |   | ‚ðŽÀs‚·‚é 
+  | ‚ðŽÀs‚µC‚»‚¤‚Å‚È‚¯‚ê‚Î
+  |   | flag © false
+  | ‚ðŽÀs‚·‚é
+‚ðŒJ‚è•Ô‚·
 
 closePort()
