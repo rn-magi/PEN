@@ -1,9 +1,9 @@
-ï»¿å®Ÿæ•° t
+ŽÀ” t
 openPort("SIM")
 pinMode(5, "INPUT")
 
-t â† analogRead(5)
+t © analogRead(5)
 
-ã€Œæ¸©åº¦ã‚»ãƒ³ã‚µãƒ¼ã®å€¤ã¯ã€ã¨ t ã‚’è¡¨ç¤ºã™ã‚‹
+u‰·“xƒZƒ“ƒT[‚Ì’l‚Ív‚Æ t ‚ð•\Ž¦‚·‚é
 
 closePort()
