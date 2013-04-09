@@ -1,0 +1,19 @@
+整数 i, a
+openPort("SIM")
+pinMode(6, "INPUT")
+pinMode(10, "OUTPUT")
+pinMode(13, "OUTPUT")
+sleep(1000)
+i を 1 から 1000 まで 1 ずつ増やしながら，
+  | a ← digitalRead(6)
+  | もし a=0 ならば
+  |   | digitalWrite(13, 1)
+  |   | digitalWrite(10, 0)
+  | を実行し，そうでなければ  
+  |   | digitalWrite(10, 1)
+  |   | digitalWrite(13, 0)
+  | を実行する
+  | sleep(500)  
+を繰り返す
+
+closePort()

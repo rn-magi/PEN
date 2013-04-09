@@ -1,0 +1,6 @@
+openPort("SIM")		/* ポートを開く */
+pinMode(10, "OUTPUT")
+digitalWrite(10, 1)	/* 緑色のLEDを点灯 */
+sleep(5000)
+digitalWrite(10, 0)	/* 緑色のLEDを消灯 */
+closePort()

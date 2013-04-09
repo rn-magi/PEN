@@ -1,0 +1,9 @@
+﻿実数 t
+openPort("SIM")
+pinMode(5, "INPUT")
+
+t ← analogRead(5)
+
+「温度センサーの値は」と t を表示する
+
+closePort()

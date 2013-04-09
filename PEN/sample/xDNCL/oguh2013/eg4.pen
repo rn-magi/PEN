@@ -1,0 +1,12 @@
+®” i
+openPort("SIM") 
+pinMode(10, "OUTPUT")
+
+i ‚ğ 1 ‚©‚ç 5 ‚Ü‚Å 1 ‚¸‚Â‘‚â‚µ‚È‚ª‚çC
+  | digitalWrite(10, 1)
+  | sleep(1000)
+  | digitalWrite(10, 0)
+  | sleep(1000)
+‚ğŒJ‚è•Ô‚·
+
+closePort()

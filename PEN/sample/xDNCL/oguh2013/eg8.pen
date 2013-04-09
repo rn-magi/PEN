@@ -1,0 +1,11 @@
+êÆêî a,i
+openPort("SIM")
+pinMode(4,"INPUT")
+pinMode(11,"OUTPUT")
+
+a Å© analogRead(4)
+analogWrite(11,a)
+sleep(2000)
+analogWrite(11,0)
+
+closePort()
