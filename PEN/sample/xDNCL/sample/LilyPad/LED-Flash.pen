@@ -12,7 +12,6 @@ i ‚ğ 0 ‚©‚ç 4 ‚Ü‚Å 1 ‚¸‚Â‘‚â‚µ‚È‚ª‚çC
   | i ‚ğ 0 ‚©‚ç 4 ‚Ü‚Å 1 ‚¸‚Â‘‚â‚µ‚È‚ª‚çC
   |   | digitalWrite(a[i], 1)
   |   | sleep(analogRead(6)*3+1)
-  |   | analogRead(6)‚ğ•\¦‚·‚é
   |   | digitalWrite(a[i], 0)
   | ‚ğŒJ‚è•Ô‚·
 ‚ğŒJ‚è•Ô‚·
