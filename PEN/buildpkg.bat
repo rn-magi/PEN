@@ -52,8 +52,8 @@ copy "%PEN_WORK%\Manual\*.pdf" "%PEN_DIR%\Manual"
 
 xcopy /Y /S "%PEN_WORK%\ButtonList" "%PEN_DIR%\ButtonList\"
 
-xcopy /Y /S "%PEN_WORK%lib" "%PEN_DIR%\lib\"
-xcopy /Y /S "%PEN_WORK%lib64" "%PEN_DIR%\lib64\"
+xcopy /Y /S "%PEN_WORK%\lib" "%PEN_DIR%\lib\"
+xcopy /Y /S "%PEN_WORK%\lib64" "%PEN_DIR%\lib64\"
 
 xcopy /Y /S "%PLUGIN_DIR%\bin" "%PEN_DIR%\plugin\"
 
