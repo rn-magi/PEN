@@ -12,7 +12,7 @@
      Microsoft Windows 7 pro SP1 64bit + JDK ver 1.5.0 + JavaCC ver 5.0
      Microsoft Windows 8 pro 64bit  + JDK ver 1.5.0 + JavaCC ver 5.0
      Mac OS X 10.6.8 Intel 64bit + JDK ver 1.6.0 + JavaCC ver 5.0
- [ 動作環境 ]
+ [ 動作確認 ]
      Microsoft Windows XP pro SP3         + JDK ver 1.5.0
      Microsoft Windows XP pro SP3         + JRE ver 1.6.0
      Microsoft Windows 7 pro SP1 64bit    + JDK ver 1.5.0
@@ -48,8 +48,8 @@
   |- PEN.jar                        … PEN本体です
   |- PEN.bat                        … WindowsでPENを起動するためのファイル
   |- PEN.command                    … MacOSでPENを起動するためのファイル
-  |- PEN.sh                         … Windows以外でPENを起動するためのシェルスクリプト
-  |- PEN64.sh                       … Windows以外の64bitマシンでPENを起動するためのシェルスクリプト
+  |- PEN.sh                         … LinuxでPENを起動するためのシェルスクリプト
+  |- PEN64.sh                       … Linux 64bitでPENを起動するためのシェルスクリプト
   |- PEN.url                        … 配布元 Webページのリンクです
   |- Property.ini                   … PENの設定を行うファイルです
   -- ReadMe.txt                     … このファイルです
