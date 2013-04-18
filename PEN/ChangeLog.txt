@@ -1,5 +1,35 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_7 (2013/xx/xx)
+  [ New ]
+    ・CLCD-BOOSTER on Arduino シミュレータを追加
+      -> openPort("SIM") でシミュレータが起動
+    ・LilyPad Development Board用のサンプルプログラムを追加
+  [ Fix ]
+    ・rxtxライブラリの更新
+    ・入力命令に命令文の揺らぎを追加
+
+      -> ≪変数≫ に入力する
+
+  [ NewFile ]
+    - ./sample/LilyPad/LED-Flash.pen
+    - ./sample/LilyPad/SwitchVibe.pen
+  [ FixFile ]
+    - ./lib/librxtxSerial.so
+    - ./lib/RXTXcomm.jar
+    - ./lib64/librxtxSerial.so
+    - ./lib64/RXTXcomm.jar
+    - ./sample/Arduino/ArduinoAction.pen
+    - ./sample/Arduino/ButtonPush.pen
+    - ./sample/Arduino/LED-Flash.pen
+    - ./sample/Arduino/LED-Flash2.pen
+    - ./sample/Arduino/LED-Light.pen
+    - ChangeLog.txt
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - MainGUI.java
+
 ・ver 1.20_6 (2013/04/03)
   [ Withdraw ]
     ・データ 型の dfp (10進浮動小数点) の対応を取りやめ
