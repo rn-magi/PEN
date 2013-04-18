@@ -1,0 +1,13 @@
+®” a, i
+openPort("COM3")
+pinMode(4, "INPUT")
+pinMode(11, "OUTPUT")
+
+i ‚ğ 1 ‚©‚ç 100 ‚Ü‚Å 1 ‚¸‚Â‘‚â‚µ‚È‚ª‚çC
+  | a © analogRead(4)
+  | analogWrite(11, a)
+  | sleep(100)
+‚ğŒJ‚è•Ô‚·
+
+analogWrite(11, 0)
+closePort()

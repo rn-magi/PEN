@@ -1,0 +1,19 @@
+À” t
+openPort("COM3")
+pinMode(4, "INPUT")
+pinMode(10, "OUTPUT")
+pinMode(13, "OUTPUT")
+
+t © analogRead(4)
+
+‚à‚µ t>=80 ‚È‚ç‚Î
+  | digitalWrite(13, 1)
+  | sleep(5000)
+  | digitalWrite(13, 0)
+‚ğÀs‚µC‚»‚¤‚Å‚È‚¯‚ê‚Î
+  | digitalWrite(10, 1)
+  | sleep(5000)
+  | digitalWrite(10, 0)
+‚ğÀs‚·‚é
+
+closePort()

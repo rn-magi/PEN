@@ -1,0 +1,18 @@
+整数 s, pin
+openPort("COM3")
+pinMode(10, "OUTPUT")
+pinMode(13, "OUTPUT")
+
+「数を入力してください」  を表示する
+s を入力する
+もし s % 2 = 0 ならば
+  | pin ← 13
+を実行し，そうでなければ
+  | pin ← 10
+を実行する
+
+digitalWrite(pin,1)
+sleep(5000)
+digitalWrite(pin,0)
+
+closePort()

@@ -1,0 +1,10 @@
+実数 t
+openPort("COM3")
+pinMode(5, "INPUT")
+
+t ← analogRead(5)
+t ← (t*5/1023 - 0.4) / 0.01953
+
+「温度は」と t を表示する
+
+closePort()

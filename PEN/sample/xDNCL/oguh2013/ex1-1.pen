@@ -1,0 +1,8 @@
+openPort("COM3")
+pinMode(13, "OUTPUT")
+
+digitalWrite(13, 1) 
+sleep(5000)
+digitalWrite(13, 0)
+
+closePort()

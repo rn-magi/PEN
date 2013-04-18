@@ -1,0 +1,20 @@
+整数 i, a, mode
+openPort("COM3")
+pinMode(6, "INPUT")
+pinMode(10, "OUTPUT")
+sleep(1000)
+mode ← 0
+i を 1 から 1000 まで 1 ずつ増やしながら，
+  | a ← digitalRead(6)
+  | もし a=0 ならば
+  |   | もし mode=0 ならば
+  |   |   | mode ← 1
+  |   | を実行し，そうでなければ
+  |   |   | mode ← 0
+  |   | を実行する
+  | を実行する
+  | digitalWrite(10, mode)
+  | sleep(500)  
+を繰り返す
+
+closePort()

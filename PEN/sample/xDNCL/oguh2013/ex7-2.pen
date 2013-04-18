@@ -1,0 +1,21 @@
+整数 a, i
+openPort("COM3")
+pinMode(4, "INPUT")
+pinMode(10, "OUTPUT")
+pinMode(13, "OUTPUT")
+
+i を 1 から 100 まで 1 ずつ増やしながら，
+  | a ← analogRead(4)
+  | もし a >= 80 ならば
+  |   | digitalWrite(13, 1)
+  |   | digitalWrite(10, 0)
+  | を実行し，そうでなければ
+  |   | digitalWrite(10, 1)  
+  |   | digitalWrite(13, 0)
+  | を実行する
+  | sleep(100)
+を繰り返す
+
+digitalWrite(10, 0)  
+digitalWrite(13, 0)
+closePort()

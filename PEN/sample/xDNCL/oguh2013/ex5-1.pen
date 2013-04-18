@@ -1,0 +1,19 @@
+®” i, a, b
+openPort("COM3")
+pinMode(6, "INPUT")
+pinMode(7, "INPUT")
+pinMode(10, "OUTPUT")
+sleep(1000)
+i ‚ğ 1 ‚©‚ç 1000 ‚Ü‚Å 1 ‚¸‚Â‘‚â‚µ‚È‚ª‚çC
+  | a © digitalRead(6)
+  | b © digitalRead(7)
+  | ‚à‚µ a=0 ‚È‚ç‚Î
+  |   | digitalWrite(10, 1)
+  | ‚ğÀs‚·‚é
+  | ‚à‚µ b=0 ‚È‚ç‚Î
+  |   | digitalWrite(10, 0)
+  | ‚ğÀs‚·‚é
+  | sleep(500)  
+‚ğŒJ‚è•Ô‚·
+
+closePort()

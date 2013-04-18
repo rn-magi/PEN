@@ -1,0 +1,9 @@
+実数 t
+openPort("COM3")
+pinMode(4, "INPUT")
+
+t ← analogRead(4)
+
+「光センサーの値は」と t を表示する
+
+closePort()

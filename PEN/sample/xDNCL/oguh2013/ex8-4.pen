@@ -1,0 +1,33 @@
+整数 i, a, b, c, p
+openPort("COM3")
+pinMode(6, "INPUT")
+pinMode(7, "INPUT")
+pinMode(8, "INPUT")
+pinMode(10, "OUTPUT")
+pinMode(11, "OUTPUT")
+pinMode(13, "OUTPUT")
+sleep(1000)
+p ← random(2)+6
+i を 1 から 1000 まで 1 ずつ増やしながら，
+  | a ← digitalRead(p)
+  | もし a=0 ならば
+  |   | digitalWrite(13, 1)  
+  |   | analogWrite(11, 100)
+  |   | digitalWrite(10, 0) 
+  | を実行し，そうでなければ  
+  |   | a ← digitalRead(6)  
+  |   | b ← digitalRead(7)
+  |   | c ← digitalRead(8)
+  |   | もし a=0 または b=0 または c=0 ならば
+  |   |   | digitalWrite(13, 0)
+  |   |   | analogWrite(11, 0)
+  |   |   | digitalWrite(10, 1) 
+  |   | を実行する 
+  | を実行する
+  | sleep(500)  
+を繰り返す
+
+digitalWrite(13, 0)  
+analogWrite(11, 0)
+digitalWrite(10, 0) 
+closePort()

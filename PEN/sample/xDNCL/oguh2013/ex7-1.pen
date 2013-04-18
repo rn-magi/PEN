@@ -1,0 +1,11 @@
+整数 a, i
+openPort("COM3")
+pinMode(5, "INPUT")
+
+i を 1 から 100 まで 1 ずつ増やしながら，
+  | a ← analogRead(5)
+  | 「温度センサーの値は」と a を表示する
+  | sleep(100)
+を繰り返す
+
+closePort()
