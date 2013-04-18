@@ -1,6 +1,8 @@
-openPort("SIM")		/* ポートを開く */
+openPort("COM3")
 pinMode(10, "OUTPUT")
-digitalWrite(10, 1)	/* 緑色のLEDを点灯 */
+
+digitalWrite(10, 1) 
 sleep(5000)
-digitalWrite(10, 0)	/* 緑色のLEDを消灯 */
+digitalWrite(10, 0)
+
 closePort()

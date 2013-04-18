@@ -1,5 +1,5 @@
 ®” i
-openPort("SIM") 
+openPort("COM3") 
 pinMode(10, "OUTPUT")
 
 i ‚ğ 1 ‚©‚ç 5 ‚Ü‚Å 1 ‚¸‚Â‘‚â‚µ‚È‚ª‚çC
@@ -9,4 +9,4 @@ i ‚ğ 1 ‚©‚ç 5 ‚Ü‚Å 1 ‚¸‚Â‘‚â‚µ‚È‚ª‚çC
   | sleep(1000)
 ‚ğŒJ‚è•Ô‚·
 
-closePort()
+closePort() 

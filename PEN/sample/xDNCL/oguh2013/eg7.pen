@@ -1,5 +1,5 @@
 ®” a, i
-openPort("SIM")
+openPort("COM3")
 pinMode(4, "INPUT")
 
 i ‚ğ 1 ‚©‚ç 100 ‚Ü‚Å 1 ‚¸‚Â‘‚â‚µ‚È‚ª‚çC

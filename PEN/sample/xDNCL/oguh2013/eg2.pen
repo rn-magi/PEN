@@ -1,8 +1,13 @@
-openPort("SIM")
+openPort("COM3")
 pinMode(10, "OUTPUT")
-analogWrite(10, 100)
-sleep(1000)
-analogWrite(10, 255)
-sleep(1000)
-analogWrite(10, 0)
+pinMode(13, "OUTPUT")
+
+digitalWrite(10, 1) 
+sleep(5000)
+digitalWrite(10, 0)
+
+digitalWrite(13, 1) 
+sleep(5000)
+digitalWrite(13, 0)
+
 closePort()

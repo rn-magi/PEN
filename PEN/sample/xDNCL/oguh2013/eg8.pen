@@ -1,5 +1,5 @@
 РоРФ a,i
-openPort("SIM")
+openPort("COM3")
 pinMode(4,"INPUT")
 pinMode(11,"OUTPUT")
 

@@ -1,5 +1,5 @@
 é¿êî t
-openPort("SIM")
+openPort("COM3")
 pinMode(5, "INPUT")
 
 t Å© analogRead(5)
