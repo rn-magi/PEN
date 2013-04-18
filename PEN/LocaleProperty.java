@@ -6,7 +6,7 @@ public class LocaleProperty {
 	/**
 	 * Localeファイルを保存しているディレクトリ
 	 */
-	public final static String LOCALE_DIR		= "Locale";
+	public final static String LOCALE_DIR	= "Locale";
 	
 	/**
 	 * Localeファイルのファイル名
@@ -39,7 +39,7 @@ public class LocaleProperty {
 	private static ResourceBundle LOCALE_PROPERTY = ResourceBundle.getBundle(LOCALE_PATH , Locale);
 	
 	// プロパティー名
-	public final static String CONFIG_LABEL_NAME		= "config.label.0";
+	public final static String CONFIG_LABEL_NAME	= "config.label.0";
 	public final static String CONFIG_LABEL_SET		= "config.label.1";
 	public final static String CONFIG_LABEL_Locale	= "congig.label.locale";
 	

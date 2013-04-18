@@ -8,7 +8,7 @@ import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
 
 public class MyWindowAdapter extends WindowAdapter{
-	MainGUI gui;
+	private MainGUI gui;
 	private PenFrame window;
 	private JTextArea text_write;
 	private ErrorSave error_dump;

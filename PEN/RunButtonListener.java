@@ -4,8 +4,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-class RunButtonListener implements ActionListener {
-	MainGUI gui;
+public class RunButtonListener implements ActionListener {
+	private MainGUI gui;
 	private volatile ThreadRun RUN;
 	
 	public RunButtonListener(MainGUI gui){

@@ -7,7 +7,7 @@ import java.util.Properties;
 public class PenProperties {
 	private Properties PROPERTY = new Properties();
 
-	private String FileSeparator		= System.getProperty("file.separator");
+	private String FileSeparator	= System.getProperty("file.separator");
 	private String PropertyFileName	= "Property.ini";
 	
 	public final static String BUTTON_LIST_FILE		= "ButtonList/Default.ini";
@@ -23,16 +23,16 @@ public class PenProperties {
 	public final static String PEN_SYSTEM_HOME		= "pen.system.home";
 	public final static String EXECUTER_GRAPHIC_ORIGIN	= "executer.graphic.origin";
 	public final static String EXECUTER_VAR_DECLARATION	= "executer.var.declaration";
-	public final static String EXECUTER_VAR_ORIGIN	= "executer.array.origin";
+	public final static String EXECUTER_VAR_ORIGIN		= "executer.array.origin";
 	public final static String EXECUTER_VAR_NAMES		= "executer.var.names";
 	public final static String EXECUTER_DIV_MODE		= "executer.div.mode";
 
-	public final static int DECLARATION_PROCEDURAL = 0;
-	public final static int DECLARATION_INT		= 1;
-	public final static int DECLARATION_LONG	= 2;
-	public final static int DECLARATION_DOUBLE	= 3;
-	public final static int DECLARATION_STRING	= 4;
-	public final static int DECLARATION_BOOLEAN	= 5;
+	public final static int DECLARATION_PROCEDURAL	= 0;
+	public final static int DECLARATION_INT			= 1;
+	public final static int DECLARATION_LONG		= 2;
+	public final static int DECLARATION_DOUBLE		= 3;
+	public final static int DECLARATION_STRING		= 4;
+	public final static int DECLARATION_BOOLEAN		= 5;
 	
 	public PenProperties(boolean isApplet){
 		String dir = "";

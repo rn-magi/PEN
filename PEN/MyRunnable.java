@@ -1,7 +1,7 @@
 import java.awt.Color;
 
 public class MyRunnable implements Runnable {
-	MainGUI gui;
+	private MainGUI gui;
 	
 	public MyRunnable(MainGUI gui){
 		this.gui = gui;

@@ -18,14 +18,14 @@ public class FileOpen {
 	private JTextArea edit_area;
 	private String WindowName;
 	
-	private String[] obj = {"ファイルを開く前に保存しますか？"};
-	private String[] option = { "保存", "破棄", "取り消し" };
+	private String[] obj	= {"ファイルを開く前に保存しますか？"};
+	private String[] option	= { "保存", "破棄", "取り消し" };
 	
 	private String file_name = "";
 	
 	private FileOpen file_open;
 	
-	MainGUI gui;
+	private MainGUI gui;
 	
 	public FileOpen(MainGUI gui){
 		this.gui	= gui;

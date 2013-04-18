@@ -3,9 +3,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.text.BadLocationException;
 
-class EditButtonListener implements ActionListener{
+public class EditButtonListener implements ActionListener{
 	private String[] add;
-	MainGUI gui;
+	private MainGUI gui;
 	
 	public EditButtonListener(String[] apend, MainGUI gui){
 		add = apend;

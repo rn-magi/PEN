@@ -1,5 +1,4 @@
 public class ThreadRunStop extends Error{
-
 	public ThreadRunStop() {
 		super();
 	}

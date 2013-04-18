@@ -11,7 +11,7 @@ import javax.swing.text.Position;
  * 
  * @author Ryota Nakamura
  */
-class ConsoleKeyListener implements KeyListener{
+public class ConsoleKeyListener implements KeyListener{
 	private String input_line;
 	private int start_offs = 0;
 	private JTextArea textArea;

@@ -3,7 +3,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
 
-class EditAreaDocumentListener implements DocumentListener{
+public class EditAreaDocumentListener implements DocumentListener{
 	private int line = 1;
 	private int text_line;
 	private int num_line;

@@ -9,7 +9,7 @@ import javax.swing.JTextArea;
  * @author Ryota Nakamura
  */
 public class BreakPointMouseListener implements MouseListener {
-	JTextArea breakpoint;
+	private JTextArea breakpoint;
 	
 	public BreakPointMouseListener(JTextArea bp){
 		breakpoint = bp;

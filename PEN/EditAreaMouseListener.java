@@ -3,7 +3,6 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JTextArea;
 
-
 public class EditAreaMouseListener implements MouseListener {
 	private JTextArea edit_area;
 	private EditSelection edit_selection;

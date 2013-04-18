@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 public class webNewButtonListener implements ActionListener{
 	private MainGUI gui;
-	private String[] obj		= {"編集画面を初期化しますか？"};
+	private String[] obj	= {"編集画面を初期化しますか？"};
 	private String[] option	= { "初期化", "取り消し"};
 	
 	public webNewButtonListener(MainGUI gui){

@@ -35,9 +35,9 @@ public class MainGUI {
 	public String WindowName		= SystemName + " " + Version;
 	public PenFrame main_window;
 	public JPanel menu_panel		= new JPanel();
-	public JPanel run_time_panel		= new JPanel();
+	public JPanel run_time_panel	= new JPanel();
 	public JPanel edit_panel		= new JPanel();
-	public JPanel edit_area_panel		= new JPanel();
+	public JPanel edit_area_panel	= new JPanel();
 	public JPanel console_panel		= new JPanel();
 	public JPanel var_panel			= new JPanel();
 	public JSplitPane main_splitpane;
@@ -47,13 +47,13 @@ public class MainGUI {
 	public JScrollPane console_log_JSP;
 	public JScrollPane var_JSP;
 
-	public String PropertyFileName		= "Property.ini";
+	public String PropertyFileName	= "Property.ini";
 	public String FileSeparator		= System.getProperty("file.separator");
 
 	public DropTarget edit_area_drop	= new DropTarget();
 	
-	public Font font			= new Font("Monospaced", 0, 14);
-	public String ButtonListFile		= "";
+	public Font font				= new Font("Monospaced", 0, 14);
+	public String ButtonListFile	= "";
 	public Document edit_doc		= new PlainDocument();
 	public EditAreaUndoableEditListener undo	= new EditAreaUndoableEditListener();
 	
@@ -70,17 +70,17 @@ public class MainGUI {
 	public MenuButton step_button	= new MenuButton("一行実行", 90, 30);
 	public MenuButton stop_button	= new MenuButton("始めに戻る", 90, 30);
 	public JTabbedPane console_tab	= new JTabbedPane();
-	public JTextArea run_point	= new JTextArea(1,1);
-	public JTextArea breakpoint	= new JTextArea(1,1);
+	public JTextArea run_point		= new JTextArea(1,1);
+	public JTextArea breakpoint		= new JTextArea(1,1);
 	public JTextArea numbar_area	= new JTextArea(1,2);
-	public JTextArea edit_area	= new JTextArea();
-	public JTextArea console	= new JTextArea();
+	public JTextArea edit_area		= new JTextArea();
+	public JTextArea console		= new JTextArea();
 	public JTextArea console_log	= new JTextArea();
-	public JTable var_table	= new JTable();
-	public JSlider run_time		= new JSlider(SwingConstants.HORIZONTAL,0,2000,0);
+	public JTable var_table			= new JTable();
+	public JSlider run_time			= new JSlider(SwingConstants.HORIZONTAL,0,2000,0);
 	public JFileChooser fc;
-	public ConsoleAppend consoleAppend	= new ConsoleAppend();
-	public RunButtonListener RunButton	= new RunButtonListener(this);
+	public ConsoleAppend consoleAppend		= new ConsoleAppend();
+	public RunButtonListener RunButton		= new RunButtonListener(this);
 	public IntVgOutputWindow gDrawWindow	= new IntVgOutputWindow(this);
 	
 	public PenFlags Flags = new PenFlags();

@@ -9,11 +9,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/*
- * 作成日: 2007/01/15
- *
- */
-
 public class ConfigButtonListener implements ActionListener {
 	private JScrollPane jsp;
 	private String wn;

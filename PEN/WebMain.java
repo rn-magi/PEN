@@ -1,10 +1,9 @@
 import javax.swing.JApplet;
 import java.net.URL;
 
-
 public class WebMain extends JApplet implements PenFrame{
-	URL codeBase;
-	String window_name = "";
+	private URL codeBase;
+	private String window_name = "";
 	
 	public WebMain() {
 		MainGUI PEN = new MainGUI(null, true);

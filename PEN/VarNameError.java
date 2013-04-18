@@ -1,6 +1,6 @@
 public class VarNameError extends Error{
 	public String message;
-	public int  line;
+	public int line;
 
 	public VarNameError() {
 	}

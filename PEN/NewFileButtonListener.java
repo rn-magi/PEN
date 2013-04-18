@@ -6,8 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
-class NewFileButtonListener implements ActionListener{
-	MainGUI gui;
+public class NewFileButtonListener implements ActionListener{
+	private MainGUI gui;
 	private PenFrame window;
 	private JTextArea edit_area;
 	private String WindowName;

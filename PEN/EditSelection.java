@@ -2,9 +2,9 @@ import javax.swing.JTextArea;
 import javax.swing.text.BadLocationException;
 
 public class EditSelection {
-	private String l = "≪";
-	private String r = "≫";
-	private String tab = "  | ";
+	private String l	= "≪";
+	private String r	= "≫";
+	private String tab	= "  | ";
 	private JTextArea edit_area;
 	private int position = 0;
 	private int move = 0;

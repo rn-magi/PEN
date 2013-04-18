@@ -14,12 +14,13 @@ import javax.swing.text.BadLocationException;
  * @author Ryota Nakamura
  */
 public class IntVExecuter implements IntVParserVisitor{
-	private Hashtable FunctionTable= new Hashtable();
-	private Hashtable symTable	= new Hashtable();
+	private Hashtable FunctionTable	= new Hashtable();
+	private Hashtable symTable		= new Hashtable();
 	private Hashtable TableNoTable	= new Hashtable();
-	private Vector mainVec		= new Vector();
+	private Vector mainVec			= new Vector();
+	private Queue callVar			= new Queue();
+	
 	private IntVFileIO IO;
-	private Queue	callVar	= new Queue();
 
 	private Stack stacksymTable = new Stack();
 	private Stack stackTableNoTable = new Stack();

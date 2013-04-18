@@ -8,7 +8,7 @@ import javax.swing.text.DefaultEditorKit.CutAction;
 import javax.swing.text.DefaultEditorKit.PasteAction;
 
 public class MyJMenuBar extends JMenuBar{
-	MainGUI gui;
+	private MainGUI gui;
 	private JFileChooser file_c;
 	private PenFrame window;
 	private JTextArea edit_area;

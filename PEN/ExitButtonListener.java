@@ -10,7 +10,7 @@ public class ExitButtonListener  implements ActionListener{
 	private JFileChooser file_c;
 	private PenFrame window;
 	private JTextArea edit_area;
-	MainGUI gui;
+	private MainGUI gui;
 	
 	private String[] obj = {"終了する前にプログラムを保存しますか？"};
 	private String[] option = { "保存", "破棄", "取り消し" };

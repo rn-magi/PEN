@@ -2,9 +2,9 @@ import java.io.StringReader;
 
 import javax.swing.SwingUtilities;
 
-class ThreadRun extends Thread {
-	MainGUI gui;
-	IntVExecuter visitor;
+public class ThreadRun extends Thread {
+	private MainGUI gui;
+	private IntVExecuter visitor;
 	
 	public ThreadRun(MainGUI gui){
 		this.gui = gui;

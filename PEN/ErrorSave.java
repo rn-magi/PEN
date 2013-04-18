@@ -27,10 +27,10 @@ public class ErrorSave {
 	private JTextArea edit;
 	private JTextArea point;
 	
-	private String destDir = "";
-	private String destPath = "";
-	private String tempDir = "";
-	private String tempPath = "";
+	private String destDir	= "";
+	private String destPath	= "";
+	private String tempDir	= "";
+	private String tempPath	= "";
 	
 	private String header = "";
 	

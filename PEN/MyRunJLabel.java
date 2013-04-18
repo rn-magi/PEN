@@ -8,8 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class MyRunJLabel extends JPanel{
-	Dimension size	= new Dimension(80,35);
-	JLabel Label	= new JLabel();
+	private Dimension size	= new Dimension(80,35);
+	private JLabel Label	= new JLabel();
 	
 	public MyRunJLabel(){
 		breaks();

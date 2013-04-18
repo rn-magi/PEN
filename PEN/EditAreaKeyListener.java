@@ -4,7 +4,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JTextArea;
 import javax.swing.text.BadLocationException;
 
-class EditAreaKeyListener implements KeyListener {
+public class EditAreaKeyListener implements KeyListener {
 	private int SS = 0;
 	private int SN = 0;
 	

@@ -3,7 +3,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JPopupMenu;
 
-class EditButtonListener2 implements MouseListener {
+public class EditButtonListener2 implements MouseListener {
 	private JPopupMenu OpenWindow;
 	private MainGUI gui;
 	

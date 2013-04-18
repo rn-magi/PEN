@@ -1,9 +1,8 @@
 import java.awt.Container;
 
-
 public interface PenFrame {
-	Container getContentPane();
-	void setVisible(boolean b);
-	String getTitle();
-	void setTitle(String s);
+	public Container getContentPane();
+	public void setVisible(boolean b);
+	public String getTitle();
+	public void setTitle(String s);
 }

@@ -24,18 +24,18 @@ import javax.swing.JToolBar;
  * @author Ryota Nakamura
  */
 public class ButtonEdit {
-	MainGUI gui;
-	JPanel edit_area_panel		= new JPanel();
-	JPanel edit_button_area_panel		= new JPanel();
+	private MainGUI gui;
+	private JPanel edit_area_panel			= new JPanel();
+	private JPanel edit_button_area_panel	= new JPanel();
 
 	/**
 	 * <code>edit_button_area_layout</code> のコメント
 	 * このインスタンスに生成された入力支援ボタンが格納される
 	 */
-	JToolBar edit_button_area_toolbar	= new JToolBar();
+	public JToolBar edit_button_area_toolbar	= new JToolBar();
 	 
-	GridBagLayout edit_button_area_layout	= new GridBagLayout();
-	GridBagConstraints gbc			= new GridBagConstraints();	
+	public GridBagLayout edit_button_area_layout	= new GridBagLayout();
+	public GridBagConstraints gbc					= new GridBagConstraints();	
 
 	/**
 	 * 入力支援ボタンを格納するツールバーの初期設定を決める
