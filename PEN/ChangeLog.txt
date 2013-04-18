@@ -2,8 +2,8 @@
 
 ・ver 1.20_7 (2013/xx/xx)
   [ New ]
-    ・CLCD-BOOSTER on Arduino シミュレータを追加
-      -> openPort("SIM") でシミュレータが起動
+    ・Arduino(CLCD-BOOSTER)のシミュレータを追加
+      -> openPort("SIM") でArduino(CLCD-BOOSTER)シミュレータが起動
     ・LilyPad Development Board用のサンプルプログラムを追加
   [ Fix ]
     ・rxtxライブラリの更新
