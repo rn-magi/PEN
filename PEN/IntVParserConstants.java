@@ -391,7 +391,7 @@ public interface IntVParserConstants {
     "<PUTLN>",
     "<PUT>",
     "<BREAK>",
-    "\"\\u3092\\u5165\\u529b\\u3059\\u308b\"",
+    "<INPUT>",
     "<GET>",
     "<RANDOM>",
     "<SIN>",
