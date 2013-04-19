@@ -106,10 +106,10 @@ TOKEN [IGNORE_CASE] :
 	|	< PROCEDURAL		: "手続き" >
 	|	< ENDPROCEDURAL		: "手続き" ( "終了" | "終わり" ) >
 	|	< BREAKPROCEDURAL	: "手続きを抜ける" >
-	|	< FUNCTION		: "関数" >
+	|	< FUNCTION			: "関数" >
 	|	< ENDFUNCTION		: "関数" ( "終了" | "終わり" ) >
 	|	< BREAKFUNCTION		: "関数を抜ける" >
-	|	< RETURN		: "を返す" >
+	|	< RETURN			: "を返す" >
 	|	< IF		: "もし" >
 	|	< ENDIF		: "を" ( "実行する" | "実行" ) >
 	|	< THEN		: ( "ならば" | "なら" ) >
@@ -162,7 +162,7 @@ TOKEN [IGNORE_CASE] :
 	|	< gClearWindow	: ( "gClearWindow"	| "gWindowClear"| "描画領域全消去" )	<LP> >
 	|	< gSaveWindow	: ( "gSaveWindow"	| "gWindowSave" | "描画領域保存")	<LP> >
 	|	< gSetOrigin	: ( "gSetOrigin" ) <LP> >
-	|	< gSetMap	: ( "gSetMap" ) <LP> >
+	|	< gSetMap		: ( "gSetMap" ) <LP> >
 	|	< gSetDotShape	: ( "gSetDotShape"	| "点種"	( "設定" | "変更" ) )	<LP> >
 	|	< gSetLineColor	: ( "gSetLineColor"	| "線色"	( "設定" | "変更" ) )	<LP> >
 	|	< gSetFillColor	: ( "gSetFillColor"	| "塗色"	( "設定" | "変更" ) )	<LP> >
@@ -171,20 +171,20 @@ TOKEN [IGNORE_CASE] :
 	|	< gSetArrowType	: ( "gSetArrowType"	| "線矢"	( "設定" | "変更" ) )	<LP> >
 	|	< gSetArrowDir	: ( "gSetArrowDir"	| "線方向"	( "設定" | "変更" ) )	<LP> >
 	|	< gSetTextColor	: ( "gSetTextColor"	| "文字色"	( "設定" | "変更" ) )	<LP> >
-	|	< gSetFont	: ( "gSetFont"		| "文字種"	( "設定" | "変更" ) )	<LP> >
+	|	< gSetFont		: ( "gSetFont"		| "文字種"	( "設定" | "変更" ) )	<LP> >
 	|	< gSetFontType	: ( "gSetFontType"	| "文字タイプ"	( "設定" | "変更" ) )	<LP> >
 	|	< gSetFontSize	: ( "gSetFontSize"	| "文字サイズ"	( "設定" | "変更" ) )	<LP> >
 	|	< gDrawPoint	: ( "gDrawPoint"	| "点描画" )	<LP> >
-	|	< gDrawLine	: ( "gDrawLine"		| "線描画" )	<LP> >
-	|	< gDrawText	: ( "gDrawText"		| "文字描画" )	<LP> >
+	|	< gDrawLine		: ( "gDrawLine"		| "線描画" )	<LP> >
+	|	< gDrawText		: ( "gDrawText"		| "文字描画" )	<LP> >
 	|	< gDrawCircle	: ( "gDrawCircle"	| "円描画" )	<LP> >
 	|	< gFillCircle	: ( "gFillCircle"	| "円塗描画" )	<LP> >
-	|	< gDrawOval	: ( "gDrawOval"		| "楕円描画" )	<LP> >
-	|	< gFillOval	: ( "gFillOval"		| "楕円塗描画" )	<LP> >
-	|	< gDrawBox	: ( "gDrawBox"		| "矩形描画" )		<LP> >
-	|	< gFillBox	: ( "gFillBox"		| "矩形塗描画" )	<LP> >
-	|	< gDrawArc	: ( "gDrawArc"		| "弧描画" )		<LP> >
-	|	< gFillArc	: ( "gFillArc"		| "弧塗描画" )		<LP> >
+	|	< gDrawOval		: ( "gDrawOval"		| "楕円描画" )	<LP> >
+	|	< gFillOval		: ( "gFillOval"		| "楕円塗描画" )	<LP> >
+	|	< gDrawBox		: ( "gDrawBox"		| "矩形描画" )		<LP> >
+	|	< gFillBox		: ( "gFillBox"		| "矩形塗描画" )	<LP> >
+	|	< gDrawArc		: ( "gDrawArc"		| "弧描画" )		<LP> >
+	|	< gFillArc		: ( "gFillArc"		| "弧塗描画" )		<LP> >
 	|	< gDrawPolygon	: "gDrawPolygon"	<LP> >
 	|	< gFillPolygon	: "gFillPolygon"	<LP> >
 	|	< gDrawPolyline	: "gDrawPolyline"	<LP> >
