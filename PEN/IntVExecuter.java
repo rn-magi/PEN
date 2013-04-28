@@ -22,18 +22,18 @@ public class IntVExecuter implements IntVParserVisitor{
 	
 	private IntVFileIO IO;
 
-	private Stack stacksymTable = new Stack();
+	private Stack stacksymTable		= new Stack();
 	private Stack stackTableNoTable = new Stack();
 	
-	private int declaration	= 0;
+	private int declaration		= 0;
 	private boolean flag		= false;
 	private boolean NodeDump	= false;
 	
-	private boolean varFlag	= false;
+	private boolean varFlag		= false;
 	private boolean varError	= false;
 	
 	private int arrayOrigin	= 0;
-	private int arrayField		= 0;
+	private int arrayField	= 0;
 	
 	private int tmpAddres;
 	
