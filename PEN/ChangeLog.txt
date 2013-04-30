@@ -5,15 +5,19 @@
     ・Arduino(CLCD-BOOSTER)のシミュレータを追加
       -> openPort("SIM") でArduino(CLCD-BOOSTER)シミュレータが起動
     ・LilyPad Development Board用のサンプルプログラムを追加
+    ・入力支援ボタン定義ファイルに Arduino用 を追加
   [ Fix ]
     ・rxtxライブラリの更新
     ・入力命令に命令文の揺らぎを追加
       -> ≪変数≫ に入力する
 
   [ NewFile ]
+    - ./ButtonList/Arduino.ini
     - ./sample/LilyPad/LED-Flash.pen
     - ./sample/LilyPad/SwitchVibe.pen
   [ FixFile ]
+    - ./ButtonList/Default.ini
+    - ./ButtonList/DrawList.ini
     - ./lib/librxtxSerial.so
     - ./lib/RXTXcomm.jar
     - ./lib64/librxtxSerial.so
@@ -24,6 +28,7 @@
     - ./sample/Arduino/LED-Flash2.pen
     - ./sample/Arduino/LED-Light.pen
     - ChangeLog.txt
+    - EditButtonList.java
     - IntVParser.jjt
     - IntVParserConstants.java
     - IntVParserTokenManager.java
