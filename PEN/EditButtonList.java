@@ -25,9 +25,9 @@ public class EditButtonList {
 		Width	= (int) Math.round(TextWidth * 10.83);
 		Height	= 25;
 
-		if(split.length > 2) {
+		if(split.length > 2 && !split[2].equals("")) {
 			String[] color	= split[2].split(",");
-			Color = new Color(new Integer(color[0]).intValue(),new Integer(color[1]).intValue(),new Integer(color[2]).intValue());
+			Color = new Color(Integer.valueOf(color[0]), Integer.valueOf(color[1]), Integer.valueOf(color[2]));
 		}
 		
 		if( split.length >= 4 ){
