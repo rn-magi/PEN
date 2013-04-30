@@ -39,6 +39,7 @@ cp -R ${PLUGIN_DIR}/bin/* ${PEN_DIR}/plugin
 cp ${PEN_WORK}/PEN.url ${PEN_DIR}/
 cp ${PEN_WORK}/ChangeLog.txt ${PEN_DIR}/
 cp ${PEN_WORK}/ReadMe.txt ${PEN_DIR}/
+cp ${PEN_WORK}/HowToArduino.txt ${PEN_DIR}/
 cp ${PEN_WORK}/*.ini ${PEN_DIR}/
 cp ${PEN_WORK}/PEN.bat ${PEN_DIR}/
 cp ${PEN_WORK}/PEN.sh ${PEN_DIR}/
