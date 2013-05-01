@@ -42,7 +42,6 @@
   |- ./lib64/                       … Javaのライブラリ(64bit版)
   |- ./plugin/                      … プラグインファイル
   |- ./sample/                      … PENのサンプルプログラムです
-  |- ./src/                         … PENのソースファイルです
   |- ChangeLog.txt                  … PENの更新履歴です
   |- functionTable.ini              … プラグイン機能で呼び出す関数を定義するファイル
   |- PEN.jar                        … PEN本体です
