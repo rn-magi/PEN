@@ -1,11 +1,10 @@
 eclipse.preferences.version=1
 encoding//sample/xDNCL=MS932
-encoding//ButtonList/Default.ini=MS932
-encoding//ButtonList/DrawList.ini=MS932
-encoding//Locale/Locale_ja_JP.properties=MS932
+encoding//src/ButtonList=MS932
+encoding//src/Locale=MS932
+encoding//src/Property.ini=MS932
 encoding/ChangeLog.txt=MS932
 encoding/Manual=MS932
-encoding/Property.ini=MS932
 encoding/ReadMe.txt=MS932
 encoding/applet.html=MS932
 encoding/buildpkg.bat=MS932
