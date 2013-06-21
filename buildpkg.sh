@@ -13,8 +13,6 @@ rm -irf ${PEN_DIR}
 mkdir ${PEN_DIR}
 mkdir ${PEN_DIR}/plugin
 
-cp -R ${PLUGIN_DIR}/ArduinoSketch ${PEN_DIR}/
-
 cp -R ${PEN_WORK}/sample/xDNCL/sample ${PEN_DIR}/
 cp -R ${PEN_WORK}/Manual ${PEN_DIR}/
 cp -R ${PEN_WORK}/src/ButtonList ${PEN_DIR}/

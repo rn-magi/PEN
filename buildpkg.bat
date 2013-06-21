@@ -29,8 +29,6 @@ set PLUGIN_DIR=%USERPROFILE%\git\penPluginDev
 
 mkdir "%PEN_DIR%"
 
-xcopy /Y /S "%PLUGIN_DIR%\ArduinoSketch" "%PEN_DIR%\ArduinoSketch\"
-
 xcopy /Y /S "%PEN_WORK%\sample\xDNCL\sample" "%PEN_DIR%\sample\"
 
 mkdir "%PEN_DIR%\Manual"
