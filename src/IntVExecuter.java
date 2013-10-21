@@ -302,7 +302,7 @@ public class IntVExecuter implements IntVParserVisitor{
 				obj = new Long(0);
 				stat_data[0] = "長整数";
 				stat_data[2] = "0";
-			}  else if( declaration == PenProperties.DECLARATION_DOUBLE ){
+			} else if( declaration == PenProperties.DECLARATION_DOUBLE ){
 				obj = new Double(0.0);
 				stat_data[0] = "実数";
 				stat_data[2] = "0.0";

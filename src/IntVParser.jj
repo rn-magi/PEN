@@ -339,9 +339,6 @@ void IntVUnit() :
 			++nParseErrors;
 			gui.consoleAppend.appendAll("### " + e.getMessage() + "\n");
 			throw new ParseException();
-			do {
-				t = getNextToken();
-			} while (t.kind != SM && t.kind != RC && t.kind != EOF);
 		}
 	)*/*@bgen(jjtree)*/
         } catch (Throwable jjte000) {

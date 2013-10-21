@@ -148,9 +148,6 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
                         ++nParseErrors;
                         gui.consoleAppend.appendAll("### " + e.getMessage() + "\u005cn");
                         {if (true) throw new ParseException();}
-                        do {
-                                t = getNextToken();
-                        } while (t.kind != SM && t.kind != RC && t.kind != EOF);
           }
         }
       } catch (Throwable jjte000) {
@@ -6987,6 +6984,37 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
     finally { jj_save(9, xla); }
   }
 
+  private boolean jj_3R_130() {
+    if (jj_scan_token(ABS)) return true;
+    if (jj_3R_37()) return true;
+    if (jj_scan_token(RP)) return true;
+    return false;
+  }
+
+  private boolean jj_3R_20() {
+    if (jj_3R_34()) return true;
+    Token xsp;
+    while (true) {
+      xsp = jj_scanpos;
+      if (jj_3R_35()) { jj_scanpos = xsp; break; }
+    }
+    xsp = jj_scanpos;
+    if (jj_scan_token(77)) {
+    jj_scanpos = xsp;
+    if (jj_3R_36()) return true;
+    }
+    return false;
+  }
+
+  private boolean jj_3R_33() {
+    if (jj_scan_token(LP)) return true;
+    Token xsp;
+    xsp = jj_scanpos;
+    if (jj_3R_48()) jj_scanpos = xsp;
+    if (jj_scan_token(RP)) return true;
+    return false;
+  }
+
   private boolean jj_3R_69() {
     if (jj_scan_token(CM)) return true;
     if (jj_3R_47()) return true;
@@ -8009,37 +8037,6 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
   private boolean jj_3R_21() {
     if (jj_3R_37()) return true;
     if (jj_scan_token(RETURN)) return true;
-    return false;
-  }
-
-  private boolean jj_3R_130() {
-    if (jj_scan_token(ABS)) return true;
-    if (jj_3R_37()) return true;
-    if (jj_scan_token(RP)) return true;
-    return false;
-  }
-
-  private boolean jj_3R_20() {
-    if (jj_3R_34()) return true;
-    Token xsp;
-    while (true) {
-      xsp = jj_scanpos;
-      if (jj_3R_35()) { jj_scanpos = xsp; break; }
-    }
-    xsp = jj_scanpos;
-    if (jj_scan_token(77)) {
-    jj_scanpos = xsp;
-    if (jj_3R_36()) return true;
-    }
-    return false;
-  }
-
-  private boolean jj_3R_33() {
-    if (jj_scan_token(LP)) return true;
-    Token xsp;
-    xsp = jj_scanpos;
-    if (jj_3R_48()) jj_scanpos = xsp;
-    if (jj_scan_token(RP)) return true;
     return false;
   }
 
