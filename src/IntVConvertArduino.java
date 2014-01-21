@@ -45,7 +45,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 		
 		inoTempDirPath = penPro.getProperty(penPro.PEN_SYSTEM_HOME)
 				+ fileSepa + "pen" + unixTime + fileSepa;
-		new File(inoTempFileName).mkdir();
+		new File(inoTempDirPath).mkdir();
 		
 		inoTempFileName = "pen" + unixTime + ".ino";
 		inoTempFilePath = inoTempDirPath + inoTempFileName;
