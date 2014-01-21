@@ -428,6 +428,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 */
 	public Object visit(ASTPutStat node, Object data) {
 		outPutIndent();
+		outPutCode("// ");
 		int k = node.jjtGetNumChildren();
 		
 		// 子ノードが2以上で文字列と変数を表示
