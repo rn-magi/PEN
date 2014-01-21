@@ -70,7 +70,7 @@ public class MyJMenuBar extends JMenuBar{
 		ConsoleCopyMenuItem.addActionListener(new ConsoleCopyButtonListener(console));
 		VarCopyMenuItem.addActionListener(new VarCopyButtonListener(var_table));
 		
-		ArduinoUploadMenuItem.addActionListener(new xDCNL2ArduinoConvertListener(edit_area));
+		ArduinoUploadMenuItem.addActionListener(new xDCNL2ArduinoConvertListener(edit_area, gui.penPro));
 
 		ConfigMenu.addActionListener(new ConfigButtonListener(gui, ConfigMenu.getText()));
 		HelpPenMenuItem.addActionListener(new HelpPenButtonListener(Version));
@@ -119,6 +119,7 @@ public class MyJMenuBar extends JMenuBar{
 		PasteMenuItem.setEnabled(f);
 		ConsoleCopyMenuItem.setEnabled(f);
 		VarCopyMenuItem.setEnabled(f);
+		ArduinoUploadMenuItem.setEnabled(f);
 	}
 	
 	public void LogCopy(boolean f){
