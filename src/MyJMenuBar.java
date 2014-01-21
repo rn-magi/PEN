@@ -21,23 +21,26 @@ public class MyJMenuBar extends JMenuBar{
 	
 	private JMenuBar MenuBar = new JMenuBar();
 	
-	private MyJMenu FileMenu = new MyJMenu("ファイル");
-	private MyJMenu EditMenu = new MyJMenu("編集");
-	private MyJMenu HelpMenu = new MyJMenu("ヘルプ");
+	private MyJMenu FileMenu	= new MyJMenu("ファイル");
+	private MyJMenu EditMenu	= new MyJMenu("編集");
+	private MyJMenu ArduinoMenu	= new MyJMenu("Arduino");
+	private MyJMenu HelpMenu	= new MyJMenu("ヘルプ");
 	
 	private MyJMenuItem NewFileMenuItem		= new MyJMenuItem("新規");
-	private MyJMenuItem FileOpenMenuItem		= new MyJMenuItem("開く");
-//	private MyJMenuItem FileSaveMenuItem		= new MyJMenuItem("上書き保存");
-	private MyJMenuItem FileReSaveMenuItem		= new MyJMenuItem("名前を付けて保存");
+	private MyJMenuItem FileOpenMenuItem	= new MyJMenuItem("開く");
+//	private MyJMenuItem FileSaveMenuItem	= new MyJMenuItem("上書き保存");
+	private MyJMenuItem FileReSaveMenuItem	= new MyJMenuItem("名前を付けて保存");
 	private MyJMenuItem ExitMenuItem		= new MyJMenuItem("PENを終了する");
 	
 	private MyJMenuItem UndoMenuItem		= new MyJMenuItem("元に戻す");
 	private MyJMenuItem RedoMenuItem		= new MyJMenuItem("やり直し");
-	private MyJMenuItem CutMenuItem		= new MyJMenuItem("切り取り"	, new CutAction());
+	private MyJMenuItem CutMenuItem			= new MyJMenuItem("切り取り"	, new CutAction());
 	private MyJMenuItem CopyMenuItem		= new MyJMenuItem("コピー"	, new CopyAction());
 	private MyJMenuItem PasteMenuItem		= new MyJMenuItem("貼り付け"	, new PasteAction());
 	private MyJMenuItem ConsoleCopyMenuItem	= new MyJMenuItem("実行画面をコピー");
 	private MyJMenuItem VarCopyMenuItem		= new MyJMenuItem("変数表示画面をコピー");
+	
+	private MyJMenuItem ArduinoUploadMenuItem	= new MyJMenuItem("Arduinoへの書き込み");
 
 	private MyJMenuItem ConfigMenu			= new MyJMenuItem("設定確認");
 	private MyJMenuItem HelpPenMenuItem		= new MyJMenuItem("PENについて");
@@ -66,6 +69,8 @@ public class MyJMenuBar extends JMenuBar{
 		
 		ConsoleCopyMenuItem.addActionListener(new ConsoleCopyButtonListener(console));
 		VarCopyMenuItem.addActionListener(new VarCopyButtonListener(var_table));
+		
+		ArduinoUploadMenuItem.addActionListener(new xDCNL2ArduinoConvertListener(edit_area));
 
 		ConfigMenu.addActionListener(new ConfigButtonListener(gui, ConfigMenu.getText()));
 		HelpPenMenuItem.addActionListener(new HelpPenButtonListener(Version));
@@ -86,6 +91,8 @@ public class MyJMenuBar extends JMenuBar{
 		EditMenu.add(new JSeparator());
 		EditMenu.add(ConsoleCopyMenuItem);
 		EditMenu.add(VarCopyMenuItem);
+		
+		ArduinoMenu.add(ArduinoUploadMenuItem);
 
 		HelpMenu.add(ConfigMenu);
 		HelpMenu.add(new JSeparator());
@@ -93,6 +100,7 @@ public class MyJMenuBar extends JMenuBar{
 		
 		MenuBar.add(FileMenu);
 		MenuBar.add(EditMenu);
+		MenuBar.add(ArduinoMenu);
 		MenuBar.add(HelpMenu);
 
 		return MenuBar;
