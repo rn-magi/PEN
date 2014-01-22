@@ -15,7 +15,7 @@ import java.util.Vector;
 public class IntVConvertArduino implements IntVParserVisitor{
 	private int declaration		= 0;
 	private boolean flag		= false;
-	private boolean NodeDump	= true;
+	private boolean NodeDump	= false;
 	
 	private boolean varFlag		= false;
 	private boolean varError	= false;
@@ -45,8 +45,6 @@ public class IntVConvertArduino implements IntVParserVisitor{
 		
 		inoTempDirPath = penPro.getProperty(penPro.PEN_SYSTEM_HOME)
 				+ fileSepa + "pen" + unixTime + fileSepa;
-		new File(inoTempDirPath).mkdir();
-		
 		inoTempFileName = "pen" + unixTime + ".ino";
 		inoTempFilePath = inoTempDirPath + inoTempFileName;
 	}
@@ -139,6 +137,11 @@ public class IntVConvertArduino implements IntVParserVisitor{
 		if(NodeDump){
 			printDebug(node);
 		}
+		
+		commandLineArduino();
+		
+		deleteTempFiles(inoTempDirPath);
+		
 		return null;
 	}
 
@@ -712,8 +715,9 @@ public class IntVConvertArduino implements IntVParserVisitor{
 		if(node.flag){
 			outPutCode(node.varName);
 		} else {
-			//変数以外のものが来た場合の処理
-			Function(node, data, node.varName);
+			if(checkArduinoFunction(node.varName)){
+				Function(node, data, node.varName);
+			}
 		}
 		return null;
 	}
@@ -731,11 +735,15 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTFunctionCall node, Object data) {
 		// TODO PENで定義されていない独自関数などの処理
 		if(node.varName.equals("openPort")){
-			openPort = ((ASTStrlit) node.jjtGetChild(0)).litString;
+			if(node.jjtGetChild(0) instanceof ASTStrlit){
+				openPort = ((ASTStrlit) node.jjtGetChild(0)).litString;
+			}
 		} else {
-			outPutIndent();
-			Function(node, data, node.varName);
-			outPutCodeln(";");
+			if(checkArduinoFunction(node.varName)){
+				outPutIndent();
+				Function(node, data, node.varName);
+				outPutCodeln(";");
+			}
 		}
 		return null;
 	}
@@ -1267,6 +1275,10 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * sleep() : プログラムの一時停止
 	 */
 	public Object visit(ASTSleep node, Object data) {
+		outPutIndent();
+		outPutCode("delay(");
+		node.jjtGetChild(0).jjtAccept(this, data);
+		outPutCodeln(");");
 		return null;
 	}
 
@@ -1447,6 +1459,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	
 	public void writeCode(){
 		try {
+			new File(inoTempDirPath).mkdir();
 			FileOutputStream file = new FileOutputStream(inoTempFilePath);
 			OutputStreamWriter bw = new OutputStreamWriter(file, "UTF-8");
 			for (int j = 0; j < arduinoCode.size(); j++) {
@@ -1466,6 +1479,36 @@ public class IntVConvertArduino implements IntVParserVisitor{
 		}
 	}
 	
+	public void commandLineArduino(){
+		try {
+			String osName = System.getProperty("os.name");
+			String commandLine = "";
+			Runtime r = Runtime.getRuntime();
+			Process p;
+			
+			if(osName.indexOf("Windows")>=0){
+			} else if(osName.indexOf("Linux")>=0){
+			} else if(osName.indexOf("Mac")>=0){
+				commandLine = "/usr/bin/open -W "+ penPro.getProperty(penPro.Arduino_EXEC_PATH) + " --args";
+			} else {
+			}
+			
+			if(!openPort.equals("")){
+				commandLine = commandLine + " --port " + openPort;
+			}
+			commandLine = commandLine + " --upload " + inoTempFilePath;
+			p = r.exec(commandLine);			
+			int ret = p.waitFor();
+			//System.out.println("command: " + commandLine);
+			//System.out.println("Retun: " + ret);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+	}
+	
 	public void printDebug(SimpleNode node){
 		System.out.println("-*-*-*- node dump -*-*-*-");
 		node.dump("");
@@ -1477,5 +1520,34 @@ public class IntVConvertArduino implements IntVParserVisitor{
 		}
 		System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-");
 		System.out.println("Port: " + openPort);
+	}
+	
+	public boolean checkArduinoFunction(String varName){
+		if(varName.equals("pinMode")
+				|| varName.equals("digitalWrite")
+				|| varName.equals("digitalRead")
+				|| varName.equals("analogWrite")
+				|| varName.equals("analogRead")
+				|| varName.equals("sleep")
+				|| varName.equals("delay")){
+			return true;
+		}
+		return false;
+	}
+	
+	public void deleteTempFiles(String filePath){
+		File temp = new File(filePath);
+		
+		if(temp.isFile()){
+			temp.delete();
+			//System.out.println(temp.getPath());
+		} else if(temp.isDirectory()){
+			File[] files=temp.listFiles();
+			for(int i=0; i<files.length; i++){
+				deleteTempFiles( files[i].getPath() );
+			}
+			temp.delete();
+			//System.out.println(temp.getPath());
+		}
 	}
 }
