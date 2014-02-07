@@ -140,7 +140,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 		
 		commandLineArduino();
 		
-		deleteTempFiles(inoTempDirPath);
+		//deleteTempFiles(inoTempDirPath);
 		
 		return null;
 	}
@@ -269,7 +269,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			node.jjtGetChild(1).jjtAccept(this, data);
 		}
 		outPutCodeln(";");
-		
+		outPutIndent();
 		return null;
 	}
 	
@@ -712,8 +712,15 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 変数名から値を返す
 	 */
 	public Object visit(ASTIdent node, Object data) {
-		if(node.flag){
+		if (node.flag) {
 			outPutCode(node.varName);
+			// 変数名が配列の場合の処理
+			int k = node.jjtGetNumChildren();
+			for (int i = 0; i < k; i++) {
+				if (node.jjtGetChild(i) instanceof ASTArrayNum) {
+					node.jjtGetChild(i).jjtAccept(this, data);
+				}
+			}
 		} else {
 			if(checkArduinoFunction(node.varName)){
 				Function(node, data, node.varName);
@@ -726,6 +733,10 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 変数（配列）から値を返す
 	 */
 	public Object visit(ASTArrayNum node, Object data) {
+		// TODO　配列処理
+		outPutCode("[");
+		node.jjtGetChild(0).jjtAccept(this, data);
+		outPutCode("]");
 		return null;
 	}
 
@@ -1487,6 +1498,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			Process p;
 			
 			if(osName.indexOf("Windows")>=0){
+				//commandLine = penPro.getProperty(penPro.Arduino_EXEC_PATH);
 			} else if(osName.indexOf("Linux")>=0){
 			} else if(osName.indexOf("Mac")>=0){
 				commandLine = "/usr/bin/open -W "+ penPro.getProperty(penPro.Arduino_EXEC_PATH) + " --args";
