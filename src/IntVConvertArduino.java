@@ -6,45 +6,43 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 /**
- * IntVParserクラスによって生成した構文木の
- * 各ノードの処理を記述したクラス。
- * xDNCL言語の実行はこのクラスがすべて行っている。
+ * IntVParserクラスによって生成した構文木の 各ノードの処理を記述したクラス。 xDNCL言語の実行はこのクラスがすべて行っている。
  * 
  * @author Ryota Nakamura
  */
-public class IntVConvertArduino implements IntVParserVisitor{
-	private int declaration		= 0;
-	private boolean flag		= false;
-	private boolean NodeDump	= false;
-	
-	private boolean varFlag		= false;
-	private boolean varError	= false;
-	
-	private int arrayOrigin	= 0;
-	private int arrayField	= 0;
-	
+public class IntVConvertArduino implements IntVParserVisitor {
+	private int declaration = 0;
+	private boolean flag = false;
+	private boolean NodeDump = false;
+
+	private boolean varFlag = false;
+	private boolean varError = false;
+
+	private int arrayOrigin = 0;
+	private int arrayField = 0;
+
 	private int indentLevel = 1;
-	
+
 	private PenProperties penPro;
-	
+
 	private ArrayList<String> arduinoCode = new ArrayList<String>();
-	
+
 	private String openPort = "";
-	
+
 	private final String lineSepa = System.getProperty("line.separator");
 	private final String fileSepa = System.getProperty("file.separator");
-	
+
 	private String inoTempDirPath;
 	private String inoTempFilePath;
 	private String inoTempFileName;
-	
-	public IntVConvertArduino(PenProperties penPro){
+
+	public IntVConvertArduino(PenProperties penPro) {
 		this.penPro = penPro;
 
 		long unixTime = System.currentTimeMillis();
-		
-		inoTempDirPath = penPro.getProperty(penPro.PEN_SYSTEM_HOME)
-				+ fileSepa + "pen" + unixTime + fileSepa;
+
+		inoTempDirPath = penPro.getProperty(penPro.PEN_SYSTEM_HOME) + fileSepa
+				+ "pen" + unixTime + fileSepa;
 		inoTempFileName = "pen" + unixTime + ".ino";
 		inoTempFilePath = inoTempDirPath + inoTempFileName;
 	}
@@ -52,64 +50,60 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	/**
 	 * 構文木をダンプするためのフラグを true にするメソッド
 	 */
-	public void NodeDump(){
+	public void NodeDump() {
 		NodeDump = true;
 	}
-	
+
 	/**
 	 * @param type
-	 * 	0 : 宣言ありモード
-	 * 	1 : 宣言なしモード + 警告あり
-	 * 	2 : 宣言なしモード
+	 *            0 : 宣言ありモード 1 : 宣言なしモード + 警告あり 2 : 宣言なしモード
 	 */
-	public void varType(int type){
-		switch(type){
-			case 0:
-				varFlag	= false;
-				varError= false;
-				break;
-			case 1:
-				varFlag	= true;
-				varError= true;
-				break;
-			case 2:
-			case 3:
-				varFlag	= true;
-				varError= false;
-				break;
+	public void varType(int type) {
+		switch (type) {
+		case 0:
+			varFlag = false;
+			varError = false;
+			break;
+		case 1:
+			varFlag = true;
+			varError = true;
+			break;
+		case 2:
+		case 3:
+			varFlag = true;
+			varError = false;
+			break;
 		}
 	}
 
 	/**
 	 * @param arrayType
-	 * 	0 : 0オリジン～添字
-	 * 	1 : 0オリジン～添字 - 1
-	 * 	2 : 1オリジン～添字
+	 *            0 : 0オリジン～添字 1 : 0オリジン～添字 - 1 2 : 1オリジン～添字
 	 */
-	public void arrayOrigin(int arrayType){
-		switch(arrayType){
-			case 0:
-				arrayOrigin = 0;
-				arrayField  = 0;
-				break;
-			case 1:
-				arrayOrigin = 0;
-				arrayField  = 1;
-				break;
-			case 2:
-				arrayOrigin = 1;
-				arrayField  = 0;
-				break;
+	public void arrayOrigin(int arrayType) {
+		switch (arrayType) {
+		case 0:
+			arrayOrigin = 0;
+			arrayField = 0;
+			break;
+		case 1:
+			arrayOrigin = 0;
+			arrayField = 1;
+			break;
+		case 2:
+			arrayOrigin = 1;
+			arrayField = 0;
+			break;
 		}
 	}
-	
+
 	/**
 	 * 実行時エラーによって呼び出されるメソッド
 	 */
 	public Object visit(SimpleNode node, Object data) {
 		throw new Error(); // It better not come here.
 	}
-	
+
 	/**
 	 * 構文木のルートノード
 	 */
@@ -117,31 +111,31 @@ public class IntVConvertArduino implements IntVParserVisitor{
 		// 手続き・関数呼び出しの先読み
 		int i, k = node.jjtGetNumChildren();
 		for (i = 0; i < k; i++) {
-			if( node.jjtGetChild(i) instanceof ASTFunction){
+			if (node.jjtGetChild(i) instanceof ASTFunction) {
 				node.jjtGetChild(i).jjtAccept(this, data);
 			}
 		}
-		
+
 		// プログラムの実行
 		outPutCodeln("void setup() {");
 		for (i = 0; i < k; i++) {
-			if( !(node.jjtGetChild(i) instanceof ASTFunction)){
+			if (!(node.jjtGetChild(i) instanceof ASTFunction)) {
 				node.jjtGetChild(i).jjtAccept(this, data);
 			}
 		}
 		outPutCodeln("}");
 		outPutCodeln("void loop() { }");
-		
+
 		writeCode();
-		
-		if(NodeDump){
+
+		if (NodeDump) {
 			printDebug(node);
 		}
-		
+
 		commandLineArduino();
-		
-		//deleteTempFiles(inoTempDirPath);
-		
+
+		// deleteTempFiles(inoTempDirPath);
+
 		return null;
 	}
 
@@ -155,6 +149,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 		return false;
 	}
+
 	/**
 	 * 実行エラー
 	 */
@@ -181,7 +176,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 */
 	public Object visit(ASTVarDecl node, Object data) {
 		outPutIndent();
-		if( node.decl == PenProperties.DECLARATION_INT ){
+		if (node.decl == PenProperties.DECLARATION_INT) {
 			outPutCode("int ");
 		} else if (node.decl == PenProperties.DECLARATION_LONG) {
 			outPutCode("long ");
@@ -200,7 +195,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			if (i >= 1) {
 				outPutCode(", ");
 			}
-			
+
 			// jjtGetChildは子ノードそのものを取得する。 jjtAcceptはノードの実行。
 			node.jjtGetChild(i).jjtAccept(this, data);
 		}
@@ -213,49 +208,57 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 */
 	public Object visit(ASTDecl node, Object data) {
 		outPutCode(node.varName);
-		
+
 		// 配列の場合
 		int k = node.jjtGetNumChildren();
 		for (int i = 0; i < k; i++) {
 			if (node.jjtGetChild(i) instanceof ASTArray) {
+				outPutCode("[");
 				node.jjtGetChild(i).jjtAccept(this, data);
+				outPutCode("]");
 			}
 		}
 		return null;
 	}
-	
+
 	/**
 	 * 変数を配列として確保する
 	 */
 	public Object visit(ASTArray node, Object data) {
 		// TODO　配列処理
-		outPutCode("[");
-		node.jjtGetChild(0).jjtAccept(this, data);
-		outPutCode("]");
+		int k = node.jjtGetNumChildren();
+		for (int i = 0; i < k; i++) {
+			if (node.jjtGetChild(i) instanceof ASTArray) {
+				outPutCode(",");
+				node.jjtGetChild(i).jjtAccept(this, data);
+			} else {
+				node.jjtGetChild(0).jjtAccept(this, data);
+			}
+		}
 		return null;
 	}
-	
+
 	/**
 	 * 複数の計算式
 	 */
 	public Object visit(ASTAssignStats node, Object data) {
 		// 子ノードの数を取得
 		int k = node.jjtGetNumChildren();
-		
-		outPutIndent();
-		
+
+		// outPutIndent();
+
 		for (int i = 0; i < k; i++) {
 			// jjtGetChildは子ノードそのものを取得する。 jjtAcceptはノードの実行。
 			node.jjtGetChild(i).jjtAccept(this, data);
 		}
 		return null;
 	}
-	
+
 	/**
-	 * 変数 ← 計算式
-	 * 計算式のノードを処理し、結果を変数に格納する
+	 * 変数 ← 計算式 計算式のノードを処理し、結果を変数に格納する
 	 */
 	public Object visit(ASTAssignStat node, Object data) {
+		outPutIndent();
 		// 左辺の子ノードを呼び出す
 		node.jjtGetChild(0).jjtAccept(this, data);
 		outPutCode(" = ");
@@ -269,17 +272,17 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			node.jjtGetChild(1).jjtAccept(this, data);
 		}
 		outPutCodeln(";");
-		outPutIndent();
+		// outPutIndent();
 		return null;
 	}
-	
+
 	/**
 	 * IF文
 	 */
 	public Object visit(ASTIfStat node, Object data) {
 		// TODO IF文の処理
 		outPutIndent();
-		
+
 		if (node.jjtGetNumChildren() >= 2) {
 			outPutCode("if ");
 			node.jjtGetChild(0).jjtAccept(this, data);
@@ -295,7 +298,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 				outPutCodeln("}");
 			}
 		}
-		
+
 		if (node.jjtGetNumChildren() == 3) {
 			// System.out.println(node.jjtGetChild(2));
 			outPutCode("else");
@@ -355,9 +358,9 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTWhileSwitchFor node, Object data) {
 		if (node.p.equals(node.wh)) {
 			return runWhileStat(node, data);
-		} else if(node.p.equals(node.sw)){
+		} else if (node.p.equals(node.sw)) {
 			return runSwitch(node, data);
-		} else if(node.p.equals(node.fr)){
+		} else if (node.p.equals(node.fr)) {
 			return runFor(node, data);
 		}
 		return null;
@@ -392,35 +395,35 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object runFor(SimpleNode node, Object data) {
 		// op が 1 なら増やしながら
 		// op が -1 なら減らしながら
-		int op = ((ASTForStatAdd)node.jjtGetChild(3)).op;
+		int op = ((ASTForStatAdd) node.jjtGetChild(3)).op;
 
 		outPutIndent();
-		
+
 		outPutCode("for (");
 		node.jjtGetChild(0).jjtAccept(this, data);
 		outPutCode(" = ");
 		node.jjtGetChild(1).jjtAccept(this, data);
 		outPutCode("; ");
-		
+
 		node.jjtGetChild(0).jjtAccept(this, data);
-		if(op == 1){
+		if (op == 1) {
 			outPutCode(" <= ");
-		}else{
+		} else {
 			outPutCode(" >= ");
 		}
 		node.jjtGetChild(2).jjtAccept(this, data);
 		outPutCode("; ");
-		
+
 		node.jjtGetChild(0).jjtAccept(this, data);
 		outPutCode(" = ");
 		node.jjtGetChild(0).jjtAccept(this, data);
 		node.jjtGetChild(3).jjtAccept(this, data);
 		outPutCodeln(") {");
-		
+
 		indentLevel++;
 		node.jjtGetChild(4).jjtAccept(this, data);
 		indentLevel--;
-		
+
 		outPutIndent();
 		outPutCodeln("}");
 		return null;
@@ -440,7 +443,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 		outPutIndent();
 		outPutCode("// ");
 		int k = node.jjtGetNumChildren();
-		
+
 		// 子ノードが2以上で文字列と変数を表示
 		if (node.jjtGetNumChildren() >= 2) {
 			outPutCode("printf(\"");
@@ -452,7 +455,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 				}
 			}
 			outPutCode("\"");
-			
+
 			// 子ノードが変数でその数だけ表示
 			for (int j = 0; j < k; j++) {
 				if (j >= 0) {
@@ -464,14 +467,14 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			}
 			outPutCode(")");
 		}
-		
+
 		// 文字列の表示
 		else if (node.jjtGetChild(0) instanceof ASTStrlit) {
 			outPutCode("printf(\"");
 			node.jjtGetChild(0).jjtAccept(this, data);
 			outPutCode("\")");
 		}
-		
+
 		// 変数の表示
 		else if (node.jjtGetChild(0) instanceof ASTIdent) {
 			outPutCode("printf(\"　%d \",");
@@ -488,7 +491,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTBlock node, Object data) {
 		int i, k = node.jjtGetNumChildren();
 		for (i = 0; i < k; i++) {
-		node.jjtGetChild(i).jjtAccept(this, data);
+			node.jjtGetChild(i).jjtAccept(this, data);
 		}
 		return null;
 	}
@@ -496,13 +499,13 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	/**
 	 * ループ処理を抜ける break文 の処理
 	 */
-	public  Object visit(ASTBreak node, Object data) {
+	public Object visit(ASTBreak node, Object data) {
 		outPutIndent();
 		outPutCodeln("break");
 		return null;
 	}
-	
-	/**
+
+/**
 	 * 比較演算子 "<" の処理
 	 */
 	public Object visit(ASTLSNode node, Object data) {
@@ -628,8 +631,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 */
 	public Object visit(ASTMulNode node, Object data) {
 		/*
-		 * 子ノードがAddNode,SubNodeの場合とカッコをつけて、子ノードそのものを返す
-		 * それ以外の場合は子ノードそのものを返す
+		 * 子ノードがAddNode,SubNodeの場合とカッコをつけて、子ノードそのものを返す それ以外の場合は子ノードそのものを返す
 		 */
 		int i, k = node.jjtGetNumChildren();
 		for (i = 0; i < k; i++) {
@@ -653,8 +655,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 */
 	public Object visit(ASTDivNode node, Object data) {
 		/*
-		 * 子ノードがAddNode,SubNodeの場合とカッコをつけて、子ノードそのものを返す
-		 * それ以外の場合は子ノードそのものを返す
+		 * 子ノードがAddNode,SubNodeの場合とカッコをつけて、子ノードそのものを返す それ以外の場合は子ノードそのものを返す
 		 */
 		int i, k = node.jjtGetNumChildren();
 		for (i = 0; i < k; i++) {
@@ -671,15 +672,14 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			}
 		}
 		return null;
-	}	
+	}
 
 	/**
 	 * 演算子 "%" の処理
 	 */
 	public Object visit(ASTSurNode node, Object data) {
 		/*
-		 * 子ノードがAddNode,SubNodeの場合とカッコをつけて、子ノードそのものを返す
-		 * それ以外の場合は子ノードそのものを返す
+		 * 子ノードがAddNode,SubNodeの場合とカッコをつけて、子ノードそのものを返す それ以外の場合は子ノードそのものを返す
 		 */
 		int i, k = node.jjtGetNumChildren();
 		for (i = 0; i < k; i++) {
@@ -718,11 +718,14 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			int k = node.jjtGetNumChildren();
 			for (int i = 0; i < k; i++) {
 				if (node.jjtGetChild(i) instanceof ASTArrayNum) {
+					outPutCode("[");
 					node.jjtGetChild(i).jjtAccept(this, data);
+					outPutCode("]");
 				}
 			}
+			// 変数以外のものが来た場合の処理(digitalread等）
 		} else {
-			if(checkArduinoFunction(node.varName)){
+			if (checkArduinoFunction(node.varName)) {
 				Function(node, data, node.varName);
 			}
 		}
@@ -734,9 +737,15 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 */
 	public Object visit(ASTArrayNum node, Object data) {
 		// TODO　配列処理
-		outPutCode("[");
-		node.jjtGetChild(0).jjtAccept(this, data);
-		outPutCode("]");
+		int k = node.jjtGetNumChildren();
+		for (int i = 0; i < k; i++) {
+			if (node.jjtGetChild(i) instanceof ASTArrayNum) {
+				outPutCode(",");
+				node.jjtGetChild(i).jjtAccept(this, data);
+			} else {
+				node.jjtGetChild(0).jjtAccept(this, data);
+			}
+		}
 		return null;
 	}
 
@@ -745,12 +754,12 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 */
 	public Object visit(ASTFunctionCall node, Object data) {
 		// TODO PENで定義されていない独自関数などの処理
-		if(node.varName.equals("openPort")){
-			if(node.jjtGetChild(0) instanceof ASTStrlit){
+		if (node.varName.equals("openPort")) {
+			if (node.jjtGetChild(0) instanceof ASTStrlit) {
 				openPort = ((ASTStrlit) node.jjtGetChild(0)).litString;
 			}
 		} else {
-			if(checkArduinoFunction(node.varName)){
+			if (checkArduinoFunction(node.varName)) {
 				outPutIndent();
 				Function(node, data, node.varName);
 				outPutCodeln(";");
@@ -863,15 +872,13 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTLength node, Object data) {
 		return null;
 	}
-	
-	
+
 	/**
 	 * append()
 	 */
 	public Object visit(ASTAppend node, Object data) {
 		return null;
-	}	
-
+	}
 
 	/**
 	 * substring()
@@ -900,7 +907,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTExtract node, Object data) {
 		return null;
 	}
-	
+
 	/**
 	 * str2int()
 	 */
@@ -924,6 +931,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgOpenWindow node, Object data) {
@@ -932,6 +940,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgOpenGraphWindow node, Object data) {
@@ -940,38 +949,43 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgCloseWindow node, Object data) {
 		return null;
 	}
-	
+
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgClearWindow node, Object data) {
 		return null;
 	}
-	
+
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSaveWindow node, Object data) {
 		return null;
 	}
-	
+
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetOrigin node, Object data) {
 		return null;
 	}
-	
+
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetMap node, Object data) {
@@ -980,6 +994,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetFillColor node, Object data) {
@@ -988,6 +1003,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetLineColor node, Object data) {
@@ -996,6 +1012,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetTextColor node, Object data) {
@@ -1004,6 +1021,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetFont node, Object data) {
@@ -1012,6 +1030,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetFontType node, Object data) {
@@ -1020,6 +1039,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetFontSize node, Object data) {
@@ -1028,6 +1048,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetDotShape node, Object data) {
@@ -1036,6 +1057,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetArrowDir node, Object data) {
@@ -1044,6 +1066,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetArrowType node, Object data) {
@@ -1052,6 +1075,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetLineShape node, Object data) {
@@ -1060,6 +1084,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgSetLineWidth node, Object data) {
@@ -1068,6 +1093,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgDrawPoint node, Object data) {
@@ -1076,6 +1102,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgDrawLine node, Object data) {
@@ -1084,6 +1111,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgDrawText node, Object data) {
@@ -1092,6 +1120,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgDrawCircle node, Object data) {
@@ -1100,6 +1129,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgFillCircle node, Object data) {
@@ -1108,6 +1138,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgDrawOval node, Object data) {
@@ -1116,6 +1147,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgFillOval node, Object data) {
@@ -1124,6 +1156,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgDrawBox node, Object data) {
@@ -1132,6 +1165,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgFillBox node, Object data) {
@@ -1140,6 +1174,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgDrawArc node, Object data) {
@@ -1148,6 +1183,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgFillArc node, Object data) {
@@ -1156,6 +1192,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgDrawPolygon node, Object data) {
@@ -1164,6 +1201,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgFillPolygon node, Object data) {
@@ -1172,6 +1210,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgDrawPolyline node, Object data) {
@@ -1180,6 +1219,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVgOutputWindowクラス参照
+	 * 
 	 * @see IntVgOutputWindow
 	 */
 	public Object visit(ASTgDrawImage node, Object data) {
@@ -1188,6 +1228,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVFileIOクラス参照
+	 * 
 	 * @see IntVFileIO
 	 */
 	public Object visit(ASTFile_openr node, Object data) {
@@ -1196,6 +1237,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVFileIOクラス参照
+	 * 
 	 * @see IntVFileIO
 	 */
 	public Object visit(ASTFile_openw node, Object data) {
@@ -1204,6 +1246,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVFileIOクラス参照
+	 * 
 	 * @see IntVFileIO
 	 */
 	public Object visit(ASTFile_opena node, Object data) {
@@ -1212,6 +1255,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVFileIOクラス参照
+	 * 
 	 * @see IntVFileIO
 	 */
 	public Object visit(ASTFile_close node, Object data) {
@@ -1220,6 +1264,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVFileIOクラス参照
+	 * 
 	 * @see IntVFileIO
 	 */
 	public Object visit(ASTFile_getstr node, Object data) {
@@ -1228,6 +1273,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVFileIOクラス参照
+	 * 
 	 * @see IntVFileIO
 	 */
 	public Object visit(ASTFile_getline node, Object data) {
@@ -1236,6 +1282,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVFileIOクラス参照
+	 * 
 	 * @see IntVFileIO
 	 */
 	public Object visit(ASTFile_putstr node, Object data) {
@@ -1244,6 +1291,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVFileIOクラス参照
+	 * 
 	 * @see IntVFileIO
 	 */
 	public Object visit(ASTFile_putline node, Object data) {
@@ -1252,6 +1300,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVFileIOクラス参照
+	 * 
 	 * @see IntVFileIO
 	 */
 	public Object visit(ASTFile_flush node, Object data) {
@@ -1260,6 +1309,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVFileIOクラス参照
+	 * 
 	 * @see IntVFileIO
 	 */
 	public Object visit(ASTFile_isfile node, Object data) {
@@ -1268,6 +1318,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVFileIOクラス参照
+	 * 
 	 * @see IntVFileIO
 	 */
 	public Object visit(ASTFile_rename node, Object data) {
@@ -1276,12 +1327,13 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 	/**
 	 * IntVFileIOクラス参照
+	 * 
 	 * @see IntVFileIO
 	 */
 	public Object visit(ASTFile_remove node, Object data) {
 		return null;
 	}
-	
+
 	/**
 	 * sleep() : プログラムの一時停止
 	 */
@@ -1315,19 +1367,19 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTTrue node, Object data) {
 		return null;
 	}
-	
+
 	/**
 	 * 「偽」を返す
 	 */
 	public Object visit(ASTFalse node, Object data) {
 		return null;
 	}
-	
+
 	/**
 	 * 文字列を表すノードで文字列を返す
 	 */
 	public Object visit(ASTStrlit node, Object data) {
-		//TODO　文字列
+		// TODO　文字列
 		outPutCode(node.litString);
 		return null;
 	}
@@ -1338,23 +1390,22 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTEXTRA_STR node, Object data) {
 		return null;
 	}
-	
+
 	/**
 	 * 手続き呼び出し、関数呼び出しを実装しているメソッド
 	 * 
 	 * @param node
-	 * 構文木
+	 *            構文木
 	 * 
 	 * @param data
-	 * Objectデータ
+	 *            Objectデータ
 	 * 
 	 * @param varName
-	 * 手続き名、関数名
+	 *            手続き名、関数名
 	 * 
-	 * @return
-	 * 関数呼び出しの戻り値
+	 * @return 関数呼び出しの戻り値
 	 */
-	public Object Function(SimpleNode node, Object data, String varName){
+	public Object Function(SimpleNode node, Object data, String varName) {
 		outPutCode(varName);
 		outPutCode("(");
 		int k = node.jjtGetNumChildren();
@@ -1364,36 +1415,34 @@ public class IntVConvertArduino implements IntVParserVisitor{
 				outPutCode(", ");
 			}
 			/*
-			 * jjtGetChildは子ノードそのものを取得する。
-			 * jjtAcceptはノードの実行。
+			 * jjtGetChildは子ノードそのものを取得する。 jjtAcceptはノードの実行。
 			 */
 			node.jjtGetChild(i).jjtAccept(this, data);
 		}
 		outPutCode(")");
 		return null;
 	}
-	
+
 	/**
 	 * callByReferenceを使用したときに変数表示画面を更新するメソッド
 	 * 
 	 * @param vec
-	 * 関数呼び出し内で使用した配列
+	 *            関数呼び出し内で使用した配列
 	 * 
 	 * @param var_name
-	 * 関数呼び出し時に渡した変数名
+	 *            関数呼び出し時に渡した変数名
 	 */
-	public void callByReference(Vector vec, String var_name){
+	public void callByReference(Vector vec, String var_name) {
 	}
 
 	/**
-	 * 実行している行のポインタの移動や、
-	 * 一行実行、実行停止などを判断するメソッド
+	 * 実行している行のポインタの移動や、 一行実行、実行停止などを判断するメソッド
 	 * 
 	 * @param num
-	 * 実行している行
+	 *            実行している行
 	 * 
 	 * @param mysleep_flag
-	 * 実行速度調節バーの時間分、停止するかしないかのフラグ
+	 *            実行速度調節バーの時間分、停止するかしないかのフラグ
 	 */
 	public synchronized void run_flag(int num, boolean mysleep_flag) {
 	}
@@ -1402,12 +1451,13 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * プログラムの実行を一時停止するためのメソッド
 	 * 
 	 * @param sleep_msec
-	 * 実行を停止させてい時間 (ミリ秒)
+	 *            実行を停止させてい時間 (ミリ秒)
 	 */
 	public synchronized void mysleep(long sleep_msec) {
-		try{
+		try {
 			wait(sleep_msec);
-		}catch(InterruptedException e){ }
+		} catch (InterruptedException e) {
+		}
 	}
 
 	/**
@@ -1421,7 +1471,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 実行行ポインタの移動
 	 * 
 	 * @param run
-	 * 実行している行番号
+	 *            実行している行番号
 	 */
 	public void run_num(int run) {
 	}
@@ -1429,58 +1479,56 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	/**
 	 * コンソール画面からの入力を処理するためのメソッド
 	 * 
-	 * @return
-	 * コンソール画面に入力された文字列
+	 * @return コンソール画面に入力された文字列
 	 */
-	public Object input_wait(){
+	public Object input_wait() {
 		return null;
 	}
-	
+
 	/**
 	 * 変数宣言なしモードで起動時、変数領域を確保するためのメソッド
 	 * 
 	 * @param varName
-	 * 確保する変数名
+	 *            確保する変数名
 	 * 
 	 * @param in
-	 * 代入する値
+	 *            代入する値
 	 */
-	public void varSecure(String varName, Object in){
+	public void varSecure(String varName, Object in) {
 	}
-	
+
 	/**
 	 * 実行停止ボタンを押すことによって呼び出されるメソッド
 	 */
-	public void runBreak(boolean flag){
+	public void runBreak(boolean flag) {
 	}
-	
+
 	public void outPutCode(String code) {
-			arduinoCode.add(code);
+		arduinoCode.add(code);
 	}
 
 	public void outPutCodeln(String code) {
-			outPutCode(code + "\n");
+		outPutCode(code + "\n");
 	}
-	
-	public void outPutIndent(){
-		for( int i = 0; i < indentLevel; i++){
+
+	public void outPutIndent() {
+		for (int i = 0; i < indentLevel; i++) {
 			outPutCode("\t");
 		}
 	}
-	
-	public void writeCode(){
+
+	public void writeCode() {
 		try {
 			new File(inoTempDirPath).mkdir();
 			FileOutputStream file = new FileOutputStream(inoTempFilePath);
 			OutputStreamWriter bw = new OutputStreamWriter(file, "UTF-8");
 			for (int j = 0; j < arduinoCode.size(); j++) {
 				bw.write(arduinoCode.get(j));
-				
+
 				// 改行の追加
-				if (arduinoCode.get(j).equals(" {") ||
-						arduinoCode.get(j).equals(";") ||
-						arduinoCode.get(j).equals("}")
-						) {
+				if (arduinoCode.get(j).equals(" {")
+						|| arduinoCode.get(j).equals(";")
+						|| arduinoCode.get(j).equals("}")) {
 					bw.write(lineSepa);
 				}
 			}
@@ -1489,30 +1537,32 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			e.printStackTrace();
 		}
 	}
-	
-	public void commandLineArduino(){
+
+	public void commandLineArduino() {
 		try {
 			String osName = System.getProperty("os.name");
 			String commandLine = "";
 			Runtime r = Runtime.getRuntime();
 			Process p;
-			
-			if(osName.indexOf("Windows")>=0){
-				//commandLine = penPro.getProperty(penPro.Arduino_EXEC_PATH);
-			} else if(osName.indexOf("Linux")>=0){
-			} else if(osName.indexOf("Mac")>=0){
-				commandLine = "/usr/bin/open -W "+ penPro.getProperty(penPro.Arduino_EXEC_PATH) + " --args";
+
+			if (osName.indexOf("Windows") >= 0) {
+				// commandLine = penPro.getProperty(penPro.Arduino_EXEC_PATH);
+			} else if (osName.indexOf("Linux") >= 0) {
+			} else if (osName.indexOf("Mac") >= 0) {
+				commandLine = "/usr/bin/open -W "
+						+ penPro.getProperty(penPro.Arduino_EXEC_PATH)
+						+ " --args";
 			} else {
 			}
-			
-			if(!openPort.equals("")){
+
+			if (!openPort.equals("")) {
 				commandLine = commandLine + " --port " + openPort;
 			}
 			commandLine = commandLine + " --upload " + inoTempFilePath;
-			p = r.exec(commandLine);			
+			p = r.exec(commandLine);
 			int ret = p.waitFor();
-			//System.out.println("command: " + commandLine);
-			//System.out.println("Retun: " + ret);
+			// System.out.println("command: " + commandLine);
+			// System.out.println("Retun: " + ret);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
@@ -1520,8 +1570,8 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			e.printStackTrace();
 		}
 	}
-	
-	public void printDebug(SimpleNode node){
+
+	public void printDebug(SimpleNode node) {
 		System.out.println("-*-*-*- node dump -*-*-*-");
 		node.dump("");
 		System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-");
@@ -1533,33 +1583,31 @@ public class IntVConvertArduino implements IntVParserVisitor{
 		System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-");
 		System.out.println("Port: " + openPort);
 	}
-	
-	public boolean checkArduinoFunction(String varName){
-		if(varName.equals("pinMode")
-				|| varName.equals("digitalWrite")
+
+	public boolean checkArduinoFunction(String varName) {
+		if (varName.equals("pinMode") || varName.equals("digitalWrite")
 				|| varName.equals("digitalRead")
 				|| varName.equals("analogWrite")
-				|| varName.equals("analogRead")
-				|| varName.equals("sleep")
-				|| varName.equals("delay")){
+				|| varName.equals("analogRead") || varName.equals("sleep")
+				|| varName.equals("delay")) {
 			return true;
 		}
 		return false;
 	}
-	
-	public void deleteTempFiles(String filePath){
+
+	public void deleteTempFiles(String filePath) {
 		File temp = new File(filePath);
-		
-		if(temp.isFile()){
+
+		if (temp.isFile()) {
 			temp.delete();
-			//System.out.println(temp.getPath());
-		} else if(temp.isDirectory()){
-			File[] files=temp.listFiles();
-			for(int i=0; i<files.length; i++){
-				deleteTempFiles( files[i].getPath() );
+			// System.out.println(temp.getPath());
+		} else if (temp.isDirectory()) {
+			File[] files = temp.listFiles();
+			for (int i = 0; i < files.length; i++) {
+				deleteTempFiles(files[i].getPath());
 			}
 			temp.delete();
-			//System.out.println(temp.getPath());
+			// System.out.println(temp.getPath());
 		}
 	}
 }
