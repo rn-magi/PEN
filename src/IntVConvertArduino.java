@@ -1513,7 +1513,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			Process p;
 			
 			if(osName.indexOf("Windows")>=0){
-				//commandLine = penPro.getProperty(penPro.Arduino_EXEC_PATH);
+				commandLine = penPro.getProperty(penPro.Arduino_EXEC_PATH);
 			} else if(osName.indexOf("Linux")>=0){
 			} else if(osName.indexOf("Mac")>=0){
 				commandLine = "/usr/bin/open -W "
