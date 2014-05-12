@@ -43,8 +43,8 @@ public class IntVConvertArduino implements IntVParserVisitor{
 
 		long unixTime = System.currentTimeMillis();
 		
-		inoTempDirPath = penPro.getProperty(penPro.PEN_SYSTEM_HOME)
-				+ fileSepa + "pen" + unixTime + fileSepa;
+		inoTempDirPath = penPro.getProperty(penPro.PEN_SYSTEM_DIR)
+				+ fileSepa + "tmpArduino" + fileSepa + "pen" + unixTime + fileSepa;
 		inoTempFileName = "pen" + unixTime + ".ino";
 		inoTempFilePath = inoTempDirPath + inoTempFileName;
 	}
@@ -140,7 +140,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 		
 		commandLineArduino();
 		
-		deleteTempFiles(inoTempDirPath);
+		//deleteTempFiles(inoTempDirPath);
 		
 		return null;
 	}
@@ -1485,7 +1485,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	
 	public void writeCode(){
 		try {
-			new File(inoTempDirPath).mkdir();
+			new File(inoTempDirPath).mkdirs();
 			FileOutputStream file = new FileOutputStream(inoTempFilePath);
 			OutputStreamWriter bw = new OutputStreamWriter(file, "UTF-8");
 			for (int j = 0; j < arduinoCode.size(); j++) {
