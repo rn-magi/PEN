@@ -70,7 +70,7 @@ public class MyJMenuBar extends JMenuBar{
 		ConsoleCopyMenuItem.addActionListener(new ConsoleCopyButtonListener(console));
 		VarCopyMenuItem.addActionListener(new VarCopyButtonListener(var_table));
 		
-		ArduinoUploadMenuItem.addActionListener(new xDCNL2ArduinoConvertListener(edit_area, gui.penPro));
+		ArduinoUploadMenuItem.addActionListener(new xDCNL2ArduinoConvertListener(gui, gui.penPro));
 
 		ConfigMenu.addActionListener(new ConfigButtonListener(gui, ConfigMenu.getText()));
 		HelpPenMenuItem.addActionListener(new HelpPenButtonListener(Version));
