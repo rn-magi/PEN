@@ -15,8 +15,6 @@
     - ./ButtonList/Arduino.ini
     - ./sample/LilyPad/LED-Flash.pen
     - ./sample/LilyPad/SwitchVibe.pen
-    - IntVConvertArduino.java
-    - xDCNL2ArduinoConvertListener.java
   [ FixFile ]
     - ./ButtonList/Default.ini
     - ./ButtonList/DrawList.ini
@@ -35,7 +33,6 @@
     - IntVParserConstants.java
     - IntVParserTokenManager.java
     - MainGUI.java
-    - MyJMenuBar.java
     - ReadMe.txt
 
 ÅEver 1.20_6 (2013/04/03)
