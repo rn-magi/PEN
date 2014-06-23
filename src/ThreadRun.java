@@ -57,31 +57,12 @@ public class ThreadRun extends Thread {
 				gui.consoleAppend.appendAll("### 実行できませんでした (実行時エラー)\n");
 				gui.consoleAppend.appendAll("### エラーコード：" + e + "\n");
 			}
-		} catch (ParseException e){
-			gui.Flags.BugFlag = true;
-			gui.consoleAppend.appendAll("### 実行できませんでした (構文エラー)\n");
-		} catch (ThreadRunStop e){
-			gui.Flags.BugFlag = true;
-		} catch (TokenMgrError e){
-			gui.Flags.BugFlag = true;
-			gui.consoleAppend.appendAll("### Tokenエラーです\n");
-			gui.consoleAppend.appendAll("### " + e.getMessage() + "\n");
-		} catch (VarNameError e) {
-			gui.Flags.BugFlag = true;
-			gui.consoleAppend.appendAll("### " + e.line +"行目でエラーです。\n");
-			gui.consoleAppend.appendAll("### 全角文字の '" + e.message + "' を使用\n");
 		} catch (Exception e) {
 			gui.Flags.BugFlag = true;
-			gui.consoleAppend.appendAll("### 実行できませんでした (構文エラー)\n");
-			gui.consoleAppend.appendAll("### エラーコード：" + e + "\n");
-		} catch(ParseError e) {
-			gui.Flags.BugFlag = true;
-			gui.consoleAppend.appendAll("### 実行できませんでした (構文エラー)\n");
-			gui.consoleAppend.appendAll(e.message);
+			gui.consoleAppend.appendAll(ParseIsolateCause.isolateCause(e));
 		} catch (Error e){
 			gui.Flags.BugFlag = true;
-			gui.consoleAppend.appendAll("### 実行できませんでした (構文エラー)\n");
-			gui.consoleAppend.appendAll("### エラーコード：" + e + "\n");
+			gui.consoleAppend.appendAll(ParseIsolateCause.isolateCause(e));
 		}
 		
 		SwingUtilities.invokeLater(new MyRunnable(gui));
