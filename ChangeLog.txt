@@ -1,5 +1,23 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_8 (2014/xx/xx)
+  [ New ]
+    ・xDNCL を Arduino用プログラム へ変換する機能の実装
+    ・PEN から ArduinoIDE をコマンドラインモードで起動しプログラムを書き込む機能の実装
+  [ Fix ]
+    ・構文エラーのメッセージを修正
+
+  [ NewFile ]
+    - IntVConvertArduino.java
+    - ParseIsolateCause.java
+    - xDCNL2ArduinoConvertListener.java
+  [ FixFile ]
+    - MainGUI.java
+    - MyJMenuBar.java
+    - PenProperties.java
+    - ThreadRun.java
+    - TokenMgrError.java
+
 ・ver 1.20_7 (2014/06/23)
   [ New ]
     ・Arduino(CLCD-BOOSTER)のシミュレータを追加
@@ -15,8 +33,6 @@
     - ./ButtonList/Arduino.ini
     - ./sample/LilyPad/LED-Flash.pen
     - ./sample/LilyPad/SwitchVibe.pen
-    - IntVConvertArduino.java
-    - xDCNL2ArduinoConvertListener.java
   [ FixFile ]
     - ./ButtonList/Default.ini
     - ./ButtonList/DrawList.ini
@@ -35,7 +51,6 @@
     - IntVParserConstants.java
     - IntVParserTokenManager.java
     - MainGUI.java
-    - MyJMenuBar.java
     - ReadMe.txt
 
 ・ver 1.20_6 (2013/04/03)
