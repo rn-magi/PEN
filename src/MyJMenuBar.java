@@ -39,7 +39,8 @@ public class MyJMenuBar extends JMenuBar{
 	private MyJMenuItem PasteMenuItem		= new MyJMenuItem("貼り付け"	, new PasteAction());
 	private MyJMenuItem ConsoleCopyMenuItem	= new MyJMenuItem("実行画面をコピー");
 	private MyJMenuItem VarCopyMenuItem		= new MyJMenuItem("変数表示画面をコピー");
-	
+
+	private MyJMenuItem ArduinoConvertMenuItem	= new MyJMenuItem("プログラムの変換");
 	private MyJMenuItem ArduinoUploadMenuItem	= new MyJMenuItem("Arduinoへの書き込み");
 
 	private MyJMenuItem ConfigMenu			= new MyJMenuItem("設定確認");
@@ -69,7 +70,8 @@ public class MyJMenuBar extends JMenuBar{
 		
 		ConsoleCopyMenuItem.addActionListener(new ConsoleCopyButtonListener(console));
 		VarCopyMenuItem.addActionListener(new VarCopyButtonListener(var_table));
-		
+
+		ArduinoConvertMenuItem.addActionListener(new xDCNL2ArduinoConvertListener(gui, gui.penPro));
 		ArduinoUploadMenuItem.addActionListener(new xDCNL2ArduinoConvertListener(gui, gui.penPro));
 
 		ConfigMenu.addActionListener(new ConfigButtonListener(gui, ConfigMenu.getText()));
@@ -91,7 +93,8 @@ public class MyJMenuBar extends JMenuBar{
 		EditMenu.add(new JSeparator());
 		EditMenu.add(ConsoleCopyMenuItem);
 		EditMenu.add(VarCopyMenuItem);
-		
+
+		ArduinoMenu.add(ArduinoConvertMenuItem);
 		ArduinoMenu.add(ArduinoUploadMenuItem);
 
 		HelpMenu.add(ConfigMenu);

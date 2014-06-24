@@ -15,6 +15,8 @@ public class xDCNL2ArduinoConvertListener implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent ae) {
+		MyJMenuItem mi = ((MyJMenuItem) ae.getSource());
+		
 		gui.consoleAppend.clean(ConsoleAppend.CONSOLE);
 		
 		if(penPro.containsKey(penPro.Arduino_EXEC_PATH)){
@@ -40,6 +42,9 @@ public class xDCNL2ArduinoConvertListener implements ActionListener {
 					
 					try {
 						IntVConvertArduino visitor = new IntVConvertArduino(penPro);
+						if(mi.getText() == "Arduinoへの書き込み"){
+							visitor.setUploadFlag(true);
+						}
 						parser.jjtree.rootNode().jjtAccept(visitor, null);
 					} catch (Exception e) {
 						
