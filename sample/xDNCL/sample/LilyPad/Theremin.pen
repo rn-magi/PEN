@@ -1,0 +1,32 @@
+整数 light
+整数 Hz
+
+openPort("/dev/tty.usbserial-AD01SUEX")
+
+pinMode(2, "INPUT")
+pinMode(7, "OUTPUT")
+
+digitalWrite(2, 1)
+
+1=1 の間，
+  | もし digitalRead(2) = 0 ならば
+  |   | light ← analogRead(6)
+  |   | Hz ← light * light * 2 + 1
+  |   | beep(7, Hz, 50)
+  | を実行する
+を繰り返す
+
+closePort()
+
+手続き beep(整数 buzpin, 長整数 fre, 長整数 time)
+  | 整数 x
+  | 長整数 delayHL, loopn
+  | delayHL ← 1000000 / fre
+  | loopn ← (time*1000)/(2*delayHL)
+  | x を 0 から loopn まで 1 ずつ増やしながら，
+  |   | digitalWrite(buzpin,1)
+  |   | delayMicroseconds(delayHL)
+  |   | digitalWrite(buzpin,0)
+  |   | delayMicroseconds(delayHL)
+  | を繰り返す
+手続き終了
