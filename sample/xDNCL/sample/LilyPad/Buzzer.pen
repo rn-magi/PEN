@@ -1,0 +1,31 @@
+®” speakerPin
+
+openPort("/dev/tty.usbserial-AD01SUEX")
+
+speakerPin © 7
+
+pinMode(speakerPin, OUTPUT)
+
+beep(speakerPin,2093,200)
+beep(speakerPin,2349,200)
+beep(speakerPin,2637,200)
+beep(speakerPin,2793,200)
+beep(speakerPin,3136,200)
+beep(speakerPin,3520,200)
+beep(speakerPin,3951,200)
+beep(speakerPin,4186,200)
+
+closePort()
+
+è‘±‚« beep(®” buzpin, ’·®” fre, ’·®” time)
+  | ®” x
+  | ’·®” delayHL, loopn
+  | delayHL © 1000000 / fre
+  | loopn © (time*1000)/(2*delayHL)
+  | x ‚ğ 0 ‚©‚ç loopn ‚Ü‚Å 1 ‚¸‚Â‘‚â‚µ‚È‚ª‚çC
+  |   | digitalWrite(buzpin,1)
+  |   | delayMicroseconds(delayHL)
+  |   | digitalWrite(buzpin,0)
+  |   | delayMicroseconds(delayHL)
+  | ‚ğŒJ‚è•Ô‚·
+è‘±‚«I—¹
