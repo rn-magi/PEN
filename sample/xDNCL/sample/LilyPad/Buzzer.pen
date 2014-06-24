@@ -4,7 +4,7 @@ openPort("/dev/tty.usbserial-AD01SUEX")
 
 speakerPin Å© 7
 
-pinMode(speakerPin, OUTPUT)
+pinMode(speakerPin, "OUTPUT")
 
 beep(speakerPin,2093,200)
 beep(speakerPin,2349,200)
