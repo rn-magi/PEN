@@ -38,6 +38,8 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	private String inoTempFilePath;
 	private String inoTempFileName;
 	
+	private boolean uploadFlag = false;
+	
 	public IntVConvertArduino(PenProperties penPro){
 		this.penPro = penPro;
 
@@ -114,15 +116,9 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 構文木のルートノード
 	 */
 	public Object visit(ASTIntVUnit node, Object data) {
-		// 手続き・関数呼び出しの先読み
 		int i, k = node.jjtGetNumChildren();
-		for (i = 0; i < k; i++) {
-			if( node.jjtGetChild(i) instanceof ASTFunction){
-				node.jjtGetChild(i).jjtAccept(this, data);
-			}
-		}
 		
-		// プログラムの実行
+		// メインプログラムの変換
 		outPutCodeln("void setup() {");
 		for (i = 0; i < k; i++) {
 			if(!(node.jjtGetChild(i) instanceof ASTFunction)){
@@ -131,6 +127,14 @@ public class IntVConvertArduino implements IntVParserVisitor{
 		}
 		outPutCodeln("}");
 		outPutCodeln("void loop() { }");
+
+		// 手続き・関数呼び出しの変換
+		for (i = 0; i < k; i++) {
+			if( node.jjtGetChild(i) instanceof ASTFunction){
+				indentLevel = 1;
+				node.jjtGetChild(i).jjtAccept(this, data);
+			}
+		}
 		
 		writeCode();
 		
@@ -138,7 +142,9 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			printDebug(node);
 		}
 		
-		commandLineArduino();
+		if(uploadFlag){
+			commandLineArduino();
+		}
 		
 		//deleteTempFiles(inoTempDirPath);
 		
@@ -166,6 +172,41 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 手続き・関数呼び出しのノードを symTable に格納
 	 */
 	public Object visit(ASTFunction node, Object data) {
+		if( node.decl == PenProperties.DECLARATION_PROCEDURAL ){
+			outPutCode("void ");
+		} else if( node.decl == PenProperties.DECLARATION_INT ){
+			outPutCode("int ");
+		} else if( node.decl == PenProperties.DECLARATION_LONG ){
+			outPutCode("long ");
+		} else if( node.decl == PenProperties.DECLARATION_DOUBLE ) {
+			outPutCode("double ");
+		} else if( node.decl == PenProperties.DECLARATION_STRING ) {
+			// 文字列
+		} else if( node.decl == PenProperties.DECLARATION_BOOLEAN ) {
+			outPutCode("boolean ");
+		}
+		
+		outPutCode(node.varName);
+		outPutCode("(");
+		
+		int k = node.jjtGetNumChildren();
+		
+		if(k != 0){
+			if(node.jjtGetChild(0) instanceof ASTFunctionVar){
+				node.jjtGetChild(0).jjtAccept(this, data);
+			}
+		}
+		outPutCodeln(") {");
+		
+		if(k != 0){
+			if(k == 2){
+				node.jjtGetChild(1).jjtAccept(this, data);
+			} else if(node.jjtGetChild(0) instanceof ASTBlock){
+				node.jjtGetChild(0).jjtAccept(this, data);
+			}
+		}
+		
+		outPutCodeln("}");
 		return null;
 	}
 
@@ -173,6 +214,26 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 仮引数の処理を行う
 	 */
 	public Object visit(ASTFunctionVar node, Object data) {
+		if( node.decl == PenProperties.DECLARATION_INT ){
+			outPutCode("int ");
+		} else if (node.decl == PenProperties.DECLARATION_LONG) {
+			outPutCode("long ");
+		} else if (node.decl == PenProperties.DECLARATION_DOUBLE) {
+			outPutCode("double ");
+		} else if (node.decl == PenProperties.DECLARATION_STRING) {
+			outPutCode("char ");
+		} else if (node.decl == PenProperties.DECLARATION_BOOLEAN) {
+			outPutCode("boolean ");
+		}
+		node.jjtGetChild(0).jjtAccept(this, data);
+
+		// 子ノードの数を取得
+		int k = node.jjtGetNumChildren();
+		if(k == 2){
+			outPutCode(", ");
+			node.jjtGetChild(1).jjtAccept(this, data);
+		}
+		
 		return null;
 	}
 
@@ -515,7 +576,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTLSNode node, Object data) {
 		outPutCode("(");
 		node.jjtGetChild(0).jjtAccept(this, data);
-		outPutCode("<");
+		outPutCode(" < ");
 		node.jjtGetChild(1).jjtAccept(this, data);
 		outPutCode(")");
 		return null;
@@ -527,7 +588,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTGTNode node, Object data) {
 		outPutCode("(");
 		node.jjtGetChild(0).jjtAccept(this, data);
-		outPutCode(">");
+		outPutCode(" > ");
 		node.jjtGetChild(1).jjtAccept(this, data);
 		outPutCode(")");
 		return null;
@@ -539,7 +600,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTLENode node, Object data) {
 		outPutCode("(");
 		node.jjtGetChild(0).jjtAccept(this, data);
-		outPutCode("<=");
+		outPutCode(" <= ");
 		node.jjtGetChild(1).jjtAccept(this, data);
 		outPutCode(")");
 		return null;
@@ -551,7 +612,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTGENode node, Object data) {
 		outPutCode("(");
 		node.jjtGetChild(0).jjtAccept(this, data);
-		outPutCode(">=");
+		outPutCode(" >= ");
 		node.jjtGetChild(1).jjtAccept(this, data);
 		outPutCode(")");
 		return null;
@@ -563,7 +624,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTEQNode node, Object data) {
 		outPutCode("(");
 		node.jjtGetChild(0).jjtAccept(this, data);
-		outPutCode("==");
+		outPutCode(" == ");
 		node.jjtGetChild(1).jjtAccept(this, data);
 		outPutCode(")");
 		return null;
@@ -575,7 +636,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTNTNode node, Object data) {
 		outPutCode("(");
 		node.jjtGetChild(0).jjtAccept(this, data);
-		outPutCode("!=");
+		outPutCode(" != ");
 		node.jjtGetChild(1).jjtAccept(this, data);
 		outPutCode(")");
 		return null;
@@ -606,13 +667,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 演算子 "+" の処理
 	 */
 	public Object visit(ASTAddNode node, Object data) {
-		int i, k = node.jjtGetNumChildren();
-		for (i = 0; i < k; i++) {
-			node.jjtGetChild(i).jjtAccept(this, data);
-			if (i < k - 1) {
-				outPutCode(" + ");
-			}
-		}
+		arithmeticOutPut(node, data, "+");
 		return null;
 	}
 
@@ -620,13 +675,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 演算子 "-" の処理
 	 */
 	public Object visit(ASTSubNode node, Object data) {
-		int i, k = node.jjtGetNumChildren();
-		for (i = 0; i < k; i++) {
-			node.jjtGetChild(i).jjtAccept(this, data);
-			if (i < k - 1) {
-				outPutCode(" - ");
-			}
-		}
+		arithmeticOutPut(node, data, "-");
 		return null;
 	}
 
@@ -634,24 +683,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 演算子 "*" の処理
 	 */
 	public Object visit(ASTMulNode node, Object data) {
-		/*
-		 * 子ノードがAddNode,SubNodeの場合とカッコをつけて、子ノードそのものを返す
-		 * それ以外の場合は子ノードそのものを返す
-		 */
-		int i, k = node.jjtGetNumChildren();
-		for (i = 0; i < k; i++) {
-			if (node.jjtGetChild(i) instanceof ASTAddNode
-					|| node.jjtGetChild(i) instanceof ASTSubNode) {
-				outPutCode("(");
-				node.jjtGetChild(i).jjtAccept(this, data);
-				outPutCode(")");
-			} else {
-				node.jjtGetChild(i).jjtAccept(this, data);
-			}
-			if (i < k - 1) {
-				outPutCode(" * ");
-			}
-		}
+		arithmeticOutPut(node, data, "*");
 		return null;
 	}
 
@@ -659,24 +691,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 演算子 "/" の処理
 	 */
 	public Object visit(ASTDivNode node, Object data) {
-		/*
-		 * 子ノードがAddNode,SubNodeの場合とカッコをつけて、子ノードそのものを返す
-		 * それ以外の場合は子ノードそのものを返す
-		 */
-		int i, k = node.jjtGetNumChildren();
-		for (i = 0; i < k; i++) {
-			if (node.jjtGetChild(i) instanceof ASTAddNode
-					|| node.jjtGetChild(i) instanceof ASTSubNode) {
-				outPutCode("(");
-				node.jjtGetChild(i).jjtAccept(this, data);
-				outPutCode(")");
-			} else {
-				node.jjtGetChild(i).jjtAccept(this, data);
-			}
-			if (i < k - 1) {
-				outPutCode(" / ");
-			}
-		}
+		arithmeticOutPut(node, data, "/");
 		return null;
 	}
 
@@ -684,22 +699,33 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 演算子 "%" の処理
 	 */
 	public Object visit(ASTSurNode node, Object data) {
-		/*
-		 * 子ノードがAddNode,SubNodeの場合とカッコをつけて、子ノードそのものを返す
-		 * それ以外の場合は子ノードそのものを返す
-		 */
-		int i, k = node.jjtGetNumChildren();
-		for (i = 0; i < k; i++) {
-			if (node.jjtGetChild(i) instanceof ASTAddNode
-					|| node.jjtGetChild(i) instanceof ASTSubNode) {
+		arithmeticOutPut(node, data, "%");
+		return null;
+	}
+	
+	public Object arithmeticOutPut(SimpleNode node, Object data, String operator){
+		boolean literalCheck = node.jjtGetChild(0) instanceof ASTLiteral
+								|| node.jjtGetChild(1) instanceof ASTLiteral;
+		
+		for(int i = 0; i < 2; i++){
+			if(i == 1){
+				outPutCode(" " + operator + " ");
+			}
+
+			boolean nodeCheck;
+			if(operator.equals("+") || operator.equals("-")){
+				nodeCheck = false;
+			} else {
+				nodeCheck = node.jjtGetChild(i) instanceof ASTAddNode
+									|| node.jjtGetChild(i) instanceof ASTSubNode;
+			}
+			
+			if(!literalCheck || nodeCheck){
 				outPutCode("(");
 				node.jjtGetChild(i).jjtAccept(this, data);
 				outPutCode(")");
 			} else {
 				node.jjtGetChild(i).jjtAccept(this, data);
-			}
-			if (i < k - 1) {
-				outPutCode(" % ");
 			}
 		}
 		return null;
@@ -779,6 +805,11 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 関数呼び出しの戻り値
 	 */
 	public Object visit(ASTReturn node, Object data) {
+		outPutIndent();
+		outPutCode("return ");
+		node.jjtGetChild(0).jjtAccept(this, data);
+		outPutCodeln(";");
+		
 		return null;
 	}
 
@@ -1552,7 +1583,9 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	}
 	
 	public boolean checkArduinoFunction(String varName){
-		if(varName.equals("pinMode")
+		if(varName.equals("closePort")){
+			return false;
+		} else if(varName.equals("pinMode")
 				|| varName.equals("digitalWrite")
 				|| varName.equals("digitalRead")
 				|| varName.equals("analogWrite")
@@ -1561,7 +1594,8 @@ public class IntVConvertArduino implements IntVParserVisitor{
 				|| varName.equals("delay")){
 			return true;
 		}
-		return false;
+		//return false;
+		return true;
 	}
 	
 	public void deleteTempFiles(String filePath){
@@ -1578,5 +1612,9 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			temp.delete();
 			//System.out.println(temp.getPath());
 		}
+	}
+	
+	public void setUploadFlag(boolean uploadFlag){
+		this.uploadFlag = uploadFlag;
 	}
 }
