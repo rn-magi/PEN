@@ -42,6 +42,7 @@ public class xDCNL2ArduinoConvertListener implements ActionListener {
 					IntVConvertArduino visitor = new IntVConvertArduino(penPro);
 					visitor.setUploadFlag(upMode);
 					parser.jjtree.rootNode().jjtAccept(visitor, null);
+					gui.consoleAppend.appendAll("xDNCLからArduinoプログラムへの変換は正常に完了しました\n");
 				} catch (Exception e) {
 					
 				}
