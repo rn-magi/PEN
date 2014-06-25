@@ -30,7 +30,7 @@ import javax.swing.text.PlainDocument;
  *
  */
 public class MainGUI {
-	public String Version			= "ver1.20_8";
+	public String Version			= "ver1.20_9";
 	public String SystemName		= "PEN";
 	public String WindowName		= SystemName + " " + Version;
 	public PenFrame main_window;
