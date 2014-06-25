@@ -1,5 +1,28 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_8 (2014/06/25)
+  [ New ]
+    ・xDNCL を Arduino用プログラム へ変換する機能の実装
+    ・PEN から ArduinoIDE をコマンドラインモードで起動しプログラムを書き込む機能の実装
+  [ Fix ]
+    ・構文エラーのメッセージを修正
+
+  [ NewFile ]
+    - ./ButtonList/ArduinoSimple.ini
+    - ./sample/LilyPad/Buzzer.pen
+    - ./sample/LilyPad/Theremin.pen
+    - IntVConvertArduino.java
+    - ParseIsolateCause.java
+    - xDCNL2ArduinoConvertListener.java
+  [ FixFile ]
+    - ChangeLog.txt
+    - MainGUI.java
+    - MyJMenuBar.java
+    - PenProperties.java
+    - Property.ini
+    - ThreadRun.java
+    - TokenMgrError.java
+
 ・ver 1.20_7 (2014/06/23)
   [ New ]
     ・Arduino(CLCD-BOOSTER)のシミュレータを追加

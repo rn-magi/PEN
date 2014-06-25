@@ -26,6 +26,8 @@ public class PenProperties {
 	public final static String EXECUTER_VAR_ORIGIN		= "executer.array.origin";
 	public final static String EXECUTER_VAR_NAMES		= "executer.var.names";
 	public final static String EXECUTER_DIV_MODE		= "executer.div.mode";
+	
+	public final static String Arduino_EXEC_PATH		= "arduino.exec.path";
 
 	public final static int DECLARATION_PROCEDURAL	= 0;
 	public final static int DECLARATION_INT			= 1;
@@ -74,5 +76,16 @@ public class PenProperties {
 	
 	public void setProperty(String key, String value){
 		PROPERTY.setProperty(key, value);
+	}
+	
+	public boolean getArduinoCheck(){
+		if(containsKey(PenProperties.Arduino_EXEC_PATH)){
+			File pathCheck = new File(getProperty(PenProperties.Arduino_EXEC_PATH));
+			boolean check = pathCheck.isFile()
+								|| (System.getProperty("os.name").indexOf("Mac")>=0
+								&& pathCheck.isDirectory());
+			return check;
+		}
+		return false;
 	}
 }

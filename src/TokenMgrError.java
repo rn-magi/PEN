@@ -106,7 +106,7 @@ public class TokenMgrError extends Error
     return(errorLine + "行目の" +
           errorColumn + "文字目の" +
           (EOFSeen ? "<EOF> " : ("\"" + String.valueOf(curChar) + "\"") ) +
-          "がおかしいかもしれません");
+          "あたりがおかしいかもしれません");
   }
 
   /**
