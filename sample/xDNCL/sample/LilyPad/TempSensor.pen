@@ -1,3 +1,5 @@
+/* 温度が上がると赤、下がると青くフルカラーLEDが光る */
+
 整数 threshold, indata
 
 openPort("COM5")

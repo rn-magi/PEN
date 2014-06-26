@@ -1,3 +1,5 @@
+/* スライドスイッチとバイブが連動して動作 */
+
 openPort("COM5")
 
 pinMode(2, "INPUT")

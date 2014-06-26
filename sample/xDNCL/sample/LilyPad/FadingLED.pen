@@ -1,3 +1,5 @@
+/* フルカラーLEDがいろんな色に変化 */
+
 整数 GREEN, BLUE, RED
 整数 delayTime
 整数 redVal, blueVal, greenVal

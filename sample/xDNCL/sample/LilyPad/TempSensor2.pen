@@ -1,3 +1,5 @@
+/* 温度センサーと5つのLEDが連動 */
+
 整数 a[4], i
 整数 threshold, indata, compare
 
