@@ -21,3 +21,5 @@ threshold © analogRead(1)
   | ‚ğÀs‚·‚é
   | delay(2000)
 ‚ğŒJ‚è•Ô‚·
+
+closePort()

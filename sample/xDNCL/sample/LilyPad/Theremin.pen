@@ -1,10 +1,10 @@
-/* ブザーで音が鳴る */
+/* ブザーから音が鳴る */
 /* 明るさによって音程が変わる */
 
 整数 light
 整数 Hz
 
-openPort("/dev/tty.usbserial-AD01SUEX")
+openPort("COM5")
 
 pinMode(2, "INPUT")
 pinMode(7, "OUTPUT")

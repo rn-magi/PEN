@@ -1,4 +1,4 @@
-/* 温度センサーと5つのLEDが連動 */
+/* 温度センサーと5つの白色LEDが連動 */
 
 整数 a[4], i
 整数 threshold, indata, compare
@@ -26,3 +26,5 @@ threshold ← analogRead(1)
   |   | を実行する
   | を繰り返す
 を繰り返す
+
+closePort()

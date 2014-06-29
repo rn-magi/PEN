@@ -54,3 +54,5 @@ digitalWrite(RED, "HIGH")
   |   | delay( delayTime )
   | ‚ðŒJ‚è•Ô‚·
 ‚ðŒJ‚è•Ô‚·
+
+closePort()
