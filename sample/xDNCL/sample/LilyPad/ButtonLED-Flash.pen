@@ -1,0 +1,26 @@
+/* ボタンスイッチを押すと白色LEDイルミネーション */
+
+整数 a[4], i
+
+a[0] ← 5, a[1] ← 6, a[2] ← 16, a[3] ← 18, a[4] ← 17
+
+openPort("COM5")
+
+i を 0 から 4 まで 1 ずつ増やしながら，
+  | pinMode(a[i], "OUTPUT")
+を繰り返す
+
+pinMode(19, "INPUT")
+digitalWrite(19, 1)
+
+1=1 の間，
+  | もし digitalRead(19) = 0 ならば
+  |   | i を 0 から 4 まで 1 ずつ増やしながら，
+  |   |   | digitalWrite(a[i], 1)
+  |   |   | delay(200)
+  |   |   | digitalWrite(a[i], 0)
+  |   | を繰り返す
+  | を実行する
+を繰り返す
+
+closePort()
