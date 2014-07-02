@@ -1,0 +1,16 @@
+/* バイブレーターが徐々に強く震える */
+
+整数 i
+
+openPort("COM5")
+
+ i を 0 から 255 まで 1 ずつ増やしながら，
+  | analogWrite(3,i)
+  | delay(50)
+を繰り返す
+
+delay(500)
+
+analogWrite(3, 0)
+
+closePort()
