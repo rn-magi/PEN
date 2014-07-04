@@ -1,9 +1,35 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_9 (2014/07/04)
+  [ New ]
+    ・LilyPad Development Board用のサンプルプログラムを追加
+  [ Fix ]
+    ・LilyPad Development Board用のサンプルプログラムの修正
+    ・Arduinoの簡易プログラム入力支援ボタン定義ファイルの修正
+    ・メインウィンドウ幅の修正
+
+  [ NewFile ]
+    - ./sample/LilyPad/AnalogVibe.pen
+    - ./sample/LilyPad/ButtonBuzzer.pen
+    - ./sample/LilyPad/ButtonLED-Flash.pen
+    - ./sample/LilyPad/ButtonVibe.pen
+    - ./sample/LilyPad/FadingLED.pen
+    - ./sample/LilyPad/TempSensor.pen
+    - ./sample/LilyPad/TempSensor2.pen
+  [ FixFile ]
+    - ./sample/LilyPad/Buzzer.pen
+    - ./sample/LilyPad/LED-Flash.pen
+    - ./sample/LilyPad/SwitchVibe.pen
+    - ./sample/LilyPad/Theremin.pen
+    - ChangeLog.txt
+    - MainGUI.java
+
 ・ver 1.20_8 (2014/06/25)
   [ New ]
+    ・LilyPad Development Board用のサンプルプログラムを追加
     ・xDNCL を Arduino用プログラム へ変換する機能の実装
     ・PEN から ArduinoIDE をコマンドラインモードで起動しプログラムを書き込む機能の実装
+    ・Arduinoの簡易プログラム入力支援ボタン定義ファイルを追加
   [ Fix ]
     ・構文エラーのメッセージを修正
 
