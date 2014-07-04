@@ -1,6 +1,8 @@
+/* ドレミファソラシドと鳴るプログラム */
+
 整数 speakerPin
 
-openPort("/dev/tty.usbserial-AD01SUEX")
+openPort("COM5")
 
 speakerPin ← 7
 

@@ -1,0 +1,25 @@
+/* 温度が上がると赤、下がると青くフルカラーLEDが光る */
+
+整数 threshold, indata
+
+openPort("COM5")
+threshold ← analogRead(1)
+
+1 = 1 の間，
+  | indata ← analogRead(1)
+  | もし indata > threshold + 5 ならば
+  |   | analogWrite(9, 0)
+  |   | analogWrite(10, 255)
+  |   | threshold ← indata
+  |  を実行し，そうでなくもし indata < threshold - 5 ならば
+  |   | analogWrite(9, 255)  
+  |   | analogWrite(10, 0)
+  |   | threshold ← indata
+  | を実行し，そうでなければ
+  |   | analogWrite(9, 255)
+  |   | analogWrite(10, 255)
+  | を実行する
+  | delay(2000)
+を繰り返す
+
+closePort()

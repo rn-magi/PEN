@@ -1,0 +1,21 @@
+/* ボタンスイッチを押すと音が鳴る */
+
+openPort("COM5")
+
+pinMode(19, "INPUT")
+pinMode(7, "OUTPUT")
+pinMode(12, "OUTPUT")
+
+digitalWrite(19, 1)
+
+1=1 の間，
+  | もし digitalRead(19) = 0 ならば
+  |   | digitalWrite(7, 1)
+  |   | digitalWrite(12, 0)
+  |   | delay(1)
+  |   | digitalWrite(7, 0)
+  |   | digitalWrite(12, 1)
+  | を実行する
+を繰り返す
+
+closePort()

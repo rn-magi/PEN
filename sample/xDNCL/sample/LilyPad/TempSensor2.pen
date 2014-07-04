@@ -1,0 +1,30 @@
+/* 温度センサーと5つの白色LEDが連動 */
+
+整数 a[4], i
+整数 threshold, indata, compare
+
+a[0] ← 5, a[1] ← 6, a[2] ← 16, a[3] ← 18, a[4] ← 17
+
+openPort("COM5")
+
+threshold ← 0
+
+i を 0 から 4 まで 1 ずつ増やしながら，
+  | pinMode(a[i], "OUTPUT")
+を繰り返す
+
+threshold ← analogRead(1)
+
+1=1 の間，
+  | indata ← analogRead(1)
+  | i を 4 から 0 まで 1 ずつ減らしながら，
+  |   | compare ← threshold + (5 * i) - 10
+  |   | もし indata >= compare ならば
+  |   |   | digitalWrite(a[i], 1)
+  |   | を実行し，そうでなければ
+  |   |   | digitalWrite(a[i], 0)
+  |   | を実行する
+  | を繰り返す
+を繰り返す
+
+closePort()

@@ -1,0 +1,58 @@
+/* フルカラーLEDがいろんな色に変化 */
+
+整数 GREEN, BLUE, RED
+整数 delayTime
+整数 redVal, blueVal, greenVal
+整数 i
+
+GREEN ← 11
+BLUE ← 10
+RED ← 9
+delayTime ← 20
+
+openPort("COM5")
+
+pinMode(GREEN, "OUTPUT")
+pinMode(BLUE, "OUTPUT")
+pinMode(RED, "OUTPUT")
+  
+digitalWrite(GREEN, "HIGH")
+digitalWrite(BLUE, "HIGH")
+digitalWrite(RED, "HIGH")
+
+1 = 1 の間，
+  | redVal ← 255
+  | blueVal ← 0
+  | greenVal ← 0
+  | i を 0 から 254 まで 1 ずつ増やしながら，
+  |   | greenVal ← greenVal + 1
+  |   | redVal ← redVal - 1
+  |   | analogWrite( GREEN, 255 - greenVal )
+  |   | analogWrite( RED, 255 - redVal )
+  |   | delay( delayTime )
+  | を繰り返す
+  | 
+  | redVal ← 0
+  | blueVal ← 0
+  | greenVal ← 255
+  | i を 0 から 254 まで 1 ずつ増やしながら，
+  |   | blueVal ← blueVal + 1
+  |   | greenVal ← greenVal - 1
+  |   | analogWrite( BLUE, 255 - blueVal )
+  |   | analogWrite( GREEN, 255 - greenVal )
+  |   | delay( delayTime )
+  | を繰り返す
+  | 
+  | redVal ← 0
+  | blueVal ← 255
+  | greenVal ← 0
+  | i を 0 から 254 まで 1 ずつ増やしながら，
+  |   | redVal ← redVal + 1
+  |   | blueVal ← blueVal - 1
+  |   | analogWrite( RED, 255 - redVal )
+  |   | analogWrite( BLUE, 255 - blueVal )
+  |   | delay( delayTime )
+  | を繰り返す
+を繰り返す
+
+closePort()
