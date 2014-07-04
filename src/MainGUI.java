@@ -173,7 +173,7 @@ public class MainGUI {
 			((JFrame)main_window).addWindowListener(new MyWindowAdapter(this));
 			((JFrame)main_window).setIconImage(Toolkit.getDefaultToolkit().createImage(getClass().getResource("pen.png")));
 			((JFrame)main_window).setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			((JFrame)main_window).setSize(800,600);
+			((JFrame)main_window).setSize(820,600);
 			((JFrame)main_window).setLocation(100,100);
 		
 			MenuBar = new MyJMenuBar(this);
