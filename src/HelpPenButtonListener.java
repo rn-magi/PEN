@@ -25,7 +25,6 @@ public class HelpPenButtonListener implements ActionListener {
 				"中村 亮太 : 大阪市立大学 大学院創造都市研究科" + "\n" +
 				"西田 知博 : 大阪学院大学 情報学部" + "\n" +
 				"松浦 敏雄 : 大阪市立大学大学院 創造都市研究科" + "\n" +
-				"兼宗 進　 : 大阪電気通信大学" + "\n" +
 				"</pre></html>";
 		
 		info = new MyJLabel(str);
