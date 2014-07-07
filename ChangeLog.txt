@@ -1,5 +1,20 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_10 (2014/07/08)
+  [ BugFix ]
+    ・ロケール対応外の時に起動しなかったのを修正
+  [ Fix ]
+    ・Applet版の提供終了に伴う修正
+    ・ReadMeの開発環境の修正
+
+  [ NewFile ]
+    - ./Locale/Locale.properties
+  [ FixFile ]
+    - ChangeLog.txt
+    - HelpPenButtonListener.java
+    - MainGUI.java
+    - ReadMe.txt
+
 ・ver 1.20_9 (2014/07/04)
   [ New ]
     ・LilyPad Development Board用のサンプルプログラムを追加
