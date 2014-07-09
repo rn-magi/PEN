@@ -566,7 +566,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 */
 	public Object visit(ASTBreak node, Object data) {
 		outPutIndent();
-		outPutCodeln("break");
+		outPutCodeln("break;");
 		return null;
 	}
 	

@@ -1,5 +1,16 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_11 (2014/07/09)
+  [ BugFix ]
+    ・「ループを抜ける」がArduinoプログラムに上手く変換できなかったのを修正
+    ・LilyPad Development Board用のサンプルプログラムの修正
+
+  [ FixFile ]
+    - ./sample/LilyPad/LED-Flash.pen
+    - IntVConvertArduino.java
+    - MainGUI.java
+    - ReadMe.txt
+
 ・ver 1.20_10 (2014/07/08)
   [ BugFix ]
     ・ロケール対応外の時に起動しなかったのを修正
