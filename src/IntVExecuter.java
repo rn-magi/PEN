@@ -311,9 +311,9 @@ public class IntVExecuter implements IntVParserVisitor{
 				stat_data[0] = "文字列";
 				stat_data[2] = "";
 			} else if( declaration == PenProperties.DECLARATION_BOOLEAN ){
-				obj = new Boolean(true);
+				obj = new Boolean(false);
 				stat_data[0] = "真偽";
-				stat_data[2] = "true";
+				stat_data[2] = "false";
 			}
 			symTable.put(node.varName, obj);
 			gui.vt_model.addRow(stat_data);
