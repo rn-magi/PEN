@@ -27,13 +27,6 @@ cp ${PEN_WORK}/ChangeLog.txt ${PEN_DIR}/
 cp ${PEN_WORK}/ReadMe.txt ${PEN_DIR}/
 cp ${PEN_WORK}/HowToArduino.txt ${PEN_DIR}/
 cp ${PEN_WORK}/src/*.ini ${PEN_DIR}/
-cp ${PEN_WORK}/PEN.bat ${PEN_DIR}/
-cp ${PEN_WORK}/PEN.sh ${PEN_DIR}/
-cp ${PEN_WORK}/PEN64.sh ${PEN_DIR}/
-cp ${PEN_WORK}/PEN.command ${PEN_DIR}/
-
-chmod +x ${PEN_DIR}/*.sh
-chmod +x ${PEN_DIR}/*.command
 
 cd ${PEN_WORK}
 jar cmf src/META-INF/MANIFEST.MF PEN.jar -C bin .

@@ -6,6 +6,7 @@ import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.dnd.DropTarget;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Field;
 import java.util.TooManyListenersException;
 
 import javax.swing.BoxLayout;
@@ -122,24 +123,54 @@ public class MainGUI {
 			}
 		}
 
-        	if(penPro.containsKey(PenProperties.PEN_BUTTON_PATH))
-        		setButtonListFile(penPro.getProperty(PenProperties.PEN_BUTTON_PATH));
-        	if(penPro.containsKey(PenProperties.PEN_TEACHER_FLAG) && Integer.parseInt(penPro.getProperty(PenProperties.PEN_TEACHER_FLAG)) == 1)
-        		enableTeacherMode();
-        	if(penPro.containsKey(PenProperties.PEN_DEBUG_FLAG) && Integer.parseInt(penPro.getProperty(PenProperties.PEN_DEBUG_FLAG)) == 1)
-        		enableDebugMode();
+		if(penPro.containsKey(PenProperties.PEN_BUTTON_PATH)) {
+			setButtonListFile(penPro.getProperty(PenProperties.PEN_BUTTON_PATH));
+		}
+		
+		if(penPro.containsKey(PenProperties.PEN_TEACHER_FLAG) && Integer.parseInt(penPro.getProperty(PenProperties.PEN_TEACHER_FLAG)) == 1) {
+			enableTeacherMode();
+		}
 
-        	if(penPro.containsKey(PenProperties.PEN_DUMP_FLAG) && Integer.parseInt(penPro.getProperty(PenProperties.PEN_DUMP_FLAG)) == 1) {
-        		enableErrorDump();
+		if(penPro.containsKey(PenProperties.PEN_DEBUG_FLAG) && Integer.parseInt(penPro.getProperty(PenProperties.PEN_DEBUG_FLAG)) == 1) {
+			enableDebugMode();
+		}
+
+		if(penPro.containsKey(PenProperties.PEN_DUMP_FLAG) && Integer.parseInt(penPro.getProperty(PenProperties.PEN_DUMP_FLAG)) == 1) {
+			enableErrorDump();
 			
-			if(penPro.containsKey(PenProperties.PEN_DUMP_TEMPDIR))
-        			error_dump.setTempDir(penPro.getProperty(PenProperties.PEN_DUMP_TEMPDIR));
-        		if(penPro.containsKey(PenProperties.PEN_DUMP_DESTDIR))
-        			error_dump.setDestDir(penPro.getProperty(PenProperties.PEN_DUMP_DESTDIR));
-        	}
+			if(penPro.containsKey(PenProperties.PEN_DUMP_TEMPDIR)) {
+				error_dump.setTempDir(penPro.getProperty(PenProperties.PEN_DUMP_TEMPDIR));
+			}
+			if(penPro.containsKey(PenProperties.PEN_DUMP_DESTDIR)) {
+				error_dump.setDestDir(penPro.getProperty(PenProperties.PEN_DUMP_DESTDIR));
+			}
+        }
         	
-        	if(penPro.containsKey(PenProperties.EXECUTER_GRAPHIC_ORIGIN) && Integer.parseInt(penPro.getProperty(PenProperties.EXECUTER_GRAPHIC_ORIGIN)) == 1)
-        		gDrawWindow.enableOriginChange();
+		if(penPro.containsKey(PenProperties.EXECUTER_GRAPHIC_ORIGIN) && Integer.parseInt(penPro.getProperty(PenProperties.EXECUTER_GRAPHIC_ORIGIN)) == 1) {
+			gDrawWindow.enableOriginChange();
+		}
+
+		try {
+			String newLibPath = "./lib";
+			if(penPro.getProperty(PenProperties.SYSTEM_OS_BITS).equals("64")){
+				newLibPath += "64";
+			}
+			newLibPath += ":";
+			System.setProperty("java.library.path", newLibPath + System.getProperty("java.library.path"));
+			Field fieldSysPath = ClassLoader.class.getDeclaredField("sys_paths");
+			fieldSysPath.setAccessible(true);
+			if (fieldSysPath != null) {
+				fieldSysPath.set(System.class.getClassLoader(), null);
+			}
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (NoSuchFieldException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
 	}
 
 	// Application

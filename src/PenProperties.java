@@ -27,6 +27,8 @@ public class PenProperties {
 	public final static String EXECUTER_VAR_NAMES		= "executer.var.names";
 	public final static String EXECUTER_DIV_MODE		= "executer.div.mode";
 	
+	public final static String SYSTEM_OS_BITS			= "system.os.bits";
+	
 	public final static String Arduino_EXEC_PATH		= "arduino.exec.path";
 
 	public final static int DECLARATION_PROCEDURAL	= 0;
@@ -50,6 +52,7 @@ public class PenProperties {
 			}
 			setProperty(PenProperties.PEN_SYSTEM_DIR, dir);
 			setProperty(PenProperties.PEN_SYSTEM_HOME, System.getProperty("user.home"));
+			setProperty(PenProperties.SYSTEM_OS_BITS, getOSBit());
 		}
 		
 		try {
@@ -88,4 +91,22 @@ public class PenProperties {
 		}
 		return false;
 	}
+	
+	public String getOSBit() {
+		String os = System.getProperty("sun.arch.data.model") ;
+		if( os != null && (os = os.trim()).length() > 0 ) {
+			return os;
+		}
+		os = System.getProperty("os.arch") ;
+		if( os == null || (os = os.trim()).length() <= 0 ) {
+			return "";
+		}
+		if( os.endsWith("86") ) {
+			return "32";
+		} else if( os.endsWith("64") ) {
+			return "64";
+		}
+		return "32";
+	}
+
 }
