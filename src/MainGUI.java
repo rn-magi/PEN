@@ -151,7 +151,7 @@ public class MainGUI {
 		}
 
 		try {
-			String newLibPath = "./lib";
+			String newLibPath = "." + System.getProperty("file.separator") + "lib";
 			if(penPro.getProperty(PenProperties.SYSTEM_OS_BITS).equals("64")){
 				newLibPath += "64";
 			}
