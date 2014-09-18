@@ -44,12 +44,7 @@ xcopy /Y /S "%PLUGIN_DIR%\bin" "%PEN_DIR%\plugin\"
 copy "%PEN_WORK%\PEN.url" "%PEN_DIR%\"
 copy "%PEN_WORK%\ChangeLog.txt" "%PEN_DIR%\"
 copy "%PEN_WORK%\ReadMe.txt" "%PEN_DIR%\"
-copy "%PEN_WORK%\HowToArduino.txt" "%PEN_DIR%\"
 copy "%PEN_WORK%\src\*.ini" "%PEN_DIR%\"
-copy "%PEN_WORK%\PEN.bat" "%PEN_DIR%\"
-copy "%PEN_WORK%\PEN.command" "%PEN_DIR%\"
-copy "%PEN_WORK%\PEN.sh" "%PEN_DIR%\"
-copy "%PEN_WORK%\PEN64.sh" "%PEN_DIR%\"
 
 cd "%PEN_WORK%"
 jar cmf src/META-INF/MANIFEST.MF PEN.jar -C bin .

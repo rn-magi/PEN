@@ -1,10 +1,35 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_13 (2014/09/18)
+  [ New ]
+    ・littleBits用のサンプルプログラムを追加
+  [ Fix ]
+    ・PEN のコピーライトの年数を修正
+    ・Library の呼び出し方法の変更
+    ・PEN の起動方法変更に伴い ReadMe の修正
+    ・プログラム入力支援ボタン定義ファイル追加分を ReadMe に追記
+
+  [ NewFile ]
+    - ./sample/littleBits/dimmer.pen
+  [ FixFile ]
+    - ChangeLog.txt
+    - HelpPenButtonListener.java
+    - MainGUI.jav
+    - PenPlugin.java
+    - PenProperties.java
+    - ReadMe.txt
+  [ ReMoveFile ]
+    - PEN.bat
+    - PEN.command
+    - PEN.sh
+    - PEN64.sh
+
 ・ver 1.20_12 (2014/08/09)
   [ BugFix ]
     ・真偽型の初期値が「true」だったのを「false」に修正
 
   [ FixFile ]
+    - ChangeLog.txt
     - IntVExecuter.java
     - MainGUI.java
     - ReadMe.txt
@@ -16,6 +41,7 @@
 
   [ FixFile ]
     - ./sample/LilyPad/LED-Flash.pen
+    - ChangeLog.txt
     - IntVConvertArduino.java
     - MainGUI.java
     - ReadMe.txt

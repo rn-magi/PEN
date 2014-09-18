@@ -21,11 +21,14 @@ public class PenProperties {
 	public final static String PEN_SYSTEM_DIR		= "pen.system.dir";
 	public final static String PEN_SYSTEM_CODE		= "pen.system.code";
 	public final static String PEN_SYSTEM_HOME		= "pen.system.home";
+	public final static String PEN_SYSTEM_LIBRARY	= "pen.system.path";
 	public final static String EXECUTER_GRAPHIC_ORIGIN	= "executer.graphic.origin";
 	public final static String EXECUTER_VAR_DECLARATION	= "executer.var.declaration";
 	public final static String EXECUTER_VAR_ORIGIN		= "executer.array.origin";
 	public final static String EXECUTER_VAR_NAMES		= "executer.var.names";
 	public final static String EXECUTER_DIV_MODE		= "executer.div.mode";
+	
+	public final static String SYSTEM_OS_BITS			= "system.os.bits";
 	
 	public final static String Arduino_EXEC_PATH		= "arduino.exec.path";
 
@@ -50,6 +53,13 @@ public class PenProperties {
 			}
 			setProperty(PenProperties.PEN_SYSTEM_DIR, dir);
 			setProperty(PenProperties.PEN_SYSTEM_HOME, System.getProperty("user.home"));
+			setProperty(PenProperties.SYSTEM_OS_BITS, getOSBit());
+			
+			String newLibPath = "lib";
+			if(getProperty(PenProperties.SYSTEM_OS_BITS).equals("64")){
+				newLibPath += "64";
+			}
+			setProperty(PenProperties.PEN_SYSTEM_LIBRARY, newLibPath);
 		}
 		
 		try {
@@ -88,4 +98,22 @@ public class PenProperties {
 		}
 		return false;
 	}
+	
+	public String getOSBit() {
+		String os = System.getProperty("sun.arch.data.model") ;
+		if( os != null && (os = os.trim()).length() > 0 ) {
+			return os;
+		}
+		os = System.getProperty("os.arch") ;
+		if( os == null || (os = os.trim()).length() <= 0 ) {
+			return "";
+		}
+		if( os.endsWith("86") ) {
+			return "32";
+		} else if( os.endsWith("64") ) {
+			return "64";
+		}
+		return "32";
+	}
+
 }
