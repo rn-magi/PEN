@@ -21,6 +21,7 @@ public class PenProperties {
 	public final static String PEN_SYSTEM_DIR		= "pen.system.dir";
 	public final static String PEN_SYSTEM_CODE		= "pen.system.code";
 	public final static String PEN_SYSTEM_HOME		= "pen.system.home";
+	public final static String PEN_SYSTEM_LIBRARY	= "pen.system.path";
 	public final static String EXECUTER_GRAPHIC_ORIGIN	= "executer.graphic.origin";
 	public final static String EXECUTER_VAR_DECLARATION	= "executer.var.declaration";
 	public final static String EXECUTER_VAR_ORIGIN		= "executer.array.origin";
@@ -53,6 +54,12 @@ public class PenProperties {
 			setProperty(PenProperties.PEN_SYSTEM_DIR, dir);
 			setProperty(PenProperties.PEN_SYSTEM_HOME, System.getProperty("user.home"));
 			setProperty(PenProperties.SYSTEM_OS_BITS, getOSBit());
+			
+			String newLibPath = "lib";
+			if(getProperty(PenProperties.SYSTEM_OS_BITS).equals("64")){
+				newLibPath += "64";
+			}
+			setProperty(PenProperties.PEN_SYSTEM_LIBRARY, newLibPath);
 		}
 		
 		try {

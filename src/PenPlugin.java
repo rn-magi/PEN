@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,6 +17,18 @@ public class PenPlugin {
 	
 	public PenPlugin() {
 		try {
+			String libPath = "lib";
+			if(getOSBit().equals("64")){
+				libPath += "64";
+			}
+			File load = new File(libPath);
+			for(int i = 0; i < load.listFiles().length; i++){
+				String filePath = load.listFiles()[i].getPath();
+				if(filePath.indexOf(".jar") >= 0){
+					addClassPathToClassLoader(load.listFiles()[i]);
+				}
+			}
+			
 			FileInputStream fis = new FileInputStream("./functionTable.ini");
 			InputStreamReader isr = new InputStreamReader(fis, "SJIS");
 			BufferedReader reader = new BufferedReader(isr);
@@ -26,7 +39,7 @@ public class PenPlugin {
 
 					//ClassLoader loader = ClassLoader.getSystemClassLoader();
 
-					URLClassLoader loader = new URLClassLoader(new URL[]{new URL("file:./plugin/")});
+					URLClassLoader loader = new URLClassLoader(new URL[]{new URL("file:./plugin/")}, getClass().getClassLoader());
 					// 呼び出すClassを指定する
 					Class claszz = loader.loadClass(line[1]);
 					
@@ -61,6 +74,9 @@ public class PenPlugin {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 	}
@@ -113,5 +129,35 @@ public class PenPlugin {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	public void addClassPathToClassLoader(File classPath) throws Exception {
+		addClassPathToClassLoader((URLClassLoader) ClassLoader.getSystemClassLoader(), classPath);
+	}
+	
+	public void addClassPathToClassLoader(URLClassLoader classLoader, File classPath) throws Exception {
+		Class classClassLoader = URLClassLoader.class;
+
+		Method methodAddUrl = classClassLoader.getDeclaredMethod("addURL", URL.class);
+
+		methodAddUrl.setAccessible(true);
+		methodAddUrl.invoke(classLoader, classPath.toURI().toURL());
+	}
+	
+	public String getOSBit() {
+		String os = System.getProperty("sun.arch.data.model") ;
+		if( os != null && (os = os.trim()).length() > 0 ) {
+			return os;
+		}
+		os = System.getProperty("os.arch") ;
+		if( os == null || (os = os.trim()).length() <= 0 ) {
+			return "";
+		}
+		if( os.endsWith("86") ) {
+			return "32";
+		} else if( os.endsWith("64") ) {
+			return "64";
+		}
+		return "32";
 	}
 }

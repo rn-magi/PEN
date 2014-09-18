@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.dnd.DropTarget;
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.util.TooManyListenersException;
@@ -151,16 +152,24 @@ public class MainGUI {
 		}
 
 		try {
-			String newLibPath = "." + System.getProperty("file.separator") + "lib";
-			if(penPro.getProperty(PenProperties.SYSTEM_OS_BITS).equals("64")){
-				newLibPath += "64";
-			}
-			newLibPath += ":";
-			System.setProperty("java.library.path", newLibPath + System.getProperty("java.library.path"));
-			Field fieldSysPath = ClassLoader.class.getDeclaredField("sys_paths");
+			System.setProperty("java.library.path", penPro.getProperty(PenProperties.PEN_SYSTEM_LIBRARY) + System.getProperty("path.separator") + System.getProperty("java.library.path"));
+			Field fieldSysPath;
+			fieldSysPath = ClassLoader.class.getDeclaredField("sys_paths");
 			fieldSysPath.setAccessible(true);
-			if (fieldSysPath != null) {
-				fieldSysPath.set(System.class.getClassLoader(), null);
+			fieldSysPath.set(System.class.getClassLoader(), null);
+			File load = new File(penPro.getProperty(PenProperties.PEN_SYSTEM_LIBRARY));
+			for(int i = 0; i < load.listFiles().length; i++){
+				String fileName = load.listFiles()[i].getName();
+				if(fileName.indexOf(".dll") >= 0){
+					fileName = fileName.substring(0, fileName.indexOf(".dll"));
+				} else if(fileName.indexOf(".jnilib") >= 0){
+					fileName = fileName.substring(3, fileName.indexOf(".jnilib"));
+				} else if(fileName.indexOf(".so") >= 0){
+					fileName = fileName.substring(3, fileName.indexOf(".so"));
+				} else {
+					continue;
+				}
+				System.loadLibrary(fileName);
 			}
 		} catch (SecurityException e) {
 			e.printStackTrace();
@@ -171,6 +180,7 @@ public class MainGUI {
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 	// Application
