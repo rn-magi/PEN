@@ -25,7 +25,6 @@ cp ${PEN_WORK}/Manual/*.pdf ${PEN_DIR}/Manual/
 cp ${PEN_WORK}/PEN.url ${PEN_DIR}/
 cp ${PEN_WORK}/ChangeLog.txt ${PEN_DIR}/
 cp ${PEN_WORK}/ReadMe.txt ${PEN_DIR}/
-cp ${PEN_WORK}/HowToArduino.txt ${PEN_DIR}/
 cp ${PEN_WORK}/src/*.ini ${PEN_DIR}/
 
 cd ${PEN_WORK}
