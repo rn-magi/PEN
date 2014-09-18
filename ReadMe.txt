@@ -7,14 +7,12 @@
  [  連絡先  ] pen@s.ogu.ac.jp
  [  配布元  ] http://www.media.osaka-cu.ac.jp/PEN/
  [ 開発環境 ]
-     Microsoft Windows 7 pro SP1 64bit + JDK ver 1.5.0 (32bit) + JavaCC ver 5.0
+     Microsoft Windows 7 pro SP1 64bit + JDK ver 1.6.0 (32bit) + JavaCC ver 5.0
      Microsoft Windows 8.1 pro 64bit + JDK ver 1.5.0 (32bit) + JavaCC ver 5.0
      Mac OS X 10.9.4 Intel 64bit + JDK ver 1.6.0 + JavaCC ver 5.0
  [ 動作確認 ]
-     Microsoft Windows 7 pro SP1 64bit    + JDK ver 1.6.0 (32bit)
-     Microsoft Windows 7 pro SP1 64bit    + JRE ver 1.6.0 (64bit)
-     Microsoft Windows 8.1 pro 64bit      + JDK ver 1.6.0 (32bit)
-     Microsoft Windows 8.1 pro 64bit      + JRE ver 1.7.0 (64bit)
+     Microsoft Windows 7 pro SP1 64bit    + JDK ver 1.6.0 (64bit)
+     Microsoft Windows 8.1 pro 64bit      + JDK ver 1.7.0 (64bit)
      Mac OS X 10.9.4 Intel 64bit          + JDK ver 1.6.0
  [  著作権  ] Copyright(C) 2003-2014 by 中村 亮太, 西田 知博, 松浦 敏雄
  [転載・配布] GPLに準ずる
