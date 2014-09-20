@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Build PEN" basedir=".">
+	<property name="source.dir" value="./src" />
+	<property name="binary.dir" value="./bin" />
+	<property name="javadoc.dir" value="./docs" />
+	<property name="manifestfile" value="./src/META-INF/MANIFEST.MF" />
+	<property name="pkg.dir" value="./pkg" />
+
+	<target name="build" description="完成版配布パッケージの作成" depends="clean-all,compile,pkg" />
+	
+	<target name="make" description="実行ファイルのコンパイル" depends="compile,pkg" />
+
+	<target name="compile" description="PENのコンパイル">
+		<javac
+			destdir="${binary.dir}"
+			srcdir="${source.dir}"
+			encoding="UTF-8"
+			debug="true"
+			includeantruntime="false"
+		/>
+		<copy todir="${binary.dir}/ButtonList">
+			<fileset dir="${source.dir}/ButtonList" />
+		</copy>
+		<copy todir="${binary.dir}/Locale">
+			<fileset dir="${source.dir}/Locale" />
+		</copy>
+		<copy file="${source.dir}/pen.png" todir="${binary.dir}" />
+		<copy file="${source.dir}/Property.ini" todir="${binary.dir}" />
+	</target>
+	
+	<target name="pkg" description="実行ファイルの生成">
+		<jar basedir="${binary.dir}" destfile="${pkg.dir}/PEN.jar" manifest="${manifestfile}" />
+
+		<copy todir="${pkg.dir}/ButtonList">
+			<fileset dir="${source.dir}/ButtonList" />
+		</copy>
+		<copy todir="${pkg.dir}/lib">
+			<fileset dir="./lib" />
+		</copy>
+		<copy todir="${pkg.dir}/lib64">
+			<fileset dir="./lib64" />
+		</copy>
+		<copy todir="${pkg.dir}/Manual">
+			<fileset dir="./Manual">
+				<include name="**/*.pdf"/>
+			</fileset>
+		</copy>
+		<copy todir="${pkg.dir}/sample">
+			<fileset dir="./sample/xDNCL/sample" />
+		</copy>
+		<copy file="ChangeLog.txt" todir="${pkg.dir}" />
+		<copy file="ReadMe.txt" todir="${pkg.dir}" />
+		<copy file="PEN.url" todir="${pkg.dir}" />
+		
+		<copy file="${source.dir}/Property.ini" todir="${pkg.dir}" />
+		<copy file="${source.dir}/functionTable.ini" todir="${pkg.dir}" />
+
+		<copy todir="${pkg.dir}/plugin">
+			<fileset dir="../penPluginDev/bin" />
+		</copy>
+	</target>
+	
+	<target name="clean-bin" description="*.classファイルを削除">
+		<delete dir="${binary.dir}" />
+		<mkdir dir="${binary.dir}" />
+	</target>
+	
+	<target name="clean-pkg" description="配布パッケージを削除">
+		<delete dir="${pkg.dir}" />
+		<mkdir dir="${pkg.dir}" />
+	</target>
+	
+	<target name="clean-all" description="テンポラリファイルを全て削除" depends="clean-bin,clean-pkg" />
+	
+	<target name="clean-docs" description="JavaDocの削除">
+		<delete dir="${javadoc.dir}" />
+		<mkdir dir="${javadoc.dir}" />
+	</target>
+	
+	<target name="javadoc" description="JavaDocの生成">
+		<javadoc
+			encoding="UTF-8"
+			destdir="${javadoc.dir}"
+			access="public"
+			splitindex="true"
+			author="true"
+			version="true"
+			additionalparam="-J-Dfile.encoding=UTF-8"
+		>
+			<fileset dir="${source.dir}" />
+			<link href="http://docs.oracle.com/javase/jp/6/api/" />
+		</javadoc>
+	</target>
+
+	<target name="build-javadoc" description="JavaDocの再生成" depends="clean-docs,javadoc" />
+</project>
