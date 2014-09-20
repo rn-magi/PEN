@@ -1,162 +1,162 @@
 %
 %PEN INSTRUCTION
 %
-¥documentclass[10pt,a4j]{jarticle}
-%¥pagestyle{empty}
-¥usepackage{amsmath}
-¥usepackage{amssymb}
-%¥usepackage{txfonts}
+\documentclass[10pt,a4j]{jarticle}
+%\pagestyle{empty}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{txfonts}
 
-%¥setlength{¥topmargin}{-0mm}
-%¥setlength{¥oddsidemargin}{-0mm}
-%¥setlength{¥textheight}{252mm}
-%¥setlength{¥textwidth}{180mm}
+%\setlength{\topmargin}{-0mm}
+%\setlength{\oddsidemargin}{-0mm}
+%\setlength{\textheight}{252mm}
+%\setlength{\textwidth}{180mm}
 
 %---------- 箇条書き -----------
 
-¥newenvironment{itemize2}%  
+\newenvironment{itemize2}%  
 {%
-   ¥begin{list}{$¥bullet$¥ ¥ }% 見出し記号／直後の空白を調節
+   \begin{list}{$\bullet$\ \ }% 見出し記号／直後の空白を調節
    {%
-      ¥setlength{¥itemindent}{0pt}
-      ¥setlength{¥leftmargin}{3zw}%  左のインデント
-      ¥setlength{¥rightmargin}{0zw}% 右のインデント
-      ¥setlength{¥labelsep}{0zw}%    黒丸と説明文の間
-      ¥setlength{¥labelwidth}{3zw}%  ラベルの幅
-      ¥setlength{¥itemsep}{0em}%     項目ごとの改行幅
-      ¥setlength{¥parsep}{0em}%      段落での改行幅
-      ¥setlength{¥listparindent}{0zw}% 段落での一字下り
+      \setlength{\itemindent}{0pt}
+      \setlength{\leftmargin}{3zw}%  左のインデント
+      \setlength{\rightmargin}{0zw}% 右のインデント
+      \setlength{\labelsep}{0zw}%    黒丸と説明文の間
+      \setlength{\labelwidth}{3zw}%  ラベルの幅
+      \setlength{\itemsep}{0em}%     項目ごとの改行幅
+      \setlength{\parsep}{0em}%      段落での改行幅
+      \setlength{\listparindent}{0zw}% 段落での一字下り
    }
 }{%
-   ¥end{list}%
+   \end{list}%
 }
 %---------- 番号つき箇条書き -----------
 
-¥newcounter{enum2}
-¥newenvironment{enumerate2}{%
-   ¥begin{list}%
+\newcounter{enum2}
+\newenvironment{enumerate2}{%
+   \begin{list}%
    {%
-      ¥arabic{enum2}.¥ ¥,%  見出し記号／直後の空白を調節
+      \arabic{enum2}.\ \,%  見出し記号／直後の空白を調節
    }%
    {%
-      ¥usecounter{enum2}
-      ¥setlength{¥itemindent}{0zw}%  ここは 0 に固定
-      ¥setlength{¥leftmargin}{3zw}%  左のインデント
-      ¥setlength{¥rightmargin}{0zw}% 右のインデント
-      ¥setlength{¥labelsep}{0zw}%    黒丸と説明文の間
-      ¥setlength{¥labelwidth}{3zw}%  ラベルの幅
-      ¥setlength{¥itemsep}{0em}%     項目ごとの改行幅
-      ¥setlength{¥parsep}{0em}%      段落での改行幅
-      ¥setlength{¥listparindent}{0zw}% 段落での一字下り
+      \usecounter{enum2}
+      \setlength{\itemindent}{0zw}%  ここは 0 に固定
+      \setlength{\leftmargin}{3zw}%  左のインデント
+      \setlength{\rightmargin}{0zw}% 右のインデント
+      \setlength{\labelsep}{0zw}%    黒丸と説明文の間
+      \setlength{\labelwidth}{3zw}%  ラベルの幅
+      \setlength{\itemsep}{0em}%     項目ごとの改行幅
+      \setlength{\parsep}{0em}%      段落での改行幅
+      \setlength{\listparindent}{0zw}% 段落での一字下り
    }
 }{%
-   ¥end{list}%
+   \end{list}%
 }
-¥setlength{¥topsep}{0pt}
-¥setlength{¥itemsep}{10pt}
-¥setlength{¥parsep}{0mm}
-¥setlength{¥itemindent}{50mm}
+\setlength{\topsep}{0pt}
+\setlength{\itemsep}{10pt}
+\setlength{\parsep}{0mm}
+\setlength{\itemindent}{50mm}
 
-%¥labelsep 20mm
-%¥labelwidth 50mm
-%¥leftmargin 100mm
-¥newcommand{¥ExerciseTitle}[1]{%
-  ¥begin{center}¥Large
-    ¥textbf{PEN マニュアル Q ¥& A} ¥qquad ¥texttt{#1}
-  ¥end{center}%
+%\labelsep 20mm
+%\labelwidth 50mm
+%\leftmargin 100mm
+\newcommand{\ExerciseTitle}[1]{%
+  \begin{center}\Large
+    \textbf{PEN マニュアル Q \& A} \qquad \texttt{#1}
+  \end{center}%
 }
 
-¥renewcommand{¥baselinestretch}{1.0}
+\renewcommand{\baselinestretch}{1.0}
 
-¥begin{document}
+\begin{document}
 
-¥noindent
-¥begin{flushright}
-{¥small	2008/10/14}
-¥end{flushright}
-¥begin{center}
-¥begin{LARGE}
-{¥bf{ファイル入出力のための関数群¥¥
-¥ ¥¥}}
-¥end{LARGE}
-¥end{center}
+\noindent
+\begin{flushright}
+{\small	2008/10/14}
+\end{flushright}
+\begin{center}
+\begin{LARGE}
+{\bf{ファイル入出力のための関数群\\
+\ \\}}
+\end{LARGE}
+\end{center}
 
-  プログラムの中から、ファイル内のデータを読み書きするための関数群を紹介する。¥¥
-%¥ ¥¥
+  プログラムの中から、ファイル内のデータを読み書きするための関数群を紹介する。\\
+%\ \\
 %  ファイルを読み書きするためには、まず、当該ファイルを開く(オープン
 %する)必要がある。また、ファイルの読み書きが終了したとき、ファイルを
-%閉じなければならない(クローズ)。¥¥
-%¥ ¥¥
-%  以下、各関数について説明する。¥¥
-¥ ¥¥
+%閉じなければならない(クローズ)。\\
+%\ \\
+%  以下、各関数について説明する。\\
+\ \\
 (1) ファイルのオープン／クローズ関数 
-¥begin{enumerate2}
-¥item {¥bf{整数 fd ← openr(文字列 filepath)}} ¥¥
-%   整数  fd,	   文字列  filepath ¥¥
+\begin{enumerate2}
+\item {\bf{整数 fd ← openr(文字列 filepath)}} \\
+%   整数  fd,	   文字列  filepath \\
 	filepathで指定したファイルを、データの読み込みのために開く。
 	fdはファイル識別子であり、以後、fdを指定して、ファイルからの読み込み等を行う。
 
-¥item {¥bf{整数 fd ← openw(文字列 filepath)}} ¥¥
-%   整数  fd,	   文字列  filepath ¥¥
+\item {\bf{整数 fd ← openw(文字列 filepath)}} \\
+%   整数  fd,	   文字列  filepath \\
 	filepathで指定したファイルを、データの書き込みのために開く。
 	指定したファイルが既に存在しているならば、
         そのファイルはこれから書き出すデータで置き換えられる。
 
-¥item {¥bf{整数 fd ← opena(文字列 filepath)}} ¥¥
-%   整数  fd,	   文字列  filepath ¥¥
+\item {\bf{整数 fd ← opena(文字列 filepath)}} \\
+%   整数  fd,	   文字列  filepath \\
 	filepathで指定したファイルを、データの追記書込みのために開く。
 	指定したファイルが既に存在しているならば、
         そのファイルの続きとして、これから書き出すデータを追記する。
 
-¥item {¥bf{close(整数 fd)}} ¥¥
-%   整数  fd ¥¥
+\item {\bf{close(整数 fd)}} \\
+%   整数  fd \\
 	fdで指定したファイルを閉じる。
-¥end{enumerate2}
+\end{enumerate2}
 
 (2) ファイルの読み書きのための関数 
-¥begin{enumerate2}
-¥item {¥bf{文字列 str ← getstr(整数 fd, 整数 n)}} ¥¥
-%   文字列  str,   整数  fd,  n ¥¥
+\begin{enumerate2}
+\item {\bf{文字列 str ← getstr(整数 fd, 整数 n)}} \\
+%   文字列  str,   整数  fd,  n \\
 	fdで指定したファイルから、n文字読み込んで その文字列を返す。
         ただし、改行コード(Return, Linefeed)もそれぞれ1文字と数える。
 
-¥item {¥bf{文字列 str ← getline(整数 fd)}} ¥¥
-%   文字列  str,   整数  fd ¥¥
+\item {\bf{文字列 str ← getline(整数 fd)}} \\
+%   文字列  str,   整数  fd \\
 	fdで指定したファイルから、1行読み込んで その文字列を返す。
 
-¥item {¥bf{putstr(整数 fd, 文字列 str)}} ¥¥
-%   整数  fd,     文字列   str ¥¥
+\item {\bf{putstr(整数 fd, 文字列 str)}} \\
+%   整数  fd,     文字列   str \\
 	fdで指定したファイルに、strの文字列を書き出す。
 
-¥item {¥bf{putline(整数 fd, 文字列 str)}} ¥¥
-%   整数  fd,     文字列   str ¥¥
+\item {\bf{putline(整数 fd, 文字列 str)}} \\
+%   整数  fd,     文字列   str \\
 	fdで指定したファイルに、strの文字列を書き出す。
 	putstr()は、文字列だけを書き出すのに比べて、
 	putline()は、文字列の後に改行コードも書き出す。
-¥end{enumerate2}
+\end{enumerate2}
 
 (3) ファイル処理のための補助関数 
-¥begin{enumerate2}
-¥item {¥bf{文字列 str ← isfile(文字列 filepath)}} ¥¥
-%   文字列  str,  文字列  filepath ¥¥
+\begin{enumerate2}
+\item {\bf{文字列 str ← isfile(文字列 filepath)}} \\
+%   文字列  str,  文字列  filepath \\
 	filepathで指定したファイルが存在するかどうかを調べる。
 	ファイルが存在する場合 "true"、 
         存在しない場合"false"の文字列が返される。
 
-¥item {¥bf{rename(文字列 filepath1, 文字列 filepath2)}} ¥¥
-%   文字列  filepath1,  filepath2 ¥¥
+\item {\bf{rename(文字列 filepath1, 文字列 filepath2)}} \\
+%   文字列  filepath1,  filepath2 \\
 	filepath1で指定したファイルの名前を、filepath2に置き換える。
 
-¥item {¥bf{flush(整数 fd)}} ¥¥
-%   整数  fd ¥¥
+\item {\bf{flush(整数 fd)}} \\
+%   整数  fd \\
 	fdで指定されるファイルに書き込み途中のデータを強制的に書込む。
         (ファイルは通常バッファリングされるので、
 	この関数を呼び出すことで、バッファ内容を吐き出す) 
 
-¥item {¥bf{remove(文字列 filepath)}} ¥¥
-%   文字列  filepath ¥¥
+\item {\bf{remove(文字列 filepath)}} \\
+%   文字列  filepath \\
 	filepathで指定したファイルを削除する。
-¥end{enumerate2}
+\end{enumerate2}
 
-¥end{document}
+\end{document}
 

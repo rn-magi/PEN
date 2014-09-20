@@ -69,78 +69,78 @@
 %%% 
 
 
-¥documentclass[11pt,a4j]{jarticle}
-%%%¥documentclass{ipsjpapers}
-¥usepackage{ascmac}
-¥usepackage{times}
-¥usepackage{graphicx}
-%%% ¥usepackage{url}
+\documentclass[11pt,a4j]{jarticle}
+%%%\documentclass{ipsjpapers}
+\usepackage{ascmac}
+\usepackage{times}
+\usepackage{graphicx}
+%%% \usepackage{url}
 
-%¥textwidth=11cm
-¥setlength¥textwidth{17.0cm}
-¥setlength¥textheight{25.0cm}
+%\textwidth=11cm
+\setlength\textwidth{17.0cm}
+\setlength\textheight{25.0cm}
 
 %ページ上の余白
-¥setlength¥topmargin{-1.54cm}
+\setlength\topmargin{-1.54cm}
 
 %奇数ページ左の余白
-¥setlength¥oddsidemargin{-0.54cm}
+\setlength\oddsidemargin{-0.54cm}
 
 %偶数ページ左の余白
-¥setlength¥evensidemargin{-0.54cm}
+\setlength\evensidemargin{-0.54cm}
 
 % 巻数，号数などの設定
-%%¥setcounter{巻数}{37}
-%%¥setcounter{号数}{6}
-%%¥setcounter{volpageoffset}{1234}
-%%¥受付{8}{2}{4}
-%%¥採録{8}{5}{11}
+%%\setcounter{巻数}{37}
+%%\setcounter{号数}{6}
+%%\setcounter{volpageoffset}{1234}
+%%\受付{8}{2}{4}
+%%\採録{8}{5}{11}
 
-¥renewcommand{¥topfraction}{1.0}
-%¥renewcommand{¥textfraction}{0.1}
+\renewcommand{\topfraction}{1.0}
+%\renewcommand{\textfraction}{0.1}
 % 移動ページをつくらないため．(See Latex Book p.182)
-¥renewcommand{¥floatpagefraction}{0.9}
+\renewcommand{\floatpagefraction}{0.9}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %追加設定
 
-¥newcounter{enum2}
-¥newenvironment{enumerate2}{%
-   ¥begin{list}%
+\newcounter{enum2}
+\newenvironment{enumerate2}{%
+   \begin{list}%
    {%
-      ¥arabic{enum2}.¥ ¥,%  見出し記号／直後の空白を調節
+      \arabic{enum2}.\ \,%  見出し記号／直後の空白を調節
    }%
    {%
-      ¥usecounter{enum2}
-      ¥setlength{¥itemindent}{0zw}%  ここは 0 に固定
-      ¥setlength{¥leftmargin}{3zw}%  左のインデント
-      ¥setlength{¥rightmargin}{0zw}% 右のインデント
-      ¥setlength{¥labelsep}{0zw}%    黒丸と説明文の間
-      ¥setlength{¥labelwidth}{3zw}%  ラベルの幅
-      ¥setlength{¥itemsep}{0em}%     項目ごとの改行幅
-      ¥setlength{¥parsep}{0em}%      段落での改行幅
-      ¥setlength{¥listparindent}{0zw}% 段落での一字下り
+      \usecounter{enum2}
+      \setlength{\itemindent}{0zw}%  ここは 0 に固定
+      \setlength{\leftmargin}{3zw}%  左のインデント
+      \setlength{\rightmargin}{0zw}% 右のインデント
+      \setlength{\labelsep}{0zw}%    黒丸と説明文の間
+      \setlength{\labelwidth}{3zw}%  ラベルの幅
+      \setlength{\itemsep}{0em}%     項目ごとの改行幅
+      \setlength{\parsep}{0em}%      段落での改行幅
+      \setlength{\listparindent}{0zw}% 段落での一字下り
    }
 }{%
-   ¥end{list}%
+   \end{list}%
 }
-¥setlength{¥topsep}{0pt}
-¥setlength{¥itemsep}{10pt}
-¥setlength{¥parsep}{0mm}
-¥setlength{¥itemindent}{50mm}
+\setlength{\topsep}{0pt}
+\setlength{\itemsep}{10pt}
+\setlength{\parsep}{0mm}
+\setlength{\itemindent}{50mm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 
-¥begin{document}
-¥noindent
-¥begin{flushright}
-{¥small	2008/10/14}
-¥end{flushright}
-¥begin{center}
-¥begin{LARGE}
-{¥bf{xDNCL言語マニュアル }}¥¥
-¥ ¥¥
-¥end{LARGE}
-¥end{center}
+\begin{document}
+\noindent
+\begin{flushright}
+{\small	2008/10/14}
+\end{flushright}
+\begin{center}
+\begin{LARGE}
+{\bf{xDNCL言語マニュアル }}\\
+\ \\
+\end{LARGE}
+\end{center}
 
 xDNCLは大学入試センターの「情報関係基礎」で用いられている
 試験用手順記述標準言語 DNCL に準拠しており、一部拡張したものである。
@@ -148,30 +148,30 @@ xDNCLは大学入試センターの「情報関係基礎」で用いられてい
 %%% $RN05$	追加
 %%%
 
-¥section{定数}
+\section{定数}
 定数を用いる場合、以下の規則に従う必要がある。
-¥begin{itemize}
-¥itemsep 0pt  ¥parskip 0pt
-¥item	整数型の定数は、小数点を含めてはいけない(例: 12, --4)。
-¥item	実数型の定数は、小数点を含めなければならない(例: 12.0,  --4.0)。
-¥item	文字列型の定数は、「」または''¥ ''で囲まなければならない
-        (例: 「プログラム」, ``abc'')。
-%文字を表すから数字であっても文字と認識される。(例: A,B,C,$¥cdots$, a,b,c, $¥cdots$, あ,い,う, $¥cdots$)。
-¥end{itemize}
+\begin{itemize}
+\itemsep 0pt  \parskip 0pt
+\item	整数型の定数は、小数点を含めてはいけない(例: 12, --4)。
+\item	実数型の定数は、小数点を含めなければならない(例: 12.0,  --4.0)。
+\item	文字列型の定数は、「」または"\ "で囲まなければならない
+        (例: 「プログラム」, "abc")。
+%文字を表すから数字であっても文字と認識される。(例: A,B,C,$\cdots$, a,b,c, $\cdots$, あ,い,う, $\cdots$)。
+\end{itemize}
 
-¥section{変数}
+\section{変数}
 変数の型として「整数」「実数」「文字列」がある。
 変数は使用に先だってその型を宣言しておかねばならない。
 変数名は半角英字から始まり、2文字目以降は半角英数字でなければならない。
 また、整数型の変数の初期値は0, 実数型の場合は0.0, 
 文字列型の場合はNULL(空の文字列)である。
-%¥begin{itemize}
-%¥itemsep 0pt  ¥parskip 0pt
-%¥item	使用できる変数の型は「整数」「実数」「文字列」の3種類である。¥footnote{変数を使用する場合は、前もって変数の型を宣言しなければならない。}
+%\begin{itemize}
+%\itemsep 0pt  \parskip 0pt
+%\item	使用できる変数の型は「整数」「実数」「文字列」の3種類である。\footnote{変数を使用する場合は、前もって変数の型を宣言しなければならない。}
 %
-%¥item	変数名は半角英字から始まり、2文字目からは半角英数字のみが使用できる。
-%¥item	整数型の変数の初期値は0, 実数型の場合は0.0, 文字列型の場合はNULL(空の文字列)である。
-%¥end{itemize}
+%\item	変数名は半角英字から始まり、2文字目からは半角英数字のみが使用できる。
+%\item	整数型の変数の初期値は0, 実数型の場合は0.0, 文字列型の場合はNULL(空の文字列)である。
+%\end{itemize}
 %%%
 %%% $RN02$	修正
 %%%
@@ -186,117 +186,117 @@ xDNCLは大学入試センターの「情報関係基礎」で用いられてい
 %%% $RN10$	誤字を修正
 %%%
 %%% screen 環境をやめる by H.Toyoda
-¥begin{quotation}
-{¥bf{
-¥noindent 整数 ¥ ¥ ¥ ¥ ¥ ≪変数≫ , ≪変数≫ , ... , ≪変数≫ ¥¥
-実数 ¥ ¥ ¥ ¥ ¥ ≪変数≫ , ≪変数≫ , ... , ≪変数≫ ¥¥
-文字列 ¥ ≪変数≫ , ≪変数≫ , ... , ≪変数≫
+\begin{quotation}
+{\bf{
+\noindent 整数 \ \ \ \ \ ≪変数≫ , ≪変数≫ , ... , ≪変数≫ \\
+実数 \ \ \ \ \ ≪変数≫ , ≪変数≫ , ... , ≪変数≫ \\
+文字列 \ ≪変数≫ , ≪変数≫ , ... , ≪変数≫
 }}
-¥end{quotation}
+\end{quotation}
 
-¥begin{quotation}
-¥noindent [使用例]
-¥begin{quotation}
-¥noindent 整数 ¥ ¥ ¥ ¥ ¥ i, integer ¥ ¥ // 変数名 i, integer は整数型の変数であると宣言 ¥¥
-実数 ¥ ¥ ¥ ¥ ¥ x, real ¥ ¥ ¥ ¥ ¥ ¥ // 変数名 x, real  は実数型の変数であると宣言¥¥
-文字列 ¥ str, name ¥ ¥ // 変数名 str は文字列型の変数であると宣言
-¥end{quotation}
-¥end{quotation}
+\begin{quotation}
+\noindent [使用例]
+\begin{quotation}
+\noindent 整数 \ \ \ \ \ i, integer \ \ // 変数名 i, integer は整数型の変数であると宣言 \\
+実数 \ \ \ \ \ x, real \ \ \ \ \ \ // 変数名 x, real  は実数型の変数であると宣言\\
+文字列 \ str, name \ \ // 変数名 str は文字列型の変数であると宣言
+\end{quotation}
+\end{quotation}
 
-¥section{配列}
+\section{配列}
 変数の配列を用いるには以下の宣言が必要である。
-¥begin{quotation}
-{¥bf{
-¥noindent ¥ 整数 ¥hspace{0.5zw} a[n]}}¥ ¥ // a[0], a[1], a[2], $¥cdots$, a[n] のn+1個の整数の変数領域を確保¥¥
-{¥bf{
-実数 ¥hspace{0.5zw} r[n]}} ¥ ¥ // r[0], r[1], r[2], $¥cdots$, r[n] のn+1個の実数の変数領域を確保
-¥end{quotation}
+\begin{quotation}
+{\bf{
+\noindent \ 整数 \hspace{0.5zw} a[n]}}\ \ // a[0], a[1], a[2], $\cdots$, a[n] のn+1個の整数の変数領域を確保\\
+{\bf{
+実数 \hspace{0.5zw} r[n]}} \ \ // r[0], r[1], r[2], $\cdots$, r[n] のn+1個の実数の変数領域を確保
+\end{quotation}
 
-¥begin{quotation}
-¥noindent [配列の宣言例]
-¥begin{quotation}
-¥noindent 整数 ¥hspace{0.5zw} count[5] ¥ ¥ // count[0]〜count[5]までの6つの変数領域を確保 ¥¥
-実数 ¥hspace{0.5zw} pos[10] ¥ ¥ ¥ // pos[0]〜pos[10]まで11個の変数領域を確保
-¥end{quotation}
-¥end{quotation}
+\begin{quotation}
+\noindent [配列の宣言例]
+\begin{quotation}
+\noindent 整数 \hspace{0.5zw} count[5] \ \ // count[0]〜count[5]までの6つの変数領域を確保 \\
+実数 \hspace{0.5zw} pos[10] \ \ \ // pos[0]〜pos[10]まで11個の変数領域を確保
+\end{quotation}
+\end{quotation}
 
-¥noindent 2次元以上の配列を宣言することもできる。
+\noindent 2次元以上の配列を宣言することもできる。
 
-¥begin{quotation}
-¥noindent [宣言例]
-¥begin{quotation}
-¥noindent 整数 ¥hspace{0.5zw} board[8, 8] ¥ ¥ ¥ ¥ ¥ //board[0, 0]〜board[8, 8] の9×9の変数領域を確保 ¥¥
-実数 ¥hspace{0.5zw} space[2, 3, 5] ¥ ¥ //space[0, 0, 0]〜space[2, 3, 5] の3×4×6の変数領域を確保 ¥¥
-¥end{quotation}
-¥end{quotation}
+\begin{quotation}
+\noindent [宣言例]
+\begin{quotation}
+\noindent 整数 \hspace{0.5zw} board[8, 8] \ \ \ \ \ //board[0, 0]〜board[8, 8] の9×9の変数領域を確保 \\
+実数 \hspace{0.5zw} space[2, 3, 5] \ \ //space[0, 0, 0]〜space[2, 3, 5] の3×4×6の変数領域を確保 \\
+\end{quotation}
+\end{quotation}
 %%%
 %%% $RN02$	例を 文字列 → 実数 に変更
 %%%
 %%% $RN03$	実数のコメント部分修正
 %%%
 
-%¥pagebreak
+%\pagebreak
 
-¥section{演算子}
-¥vspace{-0.2cm}
+\section{演算子}
+\vspace{-0.2cm}
 演算子については以下にまとめたものが利用できる。
 %%%
 %%% $RN02$	演算子をsectionにし 算術・比較・論理をsubsectionに修正
 %%%
-¥subsection{算術演算子}
+\subsection{算術演算子}
 %下記の算術演算子が利用できる。
-¥begin{table}[htbp]
-  ¥begin{center}
-    ¥begin{tabular}{p{1.5cm}|p{2.0cm}|p{1.7cm}|p{6.3cm}} ¥hline
-    演算子	& 意味	& 例		& 式の値	¥¥ ¥hline
-    ＋, +	& 加算	& 8 + 3		& 8に定数3を加えた値 ( =11)			¥¥ ¥hline
-    −, --	& 減算	& x -- 2	& 変数 xの値から 2 を引いた値	 	¥¥ ¥hline
-    ×, *	& 積算	& y * 1.5	& 変数 yの値を 1.5倍した値			¥¥ ¥hline
-    ÷, /	& 除算	& z / 2		& 変数 zの値を 2で割った値			¥¥ ¥hline
-    ％, ¥%	& 剰余	& z ¥% 5	& 変数 zの値を 5で割った余りの値	¥¥ ¥hline
-    ¥end{tabular}
-  ¥end{center}
-  ¥vspace{-1.0cm}
-¥end{table}
+\begin{table}[htbp]
+  \begin{center}
+    \begin{tabular}{p{1.5cm}|p{2.0cm}|p{1.7cm}|p{6.3cm}} \hline
+    演算子	& 意味	& 例		& 式の値	\\ \hline
+    ＋, +	& 加算	& 8 + 3		& 8に定数3を加えた値 ( =11)			\\ \hline
+    −, --	& 減算	& x -- 2	& 変数 xの値から 2 を引いた値	 	\\ \hline
+    ×, *	& 積算	& y * 1.5	& 変数 yの値を 1.5倍した値			\\ \hline
+    ÷, /	& 除算	& z / 2		& 変数 zの値を 2で割った値			\\ \hline
+    ％, \%	& 剰余	& z \% 5	& 変数 zの値を 5で割った余りの値	\\ \hline
+    \end{tabular}
+  \end{center}
+  \vspace{-1.0cm}
+\end{table}
 
 
-¥subsection{比較演算子}
+\subsection{比較演算子}
 %下記の比較演算子が利用できる。
-¥begin{table}[htbp]
-  ¥begin{center}
-    ¥begin{tabular}{p{1.5cm}|p{2.0cm}|p{1.7cm}|p{6.3cm}} ¥hline
-    演算子		& 意味			& 使用例	& 例の式の値	¥¥ ¥hline
-    ＝, =		& 等しい		& x ＝ 0	& x が 0 ならば真, それ以外ならば偽		¥¥ ¥hline
-    ＞, $>$		& より大きい	& y ＞ 5	& y が 5 より大きければ真, 以下なら偽	¥¥ ¥hline
-    ≧, $>$=	& 以上			& y ≧ 5	& y が 5 以上ならば真, 小さければ偽	¥¥ ¥hline
-    ＜, $<$		& より小さい	& z ＜ 1.2	& z が 1.2 より小さければ真, 以上なら偽	¥¥ ¥hline
-    ≦, $<$=	& 以下			& z ≦ 1.2	& z が 1.2 以下ならば真, 大きければ偽	¥¥ ¥hline
-    ≠, !=		& 等しくない	& z ≠ 6	& z が 6 以外ならば真, 同じであれば偽	¥¥ ¥hline
-    ¥end{tabular}
-  ¥end{center}
-  ¥vspace{-1.0cm}
-¥end{table}
+\begin{table}[htbp]
+  \begin{center}
+    \begin{tabular}{p{1.5cm}|p{2.0cm}|p{1.7cm}|p{6.3cm}} \hline
+    演算子		& 意味			& 使用例	& 例の式の値	\\ \hline
+    ＝, =		& 等しい		& x ＝ 0	& x が 0 ならば真, それ以外ならば偽		\\ \hline
+    ＞, $>$		& より大きい	& y ＞ 5	& y が 5 より大きければ真, 以下なら偽	\\ \hline
+    ≧, $>$=	& 以上			& y ≧ 5	& y が 5 以上ならば真, 小さければ偽	\\ \hline
+    ＜, $<$		& より小さい	& z ＜ 1.2	& z が 1.2 より小さければ真, 以上なら偽	\\ \hline
+    ≦, $<$=	& 以下			& z ≦ 1.2	& z が 1.2 以下ならば真, 大きければ偽	\\ \hline
+    ≠, !=		& 等しくない	& z ≠ 6	& z が 6 以外ならば真, 同じであれば偽	\\ \hline
+    \end{tabular}
+  \end{center}
+  \vspace{-1.0cm}
+\end{table}
 
 
-¥subsection{論理演算子}
+\subsection{論理演算子}
 %下記の論理演算子が利用できる。
-¥begin{table}[htbp]
-  ¥begin{center}
-    ¥begin{tabular}{l|l|l|p{6.0cm}} ¥hline
-    演算子	& 意味		& 使用例					& 式の値	¥¥ ¥hline
-    かつ	& 積集合	& a ≧ 0 かつ a ≦ 10		& a が 0 以上 かつ 10以下ならば真, それ以外は偽			¥¥ ¥hline
-    または	& 和集合	& b ＜ 0 または b ＞ 100	& b が 0 未満 または 100より大きければ真, それ以外は偽	¥¥ ¥hline
-    でない	& 否定		& c = 5 でない				& c が 5 でないなら真, 5 ならば偽					¥¥ ¥hline
-    ¥end{tabular}
-  ¥end{center}
-  ¥vspace{-1.0cm}
-¥end{table}
+\begin{table}[htbp]
+  \begin{center}
+    \begin{tabular}{l|l|l|p{6.0cm}} \hline
+    演算子	& 意味		& 使用例					& 式の値	\\ \hline
+    かつ	& 積集合	& a ≧ 0 かつ a ≦ 10		& a が 0 以上 かつ 10以下ならば真, それ以外は偽			\\ \hline
+    または	& 和集合	& b ＜ 0 または b ＞ 100	& b が 0 未満 または 100より大きければ真, それ以外は偽	\\ \hline
+    でない	& 否定		& c = 5 でない				& c が 5 でないなら真, 5 ならば偽					\\ \hline
+    \end{tabular}
+  \end{center}
+  \vspace{-1.0cm}
+\end{table}
 %%%
 %%% $RN03$	AND と OR の [ 式の値 ] を修正
 %%%
 %%% $RN05$	意味の部分を修正
 
-%¥pagebreak
+%\pagebreak
 
 %%% $TM1$ 良く考えると、この話が、代入文のところに書かれているのは
 %%%       変ですね。とりあえず、このままにしておいて、後で考えましょう。
@@ -305,8 +305,8 @@ xDNCLは大学入試センターの「情報関係基礎」で用いられてい
 %%%
 %%% $RN04$	移動
 %%%
-¥subsection{演算結果のデータ型について}
-演算結果のデータ型は演算対象のデータ型によって決まる。 ¥¥
+\subsection{演算結果のデータ型について}
+演算結果のデータ型は演算対象のデータ型によって決まる。 \\
 なお、演算前に演算結果のデータ型に変換してから、演算が行われる。
 %演算結果のデータ型は代入する変数のデータ型に変換される。
 %%%
@@ -315,87 +315,87 @@ xDNCLは大学入試センターの「情報関係基礎」で用いられてい
 %%% $RN05$	箇条書きの削除
 %%%
 
-¥begin{table}[!h]
-  ¥begin{center}
-    ¥begin{tabular}{l|l} ¥hline
-    演算例				& 演算結果のデータ型				¥¥ ¥hline
-    整数 ＋ 整数		& 整数								¥¥ ¥hline
-    実数 ＋ 整数		& 実数								¥¥ ¥hline
-    実数 ＋ 実数		& 実数								¥¥ ¥hline
-    文字列 ＋ 整数		& 文字列として、文字列結合される	¥¥ ¥hline
-    文字列 ＋ 実数		& 文字列として、文字列結合される	¥¥ ¥hline
-    文字列 ＋ 文字列	& 文字列として、文字列結合される	¥¥ ¥hline
-    ¥end{tabular}
-  ¥end{center}
-  ¥vspace{-1.0cm}
-¥end{table}
+\begin{table}[!h]
+  \begin{center}
+    \begin{tabular}{l|l} \hline
+    演算例				& 演算結果のデータ型				\\ \hline
+    整数 ＋ 整数		& 整数								\\ \hline
+    実数 ＋ 整数		& 実数								\\ \hline
+    実数 ＋ 実数		& 実数								\\ \hline
+    文字列 ＋ 整数		& 文字列として、文字列結合される	\\ \hline
+    文字列 ＋ 実数		& 文字列として、文字列結合される	\\ \hline
+    文字列 ＋ 文字列	& 文字列として、文字列結合される	\\ \hline
+    \end{tabular}
+  \end{center}
+  \vspace{-1.0cm}
+\end{table}
 
-¥pagebreak
+\pagebreak
 
-¥vspace{-5mm}
-¥section{式}
+\vspace{-5mm}
+\section{式}
 定数もしくは変数を演算子で結合したものは式である。
 また、式と式を演算子で結合したものも式である。
 単独の定数もしくは変数も式である。
 
-¥begin{quotation}
-¥noindent [例]
-¥begin{quotation}
-¥noindent x + 5 ¥¥
-x * y - 5.0 ¥¥
-``abc'' + str ¥¥
+\begin{quotation}
+\noindent [例]
+\begin{quotation}
+\noindent x + 5 \\
+x * y - 5.0 \\
+"abc" + str \\
 x = y
-¥end{quotation}
-¥end{quotation}
+\end{quotation}
+\end{quotation}
 
 
-¥vspace{-5mm}
-¥section{コメント文 (注釈)}
-¥begin{quotation}
-¥noindent {¥bf{/*  《コメント》  */ ¥¥
-// ¥ 《コメント》
+\vspace{-5mm}
+\section{コメント文 (注釈)}
+\begin{quotation}
+\noindent {\bf{/*  《コメント》  */ \\
+// \ 《コメント》
 }}
-¥end{quotation}
+\end{quotation}
 コメント文として書かれた文字列は、プログラム実行時には無視される。
 %また、複数行にまたがってもよい。
 
-¥begin{quotation}
-¥noindent [使用例]
-¥begin{quotation}
-¥noindent /* このように複数行になっても¥¥
-             コメントとして扱われます。*/ ¥¥
- ¥¥ 
-¥noindent // 1行の場合はこのようにコメントすることもできます。
-¥end{quotation}
-¥end{quotation}
+\begin{quotation}
+\noindent [使用例]
+\begin{quotation}
+\noindent /* このように複数行になっても\\
+             コメントとして扱われます。*/ \\
+ \\ 
+\noindent // 1行の場合はこのようにコメントすることもできます。
+\end{quotation}
+\end{quotation}
 %%%
 %%% $RN11$	コメントの章を追加
 %%%
 
 
-¥vspace{-5mm}
-¥section{出力文}
-¥subsection{改行あり出力}
-¥begin{quotation}
-¥noindent {¥bf{≪出力文≫ を表示する}}
-¥end{quotation}
+\vspace{-5mm}
+\section{出力文}
+\subsection{改行あり出力}
+\begin{quotation}
+\noindent {\bf{≪出力文≫ を表示する}}
+\end{quotation}
 ≪出力文≫で指定された変数や文字列などの式をコンソール画面に表示し、その後改行する。
-¥begin{table}[!h]
-¥hspace{1cm}
-¥begin{tabular}{l l}
-[使用例] (変数xが1.6の場合) & ¥hspace{2cm} [出力例] ¥¥
-¥hspace{1cm} ¥noindent 「xの値:」を表示する &
-¥hspace{3cm} ¥noindent xの値: ¥¥
-¥hspace{1cm} ¥ x¥ を表示する &
-¥hspace{3cm} 1.6¥¥
-¥end{tabular}
-¥end{table}
+\begin{table}[!h]
+\hspace{1cm}
+\begin{tabular}{l l}
+[使用例] (変数xが1.6の場合) & \hspace{2cm} [出力例] \\
+\hspace{1cm} \noindent 「xの値:」を表示する &
+\hspace{3cm} \noindent xの値: \\
+\hspace{1cm} \ x\ を表示する &
+\hspace{3cm} 1.6\\
+\end{tabular}
+\end{table}
 
-¥vspace{-6mm}
-¥subsection{改行なし出力}
-¥begin{quotation}
-¥noindent {¥bf{≪出力文≫ を改行なしで表示する}}
-¥end{quotation}
+\vspace{-6mm}
+\subsection{改行なし出力}
+\begin{quotation}
+\noindent {\bf{≪出力文≫ を改行なしで表示する}}
+\end{quotation}
 ≪出力文≫で指定された式や文字列定数をコンソール画面に表示し、その後改行をしない。
 %%%
 %%% $RN03$	修正
@@ -404,386 +404,386 @@ x = y
 %%%
 %%% $RN13$	印刷する → 表示する
 %%% 
-¥begin{table}[!h]
-¥hspace{1cm}
-¥begin{tabular}{l l}
-[使用例] (変数xが1.6の場合) & ¥hspace{2cm} [出力例] ¥¥
-¥hspace{1cm} ¥noindent 「xの値:」を改行なしで表示する &
-¥hspace{3cm} ¥noindent xの値: 1.6¥¥
-¥hspace{1cm} ¥ x¥ を表示する &
-¥hspace{3cm} ¥¥
-¥end{tabular}
-¥end{table}
+\begin{table}[!h]
+\hspace{1cm}
+\begin{tabular}{l l}
+[使用例] (変数xが1.6の場合) & \hspace{2cm} [出力例] \\
+\hspace{1cm} \noindent 「xの値:」を改行なしで表示する &
+\hspace{3cm} \noindent xの値: 1.6\\
+\hspace{1cm} \ x\ を表示する &
+\hspace{3cm} \\
+\end{tabular}
+\end{table}
 
 
-%% ¥newpage
-¥vspace{-6mm}
-¥subsection{複数の変数・文字列の出力}
+%% \newpage
+\vspace{-6mm}
+\subsection{複数の変数・文字列の出力}
 %%%
 %%% $RN02$	タイトルの修正
 %%%
-変数や文字列を一緒に出力する場合、それらを「{¥bf と}」で結び列挙する。
+変数や文字列を一緒に出力する場合、それらを「{\bf と}」で結び列挙する。
 
-¥begin{table}[!h]
-¥hspace{1cm}
-¥begin{tabular}{l l}
-[使用例](変数ansの値が50の場合) & ¥hspace{2cm} [出力例] ¥¥
-¥hspace{1cm} ¥noindent 「答えは」 と ans と 「です」 を表示する &
-¥hspace{3cm} ¥noindent 答えは50です¥¥
-¥end{tabular}
-¥end{table}
+\begin{table}[!h]
+\hspace{1cm}
+\begin{tabular}{l l}
+[使用例](変数ansの値が50の場合) & \hspace{2cm} [出力例] \\
+\hspace{1cm} \noindent 「答えは」 と ans と 「です」 を表示する &
+\hspace{3cm} \noindent 答えは50です\\
+\end{tabular}
+\end{table}
 
-¥vspace{-6mm}
-¥subsection{予約語}
+\vspace{-6mm}
+\subsection{予約語}
 改行などを行うための文字列がいくつか決められていてその文字列は定数、変数などに
 利用することはできない。
 
-¥begin{table}[!h]
-¥begin{center}
-{¥small{
-¥begin{tabular}{|l|l|}
-¥hline
-LF, ￥n & 改行 ¥¥
-¥hline
-CR, ￥r & その行の先頭へ移動 ¥¥
-¥hline
-HT, ￥t & 水平タブ ¥¥
-¥hline
-NL     & 改行文字(システムに依存) ¥¥
-¥hline
-EOF    & ファイルの終端 ¥¥
-¥hline
-¥end{tabular}
+\begin{table}[!h]
+\begin{center}
+{\small{
+\begin{tabular}{|l|l|}
+\hline
+LF, \verb|\n| & 改行 \\
+\hline
+CR, \verb|\r| & その行の先頭へ移動 \\
+\hline
+HT, \verb|\t| & 水平タブ \\
+\hline
+NL     & 改行文字(システムに依存) \\
+\hline
+EOF    & ファイルの終端 \\
+\hline
+\end{tabular}
 }}
-¥end{center}
-¥end{table}
+\end{center}
+\end{table}
 
 
-¥vspace{-5mm}
-¥section{代入文}
-¥subsection{代入}
-¥begin{quotation}
-¥noindent {¥bf{≪変数≫ ← ≪式≫}}
-¥end{quotation}
+\vspace{-5mm}
+\section{代入文}
+\subsection{代入}
+\begin{quotation}
+\noindent {\bf{≪変数≫ ← ≪式≫}}
+\end{quotation}
 ≪式≫に書かれた定数や式の演算結果を≪変数≫に指定された変数へ代入する。
 なお、右辺の≪式≫の値の型の如何に関わらず、代入によって、
 左辺の≪変数≫のデータ型に自動変換される。
 
 例えば、≪式≫の演算結果が実数型で、左辺の≪変数≫が整数型の場合の演算では、
 小数点以下は切り捨てられる。
-¥begin{quotation}
-¥noindent [使用例]
-¥begin{quotation}
-¥noindent x ← 2.34¥¥
-y ← x + 4.32¥¥
-str ← ``abc''
-¥end{quotation}
-¥end{quotation}
+\begin{quotation}
+\noindent [使用例]
+\begin{quotation}
+\noindent x ← 2.34\\
+y ← x + 4.32\\
+str ← "abc"
+\end{quotation}
+\end{quotation}
 
-¥vspace{-6mm}
-¥subsection{入力}
-¥begin{quotation}
-¥noindent {¥bf{≪変数≫ ← input()}}
-¥end{quotation}
+\vspace{-6mm}
+\subsection{入力}
+\begin{quotation}
+\noindent {\bf{≪変数≫ ← input()}}
+\end{quotation}
 input() で キーボードからの入力が文字列として代入される。
 左辺の≪変数≫のデータ型に合わせて型変換が行われる。
 
-¥begin{quotation}
-¥noindent [使用例] k が整数のとき，
-¥begin{quotation}
-¥noindent 
+\begin{quotation}
+\noindent [使用例] k が整数のとき，
+\begin{quotation}
+\noindent 
 k ← input()
-¥end{quotation}
+\end{quotation}
 キーボードから入力した数字列を整数として左辺の変数kに代入する。
-¥end{quotation}
+\end{quotation}
 
 
-¥vspace{-5mm}
-¥section{条件分岐}
-¥subsection{条件文(1) ¥ if〜then文}
-¥begin{quotation}
-¥noindent {¥bf{もし ≪条件式≫ ならば ¥¥
-  ¥hspace{1zw} $|$ ¥hspace{1zw} ≪処理≫ ¥¥
+\vspace{-5mm}
+\section{条件分岐}
+\subsection{条件文(1) \ if〜then文}
+\begin{quotation}
+\noindent {\bf{もし ≪条件式≫ ならば \\
+  \hspace{1zw} $|$ \hspace{1zw} ≪処理≫ \\
 を実行する}}
-¥end{quotation}
+\end{quotation}
 ≪条件式≫が真の場合、≪処理≫を実行し、
 偽の場合は≪処理≫を実行しない。
 いずれの場合もその後に次の文へ制御を渡す。
 
-¥begin{table}[!h]
-¥hspace{1cm}
-¥begin{tabular}{l l}
-¥noindent [使用例] & ¥hspace{1zw} [出力例] ¥¥
-¥hspace{1cm} ¥noindent もし x = 10 ならば & 
-¥hspace{1cm} // ¥ 変数 x が 10 の場合 ¥¥
-¥hspace{1cm} ¥hspace{1zw} $|$ ¥hspace{1zw}  「条件が成立しました」を表示する & 
-¥hspace{1cm} 条件が成立しました ¥¥
-¥hspace{1cm} を実行する & 
-¥hspace{1cm} 終了 ¥¥
-¥hspace{1cm} 「終了」を表示する &
-¥hspace{1cm} // ¥ 変数 x が 5 の場合 ¥¥
+\begin{table}[!h]
+\hspace{1cm}
+\begin{tabular}{l l}
+\noindent [使用例] & \hspace{1zw} [出力例] \\
+\hspace{1cm} \noindent もし x = 10 ならば & 
+\hspace{1cm} // \ 変数 x が 10 の場合 \\
+\hspace{1cm} \hspace{1zw} $|$ \hspace{1zw}  「条件が成立しました」を表示する & 
+\hspace{1cm} 条件が成立しました \\
+\hspace{1cm} を実行する & 
+\hspace{1cm} 終了 \\
+\hspace{1cm} 「終了」を表示する &
+\hspace{1cm} // \ 変数 x が 5 の場合 \\
  &
-¥hspace{2cm} 終了 ¥¥
-¥end{tabular}
-¥end{table}
+\hspace{2cm} 終了 \\
+\end{tabular}
+\end{table}
 
-¥vspace{-1.0cm}
-¥subsection{条件文(2) ¥ if〜then〜else文}
-¥begin{quotation}
-¥noindent {¥bf{もし ≪条件式≫ ならば ¥¥
-  ¥hspace{1zw} $|$ ¥hspace{1zw}  ≪処理1≫ ¥¥
-を実行し，そうでなければ ¥¥
-  ¥hspace{1zw} $|$ ¥hspace{1zw}  ≪処理2≫ ¥¥
+\vspace{-1.0cm}
+\subsection{条件文(2) \ if〜then〜else文}
+\begin{quotation}
+\noindent {\bf{もし ≪条件式≫ ならば \\
+  \hspace{1zw} $|$ \hspace{1zw}  ≪処理1≫ \\
+を実行し，そうでなければ \\
+  \hspace{1zw} $|$ \hspace{1zw}  ≪処理2≫ \\
 を実行する }}
-¥end{quotation}
+\end{quotation}
 
 ≪条件式≫が真の場合、≪処理1≫を実行し、
 偽の場合は≪処理2≫を実行する。
 
-¥begin{table}[!h]
-¥hspace{1cm}
-¥begin{tabular}{l l}
-¥noindent [使用例] & ¥hspace{1zw} [出力例] ¥¥
-¥hspace{1cm} ¥noindent もし x = 20 ならば & 
-¥hspace{1cm}  // ¥ 変数 x が 20 の場合 ¥¥
-¥hspace{1cm}   ¥hspace{1zw} $|$ ¥hspace{1zw}  「条件が成立しました」を表示する &
-¥hspace{1cm} 条件が成立しました ¥¥
-¥hspace{1cm} を実行し，そうでなければ &
-¥hspace{1cm} // ¥ 変数 x が 10 の場合 ¥¥
-¥hspace{1cm}   ¥hspace{1zw} $|$ ¥hspace{1zw}  「条件が成立しませんでした」を表示する &
-¥hspace{1cm} 条件が成立しませんでした ¥¥
-¥hspace{1cm} を実行する &
-¥hspace{2cm} ¥ ¥¥
-¥end{tabular}
-¥end{table}
+\begin{table}[!h]
+\hspace{1cm}
+\begin{tabular}{l l}
+\noindent [使用例] & \hspace{1zw} [出力例] \\
+\hspace{1cm} \noindent もし x = 20 ならば & 
+\hspace{1cm}  // \ 変数 x が 20 の場合 \\
+\hspace{1cm}   \hspace{1zw} $|$ \hspace{1zw}  「条件が成立しました」を表示する &
+\hspace{1cm} 条件が成立しました \\
+\hspace{1cm} を実行し，そうでなければ &
+\hspace{1cm} // \ 変数 x が 10 の場合 \\
+\hspace{1cm}   \hspace{1zw} $|$ \hspace{1zw}  「条件が成立しませんでした」を表示する &
+\hspace{1cm} 条件が成立しませんでした \\
+\hspace{1cm} を実行する &
+\hspace{2cm} \ \\
+\end{tabular}
+\end{table}
 
-¥vspace{-1.0cm}
-¥subsection{条件文(3) ¥ else〜if文}
-¥begin{quotation}
-¥noindent {¥bf{もし ≪条件式1≫ ならば ¥¥
-  ¥hspace{1zw} $|$ ¥hspace{1zw}  ≪処理1≫ ¥¥
-を実行し，そうでなくもし ≪条件式2≫ ならば ¥¥
-  ¥hspace{1zw} $|$ ¥hspace{1zw}  ≪処理2≫ ¥¥
-を実行し，そうでなければ ¥¥
-  ¥hspace{1zw} $|$ ¥hspace{1zw}  ≪処理3≫ ¥¥
+\vspace{-1.0cm}
+\subsection{条件文(3) \ else〜if文}
+\begin{quotation}
+\noindent {\bf{もし ≪条件式1≫ ならば \\
+  \hspace{1zw} $|$ \hspace{1zw}  ≪処理1≫ \\
+を実行し，そうでなくもし ≪条件式2≫ ならば \\
+  \hspace{1zw} $|$ \hspace{1zw}  ≪処理2≫ \\
+を実行し，そうでなければ \\
+  \hspace{1zw} $|$ \hspace{1zw}  ≪処理3≫ \\
 を実行する}}
-¥end{quotation}
+\end{quotation}
 
 ≪条件式1≫が成立した場合、≪処理1≫を実行し、
-成立しなくて≪条件式2≫が成立した場合、¥¥
+成立しなくて≪条件式2≫が成立した場合、\\
 ≪処理2≫を実行し、成立しない場合は≪処理3≫を実行する。
 
-¥begin{table}[!h]
-¥hspace{1cm}
-¥begin{tabular}{l l}
-¥noindent [使用例] & ¥hspace{1cm} [出力例] ¥¥
-¥hspace{1cm} ¥noindent もし x $>=$ 80 ならば & 
-¥hspace{2cm} // ¥ 変数 x が 95 の場合 ¥¥
-¥hspace{1cm}   ¥hspace{1zw} $|$ ¥hspace{1zw}  「xは80以上です」を表示する & 
-¥hspace{2cm} xは80以上です ¥¥
-¥hspace{1cm} を実行し，そうでなくもし x $>=$ 60 ならば & 
-¥hspace{2cm} // ¥ 変数 x が 70 の場合 ¥¥
-¥hspace{1cm}   ¥hspace{1zw} $|$ ¥hspace{1zw}  「xは79〜60の間です」を表示する & 
-¥hspace{2cm} xは79〜60の間です ¥¥
-¥hspace{1cm} を実行し，そうでなければ & 
-¥hspace{2cm} // ¥ 変数 x が 30 の場合 ¥¥
-¥hspace{1cm}   ¥hspace{1zw} $|$ ¥hspace{1zw}  「xは59以下です」を表示する & 
-¥hspace{2cm} xは59以下です ¥¥
-¥hspace{1cm} を実行する & 
-¥hspace{2cm} ¥¥
-¥end{tabular}
-¥end{table}
+\begin{table}[!h]
+\hspace{1cm}
+\begin{tabular}{l l}
+\noindent [使用例] & \hspace{1cm} [出力例] \\
+\hspace{1cm} \noindent もし x $>=$ 80 ならば & 
+\hspace{2cm} // \ 変数 x が 95 の場合 \\
+\hspace{1cm}   \hspace{1zw} $|$ \hspace{1zw}  「xは80以上です」を表示する & 
+\hspace{2cm} xは80以上です \\
+\hspace{1cm} を実行し，そうでなくもし x $>=$ 60 ならば & 
+\hspace{2cm} // \ 変数 x が 70 の場合 \\
+\hspace{1cm}   \hspace{1zw} $|$ \hspace{1zw}  「xは79〜60の間です」を表示する & 
+\hspace{2cm} xは79〜60の間です \\
+\hspace{1cm} を実行し，そうでなければ & 
+\hspace{2cm} // \ 変数 x が 30 の場合 \\
+\hspace{1cm}   \hspace{1zw} $|$ \hspace{1zw}  「xは59以下です」を表示する & 
+\hspace{2cm} xは59以下です \\
+\hspace{1cm} を実行する & 
+\hspace{2cm} \\
+\end{tabular}
+\end{table}
 
-¥vspace{-5mm}
-¥section{繰り返し}
-¥subsection{繰り返し文(1) ¥ while-do文}
-¥begin{quotation}
-¥noindent {¥bf{≪条件式≫ の間，¥¥
-  ¥hspace{1zw} $|$ ¥hspace{1zw}  ≪処理≫¥¥
+\vspace{-5mm}
+\section{繰り返し}
+\subsection{繰り返し文(1) \ while-do文}
+\begin{quotation}
+\noindent {\bf{≪条件式≫ の間，\\
+  \hspace{1zw} $|$ \hspace{1zw}  ≪処理≫\\
 を繰り返す}}
-¥end{quotation}
+\end{quotation}
 
 ≪条件式≫が成立していれば、≪処理≫を実行する。 
 ≪処理≫の実行終了後、再び≪条件式≫の判定を行い、
 成立すれば≪処理≫を再び実行し、これを繰り返す。 
 ≪条件式≫が成立しない場合は「を繰り返す」の次の行へ進む。
 
-¥vspace{-3mm}
-¥subsection{繰り返し文(2) ¥ repeat-until文}
-¥begin{quotation}
-¥noindent {¥bf{繰り返し， ¥¥
-  ¥hspace{1zw} $|$ ¥hspace{1zw}  ≪処理≫ ¥¥
+\vspace{-3mm}
+\subsection{繰り返し文(2) \ repeat-until文}
+\begin{quotation}
+\noindent {\bf{繰り返し， \\
+  \hspace{1zw} $|$ \hspace{1zw}  ≪処理≫ \\
 を， ≪条件式≫ になるまで実行する}}
-¥end{quotation}
+\end{quotation}
 ≪処理≫を実行した後、≪条件式≫の判定を行う。
 条件式が成立していなければ、≪処理≫を再び実行し、
 成立した場合は次の行へ進む。
 
-¥begin{table}[!h]
-¥hspace{1cm}
-¥begin{tabular}{l l}
-¥noindent [使用例] & ¥hspace{1cm} [出力例] ¥¥
-¥hspace{1cm} ¥noindent 繰り返し，&
-¥hspace{2cm} // ¥ 変数 x が 1 の場合 ¥¥
-¥hspace{1cm}   ¥hspace{1zw} $|$ ¥hspace{1zw}  x を表示する &
-¥hspace{2cm} 1 ¥¥
-¥hspace{1cm}   ¥hspace{1zw} $|$ ¥hspace{1zw}  x ← x + 1 &
-¥hspace{2cm} 2 ¥¥
-¥hspace{1cm} を， x $>$ 3 になるまで実行する &
-¥hspace{2cm} 3 ¥¥
-¥end{tabular}
-¥end{table}
+\begin{table}[!h]
+\hspace{1cm}
+\begin{tabular}{l l}
+\noindent [使用例] & \hspace{1cm} [出力例] \\
+\hspace{1cm} \noindent 繰り返し，&
+\hspace{2cm} // \ 変数 x が 1 の場合 \\
+\hspace{1cm}   \hspace{1zw} $|$ \hspace{1zw}  x を表示する &
+\hspace{2cm} 1 \\
+\hspace{1cm}   \hspace{1zw} $|$ \hspace{1zw}  x ← x + 1 &
+\hspace{2cm} 2 \\
+\hspace{1cm} を， x $>$ 3 になるまで実行する &
+\hspace{2cm} 3 \\
+\end{tabular}
+\end{table}
 
 
-¥vspace{-8mm}
-¥subsection{繰り返し文(3) ¥ for文}
-¥begin{quotation}
-¥noindent {¥bf{≪変数≫ を ≪数値1≫ から ≪数値2≫ まで ≪増加値≫ ずつ増やしながら， ¥¥
-  ¥hspace{1zw} $|$ ¥hspace{1zw}  ≪処理≫ ¥¥
+\vspace{-8mm}
+\subsection{繰り返し文(3) \ for文}
+\begin{quotation}
+\noindent {\bf{≪変数≫ を ≪数値1≫ から ≪数値2≫ まで ≪増加値≫ ずつ増やしながら， \\
+  \hspace{1zw} $|$ \hspace{1zw}  ≪処理≫ \\
 を繰り返す}}
-¥end{quotation}
+\end{quotation}
 
 ≪変数≫の部分に指定されたループ変数に≪数値1≫の値を代入し≪処理≫を実行する。
 ≪処理≫の実行後、ループ変数に≪増加値≫の値を加算し、
 ループ変数の値が≪数値2≫になるまで繰り返す。
 
-¥begin{quotation}
-¥noindent {¥bf{≪変数≫ を ≪数値1≫ から ≪数値2≫ まで ≪減少値≫ ずつ減らしながら， ¥¥
-  ¥hspace{1zw} $|$ ¥hspace{1zw}  ≪処理≫  ¥¥
+\begin{quotation}
+\noindent {\bf{≪変数≫ を ≪数値1≫ から ≪数値2≫ まで ≪減少値≫ ずつ減らしながら， \\
+  \hspace{1zw} $|$ \hspace{1zw}  ≪処理≫  \\
 を繰り返す}}
-¥end{quotation}
+\end{quotation}
 
 ≪変数≫の部分に指定されたループ変数に≪数値1≫の値を代入し≪処理≫を実行する。
 ≪処理≫の実行後、ループ変数から≪減少値≫の値を減算し、
 ループ変数の値が≪数値2≫になるまで繰り返す。
 
-¥vspace{3mm}
-%% ¥begin{table}[!h]
-¥hspace*{10mm}
-%% {¥small 
-%% ¥hspace{1cm}
-¥begin{tabular}{l l}
-¥noindent [使用例1] & ¥hspace{1cm} [出力例1] ¥¥
-¥hspace{1cm} ¥noindent x を 1 から 3 まで 1 ずつ増やしながら，&
-¥hspace{2cm} 1 ¥¥
-¥hspace{1cm}   ¥hspace{1zw} $|$ ¥hspace{1zw}  x を表示する & 
-¥hspace{2cm} 2 ¥¥
-¥hspace{1cm} を繰り返す &
-¥hspace{2cm} 3 ¥¥
-¥end{tabular}
+\vspace{3mm}
+%% \begin{table}[!h]
+\hspace*{10mm}
+%% {\small 
+%% \hspace{1cm}
+\begin{tabular}{l l}
+\noindent [使用例1] & \hspace{1cm} [出力例1] \\
+\hspace{1cm} \noindent x を 1 から 3 まで 1 ずつ増やしながら，&
+\hspace{2cm} 1 \\
+\hspace{1cm}   \hspace{1zw} $|$ \hspace{1zw}  x を表示する & 
+\hspace{2cm} 2 \\
+\hspace{1cm} を繰り返す &
+\hspace{2cm} 3 \\
+\end{tabular}
 %% }
 
-¥vspace{3mm}
-¥hspace*{10mm}
-%% {¥small 
-¥begin{tabular}{l l}
-¥noindent [使用例2] & ¥hspace{1cm} [出力例2] ¥¥
-¥hspace{1cm} ¥noindent x を 3 から 1 まで 1 ずつ減らしながら， & 
-¥hspace{2cm} 3 ¥¥
-¥hspace{1cm}   ¥hspace{1zw} $|$ ¥hspace{1zw}  x を表示する & 
-¥hspace{2cm} 2 ¥¥
-¥hspace{1cm} を繰り返す &
-¥hspace{2cm} 1 ¥¥
-¥end{tabular}
+\vspace{3mm}
+\hspace*{10mm}
+%% {\small 
+\begin{tabular}{l l}
+\noindent [使用例2] & \hspace{1cm} [出力例2] \\
+\hspace{1cm} \noindent x を 3 から 1 まで 1 ずつ減らしながら， & 
+\hspace{2cm} 3 \\
+\hspace{1cm}   \hspace{1zw} $|$ \hspace{1zw}  x を表示する & 
+\hspace{2cm} 2 \\
+\hspace{1cm} を繰り返す &
+\hspace{2cm} 1 \\
+\end{tabular}
 %% }  %%%  end of small
-%% ¥end{table}
+%% \end{table}
 
 
-%% ¥vspace{-10mm}
-¥vspace{-4mm}
-¥subsection{繰り返し文の脱出}
-¥begin{quotation}
-¥noindent {¥bf{繰り返しを抜ける}}
-¥end{quotation}
+%% \vspace{-10mm}
+\vspace{-4mm}
+\subsection{繰り返し文の脱出}
+\begin{quotation}
+\noindent {\bf{繰り返しを抜ける}}
+\end{quotation}
 
 繰り返し文を途中で強制的に抜け出す命令。
 
-¥begin{table}[!h]
-{¥small 
-¥hspace{1cm}
-¥begin{tabular}{l l}
-¥noindent [使用例] & ¥hspace{1cm} [出力例] ¥¥
-¥hspace{1cm} ¥noindent x を 1 から 10 まで 2 ずつ増やしながら，& 
-¥hspace{2cm} 1 ¥¥
-¥hspace{1cm} ¥ ¥ ¥ ¥  ¥hspace{1zw} $|$ ¥hspace{1zw}  x を表示する & 
-¥hspace{2cm} 3 ¥¥
-¥hspace{1cm} ¥ ¥ ¥ ¥  ¥hspace{1zw} $|$ ¥hspace{1zw}  もし x = 5 ならば & 
-¥hspace{2cm} 5 ¥¥
-¥hspace{1cm} ¥ ¥ ¥ ¥  ¥hspace{1zw} $|$ ¥hspace{2zw} $|$ ¥hspace{1zw} くり返しを抜ける & 
-¥hspace{1cm}  ¥¥
-¥hspace{1cm} ¥ ¥ ¥ ¥  ¥hspace{1zw} $|$ ¥hspace{1zw}  を実行する & 
-¥hspace{1cm}  ¥¥
-¥hspace{1cm} を繰り返す &
-¥hspace{1cm}  ¥¥
-¥end{tabular}
+\begin{table}[!h]
+{\small 
+\hspace{1cm}
+\begin{tabular}{l l}
+\noindent [使用例] & \hspace{1cm} [出力例] \\
+\hspace{1cm} \noindent x を 1 から 10 まで 2 ずつ増やしながら，& 
+\hspace{2cm} 1 \\
+\hspace{1cm} \ \ \ \  \hspace{1zw} $|$ \hspace{1zw}  x を表示する & 
+\hspace{2cm} 3 \\
+\hspace{1cm} \ \ \ \  \hspace{1zw} $|$ \hspace{1zw}  もし x = 5 ならば & 
+\hspace{2cm} 5 \\
+\hspace{1cm} \ \ \ \  \hspace{1zw} $|$ \hspace{2zw} $|$ \hspace{1zw} くり返しを抜ける & 
+\hspace{1cm}  \\
+\hspace{1cm} \ \ \ \  \hspace{1zw} $|$ \hspace{1zw}  を実行する & 
+\hspace{1cm}  \\
+\hspace{1cm} を繰り返す &
+\hspace{1cm}  \\
+\end{tabular}
 } %%% end of small
-¥end{table}
+\end{table}
 
-%% ¥vspace{-10mm}
-¥section{組み込み関数}
+%% \vspace{-10mm}
+\section{組み込み関数}
 
-¥vspace{-2mm}
-¥subsection{数学関数}
+\vspace{-2mm}
+\subsection{数学関数}
 
-%% {¥small 
-¥begin{table}[htbp]
-  ¥begin{center}
-    ¥begin{tabular}{l|p{5.0cm}|l|l|l} ¥hline
-    書式	& 意味	& 使用例	& 戻り値	& 戻り値の¥¥
- & & & & データ型	¥¥ ¥hline
-    random(x)	& 0〜xの乱数値 (整数) を返す		& random(10)		& 0〜10の値を返す		& 整数		¥¥ ¥hline
-    floor(x)	& x の小数点以下 切り捨て			& floor(24.64)		& 24.0					& 実数		¥¥ ¥hline
-    ceil(x)		& x の小数点以下 切り上げ			& ceil(24.64)		& 25.0					& 実数		¥¥ ¥hline
-    round(x)	& x の小数点以下 四捨五入			& round(24.64)		& 25					& 実数		¥¥ ¥hline
-    abs(x)		& x の絶対値						& abs(-234)			& 234					& 引数と同じ	¥¥ ¥hline
-    int(x)		& x の型を「整数」に変換			& int(10.2345)		& 10					& 整数		¥¥ ¥hline
-    sin(x)		& 角度 x (ラジアン) の正弦を返す	& sin(95.0)			& 0.683261714736121		& 実数		¥¥ ¥hline
-    cos(x)		& 角度 x (ラジアン) の余弦を返す	& cos(50)			& 0.15425144988758405	& 実数		¥¥ ¥hline
-    tan(x)		& 角度 x (ラジアン) の正接を返す	& tan(70)			& 1.2219599181369434	& 実数		¥¥ ¥hline
-    sqrt(x)		& x の平方根の値を返す				& sqrt(5)			& 2.23606797749979		& 実数		¥¥ ¥hline
-    log(x)		& x の自然対数値 (底は e) を返す	& log(2)			& 0.6931471805599453	& 実数		¥¥ ¥hline
-    ¥end{tabular}
-  ¥end{center}
-  ¥begin{itemize}
-    ¥itemsep 0pt  ¥parskip 0pt ¥small
-    ¥item 引数 x のデータ型は 実数型 であるが、 整数型 で渡した場合、 実数型 に型変換されて取り扱われる
-    ¥item abs(x) の戻り値のデータ型は、引数のデータ型によって決定される
-  ¥end{itemize}
-  ¥vspace{-1.0cm}
-¥end{table}
+%% {\small 
+\begin{table}[htbp]
+  \begin{center}
+    \begin{tabular}{l|p{5.0cm}|l|l|l} \hline
+    書式	& 意味	& 使用例	& 戻り値	& 戻り値の\\
+ & & & & データ型	\\ \hline
+    random(x)	& 0〜xの乱数値 (整数) を返す		& random(10)		& 0〜10の値を返す		& 整数		\\ \hline
+    floor(x)	& x の小数点以下 切り捨て			& floor(24.64)		& 24.0					& 実数		\\ \hline
+    ceil(x)		& x の小数点以下 切り上げ			& ceil(24.64)		& 25.0					& 実数		\\ \hline
+    round(x)	& x の小数点以下 四捨五入			& round(24.64)		& 25					& 実数		\\ \hline
+    abs(x)		& x の絶対値						& abs(-234)			& 234					& 引数と同じ	\\ \hline
+    int(x)		& x の型を「整数」に変換			& int(10.2345)		& 10					& 整数		\\ \hline
+    sin(x)		& 角度 x (ラジアン) の正弦を返す	& sin(95.0)			& 0.683261714736121		& 実数		\\ \hline
+    cos(x)		& 角度 x (ラジアン) の余弦を返す	& cos(50)			& 0.15425144988758405	& 実数		\\ \hline
+    tan(x)		& 角度 x (ラジアン) の正接を返す	& tan(70)			& 1.2219599181369434	& 実数		\\ \hline
+    sqrt(x)		& x の平方根の値を返す				& sqrt(5)			& 2.23606797749979		& 実数		\\ \hline
+    log(x)		& x の自然対数値 (底は e) を返す	& log(2)			& 0.6931471805599453	& 実数		\\ \hline
+    \end{tabular}
+  \end{center}
+  \begin{itemize}
+    \itemsep 0pt  \parskip 0pt \small
+    \item 引数 x のデータ型は 実数型 であるが、 整数型 で渡した場合、 実数型 に型変換されて取り扱われる
+    \item abs(x) の戻り値のデータ型は、引数のデータ型によって決定される
+  \end{itemize}
+  \vspace{-1.0cm}
+\end{table}
 %% }   %%%% end of small
 
-¥newpage
+\newpage
 
-¥subsection{文字列操作関数}
+\subsection{文字列操作関数}
 
-¥begin{table}[htbp]
-  ¥begin{center}
-    ¥begin{tabular}{l|p{3.0cm}|l|p{2.0cm}|l}
-    ¥hline
-    書式 & 意味	& 使用例 & 戻り値 & データ型 ¥¥
-    ¥hline
+\begin{table}[htbp]
+  \begin{center}
+    \begin{tabular}{l|p{3.0cm}|l|p{2.0cm}|l}
+    \hline
+    書式 & 意味	& 使用例 & 戻り値 & データ型 \\
+    \hline
     str2int(str) & str の1文字目をASCIIコードの数値に変換 &
-    str2int("A")	& 65 & 整数 ¥¥ ¥hline
-    int2str(int)				& 引数intをASCIIコードと見なしたときの対応する文字を返す			& int2str(70)					& F			& 文字列	¥¥ ¥hline
-    length(str)					& str の文字列の長さを返す											& length("PEN")					& 3			& 整数	¥¥ ¥hline
-	append(str1, str2)			& str1 と str2 を結合した文字列を返す								& append("Mr.", "PEN")			& Mr.PEN	& 文字列	¥¥ ¥hline
-    substring(str, i)			& str の先頭から i 文字よりも後の文字列を返す						& substring("smile",2)			& ile		& 文字列	¥¥ ¥hline
-    substring(str, i, len)		& str の先頭から i 文字よりも後ろの len 文字を返す					& substring("smile",1,4)		& mile		& 文字列	¥¥ ¥hline
-    insert(str1, i, str2)		& str1 の i 文字目の後に str2 を 挿入する							& insert("abc",2,"123")		& ab123c	& 文字列	¥¥ ¥hline
-    replace(str1, i, len, str2)	& str1 の i 文字目の後から len で示される文字数を str2 で置き換える	& replace("abc",1,2,"123")	& a123		& 文字列	¥¥ ¥hline
-    extract(str, delim, i)		& 文字列 str を delim で区切り，i+1 個目にある文字列を返す			& extract("a:b:c",":",2)		& c			& 文字列	¥¥ ¥hline
-    compare(str1, str2)				& 2つの文字列を辞書式に比較して正数値を返す							& compare("str1","str2")					& -1,0,1(※1)		& 整数	¥¥ ¥hline
-    ¥end{tabular}
-  ¥end{center}
-  ¥begin{itemize}
-    ¥itemsep 0pt  ¥parskip 0pt ¥small
-    ¥item 引数 str, delim のデータ型は 文字列型 でなければならない
-    ¥item 引数 int, i, j, len のデータ型は 整数型 でなければならない
-    ¥item ※1¥ ¥ str1がstr2の辞書列の、前の時に¥ -1、同じの時に¥ 0、後ろの時に¥ 1となる。
-  ¥end{itemize}
-  ¥vspace{-1.0cm}
-¥end{table}
+    str2int("A")	& 65 & 整数 \\ \hline
+    int2str(int)				& 引数intをASCIIコードと見なしたときの対応する文字を返す			& int2str(70)					& F			& 文字列	\\ \hline
+    length(str)					& str の文字列の長さを返す											& length("PEN")					& 3			& 整数	\\ \hline
+	append(str1, str2)			& str1 と str2 を結合した文字列を返す								& append("Mr.", "PEN")			& Mr.PEN	& 文字列	\\ \hline
+    substring(str, i)			& str の先頭から i 文字よりも後の文字列を返す						& substring("smile",2)			& ile		& 文字列	\\ \hline
+    substring(str, i, len)		& str の先頭から i 文字よりも後ろの len 文字を返す					& substring("smile",1,4)		& mile		& 文字列	\\ \hline
+    insert(str1, i, str2)		& str1 の i 文字目の後に str2 を 挿入する							& insert("abc",2,"123")		& ab123c	& 文字列	\\ \hline
+    replace(str1, i, len, str2)	& str1 の i 文字目の後から len で示される文字数を str2 で置き換える	& replace("abc",1,2,"123")	& a123		& 文字列	\\ \hline
+    extract(str, delim, i)		& 文字列 str を delim で区切り，i+1 個目にある文字列を返す			& extract("a:b:c",":",2)		& c			& 文字列	\\ \hline
+    compare(str1, str2)				& 2つの文字列を辞書式に比較して正数値を返す							& compare("str1","str2")					& -1,0,1(※1)		& 整数	\\ \hline
+    \end{tabular}
+  \end{center}
+  \begin{itemize}
+    \itemsep 0pt  \parskip 0pt \small
+    \item 引数 str, delim のデータ型は 文字列型 でなければならない
+    \item 引数 int, i, j, len のデータ型は 整数型 でなければならない
+    \item ※1\ \ str1がstr2の辞書列の、前の時に\ -1、同じの時に\ 0、後ろの時に\ 1となる。
+  \end{itemize}
+  \vspace{-1.0cm}
+\end{table}
 %%%
 %%% $TM1$ これは、とても気持が悪いですね。。。
 %%%	random(n)のnは整数型に限定だと思いますが、それ以外は、
@@ -862,7 +862,7 @@ k ← input()
 %%%			compare() を追加
 %%%
 
-%¥pagebreak
+%\pagebreak
 
-¥end{document}
+\end{document}
 
