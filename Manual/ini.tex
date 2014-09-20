@@ -1,316 +1,316 @@
 %
 %PEN INSTRUCTION
 %
-\documentclass[10pt,a4j]{jarticle}
-%\pagestyle{empty}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{epsfig}
-\usepackage{color}
-%\usepackage{txfonts}
+Â¥documentclass[10pt,a4j]{jarticle}
+%Â¥pagestyle{empty}
+Â¥usepackage{amsmath}
+Â¥usepackage{amssymb}
+Â¥usepackage{epsfig}
+Â¥usepackage{color}
+%Â¥usepackage{txfonts}
 
-%\setlength{\topmargin}{-0mm}
-%\setlength{\oddsidemargin}{-0mm}
-%\setlength{\textheight}{252mm}
-%\setlength{\textwidth}{180mm}
+%Â¥setlength{Â¥topmargin}{-0mm}
+%Â¥setlength{Â¥oddsidemargin}{-0mm}
+%Â¥setlength{Â¥textheight}{252mm}
+%Â¥setlength{Â¥textwidth}{180mm}
 
-%---------- ‰Óğ‘‚« -----------
+%---------- ç®‡æ¡æ›¸ã -----------
 
-\newenvironment{itemize2}%  
+Â¥newenvironment{itemize2}%  
 {%
-   \begin{list}{$\bullet$\ \ }% Œ©o‚µ‹L†^’¼Œã‚Ì‹ó”’‚ğ’²ß
+   Â¥begin{list}{$Â¥bullet$Â¥ Â¥ }% è¦‹å‡ºã—è¨˜å·ï¼ç›´å¾Œã®ç©ºç™½ã‚’èª¿ç¯€
    {%
-      \setlength{\itemindent}{0pt}
-      \setlength{\leftmargin}{3zw}%  ¶‚ÌƒCƒ“ƒfƒ“ƒg
-      \setlength{\rightmargin}{0zw}% ‰E‚ÌƒCƒ“ƒfƒ“ƒg
-      \setlength{\labelsep}{0zw}%    •ŠÛ‚Æà–¾•¶‚ÌŠÔ
-      \setlength{\labelwidth}{3zw}%  ƒ‰ƒxƒ‹‚Ì•
-      \setlength{\itemsep}{0em}%     €–Ú‚²‚Æ‚Ì‰üs•
-      \setlength{\parsep}{0em}%      ’i—‚Å‚Ì‰üs•
-      \setlength{\listparindent}{0zw}% ’i—‚Å‚Ìˆêš‰º‚è
+      Â¥setlength{Â¥itemindent}{0pt}
+      Â¥setlength{Â¥leftmargin}{3zw}%  å·¦ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+      Â¥setlength{Â¥rightmargin}{0zw}% å³ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+      Â¥setlength{Â¥labelsep}{0zw}%    é»’ä¸¸ã¨èª¬æ˜æ–‡ã®é–“
+      Â¥setlength{Â¥labelwidth}{3zw}%  ãƒ©ãƒ™ãƒ«ã®å¹…
+      Â¥setlength{Â¥itemsep}{0em}%     é …ç›®ã”ã¨ã®æ”¹è¡Œå¹…
+      Â¥setlength{Â¥parsep}{0em}%      æ®µè½ã§ã®æ”¹è¡Œå¹…
+      Â¥setlength{Â¥listparindent}{0zw}% æ®µè½ã§ã®ä¸€å­—ä¸‹ã‚Š
    }
 }{%
-   \end{list}%
+   Â¥end{list}%
 }
-%---------- ”Ô†‚Â‚«‰Óğ‘‚« -----------
+%---------- ç•ªå·ã¤ãç®‡æ¡æ›¸ã -----------
 
-\newcounter{enum2}
-\newenvironment{enumerate2}{%
-   \begin{list}%
+Â¥newcounter{enum2}
+Â¥newenvironment{enumerate2}{%
+   Â¥begin{list}%
    {%
-      \arabic{enum2}.\ \,%  Œ©o‚µ‹L†^’¼Œã‚Ì‹ó”’‚ğ’²ß
+      Â¥arabic{enum2}.Â¥ Â¥,%  è¦‹å‡ºã—è¨˜å·ï¼ç›´å¾Œã®ç©ºç™½ã‚’èª¿ç¯€
    }%
    {%
-      \usecounter{enum2}
-      \setlength{\itemindent}{0zw}%  ‚±‚±‚Í 0 ‚ÉŒÅ’è
-      \setlength{\leftmargin}{3zw}%  ¶‚ÌƒCƒ“ƒfƒ“ƒg
-      \setlength{\rightmargin}{0zw}% ‰E‚ÌƒCƒ“ƒfƒ“ƒg
-      \setlength{\labelsep}{0zw}%    •ŠÛ‚Æà–¾•¶‚ÌŠÔ
-      \setlength{\labelwidth}{3zw}%  ƒ‰ƒxƒ‹‚Ì•
-      \setlength{\itemsep}{0em}%     €–Ú‚²‚Æ‚Ì‰üs•
-      \setlength{\parsep}{0em}%      ’i—‚Å‚Ì‰üs•
-      \setlength{\listparindent}{0zw}% ’i—‚Å‚Ìˆêš‰º‚è
+      Â¥usecounter{enum2}
+      Â¥setlength{Â¥itemindent}{0zw}%  ã“ã“ã¯ 0 ã«å›ºå®š
+      Â¥setlength{Â¥leftmargin}{3zw}%  å·¦ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+      Â¥setlength{Â¥rightmargin}{0zw}% å³ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+      Â¥setlength{Â¥labelsep}{0zw}%    é»’ä¸¸ã¨èª¬æ˜æ–‡ã®é–“
+      Â¥setlength{Â¥labelwidth}{3zw}%  ãƒ©ãƒ™ãƒ«ã®å¹…
+      Â¥setlength{Â¥itemsep}{0em}%     é …ç›®ã”ã¨ã®æ”¹è¡Œå¹…
+      Â¥setlength{Â¥parsep}{0em}%      æ®µè½ã§ã®æ”¹è¡Œå¹…
+      Â¥setlength{Â¥listparindent}{0zw}% æ®µè½ã§ã®ä¸€å­—ä¸‹ã‚Š
    }
 }{%
-   \end{list}%
+   Â¥end{list}%
 }
-\setlength{\topsep}{0pt}
-\setlength{\itemsep}{10pt}
-\setlength{\parsep}{0mm}
-\setlength{\itemindent}{50mm}
+Â¥setlength{Â¥topsep}{0pt}
+Â¥setlength{Â¥itemsep}{10pt}
+Â¥setlength{Â¥parsep}{0mm}
+Â¥setlength{Â¥itemindent}{50mm}
 
-\labelsep 20mm
-\labelwidth 50mm
-\leftmargin 100mm
-\newcommand{\ExerciseTitle}[1]{%
-  \begin{center}\Large
-    \textbf{PEN ƒ}ƒjƒ…ƒAƒ‹ Q \& A} \qquad \texttt{#1}
-  \end{center}%
+Â¥labelsep 20mm
+Â¥labelwidth 50mm
+Â¥leftmargin 100mm
+Â¥newcommand{Â¥ExerciseTitle}[1]{%
+  Â¥begin{center}Â¥Large
+    Â¥textbf{PEN ãƒãƒ‹ãƒ¥ã‚¢ãƒ« Q Â¥& A} Â¥qquad Â¥texttt{#1}
+  Â¥end{center}%
 }
 
 
-\renewcommand{\baselinestretch}{1.0}
+Â¥renewcommand{Â¥baselinestretch}{1.0}
 
-\begin{document}
+Â¥begin{document}
 
-\noindent
-\begin{flushright}
-{\small	2009/02/16}
-\end{flushright}
-\begin{center}
-\begin{LARGE}
-{\bf{PEN‚Ì“®ì‚ğ§Œä‚·‚é}}
-\end{LARGE}
-\end{center}
+Â¥noindent
+Â¥begin{flushright}
+{Â¥small	2009/02/16}
+Â¥end{flushright}
+Â¥begin{center}
+Â¥begin{LARGE}
+{Â¥bf{PENã®å‹•ä½œã‚’åˆ¶å¾¡ã™ã‚‹}}
+Â¥end{LARGE}
+Â¥end{center}
 
-Property.ini “à‚Åw’è‚Å‚«‚éİ’è€–Ú‚ÍˆÈ‰º‚Ì’Ê‚èB
-ƒpƒ‰ƒ[ƒ^‚Í‹N“®‚É“Ç‚İ‚Ü‚ê‚éB
+Property.ini å†…ã§æŒ‡å®šã§ãã‚‹è¨­å®šé …ç›®ã¯ä»¥ä¸‹ã®é€šã‚Šã€‚
+ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã¯èµ·å‹•æ™‚ã«èª­ã¿è¾¼ã¾ã‚Œã‚‹ã€‚
 
-\section{•Ï”éŒ¾‚Ì—v/•s—v‚Ìİ’è}
+Â¥section{å¤‰æ•°å®£è¨€ã®è¦/ä¸è¦ã®è¨­å®š}
 
-•Ï”éŒ¾‚Ì—v/•s—v‚ğİ’è‚·‚éB
+å¤‰æ•°å®£è¨€ã®è¦/ä¸è¦ã‚’è¨­å®šã™ã‚‹ã€‚
 
-\begin{quotation}
+Â¥begin{quotation}
 
-\noindent [g—p—á]\\
-~~~~{\bf{executer.var.declaration=0}}\\
-\ \\ 
-İ’è’l‚ÍˆÈ‰º‚Ì’Ê‚è(ƒfƒtƒHƒ‹ƒg’l‚Í0)B\\
+Â¥noindent [ä½¿ç”¨ä¾‹]Â¥Â¥
+~~~~{Â¥bf{executer.var.declaration=0}}Â¥Â¥
+Â¥ Â¥Â¥ 
+è¨­å®šå€¤ã¯ä»¥ä¸‹ã®é€šã‚Š(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤ã¯0)ã€‚Â¥Â¥
 
-\begin{tabular}{c|l||cl}
-\hline
-\multicolumn{2}{c||}{İ’è’l} & \multicolumn{2}{c}{•Ï”éŒ¾‚ª‚È‚¢ê‡‚Ìo—Í}\\
-\hline
-0 & •Ï”éŒ¾•K{ &  & ƒGƒ‰[ \\
-\hline
-1 & •Ï”éŒ¾•s—v &  & Œx•\¦ \\
-\hline
-2 & •Ï”éŒ¾•s—v &  & ƒGƒ‰[‚ÆŒx•\¦‚È‚µ \\
-\hline
-\end{tabular}
+Â¥begin{tabular}{c|l||cl}
+Â¥hline
+Â¥multicolumn{2}{c||}{è¨­å®šå€¤} & Â¥multicolumn{2}{c}{å¤‰æ•°å®£è¨€ãŒãªã„å ´åˆã®å‡ºåŠ›}Â¥Â¥
+Â¥hline
+0 & å¤‰æ•°å®£è¨€å¿…é ˆ &  & ã‚¨ãƒ©ãƒ¼ Â¥Â¥
+Â¥hline
+1 & å¤‰æ•°å®£è¨€ä¸è¦ &  & è­¦å‘Šè¡¨ç¤º Â¥Â¥
+Â¥hline
+2 & å¤‰æ•°å®£è¨€ä¸è¦ &  & ã‚¨ãƒ©ãƒ¼ã¨è­¦å‘Šè¡¨ç¤ºãªã— Â¥Â¥
+Â¥hline
+Â¥end{tabular}
 
-\end{quotation}
+Â¥end{quotation}
 
-\section{”z—ñ‚Ì“Yš‚Ì”ÍˆÍ‚ğİ’è}
-”z—ñ‚ğéŒ¾‚µ‚Ä•Ï”‚ğŠm•Û‚·‚é‚Æ‚«A“Yš‚Ì”ÍˆÍ‚ğŒˆ‚ß‚é‚±‚Æ‚ª‚Å‚«‚éB
+Â¥section{é…åˆ—ã®æ·»å­—ã®ç¯„å›²ã‚’è¨­å®š}
+é…åˆ—ã‚’å®£è¨€ã—ã¦å¤‰æ•°ã‚’ç¢ºä¿ã™ã‚‹ã¨ãã€æ·»å­—ã®ç¯„å›²ã‚’æ±ºã‚ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚
 
-\begin{quotation}
-\noindent [g—p—á]\\
-~~~~{\bf{executer.array.origin=0}}\\
-\ \\ 
-İ’è’l‚ÍˆÈ‰º‚Ì’Ê‚èB\\
+Â¥begin{quotation}
+Â¥noindent [ä½¿ç”¨ä¾‹]Â¥Â¥
+~~~~{Â¥bf{executer.array.origin=0}}Â¥Â¥
+Â¥ Â¥Â¥ 
+è¨­å®šå€¤ã¯ä»¥ä¸‹ã®é€šã‚Šã€‚Â¥Â¥
 
-\begin{tabular}{c|l}
-\hline
-İ’è’l  & ”z—ñ X[n] ‚ğéŒ¾‚µ‚½ê‡ \\
-\hline
-0       & X[0],...,X[n]  ‚Ì—v‘f‚ğŠm•Û‚·‚é (ƒfƒtƒHƒ‹ƒg’l) \\
-\hline
-1       & X[0],...,X[n-1]‚Ì—v‘f‚ğŠm•Û‚·‚é \\
-\hline
-2       & X[1],...,X[n]  ‚Ì—v‘f‚ğŠm•Û‚·‚é \\
-\hline
-\end{tabular}
+Â¥begin{tabular}{c|l}
+Â¥hline
+è¨­å®šå€¤  & é…åˆ— X[n] ã‚’å®£è¨€ã—ãŸå ´åˆ Â¥Â¥
+Â¥hline
+0       & X[0],...,X[n]  ã®è¦ç´ ã‚’ç¢ºä¿ã™ã‚‹ (ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤) Â¥Â¥
+Â¥hline
+1       & X[0],...,X[n-1]ã®è¦ç´ ã‚’ç¢ºä¿ã™ã‚‹ Â¥Â¥
+Â¥hline
+2       & X[1],...,X[n]  ã®è¦ç´ ã‚’ç¢ºä¿ã™ã‚‹ Â¥Â¥
+Â¥hline
+Â¥end{tabular}
 
-%\begin{tabular}{ccl}
-%İ’è’l & : & ”z—ñ X[n] ‚ğéŒ¾‚µ‚½ê‡ \\
-%0      & : & X[0],...,X[n]  ‚Ì—v‘f‚ğŠm•Û‚·‚é (ƒfƒtƒHƒ‹ƒg’l) \\
-%1      & : & X[0],...,X[n-1]‚Ì—v‘f‚ğŠm•Û‚·‚é \\
-%2      & : & X[1],...,X[n]  ‚Ì—v‘f‚ğŠm•Û‚·‚é \\
-%\end{tabular}
+%Â¥begin{tabular}{ccl}
+%è¨­å®šå€¤ & : & é…åˆ— X[n] ã‚’å®£è¨€ã—ãŸå ´åˆ Â¥Â¥
+%0      & : & X[0],...,X[n]  ã®è¦ç´ ã‚’ç¢ºä¿ã™ã‚‹ (ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤) Â¥Â¥
+%1      & : & X[0],...,X[n-1]ã®è¦ç´ ã‚’ç¢ºä¿ã™ã‚‹ Â¥Â¥
+%2      & : & X[1],...,X[n]  ã®è¦ç´ ã‚’ç¢ºä¿ã™ã‚‹ Â¥Â¥
+%Â¥end{tabular}
 
-\end{quotation}
+Â¥end{quotation}
 
-\section{•`‰æƒEƒBƒ“ƒhƒE‚ÌŒ´“_‚Ìİ’è}
+Â¥section{æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®åŸç‚¹ã®è¨­å®š}
 
-•`‰æƒEƒBƒ“ƒhƒE‚ÅÀ•W‚ğw’è‚·‚é‚Æ‚«‚ÌŒ´“_‚ğİ’è‚·‚éB
+æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã§åº§æ¨™ã‚’æŒ‡å®šã™ã‚‹ã¨ãã®åŸç‚¹ã‚’è¨­å®šã™ã‚‹ã€‚
 
-\begin{quotation}
-\noindent [g—p—á]\\
-~~~~{\bf{executer.graphic.origin=0}}\\
-\ \\
-İ’è’l‚ÍˆÈ‰º‚Ì’Ê‚èB\\
+Â¥begin{quotation}
+Â¥noindent [ä½¿ç”¨ä¾‹]Â¥Â¥
+~~~~{Â¥bf{executer.graphic.origin=0}}Â¥Â¥
+Â¥ Â¥Â¥
+è¨­å®šå€¤ã¯ä»¥ä¸‹ã®é€šã‚Šã€‚Â¥Â¥
 
-\begin{tabular}{c|l}
-\hline
-0 & ¶ã‚ğŒ´“_‚É‚·‚é (ƒfƒtƒHƒ‹ƒg’l) \\
-\hline
-1 & ¶‰º‚ğŒ´“_‚É‚·‚é \\
-\hline
-\end{tabular}
-\end{quotation}
+Â¥begin{tabular}{c|l}
+Â¥hline
+0 & å·¦ä¸Šã‚’åŸç‚¹ã«ã™ã‚‹ (ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤) Â¥Â¥
+Â¥hline
+1 & å·¦ä¸‹ã‚’åŸç‚¹ã«ã™ã‚‹ Â¥Â¥
+Â¥hline
+Â¥end{tabular}
+Â¥end{quotation}
 
-%\begin{tabular}{ccl}
-%0 & : & ¶ã‚ğŒ´“_‚É‚·‚é (ƒfƒtƒHƒ‹ƒg’l) \\
-%1 & : & ¶‰º‚ğŒ´“_‚É‚·‚é \\
-%\end{tabular}
-%\end{quotation}
+%Â¥begin{tabular}{ccl}
+%0 & : & å·¦ä¸Šã‚’åŸç‚¹ã«ã™ã‚‹ (ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤) Â¥Â¥
+%1 & : & å·¦ä¸‹ã‚’åŸç‚¹ã«ã™ã‚‹ Â¥Â¥
+%Â¥end{tabular}
+%Â¥end{quotation}
 
-\section{“ü—Íx‰‡ƒ{ƒ^ƒ“‚Ì’è‹`‚ğ•Êƒtƒ@ƒCƒ‹‚Ås‚¤}
+Â¥section{å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³ã®å®šç¾©ã‚’åˆ¥ãƒ•ã‚¡ã‚¤ãƒ«ã§è¡Œã†}
 
-“ü—Íx‰‡ƒ{ƒ^ƒ“‚Ìİ’è‚ğ•Êƒtƒ@ƒCƒ‹‚É‹Lq‚µ‚Ä‚¨‚­‚±‚Æ‚ª‚Å‚«‚éB
-’è‹`ƒtƒ@ƒCƒ‹‚Ü‚Å‚ÌƒpƒX‚ğİ’è’l‚É‹Lq‚µ‚Ä‚¨‚­‚ÆA
-PEN‚Í‚»‚Ì’è‹`ƒtƒ@ƒCƒ‹‚ğ—p‚¢‚Ä‹N“®‚·‚éB
+å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³ã®è¨­å®šã‚’åˆ¥ãƒ•ã‚¡ã‚¤ãƒ«ã«è¨˜è¿°ã—ã¦ãŠãã“ã¨ãŒã§ãã‚‹ã€‚
+å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã¾ã§ã®ãƒ‘ã‚¹ã‚’è¨­å®šå€¤ã«è¨˜è¿°ã—ã¦ãŠãã¨ã€
+PENã¯ãã®å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç”¨ã„ã¦èµ·å‹•ã™ã‚‹ã€‚
 
-’Êí‚ÍA‚±‚Ìƒtƒ@ƒCƒ‹‚ğw’è‚¹‚¸‚ÉPEN‚ğ‹N“®‚·‚é‚±‚Æ‚ª‚Å‚«‚éB
+é€šå¸¸ã¯ã€ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æŒ‡å®šã›ãšã«PENã‚’èµ·å‹•ã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚
 
-\begin{quotation}
-\noindent [g—p—á]\\
-~~~~{\bf{ pen.button.path=./ButtonList.ini}}
+Â¥begin{quotation}
+Â¥noindent [ä½¿ç”¨ä¾‹]Â¥Â¥
+~~~~{Â¥bf{ pen.button.path=./ButtonList.ini}}
 
-\end{quotation}
+Â¥end{quotation}
 
-\section{ƒtƒHƒ“ƒgƒTƒCƒY‚ğ‘å‚«‚­‚µ‚Ä‹N“®‚·‚éİ’è}
+Â¥section{ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’å¤§ããã—ã¦èµ·å‹•ã™ã‚‹è¨­å®š}
 
-‹N“®‚ÌƒtƒHƒ“ƒgƒTƒCƒY‚ğ‘å‚«‚­‚·‚é‚±‚Æ‚ª‚Å‚«‚éB
+èµ·å‹•æ™‚ã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’å¤§ããã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚
 
-\begin{quotation}
-\noindent [g—p—á]\\
-~~~~{\bf{pen.teacher.flag=0}}\\
-\ \\
-İ’è’l‚ÍˆÈ‰º‚Ì’Ê‚èB\\
+Â¥begin{quotation}
+Â¥noindent [ä½¿ç”¨ä¾‹]Â¥Â¥
+~~~~{Â¥bf{pen.teacher.flag=0}}Â¥Â¥
+Â¥ Â¥Â¥
+è¨­å®šå€¤ã¯ä»¥ä¸‹ã®é€šã‚Šã€‚Â¥Â¥
 
-\begin{tabular}{c|l}
-\hline
-0 & ’Êí‚Ì‘å‚«‚³ (ƒfƒtƒHƒ‹ƒg’l)\\
-\hline
-1 & ƒtƒHƒ“ƒgƒTƒCƒY‚ğŠg‘å‚µ‚Ä‹N“® \\
-\hline
-\end{tabular}\\
+Â¥begin{tabular}{c|l}
+Â¥hline
+0 & é€šå¸¸ã®å¤§ãã• (ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤)Â¥Â¥
+Â¥hline
+1 & ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’æ‹¡å¤§ã—ã¦èµ·å‹• Â¥Â¥
+Â¥hline
+Â¥end{tabular}Â¥Â¥
 
-%\begin{tabular}{ccl}
-%0 & : & ’Êí‹N“® \\
-%1 & : & ƒtƒHƒ“ƒgƒTƒCƒY‚ğ‘å‚«‚­‚µ‚Ä‹N“® \\
-%\end{tabular}
+%Â¥begin{tabular}{ccl}
+%0 & : & é€šå¸¸èµ·å‹• Â¥Â¥
+%1 & : & ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’å¤§ããã—ã¦èµ·å‹• Â¥Â¥
+%Â¥end{tabular}
 
-}~\ref{fig:font01}‚ÍŠg‘å‚µ‚½ƒTƒCƒYA}~\ref{fig:font02}‚Í•W€ƒTƒCƒY‚Å‚Ì•\¦B
+å›³~Â¥ref{fig:font01}ã¯æ‹¡å¤§ã—ãŸã‚µã‚¤ã‚ºã€å›³~Â¥ref{fig:font02}ã¯æ¨™æº–ã‚µã‚¤ã‚ºã§ã®è¡¨ç¤ºã€‚
 
-\end{quotation}
+Â¥end{quotation}
 
-\begin{figure}[!h]
-\begin{minipage}{50zw}
-\begin{center}
-\epsfig{file=./eps/pen_font_large.ps, width=5.5in}
-\caption{$\!\!\!\!$\colorbox{white}{{\textcolor{white}{:}}}Šg‘åƒTƒCƒY }
-\label{fig:font01}
-\end{center}
-\end{minipage}
-\ \\
-\ \\
-\begin{minipage}{50zw}
-\begin{center}
-\epsfig{file=./eps/pen_font_small.ps, width=5.5in}
-\caption{$\!\!\!\!$\colorbox{white}{{\textcolor{white}{:}}}•W€ƒTƒCƒY}
-\label{fig:font02}
-\end{center}
-\end{minipage}
+Â¥begin{figure}[!h]
+Â¥begin{minipage}{50zw}
+Â¥begin{center}
+Â¥epsfig{file=./eps/pen_font_large.ps, width=5.5in}
+Â¥caption{$Â¥!Â¥!Â¥!Â¥!$Â¥colorbox{white}{{Â¥textcolor{white}{:}}}æ‹¡å¤§ã‚µã‚¤ã‚º }
+Â¥label{fig:font01}
+Â¥end{center}
+Â¥end{minipage}
+Â¥ Â¥Â¥
+Â¥ Â¥Â¥
+Â¥begin{minipage}{50zw}
+Â¥begin{center}
+Â¥epsfig{file=./eps/pen_font_small.ps, width=5.5in}
+Â¥caption{$Â¥!Â¥!Â¥!Â¥!$Â¥colorbox{white}{{Â¥textcolor{white}{:}}}æ¨™æº–ã‚µã‚¤ã‚º}
+Â¥label{fig:font02}
+Â¥end{center}
+Â¥end{minipage}
 
-\end{figure}
+Â¥end{figure}
 
 
-\section{ƒfƒoƒbƒNƒ‚[ƒh‚Å‚Ì‹N“®}
-ƒfƒoƒbƒOƒ‚[ƒh‚ğ—˜—p‚·‚é‚±‚Æ‚ª‚Å‚«‚éB
-ƒfƒoƒbƒOŒ‹‰Ê(\•¶‰ğÍ‚³‚ê‚½ƒcƒŠ[)‚ÍƒRƒ“ƒ\[ƒ‹‚Éo—Í‚³‚ê‚éB
+Â¥section{ãƒ‡ãƒãƒƒã‚¯ãƒ¢ãƒ¼ãƒ‰ã§ã®èµ·å‹•}
+ãƒ‡ãƒãƒƒã‚°ãƒ¢ãƒ¼ãƒ‰ã‚’åˆ©ç”¨ã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚
+ãƒ‡ãƒãƒƒã‚°çµæœ(æ§‹æ–‡è§£æã•ã‚ŒãŸãƒ„ãƒªãƒ¼)ã¯ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã«å‡ºåŠ›ã•ã‚Œã‚‹ã€‚
 
-\begin{quotation}
-\noindent [g—p—á] ƒfƒoƒbƒOƒ‚[ƒh‚Å‚Ì‹N“®•û–@\\
-~~~~{\bf{pen.debug.flag=1}}\\
-~~~~‚Æİ’è‚µAƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒgã‚ÅA
+Â¥begin{quotation}
+Â¥noindent [ä½¿ç”¨ä¾‹] ãƒ‡ãƒãƒƒã‚°ãƒ¢ãƒ¼ãƒ‰ã§ã®èµ·å‹•æ–¹æ³•Â¥Â¥
+~~~~{Â¥bf{pen.debug.flag=1}}Â¥Â¥
+~~~~ã¨è¨­å®šã—ã€ã‚³ãƒãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆä¸Šã§ã€
 ~~~~> java -jar PEN.jar
-~~~~‚Æ“ü—Í‚µ‹N“®‚·‚éB
+~~~~ã¨å…¥åŠ›ã—èµ·å‹•ã™ã‚‹ã€‚
 
-\ \\
-İ’è’l‚ÍˆÈ‰º‚Ì’Ê‚èB\\
+Â¥ Â¥Â¥
+è¨­å®šå€¤ã¯ä»¥ä¸‹ã®é€šã‚Šã€‚Â¥Â¥
 
-\begin{tabular}{c|l}
-\hline
-0 & ’Êí‹N“® (ƒfƒtƒHƒ‹ƒg’l) \\
-\hline
-1 & debugƒ‚[ƒh‚Å‹N“® \\
-\hline
-\end{tabular}
+Â¥begin{tabular}{c|l}
+Â¥hline
+0 & é€šå¸¸èµ·å‹• (ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤) Â¥Â¥
+Â¥hline
+1 & debugãƒ¢ãƒ¼ãƒ‰ã§èµ·å‹• Â¥Â¥
+Â¥hline
+Â¥end{tabular}
 
-%\begin{tabular}{ccl}
-%0 & : & ’Êí‹N“® (ƒfƒtƒHƒ‹ƒg’l) \\
-%1 & : & debugƒ‚[ƒh‚Å‹N“® \\
-%\end{tabular}
+%Â¥begin{tabular}{ccl}
+%0 & : & é€šå¸¸èµ·å‹• (ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤) Â¥Â¥
+%1 & : & debugãƒ¢ãƒ¼ãƒ‰ã§èµ·å‹• Â¥Â¥
+%Â¥end{tabular}
 
-\end{quotation}
+Â¥end{quotation}
 
-\section{ƒGƒ‰[‚Ìƒ_ƒ“ƒv“®ìİ’è}
-xDNCL‚ÌÀs‚ÉƒGƒ‰[‚ª”­¶‚µ‚½ê‡A
-dumpƒtƒ@ƒCƒ‹‚ğo—Í‚³‚¹‚é‚æ‚¤‚Éİ’è‚·‚é‚±‚Æ‚ª‚Å‚«‚éB
-‚Ü‚½Ao—Íæ‚Ìw’è‚à‚Å‚«‚éB
+Â¥section{ã‚¨ãƒ©ãƒ¼æ™‚ã®ãƒ€ãƒ³ãƒ—å‹•ä½œè¨­å®š}
+xDNCLã®å®Ÿè¡Œæ™‚ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆã€
+dumpãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‡ºåŠ›ã•ã›ã‚‹ã‚ˆã†ã«è¨­å®šã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚
+ã¾ãŸã€å‡ºåŠ›å…ˆã®æŒ‡å®šã‚‚ã§ãã‚‹ã€‚
 
-\begin{quotation}
-\noindent [g—p—á]\\
-~~~~{\bf{pen.dump.flag=0}}\\
-\ \\
-İ’è’l‚ÍˆÈ‰º‚Ì’Ê‚èB\\
+Â¥begin{quotation}
+Â¥noindent [ä½¿ç”¨ä¾‹]Â¥Â¥
+~~~~{Â¥bf{pen.dump.flag=0}}Â¥Â¥
+Â¥ Â¥Â¥
+è¨­å®šå€¤ã¯ä»¥ä¸‹ã®é€šã‚Šã€‚Â¥Â¥
 
-\begin{tabular}{c|l}
-\hline
-0 & dumpƒtƒ@ƒCƒ‹‚ğ¶¬‚µ‚È‚¢ (ƒfƒtƒHƒ‹ƒg’l) \\
-\hline
-1 & dumpƒtƒ@ƒCƒ‹‚ğ¶¬‚·‚é \\
-\hline
-\end{tabular}
+Â¥begin{tabular}{c|l}
+Â¥hline
+0 & dumpãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç”Ÿæˆã—ãªã„ (ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤) Â¥Â¥
+Â¥hline
+1 & dumpãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç”Ÿæˆã™ã‚‹ Â¥Â¥
+Â¥hline
+Â¥end{tabular}
 
-%\begin{tabular}{ccl}
-%0 & : & dumpƒtƒ@ƒCƒ‹‚ğ¶¬‚µ‚È‚¢ (ƒfƒtƒHƒ‹ƒg’l) \\
-%1 & : & dumpƒtƒ@ƒCƒ‹‚ğ¶¬‚·‚é \\
-%\end{tabular}
+%Â¥begin{tabular}{ccl}
+%0 & : & dumpãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç”Ÿæˆã—ãªã„ (ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤) Â¥Â¥
+%1 & : & dumpãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç”Ÿæˆã™ã‚‹ Â¥Â¥
+%Â¥end{tabular}
 
-\end{quotation}
+Â¥end{quotation}
 
-\subsection{dumpƒtƒ@ƒCƒ‹‚Ìb’è•Û‘¶æ‚ğw’è}
-dumpƒtƒ@ƒCƒ‹‚Ìì¬‚ğw’è‚µ‚½ê‡Aƒtƒ@ƒCƒ‹‚Ìˆê•Û‘¶æ‚ğw’è‚·‚é‚±‚Æ‚ª‚Å‚«‚éB
-\begin{quotation}
-\begin{tabular}{l}
-o—Íæ‚ğİ’è‚µ‚È‚¯‚ê‚Î HOMEƒfƒBƒŒƒNƒgƒŠ‚Öo—Í‚³‚ê‚éB\\
-(Windows‚Ìê‡‚ÍAC:Document~and~Settings ƒ†[ƒU[–¼) \\
-\ \\
-o—Íæ‚Ìw’è•û–@‚ÍA\\
-{\bf{pen.dump.tempdir=ˆê•Û‘¶æ}} \\
-\end{tabular}
-\end{quotation}
+Â¥subsection{dumpãƒ•ã‚¡ã‚¤ãƒ«ã®æš«å®šä¿å­˜å…ˆã‚’æŒ‡å®š}
+dumpãƒ•ã‚¡ã‚¤ãƒ«ã®ä½œæˆã‚’æŒ‡å®šã—ãŸå ´åˆã€ãƒ•ã‚¡ã‚¤ãƒ«ã®ä¸€æ™‚ä¿å­˜å…ˆã‚’æŒ‡å®šã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚
+Â¥begin{quotation}
+Â¥begin{tabular}{l}
+å‡ºåŠ›å…ˆã‚’è¨­å®šã—ãªã‘ã‚Œã° HOMEãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã¸å‡ºåŠ›ã•ã‚Œã‚‹ã€‚Â¥Â¥
+(Windowsã®å ´åˆã¯ã€C:ï¿¥Document~and~Settingsï¿¥ ãƒ¦ãƒ¼ã‚¶ãƒ¼å) Â¥Â¥
+Â¥ Â¥Â¥
+å‡ºåŠ›å…ˆã®æŒ‡å®šæ–¹æ³•ã¯ã€Â¥Â¥
+{Â¥bf{pen.dump.tempdir=ä¸€æ™‚ä¿å­˜å…ˆ}} Â¥Â¥
+Â¥end{tabular}
+Â¥end{quotation}
 
-\subsection{ˆê•Û‘¶‚µ‚½dumpƒtƒ@ƒCƒ‹‚ÌÅI•Û‘¶æ‚ğw’è}
-%# iƒƒOƒtƒ@ƒCƒ‹•Û‘¶æ‚Édumpƒtƒ@ƒCƒ‹‚ğˆÚ“®j
-dumpƒtƒ@ƒCƒ‹‚Ìì¬‚ğw’è‚µ‚½ê‡Aƒtƒ@ƒCƒ‹‚ÌÅI•Û‘¶æ‚ğw’è‚·‚é‚±‚Æ‚ª‚Å‚«‚éB
-\begin{quotation}
+Â¥subsection{ä¸€æ™‚ä¿å­˜ã—ãŸdumpãƒ•ã‚¡ã‚¤ãƒ«ã®æœ€çµ‚ä¿å­˜å…ˆã‚’æŒ‡å®š}
+%# ï¼ˆãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ä¿å­˜å…ˆã«dumpãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç§»å‹•ï¼‰
+dumpãƒ•ã‚¡ã‚¤ãƒ«ã®ä½œæˆã‚’æŒ‡å®šã—ãŸå ´åˆã€ãƒ•ã‚¡ã‚¤ãƒ«ã®æœ€çµ‚ä¿å­˜å…ˆã‚’æŒ‡å®šã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚
+Â¥begin{quotation}
 
-\begin{tabular}{l}
-o—Íæ‚ğİ’è‚µ‚È‚¯‚ê‚Î HOMEƒfƒBƒŒƒNƒgƒŠ‚Öo—Í‚³‚ê‚éB\\
-(Windows‚Ìê‡‚ÍAC:Document\ and\ Settingsƒ†[ƒU[–¼) \\
-o—Í‚³‚ê‚éƒtƒ@ƒCƒ‹–¼‚ÍAuƒ†[ƒU[–¼-ƒRƒ“ƒsƒ…[ƒ^–¼-”š.logv‚Æ‚È‚éB\\
-\ \\
-o—Íæ‚Ìw’è•û–@‚ÍA\\
-{\bf{pen.dump.destdir=ƒƒOƒtƒ@ƒCƒ‹•Û‘¶æ}} \\
-\end{tabular}
+Â¥begin{tabular}{l}
+å‡ºåŠ›å…ˆã‚’è¨­å®šã—ãªã‘ã‚Œã° HOMEãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã¸å‡ºåŠ›ã•ã‚Œã‚‹ã€‚Â¥Â¥
+(Windowsã®å ´åˆã¯ã€C:ï¿¥DocumentÂ¥ andÂ¥ Settingsï¿¥ãƒ¦ãƒ¼ã‚¶ãƒ¼å) Â¥Â¥
+å‡ºåŠ›ã•ã‚Œã‚‹ãƒ•ã‚¡ã‚¤ãƒ«åã¯ã€ã€Œãƒ¦ãƒ¼ã‚¶ãƒ¼å-ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ã‚¿å-æ•°å­—.logã€ã¨ãªã‚‹ã€‚Â¥Â¥
+Â¥ Â¥Â¥
+å‡ºåŠ›å…ˆã®æŒ‡å®šæ–¹æ³•ã¯ã€Â¥Â¥
+{Â¥bf{pen.dump.destdir=ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ä¿å­˜å…ˆ}} Â¥Â¥
+Â¥end{tabular}
 
-\end{quotation}
+Â¥end{quotation}
 
-\end{document}
+Â¥end{document}
 
 

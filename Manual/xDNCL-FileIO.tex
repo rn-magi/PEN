@@ -1,162 +1,162 @@
 %
 %PEN INSTRUCTION
 %
-\documentclass[10pt,a4j]{jarticle}
-%\pagestyle{empty}
-\usepackage{amsmath}
-\usepackage{amssymb}
-%\usepackage{txfonts}
+Â¥documentclass[10pt,a4j]{jarticle}
+%Â¥pagestyle{empty}
+Â¥usepackage{amsmath}
+Â¥usepackage{amssymb}
+%Â¥usepackage{txfonts}
 
-%\setlength{\topmargin}{-0mm}
-%\setlength{\oddsidemargin}{-0mm}
-%\setlength{\textheight}{252mm}
-%\setlength{\textwidth}{180mm}
+%Â¥setlength{Â¥topmargin}{-0mm}
+%Â¥setlength{Â¥oddsidemargin}{-0mm}
+%Â¥setlength{Â¥textheight}{252mm}
+%Â¥setlength{Â¥textwidth}{180mm}
 
-%---------- ‰Óğ‘‚« -----------
+%---------- ç®‡æ¡æ›¸ã -----------
 
-\newenvironment{itemize2}%  
+Â¥newenvironment{itemize2}%  
 {%
-   \begin{list}{$\bullet$\ \ }% Œ©o‚µ‹L†^’¼Œã‚Ì‹ó”’‚ğ’²ß
+   Â¥begin{list}{$Â¥bullet$Â¥ Â¥ }% è¦‹å‡ºã—è¨˜å·ï¼ç›´å¾Œã®ç©ºç™½ã‚’èª¿ç¯€
    {%
-      \setlength{\itemindent}{0pt}
-      \setlength{\leftmargin}{3zw}%  ¶‚ÌƒCƒ“ƒfƒ“ƒg
-      \setlength{\rightmargin}{0zw}% ‰E‚ÌƒCƒ“ƒfƒ“ƒg
-      \setlength{\labelsep}{0zw}%    •ŠÛ‚Æà–¾•¶‚ÌŠÔ
-      \setlength{\labelwidth}{3zw}%  ƒ‰ƒxƒ‹‚Ì•
-      \setlength{\itemsep}{0em}%     €–Ú‚²‚Æ‚Ì‰üs•
-      \setlength{\parsep}{0em}%      ’i—‚Å‚Ì‰üs•
-      \setlength{\listparindent}{0zw}% ’i—‚Å‚Ìˆêš‰º‚è
+      Â¥setlength{Â¥itemindent}{0pt}
+      Â¥setlength{Â¥leftmargin}{3zw}%  å·¦ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+      Â¥setlength{Â¥rightmargin}{0zw}% å³ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+      Â¥setlength{Â¥labelsep}{0zw}%    é»’ä¸¸ã¨èª¬æ˜æ–‡ã®é–“
+      Â¥setlength{Â¥labelwidth}{3zw}%  ãƒ©ãƒ™ãƒ«ã®å¹…
+      Â¥setlength{Â¥itemsep}{0em}%     é …ç›®ã”ã¨ã®æ”¹è¡Œå¹…
+      Â¥setlength{Â¥parsep}{0em}%      æ®µè½ã§ã®æ”¹è¡Œå¹…
+      Â¥setlength{Â¥listparindent}{0zw}% æ®µè½ã§ã®ä¸€å­—ä¸‹ã‚Š
    }
 }{%
-   \end{list}%
+   Â¥end{list}%
 }
-%---------- ”Ô†‚Â‚«‰Óğ‘‚« -----------
+%---------- ç•ªå·ã¤ãç®‡æ¡æ›¸ã -----------
 
-\newcounter{enum2}
-\newenvironment{enumerate2}{%
-   \begin{list}%
+Â¥newcounter{enum2}
+Â¥newenvironment{enumerate2}{%
+   Â¥begin{list}%
    {%
-      \arabic{enum2}.\ \,%  Œ©o‚µ‹L†^’¼Œã‚Ì‹ó”’‚ğ’²ß
+      Â¥arabic{enum2}.Â¥ Â¥,%  è¦‹å‡ºã—è¨˜å·ï¼ç›´å¾Œã®ç©ºç™½ã‚’èª¿ç¯€
    }%
    {%
-      \usecounter{enum2}
-      \setlength{\itemindent}{0zw}%  ‚±‚±‚Í 0 ‚ÉŒÅ’è
-      \setlength{\leftmargin}{3zw}%  ¶‚ÌƒCƒ“ƒfƒ“ƒg
-      \setlength{\rightmargin}{0zw}% ‰E‚ÌƒCƒ“ƒfƒ“ƒg
-      \setlength{\labelsep}{0zw}%    •ŠÛ‚Æà–¾•¶‚ÌŠÔ
-      \setlength{\labelwidth}{3zw}%  ƒ‰ƒxƒ‹‚Ì•
-      \setlength{\itemsep}{0em}%     €–Ú‚²‚Æ‚Ì‰üs•
-      \setlength{\parsep}{0em}%      ’i—‚Å‚Ì‰üs•
-      \setlength{\listparindent}{0zw}% ’i—‚Å‚Ìˆêš‰º‚è
+      Â¥usecounter{enum2}
+      Â¥setlength{Â¥itemindent}{0zw}%  ã“ã“ã¯ 0 ã«å›ºå®š
+      Â¥setlength{Â¥leftmargin}{3zw}%  å·¦ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+      Â¥setlength{Â¥rightmargin}{0zw}% å³ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+      Â¥setlength{Â¥labelsep}{0zw}%    é»’ä¸¸ã¨èª¬æ˜æ–‡ã®é–“
+      Â¥setlength{Â¥labelwidth}{3zw}%  ãƒ©ãƒ™ãƒ«ã®å¹…
+      Â¥setlength{Â¥itemsep}{0em}%     é …ç›®ã”ã¨ã®æ”¹è¡Œå¹…
+      Â¥setlength{Â¥parsep}{0em}%      æ®µè½ã§ã®æ”¹è¡Œå¹…
+      Â¥setlength{Â¥listparindent}{0zw}% æ®µè½ã§ã®ä¸€å­—ä¸‹ã‚Š
    }
 }{%
-   \end{list}%
+   Â¥end{list}%
 }
-\setlength{\topsep}{0pt}
-\setlength{\itemsep}{10pt}
-\setlength{\parsep}{0mm}
-\setlength{\itemindent}{50mm}
+Â¥setlength{Â¥topsep}{0pt}
+Â¥setlength{Â¥itemsep}{10pt}
+Â¥setlength{Â¥parsep}{0mm}
+Â¥setlength{Â¥itemindent}{50mm}
 
-%\labelsep 20mm
-%\labelwidth 50mm
-%\leftmargin 100mm
-\newcommand{\ExerciseTitle}[1]{%
-  \begin{center}\Large
-    \textbf{PEN ƒ}ƒjƒ…ƒAƒ‹ Q \& A} \qquad \texttt{#1}
-  \end{center}%
+%Â¥labelsep 20mm
+%Â¥labelwidth 50mm
+%Â¥leftmargin 100mm
+Â¥newcommand{Â¥ExerciseTitle}[1]{%
+  Â¥begin{center}Â¥Large
+    Â¥textbf{PEN ãƒãƒ‹ãƒ¥ã‚¢ãƒ« Q Â¥& A} Â¥qquad Â¥texttt{#1}
+  Â¥end{center}%
 }
 
-\renewcommand{\baselinestretch}{1.0}
+Â¥renewcommand{Â¥baselinestretch}{1.0}
 
-\begin{document}
+Â¥begin{document}
 
-\noindent
-\begin{flushright}
-{\small	2008/10/14}
-\end{flushright}
-\begin{center}
-\begin{LARGE}
-{\bf{ƒtƒ@ƒCƒ‹“üo—Í‚Ì‚½‚ß‚ÌŠÖ”ŒQ\\
-\ \\}}
-\end{LARGE}
-\end{center}
+Â¥noindent
+Â¥begin{flushright}
+{Â¥small	2008/10/14}
+Â¥end{flushright}
+Â¥begin{center}
+Â¥begin{LARGE}
+{Â¥bf{ãƒ•ã‚¡ã‚¤ãƒ«å…¥å‡ºåŠ›ã®ãŸã‚ã®é–¢æ•°ç¾¤Â¥Â¥
+Â¥ Â¥Â¥}}
+Â¥end{LARGE}
+Â¥end{center}
 
-  ƒvƒƒOƒ‰ƒ€‚Ì’†‚©‚çAƒtƒ@ƒCƒ‹“à‚Ìƒf[ƒ^‚ğ“Ç‚İ‘‚«‚·‚é‚½‚ß‚ÌŠÖ”ŒQ‚ğĞ‰î‚·‚éB\\
-%\ \\
-%  ƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‘‚«‚·‚é‚½‚ß‚É‚ÍA‚Ü‚¸A“–ŠYƒtƒ@ƒCƒ‹‚ğŠJ‚­(ƒI[ƒvƒ“
-%‚·‚é)•K—v‚ª‚ ‚éB‚Ü‚½Aƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‘‚«‚ªI—¹‚µ‚½‚Æ‚«Aƒtƒ@ƒCƒ‹‚ğ
-%•Â‚¶‚È‚¯‚ê‚Î‚È‚ç‚È‚¢(ƒNƒ[ƒY)B\\
-%\ \\
-%  ˆÈ‰ºAŠeŠÖ”‚É‚Â‚¢‚Äà–¾‚·‚éB\\
-\ \\
-(1) ƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“^ƒNƒ[ƒYŠÖ” 
-\begin{enumerate2}
-\item {\bf{®” fd © openr(•¶š—ñ filepath)}} \\
-%   ®”  fd,	   •¶š—ñ  filepath \\
-	filepath‚Åw’è‚µ‚½ƒtƒ@ƒCƒ‹‚ğAƒf[ƒ^‚Ì“Ç‚İ‚İ‚Ì‚½‚ß‚ÉŠJ‚­B
-	fd‚Íƒtƒ@ƒCƒ‹¯•Êq‚Å‚ ‚èAˆÈŒãAfd‚ğw’è‚µ‚ÄAƒtƒ@ƒCƒ‹‚©‚ç‚Ì“Ç‚İ‚İ“™‚ğs‚¤B
+  ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®ä¸­ã‹ã‚‰ã€ãƒ•ã‚¡ã‚¤ãƒ«å†…ã®ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿æ›¸ãã™ã‚‹ãŸã‚ã®é–¢æ•°ç¾¤ã‚’ç´¹ä»‹ã™ã‚‹ã€‚Â¥Â¥
+%Â¥ Â¥Â¥
+%  ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿æ›¸ãã™ã‚‹ãŸã‚ã«ã¯ã€ã¾ãšã€å½“è©²ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã(ã‚ªãƒ¼ãƒ—ãƒ³
+%ã™ã‚‹)å¿…è¦ãŒã‚ã‚‹ã€‚ã¾ãŸã€ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿æ›¸ããŒçµ‚äº†ã—ãŸã¨ãã€ãƒ•ã‚¡ã‚¤ãƒ«ã‚’
+%é–‰ã˜ãªã‘ã‚Œã°ãªã‚‰ãªã„(ã‚¯ãƒ­ãƒ¼ã‚º)ã€‚Â¥Â¥
+%Â¥ Â¥Â¥
+%  ä»¥ä¸‹ã€å„é–¢æ•°ã«ã¤ã„ã¦èª¬æ˜ã™ã‚‹ã€‚Â¥Â¥
+Â¥ Â¥Â¥
+(1) ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚ªãƒ¼ãƒ—ãƒ³ï¼ã‚¯ãƒ­ãƒ¼ã‚ºé–¢æ•° 
+Â¥begin{enumerate2}
+Â¥item {Â¥bf{æ•´æ•° fd â† openr(æ–‡å­—åˆ— filepath)}} Â¥Â¥
+%   æ•´æ•°  fd,	   æ–‡å­—åˆ—  filepath Â¥Â¥
+	filepathã§æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã€ãƒ‡ãƒ¼ã‚¿ã®èª­ã¿è¾¼ã¿ã®ãŸã‚ã«é–‹ãã€‚
+	fdã¯ãƒ•ã‚¡ã‚¤ãƒ«è­˜åˆ¥å­ã§ã‚ã‚Šã€ä»¥å¾Œã€fdã‚’æŒ‡å®šã—ã¦ã€ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã®èª­ã¿è¾¼ã¿ç­‰ã‚’è¡Œã†ã€‚
 
-\item {\bf{®” fd © openw(•¶š—ñ filepath)}} \\
-%   ®”  fd,	   •¶š—ñ  filepath \\
-	filepath‚Åw’è‚µ‚½ƒtƒ@ƒCƒ‹‚ğAƒf[ƒ^‚Ì‘‚«‚İ‚Ì‚½‚ß‚ÉŠJ‚­B
-	w’è‚µ‚½ƒtƒ@ƒCƒ‹‚ªŠù‚É‘¶İ‚µ‚Ä‚¢‚é‚È‚ç‚ÎA
-        ‚»‚Ìƒtƒ@ƒCƒ‹‚Í‚±‚ê‚©‚ç‘‚«o‚·ƒf[ƒ^‚Å’u‚«Š·‚¦‚ç‚ê‚éB
+Â¥item {Â¥bf{æ•´æ•° fd â† openw(æ–‡å­—åˆ— filepath)}} Â¥Â¥
+%   æ•´æ•°  fd,	   æ–‡å­—åˆ—  filepath Â¥Â¥
+	filepathã§æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã€ãƒ‡ãƒ¼ã‚¿ã®æ›¸ãè¾¼ã¿ã®ãŸã‚ã«é–‹ãã€‚
+	æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ãŒæ—¢ã«å­˜åœ¨ã—ã¦ã„ã‚‹ãªã‚‰ã°ã€
+        ãã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯ã“ã‚Œã‹ã‚‰æ›¸ãå‡ºã™ãƒ‡ãƒ¼ã‚¿ã§ç½®ãæ›ãˆã‚‰ã‚Œã‚‹ã€‚
 
-\item {\bf{®” fd © opena(•¶š—ñ filepath)}} \\
-%   ®”  fd,	   •¶š—ñ  filepath \\
-	filepath‚Åw’è‚µ‚½ƒtƒ@ƒCƒ‹‚ğAƒf[ƒ^‚Ì’Ç‹L‘‚İ‚Ì‚½‚ß‚ÉŠJ‚­B
-	w’è‚µ‚½ƒtƒ@ƒCƒ‹‚ªŠù‚É‘¶İ‚µ‚Ä‚¢‚é‚È‚ç‚ÎA
-        ‚»‚Ìƒtƒ@ƒCƒ‹‚Ì‘±‚«‚Æ‚µ‚ÄA‚±‚ê‚©‚ç‘‚«o‚·ƒf[ƒ^‚ğ’Ç‹L‚·‚éB
+Â¥item {Â¥bf{æ•´æ•° fd â† opena(æ–‡å­—åˆ— filepath)}} Â¥Â¥
+%   æ•´æ•°  fd,	   æ–‡å­—åˆ—  filepath Â¥Â¥
+	filepathã§æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã€ãƒ‡ãƒ¼ã‚¿ã®è¿½è¨˜æ›¸è¾¼ã¿ã®ãŸã‚ã«é–‹ãã€‚
+	æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ãŒæ—¢ã«å­˜åœ¨ã—ã¦ã„ã‚‹ãªã‚‰ã°ã€
+        ãã®ãƒ•ã‚¡ã‚¤ãƒ«ã®ç¶šãã¨ã—ã¦ã€ã“ã‚Œã‹ã‚‰æ›¸ãå‡ºã™ãƒ‡ãƒ¼ã‚¿ã‚’è¿½è¨˜ã™ã‚‹ã€‚
 
-\item {\bf{close(®” fd)}} \\
-%   ®”  fd \\
-	fd‚Åw’è‚µ‚½ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚éB
-\end{enumerate2}
+Â¥item {Â¥bf{close(æ•´æ•° fd)}} Â¥Â¥
+%   æ•´æ•°  fd Â¥Â¥
+	fdã§æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹ã€‚
+Â¥end{enumerate2}
 
-(2) ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‘‚«‚Ì‚½‚ß‚ÌŠÖ” 
-\begin{enumerate2}
-\item {\bf{•¶š—ñ str © getstr(®” fd, ®” n)}} \\
-%   •¶š—ñ  str,   ®”  fd,  n \\
-	fd‚Åw’è‚µ‚½ƒtƒ@ƒCƒ‹‚©‚çAn•¶š“Ç‚İ‚ñ‚Å ‚»‚Ì•¶š—ñ‚ğ•Ô‚·B
-        ‚½‚¾‚µA‰üsƒR[ƒh(Return, Linefeed)‚à‚»‚ê‚¼‚ê1•¶š‚Æ”‚¦‚éB
+(2) ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿æ›¸ãã®ãŸã‚ã®é–¢æ•° 
+Â¥begin{enumerate2}
+Â¥item {Â¥bf{æ–‡å­—åˆ— str â† getstr(æ•´æ•° fd, æ•´æ•° n)}} Â¥Â¥
+%   æ–‡å­—åˆ—  str,   æ•´æ•°  fd,  n Â¥Â¥
+	fdã§æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã€næ–‡å­—èª­ã¿è¾¼ã‚“ã§ ãã®æ–‡å­—åˆ—ã‚’è¿”ã™ã€‚
+        ãŸã ã—ã€æ”¹è¡Œã‚³ãƒ¼ãƒ‰(Return, Linefeed)ã‚‚ãã‚Œãã‚Œ1æ–‡å­—ã¨æ•°ãˆã‚‹ã€‚
 
-\item {\bf{•¶š—ñ str © getline(®” fd)}} \\
-%   •¶š—ñ  str,   ®”  fd \\
-	fd‚Åw’è‚µ‚½ƒtƒ@ƒCƒ‹‚©‚çA1s“Ç‚İ‚ñ‚Å ‚»‚Ì•¶š—ñ‚ğ•Ô‚·B
+Â¥item {Â¥bf{æ–‡å­—åˆ— str â† getline(æ•´æ•° fd)}} Â¥Â¥
+%   æ–‡å­—åˆ—  str,   æ•´æ•°  fd Â¥Â¥
+	fdã§æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã€1è¡Œèª­ã¿è¾¼ã‚“ã§ ãã®æ–‡å­—åˆ—ã‚’è¿”ã™ã€‚
 
-\item {\bf{putstr(®” fd, •¶š—ñ str)}} \\
-%   ®”  fd,     •¶š—ñ   str \\
-	fd‚Åw’è‚µ‚½ƒtƒ@ƒCƒ‹‚ÉAstr‚Ì•¶š—ñ‚ğ‘‚«o‚·B
+Â¥item {Â¥bf{putstr(æ•´æ•° fd, æ–‡å­—åˆ— str)}} Â¥Â¥
+%   æ•´æ•°  fd,     æ–‡å­—åˆ—   str Â¥Â¥
+	fdã§æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã«ã€strã®æ–‡å­—åˆ—ã‚’æ›¸ãå‡ºã™ã€‚
 
-\item {\bf{putline(®” fd, •¶š—ñ str)}} \\
-%   ®”  fd,     •¶š—ñ   str \\
-	fd‚Åw’è‚µ‚½ƒtƒ@ƒCƒ‹‚ÉAstr‚Ì•¶š—ñ‚ğ‘‚«o‚·B
-	putstr()‚ÍA•¶š—ñ‚¾‚¯‚ğ‘‚«o‚·‚Ì‚É”ä‚×‚ÄA
-	putline()‚ÍA•¶š—ñ‚ÌŒã‚É‰üsƒR[ƒh‚à‘‚«o‚·B
-\end{enumerate2}
+Â¥item {Â¥bf{putline(æ•´æ•° fd, æ–‡å­—åˆ— str)}} Â¥Â¥
+%   æ•´æ•°  fd,     æ–‡å­—åˆ—   str Â¥Â¥
+	fdã§æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã«ã€strã®æ–‡å­—åˆ—ã‚’æ›¸ãå‡ºã™ã€‚
+	putstr()ã¯ã€æ–‡å­—åˆ—ã ã‘ã‚’æ›¸ãå‡ºã™ã®ã«æ¯”ã¹ã¦ã€
+	putline()ã¯ã€æ–‡å­—åˆ—ã®å¾Œã«æ”¹è¡Œã‚³ãƒ¼ãƒ‰ã‚‚æ›¸ãå‡ºã™ã€‚
+Â¥end{enumerate2}
 
-(3) ƒtƒ@ƒCƒ‹ˆ—‚Ì‚½‚ß‚Ì•â•ŠÖ” 
-\begin{enumerate2}
-\item {\bf{•¶š—ñ str © isfile(•¶š—ñ filepath)}} \\
-%   •¶š—ñ  str,  •¶š—ñ  filepath \\
-	filepath‚Åw’è‚µ‚½ƒtƒ@ƒCƒ‹‚ª‘¶İ‚·‚é‚©‚Ç‚¤‚©‚ğ’²‚×‚éB
-	ƒtƒ@ƒCƒ‹‚ª‘¶İ‚·‚éê‡ "true"A 
-        ‘¶İ‚µ‚È‚¢ê‡"false"‚Ì•¶š—ñ‚ª•Ô‚³‚ê‚éB
+(3) ãƒ•ã‚¡ã‚¤ãƒ«å‡¦ç†ã®ãŸã‚ã®è£œåŠ©é–¢æ•° 
+Â¥begin{enumerate2}
+Â¥item {Â¥bf{æ–‡å­—åˆ— str â† isfile(æ–‡å­—åˆ— filepath)}} Â¥Â¥
+%   æ–‡å­—åˆ—  str,  æ–‡å­—åˆ—  filepath Â¥Â¥
+	filepathã§æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ãŒå­˜åœ¨ã™ã‚‹ã‹ã©ã†ã‹ã‚’èª¿ã¹ã‚‹ã€‚
+	ãƒ•ã‚¡ã‚¤ãƒ«ãŒå­˜åœ¨ã™ã‚‹å ´åˆ "true"ã€ 
+        å­˜åœ¨ã—ãªã„å ´åˆ"false"ã®æ–‡å­—åˆ—ãŒè¿”ã•ã‚Œã‚‹ã€‚
 
-\item {\bf{rename(•¶š—ñ filepath1, •¶š—ñ filepath2)}} \\
-%   •¶š—ñ  filepath1,  filepath2 \\
-	filepath1‚Åw’è‚µ‚½ƒtƒ@ƒCƒ‹‚Ì–¼‘O‚ğAfilepath2‚É’u‚«Š·‚¦‚éB
+Â¥item {Â¥bf{rename(æ–‡å­—åˆ— filepath1, æ–‡å­—åˆ— filepath2)}} Â¥Â¥
+%   æ–‡å­—åˆ—  filepath1,  filepath2 Â¥Â¥
+	filepath1ã§æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã®åå‰ã‚’ã€filepath2ã«ç½®ãæ›ãˆã‚‹ã€‚
 
-\item {\bf{flush(®” fd)}} \\
-%   ®”  fd \\
-	fd‚Åw’è‚³‚ê‚éƒtƒ@ƒCƒ‹‚É‘‚«‚İ“r’†‚Ìƒf[ƒ^‚ğ‹­§“I‚É‘‚ŞB
-        (ƒtƒ@ƒCƒ‹‚Í’Êíƒoƒbƒtƒ@ƒŠƒ“ƒO‚³‚ê‚é‚Ì‚ÅA
-	‚±‚ÌŠÖ”‚ğŒÄ‚Ño‚·‚±‚Æ‚ÅAƒoƒbƒtƒ@“à—e‚ğ“f‚«o‚·) 
+Â¥item {Â¥bf{flush(æ•´æ•° fd)}} Â¥Â¥
+%   æ•´æ•°  fd Â¥Â¥
+	fdã§æŒ‡å®šã•ã‚Œã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãè¾¼ã¿é€”ä¸­ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¼·åˆ¶çš„ã«æ›¸è¾¼ã‚€ã€‚
+        (ãƒ•ã‚¡ã‚¤ãƒ«ã¯é€šå¸¸ãƒãƒƒãƒ•ã‚¡ãƒªãƒ³ã‚°ã•ã‚Œã‚‹ã®ã§ã€
+	ã“ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã™ã“ã¨ã§ã€ãƒãƒƒãƒ•ã‚¡å†…å®¹ã‚’åãå‡ºã™) 
 
-\item {\bf{remove(•¶š—ñ filepath)}} \\
-%   •¶š—ñ  filepath \\
-	filepath‚Åw’è‚µ‚½ƒtƒ@ƒCƒ‹‚ğíœ‚·‚éB
-\end{enumerate2}
+Â¥item {Â¥bf{remove(æ–‡å­—åˆ— filepath)}} Â¥Â¥
+%   æ–‡å­—åˆ—  filepath Â¥Â¥
+	filepathã§æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‰Šé™¤ã™ã‚‹ã€‚
+Â¥end{enumerate2}
 
-\end{document}
+Â¥end{document}
 

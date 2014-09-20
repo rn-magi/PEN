@@ -1,671 +1,671 @@
 %
 %PEN INSTRUgSetMapCTION
 %
-\documentclass[11pt,a4j]{jarticle}
-%\pagestyle{empty}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{epsfig}
-\usepackage{color}
-%\usepackage{txfonts}
+Â¥documentclass[11pt,a4j]{jarticle}
+%Â¥pagestyle{empty}
+Â¥usepackage{amsmath}
+Â¥usepackage{amssymb}
+Â¥usepackage{epsfig}
+Â¥usepackage{color}
+%Â¥usepackage{txfonts}
 
-\setlength{\topmargin}{-20mm}
-\setlength{\oddsidemargin}{-15mm}
-\setlength{\textheight}{255mm}
-\setlength{\textwidth}{185mm}
+Â¥setlength{Â¥topmargin}{-20mm}
+Â¥setlength{Â¥oddsidemargin}{-15mm}
+Â¥setlength{Â¥textheight}{255mm}
+Â¥setlength{Â¥textwidth}{185mm}
 
-%---------- ‰Óğ‘‚« -----------
+%---------- ç®‡æ¡æ›¸ã -----------
 
-\newenvironment{itemize2}%  
+Â¥newenvironment{itemize2}%  
 {%
-   \begin{list}{$\bullet$\ \ }% Œ©o‚µ‹L†^’¼Œã‚Ì‹ó”’‚ğ’²ß
+   Â¥begin{list}{$Â¥bullet$Â¥ Â¥ }% è¦‹å‡ºã—è¨˜å·ï¼ç›´å¾Œã®ç©ºç™½ã‚’èª¿ç¯€
    {%
-      \setlength{\itemindent}{0pt}
-      \setlength{\leftmargin}{3zw}%  ¶‚ÌƒCƒ“ƒfƒ“ƒg
-      \setlength{\rightmargin}{0zw}% ‰E‚ÌƒCƒ“ƒfƒ“ƒg
-      \setlength{\labelsep}{0zw}%    •ŠÛ‚Æà–¾•¶‚ÌŠÔ
-      \setlength{\labelwidth}{3zw}%  ƒ‰ƒxƒ‹‚Ì•
-      \setlength{\itemsep}{0em}%     €–Ú‚²‚Æ‚Ì‰üs•
-      \setlength{\parsep}{0em}%      ’i—‚Å‚Ì‰üs•
-      \setlength{\listparindent}{0zw}% ’i—‚Å‚Ìˆêš‰º‚è
+      Â¥setlength{Â¥itemindent}{0pt}
+      Â¥setlength{Â¥leftmargin}{3zw}%  å·¦ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+      Â¥setlength{Â¥rightmargin}{0zw}% å³ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+      Â¥setlength{Â¥labelsep}{0zw}%    é»’ä¸¸ã¨èª¬æ˜æ–‡ã®é–“
+      Â¥setlength{Â¥labelwidth}{3zw}%  ãƒ©ãƒ™ãƒ«ã®å¹…
+      Â¥setlength{Â¥itemsep}{0em}%     é …ç›®ã”ã¨ã®æ”¹è¡Œå¹…
+      Â¥setlength{Â¥parsep}{0em}%      æ®µè½ã§ã®æ”¹è¡Œå¹…
+      Â¥setlength{Â¥listparindent}{0zw}% æ®µè½ã§ã®ä¸€å­—ä¸‹ã‚Š
    }
 }{%
-   \end{list}%
+   Â¥end{list}%
 }
-%---------- ”Ô†‚Â‚«‰Óğ‘‚« -----------
+%---------- ç•ªå·ã¤ãç®‡æ¡æ›¸ã -----------
 
-\newcounter{enum2}
-\newenvironment{enumerate2}{%
-   \begin{list}%
+Â¥newcounter{enum2}
+Â¥newenvironment{enumerate2}{%
+   Â¥begin{list}%
    {%
-      \arabic{enum2}.\ \,%  Œ©o‚µ‹L†^’¼Œã‚Ì‹ó”’‚ğ’²ß
+      Â¥arabic{enum2}.Â¥ Â¥,%  è¦‹å‡ºã—è¨˜å·ï¼ç›´å¾Œã®ç©ºç™½ã‚’èª¿ç¯€
    }%
    {%
-      \usecounter{enum2}
-      \setlength{\itemindent}{0zw}%  ‚±‚±‚Í 0 ‚ÉŒÅ’è
-      \setlength{\leftmargin}{3zw}%  ¶‚ÌƒCƒ“ƒfƒ“ƒg
-      \setlength{\rightmargin}{0zw}% ‰E‚ÌƒCƒ“ƒfƒ“ƒg
-      \setlength{\labelsep}{0zw}%    •ŠÛ‚Æà–¾•¶‚ÌŠÔ
-      \setlength{\labelwidth}{3zw}%  ƒ‰ƒxƒ‹‚Ì•
-      \setlength{\itemsep}{0em}%     €–Ú‚²‚Æ‚Ì‰üs•
-      \setlength{\parsep}{0em}%      ’i—‚Å‚Ì‰üs•
-      \setlength{\listparindent}{0zw}% ’i—‚Å‚Ìˆêš‰º‚è
+      Â¥usecounter{enum2}
+      Â¥setlength{Â¥itemindent}{0zw}%  ã“ã“ã¯ 0 ã«å›ºå®š
+      Â¥setlength{Â¥leftmargin}{3zw}%  å·¦ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+      Â¥setlength{Â¥rightmargin}{0zw}% å³ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
+      Â¥setlength{Â¥labelsep}{0zw}%    é»’ä¸¸ã¨èª¬æ˜æ–‡ã®é–“
+      Â¥setlength{Â¥labelwidth}{3zw}%  ãƒ©ãƒ™ãƒ«ã®å¹…
+      Â¥setlength{Â¥itemsep}{0em}%     é …ç›®ã”ã¨ã®æ”¹è¡Œå¹…
+      Â¥setlength{Â¥parsep}{0em}%      æ®µè½ã§ã®æ”¹è¡Œå¹…
+      Â¥setlength{Â¥listparindent}{0zw}% æ®µè½ã§ã®ä¸€å­—ä¸‹ã‚Š
    }
 }{%
-   \end{list}%
+   Â¥end{list}%
 }
-\setlength{\topsep}{0pt}
-\setlength{\itemsep}{10pt}
-\setlength{\parsep}{0mm}
-\setlength{\itemindent}{50mm}
+Â¥setlength{Â¥topsep}{0pt}
+Â¥setlength{Â¥itemsep}{10pt}
+Â¥setlength{Â¥parsep}{0mm}
+Â¥setlength{Â¥itemindent}{50mm}
 
-%\labelsep 20mm
-%\labelwidth 50mm
-%\leftmargin 100mm
-\newcommand{\ExerciseTitle}[1]{%
-  \begin{center}\Large
-    \textbf{PEN ƒ}ƒjƒ…ƒAƒ‹ Q \& A} \qquad \texttt{#1}
-  \end{center}%
+%Â¥labelsep 20mm
+%Â¥labelwidth 50mm
+%Â¥leftmargin 100mm
+Â¥newcommand{Â¥ExerciseTitle}[1]{%
+  Â¥begin{center}Â¥Large
+    Â¥textbf{PEN ãƒãƒ‹ãƒ¥ã‚¢ãƒ« Q Â¥& A} Â¥qquad Â¥texttt{#1}
+  Â¥end{center}%
 }
 
-\renewcommand{\baselinestretch}{1.0}
+Â¥renewcommand{Â¥baselinestretch}{1.0}
 
-\begin{document}
+Â¥begin{document}
 
-\noindent
-\begin{flushright}
-{\small	2008/10/27}
-\end{flushright}
-\begin{center}
-\begin{LARGE}
-{\bf{}Œ`•`‰æ‚Ì‚½‚ß‚ÌŠÖ”ŒQ}}\\
-\ \\
-\end{LARGE}
-\end{center}
+Â¥noindent
+Â¥begin{flushright}
+{Â¥small	2008/10/27}
+Â¥end{flushright}
+Â¥begin{center}
+Â¥begin{LARGE}
+{Â¥bf{å›³å½¢æç”»ã®ãŸã‚ã®é–¢æ•°ç¾¤}}Â¥Â¥
+Â¥ Â¥Â¥
+Â¥end{LARGE}
+Â¥end{center}
 
-  }Œ`•`‰æ‚Ì‚½‚ß‚ÌŠÖ”‚ÍˆÈ‰º‚ÌŠÖ”ŒQ‚©‚ç\¬‚³‚ê‚éB
-\begin{itemize2}
-  \item [(1)] •`‰æ‚Ì‚½‚ß‚ÌƒEƒBƒ“ƒhƒE‚ÌƒI[ƒvƒ“/ƒNƒ[ƒYŠÖ” 
-  \item [(2)] }Œ`‚Ì‘®«‚ğw’è‚·‚é‚½‚ß‚ÌŠÖ” 
-  \item [(3)] }Œ`‚ğ•`‰æ‚·‚é‚½‚ß‚ÌŠÖ” 
-  \item [(4)] ‚»‚Ì‘¼
-\end{itemize2}
+  å›³å½¢æç”»ã®ãŸã‚ã®é–¢æ•°ã¯ä»¥ä¸‹ã®é–¢æ•°ç¾¤ã‹ã‚‰æ§‹æˆã•ã‚Œã‚‹ã€‚
+Â¥begin{itemize2}
+  Â¥item [(1)] æç”»ã®ãŸã‚ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚ªãƒ¼ãƒ—ãƒ³/ã‚¯ãƒ­ãƒ¼ã‚ºé–¢æ•° 
+  Â¥item [(2)] å›³å½¢ã®å±æ€§ã‚’æŒ‡å®šã™ã‚‹ãŸã‚ã®é–¢æ•° 
+  Â¥item [(3)] å›³å½¢ã‚’æç”»ã™ã‚‹ãŸã‚ã®é–¢æ•° 
+  Â¥item [(4)] ãã®ä»–
+Â¥end{itemize2}
 
-  }Œ`‚ÍAˆê‚Â‚ÌƒEƒBƒ“ƒhƒEã‚É•`‰æ‚·‚éB‚±‚ÌƒEƒBƒ“ƒhƒE‚Ì‘å‚«‚³‚ğw’è‚µ
-‚ÄŠJ‚­‚½‚ß‚ÌŠÖ”‚Æ‚µ‚Ä gOpenWindow()‚ª‚ ‚éB gCloseWindow()‚Í•Â‚¶‚é‚½
-‚ß‚ÌŠÖ”‚Å‚ ‚é‚ªA‚±‚ÌŠÖ”‚ğŒÄ‚Ño‚·‚Æ•`‰æƒEƒBƒ“ƒhƒE‚ª‰æ–Ê‚©‚çÁ–Å‚·
-‚é‚Ì‚ÅA’Êí‚±‚ÌŠÖ”‚ğg—p‚·‚é‚±‚Æ‚Í‚È‚¢B \\
-  }Œ`‚ÍAü•ªAÜ‚êü‚È‚Ç‚Ì{\bf{ü}Œ`}}A’·•ûŒ`A‘È‰~A
-‘½ŠpŒ`‚È‚Ç‚Ì{\bf{–Ê}Œ`}}A
-‚¨‚æ‚ÑA{\bf{•¶š}Œ`}}‚©‚ç‚È‚éB }Œ`‚ğ•`‚­‚É‚ÍAŒ´‘¥‚Æ‚µ‚Äæ‚É•`‰æ‘®«‚ğw 
-’è‚µ‚È‚¯‚ê‚Î‚È ‚ç‚È‚¢B•`‰æ‘®«‚Æ‚µ‚Ä‚ÍAü‚Ì‘¾‚³Aü‚Ìí—ŞAü‚ÌF“™ 
-‚Ìü}Œ`‚É“K‰‚³‚ê‚é‚à‚ÌA“h‚è‚Â‚Ô‚µ‚ÌF“™‚Ì–Ê}Œ`‚É“K‰‚³‚ê‚é‚à‚ÌA 
-‚¨‚æ‚ÑAƒtƒHƒ“ƒg‚Ìí—ŞAƒtƒHƒ“ƒgƒTƒCƒY“™‚Ì•¶š}Œ`‚É“K‰‚³‚ê‚é‚à‚Ì‚ª 
-‚ ‚éB•`‰æ‘®«‚ğw’è‚µ‚È‚¢ê‡‚ÍA—\‚ß’è‚ß‚ç‚ê‚½‘®«’l‚ª—p‚¢‚ç‚êAˆê 
-’UAİ’è‚µ‚½‘®«’l‚ÍA“¯‚¶‘®«‚É‘Î‚µ‚ÄV‚½‚Éİ’è‚³‚ê‚é‚Ü‚Å—LŒø‚Å‚ ‚éB 
-  }Œ`‚ğ•`‰æ‚·‚é‚½‚ß‚ÌŠÖ”‚Æ‚µ‚Ä‚ÍAü•ª‚Ì•`‰æA’·•ûŒ`‚Ì•`‰æA‘È‰~‚Ì 
-•`‰æA‰~‚Ì•`‰æA•¶š—ñ‚Ì•`‰æ“™‚ÌŠÖ”‚ª‚ ‚éB \\
-\ \\
-  ˆÈ‰ºAŠeŠÖ”‚É‚Â‚¢‚Äà–¾‚·‚éB \\
-\ \\
-{\large{
-{\bf{
-(1) •`‰æ‚Ì‚½‚ß‚ÌƒEƒBƒ“ƒhƒE‚ÌƒI[ƒvƒ“/ƒNƒ[ƒYŠÖ”
+  å›³å½¢ã¯ã€ä¸€ã¤ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä¸Šã«æç”»ã™ã‚‹ã€‚ã“ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å¤§ãã•ã‚’æŒ‡å®šã—
+ã¦é–‹ããŸã‚ã®é–¢æ•°ã¨ã—ã¦ gOpenWindow()ãŒã‚ã‚‹ã€‚ gCloseWindow()ã¯é–‰ã˜ã‚‹ãŸ
+ã‚ã®é–¢æ•°ã§ã‚ã‚‹ãŒã€ã“ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã™ã¨æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒç”»é¢ã‹ã‚‰æ¶ˆæ»…ã™
+ã‚‹ã®ã§ã€é€šå¸¸ã“ã®é–¢æ•°ã‚’ä½¿ç”¨ã™ã‚‹ã“ã¨ã¯ãªã„ã€‚ Â¥Â¥
+  å›³å½¢ã¯ã€ç·šåˆ†ã€æŠ˜ã‚Œç·šãªã©ã®{Â¥bf{ç·šå›³å½¢}}ã€é•·æ–¹å½¢ã€æ¥•å††ã€
+å¤šè§’å½¢ãªã©ã®{Â¥bf{é¢å›³å½¢}}ã€
+ãŠã‚ˆã³ã€{Â¥bf{æ–‡å­—å›³å½¢}}ã‹ã‚‰ãªã‚‹ã€‚ å›³å½¢ã‚’æãã«ã¯ã€åŸå‰‡ã¨ã—ã¦å…ˆã«æç”»å±æ€§ã‚’æŒ‡ 
+å®šã—ãªã‘ã‚Œã°ãª ã‚‰ãªã„ã€‚æç”»å±æ€§ã¨ã—ã¦ã¯ã€ç·šã®å¤ªã•ã€ç·šã®ç¨®é¡ã€ç·šã®è‰²ç­‰ 
+ã®ç·šå›³å½¢ã«é©å¿œã•ã‚Œã‚‹ã‚‚ã®ã€å¡—ã‚Šã¤ã¶ã—ã®è‰²ç­‰ã®é¢å›³å½¢ã«é©å¿œã•ã‚Œã‚‹ã‚‚ã®ã€ 
+ãŠã‚ˆã³ã€ãƒ•ã‚©ãƒ³ãƒˆã®ç¨®é¡ã€ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºç­‰ã®æ–‡å­—å›³å½¢ã«é©å¿œã•ã‚Œã‚‹ã‚‚ã®ãŒ 
+ã‚ã‚‹ã€‚æç”»å±æ€§ã‚’æŒ‡å®šã—ãªã„å ´åˆã¯ã€äºˆã‚å®šã‚ã‚‰ã‚ŒãŸå±æ€§å€¤ãŒç”¨ã„ã‚‰ã‚Œã€ä¸€ 
+æ—¦ã€è¨­å®šã—ãŸå±æ€§å€¤ã¯ã€åŒã˜å±æ€§ã«å¯¾ã—ã¦æ–°ãŸã«è¨­å®šã•ã‚Œã‚‹ã¾ã§æœ‰åŠ¹ã§ã‚ã‚‹ã€‚ 
+  å›³å½¢ã‚’æç”»ã™ã‚‹ãŸã‚ã®é–¢æ•°ã¨ã—ã¦ã¯ã€ç·šåˆ†ã®æç”»ã€é•·æ–¹å½¢ã®æç”»ã€æ¥•å††ã® 
+æç”»ã€å††ã®æç”»ã€æ–‡å­—åˆ—ã®æç”»ç­‰ã®é–¢æ•°ãŒã‚ã‚‹ã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+  ä»¥ä¸‹ã€å„é–¢æ•°ã«ã¤ã„ã¦èª¬æ˜ã™ã‚‹ã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+{Â¥large{
+{Â¥bf{
+(1) æç”»ã®ãŸã‚ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚ªãƒ¼ãƒ—ãƒ³/ã‚¯ãƒ­ãƒ¼ã‚ºé–¢æ•°
 }}
 }}
-\begin{enumerate2}
-\item {\bf{gOpenWindow(®” w, ®” h)}} \\
-%   ®”  w, h \\
-       •wA‚‚³h‚Ì•`‰æ‚Ì‚½‚ß‚ÌƒEƒBƒ“ƒhƒE‚ğŠJ‚­BƒEƒBƒ“ƒhƒE 
-       ‚ÌˆÊ’u‚ÍA‰æ–Ê‚Ì¶ã‚ÉŒÅ’è‚³‚ê‚éB \\
-\ \\
-	   \hspace{10pt} $[$g—p—á$]$  •400A‚‚³400‚ÌƒEƒBƒ“ƒhƒE‚ğŠJ‚­B \\
-           \hspace{55pt} gOpenWindow(400, 400)  \\
+Â¥begin{enumerate2}
+Â¥item {Â¥bf{gOpenWindow(æ•´æ•° w, æ•´æ•° h)}} Â¥Â¥
+%   æ•´æ•°  w, h Â¥Â¥
+       å¹…wã€é«˜ã•hã®æç”»ã®ãŸã‚ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‹ãã€‚ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ 
+       ã®ä½ç½®ã¯ã€ç”»é¢ã®å·¦ä¸Šã«å›ºå®šã•ã‚Œã‚‹ã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	   Â¥hspace{10pt} $[$ä½¿ç”¨ä¾‹$]$  å¹…400ã€é«˜ã•400ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‹ãã€‚ Â¥Â¥
+           Â¥hspace{55pt} gOpenWindow(400, 400)  Â¥Â¥
 
-\item {\bf{gSaveWindow(•¶š—ñ filepath, •¶š—ñ format)}} \\
-%     •¶š—ñ  filepath, format \\
-     •`‰æ‚µ‚½ƒEƒBƒ“ƒhƒE‚ğ•Û‘¶‚·‚éB
-     •Û‘¶Œ`®(mode)‚ÍJPEG‚Ü‚½‚ÍPNG‚Ì‚Ç‚¿‚ç‚©‚ğw’è‚·‚éB \\
-\ \\
-	   \hspace{10pt} $[$g—p—á$]$  ƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ(ƒtƒHƒ‹ƒ_)‚ÉƒEƒBƒ“ƒhƒE‚ğpngŒ^®‚Åƒtƒ@ƒCƒ‹–¼‚ğabc.png‚Æ‚µ‚Ä•Û‘¶‚·‚éB \\
-           \hspace{55pt} gSaveWindow(``./abc.PNG'', ``PNG'')\\
+Â¥item {Â¥bf{gSaveWindow(æ–‡å­—åˆ— filepath, æ–‡å­—åˆ— format)}} Â¥Â¥
+%     æ–‡å­—åˆ—  filepath, format Â¥Â¥
+     æç”»ã—ãŸã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’ä¿å­˜ã™ã‚‹ã€‚
+     ä¿å­˜å½¢å¼(mode)ã¯JPEGã¾ãŸã¯PNGã®ã©ã¡ã‚‰ã‹ã‚’æŒ‡å®šã™ã‚‹ã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	   Â¥hspace{10pt} $[$ä½¿ç”¨ä¾‹$]$  ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª(ãƒ•ã‚©ãƒ«ãƒ€)ã«ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’pngå‹å¼ã§ãƒ•ã‚¡ã‚¤ãƒ«åã‚’abc.pngã¨ã—ã¦ä¿å­˜ã™ã‚‹ã€‚ Â¥Â¥
+           Â¥hspace{55pt} gSaveWindow(``./abc.PNG'', ``PNG'')Â¥Â¥
 
-\item {\bf{gCloseWindow()}} \\
-       •`‰æ‚Ì‚½‚ß‚ÌƒEƒBƒ“ƒhƒE‚ğ•Â‚¶‚éB
-\end{enumerate2}
-{\large{
-{\bf{
-(2) }Œ`‚Ì‘®«‚ğw’è‚·‚é‚½‚ß‚ÌŠÖ”
+Â¥item {Â¥bf{gCloseWindow()}} Â¥Â¥
+       æç”»ã®ãŸã‚ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‰ã˜ã‚‹ã€‚
+Â¥end{enumerate2}
+{Â¥large{
+{Â¥bf{
+(2) å›³å½¢ã®å±æ€§ã‚’æŒ‡å®šã™ã‚‹ãŸã‚ã®é–¢æ•°
 }}
 }}
-\begin{enumerate2}
-\item {\bf{gSetLineColor(®” r, ®” g, ®” b)}} \\
-%   ®”  r, g, b (’l‚Ì”ÍˆÍ0-255) \\
-   r, g, b ‚Ì’l‚Ì”ÍˆÍ‚Í0-255B
-       ü‚ÌF‘®«‚ğAÔ‚Ì—v‘frA—Î‚Ì—v‘fgAÂ‚Ì—v‘fb‚Åw’è‚·‚éB
-       ‰Šú’l‚Í•(0, 0, 0)B\\
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$ ü‚ÌF‚ğ‰©F‚Éİ’è‚·‚éB\\
-         \hspace{55pt}     gSetLineColor(255, 255, 0) \\
+Â¥begin{enumerate2}
+Â¥item {Â¥bf{gSetLineColor(æ•´æ•° r, æ•´æ•° g, æ•´æ•° b)}} Â¥Â¥
+%   æ•´æ•°  r, g, b (å€¤ã®ç¯„å›²0-255) Â¥Â¥
+   r, g, b ã®å€¤ã®ç¯„å›²ã¯0-255ã€‚
+       ç·šã®è‰²å±æ€§ã‚’ã€èµ¤ã®è¦ç´ rã€ç·‘ã®è¦ç´ gã€é’ã®è¦ç´ bã§æŒ‡å®šã™ã‚‹ã€‚
+       åˆæœŸå€¤ã¯é»’(0, 0, 0)ã€‚Â¥Â¥
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ ç·šã®è‰²ã‚’é»„è‰²ã«è¨­å®šã™ã‚‹ã€‚Â¥Â¥
+         Â¥hspace{55pt}     gSetLineColor(255, 255, 0) Â¥Â¥
 
-\item {\bf{gSetLineShape(®” type)}} \\
-%   ®”  type \\
-      •`‰æ‚·‚éü‚Ìƒ^ƒCƒv‚ğ•ÏXBü‚ğg—p‚·‚é‘S‚Ä‚Ì•`‰æ‚É‰e‹¿B
+Â¥item {Â¥bf{gSetLineShape(æ•´æ•° type)}} Â¥Â¥
+%   æ•´æ•°  type Â¥Â¥
+      æç”»ã™ã‚‹ç·šã®ã‚¿ã‚¤ãƒ—ã‚’å¤‰æ›´ã€‚ç·šã‚’ä½¿ç”¨ã™ã‚‹å…¨ã¦ã®æç”»ã«å½±éŸ¿ã€‚
 
-      \begin{table}[!h]
-      \begin{center}
-      {\small{
-      \begin{tabular}{l l}
-        type=0‚Ì‚Æ‚« & Àü (‰Šú’l) \\
-        type=1‚Ì‚Æ‚« & ”jü \\
-        type=2‚Ì‚Æ‚« & ŠÔŠu‚Ì‹·‚¢”jü \\
-        type=3‚Ì‚Æ‚« & ˆê“_½ü \\
-        type$\geq$4‚Ì‚Æ‚« & ü‚Ìí—Ş‚ğ•ÏX‚µ‚È‚¢ \\
-      \end{tabular}
+      Â¥begin{table}[!h]
+      Â¥begin{center}
+      {Â¥small{
+      Â¥begin{tabular}{l l}
+        type=0ã®ã¨ã & å®Ÿç·š (åˆæœŸå€¤) Â¥Â¥
+        type=1ã®ã¨ã & ç ´ç·š Â¥Â¥
+        type=2ã®ã¨ã & é–“éš”ã®ç‹­ã„ç ´ç·š Â¥Â¥
+        type=3ã®ã¨ã & ä¸€ç‚¹é–ç·š Â¥Â¥
+        type$Â¥geq$4ã®ã¨ã & ç·šã®ç¨®é¡ã‚’å¤‰æ›´ã—ãªã„ Â¥Â¥
+      Â¥end{tabular}
       }}
-      \end{center}
-      \end{table}
-         \vspace{-5mm}
-	 \hspace{10pt}  $[$g—p—á$]$  ü‚Ìƒ^ƒCƒv‚ğˆê“_½ü‚É•ÏX‚·‚éB \\
-         \hspace{55pt}     gSetLineShape(3) \\
+      Â¥end{center}
+      Â¥end{table}
+         Â¥vspace{-5mm}
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$  ç·šã®ã‚¿ã‚¤ãƒ—ã‚’ä¸€ç‚¹é–ç·šã«å¤‰æ›´ã™ã‚‹ã€‚ Â¥Â¥
+         Â¥hspace{55pt}     gSetLineShape(3) Â¥Â¥
 
-\item {\bf{gSetLineWidth(®” width)}} \\
-%  ®”  width \\
-      •`‰æ‚·‚éü‚Ì‘¾‚³‚ğ‘I‘ğ‚µ‚½í—Ş‚É•ÏXBü‚ğg—p‚·‚é‘S‚Ä‚Ì•`‰æ‚É‰e‹¿B
-      ‰Šú’l‚Í 1B
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$  ü‚Ì‘¾‚³‚ğ3‚É•ÏX‚·‚éB \\
-         \hspace{55pt}     gSetLineWidth(3) \\
+Â¥item {Â¥bf{gSetLineWidth(æ•´æ•° width)}} Â¥Â¥
+%  æ•´æ•°  width Â¥Â¥
+      æç”»ã™ã‚‹ç·šã®å¤ªã•ã‚’é¸æŠã—ãŸç¨®é¡ã«å¤‰æ›´ã€‚ç·šã‚’ä½¿ç”¨ã™ã‚‹å…¨ã¦ã®æç”»ã«å½±éŸ¿ã€‚
+      åˆæœŸå€¤ã¯ 1ã€‚
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$  ç·šã®å¤ªã•ã‚’3ã«å¤‰æ›´ã™ã‚‹ã€‚ Â¥Â¥
+         Â¥hspace{55pt}     gSetLineWidth(3) Â¥Â¥
 
-\item {\bf{gSetArrowType(®” type)}} \\
-%   ®”  type \\
-       type‚Å–î‚¶‚è‚ÌŒ`ó‚ğw’è‚·‚éB
-       (Œ»İ1í—Ş‚Ì‚İ‚ÌÀ‘•‚Å‚ ‚é‚½‚ß‚Ç‚Ì‚æ‚¤‚È”’l‚Å‚à“¯‚¶) \\
+Â¥item {Â¥bf{gSetArrowType(æ•´æ•° type)}} Â¥Â¥
+%   æ•´æ•°  type Â¥Â¥
+       typeã§çŸ¢ã˜ã‚Šã®å½¢çŠ¶ã‚’æŒ‡å®šã™ã‚‹ã€‚
+       (ç¾åœ¨1ç¨®é¡ã®ã¿ã®å®Ÿè£…ã§ã‚ã‚‹ãŸã‚ã©ã®ã‚ˆã†ãªæ•°å€¤ã§ã‚‚åŒã˜) Â¥Â¥
 
-	 \hspace{10pt}  $[$g—p—á$]$  gDrawLine‚Ì–îˆó‚Ìí—Ş‚ğİ’è‚·‚éB \\
-         \hspace{55pt}     gSetArrowType(1) \\
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$  gDrawLineã®çŸ¢å°ã®ç¨®é¡ã‚’è¨­å®šã™ã‚‹ã€‚ Â¥Â¥
+         Â¥hspace{55pt}     gSetArrowType(1) Â¥Â¥
 
-\item {\bf{gSetArrowDir(®” edge)}} \\
-%   ®”  edge \\
-       gDrawLine‚Å•`‰æ‚·‚éü•ª‚Ì—¼’[‚É–îˆó‚ğ•t‰Á‚·‚éŠÖ”B
-       edge‚Å–î‚¶‚è‚Ì‰ÓŠ‚ğw’è‚·‚éB
+Â¥item {Â¥bf{gSetArrowDir(æ•´æ•° edge)}} Â¥Â¥
+%   æ•´æ•°  edge Â¥Â¥
+       gDrawLineã§æç”»ã™ã‚‹ç·šåˆ†ã®ä¸¡ç«¯ã«çŸ¢å°ã‚’ä»˜åŠ ã™ã‚‹é–¢æ•°ã€‚
+       edgeã§çŸ¢ã˜ã‚Šã®ç®‡æ‰€ã‚’æŒ‡å®šã™ã‚‹ã€‚
 
-      \begin{table}[!h]
-      \begin{center}
-      {\small{
-      \begin{tabular}{l l}
-       edge=0‚Ì‚Æ‚« & –î‚¶‚è‚È‚µ (‰Šú’l) \\ 
-       edge=1‚Ì‚Æ‚« & n“_‚Ì‚İ–î‚¶‚è•`‰æ \\
-       edge=2‚Ì‚Æ‚« & I“_‚Ì‚İ–î‚¶‚è•`‰æ \\
-       edge=3‚Ì‚Æ‚« & —¼’[‚É–î‚¶‚è•`‰æ \\
-       edge$\geq$4‚Ì‚Æ‚« & w’è‰ÓŠ‚ğ•ÏX‚µ‚È‚¢ \\
-      \end{tabular}
+      Â¥begin{table}[!h]
+      Â¥begin{center}
+      {Â¥small{
+      Â¥begin{tabular}{l l}
+       edge=0ã®ã¨ã & çŸ¢ã˜ã‚Šãªã— (åˆæœŸå€¤) Â¥Â¥ 
+       edge=1ã®ã¨ã & å§‹ç‚¹ã®ã¿çŸ¢ã˜ã‚Šæç”» Â¥Â¥
+       edge=2ã®ã¨ã & çµ‚ç‚¹ã®ã¿çŸ¢ã˜ã‚Šæç”» Â¥Â¥
+       edge=3ã®ã¨ã & ä¸¡ç«¯ã«çŸ¢ã˜ã‚Šæç”» Â¥Â¥
+       edge$Â¥geq$4ã®ã¨ã & æŒ‡å®šç®‡æ‰€ã‚’å¤‰æ›´ã—ãªã„ Â¥Â¥
+      Â¥end{tabular}
       }}
-      \end{center}
-      \end{table}
-       \vspace{-5mm}
-        \hspace{10pt}   $[$g—p—á$]$  gDrawLine‚Ì—¼’[‚É–îˆó‚ğİ’è‚·‚éB \\
-        \hspace{55pt}    gSetArrowDir(3) \\
+      Â¥end{center}
+      Â¥end{table}
+       Â¥vspace{-5mm}
+        Â¥hspace{10pt}   $[$ä½¿ç”¨ä¾‹$]$  gDrawLineã®ä¸¡ç«¯ã«çŸ¢å°ã‚’è¨­å®šã™ã‚‹ã€‚ Â¥Â¥
+        Â¥hspace{55pt}    gSetArrowDir(3) Â¥Â¥
 
-\item {\bf{gSetFillColor(®” r, ®” g, ®” b)}} \\
-%   ®”  r, g, b (’l‚Ì”ÍˆÍ0-255) \\
-       }Œ`“à•”‚ÌF‚ğAÔ‚Ì—v‘frA—Î‚Ì—v‘fgAÂ‚Ì—v‘fb‚Åw’è‚·‚éB
-g—p•û–@‚ÍgSetLineColor‚Æ“¯‚¶B
-       ‰Šú’l‚Í•(0, 0, 0)B\\
+Â¥item {Â¥bf{gSetFillColor(æ•´æ•° r, æ•´æ•° g, æ•´æ•° b)}} Â¥Â¥
+%   æ•´æ•°  r, g, b (å€¤ã®ç¯„å›²0-255) Â¥Â¥
+       å›³å½¢å†…éƒ¨ã®è‰²ã‚’ã€èµ¤ã®è¦ç´ rã€ç·‘ã®è¦ç´ gã€é’ã®è¦ç´ bã§æŒ‡å®šã™ã‚‹ã€‚
+ä½¿ç”¨æ–¹æ³•ã¯gSetLineColorã¨åŒã˜ã€‚
+       åˆæœŸå€¤ã¯é»’(0, 0, 0)ã€‚Â¥Â¥
 
-\item {\bf{gSetDotShape(®” type)}} \\
-%   ®”  type \\
-       gDrawPoint‚Å•`‚­“_‚Ìí—Ş‚ğw’è‚·‚éB
+Â¥item {Â¥bf{gSetDotShape(æ•´æ•° type)}} Â¥Â¥
+%   æ•´æ•°  type Â¥Â¥
+       gDrawPointã§æãç‚¹ã®ç¨®é¡ã‚’æŒ‡å®šã™ã‚‹ã€‚
 
-      \begin{table}[!h]
-      \begin{center}
-      {\small{
-      \begin{tabular}{l l}
-       type=0‚Ì‚Æ‚« & ¬‚³‚ÈŠÛ‚¢“_(‰Šú’l) \\
-       type=1‚Ì‚Æ‚« & ­‚µ‘å‚«‚È \\
-       type=2‚Ì‚Æ‚« & ‘å‚«‚ÈŠÛ‚¢“_ \\
-       type$\geq$3‚Ì‚Æ‚« & “_‚Ìí—Ş‚ğ•ÏX‚µ‚È‚¢ \\
-      \end{tabular}
+      Â¥begin{table}[!h]
+      Â¥begin{center}
+      {Â¥small{
+      Â¥begin{tabular}{l l}
+       type=0ã®ã¨ã & å°ã•ãªä¸¸ã„ç‚¹(åˆæœŸå€¤) Â¥Â¥
+       type=1ã®ã¨ã & å°‘ã—å¤§ããª Â¥Â¥
+       type=2ã®ã¨ã & å¤§ããªä¸¸ã„ç‚¹ Â¥Â¥
+       type$Â¥geq$3ã®ã¨ã & ç‚¹ã®ç¨®é¡ã‚’å¤‰æ›´ã—ãªã„ Â¥Â¥
+      Â¥end{tabular}
       }}
-      \end{center}
-      \end{table}
-         \vspace{-5mm}
-	 \hspace{10pt}  $[$g—p—á$]$  ƒhƒbƒg‚Ìí—Ş‚ğ‘å‚«‚ÈŠÛ‚¢“_‚É•ÏX‚·‚éB \\
-         \hspace{55pt}     gSetDotShape(2) \\
+      Â¥end{center}
+      Â¥end{table}
+         Â¥vspace{-5mm}
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$  ãƒ‰ãƒƒãƒˆã®ç¨®é¡ã‚’å¤§ããªä¸¸ã„ç‚¹ã«å¤‰æ›´ã™ã‚‹ã€‚ Â¥Â¥
+         Â¥hspace{55pt}     gSetDotShape(2) Â¥Â¥
 
-\item {\bf{gSetTextColor(®” r, ®” g, ®” b)}} \\
-%   ®”  r, g, b (’l‚Ì”ÍˆÍ0-255) \\
-       •¶š—ñ‚ÌF‘®«‚ğAÔ‚Ì—v‘frA—Î‚Ì—v‘fgAÂ‚Ì—v‘fb‚Åw’è‚·‚éB
-g—p•û–@‚ÍgSetLineColor‚Æ“¯‚¶B
-       ‰Šú’l‚Í(0, 0, 0)B\\
+Â¥item {Â¥bf{gSetTextColor(æ•´æ•° r, æ•´æ•° g, æ•´æ•° b)}} Â¥Â¥
+%   æ•´æ•°  r, g, b (å€¤ã®ç¯„å›²0-255) Â¥Â¥
+       æ–‡å­—åˆ—ã®è‰²å±æ€§ã‚’ã€èµ¤ã®è¦ç´ rã€ç·‘ã®è¦ç´ gã€é’ã®è¦ç´ bã§æŒ‡å®šã™ã‚‹ã€‚
+ä½¿ç”¨æ–¹æ³•ã¯gSetLineColorã¨åŒã˜ã€‚
+       åˆæœŸå€¤ã¯(0, 0, 0)ã€‚Â¥Â¥
 
-\item {\bf{gSetFont(•¶š—ñ "String")}} \\
-%   •¶š—ñ  String \\
-       gDrawText•`‰æ‚·‚éƒtƒHƒ“ƒg‚Ìí—Ş‚ğw’è•ÏX‚·‚éB
-       ‰Šú’l‚ÍƒVƒXƒeƒ€‚Å’è‹`‚³‚ê‚Ä‚¢‚éƒfƒBƒtƒH[ƒ‹ƒgƒtƒHƒ“ƒgB \\
-       w’è‚Å‚«‚éƒtƒHƒ“ƒg‚ÍˆÈ‰º‚Ì’Ê‚èB
-        i‚½‚¾‚µAŒvZ‹@ŠÂ‹«‚ÉˆË‘¶‚·‚éj
+Â¥item {Â¥bf{gSetFont(æ–‡å­—åˆ— "String")}} Â¥Â¥
+%   æ–‡å­—åˆ—  String Â¥Â¥
+       gDrawTextæç”»ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã®ç¨®é¡ã‚’æŒ‡å®šå¤‰æ›´ã™ã‚‹ã€‚
+       åˆæœŸå€¤ã¯ã‚·ã‚¹ãƒ†ãƒ ã§å®šç¾©ã•ã‚Œã¦ã„ã‚‹ãƒ‡ã‚£ãƒ•ã‚©ãƒ¼ãƒ«ãƒˆãƒ•ã‚©ãƒ³ãƒˆã€‚ Â¥Â¥
+       æŒ‡å®šã§ãã‚‹ãƒ•ã‚©ãƒ³ãƒˆã¯ä»¥ä¸‹ã®é€šã‚Šã€‚
+        ï¼ˆãŸã ã—ã€è¨ˆç®—æ©Ÿç’°å¢ƒã«ä¾å­˜ã™ã‚‹ï¼‰
 
-      \begin{table}[!h]
-      \begin{center}
-      {\small{
-      \begin{tabular}{l l}
-	    ƒtƒHƒ“ƒg–¼ &      ‰ğà \\
-	    –¾’©       &   –¾’©‘ÌƒtƒHƒ“ƒg \\
-	    ƒSƒVƒbƒN   &   ƒSƒVƒbƒN‘ÌƒtƒHƒ“ƒg \\
-	    TimesRoman &   ƒZƒŠƒt•t‚«‚ÌƒtƒHƒ“ƒg \\
-	    Courier    &   “™•ƒtƒHƒ“ƒg \\
-	    Helvetica  &   ƒZƒŠƒt‚Ì‚È‚¢ƒtƒHƒ“ƒg \\
-	    Dialog     &   ƒ_ƒCƒAƒƒO•\¦—pƒtƒHƒ“ƒg \\ 
-	    DialogInput &   ƒ_ƒCƒAƒƒO“ü—Í—pƒtƒHƒ“ƒg \\
-	    ZapfDingbats & ‹L†ƒtƒHƒ“ƒg \\
-	    Serif        & ƒZƒŠƒt•t‚«ƒtƒHƒ“ƒg(–¾’©‘Ì) \\
-	    SansSerif    & ƒZƒŠƒt‚Ì‚È‚¢ƒtƒHƒ“ƒg(ƒSƒVƒbƒN) \\
-	    Monospaced   & “™•ƒtƒHƒ“ƒg \\
-      \end{tabular}
+      Â¥begin{table}[!h]
+      Â¥begin{center}
+      {Â¥small{
+      Â¥begin{tabular}{l l}
+	    ãƒ•ã‚©ãƒ³ãƒˆå &      è§£èª¬ Â¥Â¥
+	    æ˜æœ       &   æ˜æœä½“ãƒ•ã‚©ãƒ³ãƒˆ Â¥Â¥
+	    ã‚´ã‚·ãƒƒã‚¯   &   ã‚´ã‚·ãƒƒã‚¯ä½“ãƒ•ã‚©ãƒ³ãƒˆ Â¥Â¥
+	    TimesRoman &   ã‚»ãƒªãƒ•ä»˜ãã®ãƒ•ã‚©ãƒ³ãƒˆ Â¥Â¥
+	    Courier    &   ç­‰å¹…ãƒ•ã‚©ãƒ³ãƒˆ Â¥Â¥
+	    Helvetica  &   ã‚»ãƒªãƒ•ã®ãªã„ãƒ•ã‚©ãƒ³ãƒˆ Â¥Â¥
+	    Dialog     &   ãƒ€ã‚¤ã‚¢ãƒ­ã‚°è¡¨ç¤ºç”¨ãƒ•ã‚©ãƒ³ãƒˆ Â¥Â¥ 
+	    DialogInput &   ãƒ€ã‚¤ã‚¢ãƒ­ã‚°å…¥åŠ›ç”¨ãƒ•ã‚©ãƒ³ãƒˆ Â¥Â¥
+	    ZapfDingbats & è¨˜å·ãƒ•ã‚©ãƒ³ãƒˆ Â¥Â¥
+	    Serif        & ã‚»ãƒªãƒ•ä»˜ããƒ•ã‚©ãƒ³ãƒˆ(æ˜æœä½“) Â¥Â¥
+	    SansSerif    & ã‚»ãƒªãƒ•ã®ãªã„ãƒ•ã‚©ãƒ³ãƒˆ(ã‚´ã‚·ãƒƒã‚¯) Â¥Â¥
+	    Monospaced   & ç­‰å¹…ãƒ•ã‚©ãƒ³ãƒˆ Â¥Â¥
+      Â¥end{tabular}
       }}
-      \end{center}
-      \end{table}
-         \vspace{-5mm}
-	 \hspace{10pt}  $[$g—p—á$]$  ƒtƒHƒ“ƒg‚Ìí—Ş‚ğMonospaced‚É•ÏX‚·‚éB \\
-         \hspace{55pt}     gSetFont("Monospaced") \\
+      Â¥end{center}
+      Â¥end{table}
+         Â¥vspace{-5mm}
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$  ãƒ•ã‚©ãƒ³ãƒˆã®ç¨®é¡ã‚’Monospacedã«å¤‰æ›´ã™ã‚‹ã€‚ Â¥Â¥
+         Â¥hspace{55pt}     gSetFont("Monospaced") Â¥Â¥
 
-\item {\bf{gSetFontType(®” style)}} \\
-%   ®”  type \\
-       gDrawText•`‰æ‚·‚éƒtƒHƒ“ƒg‚ÌƒXƒ^ƒCƒ‹‚ğw’è‚·‚éB
+Â¥item {Â¥bf{gSetFontType(æ•´æ•° style)}} Â¥Â¥
+%   æ•´æ•°  type Â¥Â¥
+       gDrawTextæç”»ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã®ã‚¹ã‚¿ã‚¤ãƒ«ã‚’æŒ‡å®šã™ã‚‹ã€‚
 
-      \begin{table}[!h]
-      \begin{center}
-      {\small{
-      \begin{tabular}{l l}
-       style=0‚Ì‚Æ‚« & ƒvƒŒƒCƒ“(‰Šú’l) \\
-       style=1‚Ì‚Æ‚« & ƒ{[ƒ‹ƒh \\
-       style=2‚Ì‚Æ‚« & ƒCƒ^ƒŠƒbƒN \\
-       style=3‚Ì‚Æ‚« & ƒ{[ƒ‹ƒh + ƒCƒ^ƒŠƒbƒN \\
-       style†4‚Ì‚Æ‚« & ƒXƒ^ƒCƒ‹‚ğ•ÏX‚µ‚È‚¢ \\
-      \end{tabular}
+      Â¥begin{table}[!h]
+      Â¥begin{center}
+      {Â¥small{
+      Â¥begin{tabular}{l l}
+       style=0ã®ã¨ã & ãƒ—ãƒ¬ã‚¤ãƒ³(åˆæœŸå€¤) Â¥Â¥
+       style=1ã®ã¨ã & ãƒœãƒ¼ãƒ«ãƒ‰ Â¥Â¥
+       style=2ã®ã¨ã & ã‚¤ã‚¿ãƒªãƒƒã‚¯ Â¥Â¥
+       style=3ã®ã¨ã & ãƒœãƒ¼ãƒ«ãƒ‰ + ã‚¤ã‚¿ãƒªãƒƒã‚¯ Â¥Â¥
+       styleâ‰§4ã®ã¨ã & ã‚¹ã‚¿ã‚¤ãƒ«ã‚’å¤‰æ›´ã—ãªã„ Â¥Â¥
+      Â¥end{tabular}
       }}
-      \end{center}
-      \end{table}
-         \vspace{-5mm}
-	 \hspace{10pt}  $[$g—p—á$]$ ƒtƒHƒ“ƒgƒXƒ^ƒCƒ‹‚ğƒCƒ^ƒŠƒbƒN‚Éİ’èB \\
-         \hspace{55pt}     gSetFontType(2) \\
+      Â¥end{center}
+      Â¥end{table}
+         Â¥vspace{-5mm}
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ ãƒ•ã‚©ãƒ³ãƒˆã‚¹ã‚¿ã‚¤ãƒ«ã‚’ã‚¤ã‚¿ãƒªãƒƒã‚¯ã«è¨­å®šã€‚ Â¥Â¥
+         Â¥hspace{55pt}     gSetFontType(2) Â¥Â¥
 
-\item {\bf{gSetFontSize(®” size)}} \\
-%   ®”  size \\
-       gDrawText•`‰æ‚·‚éƒtƒHƒ“ƒg‚ÌƒTƒCƒY‚ğw’è‚·‚éB
-       ‰Šú’l‚Í10B\\
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$  ƒtƒHƒ“ƒg‚ÌƒTƒCƒY‚ğ20‚É•ÏX‚·‚éB \\
-         \hspace{55pt}     gSetFontSize(20) \\
-\end{enumerate2}
-{\large{
-{\bf{
-(3) }Œ`‚ğ•`‰æ‚·‚é‚½‚ß‚ÌŠÖ”
+Â¥item {Â¥bf{gSetFontSize(æ•´æ•° size)}} Â¥Â¥
+%   æ•´æ•°  size Â¥Â¥
+       gDrawTextæç”»ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã®ã‚µã‚¤ã‚ºã‚’æŒ‡å®šã™ã‚‹ã€‚
+       åˆæœŸå€¤ã¯10ã€‚Â¥Â¥
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$  ãƒ•ã‚©ãƒ³ãƒˆã®ã‚µã‚¤ã‚ºã‚’20ã«å¤‰æ›´ã™ã‚‹ã€‚ Â¥Â¥
+         Â¥hspace{55pt}     gSetFontSize(20) Â¥Â¥
+Â¥end{enumerate2}
+{Â¥large{
+{Â¥bf{
+(3) å›³å½¢ã‚’æç”»ã™ã‚‹ãŸã‚ã®é–¢æ•°
 }}
 }}
-\begin{enumerate2}
-\item {\bf{gDrawText(•¶š—ñ "string", ®” x, ®” y)}} \\
-%   •¶š—ñ string,     ®” x, y \\
-      À•W(x, y)‚ğˆê•¶š–Ú‚Ì¶‰º‚É‚ ‚í‚¹A•¶š—ñ‚ğ•`‚­B \\
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$ (20, 30)‚©‚çu•¶š—ñv‚ğ•\¦B \\
-         \hspace{55pt}      gDrawText("•¶š—ñ", 20, 30) \\
+Â¥begin{enumerate2}
+Â¥item {Â¥bf{gDrawText(æ–‡å­—åˆ— "string", æ•´æ•° x, æ•´æ•° y)}} Â¥Â¥
+%   æ–‡å­—åˆ— string,     æ•´æ•° x, y Â¥Â¥
+      åº§æ¨™(x, y)ã‚’ä¸€æ–‡å­—ç›®ã®å·¦ä¸‹ã«ã‚ã‚ã›ã€æ–‡å­—åˆ—ã‚’æãã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ (20, 30)ã‹ã‚‰ã€Œæ–‡å­—åˆ—ã€ã‚’è¡¨ç¤ºã€‚ Â¥Â¥
+         Â¥hspace{55pt}      gDrawText("æ–‡å­—åˆ—", 20, 30) Â¥Â¥
 
-\item {\bf{gDrawPoint(®” x, ®” y)}} \\
-%   ®” x, y \\
-      À•W(x, y)‚É“_‚ğ•`‚­B \\
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$  (20, 30)‚É“_‚ğ•`‚­B \\
-         \hspace{55pt}      gDrawPoint(20, 30) \\
+Â¥item {Â¥bf{gDrawPoint(æ•´æ•° x, æ•´æ•° y)}} Â¥Â¥
+%   æ•´æ•° x, y Â¥Â¥
+      åº§æ¨™(x, y)ã«ç‚¹ã‚’æãã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$  (20, 30)ã«ç‚¹ã‚’æãã€‚ Â¥Â¥
+         Â¥hspace{55pt}      gDrawPoint(20, 30) Â¥Â¥
 
-\item {\bf{gDrawLine(®” x1, ®” y1, ®” x2, ®” y2)}} \\
-%   ®” x1, y1, x2, y2 \\
-      À•W(x1 ,y1)‚©‚çÀ•W(x2, y2)‚Ü‚Åü•ª‚ğ•`‚­B \\
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$  (50, 60)‚©‚ç(100, 120)‚Ü‚Åü•ª‚ğ•`‰æB \\
-         \hspace{55pt}      gDrawLine(50, 60, 100, 120) \\
+Â¥item {Â¥bf{gDrawLine(æ•´æ•° x1, æ•´æ•° y1, æ•´æ•° x2, æ•´æ•° y2)}} Â¥Â¥
+%   æ•´æ•° x1, y1, x2, y2 Â¥Â¥
+      åº§æ¨™(x1 ,y1)ã‹ã‚‰åº§æ¨™(x2, y2)ã¾ã§ç·šåˆ†ã‚’æãã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$  (50, 60)ã‹ã‚‰(100, 120)ã¾ã§ç·šåˆ†ã‚’æç”»ã€‚ Â¥Â¥
+         Â¥hspace{55pt}      gDrawLine(50, 60, 100, 120) Â¥Â¥
 
-\item {\bf{gDrawBox(®” x, ®” y, ®” width, ®” height)}} \\
-%   ®” x, y, width, height \\
-       À•W(x, y)‚©‚ç• width ‚‚³ height‚Ì‹éŒ`‚ğ•`‚­B \\
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$ (20, 30)‚©‚ç•40A‚‚³50‚Ì‹éŒ`‚ğ•`‚­B \\
-         \hspace{55pt}      gDrawBox(20, 30, 40, 50) \\
+Â¥item {Â¥bf{gDrawBox(æ•´æ•° x, æ•´æ•° y, æ•´æ•° width, æ•´æ•° height)}} Â¥Â¥
+%   æ•´æ•° x, y, width, height Â¥Â¥
+       åº§æ¨™(x, y)ã‹ã‚‰å¹… width é«˜ã• heightã®çŸ©å½¢ã‚’æãã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ (20, 30)ã‹ã‚‰å¹…40ã€é«˜ã•50ã®çŸ©å½¢ã‚’æãã€‚ Â¥Â¥
+         Â¥hspace{55pt}      gDrawBox(20, 30, 40, 50) Â¥Â¥
 
-\item {\bf{gFillBox(®” x, ®” y, ®” width, ®” height)}} \\
-%   ®” x, y, width, height \\
-       gDrawBox() ‚Ì“à•”‚ğ gSetFillColor() ‚Åw’è‚µ‚½F‚Å“h‚è‚Â‚Ô‚µ‚½}Œ`‚ğ•`‰æ‚·‚éB \\
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$ (20, 30)‚©‚ç‰E‰º‚É•40A‚‚³50‚Ì“à•”‚ğ“h‚è‚Â‚Ô‚µ‚½‹éŒ`‚ğ•`‚­B \\
-         \hspace{55pt}      gFillBox(20, 30, 40, 50) \\
+Â¥item {Â¥bf{gFillBox(æ•´æ•° x, æ•´æ•° y, æ•´æ•° width, æ•´æ•° height)}} Â¥Â¥
+%   æ•´æ•° x, y, width, height Â¥Â¥
+       gDrawBox() ã®å†…éƒ¨ã‚’ gSetFillColor() ã§æŒ‡å®šã—ãŸè‰²ã§å¡—ã‚Šã¤ã¶ã—ãŸå›³å½¢ã‚’æç”»ã™ã‚‹ã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ (20, 30)ã‹ã‚‰å³ä¸‹ã«å¹…40ã€é«˜ã•50ã®å†…éƒ¨ã‚’å¡—ã‚Šã¤ã¶ã—ãŸçŸ©å½¢ã‚’æãã€‚ Â¥Â¥
+         Â¥hspace{55pt}      gFillBox(20, 30, 40, 50) Â¥Â¥
 
-\item {\bf{gDrawOval(®” x, ®” y, ®” width, ®” height)}} \\
-%   ®” x, y, width, height \\
-       À•W(x, y)‚©‚ç• width ‚‚³ height‚Å‹éŒ`‚ğ’è‹`‚µA“àÚ‚·‚é‘È‰~‚ğ•`‚­B \\
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$ (20, 30)‚©‚ç‰E‰º‚É•40A‚‚³50‚Ì‹éŒ`‚É“àÚ‚·‚é‘È‰~‚ğ•`‚­B \\
-         \hspace{55pt}      gDrawOval(20, 30, 40, 50) \\
+Â¥item {Â¥bf{gDrawOval(æ•´æ•° x, æ•´æ•° y, æ•´æ•° width, æ•´æ•° height)}} Â¥Â¥
+%   æ•´æ•° x, y, width, height Â¥Â¥
+       åº§æ¨™(x, y)ã‹ã‚‰å¹… width é«˜ã• heightã§çŸ©å½¢ã‚’å®šç¾©ã—ã€å†…æ¥ã™ã‚‹æ¥•å††ã‚’æãã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ (20, 30)ã‹ã‚‰å³ä¸‹ã«å¹…40ã€é«˜ã•50ã®çŸ©å½¢ã«å†…æ¥ã™ã‚‹æ¥•å††ã‚’æãã€‚ Â¥Â¥
+         Â¥hspace{55pt}      gDrawOval(20, 30, 40, 50) Â¥Â¥
 
-\item {\bf{gFillOval(®” x, ®” y, ®” width, ®” height)}} \\
-%   ®” x, y, width, height \\
-      @gDrawOval() ‚Ì“à•”‚ğ gSetFillColor() ‚Åw’è‚µ‚½F‚Å“h‚è‚Â‚Ô‚µ‚½‚à‚Ì‚ğ•`‰æ‚·‚éB \\
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$ (20, 30)‚©‚ç‰E‰º‚É•40A‚‚³50‚Ì‹éŒ`‚É“àÚ‚·‚éA\\
-         \hspace{55pt}  “à•”‚ğ“h‚è‚Â‚Ô‚µ‚½‘È‰~‚ğ•`‚­B \\
-         \hspace{55pt}      gFillOval(20, 30, 40, 50) \\
+Â¥item {Â¥bf{gFillOval(æ•´æ•° x, æ•´æ•° y, æ•´æ•° width, æ•´æ•° height)}} Â¥Â¥
+%   æ•´æ•° x, y, width, height Â¥Â¥
+      ã€€gDrawOval() ã®å†…éƒ¨ã‚’ gSetFillColor() ã§æŒ‡å®šã—ãŸè‰²ã§å¡—ã‚Šã¤ã¶ã—ãŸã‚‚ã®ã‚’æç”»ã™ã‚‹ã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ (20, 30)ã‹ã‚‰å³ä¸‹ã«å¹…40ã€é«˜ã•50ã®çŸ©å½¢ã«å†…æ¥ã™ã‚‹ã€Â¥Â¥
+         Â¥hspace{55pt}  å†…éƒ¨ã‚’å¡—ã‚Šã¤ã¶ã—ãŸæ¥•å††ã‚’æãã€‚ Â¥Â¥
+         Â¥hspace{55pt}      gFillOval(20, 30, 40, 50) Â¥Â¥
 
-\item {\bf{gDrawCircle(®” x, ®” y, ®” r)}} \\
-%  ®” x, y, r \\
-       À•W(x, y)‚ğ’†S‚É”¼Œar‚Ì‰~‚ğ•`‚­B \\
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$  (60, 70)‚ğ’†S‚É”¼Œa50‚Ì‰~‚ğ•`‚­B \\
-         \hspace{55pt}      gDrawCircle(60, 70, 50) \\
+Â¥item {Â¥bf{gDrawCircle(æ•´æ•° x, æ•´æ•° y, æ•´æ•° r)}} Â¥Â¥
+%  æ•´æ•° x, y, r Â¥Â¥
+       åº§æ¨™(x, y)ã‚’ä¸­å¿ƒã«åŠå¾„rã®å††ã‚’æãã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$  (60, 70)ã‚’ä¸­å¿ƒã«åŠå¾„50ã®å††ã‚’æãã€‚ Â¥Â¥
+         Â¥hspace{55pt}      gDrawCircle(60, 70, 50) Â¥Â¥
 
-\item {\bf{gFillCircle(®” x, ®” y, ®” r)}} \\
-%   ®” x, y, r \\
-       gDrawCircle() ‚Ì“à•”‚ğ gSetFillColor() ‚Åw’è‚µ‚½F‚Å“h‚è‚Â‚Ô‚µ‚½‚à‚Ì‚ğ•`‰æ‚·‚éB \\
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$ (60, 70)‚ğ’†S‚É”¼Œa50‚ÌA“à•”‚ğ“h‚è‚Â‚Ô‚µ‚½‰~‚ğ•`‚­B \\
-         \hspace{55pt}      gFillCircle(60, 70, 50) \\
+Â¥item {Â¥bf{gFillCircle(æ•´æ•° x, æ•´æ•° y, æ•´æ•° r)}} Â¥Â¥
+%   æ•´æ•° x, y, r Â¥Â¥
+       gDrawCircle() ã®å†…éƒ¨ã‚’ gSetFillColor() ã§æŒ‡å®šã—ãŸè‰²ã§å¡—ã‚Šã¤ã¶ã—ãŸã‚‚ã®ã‚’æç”»ã™ã‚‹ã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ (60, 70)ã‚’ä¸­å¿ƒã«åŠå¾„50ã®ã€å†…éƒ¨ã‚’å¡—ã‚Šã¤ã¶ã—ãŸå††ã‚’æãã€‚ Â¥Â¥
+         Â¥hspace{55pt}      gFillCircle(60, 70, 50) Â¥Â¥
 
-\item {\bf{gDrawArc(®” x, ®” y, ®” width, ®” height, ®” start, ®” extent, ®” type)}} \\
-%   ®” x, y, width, height, start(“x), extent(“x), type\\ 
-       À•W(x, y)‚©‚ç• width ‚‚³ height‚Å‹éŒ`‚ğ’è‹`‚µA
-       “àÚ‚·‚é‘È‰~‚É‚¨‚¢‚Ä(’†S‚©‚ç^‰E‚ğ0“x‚Æ‚µ¶‰ñ‚è‚É) 
-       start“x ‚©‚ç (¶‰ñ‚è‚É)extent“x‚ÌŒÊ‚ğ•`‰æ‚·‚éB\\
-       type‚É‚æ‚èŒÊ‚Ì•Â‚¶•û‚Ìí—Ş (OPEN=0,CHORD=1,PIE=2)
-       ‚Ì‚¢‚Ã‚ê‚©‚ğw’è‚·‚éB \\
-\ \\
-	 \hspace{10pt}  $[$g—p—á$]$ (20, 30)‚©‚ç‰E‰º‚É•40A‚‚³50‚Ì‹éŒ`‚É“àÚ‚·‚é‘È‰~‚ÌA\\
-         \hspace{55pt}  60“x‚©‚çA90“x•ª‚ÌŒÇ‚ğ•Â‚¶•ûOPEN‚Å•`‚­B \\
-         \hspace{55pt}     gDrawArc(20, 30, 40, 50, 60, 90, 0) \\
+Â¥item {Â¥bf{gDrawArc(æ•´æ•° x, æ•´æ•° y, æ•´æ•° width, æ•´æ•° height, æ•´æ•° start, æ•´æ•° extent, æ•´æ•° type)}} Â¥Â¥
+%   æ•´æ•° x, y, width, height, start(åº¦), extent(åº¦), typeÂ¥Â¥ 
+       åº§æ¨™(x, y)ã‹ã‚‰å¹… width é«˜ã• heightã§çŸ©å½¢ã‚’å®šç¾©ã—ã€
+       å†…æ¥ã™ã‚‹æ¥•å††ã«ãŠã„ã¦(ä¸­å¿ƒã‹ã‚‰çœŸå³ã‚’0åº¦ã¨ã—å·¦å›ã‚Šã«) 
+       startåº¦ ã‹ã‚‰ (å·¦å›ã‚Šã«)extentåº¦ã®å¼§ã‚’æç”»ã™ã‚‹ã€‚Â¥Â¥
+       typeã«ã‚ˆã‚Šå¼§ã®é–‰ã˜æ–¹ã®ç¨®é¡ (OPEN=0,CHORD=1,PIE=2)
+       ã®ã„ã¥ã‚Œã‹ã‚’æŒ‡å®šã™ã‚‹ã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	 Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ (20, 30)ã‹ã‚‰å³ä¸‹ã«å¹…40ã€é«˜ã•50ã®çŸ©å½¢ã«å†…æ¥ã™ã‚‹æ¥•å††ã®ã€Â¥Â¥
+         Â¥hspace{55pt}  60åº¦ã‹ã‚‰ã€90åº¦åˆ†ã®å­¤ã‚’é–‰ã˜æ–¹OPENã§æãã€‚ Â¥Â¥
+         Â¥hspace{55pt}     gDrawArc(20, 30, 40, 50, 60, 90, 0) Â¥Â¥
 
-\item {\bf{gFillArc(®” x, ®” y, ®” width, ®” height, ®” start, ®” extent, ®” type)}} \\
-%   ®” x, y, width, height, start(“x), extent(“x), type \\ 
-       gDrawArc() ‚Ì“à•”‚ğ gSetFillColor() ‚Åw’è‚µ‚½F‚Å“h‚è‚Â‚Ô‚µ‚½‚à‚Ì‚ğ•`‰æ‚·‚éB \\
-\ \\
-	  \hspace{10pt}  $[$g—p—á$]$ (20, 30)‚©‚ç‰E‰º‚É•40A‚‚³50‚Ì‹éŒ`‚É“àÚ‚·‚é‘È‰~‚ÌA\\
-          \hspace{55pt} 60“x‚©‚çA90“x•ª‚Ìî‚ğ•Â‚¶•ûOPEN‚Å•`‚­B \\
-          \hspace{55pt}    gFillArc(20, 30, 40, 50, 60, 90, 0) \\
+Â¥item {Â¥bf{gFillArc(æ•´æ•° x, æ•´æ•° y, æ•´æ•° width, æ•´æ•° height, æ•´æ•° start, æ•´æ•° extent, æ•´æ•° type)}} Â¥Â¥
+%   æ•´æ•° x, y, width, height, start(åº¦), extent(åº¦), type Â¥Â¥ 
+       gDrawArc() ã®å†…éƒ¨ã‚’ gSetFillColor() ã§æŒ‡å®šã—ãŸè‰²ã§å¡—ã‚Šã¤ã¶ã—ãŸã‚‚ã®ã‚’æç”»ã™ã‚‹ã€‚ Â¥Â¥
+Â¥ Â¥Â¥
+	  Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ (20, 30)ã‹ã‚‰å³ä¸‹ã«å¹…40ã€é«˜ã•50ã®çŸ©å½¢ã«å†…æ¥ã™ã‚‹æ¥•å††ã®ã€Â¥Â¥
+          Â¥hspace{55pt} 60åº¦ã‹ã‚‰ã€90åº¦åˆ†ã®æ‰‡ã‚’é–‰ã˜æ–¹OPENã§æãã€‚ Â¥Â¥
+          Â¥hspace{55pt}    gFillArc(20, 30, 40, 50, 60, 90, 0) Â¥Â¥
 
-\item {\bf{gDrawPolygon(®”—ñ x[], ®”—ñ y[], ®” n)}} \\
-%   ®” x, y, point \\ 
-       x, y ‚Åw’è‚µ‚½“_(À•W)‚ğŒ‹‚ñ‚¾nŠpŒ`‚ğ•`‚­B\\
-\ \\
-	  \hspace{10pt}  $[$g—p—á$]$ (200, 50), (250, 100), (250, 150), (200, 200),(150, 150),(150, 100)\\
-          \hspace{55pt}  ‚ğŒ‹‚Ô˜ZŠpŒ`‚ğ•`‚­B\\
-          \hspace{55pt}    x[0] © 200 ,x[1] © 250, x[2] © 250, x[3] © 200, x[4] © 150, x[5] © 150 \\
-          \hspace{55pt}    y[0] © 50, y[1] © 100, y[2] © 150, y[3] © 200, y[4] © 150, y[5] © 100 \\ 
-          \hspace{55pt}    gDrawPolygon(x, y, 6) \\
+Â¥item {Â¥bf{gDrawPolygon(æ•´æ•°åˆ— x[], æ•´æ•°åˆ— y[], æ•´æ•° n)}} Â¥Â¥
+%   æ•´æ•° x, y, point Â¥Â¥ 
+       x, y ã§æŒ‡å®šã—ãŸç‚¹(åº§æ¨™)ã‚’çµã‚“ã nè§’å½¢ã‚’æãã€‚Â¥Â¥
+Â¥ Â¥Â¥
+	  Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ (200, 50), (250, 100), (250, 150), (200, 200),(150, 150),(150, 100)Â¥Â¥
+          Â¥hspace{55pt}  ã‚’çµã¶å…­è§’å½¢ã‚’æãã€‚Â¥Â¥
+          Â¥hspace{55pt}    x[0] â† 200 ,x[1] â† 250, x[2] â† 250, x[3] â† 200, x[4] â† 150, x[5] â† 150 Â¥Â¥
+          Â¥hspace{55pt}    y[0] â† 50, y[1] â† 100, y[2] â† 150, y[3] â† 200, y[4] â† 150, y[5] â† 100 Â¥Â¥ 
+          Â¥hspace{55pt}    gDrawPolygon(x, y, 6) Â¥Â¥
 
-\item {\bf{gFillPolygon(®”—ñ x[], ®”—ñ y[], ®” n)}} \\
-%   ®” x, y, n \\ 
-       x, y ‚Åw’è‚µ‚½“_(À•W)‚ğŒ‹‚ñ‚¾nŠpŒ`‚ğ“h‚è‚Â‚Ô‚µ‚½‚à‚Ì‚ğ•`‰æ‚·‚éB\\
-\ \\
-	  \hspace{10pt}  $[$g—p—á$]$ (200, 50), (250, 100), (250, 150), (200, 200),(150, 150),(150, 100)\\
-          \hspace{55pt}  ‚ğŒ‹‚Ô˜ZŠpŒ`‚ğ•`‚¢‚Ä“h‚è‚Â‚Ô‚·B \\
-          \hspace{55pt}    x[0] © 200 ,x[1] © 250, x[2] © 250, x[3] © 200, x[4] © 150, x[5] © 150 \\
-          \hspace{55pt}    y[0] © 50, y[1] © 100, y[2] © 150, y[3] © 200, y[4] © 150, y[5] © 100 \\ 
-          \hspace{55pt}    gDrawPolygon(x, y, 6) \\
+Â¥item {Â¥bf{gFillPolygon(æ•´æ•°åˆ— x[], æ•´æ•°åˆ— y[], æ•´æ•° n)}} Â¥Â¥
+%   æ•´æ•° x, y, n Â¥Â¥ 
+       x, y ã§æŒ‡å®šã—ãŸç‚¹(åº§æ¨™)ã‚’çµã‚“ã nè§’å½¢ã‚’å¡—ã‚Šã¤ã¶ã—ãŸã‚‚ã®ã‚’æç”»ã™ã‚‹ã€‚Â¥Â¥
+Â¥ Â¥Â¥
+	  Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ (200, 50), (250, 100), (250, 150), (200, 200),(150, 150),(150, 100)Â¥Â¥
+          Â¥hspace{55pt}  ã‚’çµã¶å…­è§’å½¢ã‚’æã„ã¦å¡—ã‚Šã¤ã¶ã™ã€‚ Â¥Â¥
+          Â¥hspace{55pt}    x[0] â† 200 ,x[1] â† 250, x[2] â† 250, x[3] â† 200, x[4] â† 150, x[5] â† 150 Â¥Â¥
+          Â¥hspace{55pt}    y[0] â† 50, y[1] â† 100, y[2] â† 150, y[3] â† 200, y[4] â† 150, y[5] â† 100 Â¥Â¥ 
+          Â¥hspace{55pt}    gDrawPolygon(x, y, 6) Â¥Â¥
 
-\item {\bf{gDrawPolyline(®”—ñ x[], ®”—ñ y[], ®” n)}} \\
-%   ®” x, y, n \\ 
-       x, y ‚Åw’è‚µ‚½“_(À•W)‚ğŒ‹‚Ô’¼ü‚ğ•`‰æ‚·‚éB\\
-\ \\
-	  \hspace{10pt}  $[$g—p—á$]$ (10, 60), (10, 20), (60, 20), ‚ğŒ‹‚Ôü‚ğ•`‚­B \\
-          \hspace{55pt}    x[0] © 10, x[1] © 10, x[2] © 60 \\
-          \hspace{55pt}    y[0] © 60, y[1] © 20, y[2] © 20 \\
-          \hspace{55pt}    gDrawPolyline(x, y, 3) \\
+Â¥item {Â¥bf{gDrawPolyline(æ•´æ•°åˆ— x[], æ•´æ•°åˆ— y[], æ•´æ•° n)}} Â¥Â¥
+%   æ•´æ•° x, y, n Â¥Â¥ 
+       x, y ã§æŒ‡å®šã—ãŸç‚¹(åº§æ¨™)ã‚’çµã¶ç›´ç·šã‚’æç”»ã™ã‚‹ã€‚Â¥Â¥
+Â¥ Â¥Â¥
+	  Â¥hspace{10pt}  $[$ä½¿ç”¨ä¾‹$]$ (10, 60), (10, 20), (60, 20), ã‚’çµã¶ç·šã‚’æãã€‚ Â¥Â¥
+          Â¥hspace{55pt}    x[0] â† 10, x[1] â† 10, x[2] â† 60 Â¥Â¥
+          Â¥hspace{55pt}    y[0] â† 60, y[1] â† 20, y[2] â† 20 Â¥Â¥
+          Â¥hspace{55pt}    gDrawPolyline(x, y, 3) Â¥Â¥
 
 
-\item {\bf{gClearWindow()}} \\
-       •`‰æWindow‚ğƒNƒŠƒA‚·‚éB
-\end{enumerate2}
+Â¥item {Â¥bf{gClearWindow()}} Â¥Â¥
+       æç”»Windowã‚’ã‚¯ãƒªã‚¢ã™ã‚‹ã€‚
+Â¥end{enumerate2}
 
-\newpage
+Â¥newpage
 
-{\large{
-{\bf{
-(4) ‚»‚Ì‘¼ (Œ´“_ˆÚ“®‚Ì‚½‚ß‚ÌŠÖ”)
+{Â¥large{
+{Â¥bf{
+(4) ãã®ä»– (åŸç‚¹ç§»å‹•ã®ãŸã‚ã®é–¢æ•°)
 }}
 }}
-\begin{enumerate2}
-\item {\bf{gSetOrigin(À”x, À”y)}} \\
-%   \ \  À” x, y 
-\vspace{-5mm}
-   \begin{quotation}
-     •`‰æƒEƒBƒ“ƒhƒE‚Ì¶ã‚©‚ç‚Ì‰E•ûŒü‚ÉxA‰º•ûŒü‚Éy‚Ì“_‚ğŒ´“_‚Æ‚µ‚ÄÄ’è‹`‚·‚éB
-   \end{quotation}
-   \begin{quotation}
-\begin{figure}[!h]
-\begin{center}
-\begin{minipage}{25zw}
-	   \noindent $[$g—p—á$]$\\
+Â¥begin{enumerate2}
+Â¥item {Â¥bf{gSetOrigin(å®Ÿæ•°x, å®Ÿæ•°y)}} Â¥Â¥
+%   Â¥ Â¥  å®Ÿæ•° x, y 
+Â¥vspace{-5mm}
+   Â¥begin{quotation}
+     æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å·¦ä¸Šã‹ã‚‰ã®å³æ–¹å‘ã«xã€ä¸‹æ–¹å‘ã«yã®ç‚¹ã‚’åŸç‚¹ã¨ã—ã¦å†å®šç¾©ã™ã‚‹ã€‚
+   Â¥end{quotation}
+   Â¥begin{quotation}
+Â¥begin{figure}[!h]
+Â¥begin{center}
+Â¥begin{minipage}{25zw}
+	   Â¥noindent $[$ä½¿ç”¨ä¾‹$]$Â¥Â¥
 
-%\noindent }~\ref{fig:gopengraphwindow}‚Ì•`‰æƒEƒBƒ“ƒhƒE‚Ì
-•`‰æƒEƒBƒ“ƒhƒE‚Ì(100,150)‚ğ’†S‚Æ‚·‚é‰~(r=50)‚ğ•`‚¢‚½Œã‚ÉA
-‚±‚ÌÀ•W‹óŠÔ‚Ì(300,200)‚ğŒ´“_‚ÉÄ’è‹`‚·‚éB
-‚»‚µ‚ÄAÄ’è‹`‚µ‚½Œ´“_‚ğ’†S‚Æ‚·‚é‰~(r=50)‚ğ•`‚­B(}~\ref{fig:gsetmaps01})
-\ \\
+%Â¥noindent å›³~Â¥ref{fig:gopengraphwindow}ã®æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®
+æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®(100,150)ã‚’ä¸­å¿ƒã¨ã™ã‚‹å††(r=50)ã‚’æã„ãŸå¾Œã«ã€
+ã“ã®åº§æ¨™ç©ºé–“ã®(300,200)ã‚’åŸç‚¹ã«å†å®šç¾©ã™ã‚‹ã€‚
+ãã—ã¦ã€å†å®šç¾©ã—ãŸåŸç‚¹ã‚’ä¸­å¿ƒã¨ã™ã‚‹å††(r=50)ã‚’æãã€‚(å›³~Â¥ref{fig:gsetmaps01})
+Â¥ Â¥Â¥
 
-{\small{
-          gOpenWindow(500,400) \\
-          gSetLineColor(255, 0, 0)  \\
-          gDrawCircle(200, 100, 50)  \\
-          gSetOrigin(300, 200) \\
-          gSetLineColor(0, 255, 0)  \\
-          gDrawCircle(0, 0, 50)  \\
+{Â¥small{
+          gOpenWindow(500,400) Â¥Â¥
+          gSetLineColor(255, 0, 0)  Â¥Â¥
+          gDrawCircle(200, 100, 50)  Â¥Â¥
+          gSetOrigin(300, 200) Â¥Â¥
+          gSetLineColor(0, 255, 0)  Â¥Â¥
+          gDrawCircle(0, 0, 50)  Â¥Â¥
 }}
-\end{minipage}
-\begin{minipage}{20zw}
-%\begin{figure}[!h]
-\begin{center}
-\epsfig{file=./eps/gsetmaps01.eps, width=2.0in}
-\caption{$\!\!\!\!$\colorbox{white}{{\textcolor{white}{:}}}}
-\label{fig:gsetmaps01}
-\end{center}
-%\end{figure}
-\end{minipage}
-\end{center}
-\end{figure}
-   \end{quotation}
-\end{enumerate2}
+Â¥end{minipage}
+Â¥begin{minipage}{20zw}
+%Â¥begin{figure}[!h]
+Â¥begin{center}
+Â¥epsfig{file=./eps/gsetmaps01.eps, width=2.0in}
+Â¥caption{$Â¥!Â¥!Â¥!Â¥!$Â¥colorbox{white}{{Â¥textcolor{white}{:}}}}
+Â¥label{fig:gsetmaps01}
+Â¥end{center}
+%Â¥end{figure}
+Â¥end{minipage}
+Â¥end{center}
+Â¥end{figure}
+   Â¥end{quotation}
+Â¥end{enumerate2}
 
-% (4) ƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€
-% \begin{enumerate2}
-% \item {\bf{sample1}}
-% \begin{center}
-% \begin{table}[!h]
-% \begin{tabular}{ll}
-% \multicolumn{2}{l}{/* “à•”‚ğ“h‚è‚Â‚Ô‚µ‚½‹éŒ`‚ğ•`‚­ƒvƒƒOƒ‰ƒ€ */} \\
-% gOpenWindow(400, 400)         & /* ‰¡400Ac400‚Ìwindow‚ğŠJ‚­ */ \\
-% gSetLineColor(0, 0, 255)      & /* ü‚ÌF‚ğÂ‚Ì—v‘f255‚Éİ’è‚·‚é */ \\
-% gSetFillColor(0, 220, 0)      & /* }Œ`“à•”‚ÌF‚ğ—Î‚Ì—v‘f220‚Éİ’è‚·‚é */ \\
-% gFillBox(100, 120, 200, 140)  & /* ‹éŒ`‚ğ(100, 120)‚É •200A‚‚³140‚Å•`‚­ */ 
-% \end{tabular}
-% \end{table}
-% \end{center}
+% (4) ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
+% Â¥begin{enumerate2}
+% Â¥item {Â¥bf{sample1}}
+% Â¥begin{center}
+% Â¥begin{table}[!h]
+% Â¥begin{tabular}{ll}
+% Â¥multicolumn{2}{l}{/* å†…éƒ¨ã‚’å¡—ã‚Šã¤ã¶ã—ãŸçŸ©å½¢ã‚’æããƒ—ãƒ­ã‚°ãƒ©ãƒ  */} Â¥Â¥
+% gOpenWindow(400, 400)         & /* æ¨ª400ã€ç¸¦400ã®windowã‚’é–‹ã */ Â¥Â¥
+% gSetLineColor(0, 0, 255)      & /* ç·šã®è‰²ã‚’é’ã®è¦ç´ 255ã«è¨­å®šã™ã‚‹ */ Â¥Â¥
+% gSetFillColor(0, 220, 0)      & /* å›³å½¢å†…éƒ¨ã®è‰²ã‚’ç·‘ã®è¦ç´ 220ã«è¨­å®šã™ã‚‹ */ Â¥Â¥
+% gFillBox(100, 120, 200, 140)  & /* çŸ©å½¢ã‚’(100, 120)ã« å¹…200ã€é«˜ã•140ã§æã */ 
+% Â¥end{tabular}
+% Â¥end{table}
+% Â¥end{center}
 % 
-% \item {\bf{sample2}} \\
-% \begin{center}
-% \begin{table}[!h]
-% \begin{tabular}{ll}
-% \multicolumn{2}{l}{/* “ú–{‚Ì‘Šø‚ğ•`‚­ƒvƒƒOƒ‰ƒ€ */} \\
-% gOpenWindow(400, 400)       & /* ‰¡400Ac400‚Ìwindow‚ğŠJ‚­B */ \\
-% gSetFillColor(255, 0, 0)    & /* }Œ`“à•”‚ÌF‚ğÔ‚Ì—v‘f255‚Éİ’è‚·‚éB */ \\
-% gFillCircle(200, 200, 40)   & /* (200, 200)‚ğ’†S‚ÉA”¼Œa40‚Ì‰~‚ğ•`‚­B */ \\
-% gDrawBox(80, 120, 240, 160) & /* ‹éŒ`‚ğ(80, 120)‚ÉA•240A‚‚³160‚Å•`‚­ */ \\
-% gSetFontSize(40)            & /* •¶š‚Ì‘å‚«‚³‚ğ40‚Éİ’è‚·‚éB */ \\
-% gDrawText("“ú–{", 160, 320) & /* u“ú–{v‚Æ(160, 320)‚©‚ç•`‚­B */ \\
-% \end{tabular}
-% \end{table}
-% \end{center}
-% \end{enumerate2}
+% Â¥item {Â¥bf{sample2}} Â¥Â¥
+% Â¥begin{center}
+% Â¥begin{table}[!h]
+% Â¥begin{tabular}{ll}
+% Â¥multicolumn{2}{l}{/* æ—¥æœ¬ã®å›½æ——ã‚’æããƒ—ãƒ­ã‚°ãƒ©ãƒ  */} Â¥Â¥
+% gOpenWindow(400, 400)       & /* æ¨ª400ã€ç¸¦400ã®windowã‚’é–‹ãã€‚ */ Â¥Â¥
+% gSetFillColor(255, 0, 0)    & /* å›³å½¢å†…éƒ¨ã®è‰²ã‚’èµ¤ã®è¦ç´ 255ã«è¨­å®šã™ã‚‹ã€‚ */ Â¥Â¥
+% gFillCircle(200, 200, 40)   & /* (200, 200)ã‚’ä¸­å¿ƒã«ã€åŠå¾„40ã®å††ã‚’æãã€‚ */ Â¥Â¥
+% gDrawBox(80, 120, 240, 160) & /* çŸ©å½¢ã‚’(80, 120)ã«ã€å¹…240ã€é«˜ã•160ã§æã */ Â¥Â¥
+% gSetFontSize(40)            & /* æ–‡å­—ã®å¤§ãã•ã‚’40ã«è¨­å®šã™ã‚‹ã€‚ */ Â¥Â¥
+% gDrawText("æ—¥æœ¬", 160, 320) & /* ã€Œæ—¥æœ¬ã€ã¨(160, 320)ã‹ã‚‰æãã€‚ */ Â¥Â¥
+% Â¥end{tabular}
+% Â¥end{table}
+% Â¥end{center}
+% Â¥end{enumerate2}
 
-\newpage
+Â¥newpage
 
-\begin{center}
-\begin{LARGE}
-{\bf{(•â‘«)~ƒOƒ‰ƒt•`‰æ‚Ì‚½‚ß‚ÌŠÖ”ŒQ\\
-\ \\}}
-\end{LARGE}
-\end{center}
+Â¥begin{center}
+Â¥begin{LARGE}
+{Â¥bf{(è£œè¶³)~ã‚°ãƒ©ãƒ•æç”»ã®ãŸã‚ã®é–¢æ•°ç¾¤Â¥Â¥
+Â¥ Â¥Â¥}}
+Â¥end{LARGE}
+Â¥end{center}
 
-@‚±‚ÌƒhƒLƒ…ƒƒ“ƒg‚ÍAPEN‚Ì•`‰æ‹@”\‚ğ—p‚¢‚ÄAå‚Æ‚µ‚Ä2ŸŒ³À•W
-•½–Êã‚ÅƒOƒ‰ƒt‚ğ•`‰æ‚·‚é‚½‚ß‚Ì‚à‚Ì‚Å‚ ‚éB
-•`‰æƒEƒBƒ“ƒhƒE‚ğŠJ‚­‚½‚ß‚É‚ÍgOpenWindow()‚Ì‘ã‚í‚è‚É
-gOpenGraphWindow()ŠÖ”‚ğ—p‚¢‚éB
-‚±‚ê‚É‚æ‚Á‚ÄA2ŸŒ³‰¼‘z•½–Êã‚Ì”CˆÓ‚Ì‹éŒ`—Ìˆæ‚ğ•`‰æƒEƒBƒ“ƒhƒE‚É
-ƒ}ƒbƒsƒ“ƒO‚·‚é‚±‚Æ‚ª‚Å‚«‚éB
-ˆÈŒã‚Ì•`‰æ–½—ß‚ÍA‰¼‘z•½–Ê‚É‘Î‚µ‚Äw}Œ`•`‰æ‚Ì‚½‚ß‚ÌŠÖ”ŒQx‚ğ
-‚»‚Ì‚Ü‚Ü—˜—p‚·‚é‚±‚Æ‚ª‚Å‚«‚éB
+ã€€ã“ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã¯ã€PENã®æç”»æ©Ÿèƒ½ã‚’ç”¨ã„ã¦ã€ä¸»ã¨ã—ã¦2æ¬¡å…ƒåº§æ¨™
+å¹³é¢ä¸Šã§ã‚°ãƒ©ãƒ•ã‚’æç”»ã™ã‚‹ãŸã‚ã®ã‚‚ã®ã§ã‚ã‚‹ã€‚
+æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‹ããŸã‚ã«ã¯gOpenWindow()ã®ä»£ã‚ã‚Šã«
+gOpenGraphWindow()é–¢æ•°ã‚’ç”¨ã„ã‚‹ã€‚
+ã“ã‚Œã«ã‚ˆã£ã¦ã€2æ¬¡å…ƒä»®æƒ³å¹³é¢ä¸Šã®ä»»æ„ã®çŸ©å½¢é ˜åŸŸã‚’æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«
+ãƒãƒƒãƒ”ãƒ³ã‚°ã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚
+ä»¥å¾Œã®æç”»å‘½ä»¤ã¯ã€ä»®æƒ³å¹³é¢ã«å¯¾ã—ã¦ã€å›³å½¢æç”»ã®ãŸã‚ã®é–¢æ•°ç¾¤ã€ã‚’
+ãã®ã¾ã¾åˆ©ç”¨ã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚
 
-gSetMap()ŠÖ”‚ÍA‰¼‘z•½–Êã‚ÌŒ´“_‚Ì•ÀsˆÚ“®‚à‚µ‚­‚ÍA‰¼‘z•½–Êã
-‚Ì”CˆÓ‚Ì‹éŒ`—Ìˆæ‚ğ•`‰æƒEƒBƒ“ƒhƒE‚ÉÄƒ}ƒbƒsƒ“ƒO‚·‚é‚½‚ß‚Ì‚à‚Ì‚Å‚ ‚éB
+gSetMap()é–¢æ•°ã¯ã€ä»®æƒ³å¹³é¢ä¸Šã®åŸç‚¹ã®ä¸¦è¡Œç§»å‹•ã‚‚ã—ãã¯ã€ä»®æƒ³å¹³é¢ä¸Š
+ã®ä»»æ„ã®çŸ©å½¢é ˜åŸŸã‚’æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«å†ãƒãƒƒãƒ”ãƒ³ã‚°ã™ã‚‹ãŸã‚ã®ã‚‚ã®ã§ã‚ã‚‹ã€‚
 
-%  ƒOƒ‰ƒt•`‰æ‚Ì‚½‚ß‚ÌŠÖ”‚ÍˆÈ‰º‚ÌŠÖ”ŒQ‚©‚ç\¬‚³‚ê‚éB
-%\begin{itemize2}
-%  \item [(1)] •`‰æ‚Ì‚½‚ß‚ÌƒEƒBƒ“ƒhƒE‚ÌƒI[ƒvƒ“/ƒNƒ[ƒYŠÖ” 
-%  \item [(2)] }Œ`‚Ì‘®«‚ğw’è‚·‚é‚½‚ß‚ÌŠÖ” 
-%  \item [(3)] }Œ`‚ğ•`‰æ‚·‚é‚½‚ß‚ÌŠÖ” 
-%\end{itemize2}
+%  ã‚°ãƒ©ãƒ•æç”»ã®ãŸã‚ã®é–¢æ•°ã¯ä»¥ä¸‹ã®é–¢æ•°ç¾¤ã‹ã‚‰æ§‹æˆã•ã‚Œã‚‹ã€‚
+%Â¥begin{itemize2}
+%  Â¥item [(1)] æç”»ã®ãŸã‚ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚ªãƒ¼ãƒ—ãƒ³/ã‚¯ãƒ­ãƒ¼ã‚ºé–¢æ•° 
+%  Â¥item [(2)] å›³å½¢ã®å±æ€§ã‚’æŒ‡å®šã™ã‚‹ãŸã‚ã®é–¢æ•° 
+%  Â¥item [(3)] å›³å½¢ã‚’æç”»ã™ã‚‹ãŸã‚ã®é–¢æ•° 
+%Â¥end{itemize2}
 %
-%  }Œ`‚ÍAˆê‚Â‚ÌƒEƒBƒ“ƒhƒEã‚É•`‰æ‚·‚éB‚±‚ÌƒEƒBƒ“ƒhƒE‚Ì‘å‚«‚³‚ğw’è‚µ
-%‚ÄŠJ‚­‚½‚ß‚ÌŠÖ”‚Æ‚µ‚Ä gOpenGraphWindow()‚ª‚ ‚éB gCloseWindow()‚Í•Â‚¶‚é‚½
-%‚ß‚ÌŠÖ”‚Å‚ ‚é‚ªA‚±‚ÌŠÖ”‚ğŒÄ‚Ño‚·‚Æ•`‰æƒEƒBƒ“ƒhƒE‚ª‰æ–Ê‚©‚çÁ–Å‚·
-%‚é‚Ì‚ÅA’ÊígCloseWindow()‚ğg—p‚·‚é‚±‚Æ‚Í‚È‚¢B \\
-%  }Œ`‚ÍAü•ªAÜ‚êü‚È‚Ç‚Ì{\bf{ü}Œ`}}A’·•ûŒ`A‘È‰~A
-%‘½ŠpŒ`‚È‚Ç‚Ì{\bf{–Ê}Œ`}}A
-%‚¨‚æ‚ÑA{\bf{•¶š}Œ`}}‚©‚ç‚È‚éB }Œ`‚ğ•`‚­‚É‚ÍAŒ´‘¥‚Æ‚µ‚Äæ‚É•`‰æ‘®«‚ğw 
-%’è‚µ‚È‚¯‚ê‚Î‚È ‚ç‚È‚¢B•`‰æ‘®«‚Æ‚µ‚Ä‚ÍAü‚Ì‘¾‚³Aü‚Ìí—ŞAü‚ÌF“™ 
-%‚Ìü}Œ`‚É“K‰‚³‚ê‚é‚à‚ÌA“h‚è‚Â‚Ô‚µ‚ÌF“™‚Ì–Ê}Œ`‚É“K‰‚³‚ê‚é‚à‚ÌA 
-%‚¨‚æ‚ÑAƒtƒHƒ“ƒg‚Ìí—ŞAƒtƒHƒ“ƒgƒTƒCƒY“™‚Ì•¶š}Œ`‚É“K‰‚³‚ê‚é‚à‚Ì‚ª 
-%‚ ‚éB•`‰æ‘®«‚ğw’è‚µ‚È‚¢ê‡‚ÍA—\‚ß’è‚ß‚ç‚ê‚½‘®«’l‚ª—p‚¢‚ç‚êAˆê 
-%’UAİ’è‚µ‚½‘®«’l‚ÍA“¯‚¶‘®«‚É‘Î‚µ‚ÄV‚½‚Éİ’è‚³‚ê‚é‚Ü‚Å—LŒø‚Å‚ ‚éB 
-%  }Œ`‚ğ•`‰æ‚·‚é‚½‚ß‚ÌŠÖ”‚Æ‚µ‚Ä‚±‚±‚Å‚ÍA‘½ŠpŒ`‚Ì•`‰æ‚ÌŠÖ”‚ğ¦‚·B \\
+%  å›³å½¢ã¯ã€ä¸€ã¤ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä¸Šã«æç”»ã™ã‚‹ã€‚ã“ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å¤§ãã•ã‚’æŒ‡å®šã—
+%ã¦é–‹ããŸã‚ã®é–¢æ•°ã¨ã—ã¦ gOpenGraphWindow()ãŒã‚ã‚‹ã€‚ gCloseWindow()ã¯é–‰ã˜ã‚‹ãŸ
+%ã‚ã®é–¢æ•°ã§ã‚ã‚‹ãŒã€ã“ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã™ã¨æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒç”»é¢ã‹ã‚‰æ¶ˆæ»…ã™
+%ã‚‹ã®ã§ã€é€šå¸¸gCloseWindow()ã‚’ä½¿ç”¨ã™ã‚‹ã“ã¨ã¯ãªã„ã€‚ Â¥Â¥
+%  å›³å½¢ã¯ã€ç·šåˆ†ã€æŠ˜ã‚Œç·šãªã©ã®{Â¥bf{ç·šå›³å½¢}}ã€é•·æ–¹å½¢ã€æ¥•å††ã€
+%å¤šè§’å½¢ãªã©ã®{Â¥bf{é¢å›³å½¢}}ã€
+%ãŠã‚ˆã³ã€{Â¥bf{æ–‡å­—å›³å½¢}}ã‹ã‚‰ãªã‚‹ã€‚ å›³å½¢ã‚’æãã«ã¯ã€åŸå‰‡ã¨ã—ã¦å…ˆã«æç”»å±æ€§ã‚’æŒ‡ 
+%å®šã—ãªã‘ã‚Œã°ãª ã‚‰ãªã„ã€‚æç”»å±æ€§ã¨ã—ã¦ã¯ã€ç·šã®å¤ªã•ã€ç·šã®ç¨®é¡ã€ç·šã®è‰²ç­‰ 
+%ã®ç·šå›³å½¢ã«é©å¿œã•ã‚Œã‚‹ã‚‚ã®ã€å¡—ã‚Šã¤ã¶ã—ã®è‰²ç­‰ã®é¢å›³å½¢ã«é©å¿œã•ã‚Œã‚‹ã‚‚ã®ã€ 
+%ãŠã‚ˆã³ã€ãƒ•ã‚©ãƒ³ãƒˆã®ç¨®é¡ã€ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºç­‰ã®æ–‡å­—å›³å½¢ã«é©å¿œã•ã‚Œã‚‹ã‚‚ã®ãŒ 
+%ã‚ã‚‹ã€‚æç”»å±æ€§ã‚’æŒ‡å®šã—ãªã„å ´åˆã¯ã€äºˆã‚å®šã‚ã‚‰ã‚ŒãŸå±æ€§å€¤ãŒç”¨ã„ã‚‰ã‚Œã€ä¸€ 
+%æ—¦ã€è¨­å®šã—ãŸå±æ€§å€¤ã¯ã€åŒã˜å±æ€§ã«å¯¾ã—ã¦æ–°ãŸã«è¨­å®šã•ã‚Œã‚‹ã¾ã§æœ‰åŠ¹ã§ã‚ã‚‹ã€‚ 
+%  å›³å½¢ã‚’æç”»ã™ã‚‹ãŸã‚ã®é–¢æ•°ã¨ã—ã¦ã“ã“ã§ã¯ã€å¤šè§’å½¢ã®æç”»ã®é–¢æ•°ã‚’ç¤ºã™ã€‚ Â¥Â¥
 %
-%  ˆÈ‰ºAŠeŠÖ”‚É‚Â‚¢‚Äà–¾‚·‚éB
+%  ä»¥ä¸‹ã€å„é–¢æ•°ã«ã¤ã„ã¦èª¬æ˜ã™ã‚‹ã€‚
 
-%(1) ƒOƒ‰ƒt•`‰æ‚Ì‚½‚ß‚ÌƒEƒBƒ“ƒhƒE‚ÌƒI[ƒvƒ“/ƒNƒ[ƒYŠÖ” 
-ƒOƒ‰ƒt•`‰æ‚Ì‚½‚ß‚ÌƒEƒBƒ“ƒhƒE‚ÌƒI[ƒvƒ“/ƒNƒ[ƒYŠÖ” 
+%(1) ã‚°ãƒ©ãƒ•æç”»ã®ãŸã‚ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚ªãƒ¼ãƒ—ãƒ³/ã‚¯ãƒ­ãƒ¼ã‚ºé–¢æ•° 
+ã‚°ãƒ©ãƒ•æç”»ã®ãŸã‚ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚ªãƒ¼ãƒ—ãƒ³/ã‚¯ãƒ­ãƒ¼ã‚ºé–¢æ•° 
 
-\begin{enumerate2}
-\item {\bf{gOpenGraphWindow(À” width, À” height, À” x1, À” y1, À” x2, À” y2, ˜_—’l axis)}} \\
-%   \ \ À”  width, height, x1, x2, y1, y2  \\
-%   \ \ ˜_—’l axis
-\vspace{-5mm}
-   \begin{quotation}
-   • widthA‚‚³ height ‚Ì•`‰æƒEƒBƒ“ƒhƒE‚ğŠJ‚­B
-   ƒEƒBƒ“ƒhƒE‚Ì¶‰º‚ğ(x1,y1)À•W‚Æ‚µA‰Eã‚ğ(x2, y2)À•W
-   ‚Æ‚È‚é‚æ‚¤‚ÈÀ•W•½–Ê‚Æ‚µ‚Ä’è‹`‚·‚éB
-   axis ‚Ì’l‚ğ true, false ‚Éw’è‚·‚é‚±‚Æ‚ÅÀ•W²‚Ì•\¦A”ñ•\¦‚ğw’è‚·‚éB
-   \end{quotation}
-   \begin{quotation}
-\begin{figure}[!h]
-\begin{center}
-\begin{minipage}{24zw}
-	   \noindent $[$g—p—á$]$\\
-\ \\
-•500A‚‚³500‚Ì•`‰æƒEƒBƒ“ƒhƒE‚ğ—pˆÓ‚µA
-‚»‚ÌƒEƒBƒ“ƒhƒE‚Ì¶‰º‚ğ(-50, -100)A‰Eã‚ğ(350,300)‚Ì‰¼‘zÀ•W‹óŠÔ‚Æ‚µ‚Ä’è‹`‚·‚éB
-‚Ü‚½AxyÀ•W²‚ğ•\‹L‚·‚éB(}~\ref{fig:gopengraphwindow}) \\
+Â¥begin{enumerate2}
+Â¥item {Â¥bf{gOpenGraphWindow(å®Ÿæ•° width, å®Ÿæ•° height, å®Ÿæ•° x1, å®Ÿæ•° y1, å®Ÿæ•° x2, å®Ÿæ•° y2, è«–ç†å€¤ axis)}} Â¥Â¥
+%   Â¥ Â¥ å®Ÿæ•°  width, height, x1, x2, y1, y2  Â¥Â¥
+%   Â¥ Â¥ è«–ç†å€¤ axis
+Â¥vspace{-5mm}
+   Â¥begin{quotation}
+   å¹… widthã€é«˜ã• height ã®æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‹ãã€‚
+   ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å·¦ä¸‹ã‚’(x1,y1)åº§æ¨™ã¨ã—ã€å³ä¸Šã‚’(x2, y2)åº§æ¨™
+   ã¨ãªã‚‹ã‚ˆã†ãªåº§æ¨™å¹³é¢ã¨ã—ã¦å®šç¾©ã™ã‚‹ã€‚
+   axis ã®å€¤ã‚’ true, false ã«æŒ‡å®šã™ã‚‹ã“ã¨ã§åº§æ¨™è»¸ã®è¡¨ç¤ºã€éè¡¨ç¤ºã‚’æŒ‡å®šã™ã‚‹ã€‚
+   Â¥end{quotation}
+   Â¥begin{quotation}
+Â¥begin{figure}[!h]
+Â¥begin{center}
+Â¥begin{minipage}{24zw}
+	   Â¥noindent $[$ä½¿ç”¨ä¾‹$]$Â¥Â¥
+Â¥ Â¥Â¥
+å¹…500ã€é«˜ã•500ã®æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’ç”¨æ„ã—ã€
+ãã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å·¦ä¸‹ã‚’(-50, -100)ã€å³ä¸Šã‚’(350,300)ã®ä»®æƒ³åº§æ¨™ç©ºé–“ã¨ã—ã¦å®šç¾©ã™ã‚‹ã€‚
+ã¾ãŸã€xyåº§æ¨™è»¸ã‚’è¡¨è¨˜ã™ã‚‹ã€‚(å›³~Â¥ref{fig:gopengraphwindow}) Â¥Â¥
 
-{\small{gOpenGraphWindow(500, 500, -50, -100, 350, 300, true)}}
-\end{minipage}
-\begin{minipage}{20zw}
-%\begin{figure}[!h]
-\begin{center}
-\epsfig{file=./eps/gopengraphwindow.eps, width=1.9in}
-\caption{$\!\!\!\!$\colorbox{white}{{\textcolor{white}{:}}}}
-%\caption{gOpenGraphWindow‚Ì—á}
-\label{fig:gopengraphwindow}
-\end{center}
-%\end{figure}
-\end{minipage}
-\end{center}
-\end{figure}
-   \end{quotation}
-
-
-\item {\bf{gSetMap(À”x1, À”y1, À”x2, À”y2)}} \\
-%  \ \    À” x1, x2, y1, y2
-  \begin{quotation}
-     •`‰æƒEƒBƒ“ƒhƒE‚Ì¶‰º‚ğ“_(x1,y1)A‰Eã‚ğ“_(x2,y2)‚Æ‚µ‚ÄÄw’è‚·‚éB
-     (}~\ref{fig:gsetmaps02})\\
-  \end{quotation}
-\begin{quotation}
-\begin{figure}[!h]
-\begin{minipage}{25zw}
-\noindent $[$g—p—á$]$ \\
-
-}~\ref{fig:gopengraphwindow}‚ÌƒEƒBƒ“ƒhƒE‚ğŠJ‚¢‚½ŒãA
-¶‰º‚ğ(0,-50)A‰Eã‚ğ(150,200)‚ÌÀ•W‹óŠÔ‚Æ‚µ‚ÄÄ’è‹`‚·‚éB\\
+{Â¥small{gOpenGraphWindow(500, 500, -50, -100, 350, 300, true)}}
+Â¥end{minipage}
+Â¥begin{minipage}{20zw}
+%Â¥begin{figure}[!h]
+Â¥begin{center}
+Â¥epsfig{file=./eps/gopengraphwindow.eps, width=1.9in}
+Â¥caption{$Â¥!Â¥!Â¥!Â¥!$Â¥colorbox{white}{{Â¥textcolor{white}{:}}}}
+%Â¥caption{gOpenGraphWindowã®ä¾‹}
+Â¥label{fig:gopengraphwindow}
+Â¥end{center}
+%Â¥end{figure}
+Â¥end{minipage}
+Â¥end{center}
+Â¥end{figure}
+   Â¥end{quotation}
 
 
-{\small{
- gOpenGraphWindow(500, 500, -50, -100, 350, 300, true) \\
- gSetMap(0, -50, 150, 200) \\
+Â¥item {Â¥bf{gSetMap(å®Ÿæ•°x1, å®Ÿæ•°y1, å®Ÿæ•°x2, å®Ÿæ•°y2)}} Â¥Â¥
+%  Â¥ Â¥    å®Ÿæ•° x1, x2, y1, y2
+  Â¥begin{quotation}
+     æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å·¦ä¸‹ã‚’ç‚¹(x1,y1)ã€å³ä¸Šã‚’ç‚¹(x2,y2)ã¨ã—ã¦å†æŒ‡å®šã™ã‚‹ã€‚
+     (å›³~Â¥ref{fig:gsetmaps02})Â¥Â¥
+  Â¥end{quotation}
+Â¥begin{quotation}
+Â¥begin{figure}[!h]
+Â¥begin{minipage}{25zw}
+Â¥noindent $[$ä½¿ç”¨ä¾‹$]$ Â¥Â¥
+
+å›³~Â¥ref{fig:gopengraphwindow}ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‹ã„ãŸå¾Œã€
+å·¦ä¸‹ã‚’(0,-50)ã€å³ä¸Šã‚’(150,200)ã®åº§æ¨™ç©ºé–“ã¨ã—ã¦å†å®šç¾©ã™ã‚‹ã€‚Â¥Â¥
+
+
+{Â¥small{
+ gOpenGraphWindow(500, 500, -50, -100, 350, 300, true) Â¥Â¥
+ gSetMap(0, -50, 150, 200) Â¥Â¥
 }}
-\end{minipage}
-\begin{minipage}{20zw}
-%\begin{figure}[!h]
-\begin{center}
-\epsfig{file=./eps/gsetmaps02.eps, width=2.0in}
-\caption{$\!\!\!\!$\colorbox{white}{{\textcolor{white}{:}}}}
-\label{fig:gsetmaps02}
-\end{center}
-%\end{figure}
-\end{minipage}
-\end{figure}
-   \end{quotation}
-\end{enumerate2}
+Â¥end{minipage}
+Â¥begin{minipage}{20zw}
+%Â¥begin{figure}[!h]
+Â¥begin{center}
+Â¥epsfig{file=./eps/gsetmaps02.eps, width=2.0in}
+Â¥caption{$Â¥!Â¥!Â¥!Â¥!$Â¥colorbox{white}{{Â¥textcolor{white}{:}}}}
+Â¥label{fig:gsetmaps02}
+Â¥end{center}
+%Â¥end{figure}
+Â¥end{minipage}
+Â¥end{figure}
+   Â¥end{quotation}
+Â¥end{enumerate2}
 
-\end{document}
+Â¥end{document}
 
-%%%xDNCL-draw.tex ‚ÖˆÚ“®
-%%% gSetMap --> gSetOrigin ‚Ö–¼Ì•ÏX(‚Ì—\’è)
+%%%xDNCL-draw.tex ã¸ç§»å‹•
+%%% gSetMap --> gSetOrigin ã¸åç§°å¤‰æ›´(ã®äºˆå®š)
 %%%
-\item {\bf{gSetDrawArea(À”x, À”y)}} \\
-%   \ \  À” x, y 
-\vspace{-5mm}
-   \begin{quotation}
-     •`‰æƒEƒBƒ“ƒhƒE‚Ì¶ã‚©‚ç‚Ì‰E•ûŒü‚ÉxA‰º•ûŒü‚Éy‚Ì“_‚ğŒ´“_‚Æ‚µ‚ÄÄ’è‹`‚·‚éB
-   \end{quotation}
-   \begin{quotation}
-\begin{figure}[!h]
-\begin{center}
-\begin{minipage}{25zw}
-	   \noindent $[$g—p—á$]$\\
+Â¥item {Â¥bf{gSetDrawArea(å®Ÿæ•°x, å®Ÿæ•°y)}} Â¥Â¥
+%   Â¥ Â¥  å®Ÿæ•° x, y 
+Â¥vspace{-5mm}
+   Â¥begin{quotation}
+     æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å·¦ä¸Šã‹ã‚‰ã®å³æ–¹å‘ã«xã€ä¸‹æ–¹å‘ã«yã®ç‚¹ã‚’åŸç‚¹ã¨ã—ã¦å†å®šç¾©ã™ã‚‹ã€‚
+   Â¥end{quotation}
+   Â¥begin{quotation}
+Â¥begin{figure}[!h]
+Â¥begin{center}
+Â¥begin{minipage}{25zw}
+	   Â¥noindent $[$ä½¿ç”¨ä¾‹$]$Â¥Â¥
 
-\noindent }~\ref{fig:gopengraphwindow}‚Ì•`‰æƒEƒBƒ“ƒhƒE‚Ì
-(100,150)‚ğ’†S‚Æ‚·‚é‰~(r=50)‚ğ•`‚¢‚½Œã‚ÉA‚±‚ÌÀ•W‹óŠÔ‚Ì(100,0)‚ğŒ´“_‚ÉÄ’è‹`‚·‚éB
-‚»‚µ‚ÄAÄ’è‹`‚µ‚½Œ´“_‚ğ’†S‚Æ‚·‚é‰~(r=50)‚ğ•`‚­B(}~\ref{fig:gsetmaps01})
-\ \\
+Â¥noindent å›³~Â¥ref{fig:gopengraphwindow}ã®æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®
+(100,150)ã‚’ä¸­å¿ƒã¨ã™ã‚‹å††(r=50)ã‚’æã„ãŸå¾Œã«ã€ã“ã®åº§æ¨™ç©ºé–“ã®(100,0)ã‚’åŸç‚¹ã«å†å®šç¾©ã™ã‚‹ã€‚
+ãã—ã¦ã€å†å®šç¾©ã—ãŸåŸç‚¹ã‚’ä¸­å¿ƒã¨ã™ã‚‹å††(r=50)ã‚’æãã€‚(å›³~Â¥ref{fig:gsetmaps01})
+Â¥ Â¥Â¥
 
-{\small{
-          gOpenGraphWindow(500, 500, -50, 350, -100, 300, true)\\
-          gSetLineColor(255, 0, 0)  \\
-          gDrawCircle(100, 150, 50)  \\
-          gSetDrawArea(150, 300) \\
-          gSetLineColor(0, 255, 0)  \\
-          gDrawCircle(0, 0, 50)  \\
+{Â¥small{
+          gOpenGraphWindow(500, 500, -50, 350, -100, 300, true)Â¥Â¥
+          gSetLineColor(255, 0, 0)  Â¥Â¥
+          gDrawCircle(100, 150, 50)  Â¥Â¥
+          gSetDrawArea(150, 300) Â¥Â¥
+          gSetLineColor(0, 255, 0)  Â¥Â¥
+          gDrawCircle(0, 0, 50)  Â¥Â¥
 }}
-\end{minipage}
-\begin{minipage}{20zw}
-%\begin{figure}[!h]
-\begin{center}
-\epsfig{file=./eps/gsetmaps01.eps, width=2.0in}
-\caption{$\!\!\!\!$\colorbox{white}{{\textcolor{white}{:}}}}
-\label{fig:gsetmaps01}
-\end{center}
-%\end{figure}
-\end{minipage}
-\end{center}
-\end{figure}
-   \end{quotation}
+Â¥end{minipage}
+Â¥begin{minipage}{20zw}
+%Â¥begin{figure}[!h]
+Â¥begin{center}
+Â¥epsfig{file=./eps/gsetmaps01.eps, width=2.0in}
+Â¥caption{$Â¥!Â¥!Â¥!Â¥!$Â¥colorbox{white}{{Â¥textcolor{white}{:}}}}
+Â¥label{fig:gsetmaps01}
+Â¥end{center}
+%Â¥end{figure}
+Â¥end{minipage}
+Â¥end{center}
+Â¥end{figure}
+   Â¥end{quotation}
 
 
-\end{document}
+Â¥end{document}
 
 
