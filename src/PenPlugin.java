@@ -116,9 +116,9 @@ public class PenPlugin {
 		for(int i = 0; i < objectName.size(); i++){
 			Object obj = objTable.get(objectName.get(i));
 			try {
-				Method method = obj.getClass().getMethod("destruction", null);
+				Method method = obj.getClass().getMethod("destruction", new Class[]{ null });
 				
-				method.invoke(obj, null);
+				method.invoke(obj, new Object[]{ null });
 			} catch (SecurityException e) {
 				e.printStackTrace();
 			} catch (NoSuchMethodException e) {
