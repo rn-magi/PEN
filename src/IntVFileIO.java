@@ -219,7 +219,6 @@ public class IntVFileIO {
 	}
 	
 	/**
-	 * @param exe
 	 * @param ID
 	 * @param n
 	 * @return 読み込んだ文字列
@@ -325,7 +324,6 @@ public class IntVFileIO {
 	}
 	
 	/**
-	 * @param exe
 	 * @param ID
 	 * @return 読み込んだ文字列
 	 */
