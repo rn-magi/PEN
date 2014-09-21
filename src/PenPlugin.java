@@ -17,22 +17,20 @@ public class PenPlugin {
 	
 	public PenPlugin() {
 		try {
-			if(System.getProperty("os.name").indexOf("Mac") < 0){
-				String libPath = "lib";
-				if(getOSBit().equals("64")){
-					libPath += "64";
-				}
-				File load = new File(libPath);
-				for(int i = 0; i < load.listFiles().length; i++){
-					String filePath = load.listFiles()[i].getPath();
-					if(filePath.indexOf(".jar") >= 0){
-						addClassPathToClassLoader(load.listFiles()[i]);
-					}
+			String libPath = "lib";
+			if(getOSBit().equals("64")){
+				libPath += "64";
+			}
+			File load = new File(libPath);
+			for(int i = 0; i < load.listFiles().length; i++){
+				String filePath = load.listFiles()[i].getPath();
+				if(filePath.indexOf(".jar") >= 0){
+					addClassPathToClassLoader(load.listFiles()[i]);
 				}
 			}
 			
 			FileInputStream fis = new FileInputStream("./functionTable.ini");
-			InputStreamReader isr = new InputStreamReader(fis, "SJIS");
+			InputStreamReader isr = new InputStreamReader(fis);
 			BufferedReader reader = new BufferedReader(isr);
 			String str = reader.readLine();
 			while (str != null) {
