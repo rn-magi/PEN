@@ -1,5 +1,19 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_14 (2014/09/22)
+  [ BugFix ]
+    ・Library の呼び出し方法の変更に伴うバグがあったのを修正
+  [ Fix ]
+    ・（内部変更）リファクタリング
+    ・プログラム入力支援ボタン定義ファイルの文字コード変更に伴う修正
+
+  [ FixFile ]
+    - ButtonEdit.java
+    - ChangeLog.txt
+    - IntVFileIO.java
+    - MainGUI.jav
+    - PenPlugin.java
+
 ・ver 1.20_13 (2014/09/18)
   [ New ]
     ・littleBits用のサンプルプログラムを追加
