@@ -22,10 +22,12 @@ public class PenPlugin {
 				libPath += "64";
 			}
 			File load = new File(libPath);
-			for(int i = 0; i < load.listFiles().length; i++){
-				String filePath = load.listFiles()[i].getPath();
-				if(filePath.indexOf(".jar") >= 0){
-					addClassPathToClassLoader(load.listFiles()[i]);
+			if(load.isDirectory()){
+				for(int i = 0; i < load.listFiles().length; i++){
+					String filePath = load.listFiles()[i].getPath();
+					if(filePath.indexOf(".jar") >= 0){
+						addClassPathToClassLoader(load.listFiles()[i]);
+					}
 				}
 			}
 			
