@@ -32,7 +32,7 @@ import javax.swing.text.PlainDocument;
  *
  */
 public class MainGUI {
-	public String Version			= "ver1.20_13";
+	public String Version			= "ver1.20_14";
 	public String SystemName		= "PEN";
 	public String WindowName		= SystemName + " " + Version;
 	public PenFrame main_window;
@@ -152,14 +152,14 @@ public class MainGUI {
 		}
 
 		try {
-			System.setProperty("java.library.path", penPro.getProperty(PenProperties.PEN_SYSTEM_LIBRARY) + System.getProperty("path.separator") + System.getProperty("java.library.path"));
-			Field fieldSysPath;
-			fieldSysPath = ClassLoader.class.getDeclaredField("sys_paths");
-			fieldSysPath.setAccessible(true);
-			fieldSysPath.set(System.class.getClassLoader(), null);
-			
-			if(System.getProperty("os.name").indexOf("Mac") < 0){
-				File load = new File(penPro.getProperty(PenProperties.PEN_SYSTEM_LIBRARY));
+			File load = new File(penPro.getProperty(PenProperties.PEN_SYSTEM_LIBRARY));
+			if(load.isDirectory()) {
+				System.setProperty("java.library.path", penPro.getProperty(PenProperties.PEN_SYSTEM_LIBRARY));
+				Field fieldSysPath;
+				fieldSysPath = ClassLoader.class.getDeclaredField("sys_paths");
+				fieldSysPath.setAccessible(true);
+				fieldSysPath.set(System.class.getClassLoader(), null);
+	
 				for(int i = 0; i < load.listFiles().length; i++){
 					String fileName = load.listFiles()[i].getName();
 					if(fileName.indexOf(".dll") >= 0){
@@ -183,7 +183,6 @@ public class MainGUI {
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 	// Application

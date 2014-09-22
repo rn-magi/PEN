@@ -14,42 +14,42 @@
 %\setlength{\textheight}{252mm}
 %\setlength{\textwidth}{180mm}
 
-%---------- �ӏ����� -----------
+%---------- 箇条書き -----------
 
 \newenvironment{itemize2}%  
 {%
-   \begin{list}{$\bullet$\ \ }% ���o���L���^����̋󔒂𒲐�
+   \begin{list}{$\bullet$\ \ }% 見出し記号／直後の空白を調節
    {%
       \setlength{\itemindent}{0pt}
-      \setlength{\leftmargin}{3zw}%  ���̃C���f���g
-      \setlength{\rightmargin}{0zw}% �E�̃C���f���g
-      \setlength{\labelsep}{0zw}%    ���ۂƐ������̊�
-      \setlength{\labelwidth}{3zw}%  ���x���̕�
-      \setlength{\itemsep}{0em}%     ���ڂ��Ƃ̉��s��
-      \setlength{\parsep}{0em}%      �i���ł̉��s��
-      \setlength{\listparindent}{0zw}% �i���ł̈ꎚ����
+      \setlength{\leftmargin}{3zw}%  左のインデント
+      \setlength{\rightmargin}{0zw}% 右のインデント
+      \setlength{\labelsep}{0zw}%    黒丸と説明文の間
+      \setlength{\labelwidth}{3zw}%  ラベルの幅
+      \setlength{\itemsep}{0em}%     項目ごとの改行幅
+      \setlength{\parsep}{0em}%      段落での改行幅
+      \setlength{\listparindent}{0zw}% 段落での一字下り
    }
 }{%
    \end{list}%
 }
-%---------- �ԍ����ӏ����� -----------
+%---------- 番号つき箇条書き -----------
 
 \newcounter{enum2}
 \newenvironment{enumerate2}{%
    \begin{list}%
    {%
-      \arabic{enum2}.\ \,%  ���o���L���^����̋󔒂𒲐�
+      \arabic{enum2}.\ \,%  見出し記号／直後の空白を調節
    }%
    {%
       \usecounter{enum2}
-      \setlength{\itemindent}{0zw}%  ������ 0 �ɌŒ�
-      \setlength{\leftmargin}{3zw}%  ���̃C���f���g
-      \setlength{\rightmargin}{0zw}% �E�̃C���f���g
-      \setlength{\labelsep}{0zw}%    ���ۂƐ������̊�
-      \setlength{\labelwidth}{3zw}%  ���x���̕�
-      \setlength{\itemsep}{0em}%     ���ڂ��Ƃ̉��s��
-      \setlength{\parsep}{0em}%      �i���ł̉��s��
-      \setlength{\listparindent}{0zw}% �i���ł̈ꎚ����
+      \setlength{\itemindent}{0zw}%  ここは 0 に固定
+      \setlength{\leftmargin}{3zw}%  左のインデント
+      \setlength{\rightmargin}{0zw}% 右のインデント
+      \setlength{\labelsep}{0zw}%    黒丸と説明文の間
+      \setlength{\labelwidth}{3zw}%  ラベルの幅
+      \setlength{\itemsep}{0em}%     項目ごとの改行幅
+      \setlength{\parsep}{0em}%      段落での改行幅
+      \setlength{\listparindent}{0zw}% 段落での一字下り
    }
 }{%
    \end{list}%
@@ -64,7 +64,7 @@
 \leftmargin 100mm
 \newcommand{\ExerciseTitle}[1]{%
   \begin{center}\Large
-    \textbf{PEN �}�j���A�� Q \& A} \qquad \texttt{#1}
+    \textbf{PEN マニュアル Q \& A} \qquad \texttt{#1}
   \end{center}%
 }
 
@@ -79,131 +79,131 @@
 \end{flushright}
 \begin{center}
 \begin{LARGE}
-{\bf{PEN�̓���𐧌䂷��}}
+{\bf{PENの動作を制御する}}
 \end{LARGE}
 \end{center}
 
-Property.ini ���Ŏw��ł���ݒ荀�ڂ͈ȉ��̒ʂ�B
-�p�����[�^�͋N�����ɓǂݍ��܂��B
+Property.ini 内で指定できる設定項目は以下の通り。
+パラメータは起動時に読み込まれる。
 
-\section{�ϐ��錾�̗v/�s�v�̐ݒ�}
+\section{変数宣言の要/不要の設定}
 
-�ϐ��錾�̗v/�s�v��ݒ肷��B
+変数宣言の要/不要を設定する。
 
 \begin{quotation}
 
-\noindent [�g�p��]\\
+\noindent [使用例]\\
 ~~~~{\bf{executer.var.declaration=0}}\\
 \ \\ 
-�ݒ�l�͈ȉ��̒ʂ�(�f�t�H���g�l��0)�B\\
+設定値は以下の通り(デフォルト値は0)。\\
 
 \begin{tabular}{c|l||cl}
 \hline
-\multicolumn{2}{c||}{�ݒ�l} & \multicolumn{2}{c}{�ϐ��錾���Ȃ��ꍇ�̏o��}\\
+\multicolumn{2}{c||}{設定値} & \multicolumn{2}{c}{変数宣言がない場合の出力}\\
 \hline
-0 & �ϐ��錾�K�{ &  & �G���[ \\
+0 & 変数宣言必須 &  & エラー \\
 \hline
-1 & �ϐ��錾�s�v &  & �x���\�� \\
+1 & 変数宣言不要 &  & 警告表示 \\
 \hline
-2 & �ϐ��錾�s�v &  & �G���[�ƌx���\���Ȃ� \\
+2 & 変数宣言不要 &  & エラーと警告表示なし \\
 \hline
 \end{tabular}
 
 \end{quotation}
 
-\section{�z��̓Y���͈̔͂�ݒ�}
-�z���錾���ĕϐ����m�ۂ���Ƃ��A�Y���͈̔͂����߂邱�Ƃ��ł���B
+\section{配列の添字の範囲を設定}
+配列を宣言して変数を確保するとき、添字の範囲を決めることができる。
 
 \begin{quotation}
-\noindent [�g�p��]\\
+\noindent [使用例]\\
 ~~~~{\bf{executer.array.origin=0}}\\
 \ \\ 
-�ݒ�l�͈ȉ��̒ʂ�B\\
+設定値は以下の通り。\\
 
 \begin{tabular}{c|l}
 \hline
-�ݒ�l  & �z�� X[n] ��錾�����ꍇ \\
+設定値  & 配列 X[n] を宣言した場合 \\
 \hline
-0       & X[0],...,X[n]  �̗v�f���m�ۂ��� (�f�t�H���g�l) \\
+0       & X[0],...,X[n]  の要素を確保する (デフォルト値) \\
 \hline
-1       & X[0],...,X[n-1]�̗v�f���m�ۂ��� \\
+1       & X[0],...,X[n-1]の要素を確保する \\
 \hline
-2       & X[1],...,X[n]  �̗v�f���m�ۂ��� \\
+2       & X[1],...,X[n]  の要素を確保する \\
 \hline
 \end{tabular}
 
 %\begin{tabular}{ccl}
-%�ݒ�l & : & �z�� X[n] ��錾�����ꍇ \\
-%0      & : & X[0],...,X[n]  �̗v�f���m�ۂ��� (�f�t�H���g�l) \\
-%1      & : & X[0],...,X[n-1]�̗v�f���m�ۂ��� \\
-%2      & : & X[1],...,X[n]  �̗v�f���m�ۂ��� \\
+%設定値 & : & 配列 X[n] を宣言した場合 \\
+%0      & : & X[0],...,X[n]  の要素を確保する (デフォルト値) \\
+%1      & : & X[0],...,X[n-1]の要素を確保する \\
+%2      & : & X[1],...,X[n]  の要素を確保する \\
 %\end{tabular}
 
 \end{quotation}
 
-\section{�`��E�B���h�E�̌��_�̐ݒ�}
+\section{描画ウィンドウの原点の設定}
 
-�`��E�B���h�E�ō��W���w�肷��Ƃ��̌��_��ݒ肷��B
+描画ウィンドウで座標を指定するときの原点を設定する。
 
 \begin{quotation}
-\noindent [�g�p��]\\
+\noindent [使用例]\\
 ~~~~{\bf{executer.graphic.origin=0}}\\
 \ \\
-�ݒ�l�͈ȉ��̒ʂ�B\\
+設定値は以下の通り。\\
 
 \begin{tabular}{c|l}
 \hline
-0 & ��������_�ɂ��� (�f�t�H���g�l) \\
+0 & 左上を原点にする (デフォルト値) \\
 \hline
-1 & ���������_�ɂ��� \\
+1 & 左下を原点にする \\
 \hline
 \end{tabular}
 \end{quotation}
 
 %\begin{tabular}{ccl}
-%0 & : & ��������_�ɂ��� (�f�t�H���g�l) \\
-%1 & : & ���������_�ɂ��� \\
+%0 & : & 左上を原点にする (デフォルト値) \\
+%1 & : & 左下を原点にする \\
 %\end{tabular}
 %\end{quotation}
 
-\section{���͎x���{�^���̒�`��ʃt�@�C���ōs��}
+\section{入力支援ボタンの定義を別ファイルで行う}
 
-���͎x���{�^���̐ݒ��ʃt�@�C���ɋL�q���Ă������Ƃ��ł���B
-��`�t�@�C���܂ł̃p�X��ݒ�l�ɋL�q���Ă����ƁA
-PEN�͂��̒�`�t�@�C����p���ċN������B
+入力支援ボタンの設定を別ファイルに記述しておくことができる。
+定義ファイルまでのパスを設定値に記述しておくと、
+PENはその定義ファイルを用いて起動する。
 
-�ʏ�́A���̃t�@�C�����w�肹����PEN���N�����邱�Ƃ��ł���B
+通常は、このファイルを指定せずにPENを起動することができる。
 
 \begin{quotation}
-\noindent [�g�p��]\\
+\noindent [使用例]\\
 ~~~~{\bf{ pen.button.path=./ButtonList.ini}}
 
 \end{quotation}
 
-\section{�t�H���g�T�C�Y��傫�����ċN������ݒ�}
+\section{フォントサイズを大きくして起動する設定}
 
-�N�����̃t�H���g�T�C�Y��傫�����邱�Ƃ��ł���B
+起動時のフォントサイズを大きくすることができる。
 
 \begin{quotation}
-\noindent [�g�p��]\\
+\noindent [使用例]\\
 ~~~~{\bf{pen.teacher.flag=0}}\\
 \ \\
-�ݒ�l�͈ȉ��̒ʂ�B\\
+設定値は以下の通り。\\
 
 \begin{tabular}{c|l}
 \hline
-0 & �ʏ�̑傫�� (�f�t�H���g�l)\\
+0 & 通常の大きさ (デフォルト値)\\
 \hline
-1 & �t�H���g�T�C�Y���g�債�ċN�� \\
+1 & フォントサイズを拡大して起動 \\
 \hline
 \end{tabular}\\
 
 %\begin{tabular}{ccl}
-%0 & : & �ʏ�N�� \\
-%1 & : & �t�H���g�T�C�Y��傫�����ċN�� \\
+%0 & : & 通常起動 \\
+%1 & : & フォントサイズを大きくして起動 \\
 %\end{tabular}
 
-�}~\ref{fig:font01}�͊g�債���T�C�Y�A�}~\ref{fig:font02}�͕W���T�C�Y�ł̕\���B
+図~\ref{fig:font01}は拡大したサイズ、図~\ref{fig:font02}は標準サイズでの表示。
 
 \end{quotation}
 
@@ -211,7 +211,7 @@ PEN�͂��̒�`�t�@�C����p���ċN������B
 \begin{minipage}{50zw}
 \begin{center}
 \epsfig{file=./eps/pen_font_large.ps, width=5.5in}
-\caption{$\!\!\!\!$\colorbox{white}{{\textcolor{white}{:}}}�g��T�C�Y }
+\caption{$\!\!\!\!$\colorbox{white}{{\textcolor{white}{:}}}拡大サイズ }
 \label{fig:font01}
 \end{center}
 \end{minipage}
@@ -220,7 +220,7 @@ PEN�͂��̒�`�t�@�C����p���ċN������B
 \begin{minipage}{50zw}
 \begin{center}
 \epsfig{file=./eps/pen_font_small.ps, width=5.5in}
-\caption{$\!\!\!\!$\colorbox{white}{{\textcolor{white}{:}}}�W���T�C�Y}
+\caption{$\!\!\!\!$\colorbox{white}{{\textcolor{white}{:}}}標準サイズ}
 \label{fig:font02}
 \end{center}
 \end{minipage}
@@ -228,85 +228,85 @@ PEN�͂��̒�`�t�@�C����p���ċN������B
 \end{figure}
 
 
-\section{�f�o�b�N���[�h�ł̋N��}
-�f�o�b�O���[�h�𗘗p���邱�Ƃ��ł���B
-�f�o�b�O����(�\����͂��ꂽ�c���[)�̓R���\�[���ɏo�͂����B
+\section{デバックモードでの起動}
+デバッグモードを利用することができる。
+デバッグ結果(構文解析されたツリー)はコンソールに出力される。
 
 \begin{quotation}
-\noindent [�g�p��] �f�o�b�O���[�h�ł̋N�����@\\
+\noindent [使用例] デバッグモードでの起動方法\\
 ~~~~{\bf{pen.debug.flag=1}}\\
-~~~~�Ɛݒ肵�A�R�}���h�v�����v�g��ŁA
+~~~~と設定し、コマンドプロンプト上で、
 ~~~~> java -jar PEN.jar
-~~~~�Ɠ��͂��N������B
+~~~~と入力し起動する。
 
 \ \\
-�ݒ�l�͈ȉ��̒ʂ�B\\
+設定値は以下の通り。\\
 
 \begin{tabular}{c|l}
 \hline
-0 & �ʏ�N�� (�f�t�H���g�l) \\
+0 & 通常起動 (デフォルト値) \\
 \hline
-1 & debug���[�h�ŋN�� \\
+1 & debugモードで起動 \\
 \hline
 \end{tabular}
 
 %\begin{tabular}{ccl}
-%0 & : & �ʏ�N�� (�f�t�H���g�l) \\
-%1 & : & debug���[�h�ŋN�� \\
+%0 & : & 通常起動 (デフォルト値) \\
+%1 & : & debugモードで起動 \\
 %\end{tabular}
 
 \end{quotation}
 
-\section{�G���[���̃_���v����ݒ�}
-xDNCL�̎��s���ɃG���[�����������ꍇ�A
-dump�t�@�C�����o�͂�����悤�ɐݒ肷�邱�Ƃ��ł���B
-�܂��A�o�͐�̎w����ł���B
+\section{エラー時のダンプ動作設定}
+xDNCLの実行時にエラーが発生した場合、
+dumpファイルを出力させるように設定することができる。
+また、出力先の指定もできる。
 
 \begin{quotation}
-\noindent [�g�p��]\\
+\noindent [使用例]\\
 ~~~~{\bf{pen.dump.flag=0}}\\
 \ \\
-�ݒ�l�͈ȉ��̒ʂ�B\\
+設定値は以下の通り。\\
 
 \begin{tabular}{c|l}
 \hline
-0 & dump�t�@�C���𐶐����Ȃ� (�f�t�H���g�l) \\
+0 & dumpファイルを生成しない (デフォルト値) \\
 \hline
-1 & dump�t�@�C���𐶐����� \\
+1 & dumpファイルを生成する \\
 \hline
 \end{tabular}
 
 %\begin{tabular}{ccl}
-%0 & : & dump�t�@�C���𐶐����Ȃ� (�f�t�H���g�l) \\
-%1 & : & dump�t�@�C���𐶐����� \\
+%0 & : & dumpファイルを生成しない (デフォルト値) \\
+%1 & : & dumpファイルを生成する \\
 %\end{tabular}
 
 \end{quotation}
 
-\subsection{dump�t�@�C���̎b��ۑ�����w��}
-dump�t�@�C���̍쐬���w�肵���ꍇ�A�t�@�C���̈ꎞ�ۑ�����w�肷�邱�Ƃ��ł���B
+\subsection{dumpファイルの暫定保存先を指定}
+dumpファイルの作成を指定した場合、ファイルの一時保存先を指定することができる。
 \begin{quotation}
 \begin{tabular}{l}
-�o�͐��ݒ肵�Ȃ���� HOME�f�B���N�g���֏o�͂����B\\
-(Windows�̏ꍇ�́AC:��Document~and~Settings�� ���[�U�[��) \\
+出力先を設定しなければ HOMEディレクトリへ出力される。\\
+(Windowsの場合は、C:￥Document~and~Settings￥ ユーザー名) \\
 \ \\
-�o�͐�̎w����@�́A\\
-{\bf{pen.dump.tempdir=�ꎞ�ۑ���}} \\
+出力先の指定方法は、\\
+{\bf{pen.dump.tempdir=一時保存先}} \\
 \end{tabular}
 \end{quotation}
 
-\subsection{�ꎞ�ۑ�����dump�t�@�C���̍ŏI�ۑ�����w��}
-%# �i���O�t�@�C���ۑ����dump�t�@�C�����ړ��j
-dump�t�@�C���̍쐬���w�肵���ꍇ�A�t�@�C���̍ŏI�ۑ�����w�肷�邱�Ƃ��ł���B
+\subsection{一時保存したdumpファイルの最終保存先を指定}
+%# （ログファイル保存先にdumpファイルを移動）
+dumpファイルの作成を指定した場合、ファイルの最終保存先を指定することができる。
 \begin{quotation}
 
 \begin{tabular}{l}
-�o�͐��ݒ肵�Ȃ���� HOME�f�B���N�g���֏o�͂����B\\
-(Windows�̏ꍇ�́AC:��Document\ and\ Settings�����[�U�[��) \\
-�o�͂����t�@�C�����́A�u���[�U�[��-�R���s���[�^��-����.log�v�ƂȂ�B\\
+出力先を設定しなければ HOMEディレクトリへ出力される。\\
+(Windowsの場合は、C:￥Document\ and\ Settings￥ユーザー名) \\
+出力されるファイル名は、「ユーザー名-コンピュータ名-数字.log」となる。\\
 \ \\
-�o�͐�̎w����@�́A\\
-{\bf{pen.dump.destdir=���O�t�@�C���ۑ���}} \\
+出力先の指定方法は、\\
+{\bf{pen.dump.destdir=ログファイル保存先}} \\
 \end{tabular}
 
 \end{quotation}

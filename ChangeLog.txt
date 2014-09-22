@@ -1,13 +1,27 @@
-"‰ŠwÒŒü‚¯ƒvƒƒOƒ‰ƒ~ƒ“ƒOŠwKŠÂ‹« PEN" •ÏX—š—ğ
+"åˆå­¦è€…å‘ã‘ãƒ—ãƒ­ã‚°ãƒ©ãƒŸãƒ³ã‚°å­¦ç¿’ç’°å¢ƒ PEN" å¤‰æ›´å±¥æ­´
 
-Ever 1.20_13 (2014/09/18)
-  [ New ]
-    ElittleBits—p‚ÌƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚ğ’Ç‰Á
+ãƒ»ver 1.20_14 (2014/09/22)
+  [ BugFix ]
+    ãƒ»Library ã®å‘¼ã³å‡ºã—æ–¹æ³•ã®å¤‰æ›´ã«ä¼´ã†ãƒã‚°ãŒã‚ã£ãŸã®ã‚’ä¿®æ­£
   [ Fix ]
-    EPEN ‚ÌƒRƒs[ƒ‰ƒCƒg‚Ì”N”‚ğC³
-    ELibrary ‚ÌŒÄ‚Ño‚µ•û–@‚Ì•ÏX
-    EPEN ‚Ì‹N“®•û–@•ÏX‚É”º‚¢ ReadMe ‚ÌC³
-    EƒvƒƒOƒ‰ƒ€“ü—Íx‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹’Ç‰Á•ª‚ğ ReadMe ‚É’Ç‹L
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰ãƒªãƒ•ã‚¡ã‚¯ã‚¿ãƒªãƒ³ã‚°
+    ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã®æ–‡å­—ã‚³ãƒ¼ãƒ‰å¤‰æ›´ã«ä¼´ã†ä¿®æ­£
+
+  [ FixFile ]
+    - ButtonEdit.java
+    - ChangeLog.txt
+    - IntVFileIO.java
+    - MainGUI.jav
+    - PenPlugin.java
+
+ãƒ»ver 1.20_13 (2014/09/18)
+  [ New ]
+    ãƒ»littleBitsç”¨ã®ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’è¿½åŠ 
+  [ Fix ]
+    ãƒ»PEN ã®ã‚³ãƒ”ãƒ¼ãƒ©ã‚¤ãƒˆã®å¹´æ•°ã‚’ä¿®æ­£
+    ãƒ»Library ã®å‘¼ã³å‡ºã—æ–¹æ³•ã®å¤‰æ›´
+    ãƒ»PEN ã®èµ·å‹•æ–¹æ³•å¤‰æ›´ã«ä¼´ã„ ReadMe ã®ä¿®æ­£
+    ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«è¿½åŠ åˆ†ã‚’ ReadMe ã«è¿½è¨˜
 
   [ NewFile ]
     - ./sample/littleBits/dimmer.pen
@@ -24,9 +38,9 @@
     - PEN.sh
     - PEN64.sh
 
-Ever 1.20_12 (2014/08/09)
+ãƒ»ver 1.20_12 (2014/08/09)
   [ BugFix ]
-    E^‹UŒ^‚Ì‰Šú’l‚ªutruev‚¾‚Á‚½‚Ì‚ğufalsev‚ÉC³
+    ãƒ»çœŸå½å‹ã®åˆæœŸå€¤ãŒã€Œtrueã€ã ã£ãŸã®ã‚’ã€Œfalseã€ã«ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -34,10 +48,10 @@
     - MainGUI.java
     - ReadMe.txt
 
-Ever 1.20_11 (2014/07/09)
+ãƒ»ver 1.20_11 (2014/07/09)
   [ BugFix ]
-    Euƒ‹[ƒv‚ğ”²‚¯‚év‚ªArduinoƒvƒƒOƒ‰ƒ€‚Éãè‚­•ÏŠ·‚Å‚«‚È‚©‚Á‚½‚Ì‚ğC³
-    ELilyPad Development Board—p‚ÌƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚ÌC³
+    ãƒ»ã€Œãƒ«ãƒ¼ãƒ—ã‚’æŠœã‘ã‚‹ã€ãŒArduinoãƒ—ãƒ­ã‚°ãƒ©ãƒ ã«ä¸Šæ‰‹ãå¤‰æ›ã§ããªã‹ã£ãŸã®ã‚’ä¿®æ­£
+    ãƒ»LilyPad Development Boardç”¨ã®ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®ä¿®æ­£
 
   [ FixFile ]
     - ./sample/LilyPad/LED-Flash.pen
@@ -46,12 +60,12 @@
     - MainGUI.java
     - ReadMe.txt
 
-Ever 1.20_10 (2014/07/08)
+ãƒ»ver 1.20_10 (2014/07/08)
   [ BugFix ]
-    EƒƒP[ƒ‹‘Î‰ŠO‚Ì‚É‹N“®‚µ‚È‚©‚Á‚½‚Ì‚ğC³
+    ãƒ»ãƒ­ã‚±ãƒ¼ãƒ«å¯¾å¿œå¤–ã®æ™‚ã«èµ·å‹•ã—ãªã‹ã£ãŸã®ã‚’ä¿®æ­£
   [ Fix ]
-    EApplet”Å‚Ì’ñ‹ŸI—¹‚É”º‚¤C³
-    EReadMe‚ÌŠJ”­ŠÂ‹«‚ÌC³
+    ãƒ»Appletç‰ˆã®æä¾›çµ‚äº†ã«ä¼´ã†ä¿®æ­£
+    ãƒ»ReadMeã®é–‹ç™ºç’°å¢ƒã®ä¿®æ­£
 
   [ NewFile ]
     - ./Locale/Locale.properties
@@ -61,13 +75,13 @@
     - MainGUI.java
     - ReadMe.txt
 
-Ever 1.20_9 (2014/07/04)
+ãƒ»ver 1.20_9 (2014/07/04)
   [ New ]
-    ELilyPad Development Board—p‚ÌƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚ğ’Ç‰Á
+    ãƒ»LilyPad Development Boardç”¨ã®ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’è¿½åŠ 
   [ Fix ]
-    ELilyPad Development Board—p‚ÌƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚ÌC³
-    EArduino‚ÌŠÈˆÕƒvƒƒOƒ‰ƒ€“ü—Íx‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚ÌC³
-    EƒƒCƒ“ƒEƒBƒ“ƒhƒE•‚ÌC³
+    ãƒ»LilyPad Development Boardç”¨ã®ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®ä¿®æ­£
+    ãƒ»Arduinoã®ç°¡æ˜“ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã®ä¿®æ­£
+    ãƒ»ãƒ¡ã‚¤ãƒ³ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦å¹…ã®ä¿®æ­£
 
   [ NewFile ]
     - ./sample/LilyPad/AnalogVibe.pen
@@ -86,14 +100,14 @@
     - ChangeLog.txt
     - MainGUI.java
 
-Ever 1.20_8 (2014/06/25)
+ãƒ»ver 1.20_8 (2014/06/25)
   [ New ]
-    ELilyPad Development Board—p‚ÌƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚ğ’Ç‰Á
-    ExDNCL ‚ğ Arduino—pƒvƒƒOƒ‰ƒ€ ‚Ö•ÏŠ·‚·‚é‹@”\‚ÌÀ‘•
-    EPEN ‚©‚ç ArduinoIDE ‚ğƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ƒ‚[ƒh‚Å‹N“®‚µƒvƒƒOƒ‰ƒ€‚ğ‘‚«‚Ş‹@”\‚ÌÀ‘•
-    EArduino‚ÌŠÈˆÕƒvƒƒOƒ‰ƒ€“ü—Íx‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚ğ’Ç‰Á
+    ãƒ»LilyPad Development Boardç”¨ã®ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’è¿½åŠ 
+    ãƒ»xDNCL ã‚’ Arduinoç”¨ãƒ—ãƒ­ã‚°ãƒ©ãƒ  ã¸å¤‰æ›ã™ã‚‹æ©Ÿèƒ½ã®å®Ÿè£…
+    ãƒ»PEN ã‹ã‚‰ ArduinoIDE ã‚’ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ãƒ¢ãƒ¼ãƒ‰ã§èµ·å‹•ã—ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’æ›¸ãè¾¼ã‚€æ©Ÿèƒ½ã®å®Ÿè£…
+    ãƒ»Arduinoã®ç°¡æ˜“ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ 
   [ Fix ]
-    E\•¶ƒGƒ‰[‚ÌƒƒbƒZ[ƒW‚ğC³
+    ãƒ»æ§‹æ–‡ã‚¨ãƒ©ãƒ¼ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’ä¿®æ­£
 
   [ NewFile ]
     - ./ButtonList/ArduinoSimple.ini
@@ -111,16 +125,16 @@
     - ThreadRun.java
     - TokenMgrError.java
 
-Ever 1.20_7 (2014/06/23)
+ãƒ»ver 1.20_7 (2014/06/23)
   [ New ]
-    EArduino(CLCD-BOOSTER)‚ÌƒVƒ~ƒ…ƒŒ[ƒ^‚ğ’Ç‰Á
-      -> openPort("SIM") ‚ÅArduino(CLCD-BOOSTER)ƒVƒ~ƒ…ƒŒ[ƒ^‚ª‹N“®
-    ELilyPad Development Board—p‚ÌƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚ğ’Ç‰Á
-    E“ü—Íx‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚É Arduino—p ‚ğ’Ç‰Á
+    ãƒ»Arduino(CLCD-BOOSTER)ã®ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚¿ã‚’è¿½åŠ 
+      -> openPort("SIM") ã§Arduino(CLCD-BOOSTER)ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚¿ãŒèµ·å‹•
+    ãƒ»LilyPad Development Boardç”¨ã®ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’è¿½åŠ 
+    ãƒ»å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã« Arduinoç”¨ ã‚’è¿½åŠ 
   [ Fix ]
-    Erxtxƒ‰ƒCƒuƒ‰ƒŠ‚ÌXV
-    E“ü—Í–½—ß‚É–½—ß•¶‚Ì—h‚ç‚¬‚ğ’Ç‰Á
-      -> á•Ï”â ‚É“ü—Í‚·‚é
+    ãƒ»rxtxãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®æ›´æ–°
+    ãƒ»å…¥åŠ›å‘½ä»¤ã«å‘½ä»¤æ–‡ã®æºã‚‰ãã‚’è¿½åŠ 
+      -> â‰ªå¤‰æ•°â‰« ã«å…¥åŠ›ã™ã‚‹
 
   [ NewFile ]
     - ./ButtonList/Arduino.ini
@@ -146,24 +160,24 @@
     - MainGUI.java
     - ReadMe.txt
 
-Ever 1.20_6 (2013/04/03)
+ãƒ»ver 1.20_6 (2013/04/03)
   [ Withdraw ]
-    Eƒf[ƒ^Œ^‚Ì dfp (10i•‚“®¬”“_) ‚Ì‘Î‰‚ğæ‚è‚â‚ß
-    Eƒf[ƒ^Œ^‚ğ dfpŒ^ ‚É•ÏŠ·‚·‚éŠÖ”‚Ìíœ
-      -> dfp(•¶š—ñ)
+    ãƒ»ãƒ‡ãƒ¼ã‚¿å‹ã® dfp (10é€²æµ®å‹•å°æ•°ç‚¹) ã®å¯¾å¿œã‚’å–ã‚Šã‚„ã‚
+    ãƒ»ãƒ‡ãƒ¼ã‚¿å‹ã‚’ dfpå‹ ã«å¤‰æ›ã™ã‚‹é–¢æ•°ã®å‰Šé™¤
+      -> dfp(æ–‡å­—åˆ—)
   [ New ]
-    Eƒf[ƒ^Œ^‚É ’·®” (Long) ‚Ì’Ç‰Á
-    Elong(”’l)
-      -> ƒf[ƒ^Œ^‚ğ ’·®” ‚É•ÏŠ·‚·‚éŠÖ”‚Ì’Ç‰Á
-    Eƒvƒ‰ƒOƒCƒ“‹@”\‚É‚æ‚èŠÖ”‚Ì’Ç‰Á
-      * str2Half(•¶š—ñ)
-        -> ‘SŠp‰p”š‚ğ”¼Šp‰p”š‚É•ÏŠ·‚·‚é
-      * str2Double(•¶š—ñ)
-        -> ”¼Šp‰p”š‚ğ‘SŠp‰p”š‚É•ÏŠ·‚·‚é
+    ãƒ»ãƒ‡ãƒ¼ã‚¿å‹ã« é•·æ•´æ•° (Long) ã®è¿½åŠ 
+    ãƒ»long(æ•°å€¤)
+      -> ãƒ‡ãƒ¼ã‚¿å‹ã‚’ é•·æ•´æ•° ã«å¤‰æ›ã™ã‚‹é–¢æ•°ã®è¿½åŠ 
+    ãƒ»ãƒ—ãƒ©ã‚°ã‚¤ãƒ³æ©Ÿèƒ½ã«ã‚ˆã‚Šé–¢æ•°ã®è¿½åŠ 
+      * str2Half(æ–‡å­—åˆ—)
+        -> å…¨è§’è‹±æ•°å­—ã‚’åŠè§’è‹±æ•°å­—ã«å¤‰æ›ã™ã‚‹
+      * str2Double(æ–‡å­—åˆ—)
+        -> åŠè§’è‹±æ•°å­—ã‚’å…¨è§’è‹±æ•°å­—ã«å¤‰æ›ã™ã‚‹
   [ Fix ]
-    Ei“à•”•ÏXjƒŠƒtƒ@ƒNƒ^ƒŠƒ“ƒO
-    EReadMe‚ÉŠJ”­•“®ìŠÂ‹«‚ğ’Ç‰Á
-    EReadMe‚ÌŒëA‚ğC³
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰ãƒªãƒ•ã‚¡ã‚¯ã‚¿ãƒªãƒ³ã‚°
+    ãƒ»ReadMeã«é–‹ç™ºï¼†å‹•ä½œç’°å¢ƒã‚’è¿½åŠ 
+    ãƒ»ReadMeã®èª¤æ¤ã‚’ä¿®æ­£
 
   [ NewFile ]
     - ASTLong.java
@@ -194,10 +208,10 @@
     - ASTSwitch.java
     - ASTWhileStat.java
 
-Ever 1.20_5 (2013/01/28)
+ãƒ»ver 1.20_5 (2013/01/28)
   [ Fix ]
-    Ei“à•”•ÏXjƒŠƒtƒ@ƒNƒ^ƒŠƒ“ƒO
-    EReadMeƒtƒ@ƒCƒ‹‚ÌC³
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰ãƒªãƒ•ã‚¡ã‚¯ã‚¿ãƒªãƒ³ã‚°
+    ãƒ»ReadMeãƒ•ã‚¡ã‚¤ãƒ«ã®ä¿®æ­£
 
   [ NewFile ]
     - PEN.command
@@ -215,9 +229,9 @@
     - PenProperties.java
     - ReadMe.txt
 
-Ever 1.20_4 (2012/08/07)
+ãƒ»ver 1.20_4 (2012/08/07)
   [ BugFix ]
-    EŒë‚Á‚½ğŒ®‚Ì\•¶‚ğó—‚µ‚Ä‚µ‚Ü‚¤‚Ì‚ğC³
+    ãƒ»èª¤ã£ãŸæ¡ä»¶å¼ã®æ§‹æ–‡ã‚’å—ç†ã—ã¦ã—ã¾ã†ã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -234,9 +248,9 @@
     - SimpleCharStream.java
     - Token.java
 
-Ever 1.20_3 (2012/07/31)
+ãƒ»ver 1.20_3 (2012/07/31)
   [ BugFix ]
-    Eƒvƒ‰ƒOƒCƒ“ŠÖ”‚ğŒÄ‚Ño‚µ‚½‚Æ‚«‚ÉÀsƒ|ƒCƒ“ƒg‚ª³‚µ‚­“®ì‚µ‚È‚©‚Á‚½‚Ì‚ğC³
+    ãƒ»ãƒ—ãƒ©ã‚°ã‚¤ãƒ³é–¢æ•°ã‚’å‘¼ã³å‡ºã—ãŸã¨ãã«å®Ÿè¡Œãƒã‚¤ãƒ³ãƒˆãŒæ­£ã—ãå‹•ä½œã—ãªã‹ã£ãŸã®ã‚’ä¿®æ­£
 
   [ NewFile ]
     - ./sample/Arduino/ButtonPush.pen
@@ -250,9 +264,9 @@
   [ ReNameFile ]
     - ./sample/Arduino/ArduinoTest.pen -> ./sample/Arduino/ArduinoAction.pen
 
-Ever 1.20_2 (2012/07/28)
+ãƒ»ver 1.20_2 (2012/07/28)
   [ BugFix ]
-    Eƒvƒ‰ƒOƒCƒ“‚ÌI—¹ˆ—‚ª³‚µ‚­s‚í‚ê‚È‚©‚Á‚½‚Ì‚ğC³
+    ãƒ»ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®çµ‚äº†å‡¦ç†ãŒæ­£ã—ãè¡Œã‚ã‚Œãªã‹ã£ãŸã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -260,12 +274,12 @@
     - MyRunnable.java
     - PenPlugin.java
 
-Ever 1.20_1 (2012/07/27)
+ãƒ»ver 1.20_1 (2012/07/27)
   [ New ]
-    Eƒvƒ‰ƒOƒCƒ“‹@”\‚ğÀ‘•
-    Eƒvƒ‰ƒOƒCƒ“‚É Arduino ‚ÌŒv‘ªE§Œä‚ğ’Ç‰Á
+    ãƒ»ãƒ—ãƒ©ã‚°ã‚¤ãƒ³æ©Ÿèƒ½ã‚’å®Ÿè£…
+    ãƒ»ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã« Arduino ã®è¨ˆæ¸¬ãƒ»åˆ¶å¾¡ã‚’è¿½åŠ 
   [ BugFix ]
-    EŠÖ”ŒÄ‚Ño‚µ‚Ìˆø”‚Æ‰¼ˆø”‚ÌƒoƒO‚Å³‚µ‚¢’l‚ğ“n‚¹‚È‚¢ê‡‚ª‚ ‚é‚Ì‚ğC³
+    ãƒ»é–¢æ•°å‘¼ã³å‡ºã—ã®å¼•æ•°ã¨ä»®å¼•æ•°ã®ãƒã‚°ã§æ­£ã—ã„å€¤ã‚’æ¸¡ã›ãªã„å ´åˆãŒã‚ã‚‹ã®ã‚’ä¿®æ­£
 
   [ NewFile ]
     - PenPlugin.java
@@ -290,17 +304,17 @@
     - MyRunnable.java
     - ReadMe.txt
 
-Ever 1.20  (2012/06/26)
+ãƒ»ver 1.20  (2012/06/26)
   [ Memo ]
-    Ever 1.19_10 ‚ğˆÀ’èƒo[ƒWƒ‡ƒ“‚Æ‚µ‚ÄƒŠƒŠ[ƒX
+    ãƒ»ver 1.19_10 ã‚’å®‰å®šãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¨ã—ã¦ãƒªãƒªãƒ¼ã‚¹
 
   [ FixFile ]
     - ChangeLog.txt
     - MainGUI.java
 
-Ever 1.19_10  (2012/06/26)
+ãƒ»ver 1.19_10  (2012/06/26)
   [ Fix ]
-    EƒGƒ‰[ƒƒbƒZ[ƒW‚ÌC³
+    ãƒ»ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -310,12 +324,12 @@
     - ThreadRun.java
     - TokenMgrError.java
 
-Ever 1.19_9  (2012/06/10)
+ãƒ»ver 1.19_9  (2012/06/10)
   [ New ]
-    Edfp(•¶š—ñ)
-      -> Œ^‚ğ dfp (10i•‚“®¬”“_) ‚É•ÏŠ·‚·‚éŠÖ”‚ğ’Ç‰Á
+    ãƒ»dfp(æ–‡å­—åˆ—)
+      -> å‹ã‚’ dfp (10é€²æµ®å‹•å°æ•°ç‚¹) ã«å¤‰æ›ã™ã‚‹é–¢æ•°ã‚’è¿½åŠ 
   [ BugFix ]
-    E10i•‚“®¬”“_‰‰Zƒ‰ƒCƒuƒ‰ƒŠ‚ÌXV
+    ãƒ»10é€²æµ®å‹•å°æ•°ç‚¹æ¼”ç®—ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®æ›´æ–°
 
   [ NewFile ]
     - ASTDfp.java
@@ -333,9 +347,9 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.19_8  (2012/03/29)
+ãƒ»ver 1.19_8  (2012/03/29)
   [ Fix ]
-    EPEN‚ÌÀsƒfƒBƒŒƒNƒgƒŠ‚Ìæ“¾•û–@‚Ì•ÏX
+    ãƒ»PENã®å®Ÿè¡Œãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®å–å¾—æ–¹æ³•ã®å¤‰æ›´
 
   [ FixFile ]
     - ChangeLog.txt
@@ -343,9 +357,9 @@
     - MainGUI.java
     - PenProperties.java
 
-Ever 1.19_7  (2012/03/22)
+ãƒ»ver 1.19_7  (2012/03/22)
   [ BugFix ]
-    EApplet”Å ‚ª“®ì‚µ‚È‚©‚Á‚½‚Ì‚ğC³
+    ãƒ»Appletç‰ˆ ãŒå‹•ä½œã—ãªã‹ã£ãŸã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -353,12 +367,12 @@
     - MyRunnable.java
     - RunButtonListener.java
 
-Ever 1.19_6  (2011/10/13)
+ãƒ»ver 1.19_6  (2011/10/13)
   [ New ]
-    EƒCƒ“ƒfƒ“ƒg‚Ìíœ‚ğƒuƒƒbƒN’PˆÊ‚Ås‚¤‚æ‚¤‚É‚µ‚½
+    ãƒ»ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã®å‰Šé™¤ã‚’ãƒ–ãƒ­ãƒƒã‚¯å˜ä½ã§è¡Œã†ã‚ˆã†ã«ã—ãŸ
   [ BugFix ]
-    EÄ‹NŒÄ‚Ño‚µ‚ÌƒvƒƒOƒ‰ƒ€‚ğ‹Lq‚·‚é‚Æãè‚­“®ì‚µ‚È‚¢‚±‚Æ‚ª‚ ‚é‚Ì‚ğC³
-    Eƒƒjƒ…[‚Ì•ÒW‚ÌƒAƒCƒeƒ€‚ªˆê•”‰pŒê‚É‚È‚Á‚Ä‚¢‚½‚Ì‚ğC³
+    ãƒ»å†èµ·å‘¼ã³å‡ºã—ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’è¨˜è¿°ã™ã‚‹ã¨ä¸Šæ‰‹ãå‹•ä½œã—ãªã„ã“ã¨ãŒã‚ã‚‹ã®ã‚’ä¿®æ­£
+    ãƒ»ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ç·¨é›†ã®ã‚¢ã‚¤ãƒ†ãƒ ãŒä¸€éƒ¨è‹±èªã«ãªã£ã¦ã„ãŸã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ASTFunction.java
@@ -370,18 +384,18 @@
     - MainGUI.java
     - MyJMenuItem.java
 
-Ever 1.19_5  (2010/12/29)
+ãƒ»ver 1.19_5  (2010/12/29)
   [ Fix ]
-    EFileI/OŠÖ”‚Åƒtƒ@ƒCƒ‹‚Ì•¶šƒR[ƒh‚ğ”»•Ê‚·‚é‚æ‚¤‚É•ÏX
+    ãƒ»FileI/Oé–¢æ•°ã§ãƒ•ã‚¡ã‚¤ãƒ«ã®æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’åˆ¤åˆ¥ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
 
   [ FixFile ]
     - ChangeLog.txt
     - IntVFileIO.java
     - MainGUI.java
 
-Ever 1.19_4  (2010/12/09)
+ãƒ»ver 1.19_4  (2010/12/09)
   [ BugFix ]
-    EŒJ‚è•Ô‚µ–½—ß‚ª³í‚É“®ì‚µ‚È‚¢‚Ì‚ğC³
+    ãƒ»ç¹°ã‚Šè¿”ã—å‘½ä»¤ãŒæ­£å¸¸ã«å‹•ä½œã—ãªã„ã®ã‚’ä¿®æ­£
 
   [ ReNameFile ]
     - ASTWhileSwitch.java -> ASTWhileSwitchFor.java
@@ -396,9 +410,9 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.19_3  (2010/12/03)
+ãƒ»ver 1.19_3  (2010/12/03)
   [ BugFix ]
-    EFor•¶‚É”z—ñ‚ğg‚¦‚È‚©‚Á‚½‚Ì‚ğC³
+    ãƒ»Foræ–‡ã«é…åˆ—ã‚’ä½¿ãˆãªã‹ã£ãŸã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -409,9 +423,9 @@
     - IntVParserTokenManager.java
     - MainGUI.java
 
-Ever 1.19_2  (2010/11/22)
+ãƒ»ver 1.19_2  (2010/11/22)
   [ BugFix ]
-    Eu[”z—ñ] ‚ğ“ü—Í‚·‚év‚ª³í‚É“®ì‚µ‚È‚¢‚Ì‚ğC³
+    ãƒ»ã€Œ[é…åˆ—] ã‚’å…¥åŠ›ã™ã‚‹ã€ãŒæ­£å¸¸ã«å‹•ä½œã—ãªã„ã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -424,11 +438,11 @@
     - MyJMenuBar.java
     - NewFileButtonListener.java
 
-Ever 1.19_1  (2010/09/17)
+ãƒ»ver 1.19_1  (2010/09/17)
   [ Memo ]
-    EJavaCC ‚Ìƒo[ƒWƒ‡ƒ“‚ğ 4.2 -> 5.0 ‚É•ÏX
+    ãƒ»JavaCC ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’ 4.2 -> 5.0 ã«å¤‰æ›´
   [ Fix ]
-    Eƒtƒ@ƒCƒ‹‚Ì•¶šƒR[ƒh‚ğ”»•Ê‚·‚é‚æ‚¤‚É•ÏX
+    ãƒ»ãƒ•ã‚¡ã‚¤ãƒ«ã®æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’åˆ¤åˆ¥ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
 
   [ NewFile ]
     - ./org/mozilla/universalchardet/CharsetListener.java
@@ -507,20 +521,20 @@
     - TokenMgrError.java
     - WebMain.java
 
-Ever 1.19  (2010/08/29)
+ãƒ»ver 1.19  (2010/08/29)
   [ Memo ]
-    Ever 1.18_17 ‚ğˆÀ’èƒo[ƒWƒ‡ƒ“‚Æ‚µ‚ÄƒŠƒŠ[ƒX
-    E1.90 ‚©‚çJRE‚Ì 1.5.0 ˆÈã‚ğ•K—v‚Æ‚·‚é‚æ‚¤‚É‚È‚è‚Ü‚µ‚½
+    ãƒ»ver 1.18_17 ã‚’å®‰å®šãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¨ã—ã¦ãƒªãƒªãƒ¼ã‚¹
+    ãƒ»1.90 ã‹ã‚‰JREã® 1.5.0 ä»¥ä¸Šã‚’å¿…è¦ã¨ã™ã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸ
 
   [ FixFile ]
     - ChangeLog.txt
     - ReadMe.txt
 
-Ever 1.18_17  (2010/07/30)
+ãƒ»ver 1.18_17  (2010/07/30)
   [ Fix ]
-    E‘å‚«‚È”‚ğˆµ‚¤‚ÆDFPŒ^‚É‚È‚é‚æ‚¤‚É•ÏX
+    ãƒ»å¤§ããªæ•°ã‚’æ‰±ã†ã¨DFPå‹ã«ãªã‚‹ã‚ˆã†ã«å¤‰æ›´
   [ BugFix ]
-    E‘å‚«‚È”‚ğˆµ‚¤‚ÆƒGƒ‰[‚É‚È‚é‚Ì‚ğC³
+    ãƒ»å¤§ããªæ•°ã‚’æ‰±ã†ã¨ã‚¨ãƒ©ãƒ¼ã«ãªã‚‹ã®ã‚’ä¿®æ­£
 
   [ NewFile ]
     - ./rossi/dfp/dfp.java
@@ -545,10 +559,10 @@
     - dfpdec.java
     - dfpmath.java
 
-Ever 1.18_16  (2010/07/19)
+ãƒ»ver 1.18_16  (2010/07/19)
   [ Fix ]
-    E•`‰æ–½—ßÀsƒGƒ‰[‚ÌƒƒbƒZ[ƒW‚ğ•\¦‚·‚é‚æ‚¤‚É•ÏX
-    EÀ”‚ÌŒ^‚Åè—]ŒvZ(%)‚ª‚Å‚«‚é‚æ‚¤‚É•ÏX
+    ãƒ»æç”»å‘½ä»¤å®Ÿè¡Œæ™‚ã‚¨ãƒ©ãƒ¼ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
+    ãƒ»å®Ÿæ•°ã®å‹ã§å‰°ä½™è¨ˆç®—(%)ãŒã§ãã‚‹ã‚ˆã†ã«å¤‰æ›´
 
   [ FixFile ]
     - ChangeLog.txt
@@ -558,12 +572,12 @@
     - MainGUI.java
     - ThreadRunStop.java
 
-Ever 1.18_15  (2010/07/12)
+ãƒ»ver 1.18_15  (2010/07/12)
   [ New ]
-    EgDrawImage(filename, x, y)
-      -> ‰æ‘œ‚ğ“Ç‚İ‚İ•`‰æƒEƒBƒ“ƒhƒE‚Ì(x, y)‚É•`‰æ‚·‚é
-    EgDrawImage(filename, x, y,  width, height)
-      -> ‰æ‘œ‚ğ“Ç‚İ‚İ•`‰æƒEƒBƒ“ƒhƒE‚Ì(x, y)‚É‰¡• width ‚Åc• height ‚Å•`‰æ‚·‚é
+    ãƒ»gDrawImage(filename, x, y)
+      -> ç”»åƒã‚’èª­ã¿è¾¼ã¿æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®(x, y)ã«æç”»ã™ã‚‹
+    ãƒ»gDrawImage(filename, x, y,  width, height)
+      -> ç”»åƒã‚’èª­ã¿è¾¼ã¿æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®(x, y)ã«æ¨ªå¹… width ã§ç¸¦å¹… height ã§æç”»ã™ã‚‹
 
   [ NewFile ]
     - ASTgDrawImage.java
@@ -581,9 +595,9 @@
     - MainGUI.java
     - ReadMe.txt
 
-Ever 1.18_14  (2009/12/04)
+ãƒ»ver 1.18_14  (2009/12/04)
   [ Fix ]
-    Ei“à•”•ÏXjƒŠƒtƒ@ƒNƒ^ƒŠƒ“ƒO
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰ãƒªãƒ•ã‚¡ã‚¯ã‚¿ãƒªãƒ³ã‚°
 
   [ NewFile ]
     - ParseError.java
@@ -621,9 +635,9 @@
   [ RemoveFile ]
     - ErrorAppend.java
 
-Ever 1.18_13  (2009/10/30)
+ãƒ»ver 1.18_13  (2009/10/30)
   [ BugFix ]
-    EœZ‚ª³‚µ‚­“®ì‚µ‚È‚¢‚Ì‚ğC³
+    ãƒ»é™¤ç®—ãŒæ­£ã—ãå‹•ä½œã—ãªã„ã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ErrorAppend.java
@@ -631,9 +645,9 @@
     - IntVExecuter.java
     - MainGUI.java
 
-Ever 1.18_12  (2009/10/21)
+ãƒ»ver 1.18_12  (2009/10/21)
   [ BugFix ]
-    EFileIO‚ª³‚µ‚­“®ì‚µ‚È‚¢‚Ì‚ğC³
+    ãƒ»FileIOãŒæ­£ã—ãå‹•ä½œã—ãªã„ã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -641,9 +655,9 @@
     - IntVFileIO.java
     - MainGUI.java
 
-Ever 1.18_11  (2009/07/30)
+ãƒ»ver 1.18_11  (2009/07/30)
   [ New ]
-    Eİ’èƒtƒ@ƒCƒ‹‚Ì•Ï”éŒ¾—L–³‚É€–Ú‚ğ’Ç‰Á
+    ãƒ»è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®å¤‰æ•°å®£è¨€æœ‰ç„¡ã«é …ç›®ã‚’è¿½åŠ 
 
   [ FixFile ]
     - ./Locale/Locale_ja_JP.properties
@@ -656,9 +670,9 @@
     - Property.ini
     - ReadMe.txt
 
-Ever 1.18_10  (2009/07/28)
+ãƒ»ver 1.18_10  (2009/07/28)
   [ New ]
-    E•Ï”Œ^‚ÉuDFP(•„†•t‚«10i”)v‚ªg—p‚Å‚«‚é‚æ‚¤‚É‚µ‚½
+    ãƒ»å¤‰æ•°å‹ã«ã€ŒDFP(ç¬¦å·ä»˜ã10é€²æ•°)ã€ãŒä½¿ç”¨ã§ãã‚‹ã‚ˆã†ã«ã—ãŸ
 
   [ NewFile ]
     - dfp.java
@@ -676,10 +690,10 @@
     - IntVParserTokenManager.java
     - MainGUI.java
 
-Ever 1.18_9  (2009/07/24)
+ãƒ»ver 1.18_9  (2009/07/24)
   [ New ]
-    E•Ï”Œ^‚Éu^‹Uv‚ªg—p‚Å‚«‚é‚æ‚¤‚É‚µ‚½
-    EFileIO‚Ì“Ç‚İ‚İ•¶šƒR[ƒh‚ğupen.system.codev‚ÉˆË‘¶‚·‚é‚æ‚¤‚É‚µ‚½
+    ãƒ»å¤‰æ•°å‹ã«ã€ŒçœŸå½ã€ãŒä½¿ç”¨ã§ãã‚‹ã‚ˆã†ã«ã—ãŸ
+    ãƒ»FileIOã®èª­ã¿è¾¼ã¿æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’ã€Œpen.system.codeã€ã«ä¾å­˜ã™ã‚‹ã‚ˆã†ã«ã—ãŸ
 
   [ NewFile ]
     - ./sample/Primitive1/if-then-else.pen
@@ -696,9 +710,9 @@
     - MainGUI.java
     - PenFlags.java
 
-Ever 1.18_8  (2009/07/21)
+ãƒ»ver 1.18_8  (2009/07/21)
   [ New ]
-    Eİ’èƒtƒ@ƒCƒ‹‚Éuexecuter.div.modev‚ğ’Ç‰Á
+    ãƒ»è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã«ã€Œexecuter.div.modeã€ã‚’è¿½åŠ 
 
   [ FixFile ]
     - ./Locale/Locale_ja_JP.properties
@@ -714,9 +728,9 @@
     - PenProperties.java
     - Property.ini
 
-Ever 1.18_7  (2009/07/21)
+ãƒ»ver 1.18_7  (2009/07/21)
   [ Fix ]
-    Ei“à•”•ÏXjƒŠƒtƒ@ƒNƒ^ƒŠƒ“ƒO
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰ãƒªãƒ•ã‚¡ã‚¯ã‚¿ãƒªãƒ³ã‚°
 
   [ FixFile ]
     - ChangeLog.txt
@@ -726,13 +740,13 @@
     - ReadMe.txt
     - ReadMe-w32.txt
 
-Ever 1.18_6  (2009/07/19)
+ãƒ»ver 1.18_6  (2009/07/19)
   [ New ]
-    Eu``‚ğ“ü—Í‚·‚év‚Ì–½—ß‚ğ’Ç‰Á
+    ãƒ»ã€Œï½ï½ã‚’å…¥åŠ›ã™ã‚‹ã€ã®å‘½ä»¤ã‚’è¿½åŠ 
   [ Fix ]
-    EApplet”Å‚Ì‰ü—Ç
-      -> ƒtƒ@ƒCƒ‹ƒŠƒXƒg‚ªæ“¾‚Å‚«‚È‚©‚Á‚½ê‡‚ÌƒGƒ‰[‚ğ’Ç‰Á
-      -> ƒTƒ“ƒvƒ‹ƒtƒ@ƒCƒ‹‚ªŠJ‚¯‚È‚©‚Á‚½ê‡‚ÌƒGƒ‰[‚ğ’Ç‰Á
+    ãƒ»Appletç‰ˆã®æ”¹è‰¯
+      -> ãƒ•ã‚¡ã‚¤ãƒ«ãƒªã‚¹ãƒˆãŒå–å¾—ã§ããªã‹ã£ãŸå ´åˆã®ã‚¨ãƒ©ãƒ¼ã‚’è¿½åŠ 
+      -> ã‚µãƒ³ãƒ—ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ãŒé–‹ã‘ãªã‹ã£ãŸå ´åˆã®ã‚¨ãƒ©ãƒ¼ã‚’è¿½åŠ 
 
   [ FixFile ]
     - ASTAssignStat.java
@@ -747,11 +761,11 @@
     - webFileOpenButtonListener.java
     - webNewButtonListener.java
 
-Ever 1.18_5  (2009/07/19)
+ãƒ»ver 1.18_5  (2009/07/19)
   [ Fix ]
-    EApplet”Å‚Ì‰ü—Ç
-      -> V‹K‚ÌÛAíœ‚µ‚Ä‚à‚æ‚¢‚©•·‚­‚æ‚¤‚É‚µ‚½
-      -> ƒtƒ@ƒCƒ‹‚ğŠJ‚­ÛAŠJ‚¢‚Ä‚à‚æ‚¢‚©•·‚­‚æ‚¤‚É‚µ‚½
+    ãƒ»Appletç‰ˆã®æ”¹è‰¯
+      -> æ–°è¦ã®éš›ã€å‰Šé™¤ã—ã¦ã‚‚ã‚ˆã„ã‹èãã‚ˆã†ã«ã—ãŸ
+      -> ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãéš›ã€é–‹ã„ã¦ã‚‚ã‚ˆã„ã‹èãã‚ˆã†ã«ã—ãŸ
 
   [ FixFile ]
     - ChangeLog.txt
@@ -762,10 +776,10 @@
     - webFileOpenButtonListener.java
     - webNewButtonListener.java
 
-Ever 1.18_4  (2009/07/18)
+ãƒ»ver 1.18_4  (2009/07/18)
   [ New ]
-    EApplet”Å‚Ì‰ü—Ç
-      -> ƒTƒ“ƒvƒ‹ƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚ß‚é‚æ‚¤‚É‚µ‚½
+    ãƒ»Appletç‰ˆã®æ”¹è‰¯
+      -> ã‚µãƒ³ãƒ—ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚ã‚‹ã‚ˆã†ã«ã—ãŸ
 
   [ NewFile ]
     - webFileOpenButtonListener.java
@@ -774,9 +788,9 @@
     - ChangeLog.txt
     - MainGUI.java
 
-Ever 1.18_3  (2009/07/18)
+ãƒ»ver 1.18_3  (2009/07/18)
   [ Fix ]
-    EPEN‚ÌApplet”Å‚ğƒ}[ƒW
+    ãƒ»PENã®Appletç‰ˆã‚’ãƒãƒ¼ã‚¸
 
   [ NewFile ]
     - applet.html
@@ -800,9 +814,9 @@
     - PenProperties.java
     - ReadMe.txt
 
-Ever 1.18_2  (2009/07/18)
+ãƒ»ver 1.18_2  (2009/07/18)
   [ Fix ]
-    Ei“à•”•ÏXjƒŠƒtƒ@ƒNƒ^ƒŠƒ“ƒO
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰ãƒªãƒ•ã‚¡ã‚¯ã‚¿ãƒªãƒ³ã‚°
 
   [ NewFile ]
     - ErrorAppend.java
@@ -844,10 +858,10 @@
     - Token.java
     - TokenMgrError.java
 
-Ever 1.18_1  (2009/07/17)
+ãƒ»ver 1.18_1  (2009/07/17)
   [ Fix ]
-    EğŒ®‚ÉƒGƒ‰[‚ª‚ ‚éê‡‚ÌƒƒbƒZ[ƒW‚Ì’Ç‰Á
-      -> ### ›s–Ú‚ ‚½‚è‚ÌğŒ®‚ğŒ©’¼‚µ‚Ä‚­‚¾‚³‚¢
+    ãƒ»æ¡ä»¶å¼ã«ã‚¨ãƒ©ãƒ¼ãŒã‚ã‚‹å ´åˆã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®è¿½åŠ 
+      -> ### â—‹è¡Œç›®ã‚ãŸã‚Šã®æ¡ä»¶å¼ã‚’è¦‹ç›´ã—ã¦ãã ã•ã„
 
   [ NewFile ]
     - ConditionFormatException.java
@@ -859,9 +873,9 @@
     - PenProperties.java
     - ThreadRun.java
 
-Ever 1.18  (2009/07/15)
+ãƒ»ver 1.18  (2009/07/15)
   [ New ]
-    EProperty.ini‚Éupen.system.codev‚ğİ’è‚Å‚«‚é‚æ‚¤‚É‚µ‚½ 
+    ãƒ»Property.iniã«ã€Œpen.system.codeã€ã‚’è¨­å®šã§ãã‚‹ã‚ˆã†ã«ã—ãŸ 
 
   [ ReNameFile ]
     - PEN_Property.java -> PenProperties.java
@@ -876,9 +890,9 @@
     - PenProperties.java
     - Property.ini
 
-Ever 1.17_12  (2009/06/09)
+ãƒ»ver 1.17_12  (2009/06/09)
   [ Memo ]
-    EJavaCC ‚Ìƒo[ƒWƒ‡ƒ“‚ğ 4.0 -> 4.2 ‚É•ÏX
+    ãƒ»JavaCC ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’ 4.0 -> 4.2 ã«å¤‰æ›´
 
   [ FixFile ]
     - ChangeLog.txt
@@ -895,21 +909,21 @@
     - Token.java
     - TokenMgrError.java
 
-Ever 1.17_11  (2009/05/27)
+ãƒ»ver 1.17_11  (2009/05/27)
   [ BugFix ]
-    EƒvƒƒOƒ‰ƒ€“ü—Íx‰‡ƒ{ƒ^ƒ“İ’èƒtƒ@ƒCƒ‹‚ÌC³
+    ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®ä¿®æ­£
 
   [ FixFile ]
     - ./ButtonList/Default.ini
     - ChangeLog.txt
     - MainGUI.java
 
-Ever 1.17_10  (2009/04/19)
+ãƒ»ver 1.17_10  (2009/04/19)
   [ Fix ]
-    EgSetMap(À” x, À” y)‚Ìd—l‚ğ•ÏX
-      -> gSetOrigin(À” x, À” y)
+    ãƒ»gSetMap(å®Ÿæ•° x, å®Ÿæ•° y)ã®ä»•æ§˜ã‚’å¤‰æ›´
+      -> gSetOrigin(å®Ÿæ•° x, å®Ÿæ•° y)
   [ BugFix ]
-    ExDNCL-Draw‚Ìƒ}ƒjƒ…ƒAƒ‹‚ÉŒë‚è‚ª‚ ‚Á‚½‚Ì‚ÅC³
+    ãƒ»xDNCL-Drawã®ãƒãƒ‹ãƒ¥ã‚¢ãƒ«ã«èª¤ã‚ŠãŒã‚ã£ãŸã®ã§ä¿®æ­£
 
   [ NewFile ]
     - ASTgSetOrigin.java
@@ -926,13 +940,13 @@
     - MainGUI.java
     - IntVParser.jjt
 
-Ever 1.17_9  (2009/04/04)
+ãƒ»ver 1.17_9  (2009/04/04)
   [ Fix ]
-    EgOpenGraphWindow()‚Ìd—l•ÏX
-      -> gOpenGraphWindow(À” width, À” height, À” x1, À” y1, À” x2, À” y2, ˜_—’l axis)
-    EgSetMap()‚Ìd—l•ÏX
-      -> gSetMap(À”x1, À”y1, À”x2, À”y2)
-    Eƒ}ƒjƒ…ƒAƒ‹‚ğXV
+    ãƒ»gOpenGraphWindow()ã®ä»•æ§˜å¤‰æ›´
+      -> gOpenGraphWindow(å®Ÿæ•° width, å®Ÿæ•° height, å®Ÿæ•° x1, å®Ÿæ•° y1, å®Ÿæ•° x2, å®Ÿæ•° y2, è«–ç†å€¤ axis)
+    ãƒ»gSetMap()ã®ä»•æ§˜å¤‰æ›´
+      -> gSetMap(å®Ÿæ•°x1, å®Ÿæ•°y1, å®Ÿæ•°x2, å®Ÿæ•°y2)
+    ãƒ»ãƒãƒ‹ãƒ¥ã‚¢ãƒ«ã‚’æ›´æ–°
 
   [ FixFile ]
     - ./Manual/ini.pdf
@@ -945,12 +959,12 @@
     - IntVgOutputWindow.java
     - MainGUI.java
 
-Ever 1.17_8  (2009/02/21)
+ãƒ»ver 1.17_8  (2009/02/21)
   [ Fix ]
-    ECopyright‚Ì”N”‚ğ2009‚É•ÏX
+    ãƒ»Copyrightã®å¹´æ•°ã‚’2009ã«å¤‰æ›´
   [ BugFix ]
-    Eupen.debug.flagv‚ğ—LŒø‚É‚·‚é‚Æ‹N“®‚µ‚È‚©‚Á‚½‚Ì‚ğC³
-    Euexecuter.graphic.originv‚ª³‚µ‚­“®ì‚µ‚È‚©‚Á‚½‚Ì‚ğC³
+    ãƒ»ã€Œpen.debug.flagã€ã‚’æœ‰åŠ¹ã«ã™ã‚‹ã¨èµ·å‹•ã—ãªã‹ã£ãŸã®ã‚’ä¿®æ­£
+    ãƒ»ã€Œexecuter.graphic.originã€ãŒæ­£ã—ãå‹•ä½œã—ãªã‹ã£ãŸã®ã‚’ä¿®æ­£
 
   [ FixFiel ]
     - ChangeLog.txt
@@ -961,11 +975,11 @@
     - ReadMe-w32.txt
     - RunButtonListener.java
     
-Ever 1.17_7  (2008/10/14)
+ãƒ»ver 1.17_7  (2008/10/14)
   [ Fix ]
-    EŠÖ” "gSetMaps()" ‚ğ "gSetMap()" ‚É•ÏX
+    ãƒ»é–¢æ•° "gSetMaps()" ã‚’ "gSetMap()" ã«å¤‰æ›´
   [ BugFix ]
-    EgSetMap() ‚Ìy²İ’è‚ª³‚µ‚­“®ì‚µ‚È‚©‚Á‚½‚Ì‚ğC³
+    ãƒ»gSetMap() ã®yè»¸è¨­å®šãŒæ­£ã—ãå‹•ä½œã—ãªã‹ã£ãŸã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ./ButtonList/Default.ini
@@ -983,13 +997,13 @@
   [ ReNameFile ]
     - ASTgSetMaps.java -> ASTgSetMap.java
 
-Ever 1.17_6  (2008/09/22)
+ãƒ»ver 1.17_6  (2008/09/22)
   [ Fix ]
-    EƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€iŠÖ”ŒÄ‚Ño‚µj‚ÌC³
-    EƒvƒƒOƒ‰ƒ€“ü—Íx‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚ÌC³
-    Euƒwƒ‹ƒvv->uİ’èŠm”Fv‚Ì€–Ú‚ğ’Ç‰Á
+    ãƒ»ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ï¼ˆé–¢æ•°å‘¼ã³å‡ºã—ï¼‰ã®ä¿®æ­£
+    ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã®ä¿®æ­£
+    ãƒ»ã€Œãƒ˜ãƒ«ãƒ—ã€->ã€Œè¨­å®šç¢ºèªã€ã®é …ç›®ã‚’è¿½åŠ 
   [ BugFix ]
-    EgOpenGraphWindow() ‚Ìy²İ’è‚ª³‚µ‚­“®ì‚µ‚È‚©‚Á‚½‚Ì‚ğC³
+    ãƒ»gOpenGraphWindow() ã®yè»¸è¨­å®šãŒæ­£ã—ãå‹•ä½œã—ãªã‹ã£ãŸã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ./ButtonList/Default.ini
@@ -1012,13 +1026,13 @@
     - ParseException.java
     - Property.ini
 
-Ever 1.17_5  (2008/07/14)
+ãƒ»ver 1.17_5  (2008/07/14)
   [ New ]
-    EƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚Ì’Ç‰Á
-      -> ./sample/Primitive1/switch.pen	: Switch•¶‚ğg—p‚µ‚½ƒvƒƒOƒ‰ƒ€—á
+    ãƒ»ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®è¿½åŠ 
+      -> ./sample/Primitive1/switch.pen	: Switchæ–‡ã‚’ä½¿ç”¨ã—ãŸãƒ—ãƒ­ã‚°ãƒ©ãƒ ä¾‹
   [ BugFix ]
-    EŠÖ”–¼‚ğŠÔˆá‚¦‚½‚ÌƒGƒ‰[ƒƒbƒZ[ƒW‚ÌC³
-      -> u--s–Ú‚Ì"???"‚Æ‚¢‚¤ŠÖ”–¼‚Í‘¶İ‚µ‚Ü‚¹‚ñBv
+    ãƒ»é–¢æ•°åã‚’é–“é•ãˆãŸæ™‚ã®ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®ä¿®æ­£
+      -> ã€Œ--è¡Œç›®ã®"???"ã¨ã„ã†é–¢æ•°åã¯å­˜åœ¨ã—ã¾ã›ã‚“ã€‚ã€
 
   [ NewFile ]
     - ./sample/Primitive1/switch.pen
@@ -1029,10 +1043,10 @@
     - MainGUI.java
     - ThreadRun.java
 
-Ever 1.17_4  (2008/07/09)
+ãƒ»ver 1.17_4  (2008/07/09)
   [ New ]
-    EProperty.ini ‚Å‚Ìİ’è€–Ú‚ğ’Ç‰Á
-      -> executer.var.names  : •Ï”–¼‚É”¼Šp/‘SŠp‚ğg—p‚Å‚«‚é‚©İ’è
+    ãƒ»Property.ini ã§ã®è¨­å®šé …ç›®ã‚’è¿½åŠ 
+      -> executer.var.names  : å¤‰æ•°åã«åŠè§’/å…¨è§’ã‚’ä½¿ç”¨ã§ãã‚‹ã‹è¨­å®š
 
   [ NewFile ]
     - VarNameError.java
@@ -1047,18 +1061,18 @@
     - ThreadRun.java
     - ThreadRunStop.java 
 
-Ever 1.17_3  (2008/06/20)
+ãƒ»ver 1.17_3  (2008/06/20)
   [ New ]
-    EƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚Ì’Ç‰Á
-      -> ./sample/Graphic_J/Signal.pen  : M†‹@‚Ì•`‰æ
-      -> ./sample/Primitive2/Euclid.pen : ƒ†[ƒNƒŠƒbƒh‚ÌŒİœ–@
-      -> ./sample/Primitive2/Sqrt.pen   : •½•ûª
-    E•`‰æê—p“ü—Íx‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚Ì’Ç‰Á
+    ãƒ»ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®è¿½åŠ 
+      -> ./sample/Graphic_J/Signal.pen  : ä¿¡å·æ©Ÿã®æç”»
+      -> ./sample/Primitive2/Euclid.pen : ãƒ¦ãƒ¼ã‚¯ãƒªãƒƒãƒ‰ã®äº’é™¤æ³•
+      -> ./sample/Primitive2/Sqrt.pen   : å¹³æ–¹æ ¹
+    ãƒ»æç”»å°‚ç”¨å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã®è¿½åŠ 
       -> ./ButtonList/DrawList.ini
-    E•Ï”–¼‚É "‚"-"‚š", "‚`"-"‚y" ‚ğg—p‚µ‚½ê‡A”¼Šp‰pš‚É©“®•ÏŠ·‚·‚é‚æ‚¤‚É‚µ‚½
+    ãƒ»å¤‰æ•°åã« "ï½"-"ï½š", "ï¼¡"-"ï¼º" ã‚’ä½¿ç”¨ã—ãŸå ´åˆã€åŠè§’è‹±å­—ã«è‡ªå‹•å¤‰æ›ã™ã‚‹ã‚ˆã†ã«ã—ãŸ
   [ Fix ]
-    Ei“à•”•ÏXjƒŠƒtƒ@ƒNƒ^ƒŠƒ“ƒO
-    E“ü—Íx‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹—p‚ÌƒfƒBƒŒƒNƒgƒŠ‚ğì¬
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰ãƒªãƒ•ã‚¡ã‚¯ã‚¿ãƒªãƒ³ã‚°
+    ãƒ»å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ç”¨ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä½œæˆ
 
   [ NewFile ]
     - ./ButtonList/DrawList.ini
@@ -1085,11 +1099,11 @@
     - ./sample/Primitive2/binary.pen -> ./sample/Primitive2/Binary.pen
     - ButtonList.ini -> ./ButtonList/Default.ini
 
-Ever 1.17_2  (2008/01/18)
+ãƒ»ver 1.17_2  (2008/01/18)
   [ Fix ]
-    Ei“à•”•ÏXjƒŠƒtƒ@ƒNƒ^ƒŠƒ“ƒO
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰ãƒªãƒ•ã‚¡ã‚¯ã‚¿ãƒªãƒ³ã‚°
   [ BugFix ]
-    ELocaleƒtƒ@ƒCƒ‹‚ğŠJ‚­‚±‚Æ‚ª‚Å‚«‚È‚©‚Á‚½ƒoƒO‚ğC³
+    ãƒ»Localeãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã“ã¨ãŒã§ããªã‹ã£ãŸãƒã‚°ã‚’ä¿®æ­£
 
   [ NewFile ]
     - PEN_Property.java
@@ -1103,10 +1117,10 @@
     - PEN.java
     - ThreadRun.java
 
-Ever 1.17_1  (2008/01/11)
+ãƒ»ver 1.17_1  (2008/01/11)
   [ Fix ]
-    Ei“à•”•ÏXj“ü—Íx‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ•û‚ğ•ÏX
-    Ei“à•”•ÏXjLocaleŠÖ˜A‚Ìƒf[ƒ^“Ç‚İ‚İ‚ğ•ÏX
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿æ–¹ã‚’å¤‰æ›´
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰Localeé–¢é€£ã®ãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿ã‚’å¤‰æ›´
 
   [ NewFile ]
     - LocaleProperty.java
@@ -1132,9 +1146,9 @@
     - MyWindowAdapter.java
     - RunTimeMouseListener.java
 
-Ever 1.17  (2007/12/26)
+ãƒ»ver 1.17  (2007/12/26)
   [ Fix ]
-    Ei“à•”•ÏXjJavaƒ\[ƒXƒtƒ@ƒCƒ‹‚ÌƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ğUTF-8‚É•ÏX
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰Javaã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã‚’UTF-8ã«å¤‰æ›´
 
   [ FixFile ]
     - ./Locale/Locale_ja_JP.properties
@@ -1172,18 +1186,18 @@
     - Token.java
     - TokenMgrError.java
 
-Ever 1.16_7  (2007/12/10)
+ãƒ»ver 1.16_7  (2007/12/10)
   [ New ]
-    E—\–ñŒê‚ğ’Ç‰Á
+    ãƒ»äºˆç´„èªã‚’è¿½åŠ 
       -> LF : \n
       -> CR : \r
       -> HT : \t
-      -> NL : ‰üs•¶š(ƒVƒXƒeƒ€ˆË‘¶)
-    Ecompare(str1, str2) : 2 ‚Â‚Ì•¶š—ñ‚ğ«‘®‚É”äŠr‚µA®”‚Ì’l‚ğ•Ô‚·
-      -> str1 ‚ª str2 ‚æ‚è‘O : -1
-      -> str1 ‚Æ str2 ‚ª“¯‚¶ :  0
-      -> str1 ‚ª str2 ‚æ‚èŒã :  1
-    EƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚Ì’Ç‰Á
+      -> NL : æ”¹è¡Œæ–‡å­—(ã‚·ã‚¹ãƒ†ãƒ ä¾å­˜)
+    ãƒ»compare(str1, str2) : 2 ã¤ã®æ–‡å­—åˆ—ã‚’è¾æ›¸å¼ã«æ¯”è¼ƒã—ã€æ•´æ•°ã®å€¤ã‚’è¿”ã™
+      -> str1 ãŒ str2 ã‚ˆã‚Šå‰ : -1
+      -> str1 ã¨ str2 ãŒåŒã˜ :  0
+      -> str1 ãŒ str2 ã‚ˆã‚Šå¾Œ :  1
+    ãƒ»ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®è¿½åŠ 
 
   [ NewFile ]
     - ./sample/Graphic_J/Heart.pen
@@ -1205,10 +1219,10 @@
   [ ReMoveFile ]
     - ASTEOF_STR.java
 
-Ever 1.16_6  (2007/10/28)
+ãƒ»ver 1.16_6  (2007/10/28)
   [ BugFix ]
-    E•Ï”éŒ¾–³‚µƒ‚[ƒh‚ªfor•¶‚Å—LŒø‚É‚È‚ç‚È‚¢ƒoƒO‚ğC³
-    EŒ¾Œêƒ}ƒjƒ…ƒAƒ‹‚ÌŠÔˆá‚¢‚ğC³
+    ãƒ»å¤‰æ•°å®£è¨€ç„¡ã—ãƒ¢ãƒ¼ãƒ‰ãŒforæ–‡ã§æœ‰åŠ¹ã«ãªã‚‰ãªã„ãƒã‚°ã‚’ä¿®æ­£
+    ãƒ»è¨€èªãƒãƒ‹ãƒ¥ã‚¢ãƒ«ã®é–“é•ã„ã‚’ä¿®æ­£
 
   [ NewFile ]
     - ./sample/Graphic/Heart.pen
@@ -1219,14 +1233,14 @@
     - IntVgOutputWindow.java
     - MainGUI.java
 
-Ever 1.16_5  (2007/09/09)
+ãƒ»ver 1.16_5  (2007/09/09)
   [ New ]
-    EgSetMaps(x, y)
-      -> •`‰æƒEƒBƒ“ƒhƒE‚ÌŒ´“_‚ğ(x, y)‚É•ÏX‚·‚é
-    EgSetMaps(xRange1, xRange2, yRange1, yRange2)
-      -> •`‰æƒEƒBƒ“ƒhƒE‚ÌÀ•W‹óŠÔ‚ğ•ÏX‚·‚é
+    ãƒ»gSetMaps(x, y)
+      -> æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®åŸç‚¹ã‚’(x, y)ã«å¤‰æ›´ã™ã‚‹
+    ãƒ»gSetMaps(xRange1, xRange2, yRange1, yRange2)
+      -> æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®åº§æ¨™ç©ºé–“ã‚’å¤‰æ›´ã™ã‚‹
   [ Fix ]
-    E“ü—Íx‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚ÌC³
+    ãƒ»å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã®ä¿®æ­£
 
   [ NewFile ]
     - ./sample/Graphic/Ball.pen
@@ -1248,11 +1262,11 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.16_4  (2007/08/08)
+ãƒ»ver 1.16_4  (2007/08/08)
   [ New ]
-    EƒOƒ‰ƒtƒEƒBƒ“ƒhƒE‚Å‰¼‘z“I‚ÈÀ•W‹óŠÔ‚ğw’è‚Å‚«‚é‚æ‚¤‚É‹@”\’Ç‰Á
+    ãƒ»ã‚°ãƒ©ãƒ•ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã§ä»®æƒ³çš„ãªåº§æ¨™ç©ºé–“ã‚’æŒ‡å®šã§ãã‚‹ã‚ˆã†ã«æ©Ÿèƒ½è¿½åŠ 
   [ Fix ]
-    EgOpenGraphWindow() ‚Ìd—l•ÏX
+    ãƒ»gOpenGraphWindow() ã®ä»•æ§˜å¤‰æ›´
       -> gOpenGraphWindow(width, height, xRange1, xRange2, yRange1, yRange2, boolean)
 
   [ FixFile ]
@@ -1266,15 +1280,15 @@
     - IntVParserTokenManager.java
     - MainGUI.java
 
-Ever 1.16_3  (2007/08/06)
+ãƒ»ver 1.16_3  (2007/08/06)
   [ New ]
-    EgOpenWindow(width, height, x, y)
-      -> ‰¡• width, c• height ‚Å Œ´“_(x, y) ‚Ì•`‰æƒEƒBƒ“ƒhƒE‚ğŠJ‚­
-    EgOpenGraphWindow(width, height, x, y)
-      -> ‰¡• width, c• height ‚Å Œ´“_(x, y) ‚ÌƒOƒ‰ƒtƒEƒBƒ“ƒhƒE‚ğŠJ‚­
+    ãƒ»gOpenWindow(width, height, x, y)
+      -> æ¨ªå¹… width, ç¸¦å¹… height ã§ åŸç‚¹(x, y) ã®æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‹ã
+    ãƒ»gOpenGraphWindow(width, height, x, y)
+      -> æ¨ªå¹… width, ç¸¦å¹… height ã§ åŸç‚¹(x, y) ã®ã‚°ãƒ©ãƒ•ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‹ã
   [ Fix ]
-    E(Refactoring) IntVExecuter.java
-    E(Refactoring) IntVgOutputWindow.java
+    ãƒ»(Refactoring) IntVExecuter.java
+    ãƒ»(Refactoring) IntVgOutputWindow.java
 
   [ NewFile ]
     - ./sample/Graphic/Graph.pen
@@ -1294,9 +1308,9 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.16_2  (2007/08/05)
+ãƒ»ver 1.16_2  (2007/08/05)
   [ BugFix ]
-    EŒJ‚è•Ô‚µ•¶‚ª³í‚É“®ì‚µ‚È‚¢ƒoƒO‚ÌC³
+    ãƒ»ç¹°ã‚Šè¿”ã—æ–‡ãŒæ­£å¸¸ã«å‹•ä½œã—ãªã„ãƒã‚°ã®ä¿®æ­£
 
   [ NewFile ]
     - ASTWhileSwitch.java
@@ -1312,14 +1326,14 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.16_1  (2007/08/05)
+ãƒ»ver 1.16_1  (2007/08/05)
   [ New ]
-    Eswitch•¶‚Ì’Ç‰Á
-    E•`‰æƒEƒBƒ“ƒhƒE‚ÌŒ´“_‚ğ•ÏX‚Å‚«‚é‚æ‚¤‚É‹@”\’Ç‰Á
-    EProperty.ini ‚Å‚Ìİ’è€–Ú‚ğ’Ç‰Á
-      -> executer.graphic.origin  : •`‰æƒEƒBƒ“ƒhƒE‚ÌŒ´“_‚ğİ’è
+    ãƒ»switchæ–‡ã®è¿½åŠ 
+    ãƒ»æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®åŸç‚¹ã‚’å¤‰æ›´ã§ãã‚‹ã‚ˆã†ã«æ©Ÿèƒ½è¿½åŠ 
+    ãƒ»Property.ini ã§ã®è¨­å®šé …ç›®ã‚’è¿½åŠ 
+      -> executer.graphic.origin  : æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®åŸç‚¹ã‚’è¨­å®š
   [ Fix ]
-    Eo—Í•¶‚Ì—h‚ç‚¬‚ğ’Ç‰Á
+    ãƒ»å‡ºåŠ›æ–‡ã®æºã‚‰ãã‚’è¿½åŠ 
 
   [ NewFile ]
     - ASTCase.java
@@ -1346,18 +1360,18 @@
     - ParseException.java
     - Property.ini
 
-Ever 1.16  (2007/07/26)
+ãƒ»ver 1.16  (2007/07/26)
   [ Memo ]
-    Ever 1.15_7 ‚ğˆÀ’èƒo[ƒWƒ‡ƒ“‚Æ‚µ‚ÄƒŠƒŠ[ƒX
+    ãƒ»ver 1.15_7 ã‚’å®‰å®šãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¨ã—ã¦ãƒªãƒªãƒ¼ã‚¹
 
-Ever 1.15_7  (2007/07/15)
+ãƒ»ver 1.15_7  (2007/07/15)
   [ Fix ]
-    Ei“à•”•ÏXjIntVExecuterƒNƒ‰ƒX‚ÌC³
-    Eƒ}ƒjƒ…ƒAƒ‹‚ÌC³
-      -> sin(), cos(), tan() ‚Ìà–¾‚ğC³
-      -> uˆóü‚·‚év¨u•\¦‚·‚év
-    E•`‰æŠÖ”‚Ìˆø”‚ğÀ”Œ^‚Åˆ—‚·‚é‚æ‚¤‚É•ÏX
-    EFor•¶‚Ì‘Œ¸’l‚ÉÀ”‚ğˆµ‚¦‚é‚æ‚¤‚É•ÏX
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰IntVExecuterã‚¯ãƒ©ã‚¹ã®ä¿®æ­£
+    ãƒ»ãƒãƒ‹ãƒ¥ã‚¢ãƒ«ã®ä¿®æ­£
+      -> sin(), cos(), tan() ã®èª¬æ˜ã‚’ä¿®æ­£
+      -> ã€Œå°åˆ·ã™ã‚‹ã€â†’ã€Œè¡¨ç¤ºã™ã‚‹ã€
+    ãƒ»æç”»é–¢æ•°ã®å¼•æ•°ã‚’å®Ÿæ•°å‹ã§å‡¦ç†ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
+    ãƒ»Foræ–‡ã®å¢—æ¸›å€¤ã«å®Ÿæ•°ã‚’æ‰±ãˆã‚‹ã‚ˆã†ã«å¤‰æ›´
 
   [ FixFile ]
     - ./Manual/xDNCL-Language-Manual.pdf
@@ -1371,20 +1385,20 @@
     - IntVParserTokenManager.java
     - MainGUI.java
 
-Ever 1.15_6  (2007/07/01)
+ãƒ»ver 1.15_6  (2007/07/01)
   [ Fix ]
-    E•`‰æŠÖ”‚Ìˆø”‚ÉÀ”Œ^‚ğ“n‚·‚Æ®”Œ^‚É•ÏŠ·‚·‚é‚æ‚¤‚É•ÏX
+    ãƒ»æç”»é–¢æ•°ã®å¼•æ•°ã«å®Ÿæ•°å‹ã‚’æ¸¡ã™ã¨æ•´æ•°å‹ã«å¤‰æ›ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
 
   [ FixFile ]
     - ChangeLog.txt
     - IntVExecuter.java
     - MainGUI.java
 
-Ever 1.15_5  (2007/06/01)
+ãƒ»ver 1.15_5  (2007/06/01)
   [ Fix ]
-    EƒGƒ‰[•¶‚ÌƒGƒXƒP[ƒvˆ—‚ğC³
-    E‰‰Zˆ—‚Ì•]‰¿‡”Ô‚ğ¶•Ó‚©‚ç•]‰¿‚·‚é‚æ‚¤‚É•ÏX
-    EProperty.ini ‚ÌƒRƒƒ“ƒg‚ğˆê•”C³
+    ãƒ»ã‚¨ãƒ©ãƒ¼æ–‡ã®ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—å‡¦ç†ã‚’ä¿®æ­£
+    ãƒ»æ¼”ç®—å‡¦ç†ã®è©•ä¾¡é †ç•ªã‚’å·¦è¾ºã‹ã‚‰è©•ä¾¡ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
+    ãƒ»Property.ini ã®ã‚³ãƒ¡ãƒ³ãƒˆã‚’ä¸€éƒ¨ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -1394,19 +1408,19 @@
     - ParseException.java
     - Property.ini
 
-Ever 1.15_4  (2007/05/12)
+ãƒ»ver 1.15_4  (2007/05/12)
   [ Memo ]
-    E@author ‚ÌC³
-    EReadMeƒtƒ@ƒCƒ‹‚ÌŠJ”­Ò‚ğC³
-    EReadMeƒtƒ@ƒCƒ‹‚É Property.ini ‚Ìà–¾‚ğ’Ç‰Á
+    ãƒ»@author ã®ä¿®æ­£
+    ãƒ»ReadMeãƒ•ã‚¡ã‚¤ãƒ«ã®é–‹ç™ºè€…ã‚’ä¿®æ­£
+    ãƒ»ReadMeãƒ•ã‚¡ã‚¤ãƒ«ã« Property.ini ã®èª¬æ˜ã‚’è¿½åŠ 
   [ New ]
-    EProperty.ini ‚Å‚Ìİ’è€–Ú‚ğ’Ç‰Á
-      -> pen.button.path  : “ü—Íx‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚Ìw’è
-      -> pen.teacher.flag : TeacherMode ‚Å‚Ì‹N“®‚Ì—L–³
-      -> pen.debug.flag   : DebugMode ‚Å‚Ì‹N“®‚Ì—L–³
+    ãƒ»Property.ini ã§ã®è¨­å®šé …ç›®ã‚’è¿½åŠ 
+      -> pen.button.path  : å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã®æŒ‡å®š
+      -> pen.teacher.flag : TeacherMode ã§ã®èµ·å‹•ã®æœ‰ç„¡
+      -> pen.debug.flag   : DebugMode ã§ã®èµ·å‹•ã®æœ‰ç„¡
   [ Fix ]
-    Ei“à•”•ÏXjConsoleAppendƒNƒ‰ƒX‚ÌC³
-    E[ƒwƒ‹ƒv] -> [PEN‚É‚Â‚¢‚Ä]‚É•\¦‚³‚ê‚éŠJ”­Ò‚ğC³
+    ãƒ»ï¼ˆå†…éƒ¨å¤‰æ›´ï¼‰ConsoleAppendã‚¯ãƒ©ã‚¹ã®ä¿®æ­£
+    ãƒ»[ãƒ˜ãƒ«ãƒ—] -> [PENã«ã¤ã„ã¦]ã«è¡¨ç¤ºã•ã‚Œã‚‹é–‹ç™ºè€…ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ./Locale/Locale_ja_JP.properties
@@ -1432,18 +1446,18 @@
     - RunButtonListener.java
     - RunClean.java
 
-Ever 1.15_3  (2007/03/26)
+ãƒ»ver 1.15_3  (2007/03/26)
   [ New ]
-    EProperty.ini ‚Å‚Ìİ’è€–Ú‚ğ’Ç‰Á
-      -> pen.dump.flag    : dumpƒtƒ@ƒCƒ‹‚ğo—Í‚·‚é‚©‚µ‚È‚¢‚©‚Ìİ’è
-      -> pen.dump.tempdir : dumpƒtƒ@ƒCƒ‹ˆê•Û‘¶ƒfƒBƒŒƒNƒgƒŠ‚Ìw’è
-      -> pen.dump.destdir : dumpƒtƒ@ƒCƒ‹ÅI•Û‘¶æ‚Ìw’è
+    ãƒ»Property.ini ã§ã®è¨­å®šé …ç›®ã‚’è¿½åŠ 
+      -> pen.dump.flag    : dumpãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‡ºåŠ›ã™ã‚‹ã‹ã—ãªã„ã‹ã®è¨­å®š
+      -> pen.dump.tempdir : dumpãƒ•ã‚¡ã‚¤ãƒ«ä¸€æ™‚ä¿å­˜ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®æŒ‡å®š
+      -> pen.dump.destdir : dumpãƒ•ã‚¡ã‚¤ãƒ«æœ€çµ‚ä¿å­˜å…ˆã®æŒ‡å®š
   [ Fix ]
-    EProperty.ini ‚Å‚Ìİ’è€–Ú‚ğíœ
-      -> system.dump.survey : pen.dump.tempdir, pen.dump.destdir ‚É•ª‰»
+    ãƒ»Property.ini ã§ã®è¨­å®šé …ç›®ã‚’å‰Šé™¤
+      -> system.dump.survey : pen.dump.tempdir, pen.dump.destdir ã«åˆ†åŒ–
   [ BugFix ]
-    E”z—ñ‚Ì“Y‚¦š‚É”z—ñ‚ğ—p‚¢‚é‚±‚Æ‚ª‚Å‚«‚È‚¢ƒoƒO‚ÌC³
-    EBackSpace ‚¨‚æ‚Ñ Delete ƒL[‚É‚Ä•¶š‚ğíœ‚Å‚«‚È‚¢ƒoƒO‚ÌC³
+    ãƒ»é…åˆ—ã®æ·»ãˆå­—ã«é…åˆ—ã‚’ç”¨ã„ã‚‹ã“ã¨ãŒã§ããªã„ãƒã‚°ã®ä¿®æ­£
+    ãƒ»BackSpace ãŠã‚ˆã³ Delete ã‚­ãƒ¼ã«ã¦æ–‡å­—ã‚’å‰Šé™¤ã§ããªã„ãƒã‚°ã®ä¿®æ­£
 
   [ FixFile ]
     - ./Locale/Locale_ja_JP.properties
@@ -1458,11 +1472,11 @@
     - MainGUI.java
     - Property.ini
 
-Ever 1.15_2  (2007/03/23)
+ãƒ»ver 1.15_2  (2007/03/23)
   [ Fix ]
-    E(“à•”•ÏX) IntVExecuterƒNƒ‰ƒX‚ÌC³
-    E(“à•”•ÏX) EditSelectionƒNƒ‰ƒX‚ÌC³
-    E[ƒwƒ‹ƒv] -> [PEN‚É‚Â‚¢‚Ä]‚Å•\¦‚³‚ê‚éŠJ”­Ò‚ÌŠ‘®‚ğC³
+    ãƒ»(å†…éƒ¨å¤‰æ›´) IntVExecuterã‚¯ãƒ©ã‚¹ã®ä¿®æ­£
+    ãƒ»(å†…éƒ¨å¤‰æ›´) EditSelectionã‚¯ãƒ©ã‚¹ã®ä¿®æ­£
+    ãƒ»[ãƒ˜ãƒ«ãƒ—] -> [PENã«ã¤ã„ã¦]ã§è¡¨ç¤ºã•ã‚Œã‚‹é–‹ç™ºè€…ã®æ‰€å±ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -1475,11 +1489,11 @@
     - IntVExecuter.java
     - IntVFileIO.java
 
-Ever 1.15_1  (2007/02/15)
+ãƒ»ver 1.15_1  (2007/02/15)
   [ New ]
-    EƒGƒ‰[”­¶‚Ìî•ñ‚ğdump‚Å‚«‚é‚æ‚¤‚É‚µ‚½
-      -> PEN‹N“®‚Ìˆø”‚É -dump ‚ğ‚Â‚¯‚é
-      -> dumpƒtƒ@ƒCƒ‹‰ñûæ Property.ini ‚É‹Lq
+    ãƒ»ã‚¨ãƒ©ãƒ¼ç™ºç”Ÿæ™‚ã®æƒ…å ±ã‚’dumpã§ãã‚‹ã‚ˆã†ã«ã—ãŸ
+      -> PENèµ·å‹•æ™‚ã®å¼•æ•°ã« -dump ã‚’ã¤ã‘ã‚‹
+      -> dumpãƒ•ã‚¡ã‚¤ãƒ«å›åå…ˆ Property.ini ã«è¨˜è¿°
 
   [ NewFile ]
     - ErrorSave.java
@@ -1491,16 +1505,16 @@
     - MyWindowAdapter.java
     - Property.ini
 
-Ever 1.15  (2007/02/01)
+ãƒ»ver 1.15  (2007/02/01)
   [ Memo ]
-    Ever 1.14_5 ‚ğˆÀ’èƒo[ƒWƒ‡ƒ“‚Æ‚µ‚ÄƒŠƒŠ[ƒX
+    ãƒ»ver 1.14_5 ã‚’å®‰å®šãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¨ã—ã¦ãƒªãƒªãƒ¼ã‚¹
 
-Ever 1.14_5  (2007/01/29)
+ãƒ»ver 1.14_5  (2007/01/29)
   [ New ]
-    ELocaleƒtƒ@ƒCƒ‹‚Ìì¬
+    ãƒ»Localeãƒ•ã‚¡ã‚¤ãƒ«ã®ä½œæˆ
   [ Fix ]
-    EProperty.ini “à‚Ì‰ğà‚ğC³
-    Eİ’èó‹µŠm”F‰æ–Ê‚Ì•\¦‚ğ•ÏX
+    ãƒ»Property.ini å†…ã®è§£èª¬ã‚’ä¿®æ­£
+    ãƒ»è¨­å®šçŠ¶æ³ç¢ºèªç”»é¢ã®è¡¨ç¤ºã‚’å¤‰æ›´
 
   [ NewFile ]
     - ./Locale/Locale_ja_JP.properties
@@ -1514,12 +1528,12 @@
     - Property.ini
     - ThreadRun.java
 
-Ever 1.14_4  (2007/01/18)
+ãƒ»ver 1.14_4  (2007/01/18)
   [ Fix ]
-    Eİ’èó‹µ‚Ì’l‚ğ”’l‚Å‚È‚­“ú–{Œê‚É•ÏX
+    ãƒ»è¨­å®šçŠ¶æ³ã®å€¤ã‚’æ•°å€¤ã§ãªãæ—¥æœ¬èªã«å¤‰æ›´
   [ BugFix ]
-    Eİ’èŠm”F‚Ì‰æ–Ê‚Å’l‚ğ•ÏX‚Å‚«‚Ä‚µ‚Ü‚¤‚Ì‚ğC³
-    E•Ï”éŒ¾‚È‚µiŒxj‚Å‚ÌŒx•¶‚É‰üs‚ª‚È‚¢‚Ì‚ğC³
+    ãƒ»è¨­å®šç¢ºèªã®ç”»é¢ã§å€¤ã‚’å¤‰æ›´ã§ãã¦ã—ã¾ã†ã®ã‚’ä¿®æ­£
+    ãƒ»å¤‰æ•°å®£è¨€ãªã—ï¼ˆè­¦å‘Šï¼‰ã§ã®è­¦å‘Šæ–‡ã«æ”¹è¡ŒãŒãªã„ã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -1528,13 +1542,13 @@
     - MainGUI.java
     - Property.ini
 
-Ever 1.14_3  (2007/01/17)
+ãƒ»ver 1.14_3  (2007/01/17)
   [ New ]
-    Eƒƒjƒ…[‚Ìƒwƒ‹ƒv‚Éİ’èó‹µŠm”F‚Ì‚½‚ß‚Ì€–Ú‚ğ’Ç‰Á
-    E”z—ñ‚Ì”ÍˆÍ‚ğ’´‚¦‚½‚Æ‚«‚ÌƒGƒ‰[•¶‚ğ’Ç‰Á
+    ãƒ»ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ãƒ˜ãƒ«ãƒ—ã«è¨­å®šçŠ¶æ³ç¢ºèªã®ãŸã‚ã®é …ç›®ã‚’è¿½åŠ 
+    ãƒ»é…åˆ—ã®ç¯„å›²ã‚’è¶…ãˆãŸã¨ãã®ã‚¨ãƒ©ãƒ¼æ–‡ã‚’è¿½åŠ 
   [ Fix ]
-    E(“à•”•ÏX) ƒGƒ‰[”­¶‚Ìˆ—‚ğW’†‚Å‚«‚é‚æ‚¤‚ÉC³
-    E(“à•”•ÏX) “à•ï‚µ‚Ä‚¢‚½İ’èƒtƒ@ƒCƒ‹‚ğŠO•”ƒtƒ@ƒCƒ‹‚É‚µ‚½
+    ãƒ»(å†…éƒ¨å¤‰æ›´) ã‚¨ãƒ©ãƒ¼ç™ºç”Ÿæ™‚ã®å‡¦ç†ã‚’é›†ä¸­ã§ãã‚‹ã‚ˆã†ã«ä¿®æ­£
+    ãƒ»(å†…éƒ¨å¤‰æ›´) å†…åŒ…ã—ã¦ã„ãŸè¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚’å¤–éƒ¨ãƒ•ã‚¡ã‚¤ãƒ«ã«ã—ãŸ
 
   [ NewFile ]
     - ConfigButtonListener.java
@@ -1552,14 +1566,14 @@
   [ ReMoveFile ]
     - RunStop.java
 
-Ever 1.14_2  (2007/01/10)
+ãƒ»ver 1.14_2  (2007/01/10)
   [ New ]
-    E•Ï”éŒ¾‚Ì—L–³‚ğw’è‰Â”\‚É‚µ‚½
-    E”z—ñ‚Ì“Yš‚Ìİ’è‰Â”\‚É‚µ‚½
+    ãƒ»å¤‰æ•°å®£è¨€ã®æœ‰ç„¡ã‚’æŒ‡å®šå¯èƒ½ã«ã—ãŸ
+    ãƒ»é…åˆ—ã®æ·»å­—ã®è¨­å®šå¯èƒ½ã«ã—ãŸ
   [ Fix ]
-    EReadMe.txt     ‚ÌC³
-    EReadMe-w32.txt ‚ÌC³
-    EPEN-QuickReference.pdf ‚ÌC³
+    ãƒ»ReadMe.txt     ã®ä¿®æ­£
+    ãƒ»ReadMe-w32.txt ã®ä¿®æ­£
+    ãƒ»PEN-QuickReference.pdf ã®ä¿®æ­£
 
   [ FixFile ]
     - ./Manual/PEN-QuickReference.pdf
@@ -1569,13 +1583,13 @@
     - ReadMe.txt
     - ReadMe-w32.txt
 
-Ever 1.14_1  (2007/01/05)
+ãƒ»ver 1.14_1  (2007/01/05)
   [ New ]
-    E./sample/Graphic/Circle.pen ‚Ì’Ç‰Á
+    ãƒ»./sample/Graphic/Circle.pen ã®è¿½åŠ 
   [ Fix ]
-    E(“à•”•ÏX) ConsoleAppend ƒNƒ‰ƒX‚ÌC³
-    E(“à•”•ÏX) Queue ƒNƒ‰ƒX‚ÌC³
-    ECopyright ‚ğ "2003-2006" ‚©‚ç "2003-2007" ‚ÉC³
+    ãƒ»(å†…éƒ¨å¤‰æ›´) ConsoleAppend ã‚¯ãƒ©ã‚¹ã®ä¿®æ­£
+    ãƒ»(å†…éƒ¨å¤‰æ›´) Queue ã‚¯ãƒ©ã‚¹ã®ä¿®æ­£
+    ãƒ»Copyright ã‚’ "2003-2006" ã‹ã‚‰ "2003-2007" ã«ä¿®æ­£
 
   [ NewFile ]
     - ./sample/Graphic/Circle.pen
@@ -1588,25 +1602,25 @@
     - ReadMe.txt
     - ReadMe-w32.txt
 
-Ever 1.14  (2006/12/24)
+ãƒ»ver 1.14  (2006/12/24)
   [ Memo ]
-    Ever 1.13_5 ‚ğˆÀ’èƒo[ƒWƒ‡ƒ“‚Æ‚µ‚ÄƒŠƒŠ[ƒX
-    Eƒo[ƒWƒ‡ƒ“‚ğ•ÏX
-      -> x.xx     : ˆÀ’èƒo[ƒWƒ‡ƒ“
-      -> x.xx_pxx : ƒoƒOC³ˆÀ’èƒo[ƒWƒ‡ƒ“
-      -> x.xx_xx  : ŠJ”­ƒo[ƒWƒ‡ƒ“
+    ãƒ»ver 1.13_5 ã‚’å®‰å®šãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¨ã—ã¦ãƒªãƒªãƒ¼ã‚¹
+    ãƒ»ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’å¤‰æ›´
+      -> x.xx     : å®‰å®šãƒãƒ¼ã‚¸ãƒ§ãƒ³
+      -> x.xx_pxx : ãƒã‚°ä¿®æ­£å®‰å®šãƒãƒ¼ã‚¸ãƒ§ãƒ³
+      -> x.xx_xx  : é–‹ç™ºãƒãƒ¼ã‚¸ãƒ§ãƒ³
 
-Ever 1.13_5  (2006/12/18)
+ãƒ»ver 1.13_5  (2006/12/18)
   [ Fix ]
-    Eè‘±‚«/ŠÖ”ŒÄ‚Ño‚µA”z—ñ‚ÍQÆ“n‚µ‚Ì‚İ‚ÉC³
-    EFileID 0`2 ‚ğg—p‚Å‚«‚é‚æ‚¤‚ÉC³
-      -> 0 : •W€“ü—Í‚©‚ç“Ç‚İ‚İ
-      -> 1 : •W€o—Í‚É‘‚«‚İ
-      -> 2 : ƒGƒ‰[o—Í‚É‘‚«‚İ
-    E./Manul/xDNCL-Language-Manual.pdf ‚ÌC³
-    EƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚Ì®—
+    ãƒ»æ‰‹ç¶šã/é–¢æ•°å‘¼ã³å‡ºã—æ™‚ã€é…åˆ—ã¯å‚ç…§æ¸¡ã—ã®ã¿ã«ä¿®æ­£
+    ãƒ»FileID 0ï½2 ã‚’ä½¿ç”¨ã§ãã‚‹ã‚ˆã†ã«ä¿®æ­£
+      -> 0 : æ¨™æº–å…¥åŠ›ã‹ã‚‰èª­ã¿è¾¼ã¿
+      -> 1 : æ¨™æº–å‡ºåŠ›ã«æ›¸ãè¾¼ã¿
+      -> 2 : ã‚¨ãƒ©ãƒ¼å‡ºåŠ›ã«æ›¸ãè¾¼ã¿
+    ãƒ»./Manul/xDNCL-Language-Manual.pdf ã®ä¿®æ­£
+    ãƒ»ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®æ•´ç†
   [ BugFix ]
-    EQÆ“n‚µ‚ğs‚Á‚½A•Ï”•\¦‚ª‚¨‚©‚µ‚­‚È‚éƒoƒO‚ÌC³
+    ãƒ»å‚ç…§æ¸¡ã—ã‚’è¡Œã£ãŸæ™‚ã€å¤‰æ•°è¡¨ç¤ºãŒãŠã‹ã—ããªã‚‹ãƒã‚°ã®ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -1616,12 +1630,12 @@
     - Queue.java
     - ThreadRun.java
 
-Ever 1.13_4  (2006/12/04)
+ãƒ»ver 1.13_4  (2006/12/04)
   [ Fix ]
-    E(“à•”•ÏX) •`‰æƒEƒBƒ“ƒhƒE‚ÌƒTƒCƒY‚ğ”÷’²®
-    E./sample/Graphic ˆÈ‰º‚ÌƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚Ì®—
+    ãƒ»(å†…éƒ¨å¤‰æ›´) æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚µã‚¤ã‚ºã‚’å¾®èª¿æ•´
+    ãƒ»./sample/Graphic ä»¥ä¸‹ã®ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®æ•´ç†
   [ BugFix ]
-    E•`‰æŠÖ”‚Ì“ú–{Œê‘Î‰‚ªŠÔˆá‚Á‚Ä‚¢‚½‚Ì‚ÅC³
+    ãƒ»æç”»é–¢æ•°ã®æ—¥æœ¬èªå¯¾å¿œãŒé–“é•ã£ã¦ã„ãŸã®ã§ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -1635,27 +1649,27 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.13_3  (2006/12/03)
+ãƒ»ver 1.13_3  (2006/12/03)
   [ BugFix ]
-    Eè‘±‚«/ŠÖ”ŒÄ‚Ño‚µ‚ğ³í‚ÉÀs‚Å‚«‚È‚¢ƒoƒO‚ğC³
+    ãƒ»æ‰‹ç¶šã/é–¢æ•°å‘¼ã³å‡ºã—ã‚’æ­£å¸¸ã«å®Ÿè¡Œã§ããªã„ãƒã‚°ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
     - IntVExecuter.java
     - MainGUI.java
 
-Ever 1.13_2  (2006/12/02)
+ãƒ»ver 1.13_2  (2006/12/02)
   [ Fix ]
-    E(“à•”•ÏX) ConsoleAppend ƒNƒ‰ƒX‚ÌC³
-    E(“à•”•ÏX) FileSave ƒNƒ‰ƒX‚ÌC³
-    E(“à•”•ÏX) IntVgOutputWindow ƒNƒ‰ƒX‚ÌƒRƒƒ“ƒg•¶C³
-    Eƒ}ƒjƒ…ƒAƒ‹‚ÌXV
-      - ./Manual/xDNCL-DrawFileIO-Manual.pdf -> ’Ç‰Á
-      - ./Manual/xDNCL-DrawManual.pdf        -> íœ
-      - ./Manual/xDNCL-FileIOManual.pdf      -> íœ
-      - ./Manul/xDNCL-Language-Manual.pdf    -> XV
+    ãƒ»(å†…éƒ¨å¤‰æ›´) ConsoleAppend ã‚¯ãƒ©ã‚¹ã®ä¿®æ­£
+    ãƒ»(å†…éƒ¨å¤‰æ›´) FileSave ã‚¯ãƒ©ã‚¹ã®ä¿®æ­£
+    ãƒ»(å†…éƒ¨å¤‰æ›´) IntVgOutputWindow ã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ¡ãƒ³ãƒˆæ–‡ä¿®æ­£
+    ãƒ»ãƒãƒ‹ãƒ¥ã‚¢ãƒ«ã®æ›´æ–°
+      - ./Manual/xDNCL-DrawFileIO-Manual.pdf -> è¿½åŠ 
+      - ./Manual/xDNCL-DrawManual.pdf        -> å‰Šé™¤
+      - ./Manual/xDNCL-FileIOManual.pdf      -> å‰Šé™¤
+      - ./Manul/xDNCL-Language-Manual.pdf    -> æ›´æ–°
   [ BugFix ]
-    EgSetArrowType() ‚Å‚Ì‘®«•ÏX‚ª—LŒø‚É‚È‚ç‚È‚¢ƒoƒO‚ğC³
+    ãƒ»gSetArrowType() ã§ã®å±æ€§å¤‰æ›´ãŒæœ‰åŠ¹ã«ãªã‚‰ãªã„ãƒã‚°ã‚’ä¿®æ­£
 
   [ NewFile ]
     - ./Manual/xDNCL-DrawFileIO-Manual.pdf
@@ -1683,16 +1697,16 @@
     - ./Manual/xDNCL-DrawManual.pdf
     - ./Manual/xDNCL-FileIOManual.pdf
 
-Ever 1.13_1  (2006/11/26)
+ãƒ»ver 1.13_1  (2006/11/26)
   [ New ]
-    Eè‘±‚«/ŠÖ”ŒÄ‚Ño‚µ‚Å”z—ñ‚ÌQÆ“n‚µ‚ğ‚Å‚«‚é‚æ‚¤‚É‚µ‚½
-    E–ß‚è’l‚É”z—ñ‚ğˆµ‚¦‚é‚æ‚¤‚É‚µ‚½
+    ãƒ»æ‰‹ç¶šã/é–¢æ•°å‘¼ã³å‡ºã—ã§é…åˆ—ã®å‚ç…§æ¸¡ã—ã‚’ã§ãã‚‹ã‚ˆã†ã«ã—ãŸ
+    ãƒ»æˆ»ã‚Šå€¤ã«é…åˆ—ã‚’æ‰±ãˆã‚‹ã‚ˆã†ã«ã—ãŸ
   [ Fix ]
-    E•¶–@‚Ì‚ä‚ç‚¬‚ğ’Ç‰Á
-       - "è‘±‚«" ( "I—¹" | "I‚í‚è" )
-       - "ŠÖ”" ( "I—¹" | "I‚í‚è" )
+    ãƒ»æ–‡æ³•ã®ã‚†ã‚‰ãã‚’è¿½åŠ 
+       - "æ‰‹ç¶šã" ( "çµ‚äº†" | "çµ‚ã‚ã‚Š" )
+       - "é–¢æ•°" ( "çµ‚äº†" | "çµ‚ã‚ã‚Š" )
   [ BugFix ]
-    E”z—ñ‚ğ³‚µ‚­ˆµ‚¦‚È‚¢ƒoƒO‚ğC³
+    ãƒ»é…åˆ—ã‚’æ­£ã—ãæ‰±ãˆãªã„ãƒã‚°ã‚’ä¿®æ­£
 
   [ NewFile ]
     - Queue.java
@@ -1706,21 +1720,21 @@
     - IntVParserTokenManager.java
     - MainGUI.java
 
-Ever 1.13  (2006/11/20)
+ãƒ»ver 1.13  (2006/11/20)
   [ New ]
-    EgSaveWindow(filepath, mode) : •`‰æ—Ìˆæ‚Ì•Û‘¶ ( mode‚Í jpeg, png ‚Ì‚Qí—Ş )
-    EgDrawPolygon(int x[], int y[], point)
-    EgFillPolygon(int x[], int y[], point)
-    EgDrawPolyline(int x[], int y[], point)
-    Eè‘±‚«/ŠÖ”ŒÄ‚Ño‚µ‚Ìˆø”‚É”z—ñ‚ğg—p‚Å‚«‚é‚æ‚¤‚É‚µ‚½
+    ãƒ»gSaveWindow(filepath, mode) : æç”»é ˜åŸŸã®ä¿å­˜ ( modeã¯ jpeg, png ã®ï¼’ç¨®é¡ )
+    ãƒ»gDrawPolygon(int x[], int y[], point)
+    ãƒ»gFillPolygon(int x[], int y[], point)
+    ãƒ»gDrawPolyline(int x[], int y[], point)
+    ãƒ»æ‰‹ç¶šã/é–¢æ•°å‘¼ã³å‡ºã—ã®å¼•æ•°ã«é…åˆ—ã‚’ä½¿ç”¨ã§ãã‚‹ã‚ˆã†ã«ã—ãŸ
   [ Fix ]
-    E(“à•”•ÏX) ”z—ñ—Ìˆæ‚ÌŠm•Û•û–@‚ğ•ÏX
-    E(“à•”•ÏX) ƒvƒƒOƒ‰ƒ€‚ÌÅ“K‰»
-    EReadMe.txt     ‚ÌC³
-    EReadMe-w32.txt ‚ÌC³
-    E./sample/Graphic/*.pen ‚ÌC³
-    E./Manual/xDNCL-Language-Manual.pdf ‚ÌC³
-    E./Manual/xDNCL-Language-Swing.pdf  ‚ÌC³
+    ãƒ»(å†…éƒ¨å¤‰æ›´) é…åˆ—é ˜åŸŸã®ç¢ºä¿æ–¹æ³•ã‚’å¤‰æ›´
+    ãƒ»(å†…éƒ¨å¤‰æ›´) ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®æœ€é©åŒ–
+    ãƒ»ReadMe.txt     ã®ä¿®æ­£
+    ãƒ»ReadMe-w32.txt ã®ä¿®æ­£
+    ãƒ»./sample/Graphic/*.pen ã®ä¿®æ­£
+    ãƒ»./Manual/xDNCL-Language-Manual.pdf ã®ä¿®æ­£
+    ãƒ»./Manual/xDNCL-Language-Swing.pdf  ã®ä¿®æ­£
 
   [ NewFile ]
     - ./sample/Graphic/Polygon.pen
@@ -1756,36 +1770,36 @@
     - ASTgSetColor.java
     - GraphicButtonList.ini
 
-Ever 1.12  (2006/11/04)
+ãƒ»ver 1.12  (2006/11/04)
   [ New ]
-    E•`‰æŠÖ”‚Ì“ú–{Œê‘Î‰
-       - gOpenWindow(w, h)         : •`‰æ—ÌˆæŠJ‚­(w, h)
-       - gCloseWindow()            : •`‰æ—Ìˆæ•Â‚¶‚é()
-       - gClearWindow()            : •`‰æ—Ìˆæ‘SÁ‹()
-       - gSetLineColor(r, g, b)    : üFİ’è(r, g, b)
-       - gSetLineShape(type)       : üíİ’è(type)
-       - gSetLineWidth(width)      : ü‘¾‚³İ’è(width)
-       - gSetArrowType(type)       : ü–îİ’è(type)
-       - gSetArrowDir(edge)        : ü•ûŒüİ’è(edge)
-       - gSetFillColor(r, g, b)    : “hFİ’è(r, g, b)
-       - gSetDotShape(type)        : “_íİ’è(type)
-       - gSetTextColor(r, g, b)    : •¶šFİ’è(r, g, b)
-       - gSetFont("String")        : •¶šíİ’è("String")
-       - gSetFontType(style)       : •¶šƒ^ƒCƒvİ’è(style)
-       - gSetFontSize(size)        : •¶šƒTƒCƒYİ’è(size)
-       - gDrawText("string", x, y) : •¶š•`‰æ("string", x, y)
-       - gDrawPoint(x, y)          : “_•`‰æ(x, y)
-       - gDrawLine(x1, y1, x2, y2) : ü•`‰æ(x1, y1, x2, y2)
-       - gDrawCircle(x, y, r)      : ‰~•`‰æ(x, y, r)
-       - gFillCircle(x, y, r)      : ‰~“h•`‰æ(x, y, r)
-       - gDrawOval(x, y, width, height) : ‘È‰~•`‰æ(x, y, width, height)
-       - gFillOval(x, y, width, height) : ‘È‰~“h•`‰æ(x, y, width, height)
-       - gDrawBox(x, y, width, height)  : ‹éŒ`•`‰æ(x, y, width, height)
-       - gFillBox(x, y, width, height)  : ‹éŒ`“h•`‰æ(x, y, width, height)
+    ãƒ»æç”»é–¢æ•°ã®æ—¥æœ¬èªå¯¾å¿œ
+       - gOpenWindow(w, h)         : æç”»é ˜åŸŸé–‹ã(w, h)
+       - gCloseWindow()            : æç”»é ˜åŸŸé–‰ã˜ã‚‹()
+       - gClearWindow()            : æç”»é ˜åŸŸå…¨æ¶ˆå»()
+       - gSetLineColor(r, g, b)    : ç·šè‰²è¨­å®š(r, g, b)
+       - gSetLineShape(type)       : ç·šç¨®è¨­å®š(type)
+       - gSetLineWidth(width)      : ç·šå¤ªã•è¨­å®š(width)
+       - gSetArrowType(type)       : ç·šçŸ¢è¨­å®š(type)
+       - gSetArrowDir(edge)        : ç·šæ–¹å‘è¨­å®š(edge)
+       - gSetFillColor(r, g, b)    : å¡—è‰²è¨­å®š(r, g, b)
+       - gSetDotShape(type)        : ç‚¹ç¨®è¨­å®š(type)
+       - gSetTextColor(r, g, b)    : æ–‡å­—è‰²è¨­å®š(r, g, b)
+       - gSetFont("String")        : æ–‡å­—ç¨®è¨­å®š("String")
+       - gSetFontType(style)       : æ–‡å­—ã‚¿ã‚¤ãƒ—è¨­å®š(style)
+       - gSetFontSize(size)        : æ–‡å­—ã‚µã‚¤ã‚ºè¨­å®š(size)
+       - gDrawText("string", x, y) : æ–‡å­—æç”»("string", x, y)
+       - gDrawPoint(x, y)          : ç‚¹æç”»(x, y)
+       - gDrawLine(x1, y1, x2, y2) : ç·šæç”»(x1, y1, x2, y2)
+       - gDrawCircle(x, y, r)      : å††æç”»(x, y, r)
+       - gFillCircle(x, y, r)      : å††å¡—æç”»(x, y, r)
+       - gDrawOval(x, y, width, height) : æ¥•å††æç”»(x, y, width, height)
+       - gFillOval(x, y, width, height) : æ¥•å††å¡—æç”»(x, y, width, height)
+       - gDrawBox(x, y, width, height)  : çŸ©å½¢æç”»(x, y, width, height)
+       - gFillBox(x, y, width, height)  : çŸ©å½¢å¡—æç”»(x, y, width, height)
        - gDrawArc(x, y, width, height, start, extent, type)
-                                        : ŒÊ•`‰æ(x, y, width, height, start, extent, type)
+                                        : å¼§æç”»(x, y, width, height, start, extent, type)
        - gFillArc(x, y, width, height, start, extent, type)
-                                        : ŒÊ“h•`‰æ(x, y, width, height, start, extent, type)
+                                        : å¼§å¡—æç”»(x, y, width, height, start, extent, type)
 
   [ FixFile ]
     - IntVParser.java
@@ -1793,16 +1807,16 @@
     - IntVParser.jjt
     - MainGUI.java
 
-Ever 1.11  (2006/09/18)
+ãƒ»ver 1.11  (2006/09/18)
   [ New ]
-    Eo—Í•¶‚Éu``‚ğ•\¦‚·‚év‚Ì‚ä‚ç‚¬’Ç‰Á
-    E‰üs‚È‚µo—Í•¶‚Éu``‚ğ‰üs–³‚µ‚Å•\¦‚·‚év‚Ì‚ä‚ç‚¬’Ç‰Á
-    EƒvƒƒOƒ‰ƒ€“ü—Íx‰‡ƒ{ƒ^ƒ“‚ÌŠg’£
+    ãƒ»å‡ºåŠ›æ–‡ã«ã€Œï½ï½ã‚’è¡¨ç¤ºã™ã‚‹ã€ã®ã‚†ã‚‰ãè¿½åŠ 
+    ãƒ»æ”¹è¡Œãªã—å‡ºåŠ›æ–‡ã«ã€Œï½ï½ã‚’æ”¹è¡Œç„¡ã—ã§è¡¨ç¤ºã™ã‚‹ã€ã®ã‚†ã‚‰ãè¿½åŠ 
+    ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³ã®æ‹¡å¼µ
   [ Fix ]
-    Eo—Í•¶‚Ì‚ä‚ç‚¬’Ç‰Á‚É‚æ‚éƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚ÌC³
-      -> o—Í‚Ìƒ{ƒ^ƒ“‚ğuáo—Í•¶â ‚ğ•\¦‚·‚év‚É•ÏX
-      -> ‰üs–³o—Í‚Ìƒ{ƒ^ƒ“‚ğuáo—Í•¶â ‚ğ‰üs‚È‚µ‚Å•\¦‚·‚év‚É•ÏX
-    EƒvƒƒOƒ‰ƒ€“ü—Íx‰‡ƒ{ƒ^ƒ“Šg’£‚É‚æ‚é’è‹`ƒtƒ@ƒCƒ‹‚Ì’è‹`•û–@‚ğ•ÏX
+    ãƒ»å‡ºåŠ›æ–‡ã®ã‚†ã‚‰ãè¿½åŠ ã«ã‚ˆã‚‹ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã®ä¿®æ­£
+      -> å‡ºåŠ›ã®ãƒœã‚¿ãƒ³ã‚’ã€Œâ‰ªå‡ºåŠ›æ–‡â‰« ã‚’è¡¨ç¤ºã™ã‚‹ã€ã«å¤‰æ›´
+      -> æ”¹è¡Œç„¡å‡ºåŠ›ã®ãƒœã‚¿ãƒ³ã‚’ã€Œâ‰ªå‡ºåŠ›æ–‡â‰« ã‚’æ”¹è¡Œãªã—ã§è¡¨ç¤ºã™ã‚‹ã€ã«å¤‰æ›´
+    ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³æ‹¡å¼µã«ã‚ˆã‚‹å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã®å®šç¾©æ–¹æ³•ã‚’å¤‰æ›´
 
   [ NewFile ]
     - EditButtonListener2.java
@@ -1825,9 +1839,9 @@
     - MainGUI.java
     - MyJLabel.java
 
-Ever 1.10_3  (2006/08/10)
+ãƒ»ver 1.10_3  (2006/08/10)
   [ BugFix ]
-    E˜A‘±‚µ‚½“ü—Í•¶‚ğ‚·‚Î‚â‚­Às‚·‚é‚ÆA³í‚É“®ì‚µ‚È‚©‚Á‚½ƒoƒO‚ÌC³
+    ãƒ»é€£ç¶šã—ãŸå…¥åŠ›æ–‡ã‚’ã™ã°ã‚„ãå®Ÿè¡Œã™ã‚‹ã¨ã€æ­£å¸¸ã«å‹•ä½œã—ãªã‹ã£ãŸãƒã‚°ã®ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -1835,15 +1849,15 @@
     - IntVExecuter.java
     - MainGUI.java
 
-Ever 1.10_2  (2006/08/07)
+ãƒ»ver 1.10_2  (2006/08/07)
   [ New ]
-    EƒGƒ‰[•¶‚Ì’Ç‰Á
+    ãƒ»ã‚¨ãƒ©ãƒ¼æ–‡ã®è¿½åŠ 
   [ Fix ]
-    E./Manual/xDNCL-Language-Manual.pdf ‚ÌC³
-    E./Manual/xDNCL-Language-Swing.pdf  ‚ÌC³
+    ãƒ»./Manual/xDNCL-Language-Manual.pdf ã®ä¿®æ­£
+    ãƒ»./Manual/xDNCL-Language-Swing.pdf  ã®ä¿®æ­£
   [ BugFix ]
-    Einput() ‚Ì“ü—Í’l‚ªƒ}ƒCƒiƒX‚Ì”‚Ìê‡AŒ^‚ª•¶š—ñ‚É‚È‚éƒoƒO‚ÌC³
-    Einput() ‚Ì“ü—Í’l‚ªOŒ…‚Ì”š‚Å‚ ‚éê‡AŒ^‚ªÀ”‚É‚È‚éƒoƒO‚ÌC³
+    ãƒ»input() ã®å…¥åŠ›å€¤ãŒãƒã‚¤ãƒŠã‚¹ã®æ•°ã®å ´åˆã€å‹ãŒæ–‡å­—åˆ—ã«ãªã‚‹ãƒã‚°ã®ä¿®æ­£
+    ãƒ»input() ã®å…¥åŠ›å€¤ãŒä¸‰æ¡ã®æ•°å­—ã§ã‚ã‚‹å ´åˆã€å‹ãŒå®Ÿæ•°ã«ãªã‚‹ãƒã‚°ã®ä¿®æ­£
 
   [ NewFile ]
     - ReadMe-w32.txt
@@ -1854,10 +1868,10 @@
     - ReadMe.txt
     - ThreadRun.java
 
-Ever 1.10_1  (2006/07/25)
+ãƒ»ver 1.10_1  (2006/07/25)
   [ Fix ]
-    Ebreak•¶‚ÌC³
-      -> ("ŒJ‚è•Ô‚µ" | "ŒJ•Ô‚µ" | "ƒ‹[ƒv" ) "‚ğ”²‚¯‚é"
+    ãƒ»breakæ–‡ã®ä¿®æ­£
+      -> ("ç¹°ã‚Šè¿”ã—" | "ç¹°è¿”ã—" | "ãƒ«ãƒ¼ãƒ—" ) "ã‚’æŠœã‘ã‚‹"
 
   [ FixFile ]
     - ChangeLog.txt
@@ -1870,14 +1884,14 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.10  (2006/07/25)
+ãƒ»ver 1.10  (2006/07/25)
   [ New ]
-    E–½—ß/ŠÖ”‚Ì’Ç‰Á
-      -> ƒ‹[ƒv‚ğ”²‚¯‚é     : break•¶
-      -> append(str1, str2) : str1 ‚Æ str2 ‚ğŒ‹‡‚µ‚½•¶š—ñ‚ğ•Ô‚·
+    ãƒ»å‘½ä»¤/é–¢æ•°ã®è¿½åŠ 
+      -> ãƒ«ãƒ¼ãƒ—ã‚’æŠœã‘ã‚‹     : breakæ–‡
+      -> append(str1, str2) : str1 ã¨ str2 ã‚’çµåˆã—ãŸæ–‡å­—åˆ—ã‚’è¿”ã™
   [ Fix ]
-    Ereplace() ‚Ìd—l•ÏX
-      -> replace(str1, i, len, str2) : str1‚Ìi•¶š–Ú‚ÌŒã‚©‚çlen•¶š‚ğstr2‚Å’u‚«Š·‚¦‚é
+    ãƒ»replace() ã®ä»•æ§˜å¤‰æ›´
+      -> replace(str1, i, len, str2) : str1ã®iæ–‡å­—ç›®ã®å¾Œã‹ã‚‰lenæ–‡å­—ã‚’str2ã§ç½®ãæ›ãˆã‚‹
 
   [ NewFile ]
     - ASTAppend.java
@@ -1893,13 +1907,13 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.09_20  (2006/07/16)
+ãƒ»ver 1.09_20  (2006/07/16)
   [ Fix ]
-    Eround() ‚Ìd—l•ÏX
-      -> ˆø”‚Ì¬”“_ˆÈ‰º‚ğlÌŒÜ“ü‚µ‚½À”‚ğ•Ô‚·
-    EÀs‘¬“x’²ßƒo[‚Ì’l‚ğw”‚Åˆµ‚¤‚æ‚¤‚É•ÏX
+    ãƒ»round() ã®ä»•æ§˜å¤‰æ›´
+      -> å¼•æ•°ã®å°æ•°ç‚¹ä»¥ä¸‹ã‚’å››æ¨äº”å…¥ã—ãŸå®Ÿæ•°ã‚’è¿”ã™
+    ãƒ»å®Ÿè¡Œé€Ÿåº¦èª¿ç¯€ãƒãƒ¼ã®å€¤ã‚’æŒ‡æ•°ã§æ‰±ã†ã‚ˆã†ã«å¤‰æ›´
   [ BugFix ]
-    Es”‚Ì‘½‚¢ƒvƒƒOƒ‰ƒ€‚ğŠJ‚¢‚ÄÀs‚µ‚½A•ÒW‰æ–Ê‚Ìs”‚ª‚¨‚©‚µ‚©‚Á‚½‚Ì‚ğC³
+    ãƒ»è¡Œæ•°ã®å¤šã„ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’é–‹ã„ã¦å®Ÿè¡Œã—ãŸæ™‚ã€ç·¨é›†ç”»é¢ã®è¡Œæ•°ãŒãŠã‹ã—ã‹ã£ãŸã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -1908,16 +1922,16 @@
     - RunTimeChangeListener.java
     - ThreadRun.java
 
-Ever 1.09_19  (2006/07/12)
+ãƒ»ver 1.09_19  (2006/07/12)
   [ New ]
-    Estr2int(str) : •¶š—ñ‚Ì1•¶š–Ú‚ğASCIIƒR[ƒh‚Ì”’l‚É•ÏŠ·
-    Eint2str(int) : ˆø”int‚ğASCIIƒR[ƒh‚ÆŒ©‚È‚µ‚½‚Æ‚«‚Ì‘Î‰‚·‚é•¶š‚ğ•Ô‚·
+    ãƒ»str2int(str) : æ–‡å­—åˆ—ã®1æ–‡å­—ç›®ã‚’ASCIIã‚³ãƒ¼ãƒ‰ã®æ•°å€¤ã«å¤‰æ›
+    ãƒ»int2str(int) : å¼•æ•°intã‚’ASCIIã‚³ãƒ¼ãƒ‰ã¨è¦‹ãªã—ãŸã¨ãã®å¯¾å¿œã™ã‚‹æ–‡å­—ã‚’è¿”ã™
   [ Fix ]
-    E•Ï”•\¦‰æ–Ê‚Ìƒf[ƒ^‚ğ•ÒW‚Å‚«‚È‚¢‚æ‚¤‚ÉC³
-    Einput() ‚ÌŒ^‚ğ•ÏX
-      -> ”š‚Ì‚İ‚Å\¬  -> ®”
-      -> ”š‚Æ . ‚Å\¬ -> À”
-      -> ‚»‚êˆÈŠO        -> •¶š—ñ
+    ãƒ»å¤‰æ•°è¡¨ç¤ºç”»é¢ã®ãƒ‡ãƒ¼ã‚¿ã‚’ç·¨é›†ã§ããªã„ã‚ˆã†ã«ä¿®æ­£
+    ãƒ»input() ã®å‹ã‚’å¤‰æ›´
+      -> æ•°å­—ã®ã¿ã§æ§‹æˆ  -> æ•´æ•°
+      -> æ•°å­—ã¨ . ã§æ§‹æˆ -> å®Ÿæ•°
+      -> ãã‚Œä»¥å¤–        -> æ–‡å­—åˆ—
 
   [ NewFile ]
     - ASTInt2Str.java
@@ -1933,18 +1947,18 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.09_18  (2006/06/29)
+ãƒ»ver 1.09_18  (2006/06/29)
   [ Memo ]
-    EJavaCC ‚Ìƒo[ƒWƒ‡ƒ“‚ğ 3.2 -> 4.0 ‚É•ÏX
+    ãƒ»JavaCC ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’ 3.2 -> 4.0 ã«å¤‰æ›´
   [ Fix ]
-    Eu•Ï”‰æ–Ê‚ğƒRƒs[v‚ğu•Ï”•\¦‰æ–Ê‚ğƒRƒs[v‚ÉC³
-    E\•¶ƒGƒ‰[ƒƒbƒZ[ƒW‚É–³‘Ê‚È‰üsƒR[ƒh‚ª•t‚¢‚Ä‚¢‚½‚Ì‚ğíœ
-    E•Ï”–¢éŒ¾‚ÌƒGƒ‰[ƒƒbƒZ[ƒW‚ğC³
-    E“ü—Íx‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹“Ç‚İ‚İ¸”sAjar“à‚ÉŠi”[‚µ‚½ƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş‚æ‚¤‚É•ÏX
-    E•`‰æƒEƒBƒ“ƒhƒE‚ğGUI‘€ì‚Å•Â‚¶‚ç‚ê‚È‚¢‚æ‚¤‚É•ÏX
-    E•`‰æƒEƒBƒ“ƒhƒE‚ğƒŠƒTƒCƒY‚Å‚«‚È‚¢‚æ‚¤‚É•ÏX
+    ãƒ»ã€Œå¤‰æ•°ç”»é¢ã‚’ã‚³ãƒ”ãƒ¼ã€ã‚’ã€Œå¤‰æ•°è¡¨ç¤ºç”»é¢ã‚’ã‚³ãƒ”ãƒ¼ã€ã«ä¿®æ­£
+    ãƒ»æ§‹æ–‡ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã«ç„¡é§„ãªæ”¹è¡Œã‚³ãƒ¼ãƒ‰ãŒä»˜ã„ã¦ã„ãŸã®ã‚’å‰Šé™¤
+    ãƒ»å¤‰æ•°æœªå®£è¨€æ™‚ã®ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’ä¿®æ­£
+    ãƒ»å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿å¤±æ•—æ™‚ã€jarå†…ã«æ ¼ç´ã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€ã‚ˆã†ã«å¤‰æ›´
+    ãƒ»æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’GUIæ“ä½œã§é–‰ã˜ã‚‰ã‚Œãªã„ã‚ˆã†ã«å¤‰æ›´
+    ãƒ»æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’ãƒªã‚µã‚¤ã‚ºã§ããªã„ã‚ˆã†ã«å¤‰æ›´
   [ BugFix ]
-    EƒvƒƒOƒ‰ƒ€ÀsA•ÒW‰æ–Ê‚Éƒtƒ@ƒCƒ‹‚ğƒhƒƒbƒv‚·‚é‚Æ³í‚É“®ì‚µ‚È‚¢ƒoƒO‚ğC³
+    ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ å®Ÿè¡Œæ™‚ã€ç·¨é›†ç”»é¢ã«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã¨æ­£å¸¸ã«å‹•ä½œã—ãªã„ãƒã‚°ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ButtonEdit.java
@@ -1966,20 +1980,20 @@
     - SimpleCharStream.java
     - ThreadRun.java
 
-Ever 1.09_17  (2006/05/08)
+ãƒ»ver 1.09_17  (2006/05/08)
   [ New ]
-    EgSetArrowDir(edge) : —¼’[‚Ì–î‚¶‚è‚Ì—L–³‚ğw’è
-    Eƒ}ƒjƒ…ƒAƒ‹‚Ì’Ç‰Á
-       - xDNCL-DrawManual.pdf   : Draw‚ÉŠÖ‚·‚éŠÖ”ƒ}ƒjƒ…ƒAƒ‹‚Å‚·
-       - xDNCL-FileIOManual.pdf : FileI/O‚ÉŠÖ‚·‚éŠÖ”ƒ}ƒjƒ…ƒAƒ‹‚Å
+    ãƒ»gSetArrowDir(edge) : ä¸¡ç«¯ã®çŸ¢ã˜ã‚Šã®æœ‰ç„¡ã‚’æŒ‡å®š
+    ãƒ»ãƒãƒ‹ãƒ¥ã‚¢ãƒ«ã®è¿½åŠ 
+       - xDNCL-DrawManual.pdf   : Drawã«é–¢ã™ã‚‹é–¢æ•°ãƒãƒ‹ãƒ¥ã‚¢ãƒ«ã§ã™
+       - xDNCL-FileIOManual.pdf : FileI/Oã«é–¢ã™ã‚‹é–¢æ•°ãƒãƒ‹ãƒ¥ã‚¢ãƒ«ã§
   [ Fix ]
-    Eƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚Ì•ÏX
-    Esubstring() ‚Ìd—l•ÏX
-       - substring(str, i, len) : str‚Ìi•¶š–Ú‚©‚çlen•¶š•ª‚Ì•¶š—ñ‚ğ•Ô‚·
-    EgSetArrowType() ‚Ìd—l•ÏX
-       - gSetArrowType(type)       : –îK‚Ìí—Ş‚ğw’è
-       - gSetArrowType(type, edge) : –îK‚Ìí—Ş‚Æ—L–³‚ğw’è
-    E(“à•”•ÏX) ƒvƒƒOƒ‰ƒ€‚Ì’â~•û–@‚ğ•ÏX
+    ãƒ»ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã®å¤‰æ›´
+    ãƒ»substring() ã®ä»•æ§˜å¤‰æ›´
+       - substring(str, i, len) : strã®iæ–‡å­—ç›®ã‹ã‚‰lenæ–‡å­—åˆ†ã®æ–‡å­—åˆ—ã‚’è¿”ã™
+    ãƒ»gSetArrowType() ã®ä»•æ§˜å¤‰æ›´
+       - gSetArrowType(type)       : çŸ¢å°»ã®ç¨®é¡ã‚’æŒ‡å®š
+       - gSetArrowType(type, edge) : çŸ¢å°»ã®ç¨®é¡ã¨æœ‰ç„¡ã‚’æŒ‡å®š
+    ãƒ»(å†…éƒ¨å¤‰æ›´) ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®åœæ­¢æ–¹æ³•ã‚’å¤‰æ›´
 
   [ NewFile ]
     - ASTgSetArrowDir.java
@@ -2001,11 +2015,11 @@
     - RunButtonListener.java
     - ThreadRun.java
 
-Ever 1.09_16  (2006/05/04)
+ãƒ»ver 1.09_16  (2006/05/04)
   [ New ]
-    Esleep(msec) : msecƒ~ƒŠ•bƒvƒƒOƒ‰ƒ€‚ğ’â~‚·‚é
+    ãƒ»sleep(msec) : msecãƒŸãƒªç§’ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’åœæ­¢ã™ã‚‹
   [ BugFix ]
-    ELineShape ‚ª 0 ‚Ìê‡A gSetLineWidth() ‚ª—LŒø‚É‚È‚ç‚È‚¢ƒoƒO‚ÌC³
+    ãƒ»LineShape ãŒ 0 ã®å ´åˆã€ gSetLineWidth() ãŒæœ‰åŠ¹ã«ãªã‚‰ãªã„ãƒã‚°ã®ä¿®æ­£
 
   [ NewFile ]
     - ASTSleep.java
@@ -2022,11 +2036,11 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.09_15  (2006/05/04)
+ãƒ»ver 1.09_15  (2006/05/04)
   [ Fix ]
-    EgSetLineShape() ‚Ìd—l•ÏX
-       - gSetLineShape(type)        : üí(type)‚Ì‘®«‚ğ•ÏX‚·‚é
-       - gSetLineShape(type, width) : üí(type)Aü‚Ì‘¾‚³(width)‚Ì‘®«‚ğ•ÏX‚·‚é
+    ãƒ»gSetLineShape() ã®ä»•æ§˜å¤‰æ›´
+       - gSetLineShape(type)        : ç·šç¨®(type)ã®å±æ€§ã‚’å¤‰æ›´ã™ã‚‹
+       - gSetLineShape(type, width) : ç·šç¨®(type)ã€ç·šã®å¤ªã•(width)ã®å±æ€§ã‚’å¤‰æ›´ã™ã‚‹
 
   [ FixFile ]
     - ChangeLog.txt
@@ -2041,12 +2055,12 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.09_14  (2006/05/02)
+ãƒ»ver 1.09_14  (2006/05/02)
   [ New ]
-    EgClearWindow()       : •`‰æƒEƒBƒ“ƒhƒE‚ğƒNƒŠƒA‚·‚é
-    EgSetLineWidth(width) : ü‚Ì‘¾‚³‚Ì‘®«‚ğ•ÏX‚·‚é
+    ãƒ»gClearWindow()       : æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
+    ãƒ»gSetLineWidth(width) : ç·šã®å¤ªã•ã®å±æ€§ã‚’å¤‰æ›´ã™ã‚‹
   [ Fix ]
-    EgSetLineShape(type, width) : ü‚Ì‘®«‚ğ•ÏX‚·‚é
+    ãƒ»gSetLineShape(type, width) : ç·šã®å±æ€§ã‚’å¤‰æ›´ã™ã‚‹
 
   [ NewFile ]
     - ASTgClearWindow.java
@@ -2069,10 +2083,10 @@
     - ASTgWindowClose.java -> ASTgCloseWindow.java
     - ASTgWindowOpen.java  -> ASTgOpenWindow.java
 
-Ever 1.09_13  (2006/04/26)
+ãƒ»ver 1.09_13  (2006/04/26)
   [ BugFix ]
-    EgSetArrowType() ‚ğ•¶–@’Ê‚è‚É‹Lq‚µ‚Ä‚àƒGƒ‰[‚É‚È‚éƒoƒO‚ÌC³
-    EgDrawText() ‚ğ•¶–@’Ê‚è‚É‹Lq‚µ‚Ä‚àƒGƒ‰[‚É‚È‚éƒoƒO‚ÌC³
+    ãƒ»gSetArrowType() ã‚’æ–‡æ³•é€šã‚Šã«è¨˜è¿°ã—ã¦ã‚‚ã‚¨ãƒ©ãƒ¼ã«ãªã‚‹ãƒã‚°ã®ä¿®æ­£
+    ãƒ»gDrawText() ã‚’æ–‡æ³•é€šã‚Šã«è¨˜è¿°ã—ã¦ã‚‚ã‚¨ãƒ©ãƒ¼ã«ãªã‚‹ãƒã‚°ã®ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -2085,26 +2099,26 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.09_12  (2006/04/22)
+ãƒ»ver 1.09_12  (2006/04/22)
   [ BugFix ]
-    E•`‰æ–½—ßÀsA‘O‰ñ‚Ì‘®«’l‚ªc‚Á‚Ä‚¢‚½‚Ì‚ğC³
+    ãƒ»æç”»å‘½ä»¤å®Ÿè¡Œæ™‚ã€å‰å›ã®å±æ€§å€¤ãŒæ®‹ã£ã¦ã„ãŸã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
     - IntVgOutputWindow.java
     - MainGUI.java
 
-Ever 1.09_11  (2006/04/20)
+ãƒ»ver 1.09_11  (2006/04/20)
   [ New ]
-    E•`‰æ–½—ß‚Ì’Ç‰Á
+    ãƒ»æç”»å‘½ä»¤ã®è¿½åŠ 
   [ Fix ]
-    EŠJ”­Ò‚ÌŠ‘®‚ğ•ÏX
-    EƒRƒ“ƒ\[ƒ‹‰æ–Ê‚ÌƒTƒCƒY”÷’²®
-    E[ PEN‚É‚Â‚¢‚Ä ] ‚ğ”÷’²®
-    EReadMe.txt ‚Ì Copyright ‚ğC³
-    E•`‰æ–½—ß‚Ì•ÏX
+    ãƒ»é–‹ç™ºè€…ã®æ‰€å±ã‚’å¤‰æ›´
+    ãƒ»ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ç”»é¢ã®ã‚µã‚¤ã‚ºå¾®èª¿æ•´
+    ãƒ»[ PENã«ã¤ã„ã¦ ] ã‚’å¾®èª¿æ•´
+    ãƒ»ReadMe.txt ã® Copyright ã‚’ä¿®æ­£
+    ãƒ»æç”»å‘½ä»¤ã®å¤‰æ›´
   [ BugFix ]
-    EƒRƒ“ƒ\[ƒ‹‰æ–Ê‚ÌƒTƒCƒY‚ª¬‚³‚©‚Á‚½‚Ì‚ğC³
+    ãƒ»ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ç”»é¢ã®ã‚µã‚¤ã‚ºãŒå°ã•ã‹ã£ãŸã®ã‚’ä¿®æ­£
 
   [ NewFile ]
     - ASTgDrawCircle.java
@@ -2152,13 +2166,13 @@
     - ASTgColor.java
     - ASTgFillPoint.java
 
-Ever 1.09_10  (2006/03/07)
+ãƒ»ver 1.09_10  (2006/03/07)
   [ New ]
-    E•`‰æ—px‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚Ì’Ç‰Á [ GraphicButtonList.ini ]
+    ãƒ»æç”»ç”¨æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã®è¿½åŠ  [ GraphicButtonList.ini ]
   [ Fix ]
-    E•ÒWƒGƒŠƒA‚ÌFont‚ğ uMS ƒSƒVƒbƒNv -> uMonospacedv‚É•ÏX
-    E\•¶ƒGƒ‰[‚ÌƒGƒ‰[ƒƒbƒZ[ƒW‚ğ•ÏX
-    EÀsƒGƒ‰[‚ÌƒGƒ‰[ƒƒbƒZ[ƒW‚ğ•ÏX
+    ãƒ»ç·¨é›†ã‚¨ãƒªã‚¢ã®Fontã‚’ ã€ŒMS ã‚´ã‚·ãƒƒã‚¯ã€ -> ã€ŒMonospacedã€ã«å¤‰æ›´
+    ãƒ»æ§‹æ–‡ã‚¨ãƒ©ãƒ¼ã®ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å¤‰æ›´
+    ãƒ»å®Ÿè¡Œæ™‚ã‚¨ãƒ©ãƒ¼ã®ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å¤‰æ›´
 
   [ NewFile ]
     - GraphicButtonList.ini
@@ -2168,12 +2182,12 @@
     - ReadMe.txt
     - ThreadRun.java
 
-Ever 1.09_9  (2006/02/22)
+ãƒ»ver 1.09_9  (2006/02/22)
   [ New ]
-    EŠJ”­Ò‚É1–¼’Ç‰Á
+    ãƒ»é–‹ç™ºè€…ã«1åè¿½åŠ 
   [ Fix ]
-    EƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚Ì®—
-    E[ Copyright 2003-2005 ] ‚ğ [ Copyright 2003-2006 ] ‚ÉC³
+    ãƒ»ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®æ•´ç†
+    ãƒ»[ Copyright 2003-2005 ] ã‚’ [ Copyright 2003-2006 ] ã«ä¿®æ­£
 
   [ FixFile ]
     - HelpPenButtonListener.java
@@ -2182,17 +2196,17 @@
     - PEN.java
     - ReadMe.txt
 
-Ever 1.09_8  (2006/02/18)
+ãƒ»ver 1.09_8  (2006/02/18)
   [ BugFix ]
-    Eƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚ÌƒpƒX‚ª‚¤‚Ü‚­æ“¾‚Å‚«‚È‚©‚Á‚½‚Ì‚ğC³
+    ãƒ»ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹ãŒã†ã¾ãå–å¾—ã§ããªã‹ã£ãŸã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
     - MainGUI.java
 
-Ever 1.09_7  (2006/01/25)
+ãƒ»ver 1.09_7  (2006/01/25)
   [ BugFix ]
-    EƒCƒ“ƒfƒ“ƒg‚Ì©“®‘}“ü‚ªs‚í‚ê‚È‚­‚È‚Á‚Ä‚¢‚½‚Ì‚ğC³
+    ãƒ»ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã®è‡ªå‹•æŒ¿å…¥ãŒè¡Œã‚ã‚Œãªããªã£ã¦ã„ãŸã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - EditAreaAddTab.java
@@ -2202,9 +2216,9 @@
     - ChangeLog.txt
     - MainGUI.java
 
-Ever 1.09_6  (2006/01/18)
+ãƒ»ver 1.09_6  (2006/01/18)
   [ BugFix ]
-    EŒvZ®‚Ì\•¶’è‹`‚ğC³
+    ãƒ»è¨ˆç®—å¼ã®æ§‹æ–‡å®šç¾©ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -2217,28 +2231,28 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.09_5  (2006/01/14)
+ãƒ»ver 1.09_5  (2006/01/14)
   [ New ]
-    E•`‰æ–½—ß‚Ì’Ç‰Á
-      gDrawBox( x, y, width, height )  : À•W(x,y)‚©‚ç‰¡(width)Ac(height)‚Ì‹éŒ`‚ğ•`‰æ
-      gFillBox( x, y, width, height )  : À•W(x,y)‚©‚ç‰¡(width)Ac(height)‚Ì‹éŒ`(“h‚è‚Â‚Ô‚µ)‚ğ•`‰æ
+    ãƒ»æç”»å‘½ä»¤ã®è¿½åŠ 
+      gDrawBox( x, y, width, height )  : åº§æ¨™(x,y)ã‹ã‚‰æ¨ª(width)ã€ç¸¦(height)ã®çŸ©å½¢ã‚’æç”»
+      gFillBox( x, y, width, height )  : åº§æ¨™(x,y)ã‹ã‚‰æ¨ª(width)ã€ç¸¦(height)ã®çŸ©å½¢(å¡—ã‚Šã¤ã¶ã—)ã‚’æç”»
       gDrawArc( x, y, width, height, start, extent, type )
-        : ‰~ŒÊ (start:ŒÊ‚ÌnŠp, extent:ŒÊ‚ÌŠp‚Ì‘å‚«‚³, type:•Â‚¶•û)
+        : å††å¼§ (start:å¼§ã®å§‹è§’, extent:å¼§ã®è§’ã®å¤§ãã•, type:é–‰ã˜æ–¹)
       gFillArc( x, y, width, height, start, extent, type )
-        : ‰~ŒÊ (start:ŒÊ‚ÌnŠp, extent:ŒÊ‚ÌŠp‚Ì‘å‚«‚³, type:•Â‚¶•û)
+        : å††å¼§ (start:å¼§ã®å§‹è§’, extent:å¼§ã®è§’ã®å¤§ãã•, type:é–‰ã˜æ–¹)
   [ Fix ]
-    E•`‰æ–½—ß‚Ì•ÏX
-      gWindowOpen( width, height )     : •`‰æƒEƒBƒ“ƒhƒE‚ğŠJ‚­
-      gWindowClose()                   : •`‰æƒEƒBƒ“ƒhƒE‚ğ•Â‚¶‚é
-      gDrawLine( x1, y1, x2, y2 )      : À•W(x1,y1)‚©‚çÀ•W(x2,y2)‚Ü‚Åü‚ğˆø‚­
-      gDrawOval( x, y, width, height ) : À•W(x,y)‚©‚ç‰¡(width)Ac(height)‚Ì‰~‚ğ•`‰æ
-      gDrawPoint( x, y )               : À•W(x,y)‚É“_‚ğ•`‰æ
-      gFillOval( x, y, width, height ) : À•W(x,y)‚©‚ç‰¡(width)Ac(height)‚Ì‰~(“h‚è‚Â‚Ô‚µ)‚ğ•`‰æ
-      gFillPoint( x, y )               : À•W(x,y)‚É“_‚ğ•`‰æ
-    EƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚ÌC³
-      •`‰æŠÖ˜A‚ÌƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚ğC³
+    ãƒ»æç”»å‘½ä»¤ã®å¤‰æ›´
+      gWindowOpen( width, height )     : æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‹ã
+      gWindowClose()                   : æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‰ã˜ã‚‹
+      gDrawLine( x1, y1, x2, y2 )      : åº§æ¨™(x1,y1)ã‹ã‚‰åº§æ¨™(x2,y2)ã¾ã§ç·šã‚’å¼•ã
+      gDrawOval( x, y, width, height ) : åº§æ¨™(x,y)ã‹ã‚‰æ¨ª(width)ã€ç¸¦(height)ã®å††ã‚’æç”»
+      gDrawPoint( x, y )               : åº§æ¨™(x,y)ã«ç‚¹ã‚’æç”»
+      gFillOval( x, y, width, height ) : åº§æ¨™(x,y)ã‹ã‚‰æ¨ª(width)ã€ç¸¦(height)ã®å††(å¡—ã‚Šã¤ã¶ã—)ã‚’æç”»
+      gFillPoint( x, y )               : åº§æ¨™(x,y)ã«ç‚¹ã‚’æç”»
+    ãƒ»ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®ä¿®æ­£
+      æç”»é–¢é€£ã®ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä¿®æ­£
   [ BugFix ]
-    E(“à•”•ÏX) ƒXƒŒƒbƒh‚Ì“¯Šú•û–@‚ğC³
+    ãƒ»(å†…éƒ¨å¤‰æ›´) ã‚¹ãƒ¬ãƒƒãƒ‰ã®åŒæœŸæ–¹æ³•ã‚’ä¿®æ­£
 
   [ NewFile ]
     - ASTgDrawArc.java
@@ -2277,21 +2291,21 @@
     - ASTgOpen.java
     - ASTgPoint.java
 
-Ever 1.09_4  (2006/01/10)
+ãƒ»ver 1.09_4  (2006/01/10)
   [ Fix ]
-    E(“à•”•ÏX) ƒXƒŒƒbƒh‚Ì“¯Šú•û–@‚ğ•ÏX
+    ãƒ»(å†…éƒ¨å¤‰æ›´) ã‚¹ãƒ¬ãƒƒãƒ‰ã®åŒæœŸæ–¹æ³•ã‚’å¤‰æ›´
 
   [ FixFile ]
     - ChangeLog.txt
     - IntVExecuter.java
     - MainGUI.java
 
-Ever 1.09_3  (2005/12/28)
+ãƒ»ver 1.09_3  (2005/12/28)
   [ New ]
-    E•ÒW‰æ–ÊAƒRƒ“ƒ\[ƒ‹‰æ–ÊA•Ï”‰æ–Ê‚ÌƒTƒCƒY‚ğ•ÏX‰Â”\‚É‚µ‚½
-    Eƒhƒ‰ƒbƒN•ƒhƒƒbƒv‚Åƒtƒ@ƒCƒ‹‚ğŠJ‚¯‚é‚æ‚¤‚É‚µ‚½
+    ãƒ»ç·¨é›†ç”»é¢ã€ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ç”»é¢ã€å¤‰æ•°ç”»é¢ã®ã‚µã‚¤ã‚ºã‚’å¤‰æ›´å¯èƒ½ã«ã—ãŸ
+    ãƒ»ãƒ‰ãƒ©ãƒƒã‚¯ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã‘ã‚‹ã‚ˆã†ã«ã—ãŸ
   [ Fix ]
-    E(“à•”•ÏX) ì}ƒEƒBƒ“ƒhƒE‚Ì•`‰æÅ“K‰»
+    ãƒ»(å†…éƒ¨å¤‰æ›´) ä½œå›³ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®æç”»æœ€é©åŒ–
 
   [ NewFile ]
     - FileDropOpen.java
@@ -2303,11 +2317,11 @@
     - IntVgOutputWindow.java
     - MainGUI.java
 
-Ever 1.09_2  (2005/12/06)
+ãƒ»ver 1.09_2  (2005/12/06)
   [ Fix ]
-    E(“à•”•ÏX) ƒm[ƒh Block ‚ÌC³
+    ãƒ»(å†…éƒ¨å¤‰æ›´) ãƒãƒ¼ãƒ‰ Block ã®ä¿®æ­£
   [ BugFix ]
-    E“ü‚êq“à‚Å‚à–ß‚è’l‚ğ“®ì‚·‚é‚æ‚¤‚ÉC³
+    ãƒ»å…¥ã‚Œå­å†…ã§ã‚‚æˆ»ã‚Šå€¤ã‚’å‹•ä½œã™ã‚‹ã‚ˆã†ã«ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -2323,18 +2337,18 @@
   [ ReMoveFile ]
     - ASTFunctionBlock.java
 
-Ever 1.09_1  (2005/12/05)
+ãƒ»ver 1.09_1  (2005/12/05)
   [ New ]
-    Eu•¶–@‚Ì‚ä‚ç‚¬v‚ğ‹LÚ‚µ‚½ pdf ‚ğ”z•zƒLƒbƒg‚É’Ç‰Á
-    ENULL•¶š‚ÌÀ‘• ( NULL )
-    EŠÖ”ŒÄ‚Ño‚µ‚ÌÀ‘•
-      ( BUG ) –ß‚è’l‚Í“ü‚êq“à‚Å‚Í“®ì‚µ‚Ü‚¹‚ñ
+    ãƒ»ã€Œæ–‡æ³•ã®ã‚†ã‚‰ãã€ã‚’è¨˜è¼‰ã—ãŸ pdf ã‚’é…å¸ƒã‚­ãƒƒãƒˆã«è¿½åŠ 
+    ãƒ»NULLæ–‡å­—ã®å®Ÿè£… ( NULL )
+    ãƒ»é–¢æ•°å‘¼ã³å‡ºã—ã®å®Ÿè£…
+      ( BUG ) æˆ»ã‚Šå€¤ã¯å…¥ã‚Œå­å†…ã§ã¯å‹•ä½œã—ã¾ã›ã‚“
   [ Fix ]
-    E[ƒwƒ‹ƒv] ‚ÌURL‚ğC³
-    EReadMe ‚ÌURL‚ğC³
-    E”z•zƒLƒbƒg‚ÌƒfƒBƒŒƒNƒgƒŠ\¬‚ğ•ÏX
-    E(“à•”•ÏX) •Ï”Šm•Û‚Ìd•û‚ğ•ÏX
-    E(“à•”•ÏX) •Ï”•\¦‰æ–ÊƒNƒŠƒA•û–@‚ğÅ“K‰»
+    ãƒ»[ãƒ˜ãƒ«ãƒ—] ã®URLã‚’ä¿®æ­£
+    ãƒ»ReadMe ã®URLã‚’ä¿®æ­£
+    ãƒ»é…å¸ƒã‚­ãƒƒãƒˆã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªæ§‹æˆã‚’å¤‰æ›´
+    ãƒ»(å†…éƒ¨å¤‰æ›´) å¤‰æ•°ç¢ºä¿ã®ä»•æ–¹ã‚’å¤‰æ›´
+    ãƒ»(å†…éƒ¨å¤‰æ›´) å¤‰æ•°è¡¨ç¤ºç”»é¢ã‚¯ãƒªã‚¢æ–¹æ³•ã‚’æœ€é©åŒ–
 
   [ NewFile ]
     - ASTDecl.java
@@ -2366,30 +2380,30 @@
     - ASTIntDecl.java
     - ASTStringDecl.java
 
-Ever 1.09  (2005/11/21)
+ãƒ»ver 1.09  (2005/11/21)
   [ Memo ]
-    Ever 1.08_13 ‚ğˆÀ’èƒo[ƒWƒ‡ƒ“‚Æ‚µ‚ÄƒŠƒŠ[ƒX
+    ãƒ»ver 1.08_13 ã‚’å®‰å®šãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¨ã—ã¦ãƒªãƒªãƒ¼ã‚¹
 
   [ FixFile ]
     - ChangeLog.txt
     - MainGUI.java
 
-Ever 1.08_13  (2005/11/17)
+ãƒ»ver 1.08_13  (2005/11/17)
   [ New ]
-    Eƒtƒ@ƒCƒ‹I/O ‚Ì–½—ß’Ç‰Á
-      ƒtƒ@ƒCƒ‹‚Ö‚Ì‹­§‘      : flush(fd)
-      ƒtƒ@ƒCƒ‹íœ              : remove(filepath)
-    E•¶š—ñ‘€ì‚Ì–½—ß’Ç‰Á
-      •¶š‚Ì‘}“ü                : insert(str1, n, str2)
-            str1‚Ìn•¶š–Ú‚Éstr2‚ğ‘}“ü‚µ‚½•¶š—ñ‚ğ•Ô‚·
-      •¶š‚Ì‘Š·                : replace(str1, n, m, str2)
-            str1‚Ìn‚©‚çm•¶š–Ú‚ğstr2‚Å‘‚«Š·‚¦‚½•¶š—ñ‚ğ•Ô‚·
-      •¶š—ñ‚ğ‹æØ‚é            : extract(str1, str2, n)
-            str1 ‚ğ str2 ‚Ì•¶š—ñ‚Å‹æØ‚è nŒÂ–Ú‚Ì•¶š‚ğ•Ô‚·
+    ãƒ»ãƒ•ã‚¡ã‚¤ãƒ«I/O ã®å‘½ä»¤è¿½åŠ 
+      ãƒ•ã‚¡ã‚¤ãƒ«ã¸ã®å¼·åˆ¶æ›¸è¾¼      : flush(fd)
+      ãƒ•ã‚¡ã‚¤ãƒ«å‰Šé™¤              : remove(filepath)
+    ãƒ»æ–‡å­—åˆ—æ“ä½œã®å‘½ä»¤è¿½åŠ 
+      æ–‡å­—ã®æŒ¿å…¥                : insert(str1, n, str2)
+            str1ã®næ–‡å­—ç›®ã«str2ã‚’æŒ¿å…¥ã—ãŸæ–‡å­—åˆ—ã‚’è¿”ã™
+      æ–‡å­—ã®æ›¸æ›                : replace(str1, n, m, str2)
+            str1ã®nã‹ã‚‰mæ–‡å­—ç›®ã‚’str2ã§æ›¸ãæ›ãˆãŸæ–‡å­—åˆ—ã‚’è¿”ã™
+      æ–‡å­—åˆ—ã‚’åŒºåˆ‡ã‚‹            : extract(str1, str2, n)
+            str1 ã‚’ str2 ã®æ–‡å­—åˆ—ã§åŒºåˆ‡ã‚Š nå€‹ç›®ã®æ–‡å­—ã‚’è¿”ã™
   [ Fix ]
-    Eƒtƒ@ƒCƒ‹ƒŠƒl[ƒ€‚Ìd—l•ÏX
-      ƒŠƒl[ƒ€æ‚Éƒtƒ@ƒCƒ‹‚ª‚ ‚Á‚½ê‡AƒGƒ‰[‚ğ•\¦‚µƒvƒƒOƒ‰ƒ€’â~
-    EÀsƒGƒ‰[‚ÌƒGƒ‰[ƒƒbƒZ[ƒW‚ğC³
+    ãƒ»ãƒ•ã‚¡ã‚¤ãƒ«ãƒªãƒãƒ¼ãƒ ã®ä»•æ§˜å¤‰æ›´
+      ãƒªãƒãƒ¼ãƒ å…ˆã«ãƒ•ã‚¡ã‚¤ãƒ«ãŒã‚ã£ãŸå ´åˆã€ã‚¨ãƒ©ãƒ¼ã‚’è¡¨ç¤ºã—ãƒ—ãƒ­ã‚°ãƒ©ãƒ åœæ­¢
+    ãƒ»å®Ÿè¡Œã‚¨ãƒ©ãƒ¼æ™‚ã®ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’ä¿®æ­£
 
   [ NewFile ]
     - ASTExtract.java
@@ -2411,9 +2425,9 @@
     - MainGUI.java
     - ThreadRun.java
 
-Ever 1.08_12  (2005/11/13)
+ãƒ»ver 1.08_12  (2005/11/13)
   [ Fix ]
-    Eƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ‚É•¶šƒR[ƒh‚ğ”»•Ê‚·‚é‚æ‚¤‚É•ÏX
+    ãƒ»ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿æ™‚ã«æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’åˆ¤åˆ¥ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
 
   [ FixFile ]
     - ChangeLog.txt
@@ -2421,12 +2435,12 @@
     - IntVFileIO.java
     - MainGUI.java
 
-Ever 1.08_11  (2005/11/11)
+ãƒ»ver 1.08_11  (2005/11/11)
   [ New ]
-    Eƒtƒ@ƒCƒ‹I/O‚ÌƒGƒ‰[•¶‚Ì’Ç‰Á
+    ãƒ»ãƒ•ã‚¡ã‚¤ãƒ«I/Oã®ã‚¨ãƒ©ãƒ¼æ–‡ã®è¿½åŠ 
   [ Fix ]
-    EICONƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ•û‚ğ•ÏX
-    Enull -> EOF ‚É•ÏX
+    ãƒ»ICONãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿æ–¹ã‚’å¤‰æ›´
+    ãƒ»null -> EOF ã«å¤‰æ›´
 
   [ FixFile ]
     - ChangeLog.txt
@@ -2444,11 +2458,11 @@
   [ ReNameFile ]
     - ASTNull.java -> ASTEOF_STR.java
 
-Ever 1.08_10  (2005/11/11)
+ãƒ»ver 1.08_10  (2005/11/11)
   [ New ]
-    E•¶–@‚Ì—h‚ç‚¬‚ğÀ‘•
+    ãƒ»æ–‡æ³•ã®æºã‚‰ãã‚’å®Ÿè£…
   [ Fix ]
-    Eƒtƒ@ƒCƒ‹“Ç‚İ‚İ‚Ì EOF ‚ğ•ÏX
+    ãƒ»ãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿æ™‚ã® EOF ã‚’å¤‰æ›´
 
   [ FixFile ]
     - ChangeLog.txt
@@ -2463,24 +2477,24 @@
     - IntVParserVisitor.java
     - MainGUI.java
 
-Ever 1.08_9  (2005/11/10)
+ãƒ»ver 1.08_9  (2005/11/10)
   [ New ]
-    EICON‚Ì’Ç‰Á
-    Eƒtƒ@ƒCƒ‹I/O‚ÌÀ‘•iƒtƒ@ƒCƒ‹I/O‚ÉŠÖ‚·‚éƒGƒ‰[•\¦‚Í–¢À‘•j
-      ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“i“Ç‚İ‚İj : fd © openr(filepath)
-      ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“i‘‚«‚İj : fd © openw(filepath)
-      ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“i’Ç‹L‘j : fd © opena(filepath)
-      ƒtƒ@ƒCƒ‹ƒNƒ[ƒY             : close(fd)
-      ƒtƒ@ƒCƒ‹“Ç‚İ‚İ             : str © getsrt(fd, n)
-      “ü—Í [ input()‚Æ“¯“™ ]       : str © getstr(0, n)
-      ƒtƒ@ƒCƒ‹s“Ç‚İ‚İ           : str © getline(fd)
-      “ü—Í [ input()‚Æ“¯“™ ]       : str © getline(0)
-      ƒtƒ@ƒCƒ‹‘‚«‚İ             : putstr(fd, str)
-      o—Í [ ‰üs‚È‚µo—Í ]        : putstr(1, str)
-      ƒtƒ@ƒCƒ‹s‘‚«‚İ           : putline(fd, str)
-      o—Í [ ‰üs‚ ‚èo—Í ]        : putline(1, str)
-      ƒtƒ@ƒCƒ‹‚Ì—L–³               : str © isfile(filepath)
-      ƒtƒ@ƒCƒ‹‚ÌƒŠƒl[ƒ€           : rename(filepath1, filepath2)
+    ãƒ»ICONã®è¿½åŠ 
+    ãƒ»ãƒ•ã‚¡ã‚¤ãƒ«I/Oã®å®Ÿè£…ï¼ˆãƒ•ã‚¡ã‚¤ãƒ«I/Oã«é–¢ã™ã‚‹ã‚¨ãƒ©ãƒ¼è¡¨ç¤ºã¯æœªå®Ÿè£…ï¼‰
+      ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³ï¼ˆèª­ã¿è¾¼ã¿ï¼‰ : fd â† openr(filepath)
+      ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³ï¼ˆæ›¸ãè¾¼ã¿ï¼‰ : fd â† openw(filepath)
+      ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³ï¼ˆè¿½è¨˜æ›¸è¾¼ï¼‰ : fd â† opena(filepath)
+      ãƒ•ã‚¡ã‚¤ãƒ«ã‚¯ãƒ­ãƒ¼ã‚º             : close(fd)
+      ãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿             : str â† getsrt(fd, n)
+      å…¥åŠ› [ input()ã¨åŒç­‰ ]       : str â† getstr(0, n)
+      ãƒ•ã‚¡ã‚¤ãƒ«è¡Œèª­ã¿è¾¼ã¿           : str â† getline(fd)
+      å…¥åŠ› [ input()ã¨åŒç­‰ ]       : str â† getline(0)
+      ãƒ•ã‚¡ã‚¤ãƒ«æ›¸ãè¾¼ã¿             : putstr(fd, str)
+      å‡ºåŠ› [ æ”¹è¡Œãªã—å‡ºåŠ› ]        : putstr(1, str)
+      ãƒ•ã‚¡ã‚¤ãƒ«è¡Œæ›¸ãè¾¼ã¿           : putline(fd, str)
+      å‡ºåŠ› [ æ”¹è¡Œã‚ã‚Šå‡ºåŠ› ]        : putline(1, str)
+      ãƒ•ã‚¡ã‚¤ãƒ«ã®æœ‰ç„¡               : str â† isfile(filepath)
+      ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒªãƒãƒ¼ãƒ            : rename(filepath1, filepath2)
 
   [ FixFile ]
     - ChangeLog.txt
@@ -2513,10 +2527,10 @@
   [ ReNameFile ]
     - gOutputWindow.java -> IntVgOutputWindow.java
 
-Ever 1.08_8  (2005/10/31)
+ãƒ»ver 1.08_8  (2005/10/31)
   [ Fix ]
-    EQÆ‚µ‚Ä‚¢‚È‚¢•Ï”‚ğíœ
-    E‘SŠp”¼ŠpƒJƒ“ƒ}‚Æ“Ç“_‚ğ“¯‚¶ƒg[ƒNƒ“‚Æ‚µ‚Äˆµ‚¤‚æ‚¤‚É•ÏX
+    ãƒ»å‚ç…§ã—ã¦ã„ãªã„å¤‰æ•°ã‚’å‰Šé™¤
+    ãƒ»å…¨è§’åŠè§’ã‚«ãƒ³ãƒã¨èª­ç‚¹ã‚’åŒã˜ãƒˆãƒ¼ã‚¯ãƒ³ã¨ã—ã¦æ‰±ã†ã‚ˆã†ã«å¤‰æ›´
 
   [ FixFile ]
     - ChangeLog.txt
@@ -2540,11 +2554,11 @@
     - PEN.java
     - VarCopyButtonListener.java
 
-Ever 1.08_7  (2005/10/25)
+ãƒ»ver 1.08_7  (2005/10/25)
   [ Fix ]
-    EÀs‚ÌƒGƒ‰[ƒƒbƒZ[ƒW‚Ì’Ç‰Á
+    ãƒ»å®Ÿè¡Œæ™‚ã®ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®è¿½åŠ 
   [ BugFix ]
-    Eun‚ß‚É–ß‚év‚Å’â~‚µ‚½ê‡‚ÉƒGƒ‰[ƒƒbƒZ[ƒW‚ª“f‚©‚ê‚é‚Ì‚ğC³
+    ãƒ»ã€Œå§‹ã‚ã«æˆ»ã‚‹ã€ã§åœæ­¢ã—ãŸå ´åˆã«ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒåã‹ã‚Œã‚‹ã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -2552,15 +2566,15 @@
     - MainGUI.java
     - ThreadRun.java
 
-Ever 1.08_6  (2005/10/15)
+ãƒ»ver 1.08_6  (2005/10/15)
   [ Fix ]
-    EReadMeƒtƒ@ƒCƒ‹‚ğC³
-    EPENƒNƒCƒbƒNƒŠƒtƒ@ƒŒƒ“ƒX‚ğC³
-    ExDNCLŒ¾Œêƒ}ƒjƒ…ƒAƒ‹‚ğC³
-    EƒTƒ“ƒvƒ‹ƒtƒ@ƒCƒ‹‚ğ”÷’²®
+    ãƒ»ReadMeãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿®æ­£
+    ãƒ»PENã‚¯ã‚¤ãƒƒã‚¯ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ã‚’ä¿®æ­£
+    ãƒ»xDNCLè¨€èªãƒãƒ‹ãƒ¥ã‚¢ãƒ«ã‚’ä¿®æ­£
+    ãƒ»ã‚µãƒ³ãƒ—ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å¾®èª¿æ•´
   [ BugFix ]
-    E•¶–@ƒGƒ‰[‚ª”­¶‚µ‚½AƒtƒŠ[ƒY‚·‚éê‡‚ª‚ ‚é‚Ì‚ğ‚Æ‚è‚ ‚¦‚¸‘Îˆ
-    EƒvƒƒOƒ‰ƒ€“ü—Íx‰‡ƒ{ƒ^ƒ“‚Ì‹Lqƒ~ƒX‚ğC³
+    ãƒ»æ–‡æ³•ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸæ™‚ã€ãƒ•ãƒªãƒ¼ã‚ºã™ã‚‹å ´åˆãŒã‚ã‚‹ã®ã‚’ã¨ã‚Šã‚ãˆãšå¯¾å‡¦
+    ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³ã®è¨˜è¿°ãƒŸã‚¹ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ButtonEdit.java
@@ -2571,13 +2585,13 @@
     - ThreadRun.java
     - ./sample/KazuAteGame.pen
   [ ReNameFile ]
-    - PEN‘€ìƒ}ƒjƒ…ƒAƒ‹.pdf -> PENƒNƒCƒbƒNƒŠƒtƒ@ƒŒƒ“ƒX.pdf
-    - Œ¾Œêd—l.pdf -> xDNCLŒ¾Œêƒ}ƒjƒ…ƒAƒ‹.pdf
+    - PENæ“ä½œãƒãƒ‹ãƒ¥ã‚¢ãƒ«.pdf -> PENã‚¯ã‚¤ãƒƒã‚¯ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹.pdf
+    - è¨€èªä»•æ§˜.pdf -> xDNCLè¨€èªãƒãƒ‹ãƒ¥ã‚¢ãƒ«.pdf
 
-Ever 1.08_5  (2005/09/09)
+ãƒ»ver 1.08_5  (2005/09/09)
   [ BugFix ]
-    E[ á`âá`â ] ‚Æ•À‚ñ‚Å‚¢‚é‚Ì‘I‘ğ”ÍˆÍ‚ª‚¨‚©‚µ‚©‚Á‚½‚Ì‚ğC³
-    Eá`â ‚Ì‘OŒã‚Å”ÍˆÍ‘I‘ğ‚µ‚ÄAíœƒL[‚ğ‰Ÿ‚·‚Æ á`â ‚ªÁ‚¦‚Ä‚µ‚Ü‚¤‚Ì‚ğC³
+    ãƒ»[ â‰ªï½â‰«â‰ªï½â‰« ] ã¨ä¸¦ã‚“ã§ã„ã‚‹æ™‚ã®é¸æŠç¯„å›²ãŒãŠã‹ã—ã‹ã£ãŸã®ã‚’ä¿®æ­£
+    ãƒ»â‰ªï½â‰« ã®å‰å¾Œã§ç¯„å›²é¸æŠã—ã¦ã€å‰Šé™¤ã‚­ãƒ¼ã‚’æŠ¼ã™ã¨ â‰ªï½â‰« ãŒæ¶ˆãˆã¦ã—ã¾ã†ã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - ChangeLog.txt
@@ -2585,9 +2599,9 @@
     - EditSelection.java
     - MainGUI.java
 
-Ever 1.08_4  (2005/09/08)
+ãƒ»ver 1.08_4  (2005/09/08)
   [ Fix ]
-    Eó‘Ô•\¦ƒ‰ƒxƒ‹ : [ ÀsI—¹ ] ‚Ìó‘Ô‚ğ’Ç‰Á
+    ãƒ»çŠ¶æ…‹è¡¨ç¤ºãƒ©ãƒ™ãƒ« : [ å®Ÿè¡Œçµ‚äº† ] ã®çŠ¶æ…‹ã‚’è¿½åŠ 
 
   [ FixFile ]
     - ChangeLog.txt
@@ -2596,15 +2610,15 @@
     - RunClean.java
     - RunStop.java
 
-Ever 1.08_3  (2005/09/06)
+ãƒ»ver 1.08_3  (2005/09/06)
   [ New ]
-    EƒOƒ‰ƒtƒBƒJƒ‹‚Èo—Í‚ğˆµ‚¦‚é‚æ‚¤‚É‚µ‚½
-      gopen(w, h)           : ‰¡• w, c• h ‚Ì•`‰æƒEƒBƒ“ƒhƒE‚ğŠJ‚­i1‚Â‚Ì‚İj
-      gcolor(r, g, b)       : F(RGB)‚ğƒZƒbƒg‚·‚é
-      gpoint(x, y)          : À•W(x, y)‚É“_‚ğƒvƒƒbƒg
-      gline(x1, y1, x2, y2) : n“_(x1, y1)‚©‚çI“_(x2, y2)‚Éü‚ğˆø‚­
-      gdoval(x, y, w, h)    : À•W(x, y)‚©‚ç‰¡• x, c• y‚Ì‰~i˜g‚Ì‚İj‚ğ•`‰æ
-      gfoval(x, y, w, h)    : À•W(x, y)‚©‚ç‰¡• x, c• y‚Ì‰~i“h’×‚µj‚ğ•`‰æ
+    ãƒ»ã‚°ãƒ©ãƒ•ã‚£ã‚«ãƒ«ãªå‡ºåŠ›ã‚’æ‰±ãˆã‚‹ã‚ˆã†ã«ã—ãŸ
+      gopen(w, h)           : æ¨ªå¹… w, ç¸¦å¹… h ã®æç”»ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‹ãï¼ˆ1ã¤ã®ã¿ï¼‰
+      gcolor(r, g, b)       : è‰²(RGB)ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
+      gpoint(x, y)          : åº§æ¨™(x, y)ã«ç‚¹ã‚’ãƒ—ãƒ­ãƒƒãƒˆ
+      gline(x1, y1, x2, y2) : å§‹ç‚¹(x1, y1)ã‹ã‚‰çµ‚ç‚¹(x2, y2)ã«ç·šã‚’å¼•ã
+      gdoval(x, y, w, h)    : åº§æ¨™(x, y)ã‹ã‚‰æ¨ªå¹… x, ç¸¦å¹… yã®å††ï¼ˆæ ã®ã¿ï¼‰ã‚’æç”»
+      gfoval(x, y, w, h)    : åº§æ¨™(x, y)ã‹ã‚‰æ¨ªå¹… x, ç¸¦å¹… yã®å††ï¼ˆå¡—æ½°ã—ï¼‰ã‚’æç”»
 
   [ NewFile ]
     - ./sample/Drow01.pen
@@ -2628,12 +2642,12 @@
     - RunButtonListener.java
     - RunClean.java
 
-Ever 1.08_2  (2005/08/29)
+ãƒ»ver 1.08_2  (2005/08/29)
   [ Fix ]
-    EƒvƒƒOƒ‰ƒ€“ü—Íx‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚Å [ @‘}“ü•¶š—ñ ] ‚ğ‹Lq‚µ‚È‚¢ê‡A
-    @ƒ‰ƒxƒ‹(JLabel)‚Å•\¦‚·‚é‚æ‚¤‚É•ÏX
+    ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã§ [ @æŒ¿å…¥æ–‡å­—åˆ— ] ã‚’è¨˜è¿°ã—ãªã„å ´åˆã€
+    ã€€ãƒ©ãƒ™ãƒ«(JLabel)ã§è¡¨ç¤ºã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
   [ BugFix ]
-    ESHIFTƒL[ + –îˆóƒL[‚Å”ÍˆÍ‘I‘ğ‚Å‚«‚È‚©‚Á‚½ƒoƒO‚ÌC³
+    ãƒ»SHIFTã‚­ãƒ¼ + çŸ¢å°ã‚­ãƒ¼ã§ç¯„å›²é¸æŠã§ããªã‹ã£ãŸãƒã‚°ã®ä¿®æ­£
 
   [ FixFile ]
     - ButtonEdit.java
@@ -2645,59 +2659,59 @@
     - MainGUI.java
     - MyJLabel.java
 
-Ever 1.08_1  (2005/08/03)
+ãƒ»ver 1.08_1  (2005/08/03)
   [ Fix ]
-    EÀs‘¬“x’²ßƒo[‚ğƒNƒŠƒbƒN‚Å’²ß‚Å‚«‚é‚æ‚¤‚É•ÏX
+    ãƒ»å®Ÿè¡Œé€Ÿåº¦èª¿ç¯€ãƒãƒ¼ã‚’ã‚¯ãƒªãƒƒã‚¯ã§èª¿ç¯€ã§ãã‚‹ã‚ˆã†ã«å¤‰æ›´
 
   [ NewFile ]
     - RunTimeMouseListener.java
   [ FixFile ]
     - MainGUI.java
 
-Ever 1.08  (2005/07/24)
+ãƒ»ver 1.08  (2005/07/24)
   [ Memo ]
-    Ever 1.07_15 ‚ğˆÀ’èƒo[ƒWƒ‡ƒ“‚Æ‚µ‚ÄƒŠƒŠ[ƒX
+    ãƒ»ver 1.07_15 ã‚’å®‰å®šãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¨ã—ã¦ãƒªãƒªãƒ¼ã‚¹
 
   [ Fix ]
-    Esampleƒtƒ@ƒCƒ‹‚Ì®—
+    ãƒ»sampleãƒ•ã‚¡ã‚¤ãƒ«ã®æ•´ç†
 
   [ FixFile ]
-    - ./sample ˆÈ‰º®—
+    - ./sample ä»¥ä¸‹æ•´ç†
 
-Ever 1.07_15  (2005/07/21)
+ãƒ»ver 1.07_15  (2005/07/21)
   [ Fix ]
-    Eelse-if•¶‚Ì•ÏX
-      —áj
-        ‚à‚µ áğŒ®â ‚È‚ç‚Î
+    ãƒ»else-ifæ–‡ã®å¤‰æ›´
+      ä¾‹ï¼‰
+        ã‚‚ã— â‰ªæ¡ä»¶å¼â‰« ãªã‚‰ã°
           | 
-        ‚ğÀs‚µC‚»‚¤‚Å‚È‚­‚à‚µ áğŒ®â ‚È‚ç‚Î
+        ã‚’å®Ÿè¡Œã—ï¼Œãã†ã§ãªãã‚‚ã— â‰ªæ¡ä»¶å¼â‰« ãªã‚‰ã°
           | 
-        ‚ğÀs‚µC‚»‚¤‚Å‚È‚¯‚ê‚Î
+        ã‚’å®Ÿè¡Œã—ï¼Œãã†ã§ãªã‘ã‚Œã°
           | 
-        ‚ğÀs‚·‚é
+        ã‚’å®Ÿè¡Œã™ã‚‹
   [ FixFile ]
     - IntVParser.jjt
     - MainGUI.java
 
-Ever 1.07_14  (2005/07/20)
+ãƒ»ver 1.07_14  (2005/07/20)
   [ New ]
-    Eelse-if•¶‚Ì’Ç‰Á
-      —áj
-        ‚à‚µ áğŒ®â ‚È‚ç‚Î
+    ãƒ»else-ifæ–‡ã®è¿½åŠ 
+      ä¾‹ï¼‰
+        ã‚‚ã— â‰ªæ¡ä»¶å¼â‰« ãªã‚‰ã°
           | 
-        ‚ğÀs‚µC‚à‚µ áğŒ®â ‚È‚ç‚Î
+        ã‚’å®Ÿè¡Œã—ï¼Œã‚‚ã— â‰ªæ¡ä»¶å¼â‰« ãªã‚‰ã°
           | 
-        ‚ğÀs‚µC‚»‚¤‚Å‚È‚¯‚ê‚Î
+        ã‚’å®Ÿè¡Œã—ï¼Œãã†ã§ãªã‘ã‚Œã°
           | 
-        ‚ğÀs‚·‚é
-    Eˆø” -b ‚Ì’Ç‰Á
-      ‹N“®‚É [ java -jar PNE.jar -b 'x‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹ƒpƒX' ] ‚Å
-      x‰‡ƒ{ƒ^ƒ“’è‹`ƒtƒ@ƒCƒ‹‚ğw’è‚Å‚«‚é‚æ‚¤‚É‚µ‚½
+        ã‚’å®Ÿè¡Œã™ã‚‹
+    ãƒ»å¼•æ•° -b ã®è¿½åŠ 
+      èµ·å‹•æ™‚ã« [ java -jar PNE.jar -b 'æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹' ] ã§
+      æ”¯æ´ãƒœã‚¿ãƒ³å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æŒ‡å®šã§ãã‚‹ã‚ˆã†ã«ã—ãŸ
   [ Fix ]
-    ETeacherMode‚ğ [ -t ] ‚Å‚à‹N“®‚Å‚«‚é‚æ‚¤‚É‚µ‚½
-    EDebugMode‚ğ [ -d ] ‚Å‚à‹N“®‚Å‚«‚é‚æ‚¤‚É‚µ‚½
+    ãƒ»TeacherModeã‚’ [ -t ] ã§ã‚‚èµ·å‹•ã§ãã‚‹ã‚ˆã†ã«ã—ãŸ
+    ãƒ»DebugModeã‚’ [ -d ] ã§ã‚‚èµ·å‹•ã§ãã‚‹ã‚ˆã†ã«ã—ãŸ
   [ BugFix ]
-    EƒNƒŒƒWƒbƒg‚ÌŒëA‚ğC³
+    ãƒ»ã‚¯ãƒ¬ã‚¸ãƒƒãƒˆã®èª¤æ¤ã‚’ä¿®æ­£
 
   [ NewFile ]
     - ASTElseIfStat.java
@@ -2707,14 +2721,14 @@
     - IntVParser.jjt
     - MainGUI.java
 
-Ever 1.07_13  (2005/07/18)
+ãƒ»ver 1.07_13  (2005/07/18)
   [ New ]
-    EƒvƒƒOƒ‰ƒ€“ü—Íx‰‡ƒ{ƒ^ƒ“‚ÌƒJƒXƒ^ƒ}ƒCƒY‰Â”\
-      ButtonList.ini ‚É‚Äx‰‡ƒ{ƒ^ƒ“‚Ì’è‹`
-      i’è‹`•û–@jƒ{ƒ^ƒ“–¼@ƒ{ƒ^ƒ“•@F(R,G,B)@‘}“ü•¶š—ñ
+    ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³ã®ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºå¯èƒ½
+      ButtonList.ini ã«ã¦æ”¯æ´ãƒœã‚¿ãƒ³ã®å®šç¾©
+      ï¼ˆå®šç¾©æ–¹æ³•ï¼‰ãƒœã‚¿ãƒ³å@ãƒœã‚¿ãƒ³å¹…@è‰²(R,G,B)@æŒ¿å…¥æ–‡å­—åˆ—
   [ Fix ]
-    ETeacherMode‚É•Ï”‰æ–Ê‚ªŒ©‚É‚­‚©‚Á‚½‚Ì‚ğC³
-    EƒTƒ“ƒvƒ‹ƒtƒ@ƒCƒ‹‚ÌƒfƒBƒŒƒNƒgƒŠ‚Ìrename
+    ãƒ»TeacherModeæ™‚ã«å¤‰æ•°ç”»é¢ãŒè¦‹ã«ãã‹ã£ãŸã®ã‚’ä¿®æ­£
+    ãƒ»ã‚µãƒ³ãƒ—ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®rename
   
   [ NewFile ]
     - ButtonEdit.java
@@ -2726,21 +2740,21 @@
     - ./sample/OCU - example > ./sample/OCU_example
     - ./sample/OGU - example > ./sample/OGU_example
 
-Ever 1.07_12  (2005/06/28)
+ãƒ»ver 1.07_12  (2005/06/28)
   [ BugFix ]
-    E”äŠr‰‰Zq‚Ìu“™‚µ‚¢v‚Æu“™‚µ‚­‚È‚¢v‚Ì”»’è‚ª‚¨‚©‚µ‚©‚Á‚½ƒoƒO‚ÌC³
+    ãƒ»æ¯”è¼ƒæ¼”ç®—å­ã®ã€Œç­‰ã—ã„ã€ã¨ã€Œç­‰ã—ããªã„ã€ã®åˆ¤å®šãŒãŠã‹ã—ã‹ã£ãŸãƒã‚°ã®ä¿®æ­£
 
   [ FixFile ]
     - IntVExecuter.java
     - MainGUI.java
 
-Ever 1.07_11  (2005/06/24)
+ãƒ»ver 1.07_11  (2005/06/24)
   [ New ]
-    E‘g‚İ‚İŠÖ”‚Ì’Ç‰Á
-      int() : ˆø”‚ÌŒ^‚ğu®”v‚É•ÏŠ·‚·‚éB
-      log() : ˆø”‚Ì©‘R‘Î”’l (’ê‚Í e) ‚ğ•Ô‚µ‚Ü‚·B
+    ãƒ»çµ„ã¿è¾¼ã¿é–¢æ•°ã®è¿½åŠ 
+      int() : å¼•æ•°ã®å‹ã‚’ã€Œæ•´æ•°ã€ã«å¤‰æ›ã™ã‚‹ã€‚
+      log() : å¼•æ•°ã®è‡ªç„¶å¯¾æ•°å€¤ (åº•ã¯ e) ã‚’è¿”ã—ã¾ã™ã€‚
   [ Fix ]
-    Eceil(),floor()‚Ì–ß‚è’l‚ÌŒ^‚ğuÀ”v‚É•ÏX
+    ãƒ»ceil(),floor()ã®æˆ»ã‚Šå€¤ã®å‹ã‚’ã€Œå®Ÿæ•°ã€ã«å¤‰æ›´
 
   [ NewFile ]
     - ASTInt.java
@@ -2750,22 +2764,22 @@
     - IntVParser.jjt
     - MainGUI.java
 
-Ever 1.07_10  (2005/06/23)
+ãƒ»ver 1.07_10  (2005/06/23)
   [ Fix ]
-    Eceil(),floor(),round()‚Ì–ß‚è’l‚ÌŒ^‚ğu®”v‚É•ÏX
+    ãƒ»ceil(),floor(),round()ã®æˆ»ã‚Šå€¤ã®å‹ã‚’ã€Œæ•´æ•°ã€ã«å¤‰æ›´
 
   [ FixFile ]
     - IntVExecuter.java
     - MainGUI.java
 
-Ever 1.07_9  (2005/06/23)
+ãƒ»ver 1.07_9  (2005/06/23)
   [ Fix ]
-    Eabs()‚Ì–ß‚è’l‚ğ•ÏX
-      ˆø”F®” b –ß‚è’lF®”
-      ˆø”FÀ” b –ß‚è’lFÀ”
+    ãƒ»abs()ã®æˆ»ã‚Šå€¤ã‚’å¤‰æ›´
+      å¼•æ•°ï¼šæ•´æ•° ï½œ æˆ»ã‚Šå€¤ï¼šæ•´æ•°
+      å¼•æ•°ï¼šå®Ÿæ•° ï½œ æˆ»ã‚Šå€¤ï¼šå®Ÿæ•°
   [ BugFix ]
-    Eu•Ï”‰æ–Ê‚ğƒRƒs[v‚Åu’lv‚ªƒRƒs[‚³‚ê‚È‚¢ƒoƒO‚ÌC³
-    Ewhile-do•¶,do-while•¶,repeat-until•¶‚ÅAÀssƒ|ƒCƒ“ƒ^‚Ì•\¦‚ª‚¨‚©‚µ‚©‚Á‚½‚Ì‚ğC³
+    ãƒ»ã€Œå¤‰æ•°ç”»é¢ã‚’ã‚³ãƒ”ãƒ¼ã€ã§ã€Œå€¤ã€ãŒã‚³ãƒ”ãƒ¼ã•ã‚Œãªã„ãƒã‚°ã®ä¿®æ­£
+    ãƒ»while-doæ–‡,do-whileæ–‡,repeat-untilæ–‡ã§ã€å®Ÿè¡Œè¡Œãƒã‚¤ãƒ³ã‚¿ã®è¡¨ç¤ºãŒãŠã‹ã—ã‹ã£ãŸã®ã‚’ä¿®æ­£
 
   [ FixFile ]
     - IntVExecuter.java
@@ -2773,43 +2787,43 @@
     - MainGUI.java
     - VarCopyButtonListener
 
-Ever 1.07_8  (2005/06/20)
+ãƒ»ver 1.07_8  (2005/06/20)
   [ Fix ]
-    EƒNƒŒƒWƒbƒg•\‹L‚ğ•ÏX
+    ãƒ»ã‚¯ãƒ¬ã‚¸ãƒƒãƒˆè¡¨è¨˜ã‚’å¤‰æ›´
 
   [ FixFile ]
     - HelpPenButtonListener.java
     - MainGUI.java
 
-Ever 1.07_7  (2005/06/19)
+ãƒ»ver 1.07_7  (2005/06/19)
   [ BugFix ]
-    EFor•¶‚Å•Ï”•\¦‰æ–Ê‚Ìu•Ï”–¼v‚Éu’lv‚ª•\¦‚³‚ê‚éƒoƒO‚ÌC³
+    ãƒ»Foræ–‡ã§å¤‰æ•°è¡¨ç¤ºç”»é¢ã®ã€Œå¤‰æ•°åã€ã«ã€Œå€¤ã€ãŒè¡¨ç¤ºã•ã‚Œã‚‹ãƒã‚°ã®ä¿®æ­£
 
   [ FixFile ]
     - IntVExecuter.java
     - MainGUI.java
 
-Ever 1.07_6  (2005/06/18)
+ãƒ»ver 1.07_6  (2005/06/18)
   [ Fix ]
-    EƒRƒ“ƒ\[ƒ‹‰æ–Ê‚Ì”wŒiF‚ğ•ÏX
-      “ü—Í‘Ò‚¿ó‘ÔF”’F
-      ‚»‚Ì‘¼‚Ìó‘ÔFŠDF
+    ãƒ»ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ç”»é¢ã®èƒŒæ™¯è‰²ã‚’å¤‰æ›´
+      å…¥åŠ›å¾…ã¡çŠ¶æ…‹ï¼šç™½è‰²
+      ãã®ä»–ã®çŠ¶æ…‹ï¼šç°è‰²
 
   [ FixFile ]
     - IntVExecuter.java
     - MainGUI.java
 
-Ever 1.07_5  (2005/06/18)
+ãƒ»ver 1.07_5  (2005/06/18)
   [ New ]
-    E‘g‚İ‚İŠÖ”‚Ì’Ç‰Á
-      abs()       : â‘Î’l
-      ceil()      : ¬”“_ˆÈ‰º Ø‚èã‚°
-      floor()     : ¬”“_ˆÈ‰º Ø‚èÌ‚Ä
-      round()     : ¬”“_ˆÈ‰º lÌŒÜ“ü
-      length()    : •¶š—ñ‚Ì’·‚³‚ğ•Ô‚µ‚Ü‚·
-      substring() : •¶š—ñ‚Ì•”•ª•¶š—ñ‚Å‚ ‚éV‚µ‚¢•¶š—ñ‚ğ•Ô‚µ‚Ü‚·
+    ãƒ»çµ„ã¿è¾¼ã¿é–¢æ•°ã®è¿½åŠ 
+      abs()       : çµ¶å¯¾å€¤
+      ceil()      : å°æ•°ç‚¹ä»¥ä¸‹ åˆ‡ã‚Šä¸Šã’
+      floor()     : å°æ•°ç‚¹ä»¥ä¸‹ åˆ‡ã‚Šæ¨ã¦
+      round()     : å°æ•°ç‚¹ä»¥ä¸‹ å››æ¨äº”å…¥
+      length()    : æ–‡å­—åˆ—ã®é•·ã•ã‚’è¿”ã—ã¾ã™
+      substring() : æ–‡å­—åˆ—ã®éƒ¨åˆ†æ–‡å­—åˆ—ã§ã‚ã‚‹æ–°ã—ã„æ–‡å­—åˆ—ã‚’è¿”ã—ã¾ã™
   [ Fix ]
-    E•Ï”•\¦‰æ–Ê‚ÌuŒ^v‚Ì•\¦•¶š‚ğ•ÏX
+    ãƒ»å¤‰æ•°è¡¨ç¤ºç”»é¢ã®ã€Œå‹ã€ã®è¡¨ç¤ºæ–‡å­—ã‚’å¤‰æ›´
 
   [ NewFile ]
     - ASTAbs.java
@@ -2823,16 +2837,16 @@
     - IntVParser.jjt
     - MainGUI.java
 
-Ever 1.07_4  (2005/06/17)
+ãƒ»ver 1.07_4  (2005/06/17)
   [ New ]
-    EŒ^‚Ì•¶š—ñ‚ğÀ‘•
-    E1s‚ÌŒ^éŒ¾•¶‚Å•¡”‚Ì•Ï”‚ğéŒ¾‚Å‚«‚é‚æ‚¤‚É‚µ‚½
-      —áj®” a, b, c 
-    E•Ï”•\¦‰æ–Ê‚ÉuŒ^v‚ğ•\¦
+    ãƒ»å‹ã®æ–‡å­—åˆ—ã‚’å®Ÿè£…
+    ãƒ»1è¡Œã®å‹å®£è¨€æ–‡ã§è¤‡æ•°ã®å¤‰æ•°ã‚’å®£è¨€ã§ãã‚‹ã‚ˆã†ã«ã—ãŸ
+      ä¾‹ï¼‰æ•´æ•° a, b, c 
+    ãƒ»å¤‰æ•°è¡¨ç¤ºç”»é¢ã«ã€Œå‹ã€ã‚’è¡¨ç¤º
   [ Fix ]
-    Eƒtƒ@ƒCƒ‹‚ÌuV‹Kv,uŠJ‚­v‚ÌAƒRƒ“ƒ\[ƒ‹‰æ–Ê‚Æ•Ï”•\¦‰æ–Ê‚ğƒNƒŠƒA‚·‚é‚æ‚¤‚É•ÏX
-    Eun‚ß‚©‚çÀsv‚Ìó‘Ô‚ğ’Ç‰ÁiÀsI—¹ŒãAƒ}[ƒJ[‚Íˆê”Ô‰º‚Ì‚Ü‚Üj
-    Eun‚ß‚É–ß‚évƒ{ƒ^ƒ“‚ÅuƒRƒ“ƒ\[ƒ‹‰æ–Êvu•Ï”‰æ–Êv‚ğƒNƒŠƒA
+    ãƒ»ãƒ•ã‚¡ã‚¤ãƒ«ã®ã€Œæ–°è¦ã€,ã€Œé–‹ãã€ã®æ™‚ã€ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ç”»é¢ã¨å¤‰æ•°è¡¨ç¤ºç”»é¢ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
+    ãƒ»ã€Œå§‹ã‚ã‹ã‚‰å®Ÿè¡Œã€ã®çŠ¶æ…‹ã‚’è¿½åŠ ï¼ˆå®Ÿè¡Œçµ‚äº†å¾Œã€ãƒãƒ¼ã‚«ãƒ¼ã¯ä¸€ç•ªä¸‹ã®ã¾ã¾ï¼‰
+    ãƒ»ã€Œå§‹ã‚ã«æˆ»ã‚‹ã€ãƒœã‚¿ãƒ³ã§ã€Œã‚³ãƒ³ã‚½ãƒ¼ãƒ«ç”»é¢ã€ã€Œå¤‰æ•°ç”»é¢ã€ã‚’ã‚¯ãƒªã‚¢
 
   [ NewFile ]
     - RunClean.java
@@ -2848,11 +2862,11 @@
     - ParseException.java
     - ThreadRun.java
 
-Ever 1.07_3  (2005/06/15)
+ãƒ»ver 1.07_3  (2005/06/15)
   [ New ]
-    Esqrt() ‚Ì‘g‚İ‚İŠÖ”‚ÌÀ‘•
+    ãƒ»sqrt() ã®çµ„ã¿è¾¼ã¿é–¢æ•°ã®å®Ÿè£…
   [ BugFix ]
-    E˜_—‰‰Zq‚Ìu”Û’èv‚ªg—p‚Å‚«‚È‚©‚Á‚½ƒoƒO‚ÌC³
+    ãƒ»è«–ç†æ¼”ç®—å­ã®ã€Œå¦å®šã€ãŒä½¿ç”¨ã§ããªã‹ã£ãŸãƒã‚°ã®ä¿®æ­£
 
   [ NewFile ]
     - ASTSqrt.java
@@ -2860,31 +2874,31 @@
     - IntVExecuter.java
     - IntVParser.jjt
 
-Ever 1.07_2  (2005/06/14)
+ãƒ»ver 1.07_2  (2005/06/14)
   [ BugFix ]
-    E•¶–@’è‹`‚Ìƒ~ƒX‚ÅFor•¶‚ªƒGƒ‰[‚Æ‚È‚Á‚½ƒoƒO‚ÌC³
+    ãƒ»æ–‡æ³•å®šç¾©ã®ãƒŸã‚¹ã§Foræ–‡ãŒã‚¨ãƒ©ãƒ¼ã¨ãªã£ãŸãƒã‚°ã®ä¿®æ­£
 
   [ FixFile ]
     - IntVParser.jjt
 
-Ever 1.07_1  (2005/06/14)
+ãƒ»ver 1.07_1  (2005/06/14)
   [ New ]
-    EŒ^‚ÌÀ”,•¶š—ñ‚ğÀ‘•
-      ’j•¶š‚Í input() ‚Å‚Ì‚İ‘ã“ü‰Â”\
-    Esin(), cos(), tan() ‚Ì‘g‚İ‚İŠÖ”‚ÌÀ‘•
-    ETeacherMode‚Ì’Ç‰Á
-      ˆø”u-teacherv‚ğ‚Â‚¯‚ÄPEN‚ğ‹N“®
-      @—áj % java -jar PEN.jar -teacher
-    EDebugMode‚Ì’Ç‰Á
-      ˆø”u-debugv‚ğ‚Â‚¯‚ÄPEN‚ğ‹N“®
+    ãƒ»å‹ã®å®Ÿæ•°,æ–‡å­—åˆ—ã‚’å®Ÿè£…
+      æ³¨ï¼‰æ–‡å­—ã¯ input() ã§ã®ã¿ä»£å…¥å¯èƒ½
+    ãƒ»sin(), cos(), tan() ã®çµ„ã¿è¾¼ã¿é–¢æ•°ã®å®Ÿè£…
+    ãƒ»TeacherModeã®è¿½åŠ 
+      å¼•æ•°ã€Œ-teacherã€ã‚’ã¤ã‘ã¦PENã‚’èµ·å‹•
+      ã€€ä¾‹ï¼‰ % java -jar PEN.jar -teacher
+    ãƒ»DebugModeã®è¿½åŠ 
+      å¼•æ•°ã€Œ-debugã€ã‚’ã¤ã‘ã¦PENã‚’èµ·å‹•
   [ Fix ]
-    EZpŒvZ—áŠO‚ÌƒGƒ‰[•¶‚ğ’Ç‰Á
-    E“ü—Í‘Ò‚¿ó‘Ô‚Ì‚İAƒRƒ“ƒ\[ƒ‹‰æ–Ê‚Ì•ÒW‚ğ‹–‰Â‚·‚é‚æ‚¤‚É•ÏX
+    ãƒ»ç®—è¡“è¨ˆç®—ä¾‹å¤–ã®ã‚¨ãƒ©ãƒ¼æ–‡ã‚’è¿½åŠ 
+    ãƒ»å…¥åŠ›å¾…ã¡çŠ¶æ…‹ã®ã¿ã€ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ç”»é¢ã®ç·¨é›†ã‚’è¨±å¯ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
   [ BugFix ]
-    E2•ªŠòğŒ•¶‚Ìƒ{ƒ^ƒ“–¼‚ğ•ÏX
-      u‚à‚µ`‚³‚à‚È‚¯‚ê‚Îv¨u‚à‚µ`‚»‚¤‚Å‚È‚¯‚ê‚Îv
-    E‰üs–³‚µo—ÍŒã‚É“ü—Í‚Ì–½—ß‚ğÀs‚Å‚«‚È‚¢ƒoƒO‚ÌC³
-    EğŒ®‚ÅŠ‡ŒÊ•t‚«‰‰Z‚ª‚Å‚«‚È‚¢ƒoƒO‚ÌC³
+    ãƒ»2åˆ†å²æ¡ä»¶æ–‡ã®ãƒœã‚¿ãƒ³åã‚’å¤‰æ›´
+      ã€Œã‚‚ã—ï½ã•ã‚‚ãªã‘ã‚Œã°ã€â†’ã€Œã‚‚ã—ï½ãã†ã§ãªã‘ã‚Œã°ã€
+    ãƒ»æ”¹è¡Œç„¡ã—å‡ºåŠ›å¾Œã«å…¥åŠ›ã®å‘½ä»¤ã‚’å®Ÿè¡Œã§ããªã„ãƒã‚°ã®ä¿®æ­£
+    ãƒ»æ¡ä»¶å¼ã§æ‹¬å¼§ä»˜ãæ¼”ç®—ãŒã§ããªã„ãƒã‚°ã®ä¿®æ­£
 
   [ NewFile ]
     - ASTCosine.java
@@ -2902,18 +2916,18 @@
   [ MoveFile ]
     -  ASTLiteral_F.java  ->  ASTFloatLiteral.java
 
-Ever 1.07  (2005/05/16)
+ãƒ»ver 1.07  (2005/05/16)
   [ Memo ]
-    Ever 1.06_4 ‚ğˆÀ’èƒo[ƒWƒ‡ƒ“‚Æ‚µ‚ÄƒŠƒŠ[ƒX
+    ãƒ»ver 1.06_4 ã‚’å®‰å®šãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¨ã—ã¦ãƒªãƒªãƒ¼ã‚¹
 
-Ever 1.06_4  (2005/05/13)
+ãƒ»ver 1.06_4  (2005/05/13)
   [ Fix ]
-    Eá`â ‚ÉˆÍ‚Ü‚ê•”•ª‚ğ BackSpace, Delete ‚ÅˆêŠ‡íœ‚·‚é‚æ‚¤‚É•ÏX
+    ãƒ»â‰ªï½â‰« ã«å›²ã¾ã‚Œéƒ¨åˆ†ã‚’ BackSpace, Delete ã§ä¸€æ‹¬å‰Šé™¤ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
 
   [ FixFile ]
     - EditAreaKeyListener.java
     - EditSelection.java
 
-Ever 1.06_3  (2005/05/13)
+ãƒ»ver 1.06_3  (2005/05/13)
   [ New ]
-    EChangeLog ì¬ŠJn
+    ãƒ»ChangeLog ä½œæˆé–‹å§‹

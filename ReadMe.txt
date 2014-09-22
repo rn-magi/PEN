@@ -1,80 +1,80 @@
 -------------------------------------------------------------------------------
- [   –¼Ì   ] ‰ŠwŽÒŒü‚¯ƒvƒƒOƒ‰ƒ~ƒ“ƒOŠwKŠÂ‹« PEN
+ [   åç§°   ] åˆå­¦è€…å‘ã‘ãƒ—ãƒ­ã‚°ãƒ©ãƒŸãƒ³ã‚°å­¦ç¿’ç’°å¢ƒ PEN
                   ( Programming Environment for Novices )
- [  ŠJ”­ŽÒ  ] ’†‘º —º‘¾ : ‘åãŽs—§‘åŠw ‘åŠw‰@‘n‘¢“sŽsŒ¤‹†‰È
-              ¼“c ’m”Ž : ‘åãŠw‰@‘åŠw î•ñŠw•”
-              ¼‰Y •q—Y : ‘åãŽs—§‘åŠw ‘åŠw‰@‘n‘¢“sŽsŒ¤‹†‰È
- [  ˜A—æ  ] pen@s.ogu.ac.jp
- [  ”z•zŒ³  ] http://www.media.osaka-cu.ac.jp/PEN/
- [ ŠJ”­ŠÂ‹« ]
+ [  é–‹ç™ºè€…  ] ä¸­æ‘ äº®å¤ª : å¤§é˜ªå¸‚ç«‹å¤§å­¦ å¤§å­¦é™¢å‰µé€ éƒ½å¸‚ç ”ç©¶ç§‘
+              è¥¿ç”° çŸ¥åš : å¤§é˜ªå­¦é™¢å¤§å­¦ æƒ…å ±å­¦éƒ¨
+              æ¾æµ¦ æ•é›„ : å¤§é˜ªå¸‚ç«‹å¤§å­¦ å¤§å­¦é™¢å‰µé€ éƒ½å¸‚ç ”ç©¶ç§‘
+ [  é€£çµ¡å…ˆ  ] pen@s.ogu.ac.jp
+ [  é…å¸ƒå…ƒ  ] http://www.media.osaka-cu.ac.jp/PEN/
+ [ é–‹ç™ºç’°å¢ƒ ]
      Microsoft Windows 7 pro SP1 64bit + JDK ver 1.6.0 (32bit) + JavaCC ver 5.0
      Microsoft Windows 8.1 pro 64bit + JDK ver 1.5.0 (32bit) + JavaCC ver 5.0
      Mac OS X 10.9.4 Intel 64bit + JDK ver 1.6.0 + JavaCC ver 5.0
- [ “®ìŠm”F ]
+ [ å‹•ä½œç¢ºèª ]
      Microsoft Windows 7 pro SP1 64bit    + JDK ver 1.6.0 (64bit)
      Microsoft Windows 8.1 pro 64bit      + JDK ver 1.7.0 (64bit)
      Mac OS X 10.9.4 Intel 64bit          + JDK ver 1.6.0
- [  ’˜ìŒ   ] Copyright(C) 2003-2014 by ’†‘º —º‘¾, ¼“c ’m”Ž, ¼‰Y •q—Y
- [“]ÚE”z•z] GPL‚É€‚¸‚é
- [Žg—pã’ˆÓ] –{ƒvƒƒOƒ‰ƒ€‚É‚Ä‚¢‚©‚È‚é–â‘è‚ª”­¶‚µ‚½ê‡‚à
-              ìŽÒ‚ÍˆêØ‚ÌÓ”C‚ð•‰‚í‚È‚¢‚à‚Ì‚Æ‚µ‚Ü‚·B
+ [  è‘—ä½œæ¨©  ] Copyright(C) 2003-2014 by ä¸­æ‘ äº®å¤ª, è¥¿ç”° çŸ¥åš, æ¾æµ¦ æ•é›„
+ [è»¢è¼‰ãƒ»é…å¸ƒ] GPLã«æº–ãšã‚‹
+ [ä½¿ç”¨ä¸Šæ³¨æ„] æœ¬ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã«ã¦ã„ã‹ãªã‚‹å•é¡ŒãŒç™ºç”Ÿã—ãŸå ´åˆã‚‚
+              ä½œè€…ã¯ä¸€åˆ‡ã®è²¬ä»»ã‚’è² ã‚ãªã„ã‚‚ã®ã¨ã—ã¾ã™ã€‚
 -------------------------------------------------------------------------------
 
-ƒ“à—e•¨„
+ï¼œå†…å®¹ç‰©ï¼ž
 ./
   |- ./Manual/
-  |  |- PEN-QuickReference.pdf      c ‘€ìƒ}ƒjƒ…ƒAƒ‹‚Å‚·
-  |  |- xDNCL-Language-Manual.pdf   c PEN‚Å‹Lq‚·‚éƒvƒƒOƒ‰ƒ€‚ÌŒ¾ŒêŽd—l‘‚Å‚·
-  |  |- xDNCL-Draw.pdf              c •`‰æ‚ÉŠÖ‚·‚éŠÖ”ƒ}ƒjƒ…ƒAƒ‹‚Å‚·
-  |  |- xDNCL-FileIO.pdf            c FileI/O‚ÉŠÖ‚·‚éŠÖ”ƒ}ƒjƒ…ƒAƒ‹‚Å‚·
-  |  -- ini.pdf                     c PEN‚ÌÝ’èƒtƒ@ƒCƒ‹‚ÉŠÖ‚·‚éƒ}ƒjƒ…ƒAƒ‹‚Å‚·
+  |  |- PEN-QuickReference.pdf      â€¦ æ“ä½œãƒžãƒ‹ãƒ¥ã‚¢ãƒ«ã§ã™
+  |  |- xDNCL-Language-Manual.pdf   â€¦ PENã§è¨˜è¿°ã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®è¨€èªžä»•æ§˜æ›¸ã§ã™
+  |  |- xDNCL-Draw.pdf              â€¦ æç”»ã«é–¢ã™ã‚‹é–¢æ•°ãƒžãƒ‹ãƒ¥ã‚¢ãƒ«ã§ã™
+  |  |- xDNCL-FileIO.pdf            â€¦ FileI/Oã«é–¢ã™ã‚‹é–¢æ•°ãƒžãƒ‹ãƒ¥ã‚¢ãƒ«ã§ã™
+  |  -- ini.pdf                     â€¦ PENã®è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã«é–¢ã™ã‚‹ãƒžãƒ‹ãƒ¥ã‚¢ãƒ«ã§ã™
   |- ./ButtonList/
-  |  |- Default.ini                 c ƒvƒƒOƒ‰ƒ€“ü—ÍŽx‰‡ƒ{ƒ^ƒ“ ’è‹`ƒtƒ@ƒCƒ‹
-  |  |- DrawList.ini                c ŠÈˆÕ”Å •`‰æê—pƒvƒƒOƒ‰ƒ€“ü—ÍŽx‰‡ƒ{ƒ^ƒ“ ’è‹`ƒtƒ@ƒCƒ‹
-  |  |- Arduino.ini                 c Arduino§Œä—pƒvƒƒOƒ‰ƒ€“ü—ÍŽx‰‡ƒ{ƒ^ƒ“ ’è‹`ƒtƒ@ƒCƒ‹
-  |  -- ArduinoSimple.ini           c ŠÈˆÕ”Å Arduino§Œä—pƒvƒƒOƒ‰ƒ€“ü—ÍŽx‰‡ƒ{ƒ^ƒ“ ’è‹`ƒtƒ@ƒCƒ‹
-  |- ./lib/                         c Java‚Ìƒ‰ƒCƒuƒ‰ƒŠ
-  |- ./lib64/                       c Java‚Ìƒ‰ƒCƒuƒ‰ƒŠ(64bit”Å)
-  |- ./plugin/                      c ƒvƒ‰ƒOƒCƒ“ƒtƒ@ƒCƒ‹
-  |- ./sample/                      c PEN‚ÌƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚Å‚·
-  |- ChangeLog.txt                  c PEN‚ÌXV—š—ð‚Å‚·
-  |- functionTable.ini              c ƒvƒ‰ƒOƒCƒ“‹@”\‚ÅŒÄ‚Ño‚·ŠÖ”‚ð’è‹`‚·‚éƒtƒ@ƒCƒ‹
-  |- PEN.jar                        c PEN–{‘Ì‚Å‚·
-  |- PEN.url                        c ”z•zŒ³ Webƒy[ƒW‚ÌƒŠƒ“ƒN‚Å‚·
-  |- Property.ini                   c PEN‚ÌÝ’è‚ðs‚¤ƒtƒ@ƒCƒ‹‚Å‚·
-  -- ReadMe.txt                     c ‚±‚Ìƒtƒ@ƒCƒ‹‚Å‚·
+  |  |- Default.ini                 â€¦ ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³ å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
+  |  |- DrawList.ini                â€¦ ç°¡æ˜“ç‰ˆ æç”»å°‚ç”¨ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³ å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
+  |  |- Arduino.ini                 â€¦ Arduinoåˆ¶å¾¡ç”¨ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³ å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
+  |  -- ArduinoSimple.ini           â€¦ ç°¡æ˜“ç‰ˆ Arduinoåˆ¶å¾¡ç”¨ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³ å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
+  |- ./lib/                         â€¦ Javaã®ãƒ©ã‚¤ãƒ–ãƒ©ãƒª
+  |- ./lib64/                       â€¦ Javaã®ãƒ©ã‚¤ãƒ–ãƒ©ãƒª(64bitç‰ˆ)
+  |- ./plugin/                      â€¦ ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«
+  |- ./sample/                      â€¦ PENã®ã‚µãƒ³ãƒ—ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã§ã™
+  |- ChangeLog.txt                  â€¦ PENã®æ›´æ–°å±¥æ­´ã§ã™
+  |- functionTable.ini              â€¦ ãƒ—ãƒ©ã‚°ã‚¤ãƒ³æ©Ÿèƒ½ã§å‘¼ã³å‡ºã™é–¢æ•°ã‚’å®šç¾©ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«
+  |- PEN.jar                        â€¦ PENæœ¬ä½“ã§ã™
+  |- PEN.url                        â€¦ é…å¸ƒå…ƒ Webãƒšãƒ¼ã‚¸ã®ãƒªãƒ³ã‚¯ã§ã™
+  |- Property.ini                   â€¦ PENã®è¨­å®šã‚’è¡Œã†ãƒ•ã‚¡ã‚¤ãƒ«ã§ã™
+  -- ReadMe.txt                     â€¦ ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ã§ã™
 
-ƒŠT—v„
-PEN‚Í‰ŠwŽÒŒü‚¯‚ÌƒvƒƒOƒ‰ƒ~ƒ“ƒOŠwKŠÂ‹«‚Å‚·B
-PEN‚Å“®ì‚·‚éƒvƒƒOƒ‰ƒ€Œ¾Œê‚ÍA
-  ‘åŠw“üŽŽƒZƒ“ƒ^[‚ÌŽè‡‹LqŒ¾Œê DNCL 
-‚ÉŠg’£‚ðs‚Á‚½ xDNCLŒ¾Œê ‚ð—p‚¢‚Ä‚¢‚Ü‚·B
+ï¼œæ¦‚è¦ï¼ž
+PENã¯åˆå­¦è€…å‘ã‘ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒŸãƒ³ã‚°å­¦ç¿’ç’°å¢ƒã§ã™ã€‚
+PENã§å‹•ä½œã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ è¨€èªžã¯ã€
+ã€€ã‚»ãƒ³ã‚¿ãƒ¼è©¦é¨“ç”¨æ‰‹é †è¨˜è¿°æ¨™æº–è¨€èªž DNCL
+ã«æ‹¡å¼µã‚’è¡Œã£ãŸ xDNCLè¨€èªž ã‚’ç”¨ã„ã¦ã„ã¾ã™ã€‚
 
-Ú‚µ‚­‚Í xDNCL-Language-Manual.pdf ‚ðŽQÆ‚µ‚Ä‚­‚¾‚³‚¢B
+è©³ã—ãã¯ xDNCL-Language-Manual.pdf ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 
-ƒ“®ìðŒ„
-PEN ‚Í Java ‚Å‹Lq‚µ‚Ä‚¢‚é‚Ì‚Å JRE v1.6.x ˆÈ~‚ª•K—v‚Å‚·B
-Java‚Í‰º‹L‚ÌURL‚æ‚èƒ_ƒEƒ“ƒ[ƒh‚Å‚«‚Ü‚·
+ï¼œå‹•ä½œæ¡ä»¶ï¼ž
+PEN ã¯ Java ã§è¨˜è¿°ã—ã¦ã„ã‚‹ã®ã§ JRE v1.6.x ä»¥é™ãŒå¿…è¦ã§ã™ã€‚
+Javaã¯ä¸‹è¨˜ã®URLã‚ˆã‚Šãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã§ãã¾ã™
 
-EJRE 1.7.0
-@http://www.java.com/ja/
+ãƒ»JRE 1.7.0
+ã€€http://www.java.com/ja/
 
-ƒƒCƒ“ƒXƒg[ƒ‹„
-Žg—p‚³‚ê‚éƒ†[ƒU‚Ì‘‚«ž‚ÝŒ ŒÀ‚ª‚ ‚éƒfƒBƒŒƒNƒgƒŠ‚È‚ç
-‚Ç‚±‚Å‚àD‚«‚ÈêŠ‚É’u‚¢‚Ä‚¢‚½‚¾‚¢‚Ä\‚¢‚Ü‚¹‚ñB
+ï¼œã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ï¼ž
+ä½¿ç”¨ã•ã‚Œã‚‹ãƒ¦ãƒ¼ã‚¶ã®æ›¸ãè¾¼ã¿æ¨©é™ãŒã‚ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãªã‚‰
+ã©ã“ã§ã‚‚å¥½ããªå ´æ‰€ã«ç½®ã„ã¦ã„ãŸã ã„ã¦æ§‹ã„ã¾ã›ã‚“ã€‚
 
-ƒƒAƒ“ƒCƒ“ƒXƒg[ƒ‹„
-PEN‚ÌƒfƒBƒŒƒNƒgƒŠ‚²‚Æíœ‚µ‚Ä‚­‚¾‚³‚¢B
-ƒŒƒWƒXƒgƒŠ“™‚Í‘€ì‚µ‚Ä‚¢‚Ü‚¹‚ñB
+ï¼œã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ï¼ž
+PENã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã”ã¨å‰Šé™¤ã—ã¦ãã ã•ã„ã€‚
+ãƒ¬ã‚¸ã‚¹ãƒˆãƒªç­‰ã¯æ“ä½œã—ã¦ã„ã¾ã›ã‚“ã€‚
 
-ƒPEN‚Ì‹N“®„
-[ PEN.jar ] ‚ðƒ_ƒuƒ‹ƒNƒŠƒbƒN‚µ‚Ä‹N“®‚µ‚Ä‚­‚¾‚³‚¢B
-‚Ü‚½‚ÍƒRƒ}ƒ“ƒh‚Å [ java -jar PEN.jar ] ‚Æ‹N“®‚µ‚Ä‚­‚¾‚³‚¢B
-PEN‚ÌŽg‚¢•û‚Í [ PEN-QuickReference.pdf ] ‚ðŽQÆ‚µ‚Ä‚­‚¾‚³‚¢B
+ï¼œPENã®èµ·å‹•ï¼ž
+[ PEN.jar ] ã‚’ãƒ€ãƒ–ãƒ«ã‚¯ãƒªãƒƒã‚¯ã—ã¦èµ·å‹•ã—ã¦ãã ã•ã„ã€‚
+ã¾ãŸã¯ã‚³ãƒžãƒ³ãƒ‰ã§ [ java -jar PEN.jar ] ã¨èµ·å‹•ã—ã¦ãã ã•ã„ã€‚
+PENã®ä½¿ã„æ–¹ã¯ [ PEN-QuickReference.pdf ] ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 
-ƒPEN‚ÌŽg‚¢•û„
-PEN‚ÌŽg‚¢•û‚Í [ PEN-QuickReference.pdf ] ‚ðŽQÆ‚µ‚Ä‚­‚¾‚³‚¢B
+ï¼œPENã®ä½¿ã„æ–¹ï¼ž
+PENã®ä½¿ã„æ–¹ã¯ [ PEN-QuickReference.pdf ] ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 
-ƒƒvƒƒOƒ‰ƒ€“ü—ÍŽx‰‡ƒ{ƒ^ƒ“‚ÌƒJƒXƒ^ƒ}ƒCƒY„
-ƒvƒƒOƒ‰ƒ€“ü—ÍŽx‰‡ƒ{ƒ^ƒ“‚Ìƒ{ƒ^ƒ“‚Í ./ButtonList/Default.ini ‚ð“Ç‚Ýž‚ñ‚ÅA
-‹Lq‚³‚ê‚½“à—e‚Ì’Ê‚è‚É”z’u‚µ‚Ä‚¢‚Ü‚·B
+ï¼œãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³ã®ã‚«ã‚¹ã‚¿ãƒžã‚¤ã‚ºï¼ž
+ãƒ—ãƒ­ã‚°ãƒ©ãƒ å…¥åŠ›æ”¯æ´ãƒœã‚¿ãƒ³ã®ãƒœã‚¿ãƒ³ã¯ ./ButtonList/Default.ini ã‚’èª­ã¿è¾¼ã‚“ã§ã€
+è¨˜è¿°ã•ã‚ŒãŸå†…å®¹ã®é€šã‚Šã«é…ç½®ã—ã¦ã„ã¾ã™ã€‚
