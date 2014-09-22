@@ -8,7 +8,7 @@ import javax.swing.JTextArea;
 
 public class FileSaveButtonListener implements ActionListener{
 	private JFileChooser file_c;
-	private PenFrame window;
+	private MyJFrame window;
 	private JTextArea edit_area;
 	private String WindowName;
 
@@ -20,7 +20,7 @@ public class FileSaveButtonListener implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		int returnVal = file_c.showSaveDialog((JFrame)window);
+		int returnVal = file_c.showSaveDialog(window);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			File file = file_c.getSelectedFile();
 			String file_name = new FileSave(file, edit_area, file_c, window).getFileName();

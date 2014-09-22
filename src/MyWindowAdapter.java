@@ -9,7 +9,7 @@ import javax.swing.WindowConstants;
 
 public class MyWindowAdapter extends WindowAdapter{
 	private MainGUI gui;
-	private PenFrame window;
+	private MyJFrame window;
 	private JTextArea text_write;
 	private ErrorSave error_dump;
 	private String[] obj = {"終了する前にプログラムを保存しますか？"};
@@ -24,59 +24,35 @@ public class MyWindowAdapter extends WindowAdapter{
 
 	public void windowClosing(WindowEvent we) {
 		if(!gui.Flags.RunFlag){
-			String window_name;
-			if (window instanceof JFrame) {
-				window_name = ((JFrame)window).getTitle();
-			} else {
-				window_name = ((WebMain)window).getTitle();
-			}
+			String window_name = window.getTitle();
+
 			if(window_name.substring(0, 1).equals("*")){
 				java.awt.Toolkit.getDefaultToolkit().beep();
-				int retValue;
-				if (window instanceof JFrame) {
-					retValue = JOptionPane.showOptionDialog((JFrame)window, obj,"", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null,option,option[0]);
-				} else {
-					retValue = JOptionPane.showOptionDialog((WebMain)window, obj,"", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null,option,option[0]);
-				}
+				int retValue = JOptionPane.showOptionDialog(window, obj,"", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null,option,option[0]);
+
 				if(retValue==JOptionPane.YES_OPTION){
-					int returnVal;
-					if (window instanceof JFrame) {
-						returnVal = gui.fc.showSaveDialog((JFrame)window);
-					} else {
-						returnVal = gui.fc.showSaveDialog((WebMain)window);
-					}
+					int returnVal = gui.fc.showSaveDialog(window);
+
 					if (returnVal == JFileChooser.APPROVE_OPTION) {
 						new FileSave(gui.fc.getSelectedFile(), text_write);
 						error_dump.exit();
-						if (window instanceof JFrame) {
-							((JFrame)window).setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); 
-						}
+						window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); 
 					}else{
-						if (window instanceof JFrame) {
-							((JFrame)window).setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-						}
+						window.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 					}
 				}else if(retValue==JOptionPane.NO_OPTION){
 					error_dump.exit();
-					if (window instanceof JFrame) {
-						((JFrame)window).setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-					}
+					window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 				}else if(retValue==JOptionPane.CANCEL_OPTION){
-					if (window instanceof JFrame) {
-						((JFrame)window).setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-					}
+					window.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 				}
 			} else {
 				error_dump.exit();
-				if (window instanceof JFrame) {
-					((JFrame)window).setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-				}
+				window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 			}
 		} else {
 			java.awt.Toolkit.getDefaultToolkit().beep();
-			if (window instanceof JFrame) {
-				((JFrame)window).setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-			}
+			window.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		}
 	}
 }

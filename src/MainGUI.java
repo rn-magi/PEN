@@ -35,7 +35,7 @@ public class MainGUI {
 	public String Version			= "ver1.20_15";
 	public String SystemName		= "PEN";
 	public String WindowName		= SystemName + " " + Version;
-	public PenFrame main_window;
+	public MyJFrame main_window;
 	public JPanel menu_panel		= new JPanel();
 	public JPanel run_time_panel	= new JPanel();
 	public JPanel edit_panel		= new JPanel();
@@ -192,16 +192,10 @@ public class MainGUI {
 		penPro.setProperty(PenProperties.PEN_SYSTEM_HOME, System.getProperty("user.home"));
 	}
 
-	// Applet
-	public void SetFrame(WebMain f){
-		main_window = f;
-		f.setTitle("NewFile - " + WindowName);
-	}
-
 	/**
 	 * 各コンポーネントの初期化や配置を行う
 	 */
-	public void CreateGUI(boolean isApplet){
+	public void CreateGUI(){
 //		try{
 //			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 //			SwingUtilities.updateComponentTreeUI((JFrame)main_window);
@@ -209,38 +203,26 @@ public class MainGUI {
 //			System.out.println(e);
 //		}
 		
-		if (!isApplet){
-			for(int i = 0 ; i < filter.length ; i++)
-				fc.addChoosableFileFilter(filter[i]);
+		for(int i = 0 ; i < filter.length ; i++)
+			fc.addChoosableFileFilter(filter[i]);
 
-			((JFrame)main_window).addWindowListener(new MyWindowAdapter(this));
-			((JFrame)main_window).setIconImage(Toolkit.getDefaultToolkit().createImage(getClass().getResource("pen.png")));
-			((JFrame)main_window).setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			((JFrame)main_window).setSize(820,600);
-			((JFrame)main_window).setLocation(100,100);
-		
-			MenuBar = new MyJMenuBar(this);
-			((JFrame)main_window).setJMenuBar(MenuBar.createMenuBar());
-		}
+		main_window.addWindowListener(new MyWindowAdapter(this));
+		main_window.setIconImage(Toolkit.getDefaultToolkit().createImage(getClass().getResource("pen.png")));
+		main_window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		main_window.setSize(820,600);
+		main_window.setLocation(100,100);
+	
+		MenuBar = new MyJMenuBar(this);
+		main_window.setJMenuBar(MenuBar.createMenuBar());
 		
 		menu_panel.setLayout(new BoxLayout(menu_panel,BoxLayout.X_AXIS));
-			if (main_window instanceof JFrame){
-				// Application版
-				new_button.addActionListener(new NewFileButtonListener(this));
-				menu_panel.add(new_button);
-				open_button.addActionListener(new FileOpenButtonListener(this));
-				menu_panel.add(open_button);
-				save_button.addActionListener(new FileSaveButtonListener(this));
-				menu_panel.add(save_button);
-			} else {
-				// Applet版
-				MenuButton webNewButton = new MenuButton("新規", 65, 30);
-				webNewButton.addActionListener(new webNewButtonListener(this));
-				menu_panel.add(webNewButton);
-				MenuButton webFileOpenButton = new MenuButton("開く", 65, 30);
-				webFileOpenButton.addActionListener(new webFileOpenButtonListener(this));
-				menu_panel.add(webFileOpenButton);
-			}
+			new_button.addActionListener(new NewFileButtonListener(this));
+			menu_panel.add(new_button);
+			open_button.addActionListener(new FileOpenButtonListener(this));
+			menu_panel.add(open_button);
+			save_button.addActionListener(new FileSaveButtonListener(this));
+			menu_panel.add(save_button);
+			
 			menu_panel.add(new MyJLabel(new Dimension(20,30)));
 			run_button.addActionListener(RunButton);
 			menu_panel.add(run_button);

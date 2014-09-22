@@ -10,11 +10,11 @@ public class EditAreaDocumentListener implements DocumentListener{
 	private int start_offs;
 	private int end_offs;
 
-	private PenFrame main_window;
+	private MyJFrame main_window;
 	private JTextArea edit_area;
 	private JTextArea numbar_area;
 	
-	public EditAreaDocumentListener(PenFrame mw, JTextArea ea, JTextArea na){
+	public EditAreaDocumentListener(MyJFrame mw, JTextArea ea, JTextArea na){
 		main_window = mw;
 		edit_area = ea;
 		numbar_area = na;
