@@ -10,7 +10,7 @@ import javax.swing.text.DefaultEditorKit.PasteAction;
 public class MyJMenuBar extends JMenuBar{
 	private MainGUI gui;
 	private JFileChooser file_c;
-	private PenFrame window;
+	private MyJFrame window;
 	private JTextArea edit_area;
 	private JTextArea console;
 	private JTable var_table;

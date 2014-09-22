@@ -14,7 +14,7 @@ import org.mozilla.universalchardet.UniversalDetector;
 
 public class FileOpen {
 	private JFileChooser file_c;
-	private PenFrame window;
+	private MyJFrame window;
 	private JTextArea edit_area;
 	private String WindowName;
 	
@@ -40,10 +40,10 @@ public class FileOpen {
 		String window_name = window.getTitle();
 		if(window_name.substring(0, 1).equals("*")) {
 			java.awt.Toolkit.getDefaultToolkit().beep();
-			retValue = JOptionPane.showOptionDialog((JFrame)window, obj,"", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null,option,option[0]);
+			retValue = JOptionPane.showOptionDialog(window, obj,"", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null,option,option[0]);
 			
 			if(retValue==JOptionPane.YES_OPTION){
-				int returnVal = gui.fc.showSaveDialog((JFrame)window);
+				int returnVal = gui.fc.showSaveDialog(window);
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					file_name = new FileSave(gui.fc.getSelectedFile(), edit_area, gui.fc, window).getFileName();
 					if(file_name != null){
@@ -63,8 +63,7 @@ public class FileOpen {
 
 	
 	public void FileChooser(){
-		int retValue;
-		retValue = file_c.showOpenDialog((JFrame)window);
+		int retValue = file_c.showOpenDialog(window);
 		
 		if (retValue == JFileChooser.APPROVE_OPTION) {
 			FileOpenToEditArea(file_c.getSelectedFile());

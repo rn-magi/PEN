@@ -8,7 +8,7 @@ import javax.swing.JTextArea;
 
 public class NewFileButtonListener implements ActionListener{
 	private MainGUI gui;
-	private PenFrame window;
+	private MyJFrame window;
 	private JTextArea edit_area;
 	private String WindowName;
 	
@@ -27,24 +27,17 @@ public class NewFileButtonListener implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
 		java.awt.Toolkit.getDefaultToolkit().beep();
-		int retValue;
-		
-		retValue = JOptionPane.showOptionDialog((JFrame)window, obj,"", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null,option,option[0]);
+		int retValue = JOptionPane.showOptionDialog(window, obj,"", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null,option,option[0]);
 
 		if(retValue==JOptionPane.YES_OPTION){
-			String window_name;
-			if (window instanceof JFrame) {
-				window_name = ((JFrame)window).getTitle();
-			} else {
-				window_name = ((WebMain)window).getTitle();
-			}
+			String window_name = (window).getTitle();
+		
 			if(window_name.substring(0, 1).equals("*")) {
 				java.awt.Toolkit.getDefaultToolkit().beep();
-				retValue = JOptionPane.showOptionDialog((JFrame)window, obj2,"", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null,option2,option2[0]);
+				retValue = JOptionPane.showOptionDialog(window, obj2,"", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null,option2,option2[0]);
 				
 				if(retValue==JOptionPane.YES_OPTION){
-					int returnVal;
-					returnVal = gui.fc.showSaveDialog((JFrame)window);
+					int returnVal = gui.fc.showSaveDialog(window);
 					if (returnVal == JFileChooser.APPROVE_OPTION) {
 						new FileSave(gui.fc.getSelectedFile(), edit_area, gui.fc, window);
 						NewFile();

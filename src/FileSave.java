@@ -18,7 +18,7 @@ public class FileSave {
 		saveData(setFilePath(file), ed);
 	}
 
-	public FileSave(File file, JTextArea ed, JFileChooser fc, PenFrame mw){
+	public FileSave(File file, JTextArea ed, JFileChooser fc, MyJFrame mw){
 		int retValue;
 		String file_path = setFilePath(file);
 		if(new File(file_path).canRead()){			//file_pathを読み込めるかどうか
@@ -26,7 +26,7 @@ public class FileSave {
 			if(retValue==JOptionPane.YES_OPTION){
 				saveData(file_path, ed);
 			}else if(retValue==JOptionPane.NO_OPTION){
-				retValue = fc.showSaveDialog((JFrame)mw);
+				retValue = fc.showSaveDialog(mw);
 				if (retValue == JFileChooser.APPROVE_OPTION) {
 					file = fc.getSelectedFile();
 					file_name = new FileSave(file, ed, fc, mw).getFileName();

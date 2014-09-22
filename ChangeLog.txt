@@ -1,5 +1,28 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.20_15 (2014/09/22)
+  [ Fix ]
+    ・（内部変更）Applet版の提供終了に伴うリファクタリング
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - EditAreaDocumentListener.java
+    - ExitButtonListener.java
+    - FileOpen.java
+    - FileSave.java
+    - FileSaveButtonListener.java
+    - MainGUI.java
+    - MyJFrame.java
+    - MyJMenuBar.java
+    - MyWindowAdapter.java
+    - NewFileButtonListener.java
+    - PEN.java
+  [ ReMoveFile ]
+    - PenFrame.java
+    - webFileOpenButtonListener.java
+    - WebMain.java
+    - webNewButtonListener.java
+
 ・ver 1.20_14 (2014/09/22)
   [ BugFix ]
     ・Library の呼び出し方法の変更に伴うバグがあったのを修正

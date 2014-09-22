@@ -8,7 +8,7 @@ import javax.swing.JTextArea;
 
 public class ExitButtonListener  implements ActionListener{
 	private JFileChooser file_c;
-	private PenFrame window;
+	private MyJFrame window;
 	private JTextArea edit_area;
 	private MainGUI gui;
 	
@@ -27,10 +27,9 @@ public class ExitButtonListener  implements ActionListener{
 		window_name = window.getTitle();
 		if(window_name.substring(0, 1).equals("*")){
 			java.awt.Toolkit.getDefaultToolkit().beep();
-			int retValue = JOptionPane.showOptionDialog((JFrame)window, obj,"", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null,option,option[0]);
+			int retValue = JOptionPane.showOptionDialog(window, obj,"", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null,option,option[0]);
 			if(retValue==JOptionPane.YES_OPTION){
-				int returnVal;
-				returnVal = gui.fc.showSaveDialog((JFrame)window);
+				int returnVal = gui.fc.showSaveDialog(window);
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					new FileSave(file_c.getSelectedFile(), edit_area);
 					System.exit(0);
