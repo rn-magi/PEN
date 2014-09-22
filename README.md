@@ -14,7 +14,7 @@ PENで動作するプログラム言語は
 
 ```sh
 % ant -f build.xml make
-% cd ./run
+% cd ./pkg/run
 % java -jar PEN.jar
 ```
 
