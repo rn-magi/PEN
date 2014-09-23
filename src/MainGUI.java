@@ -145,8 +145,8 @@ public class MainGUI {
 			if(penPro.containsKey(PenProperties.PEN_DUMP_DESTDIR)) {
 				error_dump.setDestDir(penPro.getProperty(PenProperties.PEN_DUMP_DESTDIR));
 			}
-        }
-        	
+		}
+
 		if(penPro.containsKey(PenProperties.EXECUTER_GRAPHIC_ORIGIN) && Integer.parseInt(penPro.getProperty(PenProperties.EXECUTER_GRAPHIC_ORIGIN)) == 1) {
 			gDrawWindow.enableOriginChange();
 		}
