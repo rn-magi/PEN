@@ -12,29 +12,29 @@ PENで動作するプログラム言語は
 
 ## 実行ファイルの生成と実行
 
-```sh
-% ant -f build.xml make
-% cd ./run
+```
+% ant make
+% cd ./pkg/run
 % java -jar PEN.jar
 ```
 
 ## 実行ファイルの削除
 
-```sh
-% ant -f build.xml clean
+```
+% ant clean
 ```
 
 ## 実行ファイルを削除して再生成
 
-```sh
-% ant -f build.xml clean
-% ant -f build.xml make
+```
+% ant clean
+% ant make
 ```
 
 ## 配布パッケージの作成
 
-```sh
-% ant -f build.xml build
+```
+% ant build
 ```
 
 ## 開発者について
