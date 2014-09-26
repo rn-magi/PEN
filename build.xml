@@ -4,7 +4,7 @@
 	<property name="binary.dir" value="./bin" />
 	<property name="javadoc.dir" value="./docs" />
 	<property name="manifestfile" value="./src/META-INF/MANIFEST.MF" />
-	<property name="run.dir" value="./run" />
+	<property name="run.dir" value="./pkg/run" />
 	<property name="pkg.dir" value="./pkg" />
 	
 	<property name="major_ver" value="1" />
