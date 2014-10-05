@@ -32,7 +32,7 @@ import javax.swing.text.PlainDocument;
  *
  */
 public class MainGUI {
-	public String Version			= "ver1.20_15";
+	public String Version			= "ver1.21";
 	public String SystemName		= "PEN";
 	public String WindowName		= SystemName + " " + Version;
 	public MyJFrame main_window;
@@ -145,8 +145,8 @@ public class MainGUI {
 			if(penPro.containsKey(PenProperties.PEN_DUMP_DESTDIR)) {
 				error_dump.setDestDir(penPro.getProperty(PenProperties.PEN_DUMP_DESTDIR));
 			}
-        }
-        	
+		}
+
 		if(penPro.containsKey(PenProperties.EXECUTER_GRAPHIC_ORIGIN) && Integer.parseInt(penPro.getProperty(PenProperties.EXECUTER_GRAPHIC_ORIGIN)) == 1) {
 			gDrawWindow.enableOriginChange();
 		}
