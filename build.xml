@@ -12,10 +12,17 @@
 	<property name="local_dev" value="" />
 	<property name="pkg_pen.dir" value="PEN_v${major_ver}${minor_vev}${local_dev}" />
 
-	<target name="build" description="完成版配布パッケージの作成" depends="clean-all,make">
+	<target name="build" description="開発版配布パッケージの作成" depends="clean-all,make">
 		<copy todir="${pkg.dir}/${pkg_pen.dir}">
 			<fileset dir="${run.dir}" />
 		</copy>
+	</target>
+
+	<target name="release-build" description="安定版配布パッケージの作成" depends="build">
+		<delete dir="${pkg.dir}/${pkg_pen.dir}/lib" />
+		<delete dir="${pkg.dir}/${pkg_pen.dir}/lib64" />
+		<delete dir="${pkg.dir}/${pkg_pen.dir}/plugin" />
+		<delete file="${pkg.dir}/${pkg_pen.dir}/functionTable.ini" />
 	</target>
 	
 	<target name="make" description="実行ファイルのコンパイル" depends="compile,run" />
