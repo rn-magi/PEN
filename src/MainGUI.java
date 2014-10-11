@@ -32,7 +32,7 @@ import javax.swing.text.PlainDocument;
  *
  */
 public class MainGUI {
-	public String Version			= "ver1.21";
+	public String Version			= "ver1.21_p1";
 	public String SystemName		= "PEN";
 	public String WindowName		= SystemName + " " + Version;
 	public MyJFrame main_window;

@@ -1,5 +1,14 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.21_p1  (2014/10/11)
+  [ BugFix ]
+    ・プラグインの強制終了処理が正しく行われなかったのを修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - MainGUI.java
+    - PenPlugin.java
+
 ・ver 1.21  (2014/10/05)
   [ Memo ]
     ・ver 1.20_15 を安定バージョンとしてリリース
