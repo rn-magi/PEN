@@ -112,11 +112,19 @@ public class PenPlugin {
 		return functionTable.containsKey(methodName);
 	}
 	
+	public void init(){
+		allPluginMethodRun("init");
+	}
+	
 	public void destruction(){
+		allPluginMethodRun("destruction");
+	}
+	
+	public void allPluginMethodRun(String methodName) {
 		for(int i = 0; i < objectName.size(); i++){
 			Object obj = objTable.get(objectName.get(i));
 			try {
-				Method method = obj.getClass().getMethod("destruction");
+				Method method = obj.getClass().getMethod(methodName);
 				
 				method.invoke(obj);
 			} catch (SecurityException e) {

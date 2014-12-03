@@ -25,6 +25,7 @@ public class ThreadRun extends Thread {
 				parser.disable_tracing();
 			}
 			parser.IntVUnit();
+			gui.penPlugin.init();
 
 			try {
 				visitor = new IntVExecuter(gui);
