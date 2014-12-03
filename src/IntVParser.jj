@@ -205,7 +205,7 @@ TOKEN [IGNORE_CASE] :
 	|	< ISFILE	: "isfile" <LP> >
 	|	< RENAME	: "rename" <LP> >
 	|	< REMOVE	: "remove" <LP> >
-	|	< SLEEP		: "sleep" <LP> >
+	|	< SLEEP		: ( "sleep" | "delay" ) <LP> >
 }
 
 TOKEN :

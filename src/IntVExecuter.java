@@ -2214,12 +2214,7 @@ public class IntVExecuter implements IntVParserVisitor{
 	 * 関数呼び出しの戻り値
 	 */
 	public Object Function(SimpleNode node, Object data, String varName){
-		if(varName.equals("delay")) {
-			int waitTime = Double.valueOf(node.jjtGetChild(0).jjtAccept(this, data).toString()).intValue();
-			run_flag(node.line_num1, true);
-			mysleep(waitTime);
-			return null;
-		} else if(FunctionTable.containsKey(varName)) {
+		if(FunctionTable.containsKey(varName)) {
 			Queue callByRef = new Queue();
 			Object[] obj = (Object[]) FunctionTable.get(varName);
 			ASTFunction fc	= (ASTFunction) obj[0];
