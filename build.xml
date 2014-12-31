@@ -9,7 +9,7 @@
 	
 	<property name="major_ver" value="1" />
 	<property name="minor_vev" value="22" />
-	<property name="local_dev" value="r2" />
+	<property name="local_dev" value="r3" />
 	<property name="pkg_pen.dir" value="PEN_v${major_ver}${minor_vev}${local_dev}" />
 
 	<target name="build" description="開発版配布パッケージの作成" depends="clean-all,make">
