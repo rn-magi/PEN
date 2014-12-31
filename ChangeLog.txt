@@ -1,5 +1,28 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.22_2  (2014/12/31)
+  [ New ]
+    ・プログラムを一時停止させる delay 関数の実装（sleep関数と同じ）
+      -> delay(整数)
+    ・LilyPad用のプログラム入力支援ボタン定義ファイルの追加
+  [ Fix ]
+    ・（内部変更）リファクタリング
+    ・xDNCL実行時にプラグインの初期化用メソッドを呼び出すように修正
+    ・Arduino用のプログラム入力支援ボタンに「一時停止」がなかったので追加
+
+  [ NewFile ]
+    - ./ButtonList/LilyPadSimple.ini
+  [ FixFile ]
+    - ./ButtonList/ArduinoSimple.ini
+    - ChangeLog.txt
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.jjt
+    - IntVParserTokenManager.java
+    - MainGUI.java
+    - PenPlugin.java
+    - ThreadRun.java
+
 ・ver 1.22_1  (2014/10/11)
   [ BugFix ]
     ・プラグインの強制終了処理が正しく行われなかったのを修正

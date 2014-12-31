@@ -83,9 +83,8 @@ public class IntVgOutputWindow extends JPanel{
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 	 */
 	public void paintComponent(Graphics g) {
-		Graphics2D g2 = (Graphics2D)g;
-		super.paintComponent(g2);
-		g2.drawImage(image, 0, 0, this);
+		super.paintComponent((Graphics2D) g);
+		((Graphics2D) g).drawImage(image, 0, 0, this);
 	}
 	
 	/**
