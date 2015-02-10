@@ -54,16 +54,20 @@ public class ButtonEdit {
 		if (gui.main_window instanceof JFrame) {
 			try {
 				File file = new File(ListFile);
-				setEditButton(new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8")));
+				if(file.exists() && file.isFile() && file.canRead()) {
+					setEditButton(new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8")));
+				} else {
+					InputStreamReader isr = new InputStreamReader(getClass().getResourceAsStream(PenProperties.BUTTON_LIST_FILE), "UTF-8");
+					setEditButton(new BufferedReader(isr));
+				}
 			} catch (FileNotFoundException e) {
-				System.out.println(e);
-				InputStreamReader isr = new InputStreamReader(getClass().getResourceAsStream(PenProperties.BUTTON_LIST_FILE), "UTF-8");
-				setEditButton(new BufferedReader(isr));
+				e.printStackTrace();
 			}
 		} else {
 			try {
 				setEditButton(new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream(ListFile), "UTF-8")));
 			} catch (IOException e) {
+				e.printStackTrace();
 			}
 		}
 	}
