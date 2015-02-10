@@ -495,6 +495,23 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	}
 
 	/**
+	 * 無限ループ
+	 */
+	public Object visit(ASTInfiniteLoop node, Object data) {
+		outPutIndent();
+		outPutCodeln("while(true) {");
+		
+		indentLevel++;
+		node.jjtGetChild(0).jjtAccept(this, data);
+		indentLevel--;
+		
+		outPutIndent();
+		outPutCodeln("}");
+		
+		return null;
+	}
+	
+	/**
 	 * ないしょ
 	 */
 	public Object visit(ASTGetStat node, Object data) {
