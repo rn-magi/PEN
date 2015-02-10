@@ -1,5 +1,29 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.22_4 (2015/02/10)
+  [ New ]
+    ・無限ループの実装
+    ・littleBits Arduino用のプログラム入力支援ボタン定義ファイルの追加
+  [ Fix ]
+    ・LilyPad用のプログラム入力支援ボタン定義ファイルに無限ループを追加
+
+  [ NewFile ]
+    - ./ButtonList/littleBitsFirmata.ini
+  [ FixFile ]
+    - ./ButtonList/LilyPadSimple.ini
+    - ChangeLog.txt
+    - ASTInfiniteLoop.java
+    - IntVConvertArduino.java
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
 ・ver 1.22_3 (2015/02/10)
   [ New ]
     ・描画ウィンドウの自動的 repaint の ON / OFF を切り替える関数の実装
