@@ -15,6 +15,8 @@ public class PenPlugin {
 	private Hashtable functionTable= new Hashtable();
 	private ArrayList objectName = new ArrayList();
 	
+	private String functionTableFile = "./functionTable.ini";
+	
 	public PenPlugin() {
 		try {
 			String libPath = "lib";
@@ -31,36 +33,39 @@ public class PenPlugin {
 				}
 			}
 			
-			FileInputStream fis = new FileInputStream("./functionTable.ini");
-			InputStreamReader isr = new InputStreamReader(fis);
-			BufferedReader reader = new BufferedReader(isr);
-			String str = reader.readLine();
-			while (str != null) {
-				String[] line = str.split("\t");
-				if(!objTable.containsKey(line[1])){
-
-					//ClassLoader loader = ClassLoader.getSystemClassLoader();
-
-					URLClassLoader loader = new URLClassLoader(new URL[]{new URL("file:./plugin/")}, getClass().getClassLoader());
-					// 呼び出すClassを指定する
-					Class claszz = loader.loadClass(line[1]);
-					
-					// インスタンスの生成
-					Object obj = claszz.newInstance();
-					
-					objTable.put(line[1], obj);
-					
-					objectName.add(line[1]);
-				}
-				Object[] om = new Object[]{ objTable.get(line[1]), line[2]};
-				
-				functionTable.put(line[0], om);
-
-				str = reader.readLine();
-			}
-
-			reader.close();
+			File file = new File(functionTableFile);
 			
+			if(file.exists() && file.isFile() && file.canRead()){
+				FileInputStream fis = new FileInputStream(functionTableFile);
+				InputStreamReader isr = new InputStreamReader(fis);
+				BufferedReader reader = new BufferedReader(isr);
+				String str = reader.readLine();
+				while (str != null) {
+					String[] line = str.split("\t");
+					if(!objTable.containsKey(line[1])){
+	
+						//ClassLoader loader = ClassLoader.getSystemClassLoader();
+	
+						URLClassLoader loader = new URLClassLoader(new URL[]{new URL("file:./plugin/")}, getClass().getClassLoader());
+						// 呼び出すClassを指定する
+						Class claszz = loader.loadClass(line[1]);
+						
+						// インスタンスの生成
+						Object obj = claszz.newInstance();
+						
+						objTable.put(line[1], obj);
+						
+						objectName.add(line[1]);
+					}
+					Object[] om = new Object[]{ objTable.get(line[1]), line[2]};
+					
+					functionTable.put(line[0], om);
+	
+					str = reader.readLine();
+				}
+	
+				reader.close();
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
         } catch (ClassNotFoundException e) {
