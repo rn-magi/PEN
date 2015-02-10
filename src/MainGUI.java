@@ -101,17 +101,12 @@ public class MainGUI {
 	/**
 	 * 実行時の引数の解析 および 設定ファイルを読み込む
 	 */
-	public MainGUI(String argv[], boolean isApplet){
-		penPro = new PenProperties(isApplet);
+	public MainGUI(String argv[]){
+		penPro = new PenProperties();
 
-		if (!isApplet){
-			CreateFrame();
-			ButtonListFile = penPro.getProperty(PenProperties.PEN_SYSTEM_DIR) + PenProperties.BUTTON_LIST_FILE;
-		} else {
-			ButtonListFile = PenProperties.BUTTON_LIST_FILE;
-		}
+		CreateFrame();
+		ButtonListFile = penPro.getProperty(PenProperties.PEN_SYSTEM_DIR) + PenProperties.BUTTON_LIST_FILE;
 
-		
 		if (argv != null) {
 			for(int i = 0; i < argv.length; i++) {
 				if(argv[i].equals("-teacher") || argv[i].equals("-t")){
