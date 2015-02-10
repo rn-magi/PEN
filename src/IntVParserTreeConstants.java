@@ -90,30 +90,32 @@ public interface IntVParserTreeConstants
   public int JJTGFILLPOLYGON = 86;
   public int JJTGDRAWPOLYLINE = 87;
   public int JJTGDRAWIMAGE = 88;
-  public int JJTFILE_OPENR = 89;
-  public int JJTFILE_OPENW = 90;
-  public int JJTFILE_OPENA = 91;
-  public int JJTFILE_CLOSE = 92;
-  public int JJTFILE_GETSTR = 93;
-  public int JJTFILE_GETLINE = 94;
-  public int JJTFILE_PUTSTR = 95;
-  public int JJTFILE_PUTLINE = 96;
-  public int JJTFILE_FLUSH = 97;
-  public int JJTFILE_ISFILE = 98;
-  public int JJTFILE_RENAME = 99;
-  public int JJTFILE_REMOVE = 100;
-  public int JJTSLEEP = 101;
-  public int JJTIDENT = 102;
-  public int JJTARRAYNUM = 103;
-  public int JJTFUNCTIONCALL = 104;
-  public int JJTRETURN = 105;
-  public int JJTBREAK = 106;
-  public int JJTLITERAL = 107;
-  public int JJTFLOATLITERAL = 108;
-  public int JJTTRUE = 109;
-  public int JJTFALSE = 110;
-  public int JJTSTRLIT = 111;
-  public int JJTEXTRA_STR = 112;
+  public int JJTGSETREPAINTFLAG = 89;
+  public int JJTGREPAINT = 90;
+  public int JJTFILE_OPENR = 91;
+  public int JJTFILE_OPENW = 92;
+  public int JJTFILE_OPENA = 93;
+  public int JJTFILE_CLOSE = 94;
+  public int JJTFILE_GETSTR = 95;
+  public int JJTFILE_GETLINE = 96;
+  public int JJTFILE_PUTSTR = 97;
+  public int JJTFILE_PUTLINE = 98;
+  public int JJTFILE_FLUSH = 99;
+  public int JJTFILE_ISFILE = 100;
+  public int JJTFILE_RENAME = 101;
+  public int JJTFILE_REMOVE = 102;
+  public int JJTSLEEP = 103;
+  public int JJTIDENT = 104;
+  public int JJTARRAYNUM = 105;
+  public int JJTFUNCTIONCALL = 106;
+  public int JJTRETURN = 107;
+  public int JJTBREAK = 108;
+  public int JJTLITERAL = 109;
+  public int JJTFLOATLITERAL = 110;
+  public int JJTTRUE = 111;
+  public int JJTFALSE = 112;
+  public int JJTSTRLIT = 113;
+  public int JJTEXTRA_STR = 114;
 
 
   public String[] jjtNodeName = {
@@ -206,6 +208,8 @@ public interface IntVParserTreeConstants
     "gFillPolygon",
     "gDrawPolyline",
     "gDrawImage",
+    "gSetRepaintFlag",
+    "gRepaint",
     "File_openr",
     "File_openw",
     "File_opena",
@@ -232,4 +236,4 @@ public interface IntVParserTreeConstants
     "EXTRA_STR",
   };
 }
-/* JavaCC - OriginalChecksum=9a9b151bbd2eaea28940902cf09e7fc1 (do not edit this line) */
+/* JavaCC - OriginalChecksum=daa09015645e1ad8e3fa710a331f1a4d (do not edit this line) */

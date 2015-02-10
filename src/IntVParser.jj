@@ -193,6 +193,8 @@ TOKEN [IGNORE_CASE] :
 	|	< gFillPolygon	: "gFillPolygon"	<LP> >
 	|	< gDrawPolyline	: "gDrawPolyline"	<LP> >
 	|	< gDrawImage	: "gDrawImage"	<LP> >
+	|	< gSetRepaintFlag	: ( "gSetRepaintFlag" ) <LP> >
+	|	< gRepaint		: ( "gRepaint" ) <LP> >
 	|	< OPENR		: "openr" <LP> >
 	|	< OPENW		: "openw" <LP> >
 	|	< OPENA		: "opena" <LP> >
@@ -696,6 +698,8 @@ void Stat()       :
 	|	gFillPolygon()
 	|	gDrawPolyline()
 	|	gDrawImage()
+	|	gSetRepaintFlag()
+	|	gRepaint()
 	|	File_close()
 	|	File_putstr()
 	|	File_putline()
@@ -3824,6 +3828,66 @@ void gDrawImage() :
             throw (ParseException)jjte000;
           }
           throw (Error)jjte000;
+        } finally {
+          if (jjtc000) {
+            jjtree.closeNodeScope(jjtn000, true);
+          }
+        }
+/*@egen*/
+}
+
+void gSetRepaintFlag() :
+{/*@bgen(jjtree) gSetRepaintFlag */
+  ASTgSetRepaintFlag jjtn000 = new ASTgSetRepaintFlag(JJTGSETREPAINTFLAG);
+  boolean jjtc000 = true;
+  jjtree.openNodeScope(jjtn000);
+/*@egen*/}
+{/*@bgen(jjtree) gSetRepaintFlag */
+        try {
+/*@egen*/
+	<gSetRepaintFlag> AddExpr() <RP>/*@bgen(jjtree)*/
+                                         {
+                                           jjtree.closeNodeScope(jjtn000, true);
+                                           jjtc000 = false;
+                                         }
+/*@egen*/ {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}/*@bgen(jjtree)*/
+        } catch (Throwable jjte000) {
+          if (jjtc000) {
+            jjtree.clearNodeScope(jjtn000);
+            jjtc000 = false;
+          } else {
+            jjtree.popNode();
+          }
+          if (jjte000 instanceof RuntimeException) {
+            throw (RuntimeException)jjte000;
+          }
+          if (jjte000 instanceof ParseException) {
+            throw (ParseException)jjte000;
+          }
+          throw (Error)jjte000;
+        } finally {
+          if (jjtc000) {
+            jjtree.closeNodeScope(jjtn000, true);
+          }
+        }
+/*@egen*/
+}
+
+void gRepaint() :
+{/*@bgen(jjtree) gRepaint */
+  ASTgRepaint jjtn000 = new ASTgRepaint(JJTGREPAINT);
+  boolean jjtc000 = true;
+  jjtree.openNodeScope(jjtn000);
+/*@egen*/}
+{/*@bgen(jjtree) gRepaint */
+        try {
+/*@egen*/
+	<gRepaint> <RP>/*@bgen(jjtree)*/
+                        {
+                          jjtree.closeNodeScope(jjtn000, true);
+                          jjtc000 = false;
+                        }
+/*@egen*/ {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}/*@bgen(jjtree)*/
         } finally {
           if (jjtc000) {
             jjtree.closeNodeScope(jjtn000, true);

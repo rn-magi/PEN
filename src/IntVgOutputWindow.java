@@ -154,6 +154,8 @@ public class IntVgOutputWindow extends JPanel{
 		xRange = width;
 		yRange = height;
 		
+		setRepaintFlag(true);
+		
 		frame.setSize(width + 6, height + 25);
 		frame.getContentPane().add(this);
 		frame.setVisible(true);

@@ -1233,6 +1233,22 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	}
 
 	/**
+	 * IntVgOutputWindowクラス参照
+	 * @see IntVgOutputWindow
+	 */
+	public Object visit(ASTgSetRepaintFlag node, Object data) {
+		return null;
+	}
+	
+	/**
+	 * IntVgOutputWindowクラス参照
+	 * @see IntVgOutputWindow
+	 */
+	public Object visit(ASTgRepaint node, Object data) {
+		return null;
+	}
+	
+	/**
 	 * IntVFileIOクラス参照
 	 * @see IntVFileIO
 	 */

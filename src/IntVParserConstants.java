@@ -263,45 +263,49 @@ public interface IntVParserConstants {
   /** RegularExpression Id. */
   int gDrawImage = 134;
   /** RegularExpression Id. */
-  int OPENR = 135;
+  int gSetRepaintFlag = 135;
   /** RegularExpression Id. */
-  int OPENW = 136;
+  int gRepaint = 136;
   /** RegularExpression Id. */
-  int OPENA = 137;
+  int OPENR = 137;
   /** RegularExpression Id. */
-  int CLOSE = 138;
+  int OPENW = 138;
   /** RegularExpression Id. */
-  int GETSTR = 139;
+  int OPENA = 139;
   /** RegularExpression Id. */
-  int GETLINE = 140;
+  int CLOSE = 140;
   /** RegularExpression Id. */
-  int PUTSTR = 141;
+  int GETSTR = 141;
   /** RegularExpression Id. */
-  int PUTLINE = 142;
+  int GETLINE = 142;
   /** RegularExpression Id. */
-  int FLUSH = 143;
+  int PUTSTR = 143;
   /** RegularExpression Id. */
-  int ISFILE = 144;
+  int PUTLINE = 144;
   /** RegularExpression Id. */
-  int RENAME = 145;
+  int FLUSH = 145;
   /** RegularExpression Id. */
-  int REMOVE = 146;
+  int ISFILE = 146;
   /** RegularExpression Id. */
-  int SLEEP = 147;
+  int RENAME = 147;
   /** RegularExpression Id. */
-  int DIGIT = 148;
+  int REMOVE = 148;
   /** RegularExpression Id. */
-  int LETTER = 149;
+  int SLEEP = 149;
   /** RegularExpression Id. */
-  int LITERAL = 150;
+  int DIGIT = 150;
   /** RegularExpression Id. */
-  int FLOAT_LITERAL = 151;
+  int LETTER = 151;
   /** RegularExpression Id. */
-  int IDENT = 152;
+  int LITERAL = 152;
   /** RegularExpression Id. */
-  int STRLIT = 154;
+  int FLOAT_LITERAL = 153;
   /** RegularExpression Id. */
-  int COMMENT = 161;
+  int IDENT = 154;
+  /** RegularExpression Id. */
+  int STRLIT = 156;
+  /** RegularExpression Id. */
+  int COMMENT = 163;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -447,6 +451,8 @@ public interface IntVParserConstants {
     "<gFillPolygon>",
     "<gDrawPolyline>",
     "<gDrawImage>",
+    "<gSetRepaintFlag>",
+    "<gRepaint>",
     "<OPENR>",
     "<OPENW>",
     "<OPENA>",
@@ -465,16 +471,16 @@ public interface IntVParserConstants {
     "<LITERAL>",
     "<FLOAT_LITERAL>",
     "<IDENT>",
-    "<token of kind 153>",
-    "<STRLIT>",
     "<token of kind 155>",
+    "<STRLIT>",
+    "<token of kind 157>",
     "\"\\\\n\"",
     "\"\\\\r\"",
     "\"\\\\t\"",
-    "<token of kind 159>",
+    "<token of kind 161>",
     "\"/*\"",
     "\"*/\"",
-    "<token of kind 162>",
+    "<token of kind 164>",
   };
 
 }
