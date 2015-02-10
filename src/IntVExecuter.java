@@ -524,14 +524,14 @@ public class IntVExecuter implements IntVParserVisitor{
 		run_flag(node.line_num1, true);
 		if(b.booleanValue()) {
 			Object var = node.jjtGetChild(1).jjtAccept(this, data);
-			if(var != null){ return var; }
+			if(var instanceof ASTBreak){ return var; }
 			if(node.jjtGetNumChildren() == 3) {
 				run_flag(node.line_num2, true);
 			}
 		}else if (node.jjtGetNumChildren() == 3) {
 			run_flag(node.line_num2, true);
 			Object var = node.jjtGetChild(2).jjtAccept(this, data);
-			if(var != null){ return var; }
+			if(var instanceof ASTBreak){ return var; }
 		}
 		if (node.line_num3 != 0) {
 			run_flag(node.line_num3, true);
@@ -548,7 +548,7 @@ public class IntVExecuter implements IntVParserVisitor{
 		do {
 			run_flag(node.line_num1, true);
 			Object var = node.jjtGetChild(0).jjtAccept(this, data);
-			if(var != null){
+			if(var instanceof ASTBreak){
 				run_flag(node.line_num2, true);
 				break;
 			}
@@ -577,7 +577,7 @@ public class IntVExecuter implements IntVParserVisitor{
 		do {
 			run_flag(node.line_num1, true);
 			Object var = node.jjtGetChild(0).jjtAccept(this, data);
-			if(var != null){
+			if(var instanceof ASTBreak){
 				run_flag(node.line_num2, true);
 				break;
 			}
@@ -675,7 +675,7 @@ public class IntVExecuter implements IntVParserVisitor{
 			run_flag(node.line_num1, true);
 			if (b.booleanValue()) {
 				Object var = node.jjtGetChild(1).jjtAccept(this, data);
-				if(var != null){
+				if(var instanceof ASTBreak){
 					run_flag(node.line_num2, true);
 					break;
 				}
@@ -762,7 +762,7 @@ public class IntVExecuter implements IntVParserVisitor{
 
 			if( op > 0 && (x.compareTo(y) <= 0) || op < 0 && (x.compareTo(y) >= 0)){
 				obj = node.jjtGetChild(4).jjtAccept(this, data);
-				if(obj != null){
+				if(obj instanceof ASTBreak){
 					run_flag(node.line_num2, true);
 					break;
 				}
@@ -855,7 +855,7 @@ public class IntVExecuter implements IntVParserVisitor{
 
 		for (i = 0; i < k; i++){
 			Object var = node.jjtGetChild(i).jjtAccept(this, data);
-			if(var != null){ return var; }
+			if( var instanceof ASTBreak) { return var; }
 		}
 		return null;
 	}
@@ -865,7 +865,7 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public  Object visit(ASTBreak node, Object data) {
 		run_flag(node.line_num1, true);
-		return("break");
+		return node;
 	}
 	
 	/**
