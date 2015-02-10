@@ -189,6 +189,8 @@ TOKEN [IGNORE_CASE] :
 	|	< gFillPolygon	: "gFillPolygon"	<LP> >
 	|	< gDrawPolyline	: "gDrawPolyline"	<LP> >
 	|	< gDrawImage	: "gDrawImage"	<LP> >
+	|	< gSetRepaintFlag	: ( "gSetRepaintFlag" ) <LP> >
+	|	< gRepaint		: ( "gRepaint" ) <LP> >
 	|	< OPENR		: "openr" <LP> >
 	|	< OPENW		: "openw" <LP> >
 	|	< OPENA		: "opena" <LP> >
@@ -456,6 +458,8 @@ void Stat() #void :
 	|	gFillPolygon()
 	|	gDrawPolyline()
 	|	gDrawImage()
+	|	gSetRepaintFlag()
+	|	gRepaint()
 	|	File_close()
 	|	File_putstr()
 	|	File_putline()
@@ -1022,6 +1026,18 @@ void gDrawImage() :
 {}
 {
 	<gDrawImage> AddExpr() <CM> AddExpr() <CM> AddExpr() [ <CM> AddExpr() <CM> AddExpr() ] <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetRepaintFlag() :
+{}
+{
+	<gSetRepaintFlag> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gRepaint() :
+{}
+{
+	<gRepaint> <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
 }
 
 void File_openr() :

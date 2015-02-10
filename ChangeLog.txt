@@ -1,5 +1,29 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.22_3  (2015/02/10)
+  [ New ]
+    ・描画ウィンドウの自動的 repaint の ON / OFF を切り替える関数の実装
+      -> gSetRepaintFlag(真偽)
+    ・描画ウィンドウを repaint する関数の実装
+      -> gRepaint()
+
+  [ FixFile ]
+    - ASTgRepaint.java
+    - ASTgSetRepaintFlag.java
+    - ChangeLog.txt
+    - IntVConvertArduino.java
+    - IntVExecuter.java
+    - IntVgOutputWindow.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - JJTIntVParserState.java
+    - MainGUI.java
+
 ・ver 1.22_2  (2014/12/31)
   [ New ]
     ・プログラムを一時停止させる delay 関数の実装（sleep関数と同じ）

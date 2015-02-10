@@ -90,6 +90,8 @@ public interface IntVParserVisitor
   public Object visit(ASTgFillPolygon node, Object data);
   public Object visit(ASTgDrawPolyline node, Object data);
   public Object visit(ASTgDrawImage node, Object data);
+  public Object visit(ASTgSetRepaintFlag node, Object data);
+  public Object visit(ASTgRepaint node, Object data);
   public Object visit(ASTFile_openr node, Object data);
   public Object visit(ASTFile_openw node, Object data);
   public Object visit(ASTFile_opena node, Object data);
@@ -115,4 +117,4 @@ public interface IntVParserVisitor
   public Object visit(ASTStrlit node, Object data);
   public Object visit(ASTEXTRA_STR node, Object data);
 }
-/* JavaCC - OriginalChecksum=bf25e1bf95bcb66b2a6f4a585821cd98 (do not edit this line) */
+/* JavaCC - OriginalChecksum=091a89d406ed631f80a8b09f4f9dd48e (do not edit this line) */

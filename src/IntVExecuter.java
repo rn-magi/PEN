@@ -1993,6 +1993,32 @@ public class IntVExecuter implements IntVParserVisitor{
 		
 		return null;
 	}
+	
+	/**
+	 * IntVgOutputWindowクラス参照
+	 * @see IntVgOutputWindow
+	 */
+	public Object visit(ASTgSetRepaintFlag node, Object data) {
+		boolean flag = Boolean.parseBoolean(node.jjtGetChild(0).jjtAccept(this, data).toString());
+
+		run_flag(node.line_num1, true);
+		
+		gui.gDrawWindow.setRepaintFlag(flag);
+		
+		return null;
+	}
+	
+	/**
+	 * IntVgOutputWindowクラス参照
+	 * @see IntVgOutputWindow
+	 */
+	public Object visit(ASTgRepaint node, Object data) {
+		run_flag(node.line_num1, true);
+		
+		gui.gDrawWindow.repaint();
+		
+		return null;
+	}
 
 	/**
 	 * IntVFileIOクラス参照
