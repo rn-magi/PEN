@@ -125,6 +125,7 @@ TOKEN [IGNORE_CASE] :
 	|	< FOR4		: "ずつ" >
 	|	< FORADD	: "増やし" ( "ながら" | "つつ" ) <CM> >
 	|	< FORSUB	: "減らし" ( "ながら" | "つつ" ) <CM> >
+	|	< INFINITE	: ( "ずっと" | "永遠に" ) <CM> >
 	|	< ENDLOOP	: "を" ( "繰り返す" | "繰返す" ) >
 	|	< SWITCH	: "の値に応じて" >
 	|	< ENDSWITCH	: "のいずれかを実行する" >
@@ -420,6 +421,7 @@ void Stat() #void :
 //	|	LOOKAHEAD(2) ForStat()
 //	|	LOOKAHEAD(2) Switch()
 //	|	LOOKAHEAD(2) WhileStat()
+	|	InfiniteLoop()
 	|	IfStat()
 	|	RepeatUntil()
 	|	Break()
@@ -546,6 +548,15 @@ void WhileSwitchFor() :
 			{ jjtThis.p = jjtThis.fr; }
 	)
 }
+
+void InfiniteLoop() :
+{}
+{
+	<INFINITE> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
+	( Stat() )* #Block
+	<ENDLOOP> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
+}
+
 
 void Label() :
 {}

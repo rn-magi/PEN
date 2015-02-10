@@ -17,6 +17,7 @@ public interface IntVParserVisitor
   public Object visit(ASTForStatAdd node, Object data);
   public Object visit(ASTWhileSwitchFor node, Object data);
   public Object visit(ASTCase node, Object data);
+  public Object visit(ASTInfiniteLoop node, Object data);
   public Object visit(ASTLabel node, Object data);
   public Object visit(ASTGetStat node, Object data);
   public Object visit(ASTPutStat node, Object data);
@@ -117,4 +118,4 @@ public interface IntVParserVisitor
   public Object visit(ASTStrlit node, Object data);
   public Object visit(ASTEXTRA_STR node, Object data);
 }
-/* JavaCC - OriginalChecksum=091a89d406ed631f80a8b09f4f9dd48e (do not edit this line) */
+/* JavaCC - OriginalChecksum=5584e6795d0a3f2cb7f44d97160936cd (do not edit this line) */

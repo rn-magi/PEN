@@ -808,6 +808,21 @@ public class IntVExecuter implements IntVParserVisitor{
 		}while (true);
 		return null;
 	}
+	
+	/**
+	 * 無限ループ
+	 */
+	public Object visit(ASTInfiniteLoop node, Object data) {
+		while(true){
+			run_flag(node.line_num1, true);
+			Object var = node.jjtGetChild(0).jjtAccept(this, data);
+			if( var instanceof ASTBreak ) {
+				break;
+			}
+		}
+		run_flag(node.line_num2, true);
+		return null;
+	}
 
 	/**
 	 * ないしょ
