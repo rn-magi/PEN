@@ -203,8 +203,9 @@ public class MainGUI {
 //			System.out.println(e);
 //		}
 		
-		for(int i = 0 ; i < filter.length ; i++)
+		for(int i = 0 ; i < filter.length ; i++) {
 			fc.addChoosableFileFilter(filter[i]);
+		}
 
 		main_window.addWindowListener(new MyWindowAdapter(this));
 		main_window.setIconImage(Toolkit.getDefaultToolkit().createImage(getClass().getResource("pen.png")));
