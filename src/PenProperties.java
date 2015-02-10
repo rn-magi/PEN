@@ -62,7 +62,11 @@ public class PenProperties {
 		
 		try {
 			PROPERTY.load(getClass().getResourceAsStream(PropertyFileName));
-			PROPERTY.load(new FileInputStream(dir + PropertyFileName));
+			
+			String localPropertyFile = dir + PropertyFileName;
+			if(new File(localPropertyFile).exists()) {
+				PROPERTY.load(new FileInputStream(localPropertyFile));
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
