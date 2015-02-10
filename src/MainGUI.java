@@ -269,10 +269,7 @@ public class MainGUI {
 				edit_area.addMouseListener(new EditAreaMouseListener(edit_area));
 				
 				try {
-					// Application
-					if (main_window instanceof JFrame) {
-						edit_area_drop.addDropTargetListener(new FileDropOpen(this));
-					}
+					edit_area_drop.addDropTargetListener(new FileDropOpen(this));
 					edit_area.setDropTarget(edit_area_drop);
 				} catch (TooManyListenersException e) {
 					e.printStackTrace();
