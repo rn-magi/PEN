@@ -24,6 +24,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	private int arrayField	= 0;
 	
 	private int indentLevel = 1;
+	private boolean indentSkip = false;
 	
 	private PenProperties penPro;
 	
@@ -347,6 +348,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTIfStat node, Object data) {
 		// TODO IF文の処理
 		outPutIndent();
+		indentSkip = false;
 		
 		if (node.jjtGetNumChildren() >= 2) {
 			outPutCode("if ");
@@ -369,6 +371,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			outPutCode("else");
 			// 子ノードにASTIfStatがきたらASTIfStatの子ノードを表示
 			if (node.jjtGetChild(2) instanceof ASTIfStat) {
+				indentSkip = true;
 				outPutCode(" ");
 				node.jjtGetChild(2).jjtAccept(this, data);
 			} else if (node.jjtGetNumChildren() == 3) {
@@ -1542,8 +1545,10 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	}
 	
 	public void outPutIndent(){
-		for(int i = 0; i < indentLevel; i++){
-			outPutCode("\t");
+		if(!indentSkip) {
+			for(int i = 0; i < indentLevel; i++) {
+				outPutCode("\t");
+			}
 		}
 	}
 	
