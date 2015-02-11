@@ -58,20 +58,6 @@
 		
 		<copy file="${source.dir}/Property.ini" todir="${run.dir}" />
 	</target>
-
-	<target name="plugin" description="プラグインの同梱">
-		<copy file="${source.dir}/functionTable.ini" todir="${run.dir}" />
-		
-		<copy todir="${run.dir}/lib">
-			<fileset dir="./lib" />
-		</copy>
-		<copy todir="${run.dir}/lib64">
-			<fileset dir="./lib64" />
-		</copy>
-		<copy todir="${run.dir}/plugin">
-			<fileset dir="../penPluginDev/bin" />
-		</copy>
-	</target>
 	
 	<target name="clean" description="テンポラリファイルの削除" depends="clean-bin,clean-run" />
 	
@@ -89,14 +75,7 @@
 		<delete dir="${pkg.dir}/${pkg_pen.dir}" />
 	</target>
 	
-	<target name="clean-plugin" description="プラグインの削除">
-		<delete dir="${run.dir}/lib" />
-		<delete dir="${run.dir}/lib64" />
-		<delete dir="${run.dir}/plugin" />
-		<delete file="${run.dir}/functionTable.ini" />
-	</target>
-	
-	<target name="clean-all" description="テンポラリファイルを全て削除" depends="clean-bin,clean-run,clean-pkg,clean-plugin" />
+	<target name="clean-all" description="テンポラリファイルを全て削除" depends="clean-bin,clean-run,clean-pkg" />
 	
 	<target name="clean-docs" description="JavaDocの削除">
 		<delete dir="${javadoc.dir}" />
