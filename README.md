@@ -13,7 +13,7 @@ PENで動作するプログラム言語は
 ## 実行ファイルの生成と実行
 
 ```
-% ant make
+% ant build
 % cd ./pkg/run
 % java -jar PEN.jar
 ```
@@ -27,14 +27,13 @@ PENで動作するプログラム言語は
 ## 実行ファイルを削除して再生成
 
 ```
-% ant clean
-% ant make
+% ant rebuild
 ```
 
 ## 配布パッケージの作成
 
 ```
-% ant build
+% ant rerelase-pkg
 ```
 
 *./pkg* に配布用のパッケージが生成されます。
