@@ -15,7 +15,7 @@ public class ASTFunction extends SimpleNode {
     return visitor.visit(this, data);
   }
 
-	/** customizing codes **/
-	public String varName;
-	public int decl;
+  /** customizing codes **/
+  public String varName;
+  public Declaration decl;
 }

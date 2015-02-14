@@ -347,15 +347,15 @@ void Function() :
 {
 	( 
 		<FUNCTION> (
-			<VARINT>		{ jjtn000.decl = PenProperties.DECLARATION_INT; }
-			|	<VARLONG>	{ jjtn000.decl = PenProperties.DECLARATION_LONG; }
-			|	<VARDOUBLE>	{ jjtn000.decl = PenProperties.DECLARATION_DOUBLE; }
-			|	<VARSTRING>	{ jjtn000.decl = PenProperties.DECLARATION_STRING; }
-			|	<VARBOOLEAN>{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
+			<VARINT>		{ jjtn000.decl = Declaration.INT; }
+			|	<VARLONG>	{ jjtn000.decl = Declaration.LONG; }
+			|	<VARDOUBLE>	{ jjtn000.decl = Declaration.DOUBLE; }
+			|	<VARSTRING>	{ jjtn000.decl = Declaration.STRING; }
+			|	<VARBOOLEAN>{ jjtn000.decl = Declaration.BOOLEAN; }
 		)
 		t=<IDENT> <LP> [ FunctionVar() ] <RP> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
 		( VarDecl() | Stat() )* #Block <ENDFUNCTION>
-		|	<PROCEDURAL>	{ jjtn000.decl = PenProperties.DECLARATION_PROCEDURAL; }
+		|	<PROCEDURAL>	{ jjtn000.decl = Declaration.PROCEDURAL; }
 		t=<IDENT> <LP> [ FunctionVar() ] <RP> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
 		( VarDecl() | Stat() )* #Block <ENDPROCEDURAL>
 		
@@ -371,11 +371,11 @@ void FunctionVar() :
 {}
 {
 	(
-		<VARINT>	{ jjtn000.decl = PenProperties.DECLARATION_INT; }
-		| <VARLONG>		{ jjtn000.decl = PenProperties.DECLARATION_LONG; }
-		| <VARDOUBLE>	{ jjtn000.decl = PenProperties.DECLARATION_DOUBLE; }
-		| <VARSTRING>	{ jjtn000.decl = PenProperties.DECLARATION_STRING; }
-		| <VARBOOLEAN>	{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
+		<VARINT>	{ jjtn000.decl = Declaration.INT; }
+		| <VARLONG>		{ jjtn000.decl = Declaration.LONG; }
+		| <VARDOUBLE>	{ jjtn000.decl = Declaration.DOUBLE; }
+		| <VARSTRING>	{ jjtn000.decl = Declaration.STRING; }
+		| <VARBOOLEAN>	{ jjtn000.decl = Declaration.BOOLEAN; }
 	) Decl() [ <CM> FunctionVar() ]
 }
 
@@ -383,11 +383,11 @@ void VarDecl() :
 {}
 {
 	(
-		<VARINT>	{ jjtn000.decl = PenProperties.DECLARATION_INT; }
-		| <VARLONG>		{ jjtn000.decl = PenProperties.DECLARATION_LONG; }
-		| <VARDOUBLE>	{ jjtn000.decl = PenProperties.DECLARATION_DOUBLE; }
-		| <VARSTRING>	{ jjtn000.decl = PenProperties.DECLARATION_STRING; }
-		| <VARBOOLEAN>	{ jjtn000.decl = PenProperties.DECLARATION_BOOLEAN; }
+		<VARINT>	{ jjtn000.decl = Declaration.INT; }
+		| <VARLONG>		{ jjtn000.decl = Declaration.LONG; }
+		| <VARDOUBLE>	{ jjtn000.decl = Declaration.DOUBLE; }
+		| <VARSTRING>	{ jjtn000.decl = Declaration.STRING; }
+		| <VARBOOLEAN>	{ jjtn000.decl = Declaration.BOOLEAN; }
 	) Decl() ( <CM> Decl() )* { 
 				jjtn000.line_num1 = jj_consume_token(SM).beginLine;
 			}

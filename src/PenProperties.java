@@ -31,13 +31,6 @@ public class PenProperties {
 	public final static String SYSTEM_OS_BITS			= "system.os.bits";
 	
 	public final static String Arduino_EXEC_PATH		= "arduino.exec.path";
-
-	public final static int DECLARATION_PROCEDURAL	= 0;
-	public final static int DECLARATION_INT			= 1;
-	public final static int DECLARATION_LONG		= 2;
-	public final static int DECLARATION_DOUBLE		= 3;
-	public final static int DECLARATION_STRING		= 4;
-	public final static int DECLARATION_BOOLEAN		= 5;
 	
 	public PenProperties(){
 		String dir = "";

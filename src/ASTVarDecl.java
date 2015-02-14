@@ -16,5 +16,5 @@ public class ASTVarDecl extends SimpleNode {
 	}
 
 	/** customizing codes **/
-	public int decl;
+	public Declaration decl;
 }

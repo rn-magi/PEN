@@ -210,23 +210,23 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
           switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
           case VARINT:
             jj_consume_token(VARINT);
-                                                  jjtn000.decl = PenProperties.DECLARATION_INT;
+                                                  jjtn000.decl = Declaration.INT;
             break;
           case VARLONG:
             jj_consume_token(VARLONG);
-                                                  jjtn000.decl = PenProperties.DECLARATION_LONG;
+                                                  jjtn000.decl = Declaration.LONG;
             break;
           case VARDOUBLE:
             jj_consume_token(VARDOUBLE);
-                                                  jjtn000.decl = PenProperties.DECLARATION_DOUBLE;
+                                                  jjtn000.decl = Declaration.DOUBLE;
             break;
           case VARSTRING:
             jj_consume_token(VARSTRING);
-                                                  jjtn000.decl = PenProperties.DECLARATION_STRING;
+                                                  jjtn000.decl = Declaration.STRING;
             break;
           case VARBOOLEAN:
             jj_consume_token(VARBOOLEAN);
-                                              jjtn000.decl = PenProperties.DECLARATION_BOOLEAN;
+                                              jjtn000.decl = Declaration.BOOLEAN;
             break;
           default:
             jj_la1[1] = jj_gen;
@@ -486,7 +486,7 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
           break;
         case PROCEDURAL:
           jj_consume_token(PROCEDURAL);
-                                          jjtn000.decl = PenProperties.DECLARATION_PROCEDURAL;
+                                          jjtn000.decl = Declaration.PROCEDURAL;
           t = jj_consume_token(IDENT);
           jj_consume_token(LP);
           switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
@@ -782,23 +782,23 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
         switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
         case VARINT:
           jj_consume_token(VARINT);
-                                  jjtn000.decl = PenProperties.DECLARATION_INT;
+                                  jjtn000.decl = Declaration.INT;
           break;
         case VARLONG:
           jj_consume_token(VARLONG);
-                                          jjtn000.decl = PenProperties.DECLARATION_LONG;
+                                          jjtn000.decl = Declaration.LONG;
           break;
         case VARDOUBLE:
           jj_consume_token(VARDOUBLE);
-                                  jjtn000.decl = PenProperties.DECLARATION_DOUBLE;
+                                  jjtn000.decl = Declaration.DOUBLE;
           break;
         case VARSTRING:
           jj_consume_token(VARSTRING);
-                                  jjtn000.decl = PenProperties.DECLARATION_STRING;
+                                  jjtn000.decl = Declaration.STRING;
           break;
         case VARBOOLEAN:
           jj_consume_token(VARBOOLEAN);
-                                  jjtn000.decl = PenProperties.DECLARATION_BOOLEAN;
+                                  jjtn000.decl = Declaration.BOOLEAN;
           break;
         default:
           jj_la1[9] = jj_gen;
@@ -850,23 +850,23 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants, IntV
         switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
         case VARINT:
           jj_consume_token(VARINT);
-                                  jjtn000.decl = PenProperties.DECLARATION_INT;
+                                  jjtn000.decl = Declaration.INT;
           break;
         case VARLONG:
           jj_consume_token(VARLONG);
-                                          jjtn000.decl = PenProperties.DECLARATION_LONG;
+                                          jjtn000.decl = Declaration.LONG;
           break;
         case VARDOUBLE:
           jj_consume_token(VARDOUBLE);
-                                  jjtn000.decl = PenProperties.DECLARATION_DOUBLE;
+                                  jjtn000.decl = Declaration.DOUBLE;
           break;
         case VARSTRING:
           jj_consume_token(VARSTRING);
-                                  jjtn000.decl = PenProperties.DECLARATION_STRING;
+                                  jjtn000.decl = Declaration.STRING;
           break;
         case VARBOOLEAN:
           jj_consume_token(VARBOOLEAN);
-                                  jjtn000.decl = PenProperties.DECLARATION_BOOLEAN;
+                                  jjtn000.decl = Declaration.BOOLEAN;
           break;
         default:
           jj_la1[11] = jj_gen;

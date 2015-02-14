@@ -14,6 +14,7 @@ public class ASTReturn extends SimpleNode {
   public Object jjtAccept(IntVParserVisitor visitor, Object data) {
     return visitor.visit(this, data);
   }
-  
+
+  /** customizing codes **/
   public Object returnValue;
 }
