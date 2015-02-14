@@ -524,14 +524,18 @@ public class IntVExecuter implements IntVParserVisitor{
 		run_flag(node.line_num1, true);
 		if(b.booleanValue()) {
 			Object var = node.jjtGetChild(1).jjtAccept(this, data);
-			if(var instanceof ASTBreak){ return var; }
+			if(var instanceof ASTBreak || var instanceof ASTReturn) {
+				return var;
+			}
 			if(node.jjtGetNumChildren() == 3) {
 				run_flag(node.line_num2, true);
 			}
 		}else if (node.jjtGetNumChildren() == 3) {
 			run_flag(node.line_num2, true);
 			Object var = node.jjtGetChild(2).jjtAccept(this, data);
-			if(var instanceof ASTBreak){ return var; }
+			if(var instanceof ASTBreak || var instanceof ASTReturn) {
+				return var;
+			}
 		}
 		if (node.line_num3 != 0) {
 			run_flag(node.line_num3, true);
@@ -551,6 +555,8 @@ public class IntVExecuter implements IntVParserVisitor{
 			if(var instanceof ASTBreak){
 				run_flag(node.line_num2, true);
 				break;
+			} else if(var instanceof ASTReturn) {
+				return var;
 			}
 			
 			try {
@@ -580,6 +586,8 @@ public class IntVExecuter implements IntVParserVisitor{
 			if(var instanceof ASTBreak){
 				run_flag(node.line_num2, true);
 				break;
+			} else if(var instanceof ASTReturn) {
+				return var;
 			}
 			
 			try {
@@ -678,6 +686,8 @@ public class IntVExecuter implements IntVParserVisitor{
 				if(var instanceof ASTBreak){
 					run_flag(node.line_num2, true);
 					break;
+				} else if(var instanceof ASTReturn) {
+					return var;
 				}
 			}else{
 				run_flag(node.line_num2, true);
@@ -765,6 +775,8 @@ public class IntVExecuter implements IntVParserVisitor{
 				if(obj instanceof ASTBreak){
 					run_flag(node.line_num2, true);
 					break;
+				} else if(obj instanceof ASTReturn) {
+					return obj;
 				}
 				run_flag(node.line_num1, true);
 				
@@ -818,6 +830,8 @@ public class IntVExecuter implements IntVParserVisitor{
 			Object var = node.jjtGetChild(0).jjtAccept(this, data);
 			if( var instanceof ASTBreak ) {
 				break;
+			} else if( var instanceof ASTReturn) {
+				return var;
 			}
 		}
 		run_flag(node.line_num2, true);
@@ -870,7 +884,9 @@ public class IntVExecuter implements IntVParserVisitor{
 
 		for (i = 0; i < k; i++){
 			Object var = node.jjtGetChild(i).jjtAccept(this, data);
-			if( var instanceof ASTBreak) { return var; }
+			if(var instanceof ASTBreak || var instanceof ASTReturn) {
+				return var;
+			}
 		}
 		return null;
 	}
@@ -1248,7 +1264,8 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTReturn node, Object data) {
 		run_flag(node.line_num1, true);
-		return node.jjtGetChild(0).jjtAccept(this, data);
+		node.returnValue = node.jjtGetChild(0).jjtAccept(this, data);
+		return node;
 	}
 
 	/**
@@ -2300,6 +2317,8 @@ public class IntVExecuter implements IntVParserVisitor{
 			
 			if(return_var == null) {
 				run_flag(fc.line_num2, true);
+			} else if(return_var instanceof ASTReturn) {
+				return_var = ((ASTReturn) return_var).returnValue;
 			}
 	
 			symTable	= (Hashtable) stacksymTable.pop();
