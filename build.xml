@@ -12,13 +12,13 @@
 	<property name="local_dev" value="r5" />
 	<property name="pkg_pen.dir" value="PEN_v${major_ver}${minor_vev}${local_dev}" />
 
-	<target name="build" description="配布パッケージの作成" depends="clean-all,make">
+	<target name="rerelase-pkg" description="配布パッケージの作成" depends="clean-all,build">
 		<copy todir="${pkg.dir}/${pkg_pen.dir}">
 			<fileset dir="${run.dir}" />
 		</copy>
 	</target>
 	
-	<target name="make" description="実行ファイルのコンパイル" depends="compile,run" />
+	<target name="build" description="実行ファイルのコンパイル" depends="compile,run" />
 
 	<target name="compile" description="PENのコンパイル">
 		<javac
