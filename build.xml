@@ -12,7 +12,7 @@
 	<property name="local_dev" value="r5" />
 	<property name="pkg_pen.dir" value="PEN_v${major_ver}${minor_vev}${local_dev}" />
 
-	<target name="rerelase-pkg" description="配布パッケージの作成" depends="clean-all,build">
+	<target name="release" description="配布パッケージの作成" depends="clean-all,build">
 		<copy todir="${pkg.dir}/${pkg_pen.dir}">
 			<fileset dir="${run.dir}" />
 		</copy>
