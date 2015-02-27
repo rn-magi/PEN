@@ -1,6 +1,11 @@
+package pen.GUI;
 import java.io.StringReader;
 
 import javax.swing.SwingUtilities;
+
+import pen.Interpreter.ja.IntVExecuter;
+import pen.Interpreter.ja.IntVParser;
+import pen.Interpreter.ja.ParseIsolateCause;
 
 public class ThreadRun extends Thread {
 	private MainGUI gui;
@@ -30,7 +35,7 @@ public class ThreadRun extends Thread {
 			try {
 				visitor = new IntVExecuter(gui);
 				if(gui.Flags.DebugFlag) { visitor.NodeDump(); }
-				parser.jjtree.rootNode().jjtAccept(visitor, null);
+				parser.getJJTree().rootNode().jjtAccept(visitor, null);
 			} catch(ConditionFormatException e) {
 				gui.Flags.BugFlag = true;
 				gui.consoleAppend.appendAll("### " + e.line + "行目あたりの条件式を見直してください\n");

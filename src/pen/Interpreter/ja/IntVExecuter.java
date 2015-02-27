@@ -1,3 +1,4 @@
+package pen.Interpreter.ja;
 import java.awt.Color;
 import java.util.Hashtable;
 import java.util.Stack;
@@ -5,6 +6,13 @@ import java.util.Vector;
 
 import javax.swing.JTextArea;
 import javax.swing.text.BadLocationException;
+
+import pen.GUI.ConditionFormatException;
+import pen.GUI.ConsoleAppend;
+import pen.GUI.ConsoleKeyListener;
+import pen.GUI.MainGUI;
+import pen.GUI.PenProperties;
+import pen.GUI.ThreadRunStop;
 
 /**
  * IntVParserクラスによって生成した構文木の

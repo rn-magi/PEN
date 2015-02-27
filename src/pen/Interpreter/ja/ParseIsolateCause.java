@@ -1,3 +1,7 @@
+package pen.Interpreter.ja;
+import pen.GUI.ThreadRunStop;
+import pen.GUI.VarNameError;
+
 public class ParseIsolateCause {
 	public static String isolateCause(Exception e){
 		if(e instanceof ParseException) {

@@ -1,3 +1,4 @@
+package pen.Interpreter.ja;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -10,6 +11,10 @@ import java.io.UnsupportedEncodingException;
 import java.util.Hashtable;
 
 import org.mozilla.universalchardet.UniversalDetector;
+
+import pen.GUI.ConsoleAppend;
+import pen.GUI.MainGUI;
+import pen.GUI.ThreadRunStop;
 
 /**
  * FileI/O を管理/実装するクラス

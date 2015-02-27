@@ -1,3 +1,4 @@
+package pen.Interpreter.ja;
 
 public enum Declaration {
 	PROCEDURAL("手続き", ""),

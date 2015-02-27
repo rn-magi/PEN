@@ -1,3 +1,4 @@
+package pen.GUI;
 public class ConditionFormatException extends NumberFormatException {
 	public int line;
 

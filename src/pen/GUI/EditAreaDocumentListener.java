@@ -1,3 +1,4 @@
+package pen.GUI;
 import javax.swing.JTextArea;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;

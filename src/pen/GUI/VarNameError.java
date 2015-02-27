@@ -1,3 +1,4 @@
+package pen.GUI;
 public class VarNameError extends Error{
 	public String message;
 	public int line;

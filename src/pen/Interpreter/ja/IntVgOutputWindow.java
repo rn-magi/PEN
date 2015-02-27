@@ -1,3 +1,4 @@
+package pen.Interpreter.ja;
 import javax.swing.*;
 import javax.swing.event.MouseInputListener;
 
@@ -8,11 +9,14 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+
+import pen.GUI.ConsoleAppend;
+import pen.GUI.MainGUI;
+import pen.GUI.ThreadRunStop;
 
 /**
  * さまざまな描画をおこなうJPanelを拡張したクラスです

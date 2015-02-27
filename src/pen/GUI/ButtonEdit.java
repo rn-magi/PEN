@@ -1,3 +1,4 @@
+package pen.GUI;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -56,7 +57,7 @@ public class ButtonEdit {
 			if(file.exists() && file.isFile() && file.canRead()) {
 				setEditButton(new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8")));
 			} else {
-				InputStreamReader isr = new InputStreamReader(getClass().getResourceAsStream(PenProperties.BUTTON_LIST_FILE), "UTF-8");
+				InputStreamReader isr = new InputStreamReader(getClass().getResourceAsStream("/" + PenProperties.BUTTON_LIST_FILE), "UTF-8");
 				setEditButton(new BufferedReader(isr));
 			}
 		} catch (FileNotFoundException e) {

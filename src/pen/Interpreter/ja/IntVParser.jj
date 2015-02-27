@@ -12,6 +12,9 @@ options {
 }
 
 PARSER_BEGIN(IntVParser)
+package pen.Interpreter.ja;
+
+import pen.GUI.*;
 
 public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants/*@egen*/ {/*@bgen(jjtree)*/
   protected JJTIntVParserState jjtree = new JJTIntVParserState();
@@ -22,6 +25,10 @@ public class IntVParser/*@bgen(jjtree)*/implements IntVParserTreeConstants/*@ege
 	
 	public void setMainGUI(MainGUI gui){
 		this.gui = gui;
+	}
+	
+	public JJTIntVParserState getJJTree(){
+		return jjtree;
 	}
 	
 	public String str2Half(String str, int line){

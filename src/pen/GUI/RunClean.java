@@ -1,3 +1,4 @@
+package pen.GUI;
 public class RunClean {
 	public RunClean(MainGUI gui){
 		gui.consoleAppend.clean(ConsoleAppend.CONSOLE);

@@ -1,9 +1,14 @@
+package pen.GUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.StringReader;
 
 import javax.swing.JTextArea;
+
+import pen.Interpreter.ja.IntVConvertArduino;
+import pen.Interpreter.ja.IntVParser;
+import pen.Interpreter.ja.ParseIsolateCause;
 
 public class xDCNL2ArduinoConvertListener implements ActionListener {
 	private MainGUI gui;
@@ -41,7 +46,7 @@ public class xDCNL2ArduinoConvertListener implements ActionListener {
 				try {
 					IntVConvertArduino visitor = new IntVConvertArduino(penPro);
 					visitor.setUploadFlag(upMode);
-					parser.jjtree.rootNode().jjtAccept(visitor, null);
+					parser.getJJTree().rootNode().jjtAccept(visitor, null);
 					gui.consoleAppend.appendAll("xDNCLからArduinoプログラムへの変換は正常に完了しました\n");
 				} catch (Exception e) {
 					

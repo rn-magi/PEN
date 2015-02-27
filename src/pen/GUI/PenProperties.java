@@ -1,3 +1,4 @@
+package pen.GUI;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -54,7 +55,7 @@ public class PenProperties {
 		setProperty(PenProperties.PEN_SYSTEM_LIBRARY, newLibPath);
 		
 		try {
-			PROPERTY.load(getClass().getResourceAsStream(PropertyFileName));
+			PROPERTY.load(getClass().getResourceAsStream("/" + PropertyFileName));
 			
 			String localPropertyFile = dir + PropertyFileName;
 			if(new File(localPropertyFile).exists()) {

@@ -1,3 +1,4 @@
+package pen.GUI;
 public class PenFlags {
 	public boolean RunFlag		= false;
 	public boolean StepFlag		= false;

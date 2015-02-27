@@ -1,3 +1,4 @@
+package pen.Interpreter.ja;
 public class ParseError extends Error{
 	public String message;
 	

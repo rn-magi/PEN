@@ -1,3 +1,4 @@
+package pen.GUI;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -24,6 +25,8 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.Document;
 import javax.swing.text.PlainDocument;
+
+import pen.Interpreter.ja.IntVgOutputWindow;
 
 /**
  * GUIの基礎部分です。
@@ -203,7 +206,7 @@ public class MainGUI {
 		}
 
 		main_window.addWindowListener(new MyWindowAdapter(this));
-		main_window.setIconImage(Toolkit.getDefaultToolkit().createImage(getClass().getResource("pen.png")));
+		main_window.setIconImage(Toolkit.getDefaultToolkit().createImage(getClass().getResource("/pen.png")));
 		main_window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		main_window.setSize(820,600);
 		main_window.setLocation(100,100);
