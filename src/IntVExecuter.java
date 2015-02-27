@@ -1256,7 +1256,7 @@ public class IntVExecuter implements IntVParserVisitor{
 
 		String name = array_name;
 		Vector localVec = mainVec;
-		tmpAddres = ((Integer) node.jjtGetChild(0).jjtAccept(this, data)).intValue();
+		tmpAddres = Double.valueOf(node.jjtGetChild(0).jjtAccept(this, data).toString()).intValue();
 		
 		if(k > 1 ) {
 			mainVec = (Vector) localVec.get(tmpAddres);
