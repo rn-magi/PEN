@@ -122,9 +122,8 @@ TOKEN [IGNORE_CASE] :
 	|	< FOR		: "を" >
 	|	< FOR2		: "から" >
 	|	< FOR3		: "まで" >
-	|	< FOR4		: "ずつ" >
-	|	< FORADD	: "増やし" ( "ながら" | "つつ" ) <CM> >
-	|	< FORSUB	: "減らし" ( "ながら" | "つつ" ) <CM> >
+	|	< FORADD	: "ずつ増やし" ( "ながら" | "つつ" ) <CM> >
+	|	< FORSUB	: "ずつ減らし" ( "ながら" | "つつ" ) <CM> >
 	|	< INFINITE	: ( "ずっと" | "永遠に" ) <CM> >
 	|	< ENDLOOP	: "を" ( "繰り返す" | "繰返す" ) >
 	|	< SWITCH	: "の値に応じて" >
@@ -210,7 +209,15 @@ TOKEN [IGNORE_CASE] :
 TOKEN :
 {
 	< #DIGIT: [ "0"-"9"] >
-	|	< #LETTER: [ "a"-"z", "A"-"Z", "_", "\uFF21"-"\uFF3A", "\uFF41"-"\uFF5A"] >
+	|	< #LETTER: [ "a"-"z",
+						"A"-"Z",
+						"_",
+						"\uFF21"-"\uFF3A",
+						"\uFF41"-"\uFF5A",
+						"\u3041"-"\u3093",
+						"\u30A1"-"\u30F6",
+						"\u4e00"-"\u9fa0"
+					] >
 }
 
 TOKEN :
@@ -527,7 +534,7 @@ void RepeatUntil() :
 void ForStatAdd() :
 {}
 {
-	  [ AddExpr() <FOR4> ] ( <FORADD> {jjtThis.op = 1;} | <FORSUB> {jjtThis.op = -1;} )
+	AddExpr() ( <FORADD> {jjtThis.op = 1;} | <FORSUB> {jjtThis.op = -1;} )
 }
 
 void WhileSwitchFor() :

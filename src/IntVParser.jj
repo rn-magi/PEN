@@ -126,9 +126,8 @@ TOKEN [IGNORE_CASE] :
 	|	< FOR		: "\u3092" >
 	|	< FOR2		: "\u304b\u3089" >
 	|	< FOR3		: "\u307e\u3067" >
-	|	< FOR4		: "\u305a\u3064" >
-	|	< FORADD	: "\u5897\u3084\u3057" ( "\u306a\u304c\u3089" | "\u3064\u3064" ) <CM> >
-	|	< FORSUB	: "\u6e1b\u3089\u3057" ( "\u306a\u304c\u3089" | "\u3064\u3064" ) <CM> >
+	|	< FORADD	: "\u305a\u3064\u5897\u3084\u3057" ( "\u306a\u304c\u3089" | "\u3064\u3064" ) <CM> >
+	|	< FORSUB	: "\u305a\u3064\u6e1b\u3089\u3057" ( "\u306a\u304c\u3089" | "\u3064\u3064" ) <CM> >
 	|	< INFINITE	: ( "\u305a\u3063\u3068" | "\u6c38\u9060\u306b" ) <CM> >
 	|	< ENDLOOP	: "\u3092" ( "\u7e70\u308a\u8fd4\u3059" | "\u7e70\u8fd4\u3059" ) >
 	|	< SWITCH	: "\u306e\u5024\u306b\u5fdc\u3058\u3066" >
@@ -214,7 +213,15 @@ TOKEN [IGNORE_CASE] :
 TOKEN :
 {
 	< #DIGIT: [ "0"-"9"] >
-	|	< #LETTER: [ "a"-"z", "A"-"Z", "_", "\uff21"-"\uff3a", "\uff41"-"\uff5a"] >
+	|	< #LETTER: [ "a"-"z",
+						"A"-"Z",
+						"_",
+						"\uff21"-"\uff3a",
+						"\uff41"-"\uff5a",
+						"\u3041"-"\u3093",
+						"\u30a1"-"\u30f6",
+						"\u4e00"-"\u9fa0"
+					] >
 }
 
 TOKEN :
@@ -1082,38 +1089,38 @@ void ForStatAdd() :
   jjtree.openNodeScope(jjtn000);
 /*@egen*/}
 {/*@bgen(jjtree) ForStatAdd */
-          try {
+        try {
 /*@egen*/
-	  [ AddExpr() <FOR4> ] ( <FORADD>/*@bgen(jjtree)*/
-                                          {
-                                            jjtree.closeNodeScope(jjtn000, true);
-                                            jjtc000 = false;
-                                          }
+	AddExpr() ( <FORADD>/*@bgen(jjtree)*/
+                             {
+                               jjtree.closeNodeScope(jjtn000, true);
+                               jjtc000 = false;
+                             }
 /*@egen*/ {jjtn000.op = 1;} | <FORSUB>/*@bgen(jjtree)*/
-                                                                       {
-                                                                         jjtree.closeNodeScope(jjtn000, true);
-                                                                         jjtc000 = false;
-                                                                       }
+                                                          {
+                                                            jjtree.closeNodeScope(jjtn000, true);
+                                                            jjtc000 = false;
+                                                          }
 /*@egen*/ {jjtn000.op = -1;} )/*@bgen(jjtree)*/
-          } catch (Throwable jjte000) {
-            if (jjtc000) {
-              jjtree.clearNodeScope(jjtn000);
-              jjtc000 = false;
-            } else {
-              jjtree.popNode();
-            }
-            if (jjte000 instanceof RuntimeException) {
-              throw (RuntimeException)jjte000;
-            }
-            if (jjte000 instanceof ParseException) {
-              throw (ParseException)jjte000;
-            }
-            throw (Error)jjte000;
-          } finally {
-            if (jjtc000) {
-              jjtree.closeNodeScope(jjtn000, true);
-            }
+        } catch (Throwable jjte000) {
+          if (jjtc000) {
+            jjtree.clearNodeScope(jjtn000);
+            jjtc000 = false;
+          } else {
+            jjtree.popNode();
           }
+          if (jjte000 instanceof RuntimeException) {
+            throw (RuntimeException)jjte000;
+          }
+          if (jjte000 instanceof ParseException) {
+            throw (ParseException)jjte000;
+          }
+          throw (Error)jjte000;
+        } finally {
+          if (jjtc000) {
+            jjtree.closeNodeScope(jjtn000, true);
+          }
+        }
 /*@egen*/
 }
 
