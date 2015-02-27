@@ -18,22 +18,22 @@ public class TokenMgrError extends Error
   /**
    * Lexical error occurred.
    */
-  static final int LEXICAL_ERROR = 0;
+  public static final int LEXICAL_ERROR = 0;
 
   /**
    * An attempt was made to create a second instance of a static token manager.
    */
-  static final int STATIC_LEXER_ERROR = 1;
+  public static final int STATIC_LEXER_ERROR = 1;
 
   /**
    * Tried to change to an invalid lexical state.
    */
-  static final int INVALID_LEXICAL_STATE = 2;
+  public static final int INVALID_LEXICAL_STATE = 2;
 
   /**
    * Detected (and bailed out of) an infinite loop in the token manager.
    */
-  static final int LOOP_DETECTED = 3;
+  public static final int LOOP_DETECTED = 3;
 
   /**
    * Indicates the reason why the exception is thrown. It will have
@@ -51,8 +51,6 @@ public class TokenMgrError extends Error
     for (int i = 0; i < str.length(); i++) {
       switch (str.charAt(i))
       {
-        case 0 :
-          continue;
         case '\b':
           retval.append("\\b");
           continue;
@@ -102,7 +100,7 @@ public class TokenMgrError extends Error
    *    curchar     : the offending character
    * Note: You can customize the lexical error message by modifying this method.
    */
-  protected static String LexicalError(boolean EOFSeen, int lexState, int errorLine, int errorColumn, String errorAfter, char curChar) {
+  protected static String LexicalErr(boolean EOFSeen, int lexState, int errorLine, int errorColumn, String errorAfter, int curChar) {
     return(errorLine + "行目の" +
           errorColumn + "文字目の" +
           (EOFSeen ? "<EOF> " : ("\"" + String.valueOf(curChar) + "\"") ) +
@@ -137,8 +135,8 @@ public class TokenMgrError extends Error
   }
 
   /** Full Constructor. */
-  public TokenMgrError(boolean EOFSeen, int lexState, int errorLine, int errorColumn, String errorAfter, char curChar, int reason) {
-    this(LexicalError(EOFSeen, lexState, errorLine, errorColumn, errorAfter, curChar), reason);
+  public TokenMgrError(boolean EOFSeen, int lexState, int errorLine, int errorColumn, String errorAfter, int curChar, int reason) {
+    this(LexicalErr(EOFSeen, lexState, errorLine, errorColumn, errorAfter, curChar), reason);
   }
 }
 /* JavaCC - OriginalChecksum=f617b0103aabf7650bc48f1badde308c (do not edit this line) */
