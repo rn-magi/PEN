@@ -1,0 +1,1215 @@
+/**
+ **	 Interpreter (JJTree & Visitor)
+ **/
+
+options {
+	STATIC=false;
+	UNICODE_INPUT=true;
+	DEBUG_PARSER=true;
+	MULTI=true;
+	VISITOR=true;
+}
+
+PARSER_BEGIN(IntVParser)
+package pen.Interpreter.en;
+
+public class IntVParser {
+	public int nParseErrors = 0;
+	private MainGUI gui;
+	
+	public void setMainGUI(MainGUI gui){
+		this.gui = gui;
+	}
+}
+
+PARSER_END(IntVParser)
+
+TOKEN_MGR_DECLS :
+{
+	public int nLexicalErrors = 0;
+}
+
+SKIP :
+{
+	" "
+	|	"\t"
+//	|	"\n"
+	|	"\r"
+	|	"\f"
+	|	"|"
+	|	"｜"
+	|	"　"
+}
+
+TOKEN :
+{
+	< ADDOP: "+" >
+	|	< SUBOP: "-" >
+	|	< MULOP: "*" >
+	|	< DIVOP: "÷" >
+	|	< DIVOP2: "/" >
+	|	< SUROP: "%" >
+	|	< ASGNOP: ":=" >
+	|	< INOP: "->">
+	|	< EQOP: "=" >
+	|	< GTOP: ">" >
+	|	< GEOP: ">=" >
+	|	< LSOP: "<" >
+	|	< LEOP: "<=" >
+	|	< NTOP: "!=" >
+	|	< ANDOP: "AND" >
+	|	< OROP: "OR" >
+	|	< NOTOP: "NOT" >
+	|	< LC: "{" >
+	|	< RC: "}" >
+	|	< LD: "[" >
+	|	< RD: "]" >
+	|	< LP: "(" >
+	|	< RP: ")" >
+	|	< SM: "\n" >
+	|	< CM: ",">
+	|	< PN: "." >
+	|	< TRUE	: ( "true" | "TRUE") >
+	|	< FALSE	: ( "false" | "FALSE") >
+	|	< EOF_STR: "EOF" >
+	|	< LF_STR: "LF">
+	|	< CR_STR: "CR" >
+	|	< NL_STR: "NL">
+	|	< HT_STR: "HT">
+	|	< NULL_STR: "NULL" >
+}
+
+TOKEN [IGNORE_CASE] :
+{
+	<VARGLOBAL			: "グローバル変数">
+	|	< VARINT		: "int" >
+	|	< VARLONG		: "long" >
+	|	< VARDOUBLE		: "double" >
+	|	< VARSTRING		: "string" >
+	|	< VARBOOLEAN	: "boolean" >
+	|	< PROCEDURAL		: "手続き" >
+	|	< ENDPROCEDURAL		: "手続き" ( "終了" | "終わり" ) >
+	|	< BREAKPROCEDURAL	: "手続きを抜ける" >
+	|	< FUNCTION			: "関数" >
+	|	< ENDFUNCTION		: "関数" ( "終了" | "終わり" ) >
+	|	< BREAKFUNCTION		: "関数を抜ける" >
+	|	< RETURN			: "を返す" >
+	|	< IF		: "if" >
+	|	< ENDIF		: "end_if" >
+	|	< THEN		: "then" >
+	|	< ELSE		: "else" >
+	|	< ELSEIF	: "elseif" >
+	|	< WHILE		: "while" >
+	| 	< DO		: "do" >
+	|	< ENDWHILE	: "end_while" >
+	|	< FOR		: "for" >
+	|	< TO		: "to" >
+	|	< STEP		: "step" >
+	|	< ENDFOR	: "end_for" >
+	|	< INFINITE	: ( "ずっと" | "永遠に" ) <CM> >
+	|	< ENDLOOP	: "を" ( "繰り返す" | "繰返す" ) >
+	|	< SWITCH	: "の値に応じて" >
+	|	< ENDSWITCH	: "のいずれかを実行する" >
+	|	< CASE		: "の場合：" >
+	|	< CASEDEFAULT	: "その他の場合：" >
+	|	< PUTLN		: "putln" >
+	|	< PUT		: "put" >
+	|	< BREAK		: "break" >
+	|	< INPUT		: ( "を" | "に" ) "入力する" >
+	|	< GET		: "input" <LP> >
+	|	< RANDOM	: "random" <LP> >
+	|	< SIN		: "sin" <LP> >
+	|	< COS		: "cos" <LP> >
+	|	< TAN		: "tan" <LP> >
+	|	< SQRT		: "sqrt" <LP> >
+	|	< FLOOR		: "floor" <LP> >
+	|	< CEIL		: "ceil" <LP> >
+	|	< ROUND		: "round" <LP> >
+	|	< ABS		: "abs" <LP> >
+	|	< INT		: "int" <LP> >
+	|	< LONG		: "long" <LP> >
+	|	< LOG		: "log" <LP> >
+	|	< LENGTH	: "length" <LP> >
+	|	< APPEND	: "append" <LP> >
+	|	< SUBSTRING	: "substring" <LP> >
+	|	< INSERT	: "insert" <LP> >
+	|	< REPLACE	: "replace" <LP> >
+	|	< EXTRACT	: "extract" <LP> >
+	|	< Str2Int	: "str2int" <LP> >
+	|	< Int2Str	: "int2str" <LP> >
+	|	< Compare	: "compare" <LP> >
+	|	< gOpenWindow	: "gOpenWindow"	<LP> >
+	|	< gOpenGWindow	: "gOpenGraphWindow" <LP> >
+	|	< gCloseWindow	: "gCloseWindow" <LP> >
+	|	< gClearWindow	: "gClearWindow"	<LP> >
+	|	< gSaveWindow	: "gSaveWindow" <LP> >
+	|	< gSetOrigin	: "gSetOrigin" <LP> >
+	|	< gSetMap		: "gSetMap" <LP> >
+	|	< gSetDotShape	: "gSetDotShape" <LP> >
+	|	< gSetLineColor	: "gSetLineColor" <LP> >
+	|	< gSetFillColor	: "gSetFillColor" <LP> >
+	|	< gSetLineShape	: "gSetLineShape" <LP> >
+	|	< gSetLineWidth	: "gSetLineWidth" <LP> >
+	|	< gSetArrowType	: "gSetArrowType" <LP> >
+	|	< gSetArrowDir	: "gSetArrowDir" <LP> >
+	|	< gSetTextColor	: "gSetTextColor" <LP> >
+	|	< gSetFont		: "gSetFont" <LP> >
+	|	< gSetFontType	: "gSetFontType" <LP> >
+	|	< gSetFontSize	: "gSetFontSize" <LP> >
+	|	< gDrawPoint	: "gDrawPoint" <LP> >
+	|	< gDrawLine		: "gDrawLine" <LP> >
+	|	< gDrawText		: "gDrawText" <LP> >
+	|	< gDrawCircle	: "gDrawCircle" <LP> >
+	|	< gFillCircle	: "gFillCircle" <LP> >
+	|	< gDrawOval		: "gDrawOval" <LP> >
+	|	< gFillOval		: "gFillOval" <LP> >
+	|	< gDrawBox		: "gDrawBox" <LP> >
+	|	< gFillBox		: "gFillBox" <LP> >
+	|	< gDrawArc		: "gDrawArc" <LP> >
+	|	< gFillArc		: "gFillArc" <LP> >
+	|	< gDrawPolygon	: "gDrawPolygon" <LP> >
+	|	< gFillPolygon	: "gFillPolygon" <LP> >
+	|	< gDrawPolyline	: "gDrawPolyline" <LP> >
+	|	< gDrawImage	: "gDrawImage"	<LP> >
+	|	< gSetRepaintFlag	: "gSetRepaintFlag" <LP> >
+	|	< gRepaint		: "gRepaint" <LP> >
+	|	< OPENR		: "openr" <LP> >
+	|	< OPENW		: "openw" <LP> >
+	|	< OPENA		: "opena" <LP> >
+	|	< CLOSE		: "close" <LP> >
+	|	< GETSTR	: "getstr" <LP> >
+	|	< GETLINE	: "getline" <LP> >
+	|	< PUTSTR	: "putstr" <LP> >
+	|	< PUTLINE	: "putline" <LP> >
+	|	< FLUSH		: "flush" <LP> >
+	|	< ISFILE	: "isfile" <LP> >
+	|	< RENAME	: "rename" <LP> >
+	|	< REMOVE	: "remove" <LP> >
+	|	< SLEEP		: ( "sleep" | "delay" ) <LP> >
+}
+
+TOKEN :
+{
+	< #DIGIT: [ "0"-"9"] >
+	|	< #LETTER: [ "a"-"z", "A"-"Z", "_"] >
+}
+
+TOKEN :
+{
+	< LITERAL: (<DIGIT>)+ >
+	|	< FLOAT_LITERAL: <LITERAL> (<PN> <LITERAL>) >
+	|	< IDENT: <LETTER> (<LETTER>|<DIGIT>)* >
+		{	int idx;
+			int len = image.length();
+			
+			if (!Character.isJavaIdentifierStart(image.charAt(0))) {
+				++nLexicalErrors;
+				throw new ParseError(
+					"### " + matchedToken.beginLine + "行目で"
+					+ "エラーです : \""
+					+ matchedToken.image.charAt(0)
+					+ "\"("
+					+ Integer.toHexString(matchedToken.image.charAt(0))
+					+ ")\n"
+				);
+			}
+			for (idx = 1; idx < len; ++idx) {
+				if (!Character.isJavaIdentifierPart(image.charAt(idx))) {
+					++nLexicalErrors;
+					throw new ParseError(
+						"### " + matchedToken.beginLine + "行目で"
+						+ "エラーです : \""
+						+ matchedToken.image.charAt(idx)
+						+ "\"("
+						+ Integer.toHexString(matchedToken.image.charAt(idx))
+						+ ")\n"
+					);
+				}
+			}
+		}
+}
+
+MORE:
+{
+	< "\""> :STR
+}
+<STR>TOKEN:
+{
+	< STRLIT: "\"" | "\n" | "\r" >
+		{
+			if ( (image.charAt(0) == '\"' && image.charAt(image.length()-1) == '\"') ||
+			 (image.charAt(0) == '「' && image.charAt(image.length()-1) == '」') ){
+				matchedToken.image = image.substring(1, image.length()-1);
+			}else{
+				++nLexicalErrors;
+				matchedToken.image = image.substring(1, image.length()-2);
+				throw new ParseError(
+					"### " + matchedToken.beginLine + "行目の"
+					+ "出力文で[\"] か[ 」]を忘れていませんか？\n"
+				);
+			}
+		}
+		:DEFAULT
+}
+<STR>MORE:
+{
+	< "\\\"" | "\\」" | "\\「" >
+		{	image.deleteCharAt(image.length() - 2); }
+}
+<STR>MORE:
+{
+	< "\\n" >
+		{
+			image.delete(image.length() - 2, image.length());
+			image.append('\n');
+		}
+}
+<STR>MORE:
+{
+	< "\\r" >
+		{
+			image.delete(image.length() - 2, image.length());
+			image.append('\r');
+		}
+}
+<STR>MORE:
+{
+	< "\\t" >
+		{
+			image.delete(image.length() - 2, image.length());
+			image.append('\t');
+		}
+}
+<STR>MORE:
+{
+	< ~[] >
+}
+
+MORE:
+{
+	"/*" :COMM
+}
+<COMM>SPECIAL_TOKEN:
+{
+	< COMMENT: "*/" > :DEFAULT
+}
+<COMM>MORE:
+{
+	< ~[] >
+}
+
+void IntVUnit() :
+{	Token t; }
+{
+	(
+		try {
+			VarDecl()
+			|	Function()
+			|	Stat()
+			|	<EOF>
+				{ return; }
+			|	ErrorOccur()
+		} catch (ParseException e) {
+			++nParseErrors;
+			gui.consoleAppend.appendAll("### " + e.getMessage() + "\n");
+			throw new ParseException();
+		}
+	)*
+}
+
+JAVACODE
+void ErrorOccur() {
+	ParseException e = generateParseException();
+	throw e;
+}
+
+void Function() :
+{ Token t; }
+{
+	( 
+		<FUNCTION> (
+			<VARINT>		{ jjtn000.decl = Declaration.INT; }
+			|	<VARLONG>	{ jjtn000.decl = Declaration.LONG; }
+			|	<VARDOUBLE>	{ jjtn000.decl = Declaration.DOUBLE; }
+			|	<VARSTRING>	{ jjtn000.decl = Declaration.STRING; }
+			|	<VARBOOLEAN>{ jjtn000.decl = Declaration.BOOLEAN; }
+		)
+		t=<IDENT> <LP> [ FunctionVar() ] <RP> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
+		( VarDecl() | Stat() )* #Block <ENDFUNCTION>
+		|	<PROCEDURAL>	{ jjtn000.decl = Declaration.PROCEDURAL; }
+		t=<IDENT> <LP> [ FunctionVar() ] <RP> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
+		( VarDecl() | Stat() )* #Block <ENDPROCEDURAL>
+		
+	)
+	
+	{ jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
+		{
+			jjtThis.varName = str2Half(t.image, t.beginLine);
+		}
+}
+
+void FunctionVar() :
+{}
+{
+	(
+		<VARINT>	{ jjtn000.decl = Declaration.INT; }
+		| <VARLONG>		{ jjtn000.decl = Declaration.LONG; }
+		| <VARDOUBLE>	{ jjtn000.decl = Declaration.DOUBLE; }
+		| <VARSTRING>	{ jjtn000.decl = Declaration.STRING; }
+		| <VARBOOLEAN>	{ jjtn000.decl = Declaration.BOOLEAN; }
+	) Decl() [ <CM> FunctionVar() ]
+}
+
+void VarDecl() :
+{}
+{
+	(
+		<VARINT>	{ jjtn000.decl = Declaration.INT; }
+		| <VARLONG>		{ jjtn000.decl = Declaration.LONG; }
+		| <VARDOUBLE>	{ jjtn000.decl = Declaration.DOUBLE; }
+		| <VARSTRING>	{ jjtn000.decl = Declaration.STRING; }
+		| <VARBOOLEAN>	{ jjtn000.decl = Declaration.BOOLEAN; }
+	) Decl() ( <CM> Decl() )* { 
+				jjtn000.line_num1 = jj_consume_token(SM).beginLine;
+			}
+}
+
+void Decl() :
+{	Token t; }
+{
+	t=<IDENT> [ <LD> Array() <RD> ]
+		{
+			jjtThis.varName = str2Half(t.image, t.beginLine);
+		}
+}
+
+void Array() :
+{}
+{
+	AddExpr() [ <CM> Array() ]
+}
+
+void Stat() #void :
+{}
+{
+	PutStat()
+	|	LOOKAHEAD(100) Return()
+	|	LOOKAHEAD(100) AssignStats()
+	|	LOOKAHEAD(100) FunctionCall()
+	|	ForStat()
+	|	WhileStat()
+	|	InfiniteLoop()
+	|	IfStat()
+	|	Break()
+//	|	GetStat()
+//	|	Block()
+	|	gOpenWindow()
+	|	gOpenGraphWindow()
+	|	gCloseWindow()
+	|	gClearWindow()
+	|	gSaveWindow()
+	|	gSetOrigin()
+	|	gSetMap()
+	|	gSetFillColor()
+	|	gSetLineColor()
+	|	gSetTextColor()
+	|	gSetFont()
+	|	gSetFontType()
+	|	gSetFontSize()
+	|	gSetDotShape()
+	|	gSetArrowDir()
+	|	gSetArrowType()
+	|	gSetLineShape()
+	|	gSetLineWidth()
+	|	gDrawPoint()
+	|	gDrawLine()
+	|	gDrawText()
+	|	gDrawCircle()
+	|	gFillCircle()
+	|	gDrawOval()
+	|	gFillOval()
+	|	gDrawBox()
+	|	gFillBox()
+	|	gDrawArc()
+	|	gFillArc()
+	|	gDrawPolygon()
+	|	gFillPolygon()
+	|	gDrawPolyline()
+	|	gDrawImage()
+	|	gSetRepaintFlag()
+	|	gRepaint()
+	|	File_close()
+	|	File_putstr()
+	|	File_putline()
+	|	File_flush()
+	|	File_rename()
+	|	File_remove()
+	|	Sleep()
+	|	<SM>
+}
+
+void AssignStats() :
+{}
+{
+	AssignStat() ( <CM> AssignStat() )* {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void AssignStat() :
+{}
+{
+	  Ident() <ASGNOP> AddExpr()
+}
+
+void InputStat() #AssignStat :
+{}
+{
+	Ident()	<INPUT> { jjtThis.InputFlag = true; }
+}
+
+void IfStat() :
+{}
+{
+	<IF> Cond() { jjtn000.line_num1 = jj_consume_token(THEN).beginLine; } (
+		( Stat() )* #Block
+		[
+		 	(
+		 		<ELSE> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; } ( Stat() )* #Block
+		 		| ElseIfStat()
+		 	)
+		 ]
+		 <ENDIF> { jjtn000.line_num3 = jj_consume_token(SM).beginLine; }
+	)
+}
+
+void ElseIfStat() #IfStat :
+{}
+{
+	<ELSEIF> Cond() { jjtn000.line_num1 = jj_consume_token(THEN).beginLine; } <SM> ( Stat() )* #Block
+	[
+		(
+			<ELSE> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; } ( Stat() )* #Block
+			| ElseIfStat()
+		)
+	]		
+}
+
+void ForStat() :
+{}
+{
+	<FOR> Ident() <ASGNOP> AddExpr() <TO> AddExpr() <STEP> AddExpr() <DO>  { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
+	(Stat())* #Block <ENDFOR> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }}
+
+void WhileStat() :
+{}
+{	<WHILE> Cond() <DO>  { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
+	( Stat() )* #Block
+	<ENDWHILE> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
+}
+
+void InfiniteLoop() :
+{}
+{
+	<INFINITE> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
+	( Stat() )* #Block
+	<ENDLOOP> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
+}
+
+
+void Label() :
+{}
+{
+	AddExpr() <CASE> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
+	| <CASEDEFAULT> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
+}
+
+void GetStat() :
+{}
+{
+	<GET> <LP> Ident() <RP> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
+}
+
+void PutStat() :
+{}
+{
+	( <PUT> | <PUTLN> {jjtThis.n = "\n";} ) PutParam() ( <CM> PutParam() )*
+	{ jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
+}
+
+void PutParam() #void :
+{}
+{
+	AddExpr()
+//	|	Strlit()
+}
+
+void Block() :
+{}
+{
+	<LC> ( Stat() )* <RC>
+}
+
+void Cond() #void :
+{}
+{
+	ORExpr()
+}
+
+void ORExpr() #void :
+{}
+{
+	AndExpr() [ <OROP> ORExpr() #ORNode(2) ]
+}
+
+void AndExpr() #void :
+{}
+{
+	NotExpr() [ <ANDOP> AndExpr() #ANDNode(2) ]
+}
+
+void NotExpr() #void :
+{}
+{
+ 	LOOKAHEAD(100) CompareExpr() [ <NOTOP> #NOTNode(1) ]
+	|	LOOKAHEAD(100) <LP> Cond() <RP> [ <NOTOP> #NOTNode(1) ]
+}
+
+void CompareExpr() #void :
+{}
+{
+	AddExpr()
+	[
+		<EQOP> AddExpr() #EQNode(2)
+		|	<NTOP> AddExpr() #NTNode(2)
+		| 	<LSOP> AddExpr() #LSNode(2)
+		|	<GTOP> AddExpr() #GTNode(2)
+		|	<LEOP> AddExpr() #LENode(2)
+		|	<GEOP> AddExpr() #GENode(2)
+	]
+}
+
+void AddExpr() #void :
+{}
+{
+	MulExpr()
+	(
+		LOOKAHEAD(2) (
+				<ADDOP> MulExpr() #AddNode(2)
+			|	<SUBOP> MulExpr() #SubNode(2)
+		)
+	)*
+}
+
+void MulExpr() #void :
+{}
+{
+	UnExpr()
+	(
+		<MULOP> UnExpr() #MulNode(2)
+		|	<DIVOP> UnExpr() { jjtn002.DivFlag=true; } #DivNode(2)
+		|	<DIVOP2> UnExpr()#DivNode(2)
+		|	<SUROP> UnExpr() #SurNode(2)
+	)*
+}
+
+void UnExpr() #void :
+{}
+{
+	PrimExpr()
+	|	<SUBOP> PrimExpr() #MinNode(1)
+}
+
+void PrimExpr() #void :
+{}
+{
+	Literal()
+	|	FloatLiteral()
+	|	True()
+	|	False()
+	|	Strlit()
+	|	EXTRA_STR()
+	|	FunctionExpr()
+	|	Ident()
+//	|	FunctionCall()
+	|	<LP> AddExpr() <RP>
+}
+
+void FunctionExpr() #void :
+{}
+{
+	Get()
+	|	Random()
+	|	Sine()
+	|	Cosine()
+	|	Tangent()
+	|	Sqrt()
+	|	Floor()
+	|	Ceil()
+	|	Round()
+	|	Abs()
+	|	Log()
+	|	Int()
+	|	Long()
+	|	Length()
+	|	Append()
+	|	Substring()
+	|	Insert()
+	|	Replace()
+	|	Extract()
+	|	Str2Int()
+	|	Int2Str()
+	|	Compare()
+	|	File_openr()
+	|	File_openw()
+	|	File_opena()
+	|	File_getstr()
+	|	File_getline()
+	|	File_isfile()
+}
+
+void Get() :
+{}
+{
+	<GET> <RP>
+}
+
+void Random() :
+{}
+{
+	<RANDOM>AddExpr() <RP>
+}
+
+void Sine() :
+{}
+{
+	<SIN>	AddExpr() <RP>
+}
+
+void Cosine() :
+{}
+{
+	<COS>	AddExpr() <RP>
+}
+
+void Tangent() :
+{}
+{
+	<TAN>	AddExpr() <RP>
+}
+
+void Sqrt() :
+{}
+{
+	<SQRT>	AddExpr() <RP>
+}
+
+void Floor() :
+{}
+{
+	<FLOOR>	AddExpr() <RP>
+}
+
+void Ceil() :
+{}
+{
+	<CEIL>	AddExpr() <RP>
+}
+
+void Round() :
+{}
+{
+	<ROUND>	AddExpr() <RP>
+}
+
+void Abs() :
+{}
+{
+	<ABS>	AddExpr() <RP>
+}
+
+void Log() :
+{}
+{
+	<LOG>	AddExpr() <RP>
+}
+
+void Int() :
+{}
+{
+	<INT>	AddExpr() <RP>
+}
+
+void Long() :
+{}
+{
+	<LONG>	AddExpr() <RP>
+}
+
+void Length() :
+{}
+{
+	<LENGTH>AddExpr() <RP>
+}
+
+void Append() :
+{}
+{
+	<APPEND> AddExpr() <CM> AddExpr() <RP>
+}
+
+void Substring() :
+{}
+{
+	<SUBSTRING> AddExpr() <CM> AddExpr() [ <CM> AddExpr() ] <RP>
+}
+
+void Insert() :
+{}
+{
+	<INSERT> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP>
+}
+
+void Replace() :
+{}
+{
+	<REPLACE> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP>
+}
+
+void Extract() :
+{}
+{
+	<EXTRACT> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP>
+}
+
+void Str2Int() :
+{}
+{
+	<Str2Int> AddExpr() <RP>
+}
+
+void Int2Str() :
+{}
+{
+	<Int2Str> AddExpr() <RP>
+}
+
+void Compare() :
+{}
+{
+	<Compare> AddExpr() <CM> AddExpr() <RP>
+}
+
+void gOpenWindow() :
+{}
+{
+	<gOpenWindow> AddExpr() <CM> AddExpr() [ <CM> AddExpr() <CM> AddExpr() ] <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gOpenGraphWindow() :
+{}
+{
+	<gOpenGWindow> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() [ <CM> AddExpr() ]<RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gCloseWindow() :
+{}
+{
+	<gCloseWindow> <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gClearWindow() :
+{}
+{
+	<gClearWindow> <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSaveWindow() :
+{}
+{
+	<gSaveWindow> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetOrigin() :
+{}
+{
+	<gSetOrigin> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetMap() :
+{}
+{
+	<gSetMap> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetFillColor() :
+{}
+{
+	<gSetFillColor> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetLineColor() :
+{}
+{
+	<gSetLineColor> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetTextColor() :
+{}
+{
+	<gSetTextColor> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetFont() :
+{}
+{
+	<gSetFont> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetFontType() :
+{}
+{
+	<gSetFontType> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetFontSize() :
+{}
+{
+	<gSetFontSize> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetDotShape() :
+{}
+{
+	<gSetDotShape> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetArrowDir() :
+{}
+{
+	<gSetArrowDir> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetArrowType() :
+{}
+{
+	<gSetArrowType> AddExpr() [ <CM> AddExpr() ] <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetLineShape() :
+{}
+{
+	<gSetLineShape> AddExpr() [ <CM> AddExpr() ] <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetLineWidth() :
+{}
+{
+	<gSetLineWidth> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gDrawPoint() :
+{}
+{
+	<gDrawPoint> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gDrawLine() :
+{}
+{
+	<gDrawLine> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gDrawText() :
+{}
+{
+	<gDrawText> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gDrawCircle() :
+{}
+{
+	<gDrawCircle> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gFillCircle() :
+{}
+{
+	<gFillCircle> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gDrawOval() :
+{}
+{
+	<gDrawOval> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gFillOval() :
+{}
+{
+	<gFillOval> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gDrawBox() :
+{}
+{
+	<gDrawBox> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gFillBox() :
+{}
+{
+	<gFillBox> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gDrawArc() :
+{}
+{
+	<gDrawArc> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gFillArc() :
+{}
+{
+	<gFillArc> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gDrawPolygon() :
+{}
+{
+	<gDrawPolygon> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gFillPolygon() :
+{}
+{
+	<gFillPolygon> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gDrawPolyline() :
+{}
+{
+	<gDrawPolyline> AddExpr() <CM> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gDrawImage() :
+{}
+{
+	<gDrawImage> AddExpr() <CM> AddExpr() <CM> AddExpr() [ <CM> AddExpr() <CM> AddExpr() ] <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gSetRepaintFlag() :
+{}
+{
+	<gSetRepaintFlag> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void gRepaint() :
+{}
+{
+	<gRepaint> <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void File_openr() :
+{}
+{
+	<OPENR> AddExpr() <RP>
+}
+
+void File_openw() :
+{}
+{
+	<OPENW> AddExpr() <RP>
+}
+
+void File_opena() :
+{}
+{
+	<OPENA> AddExpr() <RP>
+}
+
+void File_close() :
+{}
+{
+	<CLOSE> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void File_getstr() :
+{}
+{
+	<GETSTR> AddExpr() <CM> AddExpr() <RP>
+}
+
+void File_getline() :
+{}
+{
+	<GETLINE> AddExpr() <RP>
+}
+
+void File_putstr() :
+{}
+{
+	<PUTSTR> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void File_putline() :
+{}
+{
+	<PUTLINE> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void File_flush() :
+{}
+{
+	<FLUSH> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void File_isfile() :
+{}
+{
+	<ISFILE> AddExpr() <RP>
+}
+
+void File_rename() :
+{}
+{
+	<RENAME> AddExpr() <CM> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void File_remove() :
+{}
+{
+	<REMOVE> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void Sleep() :
+{}
+{
+	<SLEEP> AddExpr() <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void Ident() :
+{	Token t; }
+{
+	t=<IDENT> [
+		LOOKAHEAD(2)(
+			<LD> ArrayNum() <RD>
+			|	<LP> [ AddExpr() ( <CM> AddExpr() )* ] <RP> { jjtThis.flag = false; }
+		)
+		]
+	{ jjtThis.varName = str2Half(t.image, t.beginLine); }
+
+}
+
+void ArrayNum() :
+{}
+{
+	AddExpr() [ <CM> ArrayNum() ]
+}
+
+void FunctionCall() :
+{	Token t; }
+{
+	t=<IDENT> <LP> [  AddExpr() ( <CM> AddExpr() )* ] <RP> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+		{
+			jjtThis.varName = str2Half(t.image, t.beginLine);
+			
+		}
+}
+
+void Return() :
+{}
+{
+	AddExpr() <RETURN> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void Break() :
+{}
+{
+	<BREAK> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void Literal() :
+{	Token t; }
+{
+	t=<LITERAL>
+		{
+			try {
+				if(Long.parseLong(t.image) > Integer.MAX_VALUE || Long.parseLong(t.image) <  Integer.MIN_VALUE){
+					jjtThis.litValue = new Long(Long.parseLong(t.image));
+				} else {
+					jjtThis.litValue = new Integer(Integer.parseInt(t.image));
+				}
+			} catch (NumberFormatException e){
+				jjtThis.litValue = new Double(Double.parseDouble(t.image));
+			} catch (Exception e) {
+				jjtThis.litValue = null;
+				gui.consoleAppend.appendAll(
+					"### " + t.beginLine + "行目は無効な値です : "
+					+ t.image + "\n"
+				);
+				throw new ParseException();
+			}
+		}
+}
+
+void FloatLiteral() :
+{	Token t; }
+{
+	t=<FLOAT_LITERAL>
+		{
+			try {
+				jjtThis.litValue = new Double(Double.parseDouble(t.image));
+			} catch (NumberFormatException e){
+				jjtThis.litValue = null;
+				gui.consoleAppend.appendAll(
+					"### NumberFormatException\n");
+				gui.consoleAppend.appendAll(
+					"### " + t.beginLine + "行目は無効な値です : "
+					+ t.image + "\n"
+				);
+				throw new ParseException();
+			} catch (Exception e) {
+				jjtThis.litValue = null;
+				gui.consoleAppend.appendAll(
+					"### " + t.beginLine + "行目は無効な値です : "
+					+ t.image + "\n"
+				);
+				throw new ParseException();
+			}
+		}
+}
+
+void True() :
+{}
+{
+	<TRUE>
+}
+
+void False() :
+{}
+{
+	<FALSE>
+}
+
+void Strlit() :
+{	Token t; }
+{
+	t=<STRLIT>
+		{	jjtThis.litString = t.image; }
+}
+
+void EXTRA_STR() :
+{}
+{
+	<EOF_STR>	{ jjtn000.char_code[0] = 0xFFFF; }
+	| <NULL_STR>	{ jjtn000.char_code[0] = 0x0000; }
+	| <LF_STR>	{ jjtn000.char_code[0] = 0x000A; }
+	| <NL_STR>	{
+				String str = System.getProperty("line.separator");
+				if( str.length() > 1 ){
+					jjtn000.char_code[1] = str.charAt(1);
+				}
+			}
+	| <CR_STR>	{ jjtn000.char_code[0] = 0x000D; }
+	| <HT_STR>	{ jjtn000.char_code[0] = 0x0009; }
+}
+
