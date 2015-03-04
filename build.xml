@@ -98,6 +98,4 @@
 			<link href="http://docs.oracle.com/javase/jp/6/api/" />
 		</javadoc>
 	</target>
-
-	<target name="build-javadoc" description="JavaDocの再生成" depends="clean-docs,javadoc" />
 </project>
