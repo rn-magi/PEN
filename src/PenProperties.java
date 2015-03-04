@@ -47,11 +47,7 @@ public class PenProperties {
 		setProperty(PenProperties.PEN_SYSTEM_HOME, System.getProperty("user.home"));
 		setProperty(PenProperties.SYSTEM_OS_BITS, getOSBit());
 		
-		String newLibPath = "lib";
-		if(getProperty(PenProperties.SYSTEM_OS_BITS).equals("64")){
-			newLibPath += "64";
-		}
-		setProperty(PenProperties.PEN_SYSTEM_LIBRARY, newLibPath);
+		setProperty(PenProperties.PEN_SYSTEM_LIBRARY, "lib");
 		
 		try {
 			PROPERTY.load(getClass().getResourceAsStream(PropertyFileName));
