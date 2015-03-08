@@ -19,11 +19,7 @@ public class PenPlugin {
 	
 	public PenPlugin() {
 		try {
-			String libPath = "lib";
-			if(getOSBit().equals("64")){
-				libPath += "64";
-			}
-			File load = new File(libPath);
+			File load = new File("lib");
 			if(load.isDirectory()){
 				for(int i = 0; i < load.listFiles().length; i++){
 					String filePath = load.listFiles()[i].getPath();
