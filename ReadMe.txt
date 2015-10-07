@@ -14,7 +14,7 @@
      Microsoft Windows 7 pro SP1 64bit    + JDK ver 1.6.0 (64bit)
      Microsoft Windows 8.1 pro 64bit      + JDK ver 1.7.0 (64bit)
      Mac OS X 10.9.4 Intel 64bit          + JDK ver 1.6.0
- [  著作権  ] Copyright(C) 2003-2014 by 中村 亮太, 西田 知博, 松浦 敏雄
+ [  著作権  ] Copyright(C) 2003-2015 by 中村 亮太, 西田 知博, 松浦 敏雄
  [転載・配布] GPLに準ずる
  [使用上注意] 本プログラムにていかなる問題が発生した場合も
               作者は一切の責任を負わないものとします。
