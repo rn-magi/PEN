@@ -7,8 +7,6 @@
  [  連絡先  ] pen@s.ogu.ac.jp
  [  配布元  ] http://www.media.osaka-cu.ac.jp/PEN/
  [ 開発環境 ]
-     Microsoft Windows 7 pro SP1 64bit + JDK ver 1.6.0 (32bit) + JavaCC ver 5.0
-     Microsoft Windows 8.1 pro 64bit + JDK ver 1.5.0 (32bit) + JavaCC ver 5.0
      Mac OS X 10.9.4 Intel 64bit + JDK ver 1.6.0 + JavaCC ver 5.0
  [ 動作確認 ]
      Microsoft Windows 7 pro SP1 64bit    + JDK ver 1.6.0 (64bit)
