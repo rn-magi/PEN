@@ -51,7 +51,7 @@ PENで動作するプログラム言語は、
 詳しくは xDNCL-Language-Manual.pdf を参照してください。
 
 ＜動作条件＞
-PEN は Java で記述しているので JRE v1.6.x 以降が必要です。
+PEN は Java で記述しているので JRE v1.7 以降が必要です。
 Javaは下記のURLよりダウンロードできます
 
 ・JRE 1.7.0
