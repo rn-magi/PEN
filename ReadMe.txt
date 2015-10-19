@@ -9,7 +9,7 @@
  [ 開発環境 ]
      Mac OS X 10.10.5 Intel 64bit + JDK ver 1.7.0 + JavaCC ver 6.1_2
  [ 動作確認 ]
-     Microsoft Windows 7 pro SP1 64bit    + JDK ver 1.6.0 (64bit)
+     Microsoft Windows 7 pro SP1 64bit    + JDK ver 1.7.0 (64bit)
      Microsoft Windows 8.1 pro 64bit      + JDK ver 1.7.0 (64bit)
      Mac OS X 10.10.5 Intel 64bit         + JDK ver 1.7.0
  [  著作権  ] Copyright(C) 2003-2015 by 中村 亮太, 西田 知博, 松浦 敏雄
