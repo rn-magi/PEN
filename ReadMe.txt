@@ -33,12 +33,8 @@
   |  |- ArduinoSimple.ini           … 簡易版 Arduino制御用プログラム入力支援ボタン 定義ファイル
   |  |- LilyPadSimple.ini           … LilyPad Arduino制御用プログラム入力支援ボタン 定義ファイル
   |  -- littleBitsFirmata.ini       … littleBits Arduino with Firmata用プログラム入力支援ボタン 定義ファイル
-  |- ./lib/                         … Javaのライブラリ
-  |- ./lib64/                       … Javaのライブラリ(64bit版)
-  |- ./plugin/                      … プラグインファイル
   |- ./sample/                      … PENのサンプルプログラムです
   |- ChangeLog.txt                  … PENの更新履歴です
-  |- functionTable.ini              … プラグイン機能で呼び出す関数を定義するファイル
   |- PEN.jar                        … PEN本体です
   |- PEN.url                        … 配布元 Webページのリンクです
   |- Property.ini                   … PENの設定を行うファイルです
