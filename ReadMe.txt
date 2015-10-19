@@ -30,7 +30,9 @@
   |  |- Default.ini                 … プログラム入力支援ボタン 定義ファイル
   |  |- DrawList.ini                … 簡易版 描画専用プログラム入力支援ボタン 定義ファイル
   |  |- Arduino.ini                 … Arduino制御用プログラム入力支援ボタン 定義ファイル
-  |  -- ArduinoSimple.ini           … 簡易版 Arduino制御用プログラム入力支援ボタン 定義ファイル
+  |  |- ArduinoSimple.ini           … 簡易版 Arduino制御用プログラム入力支援ボタン 定義ファイル
+  |  |- LilyPadSimple.ini           … LilyPad Arduino制御用プログラム入力支援ボタン 定義ファイル
+  |  -- littleBitsFirmata.ini       … littleBits Arduino with Firmata用プログラム入力支援ボタン 定義ファイル
   |- ./lib/                         … Javaのライブラリ
   |- ./lib64/                       … Javaのライブラリ(64bit版)
   |- ./plugin/                      … プラグインファイル
