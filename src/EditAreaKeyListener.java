@@ -58,26 +58,26 @@ public class EditAreaKeyListener implements KeyListener {
 		String get = "", add = "", add2 = "";
 		get += e.getKeyChar();
 		if(get.equals("\n")){
-				try {
-					int rows	= edit_area.getLineCount();
-					int pos		= edit_area.getCaretPosition();
-					int line	= edit_area.getLineOfOffset(pos);
-					int last	= edit_area.getLineEndOffset(line);
-
-					if(pos == last - 1){
-						add = new EditAreaAddTab().AddTab(edit_area.getLineStartOffset(line-1),edit_area.getLineEndOffset(line-1) - 1, edit_area);
-						if(rows > line + 1){
-							add2 = new EditAreaAddTab().AddTab(edit_area.getLineStartOffset(line+1),edit_area.getLineEndOffset(line+1) - 1, edit_area);
-						}
-						if(add.length() > add2.length()){
-							edit_area.insert(add, pos);
-						}else{
-							edit_area.insert(add2, pos);
-						}
+			try {
+				int rows	= edit_area.getLineCount();
+				int pos		= edit_area.getCaretPosition();
+				int line	= edit_area.getLineOfOffset(pos);
+				int last	= edit_area.getLineEndOffset(line);
+				
+				if(pos == last - 1){
+					add = new EditAreaAddTab().AddTab(edit_area.getLineStartOffset(line-1),edit_area.getLineEndOffset(line-1) - 1, edit_area);
+					if(rows > line + 1){
+						add2 = new EditAreaAddTab().AddTab(edit_area.getLineStartOffset(line+1),edit_area.getLineEndOffset(line+1) - 1, edit_area);
 					}
-				} catch (BadLocationException e1) {
-					e1.printStackTrace();
+					if(add.length() > add2.length()){
+						edit_area.insert(add, pos);
+					}else{
+						edit_area.insert(add2, pos);
+					}
 				}
+			} catch (BadLocationException e1) {
+				e1.printStackTrace();
+			}
 		}else if(get.equals("\t")){
 			int pos = edit_area.getCaretPosition();
 			edit_area.insert("  | ",pos);
