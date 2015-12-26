@@ -8,8 +8,6 @@ public class EditAreaKeyListener implements KeyListener {
 	private int SS = 0;
 	private int SN = 0;
 	
-	private boolean shift_flag = true;
-	
 	private JTextArea edit_area;
 	private EditSelection edit_selection;
 	
@@ -22,10 +20,7 @@ public class EditAreaKeyListener implements KeyListener {
 		SS = edit_area.getSelectionStart();
 		SN = edit_area.getSelectionEnd();
 		
-		if( e.getKeyCode() == KeyEvent.VK_SHIFT )
-			shift_flag = false;
-		
-		if( shift_flag ) {
+		if( e.getModifiers() != KeyEvent.SHIFT_MASK ) {
 			switch(e.getKeyCode()){
 				case KeyEvent.VK_LEFT :
 					if(SS != SN)
@@ -48,10 +43,7 @@ public class EditAreaKeyListener implements KeyListener {
 	}
 	
 	public void keyReleased(KeyEvent e) {
-		if( e.getKeyCode() == KeyEvent.VK_SHIFT )
-			shift_flag = true;
-		
-		if( shift_flag ) {
+		if( e.getModifiers() != KeyEvent.SHIFT_MASK  ) {
 			switch(e.getKeyCode()){
 				case KeyEvent.VK_LEFT	:
 				case KeyEvent.VK_RIGHT	:
