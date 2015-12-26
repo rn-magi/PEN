@@ -1,3 +1,4 @@
+import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -9,10 +10,17 @@ public class EditAreaKeyListener implements KeyListener {
 	private int SN = 0;
 	
 	private JTextArea edit_area;
+	private JTextArea breakpoint;
+	private JTextArea run_point;
+	private JTextArea numbar_area;
+	
 	private EditSelection edit_selection;
 	
-	public EditAreaKeyListener(JTextArea ea){
-		edit_area = ea;
+	public EditAreaKeyListener(JTextArea edit_area, JTextArea breakpoint, JTextArea run_point, JTextArea numbar_area){
+		this.edit_area = edit_area;
+		this.breakpoint = breakpoint;
+		this.run_point = run_point;
+		this.numbar_area = numbar_area;
 		edit_selection = new EditSelection(edit_area);
 	}
 		
@@ -20,6 +28,21 @@ public class EditAreaKeyListener implements KeyListener {
 		SS = edit_area.getSelectionStart();
 		SN = edit_area.getSelectionEnd();
 		
+		if(e.getModifiers() == KeyEvent.META_MASK || e.getModifiers() == KeyEvent.CTRL_MASK ) {
+			if(e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_DOWN ) {
+				Font f = edit_area.getFont();
+				String name = f.getFontName();
+				int style = f.getStyle();
+				int size = f.getSize();
+				
+				if( e.getKeyCode() == KeyEvent.VK_UP ) {
+					size++;
+				} else if( e.getKeyCode() == KeyEvent.VK_DOWN && size > 11 ) {
+					size--;
+				}
+				setFont(new Font(name, style, size));
+			}
+		}
 		if( e.getModifiers() != KeyEvent.SHIFT_MASK ) {
 			switch(e.getKeyCode()){
 				case KeyEvent.VK_LEFT :
@@ -83,5 +106,12 @@ public class EditAreaKeyListener implements KeyListener {
 			edit_area.insert("  | ",pos);
 			edit_area.replaceRange("",pos-1,pos);
 		}
+	}
+	
+	public void setFont(Font font) {
+		edit_area.setFont(font);
+		breakpoint.setFont(font);
+		run_point.setFont(font);
+		numbar_area.setFont(font);
 	}
 }

@@ -265,7 +265,7 @@ public class MainGUI {
 				edit_area.setDocument(edit_doc);
 				edit_area.setTabSize(4);
 				edit_area.setFont(font);
-				edit_area.addKeyListener(new EditAreaKeyListener(edit_area));
+				edit_area.addKeyListener(new EditAreaKeyListener(edit_area, breakpoint, run_point, numbar_area));
 				edit_area.addMouseListener(new EditAreaMouseListener(edit_area));
 				
 				try {
