@@ -2,6 +2,7 @@ import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.text.BadLocationException;
 
@@ -14,13 +15,16 @@ public class EditAreaKeyListener implements KeyListener {
 	private JTextArea run_point;
 	private JTextArea numbar_area;
 	
+	private JTable var_table;
+	
 	private EditSelection edit_selection;
 	
-	public EditAreaKeyListener(JTextArea edit_area, JTextArea breakpoint, JTextArea run_point, JTextArea numbar_area){
+	public EditAreaKeyListener(JTextArea edit_area, JTextArea breakpoint, JTextArea run_point, JTextArea numbar_area, JTable var_table){
 		this.edit_area = edit_area;
 		this.breakpoint = breakpoint;
 		this.run_point = run_point;
 		this.numbar_area = numbar_area;
+		this.var_table = var_table;
 		edit_selection = new EditSelection(edit_area);
 	}
 		
@@ -113,5 +117,8 @@ public class EditAreaKeyListener implements KeyListener {
 		breakpoint.setFont(font);
 		run_point.setFont(font);
 		numbar_area.setFont(font);
+		var_table.setFont(font);
+		
+		var_table.setRowHeight(font.getSize() + 5);
 	}
 }
