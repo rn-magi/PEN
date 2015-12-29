@@ -8,7 +8,7 @@
 	<property name="pkg.dir" value="./pkg" />
 	
 	<property name="major_ver" value="1" />
-	<property name="minor_vev" value="23" />
+	<property name="minor_vev" value="24" />
 	<property name="local_dev" value="" />
 	<property name="pkg_pen.dir" value="PEN_v${major_ver}${minor_vev}${local_dev}" />
 
