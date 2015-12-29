@@ -1,5 +1,63 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.22_5 (2015/12/29)
+  [ Memo ]
+    ・JavaCC のバージョンを 5.0.0 -> 6.1.2 に変更
+    ・動作する Java のバージョンを7以降に変更
+  [ New ]
+    ・編集画面で「Ctrl + ↑」や「Ctrl + ↓」を押して文字の大きさを変更できる機能を追加
+  [ BugFix ]
+    ・関数内の return が正常に動作しなかったのを修正
+    ・配列の引数で計算式を記述できなかったのを修正
+  [ Fix ]
+    ・（内部修正）リファクタリング
+    ・開発環境の変化に伴い ReadMe を修正
+    ・起動のための Java のバージョンを7以降に変更に伴い ReadMe を修正
+    ・サンプルプログラムの微調整
+    ・LilyPad Arduino用のプログラム入力支援ボタン定義ファイルの修正
+    ・littleBits Arduino用のプログラム入力支援ボタン定義ファイルの修正
+    ・plugin を配布パッケージに含まないように修正
+    ・lib64ディレクトリの廃止
+
+  [ NewFile ]
+    - Declaration.java
+  [ FixFile ]
+    - ./ButtonList/LilyPadSimple.ini
+    - ./ButtonList/littleBitsFirmata.ini
+    - ./sample/Game/JanKenGame.pen
+    - ./sample/Game/KazuAteGame.pen
+    - ./sample/Primitive1/random.pen
+    - ./sample/Primitive1/repeat-until.pen
+    - ./sample/Primitive2/MaxMin01.pen
+    - ./sample/Primitive2/MaxMin02.pen
+    - ./sample/Primitive2/MaxMin03.pen
+    - ASTFunction.java
+    - ASTFunctionVar.java
+    - ASTgRepaint.java
+    - ASTgSetRepaintFlag.java
+    - ASTInfiniteLoop.java
+    - ASTReturn.java
+    - ASTVarDecl.java
+    - ButtonEdit.java
+    - EditAreaKeyListener.java
+    - IntVConvertArduino.java
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserTokenManager.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - JJTIntVParserState.java
+    - MainGUI.java
+    - PEN.java
+    - PenPlugin.java
+    - PenProperties.java
+    - ReadMe.txt
+    - SimpleCharStream.java
+    - Token.java
+    - TokenMgrError.java
+
 ・ver 1.22_4 (2015/02/10)
   [ New ]
     ・無限ループの実装
