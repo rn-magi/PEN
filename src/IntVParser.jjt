@@ -105,7 +105,7 @@ TOKEN [IGNORE_CASE] :
 	|	< VARBOOLEAN	: "真偽" >
 	|	< PROCEDURAL		: "手続き" >
 	|	< ENDPROCEDURAL		: "手続き" ( "終了" | "終わり" ) >
-	|	< BREAKPROCEDURAL	: "手続きを抜ける" >
+	|	< RETURNPROCEDURAL	: "手続きを抜ける" >
 	|	< FUNCTION			: "関数" >
 	|	< ENDFUNCTION		: "関数" ( "終了" | "終わり" ) >
 	|	< BREAKFUNCTION		: "関数を抜ける" >
@@ -425,6 +425,7 @@ void Stat() #void :
 	|	IfStat()
 	|	RepeatUntil()
 	|	Break()
+	|	ReturnProcedural()
 //	|	GetStat()
 //	|	Block()
 	|	gOpenWindow()
@@ -538,14 +539,14 @@ void WhileSwitchFor() :
 		<WHILE> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
 		( Stat() )* #Block
 		<ENDLOOP> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
-		{ jjtThis.p = jjtThis.wh; }
+		{ jjtThis.p = BlockType.WHILE; }
 		|	<SWITCH> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
 			(Stat())* #Case
 			<ENDSWITCH> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
-			{ jjtThis.p = jjtThis.sw; }
+			{ jjtThis.p = BlockType.SWITCH; }
 		|	<FOR> AddExpr() <FOR2> AddExpr() <FOR3> ForStatAdd() { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
 			(Stat())* #Block <ENDLOOP> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
-			{ jjtThis.p = jjtThis.fr; }
+			{ jjtThis.p = BlockType.FOR; }
 	)
 }
 
@@ -1168,6 +1169,12 @@ void Break() :
 {}
 {
 	<BREAK> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
+}
+
+void ReturnProcedural() :
+{}
+{
+	<RETURNPROCEDURAL> {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}
 }
 
 void Literal() :

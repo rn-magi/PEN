@@ -334,6 +334,9 @@ public class IntVParserDefaultVisitor implements IntVParserVisitor{
   public Object visit(ASTBreak node, Object data){
     return defaultVisit(node, data);
   }
+  public Object visit(ASTReturnProcedural node, Object data){
+    return defaultVisit(node, data);
+  }
   public Object visit(ASTLiteral node, Object data){
     return defaultVisit(node, data);
   }
@@ -353,4 +356,4 @@ public class IntVParserDefaultVisitor implements IntVParserVisitor{
     return defaultVisit(node, data);
   }
 }
-/* JavaCC - OriginalChecksum=dbe5b97eadadfceb8fbcda086a90fa55 (do not edit this line) */
+/* JavaCC - OriginalChecksum=1dd1a5f79fe0462fe057db416ed9bac2 (do not edit this line) */

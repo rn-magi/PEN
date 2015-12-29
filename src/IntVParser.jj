@@ -109,7 +109,7 @@ TOKEN [IGNORE_CASE] :
 	|	< VARBOOLEAN	: "\u771f\u507d" >
 	|	< PROCEDURAL		: "\u624b\u7d9a\u304d" >
 	|	< ENDPROCEDURAL		: "\u624b\u7d9a\u304d" ( "\u7d42\u4e86" | "\u7d42\u308f\u308a" ) >
-	|	< BREAKPROCEDURAL	: "\u624b\u7d9a\u304d\u3092\u629c\u3051\u308b" >
+	|	< RETURNPROCEDURAL	: "\u624b\u7d9a\u304d\u3092\u629c\u3051\u308b" >
 	|	< FUNCTION			: "\u95a2\u6570" >
 	|	< ENDFUNCTION		: "\u95a2\u6570" ( "\u7d42\u4e86" | "\u7d42\u308f\u308a" ) >
 	|	< BREAKFUNCTION		: "\u95a2\u6570\u3092\u629c\u3051\u308b" >
@@ -665,6 +665,7 @@ void Stat()       :
 	|	IfStat()
 	|	RepeatUntil()
 	|	Break()
+	|	ReturnProcedural()
 //	|	GetStat()
 //	|	Block()
 	|	gOpenWindow()
@@ -1163,7 +1164,7 @@ void WhileSwitchFor() :
                   jjtc000 = false;
                 }
 /*@egen*/
-		{ jjtn000.p = jjtn000.wh; }
+		{ jjtn000.p = BlockType.WHILE; }
 		|	<SWITCH> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }/*@bgen(jjtree) Case */
                         {
                           ASTCase jjtn002 = new ASTCase(JJTCASE);
@@ -1199,7 +1200,7 @@ void WhileSwitchFor() :
                           jjtc000 = false;
                         }
 /*@egen*/
-			{ jjtn000.p = jjtn000.sw; }
+			{ jjtn000.p = BlockType.SWITCH; }
 		|	<FOR> AddExpr() <FOR2> AddExpr() <FOR3> ForStatAdd() { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }/*@bgen(jjtree) Block */
                         {
                           ASTBlock jjtn003 = new ASTBlock(JJTBLOCK);
@@ -1234,7 +1235,7 @@ void WhileSwitchFor() :
                           jjtc000 = false;
                         }
 /*@egen*/
-			{ jjtn000.p = jjtn000.fr; }
+			{ jjtn000.p = BlockType.FOR; }
 	)/*@bgen(jjtree)*/
         } catch (Throwable jjte000) {
           if (jjtc000) {
@@ -4584,6 +4585,29 @@ void Break() :
                   jjtree.closeNodeScope(jjtn000, true);
                   jjtc000 = false;
                 }
+/*@egen*/ {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}/*@bgen(jjtree)*/
+        } finally {
+          if (jjtc000) {
+            jjtree.closeNodeScope(jjtn000, true);
+          }
+        }
+/*@egen*/
+}
+
+void ReturnProcedural() :
+{/*@bgen(jjtree) ReturnProcedural */
+  ASTReturnProcedural jjtn000 = new ASTReturnProcedural(JJTRETURNPROCEDURAL);
+  boolean jjtc000 = true;
+  jjtree.openNodeScope(jjtn000);
+/*@egen*/}
+{/*@bgen(jjtree) ReturnProcedural */
+        try {
+/*@egen*/
+	<RETURNPROCEDURAL>/*@bgen(jjtree)*/
+                           {
+                             jjtree.closeNodeScope(jjtn000, true);
+                             jjtc000 = false;
+                           }
 /*@egen*/ {jjtn000.line_num1 = jj_consume_token(SM).beginLine;}/*@bgen(jjtree)*/
         } finally {
           if (jjtc000) {

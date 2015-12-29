@@ -25,6 +25,8 @@ public class IntVExecuter implements IntVParserVisitor{
 	private Stack stacksymTable		= new Stack();
 	private Stack stackTableNoTable = new Stack();
 	
+	private Stack blockState		= new Stack<Declaration>();
+	
 	private Declaration declaration;
 	private boolean flag		= false;
 	private boolean NodeDump	= false;
@@ -136,8 +138,18 @@ public class IntVExecuter implements IntVParserVisitor{
 		
 		// プログラムの実行
 		for (i = 0; i < k; i++) {
-			if( !(node.jjtGetChild(i) instanceof ASTFunction)){
-				node.jjtGetChild(i).jjtAccept(this, data);
+			Node childNode = node.jjtGetChild(i);
+			if(childNode instanceof ASTBreak) {
+				gui.consoleAppend.appendAll("### "  + ((ASTBreak) childNode).line_num1 + "行目の「繰り返しを抜ける」は繰り返し命令内でしか記述することはできません。\n");
+				runBreak(true);
+			} else if(childNode instanceof ASTReturn) {
+				gui.consoleAppend.appendAll("### "  + ((ASTReturn) childNode).line_num1 + "行目の「○○を返す」は戻り値ありの関数定義内でしか記述することはできません。\n");
+				runBreak(true);
+			} else if(childNode instanceof ASTReturnProcedural) {
+				gui.consoleAppend.appendAll("### "  + ((ASTReturnProcedural) childNode).line_num1 + "行目の「手続きを抜ける」は戻り値なしの関数定義内でしか記述することはできません。\n");
+				runBreak(true);
+			} else if( !(childNode instanceof ASTFunction)){
+				childNode.jjtAccept(this, data);
 			}
 		}
 		IO.closeFileAll();
@@ -550,7 +562,7 @@ public class IntVExecuter implements IntVParserVisitor{
 		run_flag(node.line_num1, true);
 		if(b.booleanValue()) {
 			Object var = node.jjtGetChild(1).jjtAccept(this, data);
-			if(var instanceof ASTBreak || var instanceof ASTReturn) {
+			if(var instanceof ASTBreak || var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
 				return var;
 			}
 			if(node.jjtGetNumChildren() == 3) {
@@ -559,7 +571,7 @@ public class IntVExecuter implements IntVParserVisitor{
 		}else if (node.jjtGetNumChildren() == 3) {
 			run_flag(node.line_num2, true);
 			Object var = node.jjtGetChild(2).jjtAccept(this, data);
-			if(var instanceof ASTBreak || var instanceof ASTReturn) {
+			if(var instanceof ASTBreak || var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
 				return var;
 			}
 		}
@@ -575,13 +587,16 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTDoWhileStat node, Object data) {
 		Boolean b;
+		blockState.push(BlockType.LOOP);
+		
 		do {
 			run_flag(node.line_num1, true);
 			Object var = node.jjtGetChild(0).jjtAccept(this, data);
 			if(var instanceof ASTBreak){
 				run_flag(node.line_num2, true);
 				break;
-			} else if(var instanceof ASTReturn) {
+			} else if(var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
+				blockState.pop();
 				return var;
 			}
 			
@@ -598,6 +613,7 @@ public class IntVExecuter implements IntVParserVisitor{
 			}
 		} while (true);
 
+		blockState.pop();
 		return null;
 	}
 
@@ -606,13 +622,16 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTRepeatUntil node, Object data) {
 		Boolean b;
+		blockState.push(BlockType.LOOP);
+		
 		do {
 			run_flag(node.line_num1, true);
 			Object var = node.jjtGetChild(0).jjtAccept(this, data);
 			if(var instanceof ASTBreak){
 				run_flag(node.line_num2, true);
 				break;
-			} else if(var instanceof ASTReturn) {
+			} else if(var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
+				blockState.pop();
 				return var;
 			}
 			
@@ -628,6 +647,8 @@ public class IntVExecuter implements IntVParserVisitor{
 				break;
 			}
 		} while (true);
+		
+		blockState.pop();
 		return null;
 	}
 
@@ -685,14 +706,26 @@ public class IntVExecuter implements IntVParserVisitor{
 	}
 
 	public Object visit(ASTWhileSwitchFor node, Object data) {
-		if (node.p.equals(node.wh)) {
-			return runWhileStat(node, data);
-		} else if(node.p.equals(node.sw)){
-			return runSwitch(node, data);
-		} else if(node.p.equals(node.fr)){
-			return runFor(node, data);
+		blockState.push(BlockType.LOOP);
+		Object r = null;
+		
+		switch (node.p) {
+			case WHILE:
+				r = runWhileStat(node, data);
+				break;
+			case SWITCH:
+				r = runSwitch(node, data);
+				break;
+			case FOR:
+				r = runFor(node, data);
+				break;
+			default:
+				blockState.pop();
+				return null;
 		}
-		return null;
+
+		blockState.pop();
+		return r;
 	}
 
 	/**
@@ -712,7 +745,7 @@ public class IntVExecuter implements IntVParserVisitor{
 				if(var instanceof ASTBreak){
 					run_flag(node.line_num2, true);
 					break;
-				} else if(var instanceof ASTReturn) {
+				} else if(var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
 					return var;
 				}
 			}else{
@@ -801,7 +834,7 @@ public class IntVExecuter implements IntVParserVisitor{
 				if(obj instanceof ASTBreak){
 					run_flag(node.line_num2, true);
 					break;
-				} else if(obj instanceof ASTReturn) {
+				} else if(obj instanceof ASTReturn || obj instanceof ASTReturnProcedural) {
 					return obj;
 				}
 				run_flag(node.line_num1, true);
@@ -851,15 +884,18 @@ public class IntVExecuter implements IntVParserVisitor{
 	 * 無限ループ
 	 */
 	public Object visit(ASTInfiniteLoop node, Object data) {
+		blockState.push(BlockType.LOOP);
 		while(true){
 			run_flag(node.line_num1, true);
 			Object var = node.jjtGetChild(0).jjtAccept(this, data);
 			if( var instanceof ASTBreak ) {
 				break;
-			} else if( var instanceof ASTReturn) {
+			} else if( var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
+				blockState.pop();
 				return var;
 			}
 		}
+		blockState.pop();
 		run_flag(node.line_num2, true);
 		return null;
 	}
@@ -910,10 +946,36 @@ public class IntVExecuter implements IntVParserVisitor{
 
 		for (i = 0; i < k; i++){
 			Object var = node.jjtGetChild(i).jjtAccept(this, data);
-			if(var instanceof ASTBreak || var instanceof ASTReturn) {
-				return var;
+			if(var instanceof ASTBreak) {
+				if(blockState.peek() == BlockType.LOOP) {
+					return var;
+				} else {
+					gui.consoleAppend.appendAll("### "  + ((ASTBreak) var).line_num1 + "行目の「繰り返しを抜ける」は繰り返し命令内でしか記述することはできません。\n");
+					runBreak(true);
+				}
+			} else if(var instanceof ASTReturn) {
+				if(blockState.search(BlockType.FUNCTION) > 0
+					&& (blockState.peek() == BlockType.FUNCTION
+							|| blockState.search(BlockType.PROCEDURAL) < 0
+							|| blockState.search(BlockType.FUNCTION) < blockState.search(BlockType.PROCEDURAL))) {
+					return var;
+				} else {
+					gui.consoleAppend.appendAll("### "  + ((ASTReturn) var).line_num1 + "行目の「○○を返す」は戻り値ありの関数定義内でしか記述することはできません。\n");
+					runBreak(true);
+				}
+			} else if(var instanceof ASTReturnProcedural) {
+				if(blockState.search(BlockType.PROCEDURAL) > 0
+					&& (blockState.peek() == BlockType.PROCEDURAL
+							|| blockState.search(BlockType.FUNCTION) < 0
+							|| blockState.search(BlockType.PROCEDURAL) < blockState.search(BlockType.FUNCTION))) {
+					return var;
+				} else {
+					gui.consoleAppend.appendAll("### "  + ((ASTReturnProcedural) var).line_num1 + "行目の「手続きを抜ける」は戻り値なしの関数定義内でしか記述することはできません。\n");
+					runBreak(true);
+				}
 			}
 		}
+
 		return null;
 	}
 
@@ -921,6 +983,14 @@ public class IntVExecuter implements IntVParserVisitor{
 	 * ループ処理を抜ける break文 の処理
 	 */
 	public  Object visit(ASTBreak node, Object data) {
+		run_flag(node.line_num1, true);
+		return node;
+	}
+	
+	/**
+	 * 手続きを抜ける return文 の処理
+	 */
+	public  Object visit(ASTReturnProcedural node, Object data) {
 		run_flag(node.line_num1, true);
 		return node;
 	}
@@ -2331,6 +2401,12 @@ public class IntVExecuter implements IntVParserVisitor{
 			
 			run_flag(fc.line_num1, true);
 			
+			if(fc.decl == Declaration.PROCEDURAL){
+				blockState.push(BlockType.PROCEDURAL);
+			} else {
+				blockState.push(BlockType.FUNCTION);
+			}
+			
 			Object return_var =null;
 			k = fc.jjtGetNumChildren();
 			int runNode = 0;
@@ -2341,7 +2417,7 @@ public class IntVExecuter implements IntVParserVisitor{
 			callVar.clear();
 			return_var = fc.jjtGetChild(runNode).jjtAccept(this, fc_data);
 			
-			if(return_var == null) {
+			if(return_var == null || return_var instanceof ASTReturnProcedural) {
 				run_flag(fc.line_num2, true);
 			} else if(return_var instanceof ASTReturn) {
 				return_var = ((ASTReturn) return_var).returnValue;
@@ -2362,6 +2438,8 @@ public class IntVExecuter implements IntVParserVisitor{
 			}
 			
 			run_flag(node.line_num1, true);
+			
+			blockState.pop();
 			
 			if(return_var instanceof Vector){
 				return (Vector) return_var;

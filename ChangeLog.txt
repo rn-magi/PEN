@@ -1,5 +1,30 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.24r1 (2015/12/30)
+  [ New ]
+    ・戻り値なしの関数を抜けられるよう「手続きを抜ける」という命令文を追加
+  [ BugFix ]
+    ・break文, return文 の記述場所を厳密にチェックするように修正
+  [ Fix ]
+    ・（内部修正）リファクタリング
+
+  [ NewFile ]
+    - ASTReturnProcedural.java
+  [ FixFile ]
+    - ASTWhileSwitchFor.java
+    - Declaration.java
+    - ChangeLog.txt
+    - IntVConvertArduino.java
+    - IntVExecuter.java
+    - IntVParser.java
+    - IntVParser.jj
+    - IntVParser.jjt
+    - IntVParserConstants.java
+    - IntVParserDefaultVisitor.java
+    - IntVParserTreeConstants.java
+    - IntVParserVisitor.java
+    - MainGUI.java
+
 ・ver 1.23 (2015/12/29)
   [ Memo ]
     ・ver 1.22_5 を安定バージョンとしてリリース

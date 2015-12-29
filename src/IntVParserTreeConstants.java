@@ -111,12 +111,13 @@ public interface IntVParserTreeConstants
   public int JJTFUNCTIONCALL = 107;
   public int JJTRETURN = 108;
   public int JJTBREAK = 109;
-  public int JJTLITERAL = 110;
-  public int JJTFLOATLITERAL = 111;
-  public int JJTTRUE = 112;
-  public int JJTFALSE = 113;
-  public int JJTSTRLIT = 114;
-  public int JJTEXTRA_STR = 115;
+  public int JJTRETURNPROCEDURAL = 110;
+  public int JJTLITERAL = 111;
+  public int JJTFLOATLITERAL = 112;
+  public int JJTTRUE = 113;
+  public int JJTFALSE = 114;
+  public int JJTSTRLIT = 115;
+  public int JJTEXTRA_STR = 116;
 
 
   public String[] jjtNodeName = {
@@ -230,6 +231,7 @@ public interface IntVParserTreeConstants
     "FunctionCall",
     "Return",
     "Break",
+    "ReturnProcedural",
     "Literal",
     "FloatLiteral",
     "True",
@@ -238,4 +240,4 @@ public interface IntVParserTreeConstants
     "EXTRA_STR",
   };
 }
-/* JavaCC - OriginalChecksum=3ad93c8adfff95cba8a827cb7b124ca0 (do not edit this line) */
+/* JavaCC - OriginalChecksum=4ed27ad368354f0c9c6c909324a582fe (do not edit this line) */
