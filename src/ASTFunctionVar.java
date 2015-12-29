@@ -16,5 +16,5 @@ public class ASTFunctionVar extends SimpleNode {
   }
 
   /** customizing codes **/
-  	public int decl;
+  public Declaration decl;
 }

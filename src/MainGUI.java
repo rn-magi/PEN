@@ -32,7 +32,7 @@ import javax.swing.text.PlainDocument;
  *
  */
 public class MainGUI {
-	public String Version			= "ver1.22_4";
+	public String Version			= "ver1.22_5";
 	public String SystemName		= "PEN";
 	public String WindowName		= SystemName + " " + Version;
 	public MyJFrame main_window;
@@ -101,17 +101,12 @@ public class MainGUI {
 	/**
 	 * 実行時の引数の解析 および 設定ファイルを読み込む
 	 */
-	public MainGUI(String argv[], boolean isApplet){
-		penPro = new PenProperties(isApplet);
+	public MainGUI(String argv[]){
+		penPro = new PenProperties();
 
-		if (!isApplet){
-			CreateFrame();
-			ButtonListFile = penPro.getProperty(PenProperties.PEN_SYSTEM_DIR) + PenProperties.BUTTON_LIST_FILE;
-		} else {
-			ButtonListFile = PenProperties.BUTTON_LIST_FILE;
-		}
+		CreateFrame();
+		ButtonListFile = penPro.getProperty(PenProperties.PEN_SYSTEM_DIR) + PenProperties.BUTTON_LIST_FILE;
 
-		
 		if (argv != null) {
 			for(int i = 0; i < argv.length; i++) {
 				if(argv[i].equals("-teacher") || argv[i].equals("-t")){
@@ -203,8 +198,9 @@ public class MainGUI {
 //			System.out.println(e);
 //		}
 		
-		for(int i = 0 ; i < filter.length ; i++)
+		for(int i = 0 ; i < filter.length ; i++) {
 			fc.addChoosableFileFilter(filter[i]);
+		}
 
 		main_window.addWindowListener(new MyWindowAdapter(this));
 		main_window.setIconImage(Toolkit.getDefaultToolkit().createImage(getClass().getResource("pen.png")));
@@ -269,14 +265,11 @@ public class MainGUI {
 				edit_area.setDocument(edit_doc);
 				edit_area.setTabSize(4);
 				edit_area.setFont(font);
-				edit_area.addKeyListener(new EditAreaKeyListener(edit_area));
+				edit_area.addKeyListener(new EditAreaKeyListener(edit_area, breakpoint, run_point, numbar_area, var_table));
 				edit_area.addMouseListener(new EditAreaMouseListener(edit_area));
 				
 				try {
-					// Application
-					if (main_window instanceof JFrame) {
-						edit_area_drop.addDropTargetListener(new FileDropOpen(this));
-					}
+					edit_area_drop.addDropTargetListener(new FileDropOpen(this));
 					edit_area.setDropTarget(edit_area_drop);
 				} catch (TooManyListenersException e) {
 					e.printStackTrace();

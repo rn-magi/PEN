@@ -24,6 +24,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	private int arrayField	= 0;
 	
 	private int indentLevel = 1;
+	private boolean indentSkip = false;
 	
 	private PenProperties penPro;
 	
@@ -172,18 +173,24 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 手続き・関数呼び出しのノードを symTable に格納
 	 */
 	public Object visit(ASTFunction node, Object data) {
-		if( node.decl == PenProperties.DECLARATION_PROCEDURAL ){
-			outPutCode("void ");
-		} else if( node.decl == PenProperties.DECLARATION_INT ){
-			outPutCode("int ");
-		} else if( node.decl == PenProperties.DECLARATION_LONG ){
-			outPutCode("long ");
-		} else if( node.decl == PenProperties.DECLARATION_DOUBLE ) {
-			outPutCode("double ");
-		} else if( node.decl == PenProperties.DECLARATION_STRING ) {
-			// 文字列
-		} else if( node.decl == PenProperties.DECLARATION_BOOLEAN ) {
-			outPutCode("boolean ");
+		switch(node.decl) {
+			case PROCEDURAL:
+				outPutCode("void ");
+				break;
+			case INT:
+				outPutCode("int ");
+				break;
+			case LONG:
+				outPutCode("long ");
+				break;
+			case DOUBLE:
+				outPutCode("double ");
+				break;
+			case STRING:
+				break;
+			case BOOLEAN:
+				outPutCode("boolean ");
+				break;
 		}
 		
 		outPutCode(node.varName);
@@ -214,16 +221,21 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 * 仮引数の処理を行う
 	 */
 	public Object visit(ASTFunctionVar node, Object data) {
-		if( node.decl == PenProperties.DECLARATION_INT ){
-			outPutCode("int ");
-		} else if (node.decl == PenProperties.DECLARATION_LONG) {
-			outPutCode("long ");
-		} else if (node.decl == PenProperties.DECLARATION_DOUBLE) {
-			outPutCode("double ");
-		} else if (node.decl == PenProperties.DECLARATION_STRING) {
-			outPutCode("char ");
-		} else if (node.decl == PenProperties.DECLARATION_BOOLEAN) {
-			outPutCode("boolean ");
+		switch(node.decl) {
+			case INT:
+				outPutCode("int ");
+				break;
+			case LONG:
+				outPutCode("long ");
+				break;
+			case DOUBLE:
+				outPutCode("double ");
+				break;
+			case STRING:
+				break;
+			case BOOLEAN:
+				outPutCode("boolean ");
+				break;
 		}
 		node.jjtGetChild(0).jjtAccept(this, data);
 
@@ -242,16 +254,21 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	 */
 	public Object visit(ASTVarDecl node, Object data) {
 		outPutIndent();
-		if( node.decl == PenProperties.DECLARATION_INT ){
-			outPutCode("int ");
-		} else if (node.decl == PenProperties.DECLARATION_LONG) {
-			outPutCode("long ");
-		} else if (node.decl == PenProperties.DECLARATION_DOUBLE) {
-			outPutCode("double ");
-		} else if (node.decl == PenProperties.DECLARATION_STRING) {
-			outPutCode("char ");
-		} else if (node.decl == PenProperties.DECLARATION_BOOLEAN) {
-			outPutCode("boolean ");
+		switch(node.decl) {
+			case INT:
+				outPutCode("int ");
+				break;
+			case LONG:
+				outPutCode("long ");
+				break;
+			case DOUBLE:
+				outPutCode("double ");
+				break;
+			case STRING:
+				break;
+			case BOOLEAN:
+				outPutCode("boolean ");
+				break;
 		}
 
 		// 子ノードの数を取得
@@ -347,6 +364,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	public Object visit(ASTIfStat node, Object data) {
 		// TODO IF文の処理
 		outPutIndent();
+		indentSkip = false;
 		
 		if (node.jjtGetNumChildren() >= 2) {
 			outPutCode("if ");
@@ -369,6 +387,7 @@ public class IntVConvertArduino implements IntVParserVisitor{
 			outPutCode("else");
 			// 子ノードにASTIfStatがきたらASTIfStatの子ノードを表示
 			if (node.jjtGetChild(2) instanceof ASTIfStat) {
+				indentSkip = true;
 				outPutCode(" ");
 				node.jjtGetChild(2).jjtAccept(this, data);
 			} else if (node.jjtGetNumChildren() == 3) {
@@ -1542,8 +1561,10 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	}
 	
 	public void outPutIndent(){
-		for(int i = 0; i < indentLevel; i++){
-			outPutCode("\t");
+		if(!indentSkip) {
+			for(int i = 0; i < indentLevel; i++) {
+				outPutCode("\t");
+			}
 		}
 	}
 	

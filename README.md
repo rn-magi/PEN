@@ -13,7 +13,7 @@ PENで動作するプログラム言語は
 ## 実行ファイルの生成と実行
 
 ```
-% ant make
+% ant build
 % cd ./pkg/run
 % java -jar PEN.jar
 ```
@@ -27,20 +27,19 @@ PENで動作するプログラム言語は
 ## 実行ファイルを削除して再生成
 
 ```
-% ant clean
-% ant make
+% ant rebuild
 ```
 
 ## 配布パッケージの作成
 
 ```
-% ant build
+% ant release
 ```
 
-*./pkg* に配布用のパッケージが生成されます。
+`./pkg` に配布用のパッケージが生成されます。
 
 ## 開発者について
 
-* **中村 亮太** (*Ryota Nakamura*) - 大阪市立大学 大学院創造都市研究科
-* **西田 知博** (*Tomohiro Nishida*) - 大阪学院大学 情報学部
-* **松浦 敏雄** (*Toshio Matsuura*) - 大阪市立大学 大学院創造都市研究科
+* **中村 亮太** ( *Ryota Nakamura* ) - 大阪市立大学 大学院創造都市研究科
+* **西田 知博** ( *Tomohiro Nishida* ) - 大阪学院大学 情報学部
+* **松浦 敏雄** ( *Toshio Matsuura* ) - 大阪市立大学 大学院創造都市研究科

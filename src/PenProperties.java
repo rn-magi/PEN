@@ -31,41 +31,30 @@ public class PenProperties {
 	public final static String SYSTEM_OS_BITS			= "system.os.bits";
 	
 	public final static String Arduino_EXEC_PATH		= "arduino.exec.path";
-
-	public final static int DECLARATION_PROCEDURAL	= 0;
-	public final static int DECLARATION_INT			= 1;
-	public final static int DECLARATION_LONG		= 2;
-	public final static int DECLARATION_DOUBLE		= 3;
-	public final static int DECLARATION_STRING		= 4;
-	public final static int DECLARATION_BOOLEAN		= 5;
 	
-	public PenProperties(boolean isApplet){
+	public PenProperties(){
 		String dir = "";
-		if (!isApplet){
-			File path = new File(new File(".").getAbsoluteFile().getParent());
-			
-			if( path.getParent() == null ) {
-				dir = "." + FileSeparator;
-			} else if( path.isDirectory() ){
-				dir = path.getPath() + FileSeparator;
-			} else {
-				dir = path.getParent() + FileSeparator;
-			}
-			setProperty(PenProperties.PEN_SYSTEM_DIR, dir);
-			setProperty(PenProperties.PEN_SYSTEM_HOME, System.getProperty("user.home"));
-			setProperty(PenProperties.SYSTEM_OS_BITS, getOSBit());
-			
-			String newLibPath = "lib";
-			if(getProperty(PenProperties.SYSTEM_OS_BITS).equals("64")){
-				newLibPath += "64";
-			}
-			setProperty(PenProperties.PEN_SYSTEM_LIBRARY, newLibPath);
+		File path = new File(new File(".").getAbsoluteFile().getParent());
+		
+		if( path.getParent() == null ) {
+			dir = "." + FileSeparator;
+		} else if( path.isDirectory() ){
+			dir = path.getPath() + FileSeparator;
+		} else {
+			dir = path.getParent() + FileSeparator;
 		}
+		setProperty(PenProperties.PEN_SYSTEM_DIR, dir);
+		setProperty(PenProperties.PEN_SYSTEM_HOME, System.getProperty("user.home"));
+		setProperty(PenProperties.SYSTEM_OS_BITS, getOSBit());
+		
+		setProperty(PenProperties.PEN_SYSTEM_LIBRARY, "lib");
 		
 		try {
 			PROPERTY.load(getClass().getResourceAsStream(PropertyFileName));
-			if (!isApplet){
-				PROPERTY.load(new FileInputStream(dir + PropertyFileName));
+			
+			String localPropertyFile = dir + PropertyFileName;
+			if(new File(localPropertyFile).exists()) {
+				PROPERTY.load(new FileInputStream(localPropertyFile));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

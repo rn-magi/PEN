@@ -9,25 +9,42 @@
 	
 	<property name="major_ver" value="1" />
 	<property name="minor_vev" value="22" />
-	<property name="local_dev" value="r4" />
+	<property name="local_dev" value="r5" />
 	<property name="pkg_pen.dir" value="PEN_v${major_ver}${minor_vev}${local_dev}" />
 
-	<target name="build" description="開発版配布パッケージの作成" depends="clean-all,make">
+	<target name="release" description="配布パッケージの作成" depends="clean-all,build">
 		<copy todir="${pkg.dir}/${pkg_pen.dir}">
 			<fileset dir="${run.dir}" />
 		</copy>
 	</target>
+	
+	<target name="build" description="実行ファイルのコンパイル" depends="compile">
+		<mkdir dir="${run.dir}" />
+		
+		<jar basedir="${binary.dir}" destfile="${run.dir}/PEN.jar" manifest="${manifestfile}" />
 
-	<target name="release-build" description="安定版配布パッケージの作成" depends="build">
-		<delete dir="${pkg.dir}/${pkg_pen.dir}/lib" />
-		<delete dir="${pkg.dir}/${pkg_pen.dir}/lib64" />
-		<delete dir="${pkg.dir}/${pkg_pen.dir}/plugin" />
-		<delete file="${pkg.dir}/${pkg_pen.dir}/functionTable.ini" />
+		<copy todir="${run.dir}/ButtonList">
+			<fileset dir="${source.dir}/ButtonList" />
+		</copy>
+		<copy todir="${run.dir}/Manual">
+			<fileset dir="./Manual">
+				<include name="**/*.pdf"/>
+			</fileset>
+		</copy>
+		<copy todir="${run.dir}/sample">
+			<fileset dir="./sample/xDNCL/sample" />
+		</copy>
+		<copy file="ChangeLog.txt" todir="${run.dir}" />
+		<copy file="ReadMe.txt" todir="${run.dir}" />
+		<copy file="PEN.url" todir="${run.dir}" />
+		
+		<copy file="${source.dir}/Property.ini" todir="${run.dir}" />
 	</target>
 	
-	<target name="make" description="実行ファイルのコンパイル" depends="compile,run" />
+	<target name="rebuild" description="実行ファイルの再コンパイル" depends="clean,build" />
 
 	<target name="compile" description="PENのコンパイル">
+		<mkdir dir="${binary.dir}" />
 		<javac
 			destdir="${binary.dir}"
 			srcdir="${source.dir}"
@@ -45,48 +62,14 @@
 		<copy file="${source.dir}/Property.ini" todir="${binary.dir}" />
 	</target>
 	
-	<target name="run" description="実行ファイルの生成">
-		<jar basedir="${binary.dir}" destfile="${run.dir}/PEN.jar" manifest="${manifestfile}" />
-
-		<copy todir="${run.dir}/ButtonList">
-			<fileset dir="${source.dir}/ButtonList" />
-		</copy>
-		<copy todir="${run.dir}/lib">
-			<fileset dir="./lib" />
-		</copy>
-		<copy todir="${run.dir}/lib64">
-			<fileset dir="./lib64" />
-		</copy>
-		<copy todir="${run.dir}/Manual">
-			<fileset dir="./Manual">
-				<include name="**/*.pdf"/>
-			</fileset>
-		</copy>
-		<copy todir="${run.dir}/sample">
-			<fileset dir="./sample/xDNCL/sample" />
-		</copy>
-		<copy file="ChangeLog.txt" todir="${run.dir}" />
-		<copy file="ReadMe.txt" todir="${run.dir}" />
-		<copy file="PEN.url" todir="${run.dir}" />
-		
-		<copy file="${source.dir}/Property.ini" todir="${run.dir}" />
-		<copy file="${source.dir}/functionTable.ini" todir="${run.dir}" />
-
-		<copy todir="${run.dir}/plugin">
-			<fileset dir="../penPluginDev/bin" />
-		</copy>
-	</target>
-
 	<target name="clean" description="テンポラリファイルの削除" depends="clean-bin,clean-run" />
 	
 	<target name="clean-bin" description="*.classファイルを削除">
 		<delete dir="${binary.dir}" />
-		<mkdir dir="${binary.dir}" />
 	</target>
 	
 	<target name="clean-run" description="実行ファイルを削除">
 		<delete dir="${run.dir}" />
-		<mkdir dir="${run.dir}" />
 	</target>
 	
 	<target name="clean-pkg" description="配布パッケージを削除">
@@ -114,6 +97,4 @@
 			<link href="http://docs.oracle.com/javase/jp/6/api/" />
 		</javadoc>
 	</target>
-
-	<target name="build-javadoc" description="JavaDocの再生成" depends="clean-docs,javadoc" />
 </project>

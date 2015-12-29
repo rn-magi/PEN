@@ -25,7 +25,7 @@ public class IntVExecuter implements IntVParserVisitor{
 	private Stack stacksymTable		= new Stack();
 	private Stack stackTableNoTable = new Stack();
 	
-	private int declaration		= 0;
+	private Declaration declaration;
 	private boolean flag		= false;
 	private boolean NodeDump	= false;
 	
@@ -161,25 +161,31 @@ public class IntVExecuter implements IntVParserVisitor{
 		FunctionTable.put(node.varName, obj);
 		
 		TableNoTable.put(node.varName,new Integer(gui.vt_model.getRowCount()));
-		if( node.decl == PenProperties.DECLARATION_PROCEDURAL ){
-			String[] stat_data = {"手続き", node.varName ,""};
-			gui.vt_model.addRow(stat_data);
-		} else if( node.decl == PenProperties.DECLARATION_INT ){
-			String[] stat_data = {"整数", node.varName ,""};
-			gui.vt_model.addRow(stat_data);
-		} else if( node.decl == PenProperties.DECLARATION_LONG ){
-			String[] stat_data = {"長整数", node.varName ,""};
-			gui.vt_model.addRow(stat_data);
-		} else if( node.decl == PenProperties.DECLARATION_DOUBLE ) {
-			String[] stat_data = {"実数", node.varName ,""};
-			gui.vt_model.addRow(stat_data);
-		} else if( node.decl == PenProperties.DECLARATION_STRING ) {
-			String[] stat_data = {"文字列", node.varName ,""};
-			gui.vt_model.addRow(stat_data);
-		} else if( node.decl == PenProperties.DECLARATION_BOOLEAN ) {
-			String[] stat_data = {"真偽", node.varName ,""};
-			gui.vt_model.addRow(stat_data);
+		
+		String[] stat_data = {"", node.varName, ""};
+		
+		switch(node.decl) {
+			case PROCEDURAL:
+				stat_data[0] = Declaration.PROCEDURAL.getDeclarationName();
+				break;
+			case INT:
+				stat_data[0] = Declaration.INT.getDeclarationName();
+				break;
+			case LONG:
+				stat_data[0] = Declaration.LONG.getDeclarationName();
+				break;
+			case DOUBLE:
+				stat_data[0] = Declaration.DOUBLE.getDeclarationName();
+				break;
+			case STRING:
+				stat_data[0] = Declaration.STRING.getDeclarationName();
+				break;
+			case BOOLEAN:
+				stat_data[0] = Declaration.BOOLEAN.getDeclarationName();
+				break;
 		}
+
+		gui.vt_model.addRow(stat_data);
 		
 		return null;
 	}
@@ -201,27 +207,33 @@ public class IntVExecuter implements IntVParserVisitor{
 			String[] stat_data = {null, var_name ,null};
 			TableNoTable.put(var_name,new Integer(gui.vt_model.getRowCount()));
 			
-			if(node.decl == PenProperties.DECLARATION_INT){
-				if(var instanceof Double){
-					var = Double.valueOf(var.toString()).longValue();
-				}
-				obj = Long.valueOf(var.toString()).intValue();
-				stat_data[0] = "整数";
-			} else if(node.decl == PenProperties.DECLARATION_LONG){
-				if(var instanceof Double){
-					var = Double.valueOf(var.toString()).longValue();
-				}
-				obj = Long.valueOf(var.toString());
-				stat_data[0] = "長整数";
-			} else if(node.decl == PenProperties.DECLARATION_DOUBLE){
-				obj = Double.valueOf(var.toString());
-				stat_data[0] = "実数";
-			} else if(node.decl == PenProperties.DECLARATION_STRING){
-				obj = String.valueOf(var.toString());
-				stat_data[0] = "文字列";
-			} else if(node.decl == PenProperties.DECLARATION_BOOLEAN){
-				obj = Boolean.valueOf(var.toString());
-				stat_data[0] = "真偽";
+			switch(node.decl) {
+				case INT:
+					if(var instanceof Double){
+						var = Double.valueOf(var.toString()).longValue();
+					}
+					obj = Long.valueOf(var.toString()).intValue();
+					stat_data[0] = Declaration.INT.getDeclarationName();
+					break;
+				case LONG:
+					if(var instanceof Double){
+						var = Double.valueOf(var.toString()).longValue();
+					}
+					obj = Long.valueOf(var.toString());
+					stat_data[0] = Declaration.LONG.getDeclarationName();
+					break;
+				case DOUBLE:
+					obj = Double.valueOf(var.toString());
+					stat_data[0] = Declaration.DOUBLE.getDeclarationName();
+					break;
+				case STRING:
+					obj = String.valueOf(var.toString());
+					stat_data[0] = Declaration.STRING.getDeclarationName();
+					break;
+				case BOOLEAN:
+					obj = Boolean.valueOf(var.toString());
+					stat_data[0] = Declaration.BOOLEAN.getDeclarationName();
+					break;
 			}
 			stat_data[2] = obj.toString();
 			gui.vt_model.addRow(stat_data);
@@ -233,7 +245,7 @@ public class IntVExecuter implements IntVParserVisitor{
 		return null;
 	}
 	
-	public void FunctionArrayVar(Vector vec, String var_name, int decl){
+	public void FunctionArrayVar(Vector vec, String var_name, Declaration decl){
 		for(int i = 0; i < vec.size(); i++){
 			Object ver = vec.get(i);
 			
@@ -244,11 +256,11 @@ public class IntVExecuter implements IntVParserVisitor{
 				String[] stat_data = {null, name ,null};
 				TableNoTable.put(name,new Integer(gui.vt_model.getRowCount()));
 
-				if( (decl == PenProperties.DECLARATION_INT		&& ver instanceof Integer) || 
-					(decl == PenProperties.DECLARATION_LONG		&& ver instanceof Long) || 
-					(decl == PenProperties.DECLARATION_DOUBLE	&& ver instanceof Double) ||
-					(decl == PenProperties.DECLARATION_STRING	&& ver instanceof String) ||
-					(decl == PenProperties.DECLARATION_BOOLEAN	&& ver instanceof Boolean)
+				if( (decl == Declaration.INT		&& ver instanceof Integer) || 
+					(decl == Declaration.LONG		&& ver instanceof Long) || 
+					(decl == Declaration.DOUBLE		&& ver instanceof Double) ||
+					(decl == Declaration.STRING		&& ver instanceof String) ||
+					(decl == Declaration.BOOLEAN	&& ver instanceof Boolean)
 				) {
 					stat_data[0] = "参照";
 				} else {
@@ -294,26 +306,32 @@ public class IntVExecuter implements IntVParserVisitor{
 
 			TableNoTable.put(node.varName,new Integer(gui.vt_model.getRowCount()));
 
-			if( declaration == PenProperties.DECLARATION_INT ){
-				obj = new Integer(0);
-				stat_data[0] = "整数";
-				stat_data[2] = "0";
-			} else if( declaration == PenProperties.DECLARATION_LONG ){
-				obj = new Long(0);
-				stat_data[0] = "長整数";
-				stat_data[2] = "0";
-			} else if( declaration == PenProperties.DECLARATION_DOUBLE ){
-				obj = new Double(0.0);
-				stat_data[0] = "実数";
-				stat_data[2] = "0.0";
-			} else if( declaration == PenProperties.DECLARATION_STRING ){
-				obj = new String();
-				stat_data[0] = "文字列";
-				stat_data[2] = "";
-			} else if( declaration == PenProperties.DECLARATION_BOOLEAN ){
-				obj = new Boolean(false);
-				stat_data[0] = "真偽";
-				stat_data[2] = "false";
+			switch(declaration) {
+				case INT:
+					obj = Declaration.INT.getInitObject();
+					stat_data[0] = Declaration.INT.getDeclarationName();
+					stat_data[2] = Declaration.INT.getDeclarationInit();
+					break;
+				case LONG:
+					obj = Declaration.LONG.getInitObject();
+					stat_data[0] = Declaration.LONG.getDeclarationName();
+					stat_data[2] = Declaration.LONG.getDeclarationInit();
+					break;
+				case DOUBLE:
+					obj = Declaration.DOUBLE.getInitObject();
+					stat_data[0] = Declaration.DOUBLE.getDeclarationName();
+					stat_data[2] = Declaration.DOUBLE.getDeclarationInit();
+					break;
+				case STRING:
+					obj = Declaration.STRING.getInitObject();
+					stat_data[0] = Declaration.STRING.getDeclarationName();
+					stat_data[2] = Declaration.STRING.getDeclarationInit();
+					break;
+				case BOOLEAN:
+					obj = Declaration.BOOLEAN.getInitObject();
+					stat_data[0] = Declaration.BOOLEAN.getDeclarationName();
+					stat_data[2] = Declaration.BOOLEAN.getDeclarationInit();
+					break;
 			}
 			symTable.put(node.varName, obj);
 			gui.vt_model.addRow(stat_data);
@@ -347,33 +365,41 @@ public class IntVExecuter implements IntVParserVisitor{
 				if((arrayOrigin == 1 && j == 0) || (arrayField == 1 && j == i.intValue())) {
 					vec.add(null);
 				} else {
-					String x = "";
-					String y = "";
 					var = array + String.valueOf(j) + "]";
-					if( declaration == PenProperties.DECLARATION_INT ) {
-						x = "整数";
-						y = "0";
-						vec.add(new Integer(0));
-					} else if( declaration == PenProperties.DECLARATION_LONG ) {
-						x = "長整数";
-						y = "0";
-						vec.add(new Long(0));
-					} else if( declaration == PenProperties.DECLARATION_DOUBLE ) {
-						x = "実数";
-						y = "0.0";
-						vec.add(new Double(0));
-					} else if( declaration == PenProperties.DECLARATION_STRING ) {
-						x = "文字列";
-						y = "";
-						vec.add(new String());
-					} else if( declaration == PenProperties.DECLARATION_BOOLEAN ) {
-						x = "真偽";
-						y = "true";
-						vec.add(new Boolean(true));
+					
+					String[] stat_data = {null, var, null};
+					Object obj = null;
+
+					switch(declaration) {
+						case INT:
+							obj = Declaration.INT.getInitObject();
+							stat_data[0] = Declaration.INT.getDeclarationName();
+							stat_data[2] = Declaration.INT.getDeclarationInit();
+							break;
+						case LONG:
+							obj = Declaration.LONG.getInitObject();
+							stat_data[0] = Declaration.LONG.getDeclarationName();
+							stat_data[2] = Declaration.LONG.getDeclarationInit();
+							break;
+						case DOUBLE:
+							obj = Declaration.DOUBLE.getInitObject();
+							stat_data[0] = Declaration.DOUBLE.getDeclarationName();
+							stat_data[2] = Declaration.DOUBLE.getDeclarationInit();
+							break;
+						case STRING:
+							obj = Declaration.STRING.getInitObject();
+							stat_data[0] = Declaration.STRING.getDeclarationName();
+							stat_data[2] = Declaration.STRING.getDeclarationInit();
+							break;
+						case BOOLEAN:
+							obj = Declaration.BOOLEAN.getInitObject();
+							stat_data[0] = Declaration.BOOLEAN.getDeclarationName();
+							stat_data[2] = Declaration.BOOLEAN.getDeclarationInit();
+							break;
 					}
+					vec.add(obj);
 					
 					TableNoTable.put(var,new Integer(gui.vt_model.getRowCount()));
-					String[] stat_data = {x, var, y};
 					gui.vt_model.addRow(stat_data);
 				}
 			}
@@ -524,14 +550,18 @@ public class IntVExecuter implements IntVParserVisitor{
 		run_flag(node.line_num1, true);
 		if(b.booleanValue()) {
 			Object var = node.jjtGetChild(1).jjtAccept(this, data);
-			if(var instanceof ASTBreak){ return var; }
+			if(var instanceof ASTBreak || var instanceof ASTReturn) {
+				return var;
+			}
 			if(node.jjtGetNumChildren() == 3) {
 				run_flag(node.line_num2, true);
 			}
 		}else if (node.jjtGetNumChildren() == 3) {
 			run_flag(node.line_num2, true);
 			Object var = node.jjtGetChild(2).jjtAccept(this, data);
-			if(var instanceof ASTBreak){ return var; }
+			if(var instanceof ASTBreak || var instanceof ASTReturn) {
+				return var;
+			}
 		}
 		if (node.line_num3 != 0) {
 			run_flag(node.line_num3, true);
@@ -551,6 +581,8 @@ public class IntVExecuter implements IntVParserVisitor{
 			if(var instanceof ASTBreak){
 				run_flag(node.line_num2, true);
 				break;
+			} else if(var instanceof ASTReturn) {
+				return var;
 			}
 			
 			try {
@@ -580,6 +612,8 @@ public class IntVExecuter implements IntVParserVisitor{
 			if(var instanceof ASTBreak){
 				run_flag(node.line_num2, true);
 				break;
+			} else if(var instanceof ASTReturn) {
+				return var;
 			}
 			
 			try {
@@ -678,6 +712,8 @@ public class IntVExecuter implements IntVParserVisitor{
 				if(var instanceof ASTBreak){
 					run_flag(node.line_num2, true);
 					break;
+				} else if(var instanceof ASTReturn) {
+					return var;
 				}
 			}else{
 				run_flag(node.line_num2, true);
@@ -765,6 +801,8 @@ public class IntVExecuter implements IntVParserVisitor{
 				if(obj instanceof ASTBreak){
 					run_flag(node.line_num2, true);
 					break;
+				} else if(obj instanceof ASTReturn) {
+					return obj;
 				}
 				run_flag(node.line_num1, true);
 				
@@ -818,6 +856,8 @@ public class IntVExecuter implements IntVParserVisitor{
 			Object var = node.jjtGetChild(0).jjtAccept(this, data);
 			if( var instanceof ASTBreak ) {
 				break;
+			} else if( var instanceof ASTReturn) {
+				return var;
 			}
 		}
 		run_flag(node.line_num2, true);
@@ -870,7 +910,9 @@ public class IntVExecuter implements IntVParserVisitor{
 
 		for (i = 0; i < k; i++){
 			Object var = node.jjtGetChild(i).jjtAccept(this, data);
-			if( var instanceof ASTBreak) { return var; }
+			if(var instanceof ASTBreak || var instanceof ASTReturn) {
+				return var;
+			}
 		}
 		return null;
 	}
@@ -1214,7 +1256,7 @@ public class IntVExecuter implements IntVParserVisitor{
 
 		String name = array_name;
 		Vector localVec = mainVec;
-		tmpAddres = ((Integer) node.jjtGetChild(0).jjtAccept(this, data)).intValue();
+		tmpAddres = Double.valueOf(node.jjtGetChild(0).jjtAccept(this, data).toString()).intValue();
 		
 		if(k > 1 ) {
 			mainVec = (Vector) localVec.get(tmpAddres);
@@ -1248,7 +1290,8 @@ public class IntVExecuter implements IntVParserVisitor{
 	 */
 	public Object visit(ASTReturn node, Object data) {
 		run_flag(node.line_num1, true);
-		return node.jjtGetChild(0).jjtAccept(this, data);
+		node.returnValue = node.jjtGetChild(0).jjtAccept(this, data);
+		return node;
 	}
 
 	/**
@@ -2300,6 +2343,8 @@ public class IntVExecuter implements IntVParserVisitor{
 			
 			if(return_var == null) {
 				run_flag(fc.line_num2, true);
+			} else if(return_var instanceof ASTReturn) {
+				return_var = ((ASTReturn) return_var).returnValue;
 			}
 	
 			symTable	= (Hashtable) stacksymTable.pop();
@@ -2320,17 +2365,21 @@ public class IntVExecuter implements IntVParserVisitor{
 			
 			if(return_var instanceof Vector){
 				return (Vector) return_var;
-			} else if(fc.decl == PenProperties.DECLARATION_INT){
-				return Double.valueOf(return_var.toString()).intValue();
-			} else if(fc.decl == PenProperties.DECLARATION_DOUBLE){
-				return Double.valueOf(return_var.toString());
-			} else if(fc.decl == PenProperties.DECLARATION_STRING){
-				return return_var.toString();
-			} else if(fc.decl == PenProperties.DECLARATION_BOOLEAN){
-				return Boolean.valueOf(return_var.toString());
-			} else {
-				return null;
+			} else if(return_var != null){
+				switch(fc.decl) {
+					case INT:
+						return Double.valueOf(return_var.toString()).intValue();
+					case LONG:
+						return Double.valueOf(return_var.toString()).longValue();
+					case DOUBLE:
+						return Double.valueOf(return_var.toString());
+					case STRING:
+						return return_var.toString();
+					case BOOLEAN:
+						return Boolean.valueOf(return_var.toString());
+				}
 			}
+			return null;
 		} else if(gui.penPlugin.containsMethod(varName)){
 			int k = node.jjtGetNumChildren();
 			Class[] c;

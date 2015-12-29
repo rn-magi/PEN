@@ -51,20 +51,16 @@ public class ButtonEdit {
 		edit_button_area_panel.setLayout(edit_button_area_layout);
 		gbc.insets = new Insets(0, 0, 0, 0);
 		
-		if (gui.main_window instanceof JFrame) {
-			try {
-				File file = new File(ListFile);
+		try {
+			File file = new File(ListFile);
+			if(file.exists() && file.isFile() && file.canRead()) {
 				setEditButton(new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8")));
-			} catch (FileNotFoundException e) {
-				System.out.println(e);
+			} else {
 				InputStreamReader isr = new InputStreamReader(getClass().getResourceAsStream(PenProperties.BUTTON_LIST_FILE), "UTF-8");
 				setEditButton(new BufferedReader(isr));
 			}
-		} else {
-			try {
-				setEditButton(new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream(ListFile), "UTF-8")));
-			} catch (IOException e) {
-			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		}
 	}
 
