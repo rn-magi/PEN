@@ -95,7 +95,7 @@ public interface IntVParserConstants {
   /** RegularExpression Id. */
   int ENDPROCEDURAL = 50;
   /** RegularExpression Id. */
-  int BREAKPROCEDURAL = 51;
+  int RETURNPROCEDURAL = 51;
   /** RegularExpression Id. */
   int FUNCTION = 52;
   /** RegularExpression Id. */

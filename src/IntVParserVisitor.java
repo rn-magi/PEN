@@ -111,6 +111,7 @@ public interface IntVParserVisitor
   public Object visit(ASTFunctionCall node, Object data);
   public Object visit(ASTReturn node, Object data);
   public Object visit(ASTBreak node, Object data);
+  public Object visit(ASTReturnProcedural node, Object data);
   public Object visit(ASTLiteral node, Object data);
   public Object visit(ASTFloatLiteral node, Object data);
   public Object visit(ASTTrue node, Object data);
@@ -118,4 +119,4 @@ public interface IntVParserVisitor
   public Object visit(ASTStrlit node, Object data);
   public Object visit(ASTEXTRA_STR node, Object data);
 }
-/* JavaCC - OriginalChecksum=aefebe0cd398527761753743a022d81a (do not edit this line) */
+/* JavaCC - OriginalChecksum=e144923b489f697658bf0b5d27053628 (do not edit this line) */

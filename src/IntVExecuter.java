@@ -550,7 +550,7 @@ public class IntVExecuter implements IntVParserVisitor{
 		run_flag(node.line_num1, true);
 		if(b.booleanValue()) {
 			Object var = node.jjtGetChild(1).jjtAccept(this, data);
-			if(var instanceof ASTBreak || var instanceof ASTReturn) {
+			if(var instanceof ASTBreak || var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
 				return var;
 			}
 			if(node.jjtGetNumChildren() == 3) {
@@ -559,7 +559,7 @@ public class IntVExecuter implements IntVParserVisitor{
 		}else if (node.jjtGetNumChildren() == 3) {
 			run_flag(node.line_num2, true);
 			Object var = node.jjtGetChild(2).jjtAccept(this, data);
-			if(var instanceof ASTBreak || var instanceof ASTReturn) {
+			if(var instanceof ASTBreak || var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
 				return var;
 			}
 		}
@@ -581,7 +581,7 @@ public class IntVExecuter implements IntVParserVisitor{
 			if(var instanceof ASTBreak){
 				run_flag(node.line_num2, true);
 				break;
-			} else if(var instanceof ASTReturn) {
+			} else if(var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
 				return var;
 			}
 			
@@ -612,7 +612,7 @@ public class IntVExecuter implements IntVParserVisitor{
 			if(var instanceof ASTBreak){
 				run_flag(node.line_num2, true);
 				break;
-			} else if(var instanceof ASTReturn) {
+			} else if(var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
 				return var;
 			}
 			
@@ -721,7 +721,7 @@ public class IntVExecuter implements IntVParserVisitor{
 				if(var instanceof ASTBreak){
 					run_flag(node.line_num2, true);
 					break;
-				} else if(var instanceof ASTReturn) {
+				} else if(var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
 					return var;
 				}
 			}else{
@@ -810,7 +810,7 @@ public class IntVExecuter implements IntVParserVisitor{
 				if(obj instanceof ASTBreak){
 					run_flag(node.line_num2, true);
 					break;
-				} else if(obj instanceof ASTReturn) {
+				} else if(obj instanceof ASTReturn || obj instanceof ASTReturnProcedural) {
 					return obj;
 				}
 				run_flag(node.line_num1, true);
@@ -866,6 +866,7 @@ public class IntVExecuter implements IntVParserVisitor{
 			if( var instanceof ASTBreak ) {
 				break;
 			} else if( var instanceof ASTReturn) {
+			} else if( var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
 				return var;
 			}
 		}
@@ -919,7 +920,7 @@ public class IntVExecuter implements IntVParserVisitor{
 
 		for (i = 0; i < k; i++){
 			Object var = node.jjtGetChild(i).jjtAccept(this, data);
-			if(var instanceof ASTBreak || var instanceof ASTReturn) {
+			if(var instanceof ASTBreak || var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
 				return var;
 			}
 		}
@@ -930,6 +931,14 @@ public class IntVExecuter implements IntVParserVisitor{
 	 * ループ処理を抜ける break文 の処理
 	 */
 	public  Object visit(ASTBreak node, Object data) {
+		run_flag(node.line_num1, true);
+		return node;
+	}
+	
+	/**
+	 * 手続きを抜ける return文 の処理
+	 */
+	public  Object visit(ASTReturnProcedural node, Object data) {
 		run_flag(node.line_num1, true);
 		return node;
 	}
@@ -2350,7 +2359,7 @@ public class IntVExecuter implements IntVParserVisitor{
 			callVar.clear();
 			return_var = fc.jjtGetChild(runNode).jjtAccept(this, fc_data);
 			
-			if(return_var == null) {
+			if(return_var == null || return_var instanceof ASTReturnProcedural) {
 				run_flag(fc.line_num2, true);
 			} else if(return_var instanceof ASTReturn) {
 				return_var = ((ASTReturn) return_var).returnValue;

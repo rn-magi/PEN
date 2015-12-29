@@ -616,6 +616,15 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	}
 	
 	/**
+	 * 手続きを抜ける return文 の処理
+	 */
+	public  Object visit(ASTReturnProcedural node, Object data) {
+		outPutIndent();
+		outPutCodeln("return;");
+		return null;
+	}
+	
+	/**
 	 * 比較演算子 "<" の処理
 	 */
 	public Object visit(ASTLSNode node, Object data) {
