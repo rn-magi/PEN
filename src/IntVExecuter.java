@@ -865,7 +865,6 @@ public class IntVExecuter implements IntVParserVisitor{
 			Object var = node.jjtGetChild(0).jjtAccept(this, data);
 			if( var instanceof ASTBreak ) {
 				break;
-			} else if( var instanceof ASTReturn) {
 			} else if( var instanceof ASTReturn || var instanceof ASTReturnProcedural) {
 				return var;
 			}
