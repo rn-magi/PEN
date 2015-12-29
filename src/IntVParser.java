@@ -2438,7 +2438,7 @@ if (jjtc001) {
 jjtn000.line_num2 = jj_consume_token(SM).beginLine;
 jjtree.closeNodeScope(jjtn000, true);
                   jjtc000 = false;
-jjtn000.p = jjtn000.wh;
+jjtn000.p = BlockType.WHILE;
           break;
           }
         case SWITCH:{
@@ -2573,7 +2573,7 @@ if (jjtc002) {
 jjtn000.line_num2 = jj_consume_token(SM).beginLine;
 jjtree.closeNodeScope(jjtn000, true);
                           jjtc000 = false;
-jjtn000.p = jjtn000.sw;
+jjtn000.p = BlockType.SWITCH;
           break;
           }
         case FOR:{
@@ -2713,7 +2713,7 @@ if (jjtc003) {
 jjtn000.line_num2 = jj_consume_token(SM).beginLine;
 jjtree.closeNodeScope(jjtn000, true);
                           jjtc000 = false;
-jjtn000.p = jjtn000.fr;
+jjtn000.p = BlockType.FOR;
           break;
           }
         default:

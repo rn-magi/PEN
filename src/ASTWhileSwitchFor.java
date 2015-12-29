@@ -15,9 +15,5 @@ public class ASTWhileSwitchFor extends SimpleNode {
 		return visitor.visit(this, data);
 	}
 	
-	public String p;
-	
-	public final String wh = "while";
-	public final String sw = "switch";
-	public final String fr = "for";
+	public BlockType p;
 }

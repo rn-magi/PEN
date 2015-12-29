@@ -538,14 +538,14 @@ void WhileSwitchFor() :
 		<WHILE> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
 		( Stat() )* #Block
 		<ENDLOOP> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
-		{ jjtThis.p = jjtThis.wh; }
+		{ jjtThis.p = BlockType.WHILE; }
 		|	<SWITCH> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
 			(Stat())* #Case
 			<ENDSWITCH> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
-			{ jjtThis.p = jjtThis.sw; }
+			{ jjtThis.p = BlockType.SWITCH; }
 		|	<FOR> AddExpr() <FOR2> AddExpr() <FOR3> ForStatAdd() { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }
 			(Stat())* #Block <ENDLOOP> { jjtn000.line_num2 = jj_consume_token(SM).beginLine; }
-			{ jjtThis.p = jjtThis.fr; }
+			{ jjtThis.p = BlockType.FOR; }
 	)
 }
 

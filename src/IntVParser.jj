@@ -1163,7 +1163,7 @@ void WhileSwitchFor() :
                   jjtc000 = false;
                 }
 /*@egen*/
-		{ jjtn000.p = jjtn000.wh; }
+		{ jjtn000.p = BlockType.WHILE; }
 		|	<SWITCH> { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }/*@bgen(jjtree) Case */
                         {
                           ASTCase jjtn002 = new ASTCase(JJTCASE);
@@ -1199,7 +1199,7 @@ void WhileSwitchFor() :
                           jjtc000 = false;
                         }
 /*@egen*/
-			{ jjtn000.p = jjtn000.sw; }
+			{ jjtn000.p = BlockType.SWITCH; }
 		|	<FOR> AddExpr() <FOR2> AddExpr() <FOR3> ForStatAdd() { jjtn000.line_num1 = jj_consume_token(SM).beginLine; }/*@bgen(jjtree) Block */
                         {
                           ASTBlock jjtn003 = new ASTBlock(JJTBLOCK);
@@ -1234,7 +1234,7 @@ void WhileSwitchFor() :
                           jjtc000 = false;
                         }
 /*@egen*/
-			{ jjtn000.p = jjtn000.fr; }
+			{ jjtn000.p = BlockType.FOR; }
 	)/*@bgen(jjtree)*/
         } catch (Throwable jjte000) {
           if (jjtc000) {

@@ -51,3 +51,7 @@ public enum Declaration {
 		return null;
 	}
 }
+
+enum BlockType {
+	PROCEDURAL, FUNCTION, LOOP, WHILE, SWITCH, FOR,
+}

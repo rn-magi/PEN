@@ -440,14 +440,23 @@ public class IntVConvertArduino implements IntVParserVisitor{
 	}
 
 	public Object visit(ASTWhileSwitchFor node, Object data) {
-		if (node.p.equals(node.wh)) {
-			return runWhileStat(node, data);
-		} else if(node.p.equals(node.sw)){
-			return runSwitch(node, data);
-		} else if(node.p.equals(node.fr)){
-			return runFor(node, data);
+		Object r = null;
+		
+		switch (node.p) {
+			case WHILE:
+				r = runWhileStat(node, data);
+				break;
+			case SWITCH:
+				r = runSwitch(node, data);
+				break;
+			case FOR:
+				r = runFor(node, data);
+				break;
+			default:
+				return null;
 		}
-		return null;
+		
+		return r;
 	}
 
 	/**
