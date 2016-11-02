@@ -202,7 +202,7 @@ public class IntVgOutputWindow extends JPanel{
 	 * 縦軸の終了座標
 	 */
 	public void gOpenGraphWindow(int width, int height, double x1, double y1, double x2, double y2){
-		gOpenGraphWindow(width, height, x1, x2, y1, y2, true);
+		gOpenGraphWindow(width, height, x1, y1, x2, y2, true);
 	}
 	
 	/**
