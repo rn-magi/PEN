@@ -74,6 +74,8 @@ public class IntVgOutputWindow extends JPanel{
 	private boolean DefaultOriginPoint = false;
 	private boolean originPoint = false;
 	
+	private boolean drawGraph = false;
+	
 	private boolean repaintFlag = true;
 	
 	private MainGUI gui = null;
@@ -142,6 +144,7 @@ public class IntVgOutputWindow extends JPanel{
 		windowsizeY 	= height;
 		
 		originPoint	= DefaultOriginPoint;
+		drawGraph = false;
 		
 		if(originPoint){
 			xPoint = 0;
@@ -202,7 +205,7 @@ public class IntVgOutputWindow extends JPanel{
 	 * 縦軸の終了座標
 	 */
 	public void gOpenGraphWindow(int width, int height, double x1, double y1, double x2, double y2){
-		gOpenGraphWindow(width, height, x1, x2, y1, y2, true);
+		gOpenGraphWindow(width, height, x1, y1, x2, y2, true);
 	}
 	
 	/**
@@ -252,6 +255,8 @@ public class IntVgOutputWindow extends JPanel{
 			drawGraph(width, height, xx, yy);
 		}
 		
+		this.drawGraph = drawGraph;
+		
 		xRange = xRangel;
 		yRange = yRangel;
 		xPoint = x;
@@ -272,7 +277,17 @@ public class IntVgOutputWindow extends JPanel{
 	 */
 	public void drawGraph(int width, int height, double x, double y){
 		int fSize = fontsize;
-
+		
+		double xRangeTEMP = this.xRange;
+		double yRangeTEMP = this.yRange;
+		double xPointTEMP = this.xPoint;
+		double yPointTEMP = this.yPoint;
+		
+		this.xRange = width;
+		this.yRange = height;
+		this.xPoint = x;
+		this.yPoint = y;
+		
 		gSetArrowDir(1);
 		gSetArrowType(2);
 		gSetLineColor(200, 200, 200);
@@ -292,6 +307,11 @@ public class IntVgOutputWindow extends JPanel{
 		gSetFontSize(fSize);
 		gSetLineColor(IntVgOutputWindow.DEFAULT_DRAW_COLOR.getRed(), IntVgOutputWindow.DEFAULT_DRAW_COLOR.getGreen(), IntVgOutputWindow.DEFAULT_DRAW_COLOR.getBlue());
 		gSetTextColor(IntVgOutputWindow.DEFAULT_DRAW_COLOR.getRed(), IntVgOutputWindow.DEFAULT_DRAW_COLOR.getGreen(), IntVgOutputWindow.DEFAULT_DRAW_COLOR.getBlue());
+		
+		this.xRange = xRangeTEMP;
+		this.yRange = yRangeTEMP;
+		this.xPoint = xPointTEMP;
+		this.yPoint = yPointTEMP;
 	}
 	
 	/**
@@ -308,6 +328,11 @@ public class IntVgOutputWindow extends JPanel{
 	 */
 	public void gClearWindow(){
 		imageGraphics.clearRect(0,0, windowsizeX, windowsizeY);
+		if(drawGraph) {
+			double xx = xPoint * windowsizeX / xRange;
+			double yy = yPoint * windowsizeY / yRange;
+			drawGraph(windowsizeX, windowsizeY, xx, yy);
+		}
 		myrepaint();
 	}
 	
