@@ -277,7 +277,17 @@ public class IntVgOutputWindow extends JPanel{
 	 */
 	public void drawGraph(int width, int height, double x, double y){
 		int fSize = fontsize;
-
+		
+		double xRangeTEMP = this.xRange;
+		double yRangeTEMP = this.yRange;
+		double xPointTEMP = this.xPoint;
+		double yPointTEMP = this.yPoint;
+		
+		this.xRange = width;
+		this.yRange = height;
+		this.xPoint = x;
+		this.yPoint = y;
+		
 		gSetArrowDir(1);
 		gSetArrowType(2);
 		gSetLineColor(200, 200, 200);
@@ -297,6 +307,11 @@ public class IntVgOutputWindow extends JPanel{
 		gSetFontSize(fSize);
 		gSetLineColor(IntVgOutputWindow.DEFAULT_DRAW_COLOR.getRed(), IntVgOutputWindow.DEFAULT_DRAW_COLOR.getGreen(), IntVgOutputWindow.DEFAULT_DRAW_COLOR.getBlue());
 		gSetTextColor(IntVgOutputWindow.DEFAULT_DRAW_COLOR.getRed(), IntVgOutputWindow.DEFAULT_DRAW_COLOR.getGreen(), IntVgOutputWindow.DEFAULT_DRAW_COLOR.getBlue());
+		
+		this.xRange = xRangeTEMP;
+		this.yRange = yRangeTEMP;
+		this.xPoint = xPointTEMP;
+		this.yPoint = yPointTEMP;
 	}
 	
 	/**
@@ -314,7 +329,9 @@ public class IntVgOutputWindow extends JPanel{
 	public void gClearWindow(){
 		imageGraphics.clearRect(0,0, windowsizeX, windowsizeY);
 		if(drawGraph) {
-			drawGraph(windowsizeX, windowsizeY, xPoint, yPoint);
+			double xx = xPoint * windowsizeX / xRange;
+			double yy = yPoint * windowsizeY / yRange;
+			drawGraph(windowsizeX, windowsizeY, xx, yy);
 		}
 		myrepaint();
 	}
