@@ -74,6 +74,8 @@ public class IntVgOutputWindow extends JPanel{
 	private boolean DefaultOriginPoint = false;
 	private boolean originPoint = false;
 	
+	private boolean drawGraph = false;
+	
 	private boolean repaintFlag = true;
 	
 	private MainGUI gui = null;
@@ -142,6 +144,7 @@ public class IntVgOutputWindow extends JPanel{
 		windowsizeY 	= height;
 		
 		originPoint	= DefaultOriginPoint;
+		drawGraph = false;
 		
 		if(originPoint){
 			xPoint = 0;
@@ -252,6 +255,8 @@ public class IntVgOutputWindow extends JPanel{
 			drawGraph(width, height, xx, yy);
 		}
 		
+		this.drawGraph = drawGraph;
+		
 		xRange = xRangel;
 		yRange = yRangel;
 		xPoint = x;
@@ -308,6 +313,9 @@ public class IntVgOutputWindow extends JPanel{
 	 */
 	public void gClearWindow(){
 		imageGraphics.clearRect(0,0, windowsizeX, windowsizeY);
+		if(drawGraph) {
+			drawGraph(windowsizeX, windowsizeY, xPoint, yPoint);
+		}
 		myrepaint();
 	}
 	
