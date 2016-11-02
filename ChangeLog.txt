@@ -1,5 +1,18 @@
 "初学者向けプログラミング学習環境 PEN" 変更履歴
 
+・ver 1.24r2 (2016/11/02)
+  [ BugFix ]
+    ・gOpenGraphWindow() のマッピングが正常に動作しなかったのを修正
+  [ Fix ]
+    ・gClearWindow() で座標軸を再描画するように修正
+    ・Copyrightの年数を「2003-2016」に修正
+
+  [ FixFile ]
+    - ChangeLog.txt
+    - HelpPenButtonListener.java
+    - IntVgOutputWindow.java
+    - ReadMe.txt
+
 ・ver 1.24r1 (2015/12/30)
   [ New ]
     ・戻り値なしの関数を抜けられるよう「手続きを抜ける」という命令文を追加
