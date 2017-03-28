@@ -5,8 +5,6 @@ PENで動作するプログラム言語は
 　センター試験用手順記述標準言語 DNCL  
 に拡張を行った xDNCL言語 を用いています。
 
-* 初学者向けプログラミング学習環境 PEN 公式サイト
-	* <http://www.media.osaka-cu.ac.jp/PEN/>
 * 開発メモWiki
 	* <http://pen.moe.hm/>
 
@@ -51,6 +49,4 @@ PENの開発は主に3つのブランチを使い分けています。
 
 ## 開発者について
 
-* ~~**中村 亮太** ( *Ryota Nakamura* ) - 大阪市立大学 大学院創造都市研究科~~
-* **西田 知博** ( *Tomohiro Nishida* ) - 大阪学院大学 情報学部
-* **松浦 敏雄** ( *Toshio Matsuura* ) - 大阪市立大学 大学院創造都市研究科
+* **中村 亮太** ( *Ryota Nakamura* )
