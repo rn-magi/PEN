@@ -42,6 +42,7 @@ public class MyJMenuBar extends JMenuBar{
 
 	private MyJMenuItem ArduinoConvertMenuItem	= new MyJMenuItem("プログラムの変換");
 	private MyJMenuItem ArduinoUploadMenuItem	= new MyJMenuItem("Arduinoへの書き込み");
+	private MyJMenuItem ArduinoConvertModeItem	= new MyJMenuItem("モード変更");
 
 	private MyJMenuItem ConfigMenu			= new MyJMenuItem("設定確認");
 	private MyJMenuItem HelpPenMenuItem		= new MyJMenuItem("PENについて");
@@ -74,6 +75,8 @@ public class MyJMenuBar extends JMenuBar{
 		ArduinoConvertMenuItem.addActionListener(new xDCNL2ArduinoConvertListener(gui));
 		ArduinoUploadMenuItem.setEnabled(gui.penPro.getArduinoCheck());
 		ArduinoUploadMenuItem.addActionListener(new xDCNL2ArduinoConvertListener(gui));
+		ArduinoConvertModeItem.setEnabled(gui.penPro.getArduinoCheck());
+		ArduinoConvertModeItem.addActionListener(new xDCNL2ArduinoConvertListener(gui, new xDNCL2Arduino(gui)));
 
 		ConfigMenu.addActionListener(new ConfigButtonListener(gui, ConfigMenu.getText()));
 		HelpPenMenuItem.addActionListener(new HelpPenButtonListener(Version));
@@ -97,6 +100,7 @@ public class MyJMenuBar extends JMenuBar{
 
 		ArduinoMenu.add(ArduinoConvertMenuItem);
 		ArduinoMenu.add(ArduinoUploadMenuItem);
+		ArduinoMenu.add(ArduinoConvertModeItem);
 
 		HelpMenu.add(ConfigMenu);
 		HelpMenu.add(new JSeparator());
